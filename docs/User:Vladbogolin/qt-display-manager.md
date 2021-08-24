@@ -9,7 +9,7 @@ Tk windows so this was one of the first features implemented. Then,
 basic drawing had to be done, more exactly line, points and text
 drawing. To obtain this a QPainter that draws on a QPixmap was used.
 
-<img src="Tkqt1.png" title="fig:Tkqt1.png" width="200" alt="Tkqt1.png" /><img src="Sph.png" title="fig:Sph.png" width="200" alt="Sph.png" /><img src="Tor.png" title="fig:Tor.png" width="200" alt="Tor.png" />
+![](img/Tkqt1.png)![](img/Sph.png)<img src="img/Tor.png" title="fig:Tor.png" width="200" alt="Tor.png" />
 
 At this point the display manager could draw almost anything but there
 was no event processing involved so user input was ignored. The problem
@@ -23,15 +23,15 @@ The events can be grouped in three categories:
 
 -   mouse events:
 
-<img src="Tor1.png" title="fig:Tor1.png" width="200" alt="Tor1.png" /><img src="Tor2.png" title="fig:Tor2.png" width="200" alt="Tor2.png" />
+![](img/Tor1.png)![](img/Tor2.png)
 
 -   keyboard events:
 
-<img src="Keyboard.png" title="fig:Keyboard.png" width="200" alt="Keyboard.png" /><img src="Keyboard2.png" title="fig:Keyboard2.png" width="200" alt="Keyboard2.png" /><img src="mged-c.png" title="fig:mged-c.png" width="200" alt="mged-c.png" />
+![](img/Keyboard.png)![](img/Keyboard2.png)![](img/mged-c.png)
 
 -   mouse + keyboard events:
 
-<img src="Rotate1.png" title="fig:Rotate1.png" width="200" alt="Rotate1.png" /><img src="Rotate2.png" title="fig:Rotate2.png" width="200" alt="Rotate2.png" />
+![](img/Rotate1.png)![](img/Rotate2.png)
 
 As it comes to key bindings, I've tried to do everything in such a way
 that new key bindings can be easily added. In order to add a new key
@@ -56,16 +56,12 @@ towards integrating the new display manager
 
 -   in mged:
 
-<figure>
-<img src="mged.png" title="mged.png" width="200" alt="mged.png" /><figcaption aria-hidden="true">mged.png</figcaption>
-</figure>
+![](img/mged.png)
 
 -   and archer:
 
 <figure>
-<img src="archer.png" title="archer.png" width="200" alt="archer.png" /><figcaption aria-hidden="true">archer.png</figcaption>
-</figure>
+![](img/archer.png)
 
-The integration is one of the final features implemented. At the end I
 made some testing using some more complex objects to see that everything
 is displayed properly and working as expected.

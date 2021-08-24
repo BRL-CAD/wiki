@@ -145,7 +145,7 @@ be boosted by doing following things:
     down OGV. Therefore merging obj files will reduce HTTP requests by a
     big number.
 
-![](_details.png)
+![](img/_details.png)
 
 -   **Group/Ungroup merged Obj file**: User should get an option to
     group/ungroup the merged obj file. As I will load only one obj file
@@ -166,19 +166,15 @@ be boosted by doing following things:
     These names will then be seen when hovered with mouse over the part
     of model
 
-<figure>
-<img src="_show_hide.png" title="_show_hide.png" width="900" alt="_show_hide.png" /><figcaption aria-hidden="true">_show_hide.png</figcaption>
-</figure>
+![](img/_show_hide.png)
 
 -   **Coloring parts of model**: Once the model is ungrouped, we get a
     set of different parts that can be colored in a separate color or a
     material texture.
 
 <figure>
-<img src="_colored_parts.png" title="_colored_parts.png" width="900" alt="_colored_parts.png" /><figcaption aria-hidden="true">_colored_parts.png</figcaption>
-</figure>
+![](img/_colored_parts.png)
 
-### Search
 
 -   **Searching parts of Model**: Complex models have a large number of
     parts, so it isn't feasible to go through the list manually to find
@@ -198,30 +194,24 @@ be boosted by doing following things:
 `  art1sec8:fuse`
 
 <figure>
-<img src="_empty_search.png" title="_empty_search.png" width="900" alt="_empty_search.png" /><figcaption aria-hidden="true">_empty_search.png</figcaption>
+![](img/_empty_search.png)
 </figure>
 
-When searched, it shows both users and models, at the same time.
 
-<figure>
-<img src="_search_ga.png" title="_search_ga.png" width="900" alt="_search_ga.png" /><figcaption aria-hidden="true">_search_ga.png</figcaption>
+![](img/_search_ga.png)
 </figure>
 
 -   **Advanced Search**: With this we can search for models using
     certain filters. Filters include filter by the owner of the model,
-    category of a model
 
-<figure>
-<img src="_advanced_search.png" title="_advanced_search.png" width="900" alt="_advanced_search.png" /><figcaption aria-hidden="true">_advanced_search.png</figcaption>
+![](img/_advanced_search.png)
 </figure>
 
 ### Notifications
 
 -   **Better notification UI**: The current notification style cover the
     entire top bar, and hides the menu, thus the user can not go
-    anywhere until he/she closes the notification. In OGV, there is a
     mixture of meteor sAlert notifications and simple javascript Alert.
-    Simple javascript alerts can't be styled much, So I would transform
     all the alerts to meteor sAlert. Sometimes when we follow another
     user, we get two sAlerts. This inconsistent behaviour of
     notifications needs to be fixed.
@@ -233,7 +223,7 @@ When searched, it shows both users and models, at the same time.
     configurable. You can switch it off if you don't want it.
 
 <figure>
-<img src="_notifications.png" title="_notifications.png" width="900" alt="_notifications.png" /><figcaption aria-hidden="true">_notifications.png</figcaption>
+![](img/_notifications.png)
 </figure>
 
 ### Customized Access to models
@@ -242,9 +232,7 @@ When searched, it shows both users and models, at the same time.
     models. These doesn't appear in the news feed.
 -   Groups/lists: Allowing the user to classify the followers into
     groups or lists. And then share the model only with the chosen
-    groups/lists.
 -   Only followers: Only users who follow can see the uploaded model
--   Public models: Anyone can see the uploaded model.
 
 ### UI/UX improvements in model
 
@@ -255,7 +243,7 @@ When searched, it shows both users and models, at the same time.
 `  {{> FS.UploadProgressBar}}`
 
 <figure>
-<img src="_uploading.png" title="_uploading.png" width="900" alt="_uploading.png" /><figcaption aria-hidden="true">_uploading.png</figcaption>
+![](img/_uploading.png)
 </figure>
 
 -   **Progress bar for conversion**: In current OGV code, the conversion
@@ -265,10 +253,8 @@ When searched, it shows both users and models, at the same time.
     that animates the button.
 
 <figure>
-<img src="_conversion.png" title="_conversion.png" width="900" alt="_conversion.png" /><figcaption aria-hidden="true">_conversion.png</figcaption>
-</figure>
+![](img/_conversion.png)
 
--   **Thumbnail Generation** : For now, we have to manually upload an
     image file to be used as a thumbnail of the model. Automatic
     thumbnail generation will snapshot the rendered view of a model, and
     use that image as a thumbnail.
@@ -279,8 +265,6 @@ doing it this way seems a right approach to me.
 
 `   window.open( renderer.domElement.toDataURL( 'image/png' ), 'screenshot' );`
 
-This simple javascript line when executed from the console, will open
-the screenshot in a new tab.
 
 -   **Improvements in social elements**: Social elements like love and
     comment needs some UI refreshment. Also, another social element of

@@ -15,7 +15,7 @@
 
 # Class Diagram Legend
 
-![](ClassDiagramInitial.jpg)
+![](img/ClassDiagramInitial.jpg)
 
 
 

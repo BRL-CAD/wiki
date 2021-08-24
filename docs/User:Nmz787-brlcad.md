@@ -36,13 +36,13 @@ cmake ../ -DCMAKE_BUILD_TYPE=Debug -DBRLCAD_BUNDLED_LIBS=Bundled
     -   `in knob.s rcc 4 4 40 8 0 0 5`
 -   Pasting or typing those lines should look like this:
 
-![](Mged_radio_view1.png)
+![](img/Mged_radio_view1.png)
 
 -   Press enter if you haven't already
 -   If you don't see a window with an image open up, click mged's
     **Tools** menu, then **Graphics Window**
 
-![](Mged_radio_graphic_view1.png)
+![](img/Mged_radio_graphic_view1.png)
 
 -   Pressing the keyboard **CTRL** button along with the **left
     mouse-button** will pan around the displayed image
@@ -50,7 +50,7 @@ cmake ../ -DCMAKE_BUILD_TYPE=Debug -DBRLCAD_BUNDLED_LIBS=Bundled
     mouse-button** will move the view away from or toward the center
     (where the cartesian plane X,Y,Z are 0,0,0)
 
-![](mged_radio_graphic_window.gif)
+![](img/mged_radio_graphic_window.gif)
 
 ## Primitive Examples
 
@@ -66,7 +66,7 @@ Arguments
 
 -   vertex, vectors H A B, magnitudes of vectors C D
 
-![](TGC_mged_brlcad.png)
+![](img/TGC_mged_brlcad.png)
 
 #### RCC example via TGC
 

@@ -259,8 +259,8 @@
         received no answer until now.
     -   Results:
 
-<img src="Snapshot2.png" title="fig:Snapshot2.png" width="500" alt="Snapshot2.png" />
-<img src="Snapshot3.png" title="fig:Snapshot3.png" width="500" alt="Snapshot3.png" />
+![](img/Snapshot2.png)
+![](img/Snapshot3.png)
 
 ## Week 6 (22 July - 28 July)
 
@@ -294,7 +294,7 @@
     -   I want to thank D.Rossberg for his help and support in finding
         the solution :).
 -   26 July 2013:
-    -   Result:<img src="Tkqt.png" title="fig:Tkqt.png" width="520" alt="Tkqt.png" /><img src="Tkqt1.png" title="fig:Tkqt1.png" width="500" alt="Tkqt1.png" />
+    -   Result:![](img/Tkqt.png)![](img/Tkqt1.png)
         -   The window's content is the same like in the first pictures
             posted but this time Qt content is shown within a Tk window
             :).
@@ -325,8 +325,8 @@
         qt_drawVList function.
     -   The display manager is able to display more complex objects:
 
-<img src="Sph.png" title="fig:Sph.png" width="500" alt="Sph.png" />
-<img src="Tor.png" title="fig:Tor.png" width="500" alt="Tor.png" />
+![](img/Sph.png)
+![](img/Tor.png)
 
 -   31 July 2013:
     -   Struggled with mouse integration.
@@ -363,14 +363,14 @@
     -   Almost finished the mouse integration: the content resizes when
         pressing mouse buttons:
 
-<img src="Tor1.png" title="fig:Tor1.png" width="500" alt="Tor1.png" /><img src="Tor2.png" title="fig:Tor2.png" width="500" alt="Tor2.png" />
+![](img/Tor1.png)![](img/Tor2.png)
 
 -   6 August 2013:
     -   Dealt with Control+LeftMouseButton binding: I successfully
         managed to rotate the object but I still have some problems
         because since it starts rotating it never stops:
 
-<img src="Rotate1.png" title="fig:Rotate1.png" width="500" alt="Rotate1.png" /><img src="Rotate2.png" title="fig:Rotate2.png" width="500" alt="Rotate2.png" />
+![](img/Rotate1.png)![](img/Rotate2.png)
 
 -   7 August 2013:
     -   Break day
@@ -380,7 +380,7 @@
 -   9 August 2013:
     -   Integrated keyboard events:
 
-<img src="Keyboard.png" title="fig:Keyboard.png" width="500" alt="Keyboard.png" /><img src="Keyboard2.png" title="fig:Keyboard2.png" width="500" alt="Keyboard2.png" />
+![](img/Keyboard.png)![](img/Keyboard2.png)
 
 -   10 August 2013:
     -   Break day
@@ -435,9 +435,7 @@
     -   Added the option to select the Qt display manager from
         Modes&gt;Display Manager in mged's menu:
 
-<figure>
-<img src="Mged1.png" title="Mged1.png" width="500" alt="Mged1.png" /><figcaption aria-hidden="true">Mged1.png</figcaption>
-</figure>
+![](img/Mged1.png)
 
 -   20 August 2013:
     -   Solved the issue regarding opening the display manager without a

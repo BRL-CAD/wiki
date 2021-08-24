@@ -1,6 +1,6 @@
 # Who I am
 
-![](Kunigami_profile.png)
+![](img/Kunigami_profile.png)
 
 My name is Guilherme Kunigami.
 

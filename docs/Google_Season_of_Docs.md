@@ -7,7 +7,7 @@ concise Intro to BRL-CAD. We participated again in 2020, learned from
 that experience even more, and are looking forward to the 2021 Season of
 Docs.
 
-![](GSoD2019.png)
+![](img/GSoD2019.png)
 
 > The goal of [Google Season of
 > Docs](https://developers.google.com/season-of-docs/) is to provide a

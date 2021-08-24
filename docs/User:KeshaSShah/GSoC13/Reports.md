@@ -844,10 +844,10 @@ and cmake_source_dir / cmake_current_source_dir --&gt; stepcode/
 
 <!-- -->
 
--   -   <img src="layers.jpg" title="fig:layers.jpg" width="500" alt="layers.jpg" />
+-   -   ![](img/layers.jpg)
 
 -   My screenshot after conversion:
-    -   <img src="ScreenshotForLayers.png" title="fig:ScreenshotForLayers.png" width="1000" alt="ScreenshotForLayers.png" />
+    -   ![](img/ScreenshotForLayers.png)
 
 <!-- -->
 
@@ -987,11 +987,11 @@ and cmake_source_dir / cmake_current_source_dir --&gt; stepcode/
 -   The 3 stepfiles when importer and viewed in archer looks like the
     following :
     -   instance_stepfile1.g
-    -   <img src="instance_stepfile1.png" title="fig:instance_stepfile1.png" width="500" alt="instance_stepfile1.png" />
+    -   ![](img/instance_stepfile1.png)
     -   instance_stepfile2.g
-    -   <img src="instance_stepfile2.png" title="fig:instance_stepfile2.png" width="500" alt="instance_stepfile2.png" />
+    -   ![](img/instance_stepfile2.png)
     -   instance_stepfile3.g
-    -   <img src="instance_stepfile3.png" title="fig:instance_stepfile3.png" width="500" alt="instance_stepfile3.png" />
+    -   ![](img/instance_stepfile3.png)
 
 ## September 20
 

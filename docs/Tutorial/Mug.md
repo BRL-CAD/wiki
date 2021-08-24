@@ -10,7 +10,7 @@ and named it <i>cup.r</i> then go to the Combination Editor and input
 "53 20 0" (dark brown color) on the Color GUI.
 
 <figure>
-<img src="Outside_cup.PNG" title="Outside_cup.PNG" width="600" alt="Outside_cup.PNG" /><figcaption aria-hidden="true">Outside_cup.PNG</figcaption>
+![](img/Outside_cup.PNG)
 </figure>
 
 <b>2. Handle</b>
@@ -26,7 +26,7 @@ to lessen the creases. Do the same way on how put color on <i>cup.r</i>
 only name the new region <i>handle.r.</i>
 
 <figure>
-<img src="Handle.PNG" title="Handle.PNG" width="600" alt="Handle.PNG" /><figcaption aria-hidden="true">Handle.PNG</figcaption>
+![](img/Handle.PNG)
 </figure>
 
 <b>3. Inside of the cup</b>
@@ -41,7 +41,7 @@ of the cup might now looked too small for a cup and also that
 `r inside.r u inside.s - cup.r`
 
 <figure>
-<img src="Inside_cup.PNG" title="Inside_cup.PNG" width="600" alt="Inside_cup.PNG" /><figcaption aria-hidden="true">Inside_cup.PNG</figcaption>
+![](img/Inside_cup.PNG)
 </figure>
 
 <b>4. Rim</b>
@@ -52,7 +52,7 @@ the cup's circumference, and "Radius 2" to fit it to the cup's width.
 After that make it into a region named <i>rim.r</i>.
 
 <figure>
-<img src="Rim.PNG" title="Rim.PNG" width="600" alt="Rim.PNG" /><figcaption aria-hidden="true">Rim.PNG</figcaption>
+![](img/Rim.PNG)
 </figure>
 
 <b>5. Base</b>
@@ -62,7 +62,7 @@ a region named <i>base.r</i> then type "53 20 0" on the Color GUI in
 Combination Editor.
 
 <figure>
-<img src="Base.PNG" title="Base.PNG" width="600" alt="Base.PNG" /><figcaption aria-hidden="true">Base.PNG</figcaption>
+![](img/Base.PNG)
 </figure>
 
 <b>6. Coffee (optional)</b>
@@ -77,7 +77,7 @@ problem on setting the transparency to 0.1 rather than 0 is that the
 Command Window would "complain" on overlapping.
 
 <figure>
-<img src="Coffee.PNG" title="Coffee.PNG" width="600" alt="Coffee.PNG" /><figcaption aria-hidden="true">Coffee.PNG</figcaption>
+![](img/Coffee.PNG)
 </figure>
 
 <b>7. Combining all regions</b>
@@ -102,13 +102,13 @@ for best results, set the Background Color to white, the view in
 "az35,el25", and also the Framebuffer option to "Overlay".
 
 <figure>
-<img src="Raytrace1.PNG" title="Raytrace1.PNG" width="600" alt="Raytrace1.PNG" /><figcaption aria-hidden="true">Raytrace1.PNG</figcaption>
+![](img/Raytrace1.PNG)
 </figure>
 
 with coffee
 
 <figure>
-<img src="Raytrace2.PNG" title="Raytrace2.PNG" width="600" alt="Raytrace2.PNG" /><figcaption aria-hidden="true">Raytrace2.PNG</figcaption>
+![](img/Raytrace2.PNG)
 </figure>
 
 without coffee

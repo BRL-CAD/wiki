@@ -46,7 +46,7 @@ the middle partition of the ray has the "TRUE" value.
 -   Planning to shade the segments from the evaluated partitions next
     week.
 
-![](Csg_simple_example.png)
+![](img/Csg_simple_example.png)
 
 ### Week 2:
 
@@ -84,7 +84,7 @@ the middle partition of the ray has the "TRUE" value.
 -   The next figure contains images with the results of the OCL code and
     a comparison with the Ansi C code.
 
-![](ocl_results.png)
+![](img/ocl_results.png)
 
 -   Planning to refractor the 'weave_segs' kernel next week to a
     solution that does not use a bounded array for the segments in each
@@ -139,7 +139,7 @@ the middle partition of the ray has the "TRUE" value.
     order to have a more exact comparision between the Ansi C and the
     OpenCL code
 
-![](White_shading_results.png)
+![](img/White_shading_results.png)
 
 |              | Ansi C    | OCL - Intel i5 4690k | OCL - Nvidia GTX 970 |
 |--------------|-----------|----------------------|----------------------|
@@ -239,7 +239,7 @@ the middle partition of the ray has the "TRUE" value.
     the ansi c results. There are some slightly differences in the
     illumination, but those differences were already there before.
 
-![](Shading_eval.png)
+![](img/Shading_eval.png)
 
 ### 10 July
 
@@ -263,7 +263,7 @@ the middle partition of the ray has the "TRUE" value.
     'rtip-&gt;rti_Solids' bits before sending the boolean trees to
     OpenCL, and was able to get the following results:
 
-![](Operators.png)
+![](img/Operators.png)
 
 -   Hopefully this help us find the cause for the 'seg_sti' mismatch
     between the segments and the bits in the boolean tree.
@@ -285,7 +285,7 @@ the middle partition of the ray has the "TRUE" value.
     Here is an example of a view that was having this problem, now
     fixed:
 
-![](Operators_v1.png)
+![](img/Operators_v1.png)
 
 -   Will finish the rt_boolfinal kernel, by implementing the handler
     for overlapping partitions before submiting the patch in the svn.
@@ -355,9 +355,9 @@ the middle partition of the ray has the "TRUE" value.
 -   Prepared the code and submitted the patch in the svn
     (https://sourceforge.net/p/brlcad/patches/472/)
 
-![](results1.png)
+![](img/results1.png)
 
-![](results2.png)
+![](img/results2.png)
 
 ### 24 July
 
@@ -378,7 +378,7 @@ the middle partition of the ray has the "TRUE" value.
 -   Tomorrow will add some more measurements and will share the document
     with the results.
 
-![](operators_normals.png)
+![](img/operators_normals.png)
 
 ### 25 July
 
@@ -390,7 +390,7 @@ the middle partition of the ray has the "TRUE" value.
 -   Fixed the issue that was causing some interior normals to be wrongly
     represented
 
-![](normals_fixed.png)
+![](img/normals_fixed.png)
 
 -   Working on a solution to iterate only over partitions evaluated in
     the shading process
@@ -407,7 +407,7 @@ the middle partition of the ray has the "TRUE" value.
     performance, as you can see in the following table:
 
 (Running the OpenCL over the NVIDIA OpenCL SDK on GPU - Debug build)
-![](time_comparison.png)
+![](img/time_comparison.png)
 
 ### 31 July
 
@@ -433,7 +433,7 @@ the middle partition of the ray has the "TRUE" value.
 
 -   Example of what was happening before vs what is happening now:
 
-![](shade_closest_partition.png)
+![](img/shade_closest_partition.png)
 
 ### 2 - 4 August
 
@@ -461,7 +461,7 @@ the middle partition of the ray has the "TRUE" value.
     trunk, the code with the new tree structure and the code currently
     in the opencl branch (RPN tree):
 
-(Release build) ![](comparison.png)
+(Release build) ![](img/comparison.png)
 
 -   Removed the 'next_evalpp' from the partition structure, which
     wasn't necessary in the first place
@@ -473,7 +473,7 @@ the middle partition of the ray has the "TRUE" value.
     trunk! This difference is more noticeable when rendering the havoc
     scene with the command "rt -s2048": 2.53sec vs 2.18sec.
 
-(Release build) ![](time.png)
+(Release build) ![](img/time.png)
 
 ### 9 August
 
@@ -509,7 +509,7 @@ the middle partition of the ray has the "TRUE" value.
     with the new tree representation:
 
 (running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
-![](new_tree_times.png)
+![](img/new_tree_times.png)
 
 ### 11 August
 
@@ -618,7 +618,7 @@ the middle partition of the ray has the "TRUE" value.
     increased significantly, as we can see in the following table:
 
 (running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
-![](times.png)
+![](img/times.png)
 
 ### GSoC17 is Over!!
 

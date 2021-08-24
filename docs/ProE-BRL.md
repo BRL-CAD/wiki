@@ -13,4 +13,4 @@ introduce *new* overlaps on valid geometry or even fail outright (within
 Pro/E) if there are modeling errors. This time-intensive process is
 being deprecated by our active BREP/NURBS development effort.
 
-![](ProE-BRL_GUI.png)
+![](img/ProE-BRL_GUI.png)

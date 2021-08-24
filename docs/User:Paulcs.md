@@ -15,7 +15,7 @@
 [1](http://more.brlcad.org/model/photo-holder)
 [2](https://sourceforge.net/support/tracker.php?aid=3027507)
 
-![](PhotoHolder.jpg)
+![](img/PhotoHolder.jpg)
 
 I made an ogg video from it, available here:
 [3](http://hu.wikipedia.org/wiki/Fájl:PhotoHolder.ogg)

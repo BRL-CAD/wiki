@@ -8,7 +8,7 @@ We will use two examples to illustrate the next few sections.
 
 1\. A black and white (gray scale) image (png format):
 
-![](Ex1.png)
+![](img/Ex1.png)
 
 with properties:
 
@@ -17,7 +17,7 @@ with properties:
 
 2\. A color png file:
 
-![](Ex2.png)
+![](img/Ex2.png)
 
 with properties:
 
@@ -121,7 +121,7 @@ Example 1.
 
 You should see something like this:
 
-![](Ex1rt.png)
+![](img/Ex1rt.png)
 
 You can play around with the scaling factors (the end pair: 1 - cell
 width, 0.005 - cell height) to improve the looks of the image.
@@ -137,7 +137,7 @@ And make another dsp in the same manner as before:
 
 And see the results:
 
-![](Ex1nrt.png)
+![](img/Ex1nrt.png)
 
 Example 2.
 
@@ -147,13 +147,13 @@ Example 2.
 
 You should see something like this:
 
-![](Ex2rt.png)
+![](img/Ex2rt.png)
 
 Again, you could play with various parameters to get the desired look.
 You could also create the negative as we did with example 1 and see the
 results:
 
-![](Ex2nrt.png)
+![](img/Ex2nrt.png)
 
 ## Creating a DSP object from manual or programmatic generation of data
 
@@ -294,4 +294,4 @@ all the work for us with the options shown:
 
 The resulting default png file (but cropped) is shown below.
 
-![](381822-az35-el25.png)
+![](img/381822-az35-el25.png)

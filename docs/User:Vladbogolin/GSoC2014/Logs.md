@@ -267,8 +267,8 @@
     -   Solved the display problem - now correct drawings can be made in
         the embedded framebuffer window:
 
-<img src="Mged_fb.png" title="fig:Mged_fb.png" width="500" alt="Mged_fb.png" />
-<img src="Mged_fb2.png" title="fig:Mged_fb2.png" width="500" alt="Mged_fb2.png" />
+![](img/Mged_fb.png)
+![](img/Mged_fb2.png)
 
 -   24 July:
     -   Tried to find out why the image disappears after is drawn in the
@@ -302,8 +302,8 @@
         that need some further investigation (at some point the display
         manager crashes)
 
-<img src="Mged_fb3.png" title="fig:Mged_fb3.png" width="500" alt="Mged_fb3.png" />
-<img src="Mged_fb4.png" title="fig:Mged_fb4.png" width="500" alt="Mged_fb4.png" />
+![](img/Mged_fb3.png)
+![](img/Mged_fb4.png)
 
 -   2 August:
     -   Investigated to see why the display manager sometimes crashes
@@ -324,8 +324,8 @@
 -   6 August:
     -   Integrated the fb in archer:
 
-<img src="Archer_fb.png" title="fig:Archer_fb.png" width="500" alt="Archer_fb.png" />
-<img src="Archer_fb2.png" title="fig:Archer_fb2.png" width="500" alt="Archer_fb2.png" />
+![](img/Archer_fb.png)
+![](img/Archer_fb2.png)
 
 -   7 August:
     -   Did some testing to see that everything works as expected

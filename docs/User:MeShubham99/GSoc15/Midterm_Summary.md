@@ -22,7 +22,7 @@ displayed.**
     but needs to be configured by brlcad accounts (after deployment).
 
 
-<img src="LoginOmniAuth.png" title="fig:LoginOmniAuth.png" width="700" height="394" alt="LoginOmniAuth.png" />
+![](img/LoginOmniAuth.png)
 
 ## **Feedback**
 
@@ -36,7 +36,7 @@ displayed.**
     in the feedback form at all times, without stopping any of his work.
 
 
-<img src="feedbackTemplate.png" title="fig:feedbackTemplate.png" width="700" height="394" alt="feedbackTemplate.png" />
+![](img/feedbackTemplate.png)
 
 ## **Edit info of Model**
 
@@ -54,7 +54,7 @@ displayed.**
     have been resolved.
 
 
-<img src="editinfo.png" title="fig:editinfo.png" width="550" height="309" alt="editinfo.png" /><img src="editinfo2.png" title="fig:editinfo2.png" width="550" height="309" alt="editinfo2.png" />
+![](img/editinfo.png) ![](img/editinfo2.png)
 
 ## **Model Viewer**
 
@@ -65,10 +65,10 @@ displayed.**
     emissive, wireframe+model, only wireframe and wireframe line width.
 
 
-<img src="modelViewer1.png" title="fig:modelViewer1.png" width="500" height="281" alt="modelViewer1.png" />
-<img src="modelViewer2.png" title="fig:modelViewer2.png" width="500" height="281" alt="modelViewer2.png" />
-<img src="modelViewer3.png" title="fig:modelViewer3.png" width="500" height="281" alt="modelViewer3.png" />
-<img src="modelViewer4.png" title="fig:modelViewer4.png" width="500" height="281" alt="modelViewer4.png" />
+![](img/modelViewer1.png)
+![](img/modelViewer2.png)
+![](img/modelViewer3.png)
+![](img/modelViewer4.png)
 
 ## **Follower/following format for users**
 
@@ -86,4 +86,4 @@ displayed.**
 The first picture depicts the view of user's own profile.
 And the second one is when the same profile is being viewed by another
 user. That is when the user clicks the follow button.
-<img src="profilePage.png" title="fig:profilePage.png" width="550" height="309" alt="profilePage.png" /><img src="profilePage2.png" title="fig:profilePage2.png" width="550" height="309" alt="profilePage2.png" />
+![](img/profilePage.png)![](img/profilePage2.png)

@@ -22,7 +22,7 @@ We must write down somewhere the dimensions in pixels of this image
 (e.g., 350x350), as this information will be needed when the *ebm* is
 created in MGED.
 
-![](Ychar.png)
+![](img/Ychar.png)
 
 **The GIMP image**
 
@@ -44,14 +44,14 @@ If we don't type the dimensions (in pixels) of the file
 *image_name.png* exactly as it was created, the *ebm* shape that we get
 will not be the desired result.
 
-![](Ychar_ebm_Wireframe.jpg)
+![](img/Ychar_ebm_Wireframe.jpg)
 
 **The Wireframe of the *ebm***
 
 If we made a region of this *ebm* and raytraced it, then we can see
 something like the picture below.
 
-![](Ychar_ebm_Raytraced.jpg)
+![](img/Ychar_ebm_Raytraced.jpg)
 
 ### Creating *ebm* with database objects
 

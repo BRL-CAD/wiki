@@ -89,7 +89,7 @@
 
 <!-- -->
 
--   <img src="Overlaps_tool_final.png" title="fig:Overlaps_tool_final.png" width="693" alt="Overlaps_tool_final.png" />
+-   ![](img/Overlaps_tool_final.png)
 
 <!-- -->
 

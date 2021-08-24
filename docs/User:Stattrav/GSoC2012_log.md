@@ -24,11 +24,11 @@
 -   Source is at <https://bitbucket.org/suryajith/benchmark/src>
 -   Awaiting Dr.Rai's perusal of the patches.
 
-<img src="absavgperfvsimagescomb.png" title="fig:absavgperfvsimagescomb.png" width="900" alt="absavgperfvsimagescomb.png" />
-<img src="absavgperfvsimages2.png" title="fig:absavgperfvsimages2.png" width="900" alt="absavgperfvsimages2.png" />
-<img src="absavgperfvsimages1.png" title="fig:absavgperfvsimages1.png" width="900" alt="absavgperfvsimages1.png" />
-<img src="absavgperfvsarchpermhz.png" title="fig:absavgperfvsarchpermhz.png" width="900" alt="absavgperfvsarchpermhz.png" />
-<img src="absavgperfvsarch.png" title="fig:absavgperfvsarch.png" width="900" alt="absavgperfvsarch.png" />
+![](img/absavgperfvsimagescomb.png)
+![](img/absavgperfvsimages2.png)
+![](img/absavgperfvsimages1.png)
+![](img/absavgperfvsarchpermhz.png)
+![](img/absavgperfvsarch.png)
 
 ### 12-14 August 2012
 
@@ -47,9 +47,9 @@
 -   Below are some examples of the graphs generated from the data in the
     database
 
-<img src="Perfvsimages.png" title="fig:Perfvsimages.png" width="900" alt="Perfvsimages.png" />
-<img src="absavgperfpermhz.png" title="fig:absavgperfpermhz.png" width="900" alt="absavgperfpermhz.png" />
-<img src="Absavgperf.png" title="fig:Absavgperf.png" width="900" alt="Absavgperf.png" />
+![](img/Perfvsimages.png)
+![](img/absavgperfpermhz.png)
+![](img/Absavgperf.png)
 
 ### 8-11 August 2012
 

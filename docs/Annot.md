@@ -1,6 +1,6 @@
 [category:tutorials](category:tutorials.md)
 
-![](Example_annot.png)
+![](img/Example_annot.png)
 
 Annotations are currently created through the "in" command. Support for
 the annotation editor is yet to be provided. This primitive allows users

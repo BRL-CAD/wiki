@@ -176,7 +176,7 @@ edit to customize it specifically for OGV.
     focus is on the content. I have chosen flat icons, and a
     **mobile-first** interface.
 
-![](Ogv_viewer.png)
+![](img/Ogv_viewer.png)
 
 -   The front page will provide users an option to Sign In/ Sign Up and
     also showcase the ability of OGV. The text abive Form is an embedded
@@ -185,33 +185,33 @@ edit to customize it specifically for OGV.
     play with a model, even before he signs up. I believe that will lead
     to more people signing up.
 
-![](OGV_Sign_in.png)
+![](img/OGV_Sign_in.png)
 
 -   When we hover on the above model, it will highlight the various
     options that user can perform without even logging in. Comments
     cannot be added but read without signing in.
 
-![](Ogv_sign_in_hovered.png)
+![](img/Ogv_sign_in_hovered.png)
 
 -   Sign up page is same as that of sign in page.
 
-![](Ogv_sign_up_hovered.png)
+![](img/Ogv_sign_up_hovered.png)
 
 -   This is how upload page may look, using dropzonejs a drag and drop
     interface for uploading files can be created.
 
-![](Ogv_uploader.png)
+![](img/Ogv_uploader.png)
 
 -   I will use [Hakim.se's](http://lab.hakim.se/ladda/) in-button
     progress bar for uploading. The button itself turns into a progress
     bar showing percentage of file uploaded.
 
-![](Ogv_uploading_btn.png)
+![](img/Ogv_uploading_btn.png)
 
 -   File manager shows all the files that the user has uploaded at one
     place. Clicking on these files take the user to full screen viewer.
 
-![](Ogv_file_manager.png)
+![](img/Ogv_file_manager.png)
 
 These are just the early rough mockups and not the exact design so it's
 not pixel perfect. I try to make pixel perfect designs using grids and

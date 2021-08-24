@@ -186,7 +186,7 @@ For a better idea look at the prototype I have in mind :
 <center>
 
 <figure>
-<img src="CheckGUI.png" title="CheckGUI.png" width="800" alt="CheckGUI.png" /><figcaption aria-hidden="true">CheckGUI.png</figcaption>
+![](img/CheckGUI.png)
 </figure>
 
 </center>

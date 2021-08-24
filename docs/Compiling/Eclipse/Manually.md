@@ -12,7 +12,7 @@ Create an Eclipse CDT (C/C++ Development Tooling) project using the
 &gt; New &gt; C* Project for a C project. Do not create the project
 using the CMake Eclipse project generator.
 
-![](Compiling-Eclipse-Manually-1.png)
+![](img/Compiling-Eclipse-Manually-1.png)
 
 ## Create Eclipse Make Targets
 
@@ -38,7 +38,7 @@ usual *Release* and *Debug* configurations:
         *Build command* to
         -   `cmake -E chdir Release/ cmake -G "Unix Makefiles" ../ -DCMAKE_BUILD_TYPE:STRING=Release`
     -   Click OK
-        -   ![](Compiling-Eclipse-Manually-2.png)
+        -   ![](img/Compiling-Eclipse-Manually-2.png)
 -   Repeat, this time for *Target name* **CMake Debug**, and *Build
     command*:
     -   `cmake -E chdir Debug/ cmake -G "Unix Makefiles" ../ -DCMAKE_BUILD_TYPE:STRING=Debug`
@@ -60,13 +60,13 @@ Next, set up the CDT builder to run the Makefiles that CMake builds.
             -   Deselect *Generate Makefiles automatically*
             -   Make the *Build directory* field blank
             -   The form should appear as shown below:
-                -   ![](Compiling-Eclipse-Manually-3.png)
+                -   ![](img/Compiling-Eclipse-Manually-3.png)
         -   Choose the *Behavior* tab
             -   Select *Build (Incremental build)* and specify the
                 target name *all*
             -   Select *Clean* and specify the target name *clean*
             -   The form should appear as shown below:
-                -   ![](Compiling-Eclipse-Manually-4.png)
+                -   ![](img/Compiling-Eclipse-Manually-4.png)
     -   Set *Configuration* to *Debug*
         -   Choose the *Builder Settings* tab
             -   Set all values exactly the same as the *Release*
@@ -74,8 +74,8 @@ Next, set up the CDT builder to run the Makefiles that CMake builds.
         -   Choose the *Behavior* tab
             -   Set all values exactly the same as the *Release*
                 configuration
-                -   ![](Compiling-Eclipse-Manually-5.png)
-                -   ![](Compiling-Eclipse-Manually-6.png)
+                -   ![](img/Compiling-Eclipse-Manually-5.png)
+                -   ![](img/Compiling-Eclipse-Manually-6.png)
             -   Click OK
 
 ## Build the Project
@@ -86,7 +86,7 @@ Use CMake to generate an out-of-source GNU Make build system:
     *CMake Debug* to generate the GNU Make build system in **Release/**
     or **Debug/**, respectively
 
-![](Compiling-Eclipse-Manually-7.PNG)
+![](img/Compiling-Eclipse-Manually-7.PNG)
 
 -   If necessary, edit your **CMakeLists.txt** control files
 -   Delete the contents of the corresponding build directory. For

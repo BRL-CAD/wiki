@@ -50,7 +50,7 @@ glfw.
 The brlcad suite has many tools and libraries that interact with each
 other to render and view models. The general architecture is given
 below:
-<img src="Data_flow_structure.png" title="fig:Data_flow_structure.png" width="396" alt="Data_flow_structure.png" />
+![](img/Data_flow_structure.png)
 
 The most important part for us out of this architecture is the geometry
 rendering libraries, to be more specific librt & libdm.

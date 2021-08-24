@@ -1,8 +1,6 @@
 [category:tutorials](category:tutorials.md)
 
-<figure>
-<img src="nmg-wiki-tutorial-screenshot.png" title="Example NMG object created with &quot;put&quot;" width="256" alt="Example NMG object created with &quot;put&quot;" /><figcaption aria-hidden="true">Example NMG object created with "put"</figcaption>
-</figure>
+![](img/nmg-wiki-tutorial-screenshot.png)
 
 BRL-CAD contains a powerful Non-Manifold Geometry (NMG) mesh primitive.
 NMG objects are usually created through geometry importers, or through
@@ -77,7 +75,7 @@ that the final command to create it is:
 
 This yields the following object: (an MGED wireframe, from the az35,el25
 view setting):
-![](nmg-wiki-tutorial-box-mged-screenshot.png)
+![](img/nmg-wiki-tutorial-box-mged-screenshot.png)
 
 Another more complex example is to create a box with a hole through it.
 Much of the command is the same as the one above for creating a plain
@@ -97,4 +95,4 @@ and `F { { 12 8 9 15 } }`. The final command with all of this is:
 
 This produces the following wireframe when drawn in MGED using the
 az35,el25 view setting:
-![](nmg-wiki-tutorial-box-with-hole-mged-screenshot.png)
+![](img/nmg-wiki-tutorial-box-with-hole-mged-screenshot.png)

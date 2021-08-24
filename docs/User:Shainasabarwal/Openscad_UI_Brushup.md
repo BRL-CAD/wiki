@@ -72,7 +72,7 @@ desires
 -   Solarized <http://ethanschoonover.com/solarized>
 
 Can add more if required by developers. This will require diving into
-highlighter.cc and adding more color themes. ![](improved_code_editor.png)
+highlighter.cc and adding more color themes. ![](img/improved_code_editor.png)
 
 **Custom designed toolbar:-** Finding the right menu through the menubar
 is a hectic task for the user. It takes lots of clicks and hassle going
@@ -83,13 +83,13 @@ toolbar. This way, it will provide ease to use and precious time of the
 user. Though this toolbar is designed with intention of not covering
 much space of the editor, still there will be option to hide this
 toolbar. Qt has a class QStyle that will be used to develop this
-toolbar. ![](Custom_designed_toolbar.png)
-![](With_Console.png)
+toolbar. ![](img/Custom_designed_toolbar.png)
+![](img/With_Console.png)
 
 **Better Model Colors:-** ALso we can change the color of output window
 from prefrences but options are less .There should be different themes
 for colors of rendered model. Currently, we can have figures in yellow
-and green color. That must have more options. ![](Colored_model.png)
+and green color. That must have more options. ![](img/Colored_model.png)
 )
 
 **Other Editors Review**

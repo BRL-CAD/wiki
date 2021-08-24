@@ -50,31 +50,25 @@ One of the best way to see the actual results is from screenshots:
 To use the display manager in classic mged simply select it when
 prompted:
 
-<figure>
-<img src="mged-c.png" title="mged-c.png" width="500" alt="mged-c.png" /><figcaption aria-hidden="true">mged-c.png</figcaption>
-</figure>
+![](img/mged-c.png)
 
 To use the display manager in mged it must be selected from
 Modes-&gt;DisplayManager-&gt;Qt.
 
 <figure>
-<img src="mged.png" title="mged.png" width="500" alt="mged.png" /><figcaption aria-hidden="true">mged.png</figcaption>
-</figure>
+![](img/mged.png)
 
-After a lot of changes in event processing the display manager can be
 used in archer too. At this moment there isn't a option like in mged
 (Modes-&gt;DisplayManager-&gt;Qt) so what has to be done to use the dm
 in archer is modify src/tclscripts/lib/Get.tcl line 957 (set dmType qt)
 and deactivate the use of Display Lists:
 
 <figure>
-<img src="archer.png" title="archer.png" width="500" alt="archer.png" /><figcaption aria-hidden="true">archer.png</figcaption>
+![](img/archer.png)
 </figure>
 
-More infos about the development process can be found on the [log
 page](http://brlcad.org/wiki/User:Vladbogolin/GSoC2013/Logs).
 
-# To be done
 
 One of the most important aspects that need to be done after GSoC is the
 development of a new Qt framebuffer interface which I already started.

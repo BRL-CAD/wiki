@@ -38,16 +38,14 @@ remade. Improve simple view for displaying user feed. Simple profile
 card on the left, actual feed in the middle, and recommended users on
 the right (not shown). This view will be same for profile.
 
-<figure>
-<img src="Feed.jpg" title="Feed.jpg" width="640" alt="Feed.jpg" /><figcaption aria-hidden="true">Feed.jpg</figcaption>
-</figure>
+![](img/Feed.jpg)
 
 ### Add simple model view
 
 Currently you can’t quickly preview model, download and leave comment.
 Proposed view provides simple interactive preview of the model,
 information about model and comments.
-<img src="Normal_view.jpg" title="fig:Normal_view.jpg" width="640" alt="Normal_view.jpg" />
+![](img/Normal_view.jpg)
 
 ### Remake upload view
 
@@ -58,38 +56,26 @@ will improve user experience. Remake upload process into three steps:
 Upload -&gt; File processing -&gt; Editing and saving. Generate model
 preview at this step.
 
-<figure>
-<img src="Upload.jpg" title="Upload.jpg" width="640" alt="Upload.jpg" /><figcaption aria-hidden="true">Upload.jpg</figcaption>
+![](img/Upload.jpg)
+
 </figure>
 
-<figure>
-<img src="Processing.jpg" title="Processing.jpg" width="640" alt="Processing.jpg" /><figcaption aria-hidden="true">Processing.jpg</figcaption>
-</figure>
-
-<figure>
-<img src="Save.jpg" title="Save.jpg" width="640" alt="Save.jpg" /><figcaption aria-hidden="true">Save.jpg</figcaption>
-</figure>
+![](img/Save.jpg)
 
 ### Improve advanced model view
 
-Right now model view doesn’t provide scene settings. It has threejs
 view, download, social buttons and color settings view. In this view
-user can interact with model in full window mode, browse model tree ( .g
 files only ) and change scene settings.
 
 Proposed model view
 
 <figure>
-<img src="Advanced_view.jpg" title="Advanced_view.jpg" width="640" alt="Advanced_view.jpg" /><figcaption aria-hidden="true">Advanced_view.jpg</figcaption>
-</figure>
+![](img/Advanced_view.jpg)
 
-## Code structure
 
 ### Use meteor’s recommended code structure
 
-Since last summer I've been working on restructuring code to match
 Meteor's recommended structure. It still needs work. Final goal is
-breaking everything in modules to leverage Meteor's support of ES2015
 modules.
 
 ### Configure ESLint

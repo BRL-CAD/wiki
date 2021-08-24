@@ -6,9 +6,9 @@
 <table>
 <tbody>
 <tr class="odd">
-<td><figure>
-<img src="GSNet_Symbol.png" title="GSNet_Symbol.png" alt="GSNet_Symbol.png" /><figcaption aria-hidden="true">GSNet_Symbol.png</figcaption>
-</figure></td>
+<td>
+![](img/GSNet_Symbol.png)
+</td>
 <td><p>The Geometry Service Network (GSNet) Protocol is a TCP/IP based protocol designed to facilitate socketed communications between Geometry Service Nodes on a network. A Geometry Service Node is defined as any softwares that supports communication via the GSNet Protocol.<br />
 __TOC__</p></td>
 </tr>

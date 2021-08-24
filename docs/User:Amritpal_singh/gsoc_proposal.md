@@ -91,7 +91,7 @@ following:
 </dt>
 <dd>
 
-![](RebaraddonUI.png)
+![](img/RebaraddonUI.png)
 
 </dd>
 <dt>
@@ -101,7 +101,7 @@ following:
 </dt>
 <dd>
 
-![](RebaraddonUI2.png)
+![](img/RebaraddonUI2.png)
 
 </dd>
 <dt>
@@ -111,7 +111,7 @@ following:
 </dt>
 <dd>
 
-![](RebaraddonUI3.png)
+![](img/RebaraddonUI3.png)
 
 </dd>
 </dl>
@@ -170,7 +170,7 @@ something new and interesting which will enrich user experience.
 
 <dd>
 
-![](RebaraddonDFD.png)
+![](img/RebaraddonDFD.png)
 
 </dd>
 

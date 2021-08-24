@@ -1,6 +1,6 @@
 [category:tutorials](category:tutorials.md)
 
-![](DL.png)
+![](img/DL.png)
 
 A dimension line annotation is suggested and not final yet, it is
 currently created through the "in" command. This capability is

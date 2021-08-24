@@ -2,7 +2,7 @@
 
 |                                    |                                                                                                                                                                                                                                                                                                                                                                               |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![](GS_Symbol.png) | The Geometry Service Project (GS) is the internal name for a project under development that aims to restructure the geometry management services within BRL-CAD and provide a new user interface. More specifically, the restructuring aims to leverage an object-oriented design and encapsulate much of the existing functionality in BRL-CAD through three C++ interfaces. |
+| ![](img/GS_Symbol.png) | The Geometry Service Project (GS) is the internal name for a project under development that aims to restructure the geometry management services within BRL-CAD and provide a new user interface. More specifically, the restructuring aims to leverage an object-oriented design and encapsulate much of the existing functionality in BRL-CAD through three C++ interfaces. |
 
 ------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@
 
 |                                                         |                               |                                                             |
 |:-------------------------------------------------------:|-------------------------------|:-----------------------------------------------------------:|
-|         ![](Users_128px.png)          |                               |       ![](Developer_128px.png)        |
+|         ![](img/Users_128px.png)          |                               |       ![](img/Developer_128px.png)        |
 | [**User Pages**](Geometry_Service_User_Main.md) |                               | [**Developer Pages**](Geometry_Service_Dev_Main.md) |
 
 </center>

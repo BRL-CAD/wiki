@@ -36,13 +36,13 @@ with the raytracer and it can successfully display raytraced models.
 When it comes to embedding a frambuffer window, I tested the behavior in
 both mged
 
-<img src="Mged_fb.png" title="fig:Mged_fb.png" width="500" alt="Mged_fb.png" />
-<img src="Mged_fb4.png" title="fig:Mged_fb4.png" width="500" alt="Mged_fb4.png" />
+![](img/Mged_fb.png)
+![](img/Mged_fb4.png)
 
 and archer
 
-<img src="Archer_fb.png" title="fig:Archer_fb.png" width="500" alt="Archer_fb.png" />
-<img src="Archer_fb2.png" title="fig:Archer_fb2.png" width="500" alt="Archer_fb2.png" />
+![](img/Archer_fb.png)
+![](img/Archer_fb2.png)
 
 More infos about the development process can be found on the [log
 page](http://brlcad.org/wiki/User:Vladbogolin/GSoC2014/Logs)

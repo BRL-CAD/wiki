@@ -8,9 +8,7 @@ Consider this .stp file. You can copy the data from this file to your
 working directory and name it bull.stp. We have the output how it should
 look as below.
 
-<figure>
-<img src="original.png" title="original.png" width="500" alt="original.png" /><figcaption aria-hidden="true">original.png</figcaption>
-</figure>
+![](img/original.png)
 
 After you have bull.stp and BRL-CAD, just type the following command on
 terminal. " step-g -o bull.g bull.stp "
@@ -30,10 +28,8 @@ You will see the outline for model bull.g created which would look as
 follows :-
 
 <figure>
-<img src="s1.png" title="s1.png" width="500" alt="s1.png" /><figcaption aria-hidden="true">s1.png</figcaption>
-</figure>
+![](img/s1.png)
 
-And to see the model, just raytrace it.
 
 For mged, go to File -&gt; Raytrace. This will open a dialog box named
 Raytrace Control Panel . Click on 'Raytrace' button.
@@ -43,24 +39,20 @@ looking button which will read 'Raytrace the current view'. Click on
 that.
 
 <figure>
-<img src="s2.png" title="s2.png" width="500" alt="s2.png" /><figcaption aria-hidden="true">s2.png</figcaption>
+![](img/s2.png)
 </figure>
 
-To remove the wireframe, in mged in the Raytrace Control Panel, there is
 menu called Framebuffer, select overlay from it.
 
-In archer, in the same pane as Raytrace current view, there will a
 option called, 'Change Framebuffer Mode' just besides raytrace. Click on
 that.
 
 Final View is -
 
 <figure>
-<img src="s3.png" title="s3.png" width="500" alt="s3.png" /><figcaption aria-hidden="true">s3.png</figcaption>
+![](img/s3.png)
 </figure>
 
 which is similar to that we saw before-
 
-<figure>
-<img src="original.png" title="original.png" width="500" alt="original.png" /><figcaption aria-hidden="true">original.png</figcaption>
-</figure>
+![](img/original.png)
