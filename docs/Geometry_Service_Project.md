@@ -1,1 +1,1 @@
-1.  REDIRECT [Geometry Service](Geometry_Service "wikilink")
+1.  REDIRECT [Geometry Service](Geometry_Service.md)

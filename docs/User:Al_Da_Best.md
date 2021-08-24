@@ -26,6 +26,6 @@ constantly check for collisions, combined with its relatively fast
 simulations compared to, say, ODE and it is already integrated to some
 extent into BRL-CAD.
 
-[Project Details](User:Al_Da_Best/gsoc2012project "wikilink")
+[Project Details](User:Al_Da_Best/gsoc2012project.md)
 
-[Development Log](User:Al_Da_Best/devlog "wikilink")
+[Development Log](User:Al_Da_Best/devlog.md)

@@ -12,16 +12,16 @@ BRL-CAD.
 
 # GSOC 13
 
--   My summary page is [here](User:Level_zero/GSOC13/summary "wikilink")
--   My proposal page is [here](User:Level_zero/proposal "wikilink").
+-   My summary page is [here](User:Level_zero/GSOC13/summary.md)
+-   My proposal page is [here](User:Level_zero/proposal.md).
 -   My updated timeline is
-    [here](User:Level_zero/GSOC13/timeline "wikilink").
--   My Logs page is here [here](User:Level_zero/GSOC13/logs "wikilink").
+    [here](User:Level_zero/GSOC13/timeline.md).
+-   My Logs page is here [here](User:Level_zero/GSOC13/logs.md).
 -   Information regarding my patches are
-    [here](User:Level_zero/patches "wikilink")
+    [here](User:Level_zero/patches.md)
 -   API design and structure definitions are
-    [here](User:Level_zero/GSOC13/api "wikilink")
+    [here](User:Level_zero/GSOC13/api.md)
 
 ## Pre Application Refinements
 
-These pages are [here](User:Level_zero/GSOC13/Refinements "wikilink").
+These pages are [here](User:Level_zero/GSOC13/Refinements.md).

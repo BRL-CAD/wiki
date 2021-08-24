@@ -1,4 +1,4 @@
-[Setting up in Eclipse](Compiling/Eclipse "wikilink")
+[Setting up in Eclipse](Compiling/Eclipse.md)
 
 BRL-CAD build system uses CMake and so I will show you how to build a
 project from cross-platform CMake on Eclipse. The CMake 2.8 project

@@ -1,2 +1,2 @@
-1.  redirect [Distributed Rendering](Distributed_Rendering "wikilink")
-    [category:commands](category:commands "wikilink")
+1.  redirect [Distributed Rendering](Distributed_Rendering.md)
+    [category:commands](category:commands.md)

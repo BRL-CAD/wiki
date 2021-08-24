@@ -21,9 +21,9 @@ northern hemisphere's summer timeframe:
         that organization.
 
 Students interested in participating with BRL-CAD in SOCIS should review
-our **[CHECKLIST](Summer_of_Code/Checklist "wikilink")** to get started.
+our **[CHECKLIST](Summer_of_Code/Checklist.md)** to get started.
 Start with our [Project
-Ideas](ESA_Summer_of_Code_in_Space/Project_Ideas "wikilink") page for a
+Ideas](ESA_Summer_of_Code_in_Space/Project_Ideas.md) page for a
 list of project suggestions that are of particular interest. Students
 are welcome to submit their own ideas as well but, more importantly, are
 encouraged to collaborate with the developers on formulating projects.
@@ -85,9 +85,9 @@ TBD!
 ### Abhijit Nandy
 
 For the 2011 ESA Summer of Code, we selected [Abhijit
-Nandy](User:Abhijit "wikilink") to work in implementing a non-vacuum
+Nandy](User:Abhijit.md) to work in implementing a non-vacuum
 gravity simulator for BRL-CAD. See his user page at
-[User:Abhijit](User:Abhijit "wikilink") for details on the progress he
+[User:Abhijit](User:Abhijit.md) for details on the progress he
 made on that project.
 
-[Category: Summer of Code](Category:_Summer_of_Code "wikilink")
+[Category: Summer of Code](Category:_Summer_of_Code.md)

@@ -1,1 +1,1 @@
-1.  REDIRECT [Distributed Rendering](Distributed_Rendering "wikilink")
+1.  REDIRECT [Distributed Rendering](Distributed_Rendering.md)

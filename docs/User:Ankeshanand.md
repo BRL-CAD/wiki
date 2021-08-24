@@ -11,6 +11,6 @@
 # GSOC 14
 
 -   My proposal page is
-    [here](User:Ankeshanand/GSoC14/proposal "wikilink").
+    [here](User:Ankeshanand/GSoC14/proposal.md).
 -   My Logs page is here
-    [here](User:Ankeshanand/GSoC14/logs "wikilink").
+    [here](User:Ankeshanand/GSoC14/logs.md).

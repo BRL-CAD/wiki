@@ -1,5 +1,5 @@
 This is a notional table of contents for the BRL-CAD Website. Discuss on
-[IRC](IRC "wikilink").
+[IRC](IRC.md).
 
 -   News
     -   Announcements

@@ -1,1 +1,1 @@
-1.  REDIRECT [MGED_CMD_sed](MGED_CMD_sed "wikilink")
+1.  REDIRECT [MGED_CMD_sed](MGED_CMD_sed.md)

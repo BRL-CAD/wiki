@@ -28,7 +28,7 @@ Has done
 -   wrote "save as any image" framework (src/libbu/image.c, later
     src/libicv) and began tool conversion to use it
 -   wrote a basic obj-g converter
--   mentoring [Andrei](User:Popescu.andrei1991 "wikilink") with libpkg
+-   mentoring [Andrei](User:Popescu.andrei1991.md) with libpkg
     stuff
 -   GCI mentoring
 -   GSoC mentoring and project administration

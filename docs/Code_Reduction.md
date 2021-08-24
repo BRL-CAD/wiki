@@ -26,8 +26,8 @@ here.
 
 # Past Efforts
 
--   [GSOC12](User:Ksuzee/Reports "wikilink")
+-   [GSOC12](User:Ksuzee/Reports.md)
 
 # See also
 
--   [Code Cleanup](Code_Cleanup "wikilink")
+-   [Code Cleanup](Code_Cleanup.md)

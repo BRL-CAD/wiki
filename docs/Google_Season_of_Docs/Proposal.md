@@ -22,8 +22,8 @@ across hundreds of manual pages, dozens of tutorials, hundreds of wiki
 pages, dozens of technical papers, and other resources. There are
 literally thousands of features created over decades of development.
 BRL-CAD's set of current manuals, guides, tutorials, and other
-documentation [are listed](Documentation "wikilink") on our [website
-wiki](Main_page "wikilink") and included in our
+documentation [are listed](Documentation.md) on our [website
+wiki](Main_page.md) and included in our
 [repository](https://github.com/BRL-CAD/brlcad/)\].
 
 ## About Our Doc Infrastructure
@@ -96,8 +96,8 @@ includes:
 ## What is not in scope?
 
 There are extensive docs not in Docbook XML format in our repository, on
-the [website wiki](Main_page "wikilink"), [in other
-formats](Documentation "wikilink"), and in other files that are
+the [website wiki](Main_page.md), [in other
+formats](Documentation.md), and in other files that are
 desirable and may also be migrated (e.g., for testing purposes), but
 they are secondary priority and need not be considered in scope.
 
@@ -187,7 +187,7 @@ contributions that equated to more than 10 staff years of full time
 effort! We loved GCI and were sad to see it go.
 
 In 2013, BRL-CAD was selected to participate in [Google Doc
-Camp](Google_Doc_Camp "wikilink") where our team of developers and
+Camp](Google_Doc_Camp.md) where our team of developers and
 technical writers wrote a Contributor's Guide. That guide continues to
 be used today for onboarding of new contributors, showcasing features,
 and showcasing the potential effectiveness of a development

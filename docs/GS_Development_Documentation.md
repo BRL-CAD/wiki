@@ -1,10 +1,10 @@
 ------------------------------------------------------------------------
 
 
-\*[Requirements](GS_Dev_Requirements "wikilink").
+\*[Requirements](GS_Dev_Requirements.md).
 
--   [Actors](GS_Dev_Actors "wikilink").
--   [Use Cases](GS_Dev_Use-Cases "wikilink").
--   [Packages](GS_Dev_Packages "wikilink").
--   [Class Diagrams](GS_Dev_Class_Diagram "wikilink").
--   [Sequence Diagrams](GS_Dev_Sequence_Diagram "wikilink").
+-   [Actors](GS_Dev_Actors.md).
+-   [Use Cases](GS_Dev_Use-Cases.md).
+-   [Packages](GS_Dev_Packages.md).
+-   [Class Diagrams](GS_Dev_Class_Diagram.md).
+-   [Sequence Diagrams](GS_Dev_Sequence_Diagram.md).

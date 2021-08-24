@@ -35,8 +35,8 @@ across hundreds of manual pages, dozens of tutorials, hundreds of wiki
 pages, dozens of technical papers, and other resources. There are
 literally thousands of features created over decades of development.
 BRL-CAD's set of current manuals, guides, tutorials, and other
-documentation [are listed](Documentation "wikilink") on our [website
-wiki](Main_page "wikilink").
+documentation [are listed](Documentation.md) on our [website
+wiki](Main_page.md).
 
 # How You Can Help
 
@@ -59,7 +59,7 @@ We especially need help with:
 
 For 2021, our Season of Docs focus project is [Migrating BRL-CAD's
 Documentation
-Infrastructure](Google_Season_of_Docs/Proposal "wikilink").
+Infrastructure](Google_Season_of_Docs/Proposal.md).
 
 If you are interested in working with BRL-CAD on a documentation
 project, whether under GSoD or not, please see our [PROJECT

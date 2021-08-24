@@ -30,7 +30,7 @@ NURBS curve editing operations:
 
 NURBS curve to surface operations:
 
--   Projection (see [here](Vector_Drawings_from_NURBS "wikilink"))
+-   Projection (see [here](Vector_Drawings_from_NURBS.md))
 -   Loft/Birail (surface created between curves)
 -   Cap (surface from closed curve)
 -   Extrude

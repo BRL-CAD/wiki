@@ -1,4 +1,4 @@
-[category:tutorials](category:tutorials "wikilink")
+[category:tutorials](category:tutorials.md)
 
 ## Cutting and Pasting Pix Files
 

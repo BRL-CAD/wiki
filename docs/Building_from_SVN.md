@@ -131,4 +131,4 @@ should be able to run the main modeling application:
 If you didn't install, you may need to specify the path to the tool
 (e.g., "bin/mged") from the build directory.
 
-[Category:Documentation](Category:Documentation "wikilink")
+[Category:Documentation](Category:Documentation.md)

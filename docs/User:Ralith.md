@@ -262,7 +262,7 @@ without sacrificing the power offered by mged.
 
 As a well-recognized need, this project was first addressed in a [2008
 Summer of Code
-project](OpenGL_GUI_Framework#Initial_Project_from_GSoC_2008 "wikilink")
+project](OpenGL_GUI_Framework#Initial_Project_from_GSoC_2008.md)
 which produced the beginnings of a working prototype based upon
 [Ogre](http://www.ogre3d.org/) and
 [RBGui](http://www.rightbraingames.com/tech/). While it provides an

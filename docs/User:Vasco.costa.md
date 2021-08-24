@@ -1,13 +1,13 @@
 Hello. I am interested in ray-tracing, and GPGPU. I work on the [OpenCL
 acceleration of the BRL-CAD librt rendering
-pipeline](User:Vasco.costa/GSoC15/logs "wikilink"):
+pipeline](User:Vasco.costa/GSoC15/logs.md):
 
 -   [GSoC 2015
     Abstract](https://www.google-melange.com/gsoc/project/details/google/gsoc2015/vasc/5657382461898752)
 -   [GSoC 2015 Project
-    Proposal](User:vasco.costa/GSoC15/proposal "wikilink")
+    Proposal](User:vasco.costa/GSoC15/proposal.md)
 -   [GSoC 2015 Development
-    Logs](User:vasco.costa/GSoC15/logs "wikilink")
+    Logs](User:vasco.costa/GSoC15/logs.md)
 
 # OCL librt TODO
 

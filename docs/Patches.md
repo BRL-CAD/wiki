@@ -65,6 +65,6 @@ You should use the description field to explain what you did there and,
 if necessary, what isn't working.
 
 Be sure to check out the extensive
-[Documentation](Documentation "wikilink") and
-[Main_Page](Main_Page "wikilink") for tutorials and
-[Deuces](Deuces "wikilink") for ways to get involved!
+[Documentation](Documentation.md) and
+[Main_Page](Main_Page.md) for tutorials and
+[Deuces](Deuces.md) for ways to get involved!

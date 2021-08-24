@@ -1,1 +1,1 @@
-1.  REDIRECT [Disclaimer](Disclaimer "wikilink")
+1.  REDIRECT [Disclaimer](Disclaimer.md)

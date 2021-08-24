@@ -144,4 +144,4 @@ and become familiarized with basic infrastructure.
 </tbody>
 </table>
 
-[category:Summer of Code](category:Summer_of_Code "wikilink")
+[category:Summer of Code](category:Summer_of_Code.md)

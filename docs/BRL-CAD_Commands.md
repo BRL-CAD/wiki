@@ -1,4 +1,4 @@
-[BRL-CAD Commands](category:commands "wikilink") This is a list of the
+[BRL-CAD Commands](category:commands.md) This is a list of the
 Unix commands provided by BRL-CAD. In the spirit of Unix there are over
 400 commands that each do a single thing well and can be used together
 as you see fit.
@@ -9,7 +9,7 @@ as you see fit.
 
 `mged`—multi-device geometry editor. Start here.
 
-[burst](burst "wikilink")—PDAM input generator
+[burst](burst.md)—PDAM input generator
 
 `tire`—make a model of a tire
 

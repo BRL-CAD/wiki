@@ -5,6 +5,6 @@ indicate that a new session has failed.
 
 ## Related Subjects
 
-[NewSession](NewSession "wikilink")
+[NewSession](NewSession.md)
 
-[Success](Success "wikilink") Codes
+[Success](Success.md) Codes

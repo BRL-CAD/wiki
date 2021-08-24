@@ -1,4 +1,4 @@
-[category:Code examples](category:Code_examples "wikilink")
+[category:Code examples](category:Code_examples.md)
 
     /*                     R T E X A M P L E . C
      * BRL-CAD

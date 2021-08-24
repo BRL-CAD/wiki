@@ -1,14 +1,14 @@
 MGED provides several different ways to modify and reposition [BRL-CAD
-Primitives](BRL-CAD_Primitives "wikilink") by changing the values of
+Primitives](BRL-CAD_Primitives.md) by changing the values of
 their associated parameters:
 
--   the [primitive object editor](#Primitive_Editor "wikilink") dialog
+-   the [primitive object editor](#Primitive_Editor.md) dialog
     box
--   the [interactive editing](#Interactive_editing "wikilink") commands
--   the get and put [TCL commands](#TCL_Commands "wikilink")
+-   the [interactive editing](#Interactive_editing.md) commands
+-   the get and put [TCL commands](#TCL_Commands.md)
 
 See also: [Determining the properties of primitive
-objects](Determining_the_properties_of_primitive_objects "wikilink")
+objects](Determining_the_properties_of_primitive_objects.md)
 
 ;
 
@@ -38,7 +38,7 @@ lack such forms cannot be edited using this method.
 
 Any *currently displayed* primitive object can be selected for
 modification or relocation using either the GUI **Edit--&gt;Primitive
-Selection...** or the CLI [**sed**](MGED_CMD_sed "wikilink") command.
+Selection...** or the CLI [**sed**](MGED_CMD_sed.md) command.
 
 Objects that aren't currently displayed will not be listed in the
 Primitive Selection Menu dialog, and the sed command will display an

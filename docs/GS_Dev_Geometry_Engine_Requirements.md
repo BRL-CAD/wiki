@@ -40,6 +40,6 @@ Initially, we are striving to mirror BRL-CAD's current functionality.
 
 
 [GS Dev Geometry Engine
-Actors](GS_Dev_Geometry_Engine_Actors "wikilink")
+Actors](GS_Dev_Geometry_Engine_Actors.md)
 
-[Category:Design Documents](Category:Design_Documents "wikilink")
+[Category:Design Documents](Category:Design_Documents.md)

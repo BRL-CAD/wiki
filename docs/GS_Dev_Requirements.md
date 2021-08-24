@@ -27,7 +27,7 @@
         -   Communicates with Geometry Engine via GS Protocol
         -   Gui Interface
     -   [GS Dev Thin Client
-        Requirements](GS_Dev_Thin_Client_Requirements "wikilink")
+        Requirements](GS_Dev_Thin_Client_Requirements.md)
 
 
 \*Geometry Engine
@@ -42,7 +42,7 @@
         -   Communications with any other application that implements
             the GS Protocol
     -   [GS Dev Geometry Engine
-        Requirements](GS_Dev_Geometry_Engine_Requirements "wikilink")
+        Requirements](GS_Dev_Geometry_Engine_Requirements.md)
 
 
 

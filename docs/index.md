@@ -22,68 +22,68 @@ So be **bold** and *improve our documentation*!
 
 ## Getting started
 
--   [BRL-CAD FAQ](FAQ "wikilink")
--   [MGED FAQ](MgedFAQ "wikilink")
+-   [BRL-CAD FAQ](FAQ.md)
+-   [MGED FAQ](MgedFAQ.md)
 -   [Documentation](Documentation.md)
--   [MGED Commands](MGED_Commands "wikilink")
--   [BRL-CAD Commands](BRL-CAD_Commands "wikilink")
--   [BRL-CAD Primitives](BRL-CAD_Primitives "wikilink")
+-   [MGED Commands](MGED_Commands.md)
+-   [BRL-CAD Commands](BRL-CAD_Commands.md)
+-   [BRL-CAD Primitives](BRL-CAD_Primitives.md)
 -   [Image Gallery](http://brlcad.org/gallery)
--   [Forums](Forums "wikilink")
+-   [Forums](Forums.md)
 
 ## Want to get involved?
 
--   [2-hour Tasks](Deuces "wikilink")
+-   [2-hour Tasks](Deuces.md)
 -   [BRL-CAD Priorities](http://brlcad.org/BRL-CAD_Priorities.png)
 -   [Additional Development Ideas](http://brlcad.org/~sean/ideas.html)
--   [Code Cleanup](Code_Cleanup "wikilink")
--   [Continuous Integration](Continuous_Integration "wikilink")
--   [Developer Documents](Developer_Documents "wikilink")
+-   [Code Cleanup](Code_Cleanup.md)
+-   [Continuous Integration](Continuous_Integration.md)
+-   [Developer Documents](Developer_Documents.md)
 -   Compiling BRL-CAD...
-    -   [...from a Subversion checkout](Building_from_SVN "wikilink")
-    -   [...from a Source tarball](Compiling "wikilink")
-    -   [...with Eclipse](Compiling/Eclipse "wikilink")
-    -   [...with Xcode](Compiling/XCode "wikilink")
+    -   [...from a Subversion checkout](Building_from_SVN.md)
+    -   [...from a Source tarball](Compiling.md)
+    -   [...with Eclipse](Compiling/Eclipse.md)
+    -   [...with Xcode](Compiling/XCode.md)
 
 ## Tutorials
 
--   [for Newbies](Tutorial/Newbie "wikilink")
+-   [for Newbies](Tutorial/Newbie.md)
 -   Scripting
-    -   [SGI_Cube](SGI_Cube "wikilink"): via shell scripting
-    -   [Spiral](Spiral "wikilink"): via Perl
+    -   [SGI_Cube](SGI_Cube.md): via shell scripting
+    -   [Spiral](Spiral.md): via Perl
     -   [Cutting and Pasting PIX
-        files](Cutting_and_Pasting_PIX_files "wikilink")
+        files](Cutting_and_Pasting_PIX_files.md)
 -   Rendering Images
-    -   [Animation](Animation "wikilink")
-    -   [Lighting](Lighting "wikilink")
-    -   [Shaders](Tutorial/Shaders "wikilink")
-    -   [Distributed Rendering](Distributed_Rendering "wikilink")
+    -   [Animation](Animation.md)
+    -   [Lighting](Lighting.md)
+    -   [Shaders](Tutorial/Shaders.md)
+    -   [Distributed Rendering](Distributed_Rendering.md)
 -   Importing Geometry
-    -   [STEP2G](STEP2G "wikilink") (step-g)
-    -   [Importing from Blender](Tutorial/Blender_to_CAD "wikilink")
+    -   [STEP2G](STEP2G.md) (step-g)
+    -   [Importing from Blender](Tutorial/Blender_to_CAD.md)
 -   Primitive Tutorials
-    -   [Annot](Annot "wikilink"): Annotations
-    -   [Sketch](Sketch "wikilink"): 2D Sketches
-    -   [Extrude](Extrude "wikilink"): 3D Extrusions (of 2D Sketches)
-    -   [Revolve](Revolve "wikilink"): 3D Revolutions (of 2D Sketches)
-    -   [EBM](EBM "wikilink"): Extruded bitmaps
-    -   [DSP](DSP "wikilink"): Displacement maps (heightfields)
-    -   [NMG](NMG "wikilink"): N-manifold geometry (polygonal meshes)
-    -   [VOL](VOL "wikilink"): Volumetric data
+    -   [Annot](Annot.md): Annotations
+    -   [Sketch](Sketch.md): 2D Sketches
+    -   [Extrude](Extrude.md): 3D Extrusions (of 2D Sketches)
+    -   [Revolve](Revolve.md): 3D Revolutions (of 2D Sketches)
+    -   [EBM](EBM.md): Extruded bitmaps
+    -   [DSP](DSP.md): Displacement maps (heightfields)
+    -   [NMG](NMG.md): N-manifold geometry (polygonal meshes)
+    -   [VOL](VOL.md): Volumetric data
 
 ## Third-party Projects
 
--   [Hex](Hex "wikilink") - Create threaded metric bolts, nuts, and
+-   [Hex](Hex.md) - Create threaded metric bolts, nuts, and
     washers
--   [Projecto VeRDE](Projecto_VeRDE "wikilink") - Designing a vehicle
+-   [Projecto VeRDE](Projecto_VeRDE.md) - Designing a vehicle
     for collecting space debris
 
 ------------------------------------------------------------------------
 
 If you are unsure on how to edit or add new pages, see our
-[Help](Help:Contents "wikilink").
+[Help](Help:Contents.md).
 
 Unless otherwise noted, all contributions to the BRL-CAD wiki are made
 available under the terms of the [BSD Documentation
-License](BSD_Documentation_License "wikilink") (BDL). Please refer to
-the wiki site [disclaimer](disclaimer "wikilink") for more details.
+License](BSD_Documentation_License.md) (BDL). Please refer to
+the wiki site [disclaimer](disclaimer.md) for more details.

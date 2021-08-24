@@ -26,4 +26,4 @@ to get linked into the top-level wiki page, there needs to be more than
 just stubbed content. Hope that clears things up some. Thanks for your
 interest and efforts to contribute, regardless.
 
-Cheers! [Sean](User:Sean "wikilink") 00:51, 11 March 2011 (EST)
+Cheers! [Sean](User:Sean.md) 00:51, 11 March 2011 (EST)

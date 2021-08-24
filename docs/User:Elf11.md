@@ -1,1 +1,1 @@
-1.  REDIRECT [Escuelas](Escuelas "wikilink")
+1.  REDIRECT [Escuelas](Escuelas.md)

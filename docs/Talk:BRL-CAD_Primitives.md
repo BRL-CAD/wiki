@@ -38,8 +38,8 @@ more properly belonged elsewhere, so I:
 Of course, I also anticipate improving the rest of this article as time
 permits.
 
-[JoelDBenson](User:JoelDBenson "wikilink")
-([talk](User_talk:JoelDBenson "wikilink")) 20:22, 27 May 2013 (UTC)
+[JoelDBenson](User:JoelDBenson.md)
+([talk](User_talk:JoelDBenson.md)) 20:22, 27 May 2013 (UTC)
 
 Joel, impressive how you were able to gather all of our myriad
 documentation and developer notes that are scattered about. Your cleanup
@@ -73,7 +73,7 @@ it only so you are aware of the long-term plan, not to derail your
 current (excellent) goals of cleaning up what we do have.
 
 One piece of information you may not yet have come across is a [table of
-contents](TOC "wikilink") that I recently pulled together. That includes
+contents](TOC.md) that I recently pulled together. That includes
 a massive Documentation section that I would greatly appreciate feedback
 on from your tech writer perspective. I'd like to build up a consistent
 vision for where the website as a whole is going with an emphasis on
@@ -82,7 +82,7 @@ documentation. You wouldn't know it but we actually have several
 \*thousand\* pages (million+ words) of documentation when you add it all
 up!
 
-[Sean](User:Sean "wikilink") ([talk](User_talk:Sean "wikilink")) 11:31,
+[Sean](User:Sean.md) ([talk](User_talk:Sean.md)) 11:31,
 31 May 2013 (UTC)
 
 Sean—
@@ -102,8 +102,8 @@ Specifically:
     learned via other Wikis does seem to work here. Still, it would be
     nice if this site's authoring help worked.
 
-[JoelDBenson](User:JoelDBenson "wikilink")
-([talk](User_talk:JoelDBenson "wikilink")) 04:40, 10 June 2013 (UTC)
+[JoelDBenson](User:JoelDBenson.md)
+([talk](User_talk:JoelDBenson.md)) 04:40, 10 June 2013 (UTC)
 
 ## Completion of ARBs section
 
@@ -119,13 +119,13 @@ Having done that, I was able to complete the text of the Arbs section of
 this article as a true overview. I do plan on adding some illustrations
 as soon as I have time.
 
-[JoelDBenson](User:JoelDBenson "wikilink")
-([talk](User_talk:JoelDBenson "wikilink")) 04:40, 10 June 2013 (UTC)
+[JoelDBenson](User:JoelDBenson.md)
+([talk](User_talk:JoelDBenson.md)) 04:40, 10 June 2013 (UTC)
 
 On further reflection, I think I've gone overboard in reducing the
 extent of this section. I need to include details on how the vertices of
 arb8s, arb7s, etc. have to be defined so that they are recognized as
 such. Plus the illustrations, of course.
 
-[JoelDBenson](User:JoelDBenson "wikilink")
-([talk](User_talk:JoelDBenson "wikilink")) 15:03, 10 June 2013 (UTC)
+[JoelDBenson](User:JoelDBenson.md)
+([talk](User_talk:JoelDBenson.md)) 15:03, 10 June 2013 (UTC)

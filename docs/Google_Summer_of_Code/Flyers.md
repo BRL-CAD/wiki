@@ -10,4 +10,4 @@
 
 ![](brlcad_gsoc2008_flyer.jpg "brlcad_gsoc2008_flyer.jpg")
 
-[category: Summer of Code](category:_Summer_of_Code "wikilink")
+[category: Summer of Code](category:_Summer_of_Code.md)

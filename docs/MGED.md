@@ -1,1 +1,1 @@
-1.  redirect [Mged](Mged "wikilink")
+1.  redirect [Mged](Mged.md)

@@ -212,7 +212,7 @@ part.
 <!-- -->
 
 -   I intend to use my personal [wiki
-    page](User:Andrei.ilinca24/logs "wikilink") as a host for my work
+    page](User:Andrei.ilinca24/logs.md) as a host for my work
     this summer.
 
 <!-- -->

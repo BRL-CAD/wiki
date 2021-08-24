@@ -7,7 +7,7 @@ operations, we also have a very different approach to ray tracing that
 has its own set of academic challenges.
 
 Currently we use a [Bounding Volume
-Hierarchy](wikipedia:Bounding_volume_hierarchy "wikilink") (BVH), an
+Hierarchy](wikipedia:Bounding_volume_hierarchy.md) (BVH), an
 object partitioning scheme, to reduce the amount of intersections that
 we need to compute on the OpenCL librt. The advantage of the BVH is that
 it does not compute duplicate intersections, which is typically an issue
@@ -25,7 +25,7 @@ GPU, in this way only the traversal, i.e. intersection stage, needs to
 be ported to OpenCL.
 
 The ANSI C librt uses a BSP tree (really a
-[Kd-tree](wikipedia:k-d_tree "wikilink")) so that can be used an initial
+[Kd-tree](wikipedia:k-d_tree.md)) so that can be used an initial
 example. You can also use the PBRT Kd-tree source code as an initial
 example. Since we do not want to have duplicate intersections (we have
 complex primitives which can take a long time to intersect, also
@@ -39,7 +39,7 @@ cache memory available on a platform like a GPU.
 
 A suitable Kd-tree hybrid which does not compute duplicate intersections
 would be either the [Bounding Interval
-Hierarchy](wikipedia:Bounding_interval_hierarchy "wikilink") (BIH), or a
+Hierarchy](wikipedia:Bounding_interval_hierarchy.md) (BIH), or a
 Kd-tree which stores the larger primitives in the inner nodes, instead
 of only storing primitives at the leaf nodes (like the Kd-tree described
 by Choi, et al). Alternatively as a first step, you can simply discard

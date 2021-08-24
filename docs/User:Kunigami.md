@@ -42,8 +42,8 @@ portuguese and fixing two bugs.
 # Links
 
 -   Home page: <http://www.loco.ic.unicamp.br/~kunigami>
--   [GSoC Project Proposal](User:Kunigami/GSoc2011/Proposal "wikilink")
--   [GSoC Reports](User:Kunigami/GSoc2011/Reports "wikilink")
--   [OSL Tutorial](User:Kunigami/GSoc2011/OSL_Tutorial "wikilink")
+-   [GSoC Project Proposal](User:Kunigami/GSoc2011/Proposal.md)
+-   [GSoC Reports](User:Kunigami/GSoc2011/Reports.md)
+-   [OSL Tutorial](User:Kunigami/GSoc2011/OSL_Tutorial.md)
 -   [New RT Parameters
-    Proposal](User:Kunigami/GSoc2011/RT_Parameters_Proposal "wikilink")
+    Proposal](User:Kunigami/GSoc2011/RT_Parameters_Proposal.md)

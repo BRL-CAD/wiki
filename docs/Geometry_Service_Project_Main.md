@@ -1,4 +1,4 @@
-[category:Geometry Service](category:Geometry_Service "wikilink")
+[category:Geometry Service](category:Geometry_Service.md)
 
 |                                    |                                                                                                                                                                                                                                                                                                                                                                               |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,7 +37,7 @@
 |                                                         |                               |                                                             |
 |:-------------------------------------------------------:|-------------------------------|:-----------------------------------------------------------:|
 |         ![](Users_128px.png "Users_128px.png")          |                               |       ![](Developer_128px.png "Developer_128px.png")        |
-| [**User Pages**](Geometry_Service_User_Main "wikilink") |                               | [**Developer Pages**](Geometry_Service_Dev_Main "wikilink") |
+| [**User Pages**](Geometry_Service_User_Main.md) |                               | [**Developer Pages**](Geometry_Service_Dev_Main.md) |
 
 </center>
 

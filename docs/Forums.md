@@ -26,4 +26,4 @@ mailing list or [support
 trackers](https://sourceforge.net/tracker/?group_id=105292) are usually
 more effective.
 
-[category:Getting started](category:Getting_started "wikilink")
+[category:Getting started](category:Getting_started.md)

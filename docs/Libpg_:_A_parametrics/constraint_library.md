@@ -31,7 +31,7 @@ constraint functionality which currently exists in terms of implicit
 constraints ( Non negative radius, Perpendicular vectors etc. ) To see a
 list of implicit constraints in the various BRL-CAD primitives See [A
 Survey of Implicit Constraints in
-Primitives](A_Survey_of_Implicit_Constraints_in_Primitives "wikilink")
+Primitives](A_Survey_of_Implicit_Constraints_in_Primitives.md)
 
 ## Constraints and CSPs
 
@@ -53,7 +53,7 @@ don't fit neatly into the bipartite graph structure.
 For a short review of Constraints, and Constraint Satisfaction Problems
 as well as links to resources on Constraints in general and geometrical
 constraints in particular, please see [Constraint
-Satisfaction](Constraint_Satisfaction "wikilink")
+Satisfaction](Constraint_Satisfaction.md)
 
 ## Library architecture
 

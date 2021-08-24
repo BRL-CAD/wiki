@@ -1,7 +1,7 @@
 To determine the properties of a primitive, use the l command followed
 by the primitive name. The example below shows the output of the l
 command against a [right circular
-cylinder](right_circular_cylinder "wikilink"):
+cylinder](right_circular_cylinder.md):
 
 `l cyl1.s`
 
@@ -19,9 +19,9 @@ cylinder](right_circular_cylinder "wikilink"):
 `   AxB rotation angle=90, fallback angle=90`
 
 So, the primitive values for the [right circular
-cylinder](right_circular_cylinder "wikilink") are as follows:
+cylinder](right_circular_cylinder.md) are as follows:
 
 ------------------------------------------------------------------------
 
 [Changing the properties of primitive
-objects](Changing_the_properties_of_primitive_objects "wikilink")
+objects](Changing_the_properties_of_primitive_objects.md)

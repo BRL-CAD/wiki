@@ -139,7 +139,7 @@ TCL Project Repo :
             file upload works in mged. That'll be the first challenge in
             working with the 'script' parser.
         -   Discussion with Sean today is going-on. [To be
-            updated](To_be_updated "wikilink")
+            updated](To_be_updated.md)
     -   **9 June**
         -   Today was majorly spent understanding the ctypesges approach
             as proposed by Kanzure.

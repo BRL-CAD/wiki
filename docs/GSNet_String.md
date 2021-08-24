@@ -1,5 +1,5 @@
-[category:Geometry Service](category:Geometry_Service "wikilink")
-[category:GSNet Protocol](category:GSNet_Protocol "wikilink")
+[category:Geometry Service](category:Geometry_Service.md)
+[category:GSNet Protocol](category:GSNet_Protocol.md)
 
 ------------------------------------------------------------------------
 

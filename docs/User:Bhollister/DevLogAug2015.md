@@ -20,10 +20,10 @@ n/a
 
 -   investigating ways of labelling faces for CLI specification
     -   looked at:
-        -   [E](MGED_CMD_E_upper "wikilink")
-        -   [e](MGED_CMD_e_lower "wikilink")
-        -   [ev](MGED_CMD_ev "wikilink")
-        -   [B](MGED_CMD_B "wikilink")
+        -   [E](MGED_CMD_E_upper.md)
+        -   [e](MGED_CMD_e_lower.md)
+        -   [ev](MGED_CMD_ev.md)
+        -   [B](MGED_CMD_B.md)
     -   none label objects with symbols (only color change, etc. and NOT
         faces)
     -   *ev* provides some direction
@@ -182,12 +182,12 @@ n/a
 -   submitted patch [405](https://sourceforge.net/p/brlcad/patches/405/)
     for move V nmg subcommand
 -   updated docs
-    -   [nmg](MGED_CMD_nmg "wikilink")
-    -   [labelvert](MGED_CMD_labelvert "wikilink") for proposed -i
+    -   [nmg](MGED_CMD_nmg.md)
+    -   [labelvert](MGED_CMD_labelvert.md) for proposed -i
         (index) option
         -   this will allow for CLI specification with make F
 -   updated [project
-    schedule](User:Bhollister/Proposal#Project_Schedule "wikilink") to
+    schedule](User:Bhollister/Proposal#Project_Schedule.md) to
     reflect remaining work for next week, i.e. make F, make V, labelvert
     -i
 

@@ -1,4 +1,4 @@
-[category:Geometry Service](category:Geometry_Service "wikilink")
+[category:Geometry Service](category:Geometry_Service.md)
 
 |                                        |                                                                                      |
 |----------------------------------------|--------------------------------------------------------------------------------------|
@@ -7,7 +7,7 @@
 ------------------------------------------------------------------------
 
 [Geometry Service's Network Protocol
-Documentation](GeometryServiceNetworkProtocol "wikilink")
+Documentation](GeometryServiceNetworkProtocol.md)
 
 [Proposed URL URI URN
-Implimentations](URL_URI_URN_Implimentations "wikilink")
+Implimentations](URL_URI_URN_Implimentations.md)

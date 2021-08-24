@@ -1,4 +1,4 @@
-[Primitives](category:MGED "wikilink")
+[Primitives](category:MGED.md)
 
 This article provides an overview of various types of geometric
 primitive objects that can be added to a BRL-CAD geometry file. The
@@ -9,16 +9,16 @@ discussed in the corresponding section below.
 For general discussions on using MGED to create primitive objects, view
 their properties, and modify or move them, see:
 
--   [Creating_primitive_objects](Creating_primitive_objects "wikilink")
+-   [Creating_primitive_objects](Creating_primitive_objects.md)
 -   [Determining_the_properties_of_primitive
-    objects](Determining_the_properties_of_primitive_objects "wikilink")
+    objects](Determining_the_properties_of_primitive_objects.md)
 -   [Changing_the_properties_of_primitive
-    objects](Changing_the_properties_of_primitive_objects "wikilink")
+    objects](Changing_the_properties_of_primitive_objects.md)
 
 also see:
 
 -   [A Survey of Implicit Constraints in
-    Primitives](A_Survey_of_Implicit_Constraints_in_Primitives "wikilink")
+    Primitives](A_Survey_of_Implicit_Constraints_in_Primitives.md)
 
 ;
 
@@ -42,9 +42,9 @@ faces and three edges).
 The BRL-CAD geometry file format defines two types of records for such
 polyhedra:
 
--   [**arb8**s](#ARB8_Records "wikilink") are specified by a set of
+-   [**arb8**s](#ARB8_Records.md) are specified by a set of
     eight vertices.
--   [**arbn**s](#ARBN_Records "wikilink") are specified by a set of
+-   [**arbn**s](#ARBN_Records.md) are specified by a set of
     intersecting planes, each defined by four coefficients.
 
 Although any polyhedron can be defined and stored as an arbn, the arb8
@@ -124,7 +124,7 @@ defined by four coefficients:
 -   the perpendicular distance of that plane from the origin.
 
 As discussed in the [Creating and editing arbn
-primitives](Creating_and_editing_arbn_primitives "wikilink") article,
+primitives](Creating_and_editing_arbn_primitives.md) article,
 BRL-CAD uses such primitives to represent polyhedra having any number of
 sides, edges and vertices.
 
@@ -258,7 +258,7 @@ Arguments: vertex, revolution axis, vector in start plane, angle, sketch
 Handled by: in create
 Arguments: data type (f\|o), datasource, count of length and width, interpolation type, cut direction, cell size, unit elevation
 
-See also [DSP](DSP "wikilink") tutorial.
+See also [DSP](DSP.md) tutorial.
 
 ## ebm
 
@@ -267,7 +267,7 @@ extruded bit map
 Handled by: in form create
 Arguments: filename, width and height in cells, extrusion distance,
 
-See also [EBM](EBM "wikilink") tutorial.
+See also [EBM](EBM.md) tutorial.
 
 The extruded bitmap (also referred to as EBM) is a solid based on a
 greyscale bitmap. The bitmap is an array of unsigned char values, see
@@ -391,7 +391,7 @@ Arguments: render method, threshold, number of points, location and field streng
 
 ## brep
 
-[see NURBS](NURBS "wikilink")
+[see NURBS](NURBS.md)
 
 ## spline
 
@@ -418,7 +418,7 @@ Bag of triangles
 
 Handled by: in make create (not edit!)
 Arguments: number of verticies, number of triangles, mode (1=surface 2=solid 3=plate), triangle orientation mode (1=unoriented 2=counter-clockwise 3=clockwise), each vertex, vertex index of each triangle
-See also: [BoT](BoT "wikilink")
+See also: [BoT](BoT.md)
 
 ## poly
 
@@ -434,7 +434,7 @@ Status: depreciated, use bot instead
 2d outline
 
 Handled by: make form(sketch editor) create
-See also: [sketch](sketch "wikilink")
+See also: [sketch](sketch.md)
 
 ## annot
 
@@ -442,7 +442,7 @@ See also: [sketch](sketch "wikilink")
 
 Handled by: in command
 
-See: [annot](annot "wikilink")
+See: [annot](annot.md)
 
 ## grip
 

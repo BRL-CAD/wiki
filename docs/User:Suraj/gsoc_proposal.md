@@ -292,7 +292,7 @@ fields for:
 -   Diameter of Rebar
 
 Benefit of doing so is discussed in [future
-scope](#Future_Scope "wikilink") of project.
+scope](#Future_Scope.md) of project.
 
 **Enhancement**
 

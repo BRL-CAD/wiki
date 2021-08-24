@@ -1,7 +1,7 @@
 This page is intended to lay out the basic "**rules and requirements**"
 that our organization requires of all Summer of Code (whether
-[GSoC](Google_Summer_of_Code "wikilink") or
-[SOCIS](ESA_Summer_of_Code_in_Space "wikilink")) participants whose
+[GSoC](Google_Summer_of_Code.md) or
+[SOCIS](ESA_Summer_of_Code_in_Space.md)) participants whose
 project proposals are accepted. Unless otherwise arranged with the
 organization administrator (contact 'brlcad' via IRC on
 irc.freenode.net), it will be expected that all students will comply
@@ -150,4 +150,4 @@ comments are good), but instead focus on coding "deep" instead of
 than 5 features that half-work or even 20 features that are all 90%
 complete.
 
-[Category: Summer of Code](Category:_Summer_of_Code "wikilink")
+[Category: Summer of Code](Category:_Summer_of_Code.md)

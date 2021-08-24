@@ -1,31 +1,31 @@
 ## Description
 
-[NetMsg](IBME_GeometryService#NetMsg_Class "wikilink") that contains
+[NetMsg](IBME_GeometryService#NetMsg_Class.md) that contains
 either a UUID or string Path that references a piece of Geometry.
-Extends [GenericOneStringMsg](GenericOneStringMsg "wikilink") (thus
+Extends [GenericOneStringMsg](GenericOneStringMsg.md) (thus
 contains those fields also). The String field from
-[GenericOneStringMsg](GenericOneStringMsg "wikilink") is used as the
+[GenericOneStringMsg](GenericOneStringMsg.md) is used as the
 UUID or Path field, depending on the Request Type.
 
 ## Warning Messages
 
 If you want to disconnect this request,
-[DisconnectREQ](DisconnectREQ "wikilink") is displayed. <BSRJ>
+[DisconnectREQ](DisconnectREQ.md) is displayed. <BSRJ>
 
 ## Failure Codes
 
-If a [GeometryREQFAIL](GeometryREQFAIL "wikilink") message is displayed,
+If a [GeometryREQFAIL](GeometryREQFAIL.md) message is displayed,
 this indicates that the GeometryREQ has failed. <BSRJ>
 
-Note: You can read all [Failure](Failure "wikilink") codes.
+Note: You can read all [Failure](Failure.md) codes.
 
 ## Related Subjects
 
-[NewHostOnNet](NewHostOnNet "wikilink")
+[NewHostOnNet](NewHostOnNet.md)
 
-[GeometryCHUNK](GeometryCHUNK "wikilink")
+[GeometryCHUNK](GeometryCHUNK.md)
 
-[GeometryMANIFEST](GeometryMANIFEST "wikilink")
+[GeometryMANIFEST](GeometryMANIFEST.md)
 
 ## Byte Format
 
@@ -44,5 +44,5 @@ Note: You can read all [Failure](Failure "wikilink") codes.
 
 ## Google Code In
 
-This page was edited for [Google_Code_In](Google_Code_In "wikilink")
+This page was edited for [Google_Code_In](Google_Code_In.md)
 by BSRJ.

@@ -1,3 +1,3 @@
-[Special:Recentchanges](Special:Recentchanges "wikilink")
+[Special:Recentchanges](Special:Recentchanges.md)
 
-[Special:Random](Special:Random "wikilink")
+[Special:Random](Special:Random.md)

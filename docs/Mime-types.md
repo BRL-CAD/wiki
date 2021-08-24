@@ -1,4 +1,4 @@
-[category:Design Documents](category:Design_Documents "wikilink") When a
+[category:Design Documents](category:Design_Documents.md) When a
 developer commits a new file to the repository, they may get an error
 about mime types not being set. This is because there is (intentionally)
 a commit hook set up that verifies that there are mime types set on all

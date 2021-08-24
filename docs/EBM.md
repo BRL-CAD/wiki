@@ -1,4 +1,4 @@
-[category:tutorials](category:tutorials "wikilink")
+[category:tutorials](category:tutorials.md)
 
 ## Inserting an *ebm* shape in MGED
 

@@ -1,6 +1,6 @@
 __NOTOC__ **Please note that all textual contents of BRL-CAD Wiki,
 unless specifically marked otherwise, are released under the terms of
-the [BSD Documentation License](BSD_Documentation_License "wikilink")
+the [BSD Documentation License](BSD_Documentation_License.md)
 (BDL).**
 
 The [BRL-CAD Wiki](http://brlcad.org/wiki) is a primary source for
@@ -49,7 +49,7 @@ Wiki or any of its agents, members, organizers, or other users.
 There is no agreement or understanding between you and the BRL-CAD
 project regarding your use or modification of this information beyond
 the terms of the [BSD Documentation
-License](BSD_Documentation_License "wikilink") (BDL); neither is anyone
+License](BSD_Documentation_License.md) (BDL); neither is anyone
 that contributes to any BRL-CAD website responsible should someone
 change, edit, modify, or remove any information that is posted or
 otherwise provided.

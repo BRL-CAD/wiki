@@ -30,4 +30,4 @@ Paul H. Deitz, Keith Applin
 
 John R. Anderson, Earl P. Weaver, Susanne L. Muuss
 
-[Category:Documentation](Category:Documentation "wikilink")
+[Category:Documentation](Category:Documentation.md)

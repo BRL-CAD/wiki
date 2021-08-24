@@ -3,7 +3,7 @@ geometry files (.g files) on browser. Development started in 2013 and
 efforts were made to make it functional and no doubt it is working but
 lacks robust back-end and good looking front-end (user interface). While
 details about back-end are mentioned
-[here](Online_Geometry_Viewer_Back-end "wikilink"), this page is focused
+[here](Online_Geometry_Viewer_Back-end.md), this page is focused
 only on front-end i.e. designing of user interface for OGV keeping the
 user experience in mind.
 
@@ -23,8 +23,8 @@ Feel free to discuss anything about the project at IRC or mailing list.
 # References
 
 -   [Online Geometry Viewer
-    Back-end](Online_Geometry_Viewer_Back-end "wikilink")
--   [Online Geometry: TODO](Online_Geometry/TODO "wikilink")
+    Back-end](Online_Geometry_Viewer_Back-end.md)
+-   [Online Geometry: TODO](Online_Geometry/TODO.md)
 
 # Requirements
 

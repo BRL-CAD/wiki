@@ -1,4 +1,4 @@
-[category:tutorials](category:tutorials "wikilink")
+[category:tutorials](category:tutorials.md)
 
 ![resize](extrude_example.png "resize")
 

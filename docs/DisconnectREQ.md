@@ -1,6 +1,6 @@
 ## Description
 
-[NetMsg](IBME_GeometryService#NetMsg_Class "wikilink") that indicates a
+[NetMsg](IBME_GeometryService#NetMsg_Class.md) that indicates a
 desire to disconnect. This is a 'MsgType Only' NetMsg and carries no
 body.
 

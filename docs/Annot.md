@@ -1,4 +1,4 @@
-[category:tutorials](category:tutorials "wikilink")
+[category:tutorials](category:tutorials.md)
 
 ![](Example_annot.png "Example_annot.png")
 

@@ -16,7 +16,7 @@ for you.
 
 Remember that project descriptions are just *rough ideas*. You must
 expand with [considerably more
-detail](Summer_of_Code/Application_Guidelines "wikilink"). Set goals
+detail](Summer_of_Code/Application_Guidelines.md). Set goals
 that fit your experience and interest.
 
 # Migrate doc infrastructure

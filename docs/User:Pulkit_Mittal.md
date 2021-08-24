@@ -11,6 +11,6 @@
 # GSOC 2014
 
 -   My proposal page is
-    [here](User:Pulkit%20Mittal/GSOC2014/proposal "wikilink").
+    [here](User:Pulkit%20Mittal/GSOC2014/proposal.md).
 -   My project logs can be found
-    [here](User:Pulkit%20Mittal/GSOC2014/logs "wikilink").
+    [here](User:Pulkit%20Mittal/GSOC2014/logs.md).

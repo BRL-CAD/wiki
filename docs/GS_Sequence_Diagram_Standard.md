@@ -2,7 +2,7 @@
 
 # Notes on Sequence Diagrams
 
--   Sequence show how [Actors](GS_Actors_Standard "wikilink") and
+-   Sequence show how [Actors](GS_Actors_Standard.md) and
     Classes/Objects interact with eachother over time.
 -   Extremely useful for identifying potential areas to impliment
     concurrency.

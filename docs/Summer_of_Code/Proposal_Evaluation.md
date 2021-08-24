@@ -46,4 +46,4 @@ score to the closest integer when ranking.
 Scores for each application will be **averaged** and *weighted by mentor
 assignments* after evaluations are complete and plugged into a
 spreadsheet for group review before the final ordering. [category:
-Summer of Code](category:_Summer_of_Code "wikilink")
+Summer of Code](category:_Summer_of_Code.md)

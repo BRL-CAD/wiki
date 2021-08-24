@@ -40,15 +40,15 @@ Still integrating prior tasks, we did not apply. We also needed time to
 focus on a major release and were quite exhausted after GCI 2014. We
 needed a break.
 
-## [Google Code-In 2014](Google_Code_In/2014 "wikilink")
+## [Google Code-In 2014](Google_Code_In/2014.md)
 
 With 393 tasks completed, this was a hugely productive year. By a simple
 wallclock conservative measure, those tasks constitute roughly 10
 full-time years of effort.
 
-## [Google Code-In 2013](Google_Code_In/2013 "wikilink")
+## [Google Code-In 2013](Google_Code_In/2013.md)
 
-## [Google Code-In 2012](Google_Code_In/2012 "wikilink")
+## [Google Code-In 2012](Google_Code_In/2012.md)
 
 This was the first year doing GCI. BRL-CAD was 1 of 10 organizations
 selected. Student response was

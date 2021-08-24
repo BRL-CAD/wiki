@@ -1,1 +1,1 @@
-Please see the site [disclaimer](disclaimer "wikilink").
+Please see the site [disclaimer](disclaimer.md).

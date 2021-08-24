@@ -1,5 +1,5 @@
-[category:Geometry Service](category:Geometry_Service "wikilink")
-[category:GSNet Protocol](category:GSNet_Protocol "wikilink")
+[category:Geometry Service](category:Geometry_Service.md)
+[category:GSNet Protocol](category:GSNet_Protocol.md)
 
 ------------------------------------------------------------------------
 
@@ -32,9 +32,9 @@ this:
 | **Element**          | **Length**                                         | **Value**                                                      |
 | MsgType              | int16 (2 bytes)                                    |                                                                |
 | MessageLength        | int32 (4 bytes)                                    | Does \*NOT\* include the type or length, so is packet size - 6 |
-| MessageUUID          | [String (Variable bytes)](GSNet_String "wikilink") |                                                                |
+| MessageUUID          | [String (Variable bytes)](GSNet_String.md) |                                                                |
 | HasRegardingUUID     | Boolean (1 byte)                                   |                                                                |
-| RegardingMessageUUID | [String (Variable bytes)](GSNet_String "wikilink") |                                                                |
+| RegardingMessageUUID | [String (Variable bytes)](GSNet_String.md) |                                                                |
 
 -   **MsgType:** 2 byte integer value that tells what type of message
     this is.
@@ -55,5 +55,5 @@ The Data load of a NetMsg is, obivously, the important and unique part.
 Data Loads can be as small as zero (in the case of a TypeOnlyMsg) or
 many kilobytes long.
 
-Here is a list of [NetMsg types](NetMsgTypes "wikilink") and here is a
-list of [Common NetMsg Exchanges](Common_NetMsg_Exchanges "wikilink").
+Here is a list of [NetMsg types](NetMsgTypes.md) and here is a
+list of [Common NetMsg Exchanges](Common_NetMsg_Exchanges.md).

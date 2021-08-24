@@ -388,4 +388,4 @@ important issue as compared to introducing enhancements.
 -   Continue...
 
 If you're interested in getting involved, please join the [brlcad-devel
-mailing list](Mailing_Lists "wikilink") and introduce yourself.
+mailing list](Mailing_Lists.md) and introduce yourself.

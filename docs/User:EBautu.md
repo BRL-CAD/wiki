@@ -1,4 +1,4 @@
-[category: Summer of Code](category:_Summer_of_Code "wikilink")
+[category: Summer of Code](category:_Summer_of_Code.md)
 
 ## Abstract
 
@@ -8,7 +8,7 @@ users to share their models and to easily locate useful models. An
 advantage of using Drupal both for the repository and the main site is
 that we can integrate the two sites (use the same code base, share users
 accounts, etc). The activity logs for this project are
-[here](More_Changelog "wikilink").
+[here](More_Changelog.md).
 
 ## Description
 
@@ -177,5 +177,5 @@ These things I did not implement:
 
 ## See also
 
--   [Activities logs](More_Changelog "wikilink")
+-   [Activities logs](More_Changelog.md)
 -   [Model Repository site](http://more.brlcad.org)

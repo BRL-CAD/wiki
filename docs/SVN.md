@@ -25,7 +25,7 @@ knowledgeable community member.
 
 Some information may be found on other pages here. To wit:
 
--   [Mime-types](Mime-types "wikilink")
--   [Undoing a commit](Undoing-a-commit "wikilink")
+-   [Mime-types](Mime-types.md)
+-   [Undoing a commit](Undoing-a-commit.md)
 
-[category:Getting started](category:Getting_started "wikilink")
+[category:Getting started](category:Getting_started.md)

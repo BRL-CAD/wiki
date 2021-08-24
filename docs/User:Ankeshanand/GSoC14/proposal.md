@@ -62,7 +62,7 @@ as machine descriptions, versions, results etc.
 
 
 [Image :
-Benchmark_overview_v3.jpg](Image_:_Benchmark_overview_v3.jpg "wikilink")
+Benchmark_overview_v3.jpg](Image_:_Benchmark_overview_v3.jpg.md)
 
 #### The current status of the Project
 

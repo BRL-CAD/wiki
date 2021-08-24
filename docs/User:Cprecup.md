@@ -225,7 +225,7 @@ suite the requirements for it.
 # Development progress
 
 Information regarding my general progress can be found
-[here](User:Cprecup/GSoC2012_progress "wikilink").
+[here](User:Cprecup/GSoC2012_progress.md).
 
 **Midterm overview of milestones**
 

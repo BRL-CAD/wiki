@@ -1,5 +1,5 @@
-[category:tutorials](category:tutorials "wikilink")
-[animation](category:animation "wikilink") The question often comes up
+[category:tutorials](category:tutorials.md)
+[animation](category:animation.md) The question often comes up
 about how to make an animation in BRL-CAD. As BRL-CAD is primarily a
 solid modeling system for engineering and analysis purposes, there is
 (presently) only limited support for generating animations but it is
@@ -16,13 +16,13 @@ composite them together into a movie.
 
 There are a variety of rendering and image processing tools that support
 a wide range of visualization techniques. Tools that may be of interest
-include **[rt](rt "wikilink")**, **[rtedge](rtedge "wikilink")**,
+include **[rt](rt.md)**, **[rtedge](rtedge.md)**,
 **rtxray**, **pixmatte**, and **pixblend** as well as a variety of other
 rendering and image processing tools.
 
 If the animation you want is very simple like having an animation of
 something spinning, the relatively simple process is described in the
-[\#Fly-around animation](#Fly-around_animation "wikilink") section. If,
+[\#Fly-around animation](#Fly-around_animation.md) section. If,
 however, what you want to animate is considerably more complex, there
 are a variety of tools that become important for setting up animation
 paths, managing keyframes, interpolating between frames, and previewing

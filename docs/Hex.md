@@ -1,4 +1,4 @@
-[category:commands](category:commands "wikilink")
+[category:commands](category:commands.md)
 
 ## Supported items
 

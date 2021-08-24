@@ -13,7 +13,7 @@ I live in Bakersfield, CA. My preferred coding environment is in any
 ## Experience
 
 I participated in [GSoC 2011 with
-BRL-CAD](#GSoC_2011_Project "wikilink"), under Cliff, my official
+BRL-CAD](#GSoC_2011_Project.md), under Cliff, my official
 mentor. I have 5 years of experience designing [commercial plumbing
 systems in
 3d](https://picasaweb.google.com/lh/photo/_dWpWLr1esGb16X7_4DlNHMyrgI048JfNwPx7Dl9cn0?feat=directlink),
@@ -28,7 +28,7 @@ system administrator for a Linux/Windows based small business network.
 
 ## GSoC 2011 Project
 
-See the [log and timeline](User:Bhinesley/gsoc2011 "wikilink") or the
+See the [log and timeline](User:Bhinesley/gsoc2011.md) or the
 [official GSoC project
 summary](http://www.google-melange.com/gsoc/project/google/gsoc2011/bhinesley/1000)
 for details. I migrated MGED commands to Archer/libged, and cleaned up
@@ -38,7 +38,7 @@ migrating them.
 
 ## GSoC 2012 Project
 
-See my [GSoC 2012 proposal drafts](User:Bhinesley/gsoc2012 "wikilink").
+See my [GSoC 2012 proposal drafts](User:Bhinesley/gsoc2012.md).
 
 ## Misc
 

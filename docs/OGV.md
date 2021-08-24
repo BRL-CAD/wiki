@@ -8,7 +8,7 @@ can like (love) or comment on them. In a nutshell it can be looked at as
 ## History
 
 OGV started as a [Google Summer of
-Code](Google_Summer_of_Code "wikilink") project in 2013 by Harmanpreet
+Code](Google_Summer_of_Code.md) project in 2013 by Harmanpreet
 Singh. It was written in PHP on server side and HTML, CSS and Javascript
 on the client side. It used MySQL for database. For viewing models in
 web browser a webGL based library called three.js was used. Users could

@@ -3,8 +3,8 @@
 # Notes on Packages
 
 -   Packages are simply a graphical grouping of functionality.
--   They combine multiple [Actors](GS_Actors_Standard "wikilink") and
-    [Use Cases](GS_Use-Cases_Standard "wikilink") that have some
+-   They combine multiple [Actors](GS_Actors_Standard.md) and
+    [Use Cases](GS_Use-Cases_Standard.md) that have some
     comonalities.
 -   Packages can also be called Systems or Subsystems.
 -   Packages do not have to define internal associations between

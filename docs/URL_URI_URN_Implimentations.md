@@ -1,4 +1,4 @@
-[category:Geometry Service](category:Geometry_Service "wikilink")
+[category:Geometry Service](category:Geometry_Service.md)
 
 The formal way to specify the URL of a directory or concrete resource in
 a Geometry Service repository is as follows:

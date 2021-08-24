@@ -19,8 +19,8 @@
     general or broad scoped, then break it down into smaller
     requirements.
 -   During the process of identifying Requirements, new
-    [Actors](GS_Actors_Standard "wikilink") and new [Use
-    Cases](GS_Use-Cases_Standard "wikilink") will become appearent.
+    [Actors](GS_Actors_Standard.md) and new [Use
+    Cases](GS_Use-Cases_Standard.md) will become appearent.
 
 
 

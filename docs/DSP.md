@@ -1,4 +1,4 @@
-[category:tutorials](category:tutorials "wikilink")
+[category:tutorials](category:tutorials.md)
 
 # Displacement (DSP) map primitive
 
@@ -97,7 +97,7 @@ Convert it to the format required for a dsp file:
 
 Example 1.
 
-In [mged](mged "wikilink") create a dsp object of width 142, length 150,
+In [mged](mged.md) create a dsp object of width 142, length 150,
 no interpolation, cut direction 'ad', cell size 1 (in current units),
 and unit elevation 0.005 (in current units):
 

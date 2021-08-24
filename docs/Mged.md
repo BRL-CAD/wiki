@@ -24,12 +24,12 @@ editing geometry.
 MGED will not automatically display the contents of a geometry database
 when it is opened/loaded. Unlike other CAD systems, a single BRL-CAD
 geometry database can contain an arbitrary number of complete geometry
-models. Run the MGED [tops](tops "wikilink") command or use the
+models. Run the MGED [tops](tops.md) command or use the
 Tools-&gt;Geometry_Browser to see the top-level objects in an opened .g
 geometry database.
 
 There is extensive documentation and tutorials available for MGED under
-[Documentation](Documentation "wikilink").
+[Documentation](Documentation.md).
 
 See also:
 
@@ -37,6 +37,6 @@ See also:
 
     2.
 
-2.  [:Category:MGED](:Category:MGED "wikilink")
+2.  [:Category:MGED](:Category:MGED.md)
 
-[category:commands](category:commands "wikilink")
+[category:commands](category:commands.md)

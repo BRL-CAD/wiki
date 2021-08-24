@@ -18,7 +18,7 @@ contact us (IRC or brlcad-devel mailing list) if you have any questions,
 corrections, comments, or ideas of your own that you'd like to suggest.
 
 Be sure to read up on our [application
-process](Google_Summer_of_Code "wikilink") for getting started with your
+process](Google_Summer_of_Code.md) for getting started with your
 proposal submission if you have not done so already.
 
 # Project Ideas
@@ -179,7 +179,7 @@ Difficulty: high
 
 This was a GSoC 2008 project. For more information about
 libpc(parametrics and constraints library) please check [libpc Developer
-Doc](libpg_:_A_parametrics/constraint_library "wikilink") as well as the
+Doc](libpg_:_A_parametrics/constraint_library.md) as well as the
 [libpc
 source](http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/src/libpc/).
 The work is effectively long-term considering the amount of work
@@ -616,4 +616,4 @@ are:
 -   David Loman (d-lo)
 -   Keith Bowman (indianlarry)
 
-[category: Summer of Code](category:_Summer_of_Code "wikilink")
+[category: Summer of Code](category:_Summer_of_Code.md)

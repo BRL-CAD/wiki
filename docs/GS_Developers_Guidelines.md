@@ -8,17 +8,17 @@ Process using UML. Since both of these development tools are extensible,
 we are free to modify as we see fit. These, like all things pertaining
 to this project, are not set in stone. As we learn, we will adapt.
 
-1.  Define [Requirements](GS_Requirements_Standard "wikilink").
-2.  Identify [Actors](GS_Actors_Standard "wikilink").
-3.  Develop [Use Cases](GS_Use-Cases_Standard "wikilink").
-4.  Repeat steps 1-3 until [Actors](GS_Actors_Standard "wikilink") and
-    [Use Cases](GS_Use-Cases_Standard "wikilink") are as simplified and
+1.  Define [Requirements](GS_Requirements_Standard.md).
+2.  Identify [Actors](GS_Actors_Standard.md).
+3.  Develop [Use Cases](GS_Use-Cases_Standard.md).
+4.  Repeat steps 1-3 until [Actors](GS_Actors_Standard.md) and
+    [Use Cases](GS_Use-Cases_Standard.md) are as simplified and
     comprehensive as possible.
-5.  Group Use-Cases into [Packages](GS_Packages_Standard "wikilink").
+5.  Group Use-Cases into [Packages](GS_Packages_Standard.md).
 6.  Build applicable [Class
-    Diagrams](GS_Class_Diagram_Standard "wikilink").
-7.  Build [Sequence Diagrams](GS_Sequence_Diagram_Standard "wikilink").
-8.  Refine [Class Diagrams](GS_Class_Diagram_Standard "wikilink") by
+    Diagrams](GS_Class_Diagram_Standard.md).
+7.  Build [Sequence Diagrams](GS_Sequence_Diagram_Standard.md).
+8.  Refine [Class Diagrams](GS_Class_Diagram_Standard.md) by
     adding methods.
 9.  [Implement
     code](https://brlcad.svn.sourceforge.net/viewvc/*checkout*/brlcad/brlcad/trunk/HACKING).

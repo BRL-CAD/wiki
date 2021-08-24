@@ -1,1 +1,1 @@
-1.  REDIRECT [Logo](Logo "wikilink")
+1.  REDIRECT [Logo](Logo.md)

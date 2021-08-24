@@ -1,4 +1,4 @@
-BRL-CAD's [rt](rt "wikilink") ray tracer automatically provides light
+BRL-CAD's [rt](rt.md) ray tracer automatically provides light
 sources if none are defined in a scene being rendered. Additionally, 30%
 of the light in a scene goes towards ambient illumination so that all
 objects in a scene are visible. The default lights are automatically
@@ -13,7 +13,7 @@ material property set.
 
 If you render a scene with **any** lights, the default lights will be
 disabled. The default ambient lighting will still remain at 30%, and is
-a parameter controlled by the **-A** option to [rt](rt "wikilink").
+a parameter controlled by the **-A** option to [rt](rt.md).
 
 BRL-CAD supports a wide variety of light types including the ability to
 represent directional lights, point light sources, colored lights, area
@@ -139,4 +139,4 @@ If the fraction is increased even further still, the center white
 becomes even more pronounced and the color overlap becomes considerable:
 
 ![Image:Light_brg20.png](Light_brg20.png "fig:Image:Light_brg20.png")
-[category:tutorials](category:tutorials "wikilink")
+[category:tutorials](category:tutorials.md)

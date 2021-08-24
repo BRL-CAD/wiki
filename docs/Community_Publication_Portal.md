@@ -61,7 +61,7 @@ Note: if you see a comment indicating that a section is FROZEN, any
 changes you make in that section may go unnoticed as the article is
 being prepared for distribution. If you find errors in a FROZEN article,
 go ahead and correct the article but contact Sean (brlcad on freenode
-[IRC](IRC "wikilink")) who may be able to incorporate changes during
+[IRC](IRC.md)) who may be able to incorporate changes during
 final publication.
 
 ***Move from Final Review to Here When Ready***

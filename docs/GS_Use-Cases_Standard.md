@@ -7,7 +7,7 @@ __NOTOC__
 -   A use case is a sequence of interactions that describes one clear
     goal for the user.
 -   One or many Use Cases may make up the functionality described in a
-    single [Requirement](GS_Requirements_Standard "wikilink").
+    single [Requirement](GS_Requirements_Standard.md).
 
 
 

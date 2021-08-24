@@ -1,21 +1,21 @@
 ## Description
 
-[NetMsg](IBME_GeometryService#NetMsg_Class "wikilink") that contains a
+[NetMsg](IBME_GeometryService#NetMsg_Class.md) that contains a
 list of Geometry objects.
 
 ## Failure Codes
 
-If a [GeometryREQFAIL](GeometryREQFAIL "wikilink") message is displayed,
+If a [GeometryREQFAIL](GeometryREQFAIL.md) message is displayed,
 this indicates that the GeometryMANIFEST has failed to create list of
 geometry objects. <BSRJ>
 
-Note: You can read all [Failure](Failure "wikilink") codes.
+Note: You can read all [Failure](Failure.md) codes.
 
 ## Related Subjects
 
-[GeometryREQ](GeometryREQ "wikilink")
+[GeometryREQ](GeometryREQ.md)
 
-[GeometryCHUNK](GeometryCHUNK "wikilink")
+[GeometryCHUNK](GeometryCHUNK.md)
 
 ## Byte Format
 
@@ -33,5 +33,5 @@ Note: You can read all [Failure](Failure "wikilink") codes.
 
 ## Google Code In
 
-This page was edited for [Google_Code_In](Google_Code_In "wikilink")
+This page was edited for [Google_Code_In](Google_Code_In.md)
 by BSRJ.

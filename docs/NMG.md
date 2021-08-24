@@ -1,4 +1,4 @@
-[category:tutorials](category:tutorials "wikilink")
+[category:tutorials](category:tutorials.md)
 
 <figure>
 <img src="nmg-wiki-tutorial-screenshot.png" title="Example NMG object created with &quot;put&quot;" width="256" alt="Example NMG object created with &quot;put&quot;" /><figcaption aria-hidden="true">Example NMG object created with "put"</figcaption>

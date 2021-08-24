@@ -1,4 +1,4 @@
-[category:Code examples](category:Code_examples "wikilink") This is a
+[category:Code examples](category:Code_examples.md) This is a
 simple example program that shows how to walk a geometry database while
 performing some operation on geometry as it is encountered. In this
 particular example, we iterate just over regions and simply count them:

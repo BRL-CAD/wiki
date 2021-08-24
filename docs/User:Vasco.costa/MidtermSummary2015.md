@@ -11,4 +11,4 @@
     ([p379](https://sourceforge.net/p/brlcad/patches/379/)).
 
 You can see a more detailed dev log
-[here](User:Vasco.costa/GSoC15/logs "wikilink").
+[here](User:Vasco.costa/GSoC15/logs.md).

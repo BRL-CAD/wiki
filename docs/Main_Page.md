@@ -1,1 +1,1 @@
-1.  REDIRECT [Main page](Main_page "wikilink")
+1.  REDIRECT [Main page](Main_page.md)

@@ -7,7 +7,7 @@ inclusively.
 
 Information about the creation of a VOL primitive using **in** is
 available in the [list of
-primitives](BRL-CAD_Primitives#vol "wikilink").
+primitives](BRL-CAD_Primitives#vol.md).
 
 ## Inserting volumetric data of a CT scan in MGED
 

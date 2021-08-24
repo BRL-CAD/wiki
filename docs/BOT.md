@@ -1,1 +1,1 @@
-1.  redirect [BoT](BoT "wikilink")
+1.  redirect [BoT](BoT.md)

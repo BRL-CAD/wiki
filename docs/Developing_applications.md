@@ -4,10 +4,10 @@ applications with BRL-CAD.
 -
 
 -   [An example program with
-    rt_shootray()](Example_Application "wikilink")
+    rt_shootray()](Example_Application.md)
 
 -   [An example program with
-    db_walk_tree()](Example_db_walk_tree "wikilink")
+    db_walk_tree()](Example_db_walk_tree.md)
 
 ## Standards Support
 
@@ -36,6 +36,6 @@ standards including:
     52242-52245)
 -   U.S. customary units (NIST Handbook 44)
 
-[category:Design Documents](category:Design_Documents "wikilink")
+[category:Design Documents](category:Design_Documents.md)
 
-[Category:Documentation](Category:Documentation "wikilink")
+[Category:Documentation](Category:Documentation.md)

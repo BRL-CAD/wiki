@@ -2,12 +2,12 @@
 
 ------------------------------------------------------------------------
 
-Name: [Mandeep Singh](User:Mandeeps708 "wikilink")
+Name: [Mandeep Singh](User:Mandeeps708.md)
 
 IRC: Mandeep_Singh
 
 Project: [The FreeCAD Plugin
-Installer](User:Mandeeps708/gsoc_proposal "wikilink")
+Installer](User:Mandeeps708/gsoc_proposal.md)
 
 Commits:
 [mandeeps708/PluginManager](http://brlcad.org/wiki/User:Mandeeps708/GSoC16/logs#Coding_Period)

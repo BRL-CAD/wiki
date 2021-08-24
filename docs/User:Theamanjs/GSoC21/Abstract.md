@@ -8,4 +8,4 @@ to improve the documentation of the project; documentation focus on both
 user and developer documentation.
 
 The detailed project plan can be found
-[here](User:Theamanjs/GSoC21/Project "wikilink")
+[here](User:Theamanjs/GSoC21/Project.md)

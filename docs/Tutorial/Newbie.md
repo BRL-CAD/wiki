@@ -94,7 +94,7 @@ brlcad-7.26.4/doc/docbook/README:
 `..."`
 
 Unfortunately, as for now, only [parts of this
-Documentation](Documentation "wikilink") are available online and only
+Documentation](Documentation.md) are available online and only
 in pdf. To acquire these documents you will most likely need to install
 BRL-CAD, and if you are lucky, they were installed as well during the
 installation. The location may vary from System to System.

@@ -4,7 +4,7 @@ project files for a number of different development environments. Here
 we show you how to create a project using the Eclipse CDT4 generator.
 
 Note that you can [manually set up an Eclipse
-project](Compiling/Eclipse/Manually "wikilink") for BRL-CAD, though
+project](Compiling/Eclipse/Manually.md) for BRL-CAD, though
 there are several substantial differences in the result.
 
 At first we need to run CMake, and set ”Where is the source code” and

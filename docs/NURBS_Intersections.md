@@ -1,1 +1,1 @@
-1.  REDIRECT [NURBS Booleans](NURBS_Booleans "wikilink")
+1.  REDIRECT [NURBS Booleans](NURBS_Booleans.md)

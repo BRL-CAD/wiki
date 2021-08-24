@@ -8,6 +8,6 @@
 | **Time Zone**      | UTC+05:30                  |
 | **GSOC20 Project** | Persistent Cache OpenSCAD  |
 
--   [Development Log](User:Tbharathchandra/DevLog2020 "wikilink")
+-   [Development Log](User:Tbharathchandra/DevLog2020.md)
 -   [Project
     Proposal](https://drive.google.com/file/d/1mwsS3Jo4Jus0B2vfU-rdnlQLlB0QFFHC/view?usp=sharing)

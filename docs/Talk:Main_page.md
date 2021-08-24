@@ -1,7 +1,7 @@
 Hello and welcome, X Tin Basher! The edits to EBM and elsewhere are more
 than welcome, thanks!
 
-Cheers! --[Sean](User:Sean "wikilink") 10:48, 23 November 2010 (EST)
+Cheers! --[Sean](User:Sean.md) 10:48, 23 November 2010 (EST)
 
 ------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ some TLC. I'm an old hand at mediawiki, so if nobody objects, I'm going
 to start making massive changes here. For starters, I can:
 
 -   categorize every page, looks like there's quite a few untagged pages
--   relabel the stuff in [:Category:MGED](:Category:MGED "wikilink") to
+-   relabel the stuff in [:Category:MGED](:Category:MGED.md) to
     remove the prefix so it looks nicer (this is a huge job unless it
     gets automated)
 -   Eventually, I'd like to make a page for (almost) every executable in
@@ -18,7 +18,7 @@ to start making massive changes here. For starters, I can:
     and categorizing these.
 
 If there are no objections, I'll get started when I have time.
---[Ssd](User:Ssd "wikilink") 08:40, 12 November 2009 (EST)
+--[Ssd](User:Ssd.md) 08:40, 12 November 2009 (EST)
 
 ------------------------------------------------------------------------
 
@@ -36,13 +36,13 @@ Something to perhaps think about, but even without that, the Wiki still
 needs massive TLC. The categorization and filling in of missing content
 will be greatly appreciated!
 
-Cheers! --[Sean](User:Sean "wikilink") 08:48, 12 November 2009 (EST)
+Cheers! --[Sean](User:Sean.md) 08:48, 12 November 2009 (EST)
 
 ------------------------------------------------------------------------
 
 It also annoys me that none of the PDF's have a table of contents, but
 that's not somethign I know how to fix so easily.
---[Ssd](User:Ssd "wikilink") 09:02, 12 November 2009 (EST)
+--[Ssd](User:Ssd.md) 09:02, 12 November 2009 (EST)
 
 ------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ part of the larger migration to Docbook as the central document
 management format so that the PDF files can be continually updated and
 regenerated, and the documents can be output in different formats (e.g.
 directly integrated with the wiki or even if just as static html dumps).
--- [Sean](User:Sean "wikilink") 15:26, 12 November 2009 (EST)
+-- [Sean](User:Sean.md) 15:26, 12 November 2009 (EST)
 
 
 Lots of updates...yes, and did you see the time frame? Those were the
@@ -65,24 +65,24 @@ toc/index/bookmark thingie. Very annoying to try to find stuff in there
 without one. I take it that the docbook material is not yet in the wiki.
 Has anyone started work on a wiki translator for it? The bidirectional
 gateway thing sounds interesting but dangerous.
---[Ssd](User:Ssd "wikilink") 00:58, 14 November 2009 (EST)
+--[Ssd](User:Ssd.md) 00:58, 14 November 2009 (EST)
 
 ## BRL-CAD Primitives
 
 I got annoyed that I couldn't find a comprehensive list of primitives,
 so I started filling out [BRL-CAD
-Primitives](BRL-CAD_Primitives "wikilink"). I'm sure I missed a few, and
+Primitives](BRL-CAD_Primitives.md). I'm sure I missed a few, and
 the few that are there don't all have complete information. It would be
 nice to add a description/title, and a link to relevant documentation
 (and page) for those that need it.
 
-Anyone wanna help fill in the blanks? --[ssd](User:Ssd "wikilink")
+Anyone wanna help fill in the blanks? --[ssd](User:Ssd.md)
 05:39, 31 December 2009 (EST)
 
 
 Of relevance to this work, there is <http://brlcad.org/tmp/primitives/>
 which includes grouping and visuals for most of the production-ready
-primitives. --[Sean](User:Sean "wikilink") 14:20, 25 March 2010 (EDT)
+primitives. --[Sean](User:Sean.md) 14:20, 25 March 2010 (EDT)
 
 I suggest utilizing this work for categorization of primitives - we've
 been working on how to group these things for a while, and we have an
@@ -108,12 +108,12 @@ sweep or brep. I assume they aren't supported in my version. (Do we need
 to tag new primitives with version numbers?) Also, a lot of your "hard
 to categorize" things I just stuffed in an "other" category; although
 the order I put them in still groups them about the same as you do, even
-within the other group. --[ssd](User:Ssd "wikilink") 17:10, 31 December
+within the other group. --[ssd](User:Ssd.md) 17:10, 31 December
 2009 (EST)
 
 How about a category for meshed primitives? This would include (please
 correct me!) ars, bot, spline, nurbs, and maybe metaball?
---[ssd](User:Ssd "wikilink") 01:58, 1 January 2010 (EST)
+--[ssd](User:Ssd.md) 01:58, 1 January 2010 (EST)
 
 
 The only truly meshed primitives are the BoT and NMG primitives. ARS is
@@ -123,7 +123,7 @@ Similarly, spline, nurbs, and metaballs aren't meshed. With the
 exception of metaballs, all the rest have one trait in common in that
 they are primitives with an explicit boundary representation. Metaballs
 are an implicit boundary representation primitive.
---[Sean](User:Sean "wikilink") 14:20, 25 March 2010 (EDT)
+--[Sean](User:Sean.md) 14:20, 25 March 2010 (EDT)
 
 Hello Sean. Glad I haven't upset anyone yet with my edits. I'm a bit OCD
 about English grammar. Don't expect any amazing code or anything similar

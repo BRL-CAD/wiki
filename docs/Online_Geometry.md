@@ -27,7 +27,7 @@ In the end, obj file is given to ThreeJS and it draws entity on browser.
 ### Detailed workflow
 
 Here is the flow diagram of OGV: [Media:
-Flow_diagram_of_online_geometry_viewer.jpeg](Media:_Flow_diagram_of_online_geometry_viewer.jpeg "wikilink").
+Flow_diagram_of_online_geometry_viewer.jpeg](Media:_Flow_diagram_of_online_geometry_viewer.jpeg.md).
 We can divide the whole process in following four operations:
 
 -   Upload .g file
@@ -105,7 +105,7 @@ freenode network.
 
 # Status of Development
 
-See the [TODO](Online_Geometry/TODO "wikilink") page to get involved or
+See the [TODO](Online_Geometry/TODO.md) page to get involved or
 check on the status of development.
 
 # History

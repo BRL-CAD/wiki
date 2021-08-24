@@ -33,15 +33,15 @@ features pertinent when referring to implementing NURBS that are
 important to some users and not others. The details regarding what NURBS
 functionality is started but considered incomplete include:
 
-1.  [explicit NURBS Boolean evaluation](NURBS_Intersections "wikilink")
-2.  [interactive surface editing](NURBS_Editing_Support "wikilink")
-3.  [export to polygonal mesh](NURBS_Tessellation "wikilink")
-4.  [export to vector drawings](Vector_Drawings_from_NURBS "wikilink")
+1.  [explicit NURBS Boolean evaluation](NURBS_Intersections.md)
+2.  [interactive surface editing](NURBS_Editing_Support.md)
+3.  [export to polygonal mesh](NURBS_Tessellation.md)
+4.  [export to vector drawings](Vector_Drawings_from_NURBS.md)
 5.  [ray tracing performance
-    (optimization)](NURBS_Optimization_and_Cleanup "wikilink")
+    (optimization)](NURBS_Optimization_and_Cleanup.md)
 6.  [converting explicit entities (e.g., BoT, NMG, EBM,
-    Vol)](Implicit_to_NURBS_conversion "wikilink")
+    Vol)](Implicit_to_NURBS_conversion.md)
 7.  [support for (non-solid) surface
-    NURBS](Plate_Mode_NURBS_raytracing "wikilink")
+    NURBS](Plate_Mode_NURBS_raytracing.md)
 
-See [here](NURBS_TODO "wikilink") for more TODO topics. Help wanted.
+See [here](NURBS_TODO.md) for more TODO topics. Help wanted.

@@ -1,5 +1,5 @@
 While there is existing ANSI C/C++ code for
-[Brep](wikipedia:Boundary_representation "wikilink") in BRL-CAD it is
+[Brep](wikipedia:Boundary_representation.md) in BRL-CAD it is
 not GPU parallel. Porting it to the GPU with OpenCL should be rather
 complex because much of this code is written in object oriented C++.
 

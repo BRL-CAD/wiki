@@ -1,4 +1,4 @@
-[category:Code examples](category:Code_examples "wikilink")
+[category:Code examples](category:Code_examples.md)
 
 `#include <brlcad/MemoryDatabase.h>`
 

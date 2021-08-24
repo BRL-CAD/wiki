@@ -1,6 +1,6 @@
 Covered below in detail are the expectations for Summer of Code students
 that are accepted to participate. In addition to the [acceptance
-criteria](Summer_of_Code/Acceptance "wikilink") that all students are
+criteria](Summer_of_Code/Acceptance.md) that all students are
 required to abide by, there are participation and behavior expectations.
 
 The program timeframe is *very* short. There's not much time to get up
@@ -234,7 +234,7 @@ Student can call upon any mentor or other developer, they don't have to
 limit their interactions to just their mentor. They shouldn't limit
 their interactions to just one mentor. Students having difficulties
 communicating with any mentor should contact the
-[administrator](User:Sean "wikilink").
+[administrator](User:Sean.md).
 
 If you're stuck, ask for help on IRC and/or on the mailing list. If you
 are still stuck, read the source code. If you're still stuck, ask for
@@ -266,4 +266,4 @@ any questions or concerns regarding these expectations.
 Many thanks to the Python foundation for their initial write-up document
 on participant expectations:
 <http://wiki.python.org/moin/SummerOfCode/Expectations> [category:Summer
-of Code](category:Summer_of_Code "wikilink")
+of Code](category:Summer_of_Code.md)

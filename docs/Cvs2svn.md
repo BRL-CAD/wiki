@@ -510,4 +510,4 @@ from RCS to CVS and now to SVN preserving more than 25 years of revision
 history. The conversion was completed on January 10th, 2008.
 
 [category:Historical
-documentation](category:Historical_documentation "wikilink")
+documentation](category:Historical_documentation.md)

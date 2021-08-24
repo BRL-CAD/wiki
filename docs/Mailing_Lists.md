@@ -26,4 +26,4 @@ Please note that you must still subscribe to our mailing lists on
 Sourceforge in order to post through an online mirroring service such as
 [Nabble](http://old.nabble.com/BRL-CAD-f3277.html).
 
-[category:Getting started](category:Getting_started "wikilink")
+[category:Getting started](category:Getting_started.md)

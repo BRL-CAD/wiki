@@ -265,4 +265,4 @@ away in the fall of 2000. Without his vision, this work would not have
 been possible. Therefore, the BRL-CAD Tutorial Series is dedicated to
 his memory.
 
-[Category:Documentation](Category:Documentation "wikilink")
+[Category:Documentation](Category:Documentation.md)

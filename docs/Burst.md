@@ -1,5 +1,5 @@
 **burst** is one of multiple [BRL-CAD
-Commands](BRL-CAD_Commands "wikilink").
+Commands](BRL-CAD_Commands.md).
 
 ## Running BURST
 

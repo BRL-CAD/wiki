@@ -114,8 +114,8 @@ Release build, please submit your benchmark results to benchmark at
 brlcad dot org.
 
 The second command runs the main graphical interface. Be sure to check
-out the extensive [Documentation](Documentation "wikilink") and
-[Main_Page](Main_Page "wikilink") for tutorials.
+out the extensive [Documentation](Documentation.md) and
+[Main_Page](Main_Page.md) for tutorials.
 
 The third runs our newer graphical interface that is under development.
 
@@ -126,4 +126,4 @@ source and you don't need to be an experienced programmer. We do need
 software developers, but we also need artists, writers, designers, and
 managers.
 
-See [Deuces](Deuces "wikilink") for really easy ways to get started!
+See [Deuces](Deuces.md) for really easy ways to get started!

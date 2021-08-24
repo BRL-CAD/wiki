@@ -222,7 +222,7 @@ This week's plan is to come in sync with the time line.
 
 
 Mid Term Summary is
-[here](User:Krajkreddy/GSOC14/midterm-summary "wikilink")
+[here](User:Krajkreddy/GSOC14/midterm-summary.md)
 
 ## Implementation of Brep and OpenNurbs
 
@@ -482,4 +482,4 @@ find an alternative.)
 **Suggested 'pencils down' date**
 
 End term summary is
-[here](User:Krajkreddy/GSOC14/end_term_summary "wikilink")
+[here](User:Krajkreddy/GSOC14/end_term_summary.md)
