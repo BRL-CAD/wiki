@@ -59,16 +59,16 @@ web as normal as sharing videos on youtube or images on flickr.
         as you might have guessed the main url where OGV is hosted.
 
 Login page of Online Geometry Viewer.
-![<File:LoginOGV.png>](LoginOGV.png "fig:File:LoginOGV.png") Sign Up
+![](LoginOGV.png) Sign Up
 page of Online Geometry Viewer.
-![<File:SignupOGV.png>](SignupOGV.png "fig:File:SignupOGV.png")
+![](SignupOGV.png)
 
 -   **Uploader: -** OGV uses CollectionFS a file handling package
     available at Atmosphere. Using this package, OGV uploader provides
     both *drag 'n' drop* as well as input field for uploading the model
     files.
 
-![<File:UploaderOGV.png>](UploaderOGV.png "File:UploaderOGV.png")
+![](UploaderOGV.png)
 
 -   **File types supported:-** Currently OGV supports only .g file as
     input for uploader, in future it will support more of them.
@@ -81,7 +81,7 @@ page of Online Geometry Viewer.
     of the model. This editing option is visible to user immediately
     after user uploads the model.
 
-![<File:ModelmetaOGV.png>](ModelmetaOGV.png "File:ModelmetaOGV.png")
+![](ModelmetaOGV.png)
 
 -   **Model Feeds: -** The front page of OGV is named as model feed. It
     consists of all the model posts. A model posts consists of
@@ -89,19 +89,19 @@ page of Online Geometry Viewer.
     name and info about the user who uploaded it. Clicking on
     representative image takes user to the model viewer page.
 
-![<File:ModelfeedOGV.png>](ModelfeedOGV.png "File:ModelfeedOGV.png")
+![](ModelfeedOGV.png)
 
 -   **File manager:-** Every user has a file manager, where he can see
     and edit his own models.
 
-![<File:FileManagerOGV.png>](FileManagerOGV.png "File:FileManagerOGV.png")
+![](FileManagerOGV.png)
 
 -   **Model Viewer:-** Model Viewer is a place where user actually sees
     his models in 3D. He can pan, rotate, zoom in and out and take a
     good look at model. Here you can also get **embed code for models**
     which then you can use to show models from OGV in your website.
 
-![<File:ModelViewerOGV.png>](ModelViewerOGV.png "File:ModelViewerOGV.png")
+![](ModelViewerOGV.png)
 
 ## Technical Information
 

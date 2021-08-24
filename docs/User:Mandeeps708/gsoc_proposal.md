@@ -136,7 +136,7 @@ Rather, it has to be automated.
 
 Here is a prototype for the same:
 
-![Image:image01.png](image01.png "Image:image01.png")
+![](image01.png)
 
 1.  ***Getting list of installed workbenches and stored macros:*** To
     > get the list of installed workbenches and created macros, we will

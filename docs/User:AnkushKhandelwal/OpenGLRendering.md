@@ -75,7 +75,7 @@ openGL 2 and 1.1 + extentions and also we have users on openGL 2 and
 openGL 1.1 + extentions , so abstracting away OpenGL extensions and
 version differences is important.
 
-![<File:Diagram.png>](Diagram.png "File:Diagram.png")
+![](Diagram.png)
 
 If we know exactly how much GL code is in a file , the next step would
 be to turn it into a separate component, i.e. a class or set of
@@ -91,7 +91,7 @@ used in rendering edges, now we want to separate it from the polyset.cc
 file such that the moved code is not allowed to use any private methods
 or any member variables of polyset.
 
-![<File:polyset.png>](polyset.png "File:polyset.png")
+![](polyset.png)
 
 To do that we take this function to another file and we create a
 renderer class and add API to polyset to enable that rendering class to

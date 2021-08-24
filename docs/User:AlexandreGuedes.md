@@ -33,7 +33,7 @@ according to table 1 BRL-CAD can only export to previously cited
 formats. To BRL-CAD would be very interesting if models could be
 imported from these formats.
 
-![](ConverterTable.jpg "ConverterTable.jpg")
+![](ConverterTable.jpg)
 
 ##### **Synopsis**
 
@@ -42,7 +42,7 @@ to write model importers - OBJ, VRML and X3D formats - to BRL-CAD, which
 would be respectively called obj-g, vrml-g and x3d-g. Figure 1 show the
 work scope.
 
-![](WorkScope.jpg "WorkScope.jpg")
+![](WorkScope.jpg)
 
 ##### **Benefits to BRL-CAD**
 

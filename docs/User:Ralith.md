@@ -235,7 +235,7 @@ Application and an actual Qt window.
 Much has happened since last log. In summary, OpenGL embedding is now
 functional, and after some work the GUI has been restored to original
 G3D functionality and can be seen following.
-![Image:G3d-2009-08-03.png](G3d-2009-08-03.png "fig:Image:G3d-2009-08-03.png")
+![](G3d-2009-08-03.png)
 
 #### Abstract
 

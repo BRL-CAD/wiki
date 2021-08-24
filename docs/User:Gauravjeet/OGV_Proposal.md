@@ -145,7 +145,7 @@ be boosted by doing following things:
     down OGV. Therefore merging obj files will reduce HTTP requests by a
     big number.
 
-![File: details.png](_details.png "File: details.png")
+![](_details.png)
 
 -   **Group/Ungroup merged Obj file**: User should get an option to
     group/ungroup the merged obj file. As I will load only one obj file

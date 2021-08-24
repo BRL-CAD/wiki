@@ -26,7 +26,7 @@ illuminate a portion of a scene without seeing the light object itself.
 Consider a simple scene comprised of a box with three colored lights
 positioned above the box:
 
-![Image:Light1.png](Light1.png "Image:Light1.png")
+![](Light1.png)
 
 The default ambient illumination allows the entire box to be visible
 even though the light sources clearly do not illuminate the sides or
@@ -35,7 +35,7 @@ goes towards ambient lighting. If we set the ambient light contribution
 to 0% (via **rt -A0**), only the top of the box is illuminated as we
 would expect.
 
-![Image:Light2.png](Light2.png "Image:Light2.png")
+![](Light2.png)
 
 To fully control the lighting for a given scene, ambient lighting should
 be turned off (via **rt -A0**) or at least set to a low value (e.g.,
@@ -46,12 +46,12 @@ the lights in the scene. For example, if we consider our simple scene
 with ambient lighting disabled and increase the *fraction* parameter on
 all three lights from 1.0 to 2.0, we double the intensity of the lights.
 
-![Image:Light3.png](Light3.png "Image:Light3.png")
+![](Light3.png)
 
 Crank that fraction up to 10.0 and the lights reflected on the top of
 the box really begin to bloom:
 
-![Image:Light4.png](Light4.png "Image:Light4.png")
+![](Light4.png)
 
 Note that there is so much overlap between the lights at that point, so
 you see blue for the farthest light, a pinkish magenta color in the
@@ -83,7 +83,7 @@ hitting a phong surface will be *specular* and biased back towards a
 viewer. The remaining 30% of the light is considered *diffuse* and
 reflects less sharply towards the viewer.
 
-![Image:Phong.png](Phong.png "Image:Phong.png")
+![](Phong.png)
 
 ## Tweaking the Box
 
@@ -91,7 +91,7 @@ If we move the spherical light sources a little bit closer to the box's
 surface, we can emphasize the effects of diffuse and specular
 reflectivity:
 
-![Image:Light5.png](Light5.png "Image:Light5.png")
+![](Light5.png)
 
 The default ratio of specular-to-diffuse is 7:3 or 70% going towards
 specular and 30% towards diffuse reflectivity. If we balance the two
@@ -99,18 +99,18 @@ out, decreasing specular and increasing diffuse reflectivity, the
 surface becomes slightly more 'dulled' and with our (high-powered, high
 fraction) lights, we see even more overlap and blending of colors.
 
-![Image:Light6.png](Light6.png "Image:Light6.png")
+![](Light6.png)
 
 Taking that to an extreme with only diffuse reflectivity, the light
 hitting the surface becomes very spread out:
 
-![Image:Light7.png](Light7.png "Image:Light7.png")
+![](Light7.png)
 
 Taking it to the opposite extreme with only specular reflectivity, each
 light harshly reflects back off the surface and the "forward-blending"
 of colors becomes rather apparent:
 
-![Image:Light8.png](Light8.png "Image:Light8.png")
+![](Light8.png)
 
 ## Topping it all off
 
@@ -119,13 +119,13 @@ directly above the three spheres, specular reflectance is no longer a
 concern and we can see that the lights indeed do reflect straight down.
 Here they are seen with a default 1.0 fraction and no ambient lighting:
 
-![Image:Light_brg.png](Light_brg.png "Image:Light_brg.png")
+![](Light_brg.png)
 
 If we increase the light intensity contribution (i.e., its fraction) by
 an order of magnitude to 10.0 then the colors begin to overlap
 considerably:
 
-![Image:Light_brg10.png](Light_brg10.png "Image:Light_brg10.png")
+![](Light_brg10.png)
 
 Notice in particular the optical illusion of a bright halo around each
 light caused by how the three lights are overlapping and how you can
@@ -138,5 +138,5 @@ and the contribution of the neighboring colors continues to increase
 If the fraction is increased even further still, the center white
 becomes even more pronounced and the color overlap becomes considerable:
 
-![Image:Light_brg20.png](Light_brg20.png "fig:Image:Light_brg20.png")
+![](Light_brg20.png)
 [category:tutorials](category:tutorials.md)

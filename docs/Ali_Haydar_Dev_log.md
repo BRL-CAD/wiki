@@ -78,7 +78,7 @@ and static arc segment I defined it inside the annot_in() function. the
 annotation is imported correctly and all the segments are converted
 correctly to vlist.
 
-![](15.png "15.png")
+![](15.png)
 
 -   June 15 working on the problem of the bounding box, the solution is
     to change the bbox() function
@@ -86,7 +86,7 @@ correctly to vlist.
     it seems like the annotation construction will be so hard on the
     user
 
-![](Pasted_image_(1).png "Pasted_image_(1).png")
+![](Pasted_image_(1).png)
 
 -   June 16 send the patch of the new bbox() function it needs some
     modifications
@@ -118,7 +118,7 @@ correctly to vlist.
     going very slow the placement of the widgets in the window is making
     me crazy.
 
-![](Pasted_image_(2).png "Pasted_image_(2).png")
+![](Pasted_image_(2).png)
 
 -   June 25 now its the time to make a method to create the txt segment
     in tcl script but whenever I add a new method to the script the
@@ -185,7 +185,7 @@ correctly to vlist.
     for a partial solution.
 -   July 7 managed to make the case of the bottom right
 
-![](Pasted_image_(3).png "Pasted_image_(3).png")
+![](Pasted_image_(3).png)
 
 -   July 8 I am preparing for structural dynamics exam tomorrow didn't
     do much I know I have to calculate the length of the label in the
@@ -205,7 +205,7 @@ correctly to vlist.
     now I think it is manageable to construct all cases
 -   July 14 I managed to construct all the cases of the positions flage
 
-![](Pasted_image4.png "Pasted_image4.png")
+![](Pasted_image4.png)
 
 -   July 15 still the discussion of position flag and I am working on
     making a new annotation type which is dimension line I am thinking
@@ -215,7 +215,7 @@ correctly to vlist.
 -   July 16 I made the dimension line and send it to the mentors to see
     what they think
 
-![](DL.png "DL.png")
+![](DL.png)
 
 July 16 the mentor's said this approach will not work because the line
 had to be in model space and its label in display space I don't know how
@@ -250,7 +250,7 @@ and the lines are in the model space, waiting for the society opinion.
 July 25 I fixed the error in importing and exporting the annotation but
 still, there is an error in the label
 
-![](DL1.png "DL1.png")
+![](DL1.png)
 
 -   July 26 working on the dimension line
 
@@ -271,7 +271,7 @@ that
     structure in the annotation to have a text size and text rotation
     angle parameters
 
-![](PF.png "PF.png")
+![](PF.png)
 
 -   July 31 trying a new approach for the dimension line by adding a 3d
     verts to the annotation primitive which will be existed along with

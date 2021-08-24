@@ -1,33 +1,33 @@
 1\. Open Blender
-![](Blender_Step_1.jpg "fig:Blender_Step_1.jpg")
+![](Blender_Step_1.jpg)
 
 2.Use the scale manipulator to flatten and expand the cube so it looks
 like a tabletop.
-![](Blender_Step_2.jpg "fig:Blender_Step_2.jpg")
+![](Blender_Step_2.jpg)
 
 3.Go to the Add menu or use the shortcut Shift+A. Add a cube.
-![](Blender_Step_3.jpg "fig:Blender_Step_3.jpg")
+![](Blender_Step_3.jpg)
 
 4.Use the scale manipulator to expand and flatten this cube so it looks
 like a table leg. Then duplicate this table leg 3 times.
-![](Blender_Step_4.jpg "fig:Blender_Step_4.jpg")
+![](Blender_Step_4.jpg)
 
 5.Move the legs of the table so it represents a table.
-![](Blender_Step_5.jpg "fig:Blender_Step_5.jpg")
+![](Blender_Step_5.jpg)
 
 6.Select all the legs and the tabletop, and then click joins on the left
 side of the window under Object.
-![](Blender_Step_6.jpg "fig:Blender_Step_6.jpg")
+![](Blender_Step_6.jpg)
 
 7.Go to File on the top left corner and select export. Under the export
 select obj.
-![](Blender_Step_7.jpg "fig:Blender_Step_7.jpg")
+![](Blender_Step_7.jpg)
 
 8.You will get an export window. Name your file test (optional).
 
 9.Once you have named your file click on the Export OBJ button, which
 can be found in the top right corner, to export your blender file.
-![](Blender_Step_9.jpg "fig:Blender_Step_9.jpg")
+![](Blender_Step_9.jpg)
 
 10.Go to the BRL-CAD bin directory and give the command to turn you obj
 file into a .g file. This command exports the obj-formatted file to a .g
@@ -43,29 +43,29 @@ and a graphics window that is black.
 
 |                                                    |                                                                      |
 |----------------------------------------------------|----------------------------------------------------------------------|
-| ![](MGED_7.22_Step_11.jpg "MGED_7.22_Step_11.jpg") | ![](MGED_7.22_Graphics_Step_11.jpg "MGED_7.22_Graphics_Step_11.jpg") |
+| ![](MGED_7.22_Step_11.jpg) | ![](MGED_7.22_Graphics_Step_11.jpg) |
 
 12.Select File and click open. Open you .g file that you just made.
-![](MGED_7.22.0_Command_Window_Step_12.jpg "fig:MGED_7.22.0_Command_Window_Step_12.jpg")
+![](MGED_7.22.0_Command_Window_Step_12.jpg)
 
 13.Then click on Tools. Open Geometry Browser under tools. Double click
 on the top object to display it.
-![](MGED_7.22.0_Command_Window_Step_13.jpg "fig:MGED_7.22.0_Command_Window_Step_13.jpg")
+![](MGED_7.22.0_Command_Window_Step_13.jpg)
 
-![](Geometry_Browser_Step_13.jpg "fig:Geometry_Browser_Step_13.jpg")
+![](Geometry_Browser_Step_13.jpg)
 
 14.Click on View. Select “az35,el25”
-![](MGED_7.22.0_Command_Window_Step_14.jpg "fig:MGED_7.22.0_Command_Window_Step_14.jpg")
+![](MGED_7.22.0_Command_Window_Step_14.jpg)
 
 15.Click on Tools once again. Select the Raytrace Control Panel. Hit the
 raytrace button.
-![](MGED_7.22.0_Command_Window_Step_15_-1.jpg "fig:MGED_7.22.0_Command_Window_Step_15_-1.jpg")
+![](MGED_7.22.0_Command_Window_Step_15_-1.jpg)
 
-![](Raytrace_Control_Panel_Step_15_and_16_-4.jpg "fig:Raytrace_Control_Panel_Step_15_and_16_-4.jpg")
+![](Raytrace_Control_Panel_Step_15_and_16_-4.jpg)
 
-![](MGED_7.22_Step_15_-2.jpg "fig:MGED_7.22_Step_15_-2.jpg") Once you
+![](MGED_7.22_Step_15_-2.jpg) Once you
 have Raytraced, you should have an image the looks like this:
-![](MGED_7.22_Step_15.jpg "fig:MGED_7.22_Step_15.jpg")
+![](MGED_7.22_Step_15.jpg)
 
 16.Do you remember what the table looked like when we were done with it
 in Blender? It was upside down and now it’s on its side. Rotating the
@@ -76,26 +76,21 @@ enter these commands in the command window:
 
 |                                                          |                                                                            |
 |----------------------------------------------------------|----------------------------------------------------------------------------|
-| ![](MGED_7.22_Step_16_-1.jpg "MGED_7.22_Step_16_-1.jpg") | ![](Fullscreen_capture_Step_16_-1.jpg "Fullscreen_capture_Step_16_-1.jpg") |
+| ![](MGED_7.22_Step_16_-1.jpg) | ![](Fullscreen_capture_Step_16_-1.jpg) |
 
 ` rot –90 0 0 `
 `{| border="0"`
 
 \|-
-\|![](Fullscreen_capture_Step_16_-2.jpg "fig:Fullscreen_capture_Step_16_-2.jpg")\|\|![](Fullscreen_capture_Step_16_-2_-2.jpg "fig:Fullscreen_capture_Step_16_-2_-2.jpg")
+\|![](Fullscreen_capture_Step_16_-2.jpg)\|\|![](Fullscreen_capture_Step_16_-2_-2.jpg)
 \|}
 
 ` accept `
 `{| border="0"`
 
 \|-
-\|![](Fullscreen_capture_Step_16_-3.jpg "fig:Fullscreen_capture_Step_16_-3.jpg")\|\|![](MGED_7.22_Step_16_-3.jpg "fig:MGED_7.22_Step_16_-3.jpg")
-\|}
-
-Then Raytrace the table once again by going to the Tools menu.
-![](Raytrace_Control_Panel_Step_15_and_16_-4.jpg "fig:Raytrace_Control_Panel_Step_15_and_16_-4.jpg")
+\|![](Fullscreen_capture_Step_16_-3.jpg)\|\|![](MGED_7.22_Step_16_-3.jpg "fig:MGED_7.22_Step_16_-3.jpg"))
 
 With that final rendering your import is complete!
 ![](MGED_7.22.0_Graphics_Window_Step_16_-5.jpg "fig:MGED_7.22.0_Graphics_Window_Step_16_-5.jpg")
-
-![](Xyz.jpg "Xyz.jpg")
+)

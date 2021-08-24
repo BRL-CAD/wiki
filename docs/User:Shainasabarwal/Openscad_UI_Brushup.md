@@ -72,8 +72,7 @@ desires
 -   Solarized <http://ethanschoonover.com/solarized>
 
 Can add more if required by developers. This will require diving into
-highlighter.cc and adding more color themes. ![<File:improved> code
-editor.png](improved_code_editor.png "fig:File:improved code editor.png")
+highlighter.cc and adding more color themes. ![](improved_code_editor.png)
 
 **Custom designed toolbar:-** Finding the right menu through the menubar
 is a hectic task for the user. It takes lots of clicks and hassle going
@@ -84,20 +83,20 @@ toolbar. This way, it will provide ease to use and precious time of the
 user. Though this toolbar is designed with intention of not covering
 much space of the editor, still there will be option to hide this
 toolbar. Qt has a class QStyle that will be used to develop this
-toolbar. ![<File:Custom> designed
-toolbar.png](Custom_designed_toolbar.png "fig:File:Custom designed toolbar.png")
-![<File:With> Console.png](With_Console.png "fig:File:With Console.png")
+toolbar. ![](Custom_designed_toolbar.png)
+![](With_Console.png)
 
 **Better Model Colors:-** ALso we can change the color of output window
 from prefrences but options are less .There should be different themes
 for colors of rendered model. Currently, we can have figures in yellow
-and green color. That must have more options. ![<File:Colored>
-model.png](Colored_model.png "fig:File:Colored model.png")
+and green color. That must have more options. ![](Colored_model.png)
+)
 
 **Other Editors Review**
 
 These are the editors we can integrate into OpenSCAD application and
 have a better user experience of programming.
+
 
 <http://www.riverbankcomputing.co.uk/software/qscintilla/intro>
 

@@ -25,7 +25,7 @@ The project was divided into two parts:
 
 ### **Support for the 3D-&gt;2D projection**
 
-![](Example_annot.png "Example_annot.png")
+![](Example_annot.png)
 
 -   Annotations always remain in the plane of the screen
 -   Modifying the projection matrices for all the display managers was

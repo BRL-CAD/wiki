@@ -77,7 +77,7 @@ that the final command to create it is:
 
 This yields the following object: (an MGED wireframe, from the az35,el25
 view setting):
-![](nmg-wiki-tutorial-box-mged-screenshot.png "fig:nmg-wiki-tutorial-box-mged-screenshot.png")
+![](nmg-wiki-tutorial-box-mged-screenshot.png)
 
 Another more complex example is to create a box with a hole through it.
 Much of the command is the same as the one above for creating a plain
@@ -97,4 +97,4 @@ and `F { { 12 8 9 15 } }`. The final command with all of this is:
 
 This produces the following wireframe when drawn in MGED using the
 az35,el25 view setting:
-![](nmg-wiki-tutorial-box-with-hole-mged-screenshot.png "fig:nmg-wiki-tutorial-box-with-hole-mged-screenshot.png")
+![](nmg-wiki-tutorial-box-with-hole-mged-screenshot.png)

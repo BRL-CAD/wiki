@@ -468,13 +468,13 @@ the screenshots of the raytrace results.
 
 -   m35.g: component (left: implicit + csg, right: brep + csg)
 
-![Image:M35.implicit.png](M35.implicit.png "fig:Image:M35.implicit.png")
-![Image:M35.brep.png](M35.brep.png "fig:Image:M35.brep.png")
+![](M35.implicit.png)
+![](M35.brep.png)
 
 -   ktank.g: tank (left: implicit + csg, right: brep + csg)
 
-![Image:Ktank.implicit.png](Ktank.implicit.png "fig:Image:Ktank.implicit.png")
-![Image:Ktank.brep.png](Ktank.brep.png "fig:Image:Ktank.brep.png")
+![](Ktank.implicit.png)
+![](Ktank.brep.png)
 
 -   havoc.g: havoc (the raytrace of brep+csg takes a too long time, so
     the result hasn't been generated yet)
@@ -485,36 +485,28 @@ the screenshots of the raytrace results.
     third: reduced to a 16\*26 map (sorry for the slightly different
     views))
 
-![Image:Dsp implicit.png](Dsp_implicit.png "fig:Image:Dsp implicit.png")
-![Image:Dsp brep.png](Dsp_brep.png "fig:Image:Dsp brep.png") ![Image:Dsp
-reduced.png](Dsp_reduced.png "fig:Image:Dsp reduced.png")
+![](Dsp_implicit.png)
+![](Dsp_brep.png) ![](Dsp_reduced.png)
 
 -   Brep form of superell primitives with axes of the same magnitude:
     (left: n = 0.8, e = 0.2, right: n = 1.0, e = 2.0)
     -   Reference page: <http://paulbourke.net/geometry/superellipse/>
 
-![Image:Superell 0.8
-0.2.png](Superell_0.8_0.2.png "fig:Image:Superell 0.8 0.2.png")
-![Image:Superell 1.0
-2.0.png](Superell_1.0_2.0.png "fig:Image:Superell 1.0 2.0.png")
+![](Superell_0.8_0.2.png)
+![](Superell_1.0_2.0.png)
 
 -   -   There is still some problems when n &gt; 2 or e &gt; 2. (left: n
         = 0.2, e = 3.0, right: n = e = 3.0)
 
-![Image:Superell 0.2
-3.0.png](Superell_0.2_3.0.png "fig:Image:Superell 0.2 3.0.png")
-![Image:Superell 3.0
-3.0.png](Superell_3.0_3.0.png "fig:Image:Superell 3.0 3.0.png")
+![](Superell_0.2_3.0.png)
+![](Superell_3.0_3.0.png)
 
 -   -   The problem above was fixed in r51405. (first: n = 0.2, e = 3.0,
         second: n = e = 3.0, third: n = 3.0, e = 0.2)
 
-![Image:Superell 0.2 3.0
-fixed.png](Superell_0.2_3.0_fixed.png "fig:Image:Superell 0.2 3.0 fixed.png")
-![Image:Superell 3.0 3.0
-fixed.png](Superell_3.0_3.0_fixed.png "fig:Image:Superell 3.0 3.0 fixed.png")
-![Image:Superell 3.0 0.2
-fixed.png](Superell_3.0_0.2_fixed.png "fig:Image:Superell 3.0 0.2 fixed.png")
+![](Superell_0.2_3.0_fixed.png)
+![](Superell_3.0_3.0_fixed.png)
+![](Superell_3.0_0.2_fixed.png)
 
 -   A cline primitive raytraced in different views. You can see that
     it's a primitive whose raytrace is view-dependent. We use a pipe to
@@ -523,26 +515,24 @@ fixed.png](Superell_3.0_0.2_fixed.png "fig:Image:Superell 3.0 0.2 fixed.png")
     when plotting a cline with the draw command in MGED. (Two different
     views, left: implicit, right: brep)
 
-![Image:Cline implicit
-1.png](Cline_implicit_1.png "fig:Image:Cline implicit 1.png")
-![Image:Cline brep 1.png](Cline_brep_1.png "fig:Image:Cline brep 1.png")
-![Image:Cline implicit
-2.png](Cline_implicit_2.png "fig:Image:Cline implicit 2.png")
-![Image:Cline brep 2.png](Cline_brep_2.png "fig:Image:Cline brep 2.png")
+![](Cline_implicit_1.png)
+![](Cline_brep_1.png)
+![](Cline_implicit_2.png)
+![](Cline_brep_2.png)
 
 -   The intersection curve (green) of a sph (red) and an ehy (blue).
 
-![Image:Sph ehy.png](Sph_ehy.png "Image:Sph ehy.png")
+![](Sph_ehy.png)
 
 -   The intersection curves (green) of a tgc (red) and an epa (blue).
     (Two segments)
 
-![Image:Tgc epa.png](Tgc_epa.png "Image:Tgc epa.png")
+![](Tgc_epa.png)
 
 -   The intersection curve (green) of a plane surface (red) and an ehy
     (blue).
 
-![Image:Planar ehy.png](Planar_ehy.png "Image:Planar ehy.png")
+![](Planar_ehy.png)
 
 # Original development timeline
 

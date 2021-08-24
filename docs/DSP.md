@@ -8,7 +8,7 @@ We will use two examples to illustrate the next few sections.
 
 1\. A black and white (gray scale) image (png format):
 
-![Image:Ex1.png](Ex1.png "Image:Ex1.png")
+![](Ex1.png)
 
 with properties:
 
@@ -17,7 +17,7 @@ with properties:
 
 2\. A color png file:
 
-![Image:Ex2.png](Ex2.png "Image:Ex2.png")
+![](Ex2.png)
 
 with properties:
 
@@ -121,7 +121,7 @@ Example 1.
 
 You should see something like this:
 
-![Image:Ex1rt.png](Ex1rt.png "Image:Ex1rt.png")
+![](Ex1rt.png)
 
 You can play around with the scaling factors (the end pair: 1 - cell
 width, 0.005 - cell height) to improve the looks of the image.
@@ -137,7 +137,7 @@ And make another dsp in the same manner as before:
 
 And see the results:
 
-![Image:Ex1nrt.png](Ex1nrt.png "Image:Ex1nrt.png")
+![](Ex1nrt.png)
 
 Example 2.
 
@@ -147,13 +147,13 @@ Example 2.
 
 You should see something like this:
 
-![Image:Ex2rt.png](Ex2rt.png "Image:Ex2rt.png")
+![](Ex2rt.png)
 
 Again, you could play with various parameters to get the desired look.
 You could also create the negative as we did with example 1 and see the
 results:
 
-![Image:Ex2nrt.png](Ex2nrt.png "Image:Ex2nrt.png")
+![](Ex2nrt.png)
 
 ## Creating a DSP object from manual or programmatic generation of data
 
@@ -294,4 +294,4 @@ all the work for us with the options shown:
 
 The resulting default png file (but cropped) is shown below.
 
-![Image:381822-az35-el25.png](381822-az35-el25.png "Image:381822-az35-el25.png")
+![](381822-az35-el25.png)

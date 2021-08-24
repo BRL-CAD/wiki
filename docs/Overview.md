@@ -61,7 +61,7 @@ types of transport.
 
 ## Package Content
 
-![](Data_flow_structure.png "fig:Data_flow_structure.png") In keeping
+![](Data_flow_structure.png) In keeping
 with the UNIX philosophy of developing independent tools to perform
 single, specific tasks and then linking the tools together in a package,
 BRL-CAD is basically a collection of libraries, tools, and utilities

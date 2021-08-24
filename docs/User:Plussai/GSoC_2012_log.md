@@ -18,8 +18,7 @@
 `    ON_SurfaceArray m_S;//Pointers to parametric surfaces (used by faces)`
 `    ON_BrepTrimArray m_T;//trims`
 `    ON_BrepVertexArray m_V;//vertexs`
-
-![Image:brep.jpg](brep.jpg "fig:Image:brep.jpg")
+![](brep.jpg)
 figure:[1](http://brlcad.org/w/images/5/5e/Brep.jpg)
 
 ## 9 May 2012
@@ -379,20 +378,20 @@ needed.
 -   add a trimcurve for ell.brep and hyp.brep manually to test trimming
 -   ell:left:top view,right:left view
 
-![Image:Ell1.png](Ell1.png "fig:Image:Ell1.png")
-![Image:Ell2.png](Ell2.png "fig:Image:Ell2.png")
+![](Ell1.png)
+![](Ell2.png)
 
 -   ell:left:local view,right:uv region
 
-![Image:Ell3.png](Ell3.png "fig:Image:Ell3.png")
-![Image:Ell4.png](Ell4.png "fig:Image:Ell4.png")
+![](Ell3.png)
+![](Ell4.png)
 
 -   hyp:
 
-![Image:HYP1.png](HYP1.png "fig:Image:HYP1.png")
-![Image:HYP2.png](HYP2.png "fig:Image:HYP2.png")
-![Image:HYP3.png](HYP3.png "fig:Image:HYP3.png")
-![Image:HYP4.png](HYP4.png "fig:Image:HYP4.png")
+![](HYP1.png)
+![](HYP2.png)
+![](HYP3.png)
+![](HYP4.png)
 
 ### 8 July 2012
 
@@ -407,8 +406,8 @@ needed.
 -   image: some BBoxing in uv which should be trimmed are still
     remain(right bottom conner).
 
-![Image:rhino.png](rhino.png "fig:Image:rhino.png")
-![Image:rhino1.png](rhino1.png "fig:Image:rhino1.png")
+![](rhino.png)
+![](rhino1.png)
 
 ### 10 July 2012
 
