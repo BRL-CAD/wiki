@@ -1,0 +1,1 @@
+1.  REDIRECT [SJ1](SJ1 "wikilink")

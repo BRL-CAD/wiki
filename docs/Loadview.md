@@ -1,0 +1,1 @@
+1.  REDIRECT [MGED CMD loadview](MGED_CMD_loadview "wikilink")

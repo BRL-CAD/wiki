@@ -1,0 +1,1 @@
+1.  REDIRECT [Escuelas](Escuelas "wikilink")
