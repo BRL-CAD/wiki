@@ -1,1 +1,0 @@
-1.  REDIRECT [2D Sketch Editor](2D_Sketch_Editor.md)

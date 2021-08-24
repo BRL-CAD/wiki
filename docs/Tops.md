@@ -1,1 +1,0 @@
-1.  redirect [MGED CMD tops](MGED_CMD_tops.md)
