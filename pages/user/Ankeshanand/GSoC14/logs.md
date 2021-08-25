@@ -215,7 +215,7 @@ after invoking the appropriate data aggregation function from data.py
     resolution, see [here](http://i.imgur.com/eEA99Hm.png)
 
 
-![](img/Wireframe-plots-index.png)
+![](/wiki/user/img/Wireframe-plots-index.png)
 
 -   **7th June (Saturday):** Fixed bugs in the front-end, added support
     for a new plot (Average VGR vs Number of Processors)
@@ -400,7 +400,7 @@ template.
     automatically on file-uploads.
 
 
-![](img/ResultsInterface.png)
+![](/wiki/user/img/ResultsInterface.png)
 
 -   **4th July (Friday):** Encountered a bug while integrating the
     fileupload and results module. The database changes were not
@@ -481,7 +481,7 @@ template.
     [here](http://i.imgur.com/BxIbmTN.png).
 
 
-![](img/ComparisonsInterface.png)
+![](/wiki/user/img/ComparisonsInterface.png)
 
 -   **22rd July (Tuesday):** Added a Date filter to the comparisons
     view. It lets filter down logs submitted this week, this month, this
@@ -579,7 +579,7 @@ template.
     mockup, below is a screenshot.
 
 
-![](img/BenchmarkHome.png)
+![](/wiki/user/img/BenchmarkHome.png)
 
 -   **7th August (Thursday):** Pushed the site to deployment after
     enabling the site in apache, it is now live again at

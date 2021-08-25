@@ -186,7 +186,7 @@ For a better idea look at the prototype I have in mind :
 <center>
 
 <figure>
-![](img/CheckGUI.png)
+![](/wiki/user/img/CheckGUI.png)
 </figure>
 
 </center>

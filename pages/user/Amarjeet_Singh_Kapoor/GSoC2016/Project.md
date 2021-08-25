@@ -55,7 +55,7 @@ changed as per user's requirements.
 
 The basic implementation of the this project is almost done in form of
 prototype. There is need to modify structure of the project.We have to
-divide the task in to there parts: ![](img/image05.png)
+divide the task in to there parts: ![](/wiki/user/img/image05.png)
 
 <dl>
 <dt>
@@ -126,7 +126,7 @@ inject the value of individual parameter in to the AST.
 </dd>
 </dl>
 
-![](img/main.jpg)
+![](/wiki/user/img/main.jpg)
 
 There is need to modify some existing features and to enhance its
 functionality so that it could be more interactive and user friendly. We
@@ -259,13 +259,13 @@ features under the scope of this project
     > on the parameter window for viewing new input widget based upon
     > the change in value of parameterized variable we have to reopen
     > the file. e.g. For an instance in following screenshot 1,
-    > everything is correct. ![](img/image07.png)
+    > everything is correct. ![](/wiki/user/img/image07.png)
     > But if the value of G=False and resolution=\[10,34,45\] are
     > changed from their initial value of G=0 and resolution=10, than
     > result is screenshot 2 but instead it should be as per screenshot
     > 3 which is obtained on re-opening the document.
-    > ![](img/image06.png)
-    > ![](img/image03.jpg)
+    > ![](/wiki/user/img/image06.png)
+    > ![](/wiki/user/img/image03.jpg)
     >
     > We can do this by not only storing the parameters based on name
     > only but by both name of parameter and Type of data in parameter.

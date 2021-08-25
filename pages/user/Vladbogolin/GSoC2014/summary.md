@@ -35,12 +35,12 @@ with the raytracer and it can successfully display raytraced models.
 When it comes to embedding a frambuffer window, I tested the behavior in
 both mged
 
-![](img/Mged_fb.png)
-![](img/Mged_fb4.png)
+![](/wiki/user/img/Mged_fb.png)
+![](/wiki/user/img/Mged_fb4.png)
 
 and archer
 
-![](img/Archer_fb.png)
-![](img/Archer_fb2.png)
+![](/wiki/user/img/Archer_fb.png)
+![](/wiki/user/img/Archer_fb2.png)
 
 More infos about the development process can be found on the [log page](Logs.md)

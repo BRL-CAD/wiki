@@ -38,14 +38,14 @@ remade. Improve simple view for displaying user feed. Simple profile
 card on the left, actual feed in the middle, and recommended users on
 the right (not shown). This view will be same for profile.
 
-![](img/Feed.jpg)
+![](/wiki/user/img/Feed.jpg)
 
 ### Add simple model view
 
 Currently you can’t quickly preview model, download and leave comment.
 Proposed view provides simple interactive preview of the model,
 information about model and comments.
-![](img/Normal_view.jpg)
+![](/wiki/user/img/Normal_view.jpg)
 
 ### Remake upload view
 
@@ -56,11 +56,11 @@ will improve user experience. Remake upload process into three steps:
 Upload -&gt; File processing -&gt; Editing and saving. Generate model
 preview at this step.
 
-![](img/Upload.jpg)
+![](/wiki/user/img/Upload.jpg)
 
 </figure>
 
-![](img/Save.jpg)
+![](/wiki/user/img/Save.jpg)
 
 ### Improve advanced model view
 
@@ -70,7 +70,7 @@ files only ) and change scene settings.
 Proposed model view
 
 <figure>
-![](img/Advanced_view.jpg)
+![](/wiki/user/img/Advanced_view.jpg)
 
 
 ### Use meteor’s recommended code structure

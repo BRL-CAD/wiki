@@ -114,7 +114,7 @@
 
 Here is how the graph for the *share/db/axis.g* database looks like now:
 
-![](img/Graph_editor_v2.png)
+![](/wiki/user/img/Graph_editor_v2.png)
 
 <!-- -->
 
@@ -154,7 +154,7 @@ Here is the window that the **graph** command launches for the
 <!-- -->
 
 
-![](img/Graph_editor_v1.png)
+![](/wiki/user/img/Graph_editor_v1.png)
 
 #### 06/08/2012
 
@@ -357,7 +357,7 @@ There is no commit because the code might need some restructuring.
 
 Here's the graphical output for the *share/brlcad/7.22.1/db/axis.g*
 (that was put in a .svg file, for now):
-![](img/Graph_link_nodes_no_duplications.png)
+![](/wiki/user/img/Graph_link_nodes_no_duplications.png)
 
 <!-- -->
 
@@ -411,7 +411,7 @@ needs to be taken care of.
 
 
 Here's the graphical output (that was put in a .svg file, for now):
-![](img/Graph_link_nodes.png)
+![](/wiki/user/img/Graph_link_nodes.png)
 
 <!-- -->
 

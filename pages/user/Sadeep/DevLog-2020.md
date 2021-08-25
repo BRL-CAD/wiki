@@ -166,7 +166,7 @@ Finished writing DM to coreinterfaces:VectorList.
 
 bug fixes in coreinterface.
 
-![](img/arbalest2.png)
+![](/wiki/user/img/arbalest2.png)
 
 -   14 June 2020
 
@@ -340,7 +340,7 @@ above.
 
 Learning about fonts and using them in Qt.
 
-![](img/aba2.png)
+![](/wiki/user/img/aba2.png)
 
 -   17-25 July 2020
 
@@ -425,4 +425,4 @@ Implemented object creation.
 
 Implemented changing background color of raytraced outputs.
 
-![](img/arbalest6.png)
+![](/wiki/user/img/arbalest6.png)

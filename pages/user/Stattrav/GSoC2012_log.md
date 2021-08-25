@@ -24,11 +24,11 @@
 -   Source is at <https://bitbucket.org/suryajith/benchmark/src>
 -   Awaiting Dr.Rai's perusal of the patches.
 
-![](img/absavgperfvsimagescomb.png)
-![](img/absavgperfvsimages2.png)
-![](img/absavgperfvsimages1.png)
-![](img/absavgperfvsarchpermhz.png)
-![](img/absavgperfvsarch.png)
+![](/wiki/user/img/absavgperfvsimagescomb.png)
+![](/wiki/user/img/absavgperfvsimages2.png)
+![](/wiki/user/img/absavgperfvsimages1.png)
+![](/wiki/user/img/absavgperfvsarchpermhz.png)
+![](/wiki/user/img/absavgperfvsarch.png)
 
 ### 12-14 August 2012
 
@@ -47,9 +47,9 @@
 -   Below are some examples of the graphs generated from the data in the
     database
 
-![](img/Perfvsimages.png)
-![](img/absavgperfpermhz.png)
-![](img/Absavgperf.png)
+![](/wiki/user/img/Perfvsimages.png)
+![](/wiki/user/img/absavgperfpermhz.png)
+![](/wiki/user/img/Absavgperf.png)
 
 ### 8-11 August 2012
 

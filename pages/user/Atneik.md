@@ -1,4 +1,4 @@
-![](img/Ani_user_pic.jpg "Ani_user_pic.jpg")
+![](/wiki/user/img/Ani_user_pic.jpg "Ani_user_pic.jpg")
 
 # About
 

@@ -145,7 +145,7 @@ be boosted by doing following things:
     down OGV. Therefore merging obj files will reduce HTTP requests by a
     big number.
 
-![](img/_details.png)
+![](/wiki/user/img/_details.png)
 
 -   **Group/Ungroup merged Obj file**: User should get an option to
     group/ungroup the merged obj file. As I will load only one obj file
@@ -166,14 +166,14 @@ be boosted by doing following things:
     These names will then be seen when hovered with mouse over the part
     of model
 
-![](img/_show_hide.png)
+![](/wiki/user/img/_show_hide.png)
 
 -   **Coloring parts of model**: Once the model is ungrouped, we get a
     set of different parts that can be colored in a separate color or a
     material texture.
 
 <figure>
-![](img/_colored_parts.png)
+![](/wiki/user/img/_colored_parts.png)
 
 
 -   **Searching parts of Model**: Complex models have a large number of
@@ -194,17 +194,17 @@ be boosted by doing following things:
 `  art1sec8:fuse`
 
 <figure>
-![](img/_empty_search.png)
+![](/wiki/user/img/_empty_search.png)
 </figure>
 
 
-![](img/_search_ga.png)
+![](/wiki/user/img/_search_ga.png)
 </figure>
 
 -   **Advanced Search**: With this we can search for models using
     certain filters. Filters include filter by the owner of the model,
 
-![](img/_advanced_search.png)
+![](/wiki/user/img/_advanced_search.png)
 </figure>
 
 ### Notifications
@@ -223,7 +223,7 @@ be boosted by doing following things:
     configurable. You can switch it off if you don't want it.
 
 <figure>
-![](img/_notifications.png)
+![](/wiki/user/img/_notifications.png)
 </figure>
 
 ### Customized Access to models
@@ -243,7 +243,7 @@ be boosted by doing following things:
 `  {{> FS.UploadProgressBar}}`
 
 <figure>
-![](img/_uploading.png)
+![](/wiki/user/img/_uploading.png)
 </figure>
 
 -   **Progress bar for conversion**: In current OGV code, the conversion
@@ -253,7 +253,7 @@ be boosted by doing following things:
     that animates the button.
 
 <figure>
-![](img/_conversion.png)
+![](/wiki/user/img/_conversion.png)
 
     image file to be used as a thumbnail of the model. Automatic
     thumbnail generation will snapshot the rendered view of a model, and

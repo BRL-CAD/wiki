@@ -29,7 +29,7 @@ Internal object specific methods are stored in the OBJ (struct
 rt_functab array). When building internal objects, the minor type is
 used as an index to point the right methods for that type of object. For
 now, material and shader objects are at the end of the OBJ array.
-![](img/Rt_material_internal2.png)
+![](/wiki/user/img/Rt_material_internal2.png)
 
 There should probably be a new array that stores just
 DB5_MAJORTYPE_ATTRIBUTE_ONLY object methods for the material and
@@ -43,7 +43,7 @@ idb_avs and make operations on it. Right now, on my patch,
 rt_material_internal contains an bu_avs structure that's being copied
 to idb_avs when exporting.
 
-![](img/Rt_material_internal.png)
+![](/wiki/user/img/Rt_material_internal.png)
 
 To associate regions with materials the most sane way I could think of
 was to store the material object's name in one of the region's internal

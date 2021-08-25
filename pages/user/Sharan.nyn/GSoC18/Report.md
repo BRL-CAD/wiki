@@ -89,7 +89,7 @@
 
 <!-- -->
 
--   ![](img/Overlaps_tool_final.png)
+-   ![](/wiki/user/img/Overlaps_tool_final.png)
 
 <!-- -->
 

@@ -40,7 +40,7 @@ primitives.
 
 We shall take the example of HYP primitive here for comparing the
 performance of C and OpenCL versions of rendering.
-![](img/Hyp2_c.png)![](img/Hyp2_cl.png)
+![](/wiki/user/img/Hyp2_c.png)![](/wiki/user/img/Hyp2_cl.png)
 **First Test**: Both the C and OpenCL renderings should look same
 
 On the left is the C rendering of the HYP primitive and on the right is
@@ -55,7 +55,7 @@ the time taken by the C version to render was 0.31 seconds, the time
 taken by the OpenCL version to render was 0.02 seconds. That is more
 than **15x improvement** in the performance! Hurray!
 
-![](img/Hyp_pixdiff.png)
+![](/wiki/user/img/Hyp_pixdiff.png)
 
 **Third Test**: Checking the difference between images at a pixel level
 
