@@ -277,14 +277,14 @@ open-source project has been something I have wished to pursue for a
 while now, but am just recently confident enough in my skills to be able
 to meaningfully contribute.
 
-If accepted, I plan on continuing my involvement with BRLCAD after GSoC
-ends, moving on to more challenging tasks. In particular
-[this](http://brlcad.org/wiki/General_Tree_Walker) project interests me
-as I have a good deal of experience working with trees from my Data
-Structures course at school. Having already invested some time
-familiarizing myself with BRLCAD's source library, I'm considering
-completing some of my proposed goals this summer even if my application
-is unsuccessful.
+If accepted, I plan on continuing my involvement with BRLCAD after
+GSoC ends, moving on to more challenging tasks. In particular
+[this](/wiki/General_Tree_Walker.md) project interests me as I have a
+good deal of experience working with trees from my Data Structures
+course at school. Having already invested some time familiarizing
+myself with BRLCAD's source library, I'm considering completing some
+of my proposed goals this summer even if my application is
+unsuccessful.
 
 ## My Patches
 

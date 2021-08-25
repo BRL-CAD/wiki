@@ -115,7 +115,7 @@
 I am planning to submit three proposals and the priorities with which I
 want to get engaged in summer are as follows-
 
-### Priority 1: ["Code Reduction and Refactoring for Reduced Maintenance Cost"](http://brlcad.org/wiki/user/KeshaSShah/GSoC13/Priority1)
+### Priority 1: ["Code Reduction and Refactoring for Reduced Maintenance Cost"](Priority1.md)
 
 -   This was the project which first caught my eyes and I was attracted
     towards working with BRL-CAD. I looked at the files in source folder
@@ -123,7 +123,7 @@ want to get engaged in summer are as follows-
     confident about this project that I can contribute the best in me in
     this domain.
 
-### Priority 2: ["STEP Libraries"](http://brlcad.org/wiki/user/KeshaSShah/GSoC13/Priority2)
+### Priority 2: ["STEP Libraries"](Priority2.md)
 
 -   Being frank, I came in contact with STEP a few days ago when I was
     going through Converting Geometry and Exchange of CAD data between
@@ -132,7 +132,7 @@ want to get engaged in summer are as follows-
     documented. I am also planning to include some BRL-CAD wiki pages as
     it lacks a detailed one now.
 
-### Priority 3: ["STEP AP242 Parser"](http://brlcad.org/wiki/user/KeshaSShah/GSoC13/Priority3)
+### Priority 3: ["STEP AP242 Parser"](Priority3.md)
 
 -   I think this project can give me a great learning opportunity. Right
     now I am trying to compile and understand file-wise how the current
@@ -142,5 +142,4 @@ want to get engaged in summer are as follows-
 
 ## Development Logs
 
-[This are my Development Logs Till
-Date](http://brlcad.org/wiki/user/KeshaSShah/GSoC13/Reports)
+[This are my Development Logs Till Date](Reports.md)

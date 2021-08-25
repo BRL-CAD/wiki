@@ -300,6 +300,5 @@ in Computer programming.
 
 # DEVELOPMENT SCHEDULE
 
--   My development is kind of my Google Summer of Code Log Book. Anyone
-    can view it
-    [here](http://brlcad.org/wiki/user/Amalia/Development_logs).
+-   My development is kind of my Google Summer of Code Log
+    Book. Anyone can view it [here](Development_logs.md).

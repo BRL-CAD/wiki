@@ -272,8 +272,7 @@ STEP LIBRARIES
 
 # My Development Reports
 
-[Click here to see
-logs](http://www.brlcad.org/wiki/user/KeshaSShah/GSoC13/Reports)
+[Click here to see logs](Reports.md)
 
 # Links to any code or algorithms you intend to use
 

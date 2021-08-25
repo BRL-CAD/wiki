@@ -34,4 +34,4 @@ notes, and dimensions
 **Proposal**:
 <https://docs.google.com/document/d/1wqO23R3-D5mkkH_-ebcFuWz7Tsh8ZtMvLEsg_ClbJ7U/edit#>
 
-**Devlog**: <https://brlcad.org/wiki/Ali_Haydar_Dev_log>
+**Devlog**: [Ali_Haydar_Dev_log](Ali_Haydar_Dev_log.md)

@@ -403,7 +403,7 @@ TCL Project Repo :
             issues popping up. I'm fixing them. The issue with metaball
             is something that is followed on from GSoC'14. Look at May
             29 Entry :
-            <https://brlcad.org/wiki/user/Krajkreddy/GSOC14/summary>
+            [Krajkreddy/GSOC14/summary](/wiki/user/Krajkreddy/GSOC14/summary.md)
         -   With ars and metaball there's some issues on the binding
             side. There was an issue with the fastf_t \*verts\[5\],
             Error :: expected LP_c_double_Array_5 instance instead

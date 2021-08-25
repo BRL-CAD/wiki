@@ -37,4 +37,4 @@ easily use BRL-CAD functionality into their own applications.
 # Development Logs
 
 
-<http://brlcad.org/wiki/user/Anoop/Logs>
+[Logs](Logs.md)

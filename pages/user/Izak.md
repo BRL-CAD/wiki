@@ -452,6 +452,5 @@ underrepresented minority backgrounds in computing like Africa.
 
 ## DEVELOPMENT REPORT
 
-You want to read my
-[diary](http://brlcad.org/wiki/user/Izak/GSOC_2013_logs) to know the
-status of my work.
+You want to read my [diary](GSOC_2013_logs.md) to know the status of
+my work.

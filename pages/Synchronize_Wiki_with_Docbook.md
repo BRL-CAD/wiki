@@ -29,8 +29,8 @@ documentation each.
 
 <!-- -->
 
--   <http://brlcad.org/wiki/MGED_Commands>
--   <http://brlcad.org/wiki/BRL-CAD_Commands>
+-   [MGED_Commands](MGED_Commands.md)
+-   [BRL-CAD_Commands](BRL-CAD_Commands)
 
 # Requirements
 

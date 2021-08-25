@@ -12,11 +12,11 @@ this:
 -   A BRL-CAD mentor reviews the work and either sends it back for more
     work or accepts it as completed successfully.
 
-# Getting Started [Checklist](http://brlcad.org/wiki/Google_Code_In/Checklist)
+# Getting Started [Checklist](Checklist.md)
 
 Whether you're applying or accepted, we've itemized everything you need
 to do into a simple
-[CHECKLIST](http://brlcad.org/wiki/Google_Code_In/Checklist). We're here
+[CHECKLIST](Checklist.md). We're here
 to help you become new open source developers, so don't be shy if you
 have any questions.
 
@@ -52,5 +52,5 @@ full-time years of effort.
 
 This was the first year doing GCI. BRL-CAD was 1 of 10 organizations
 selected. Student response was
-[overwhelming](http://brlcad.org/wiki/Community_Publication_Portal#BRL-CAD_Accomplishments_:_GCI_2012).
+[overwhelming](Community_Publication_Portal.md#BRL-CAD_Accomplishments_:_GCI_2012).
 We learned a lot and fell in love with the program.

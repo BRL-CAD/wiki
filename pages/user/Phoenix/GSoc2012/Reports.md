@@ -215,7 +215,7 @@
         a bigger tolerance value should be used).
     -   Next step for my project: start studying and implementing NURBS
         surface-surface intersection.
-        [(http://brlcad.org/wiki/NURBS_Intersections)](http://brlcad.org/wiki/NURBS_Intersections)
+        [(/wiki/NURBS_Intersections)](/wiki/NURBS_Intersections.md)
         Even if I cannot completely finished this project as there is
         not much time left in this summer, adding some useful "pieces"
         of it can still be helpful.
@@ -449,7 +449,7 @@
     -   Did some clean up and added comments to /libged/brep.c.
 -   Aug 17
     -   Add documentation of the brep command in MGED to the wiki page.
-        See: [1](http://brlcad.org/wiki/MGED_CMD_brep)
+        See: [1](/wiki/MGED_CMD_brep.md)
 
 ## Final summary
 

@@ -15,7 +15,5 @@ master degree at Instituto Superior Técnico, University of Lisbon,
 Portugal, focused in computer graphics and video games development.
 
 -   [Abstract](https://summerofcode.withgoogle.com/projects/#4523183467134976)
--   [Project
-    Proposal](http://brlcad.org/wiki/user/Marco-domingues/GSoC17/Project)
--   [Development
-    Logs](http://brlcad.org/wiki/user/Marco-domingues/GSoC17/Log)
+-   [Project Proposal](GSoC17/Project.md)
+-   [Development Logs](GSoC17/Log.md)

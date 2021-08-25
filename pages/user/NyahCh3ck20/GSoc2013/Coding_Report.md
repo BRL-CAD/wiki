@@ -8,15 +8,14 @@ This year's GSoC was my first and most exciting projects given the fact
 that I'm working on my first opensource project and contributing for my
 first time to a great software and organization like BRL-CAD.
 
-For the past three months I worked on implementing a pull routine which
-reversed the effects of a push on a CSG tree. This project focused on
-reversing the effects of the push command available in BRL-CAD and also
-pulling up and unpushed node. While following my implementation outline
-as described in my [Design
-Document](http://brlcad.org/wiki/user/NyahCh3ck20/GSOC13/Design_Document),
-I kept modifying the plan as needed and tried updating my
-[logs](http://brlcad.org/wiki/user/NyahCh3ck20/GSoc2013/Coding_Report)
-daily especially when I initially had no stable Internet access.
+For the past three months I worked on implementing a pull routine
+which reversed the effects of a push on a CSG tree. This project
+focused on reversing the effects of the push command available in
+BRL-CAD and also pulling up and unpushed node. While following my
+implementation outline as described in my [Design
+Document](Design_Document.md), I kept modifying the plan as needed and
+tried updating my [logs](Coding_Report.md) daily especially when I
+initially had no stable Internet access.
 
 Before the Mid-term Evaluations, I studied the push and xpush routines
 seeing how the matrices were pushed down the tree in respective commands

@@ -12,8 +12,7 @@ year is 2019
 
 ## May 21
 
--   Completed the Checklist
-    <https://brlcad.org/wiki/Summer_of_Code/Checklist>
+-   Completed the [Checklist](/wiki/Summer_of_Code/Checklist.md)
 
 # Coding Period
 

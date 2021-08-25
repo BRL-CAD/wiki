@@ -21,4 +21,4 @@
 **Proposal** :
 <https://docs.google.com/document/d/1bZTr1MgF8TJok7Ai5kI3VDGW3sPttm4-WQ63RLZjJXA/edit?usp=sharing>
 
-**Devlog**    :  https://brlcad.org/wiki/user/Theamanjs/GSoC21DevLog
+**Devlog**    : [GSoC21DevLog](GSoC21DevLog.md)

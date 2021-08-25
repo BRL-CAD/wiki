@@ -32,4 +32,4 @@ maintainability. MIT/BSD license is ideal.
 
 # Past Efforts
 
--   [GSoC12](http://brlcad.org/wiki/Google_Summer_of_Code/2012)
+-   [GSoC12](Google_Summer_of_Code/2012.md)

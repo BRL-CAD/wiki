@@ -133,7 +133,5 @@ where and why it is failing.
 
 ## References
 
--   **Project Plan**:
-    <https://brlcad.org/wiki/user/Rishabhsuthar32/GSoC20/Project>
--   **Development Logs**:
-    <https://brlcad.org/wiki/user/Rishabhsuthar32/GSoC20/Log>
+-   **Project Plan**: [Project](Project.md)
+-   **Development Logs**: [Log](Log.md)

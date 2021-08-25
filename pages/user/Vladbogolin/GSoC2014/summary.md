@@ -7,8 +7,7 @@ The project can be split into two main parts:
 
 I started by creating a new cross-platform Qt framebuffer which was
 implemented almost completely until midterm evaluation. More information
-about my work in that period can be found
-[here](http://brlcad.org/wiki/user/Vladbogolin/GSoC2014/Midterm).
+about my work in that period can be found [here](Midterm.md).
 
 In the second part I worked at embedding a framebuffer window in the
 existing Qt display manager. Even though I encountered quite a lot of
@@ -44,5 +43,4 @@ and archer
 ![](img/Archer_fb.png)
 ![](img/Archer_fb2.png)
 
-More infos about the development process can be found on the [log
-page](http://brlcad.org/wiki/user/Vladbogolin/GSoC2014/Logs)
+More infos about the development process can be found on the [log page](Logs.md)

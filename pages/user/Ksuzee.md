@@ -23,10 +23,9 @@ Also I have some experience in C/C++:
 # Google Summer of Code (2012)
 
 This summer I am taking part in project ["Code
-Reduction"](http://brlcad.org/wiki/Code_Reduction) and hope to finish it
+Reduction"](/wiki/Code_Reduction.md) and hope to finish it
 successfully
 
-[This is my proposal to
-GSoC](http://brlcad.org/wiki/user/Ksuzee/Proposal)
+[This is my proposal to GSoC](Proposal.md)
 
-[My development logs](http://brlcad.org/wiki/user/Ksuzee/Reports)
+[My development logs](Reports.md)

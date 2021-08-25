@@ -346,11 +346,11 @@ my dedication and strive to achieve the necessary abilities to complete
 the project tasks.
 
 So far, I hope I fulfilled the [Acceptance
-guidelines](http://brlcad.org/wiki/Summer_of_Code/Acceptance) and also
-followed the [Application
-guidelines](http://brlcad.org/wiki/Summer_of_Code/Application_Guidelines).
-Here is a [link](https://sourceforge.net/p/brlcad/patches/329/) to my
-first ever open source patch and, hopefully, not the last for BRL-CAD ,
+guidelines](/wiki/Summer_of_Code/Acceptance.md) and also followed the
+[Application
+guidelines](/wiki/Summer_of_Code/Application_Guidelines.md).  Here is
+a [link](https://sourceforge.net/p/brlcad/patches/329/) to my first
+ever open source patch and, hopefully, not the last for BRL-CAD ,
 regarding the importer logic and also following the HACKING guide.
 
 As a last note, to be honest, I don’t have any really amazing reason to

@@ -565,8 +565,7 @@ during the GSOC period.
 
 **26 June (Thu)**
 
--   Wrote a blog on my mid-term progress:
-    <http://brlcad.org/wiki/user/Pulkit_Mittal/GSOC2014/Midterm>
+-   Wrote a blog on my mid-term progress: [midterm](Midterm.md)
 -   Devoted the rest of the day on M.Tech. Project.
 
 **27 June (Fri)**

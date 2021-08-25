@@ -3,8 +3,7 @@
 ## Community Bonding Period
 
 I have began this period by going through and adhering to the BRL-CAD
-[Summer of
-Code/Checklist](http://brlcad.org/wiki/Summer_of_Code/Checklist)
+[Summer of Code/Checklist](/wiki/Summer_of_Code/Checklist.md)
 
 \- Working on replacing the FreeWRL dependency on automake to cmake and
 generate a shared library from src/lib of the FreeWRL source code.

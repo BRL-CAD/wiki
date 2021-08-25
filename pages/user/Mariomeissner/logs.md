@@ -37,9 +37,7 @@ Finished read_density_points vector update and will now give support
 to transitions (vectors) with arbitrary 'rate' inside segment_density
 calculations.
 
-Moved old logs to a separate page
-(http://brlcad.org/wiki/user/Mariomeissner/logs/old) to keep this one
-clean.
+Moved old logs to a [separate page](old.md) to keep this one clean.
 
 **30-8**
 

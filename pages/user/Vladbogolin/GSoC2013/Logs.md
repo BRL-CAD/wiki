@@ -7,7 +7,7 @@
 | **Project Name**     | New Cross-Platform 3D Display Manager                             |
 | **Student Name**     | Bogolin Simion Vlad                                               |
 | **IRC nick**         | vladbogo                                                          |
-| **Link to proposal** | <http://brlcad.org/wiki/user/Vladbogolin/Proposal/DisplayManager> |
+| **Link to proposal** | [proposal](../../Proposal/DisplayManager.md)     |
 
 # Milestones
 
@@ -621,5 +621,4 @@
 
 # Project summary
 
-[The project summary can be found
-here](http://brlcad.org/wiki/user/Vladbogolin/GSoC2013/qt-display-manager)
+[The project summary can be found here](qt-display-manager.md)

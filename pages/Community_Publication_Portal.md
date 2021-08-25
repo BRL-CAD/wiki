@@ -270,11 +270,10 @@ development and maintenance. Are You Ready ?
 
 More information on what is Google Code-In, how you can participate,
 what are the exciting prizes for you, etc. is available
-[here](http://brlcad.org/wiki/Google_Code_In).
+[here](Google_Code_In.md).
 
-For further queries mail us on our [mailing
-list](http://brlcad.org/wiki/Mailing_Lists) or contact us via
-[IRC](http://brlcad.org/wiki/IRC)
+For further queries mail us on our [mailing list](Mailing_Lists.md) or
+contact us via [IRC](IRC.md)
 
 ------------------------------------------------------------------------
 

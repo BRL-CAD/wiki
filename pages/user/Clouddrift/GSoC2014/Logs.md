@@ -306,7 +306,7 @@ Two kinds of situations are most common:
 
 All errors are fixed, and MGED in my branch can run well on Linux now.
 
-### [Midterm](http://brlcad.org/wiki/user/Clouddrift/GSoC2014/Midterm)
+### [Midterm](Midterm.md)
 
 ### Week 7
 

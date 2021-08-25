@@ -15,4 +15,4 @@
 **Project Title**: Automate Reinforcement Process of Slab and Footing in
 FreeCAD
 
-<https://brlcad.org/wiki/Https://brlcad.org/wiki/user/Shiv_Charan/gsoc_proposal>
+[gsoc_proposal](gsoc_proposal.md)

@@ -37,25 +37,21 @@ IRC Username: phoenixyjll
 It's my first year to participate in GSoC.
 
 This summer I am involved in the project of ["Implicit to NURBS
-conversion"](http://brlcad.org/wiki/Implicit_to_NURBS_conversion), which
+conversion"](/wiki/Implicit_to_NURBS_conversion.md), which
 is to convert implicit CSG primitives to BREPs.
 
-[Click here to see my detailed project
-proposal](http://brlcad.org/wiki/user/Phoenix/GSoc2012/Proposal)
+[Click here to see my detailed project proposal](GSoc2012/Proposal.md)
 
-[Click here to see my development log and
-reports](http://brlcad.org/wiki/user/Phoenix/GSoc2012/Reports)
+[Click here to see my development log and reports](GSoc2012/Reports.md)
 
 # GSoC 2013 Project
 
 This year I'm so glad to once again be accepted to work for BRL-CAD.
 
 I'd like to continue work on the [NURBS
-Intersection](http://brlcad.org/wiki/NURBS_Intersections) project, which
-is partially finished last summer.
+Intersection](/wiki/NURBS_Intersections.md) project, which is
+partially finished last summer.
 
-[Click here to see my detailed project
-proposal](http://brlcad.org/wiki/user/Phoenix/GSoc2013/Proposal)
+[Click here to see my detailed project proposal](GSoc2013/Proposal.md)
 
-[Click here to see my detailed project log and
-report](http://brlcad.org/wiki/user/Phoenix/GSoc2013/Reports)
+[Click here to see my detailed project log and report](GSoc2013/Reports.md)

@@ -19,6 +19,6 @@ Tessellation](http://www.google-melange.com/gsoc/proposal/review/google/gsoc2012
 
 ## Link to progress log
 
-[my progress log](http://brlcad.org/wiki/user/Plussai/GSoC_2012_log)
+[my progress log](GSoC_2012_log.md)
 
 ## Some matericals

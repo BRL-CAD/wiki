@@ -63,11 +63,9 @@ used in archer too. At this moment there isn't a option like in mged
 in archer is modify src/tclscripts/lib/Get.tcl line 957 (set dmType qt)
 and deactivate the use of Display Lists:
 
-<figure>
 ![](img/archer.png)
-</figure>
 
-page](http://brlcad.org/wiki/user/Vladbogolin/GSoC2013/Logs).
+[log page](Logs.md).
 
 
 One of the most important aspects that need to be done after GSoC is the

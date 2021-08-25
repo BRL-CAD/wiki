@@ -172,17 +172,15 @@ which takes this db_i structure as input to do so.
 As we have located the g file bytes, we simply write out these bytes
 onto a temporary file and pass this file onto db_open(). db_open then
 populates the database structure db_i. An
-[**example**](http://brlcad.org/wiki/Example_db_walk_tree) is already
-available that shows the usage of db_open. We are utilizing the
-skeleton of this example to populate the struct db_i. A cleaner
-approach would be to directly populate the struct db_i and I am working
-on that.
+[**example**](Example_db_walk_tree.md) is already available that shows
+the usage of db_open. We are utilizing the skeleton of this example to
+populate the struct db_i. A cleaner approach would be to directly
+populate the struct db_i and I am working on that.
 
 The next step is to identify the top level objects of a g file. These
-can be listed by issuing a
-["tops"](http://brlcad.org/wiki/MGED_CMD_tops) command on mged after
-opening a g file. In code this can be achieved by following db_ls
-and/or DB_LS_TOPS in src/libged/\*.c.
+can be listed by issuing a ["tops"](MGED_CMD_tops.md) command on mged
+after opening a g file. In code this can be achieved by following
+db_ls and/or DB_LS_TOPS in src/libged/\*.c.
 
 After these top level objects have been identified we need to call
 [db_walk_tree](http://brlcad.sourceforge.net/doxygen/d3/d9b/group__dbio.html#ge69d8a8eb90d514e554e1b84bbb7018f)

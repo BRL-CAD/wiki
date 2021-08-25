@@ -50,9 +50,9 @@ development of the library**.
 
 To implement the image processing functionalities common groups have
 been identified details of which are given at
-<http://brlcad.org/wiki/user/Level_zero/GSOC13/ImplemnetationDetails-1>
-.Further these groups have varied implementation load, Thus to balance
-the load for a particular following weekly plan has been chalked in.
+[ImplemnetationDetails-1](ImplemnetationDetails-1.md) .Further these
+groups have varied implementation load, Thus to balance the load for a
+particular following weekly plan has been chalked in.
 
 #### Sub Division
 

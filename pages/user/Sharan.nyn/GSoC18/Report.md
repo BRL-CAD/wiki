@@ -4,7 +4,7 @@
 
 ### libanalyze function -- analyze_overlaps and libged command -- check_overlaps
 
-` NOTE: This was later replaced with better code, check it out `[`here`](https://brlcad.org/wiki/user/Sharan.nyn/GSoC18/Report#new_libanalyze_API_and_check_command_that_uses_this_API)
+` NOTE: This was later replaced with better code, check it out `[`here`](Report#new_libanalyze_API_and_check_command_that_uses_this_API)
 
 -   The main goal behind adding a check_overlaps command was that
     libged's rtcheck command acted as a wrapper for the rtcheck program,
@@ -34,7 +34,7 @@
 
 ### rtcheck based on libanalyze's analyze_overlaps function
 
-` NOTE: This was later replaced with better code, check it out `[`here`](https://brlcad.org/wiki/user/Sharan.nyn/GSoC18/Report#new_libanalyze_API_and_check_command_that_uses_this_API)
+` NOTE: This was later replaced with better code, check it out `[`here`](Report#new_libanalyze_API_and_check_command_that_uses_this_API)
 
 -   Since the logic for shooting the rays was in libanalyze function
     analyze_overlaps.

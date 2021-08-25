@@ -55,4 +55,4 @@ graphical output will be displayed by a QPainter instance.
 
 ### Actual
 
-Reports: <http://brlcad.org/wiki/user/Mesut/Reports>
+[Reports](Reports.md)

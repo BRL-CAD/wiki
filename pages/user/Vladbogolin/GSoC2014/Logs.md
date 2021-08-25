@@ -7,7 +7,7 @@
 | **Project Name**     | Embedding a framebuffer window                                          |
 | **Student Name**     | Bogolin Simion Vlad                                                     |
 | **IRC nick**         | vladbogo                                                                |
-| **Link to proposal** | <http://brlcad.org/wiki/user/Vladbogolin/Proposal/EmbeddingFrameBuffer> |
+| **Link to proposal** | [Proposal](../Proposal/EmbeddingFrameBuffer.md)                         |
 
 # Milestones
 
@@ -17,10 +17,8 @@
 
 # Progress reports
 
--   Midterm evaluation report can be found
-    [here](http://brlcad.org/wiki/user/Vladbogolin/GSoC2014/Midterm)
--   Project summary can be found
-    [here](http://brlcad.org/wiki/user/Vladbogolin/GSoC2014/summary)
+-   Midterm evaluation report can be found [here](Midterm.md)
+-   Project summary can be found [here](summary.md)
 
 # Logs
 
@@ -168,8 +166,7 @@
 -   24 June:
     -   Break day.
 -   25 June:
-    -   Created the midterm report that can be found
-        [here](http://brlcad.org/wiki/user/Vladbogolin/GSoC2014/Midterm)
+    -   Created the midterm report that can be found [here](Midterm.md)
 -   26 June:
     -   Processed events so that the output is displayed line by line
     -   Fixed the upside down drawing problem:
@@ -351,5 +348,4 @@
     -   Just some small fixes.
 -   15 August:
     -   Added a simple keyboard event
-    -   Written a project summary which can be found
-        [here](http://brlcad.org/wiki/user/Vladbogolin/GSoC2014/summary)
+    -   Written a project summary which can be found [here](summary.md)
