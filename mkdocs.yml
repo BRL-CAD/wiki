@@ -1,8 +1,8 @@
 site_name: BRL-CAD Wiki
 site_url: https://brl-cad.github.io/wiki/
 repo_url: https://github.com/BRL-CAD/wiki/
-#edit_uri: blob/main/docs/
-#remote_branch: main
+edit_uri: blob/main/docs/
+#remote_branch: gh-pages
 
 docs_dir: pages
 site_dir: html
@@ -19,4 +19,4 @@ site_dir: html
 
 nav:
     - 'index.md'
-    - 'about.md'
+    - 'User Pages': 'user-pages.md'
