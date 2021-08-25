@@ -1,4 +1,22 @@
-site_name: My Docs
+site_name: BRL-CAD Wiki
+site_url: https://brl-cad.github.io/wiki/
+repo_url: https://github.com/BRL-CAD/wiki/
+#edit_uri: blob/main/docs/
+#remote_branch: main
+
+docs_dir: pages
+site_dir: html
+
+#theme:
+#  name: mkdocs
+#  locale: en
+#  static_templates:
+#    - sitemap.html
+
+#plugins:
+#  - search:
+#      prebuild_index: true
+
 nav:
     - 'index.md'
     - 'about.md'
