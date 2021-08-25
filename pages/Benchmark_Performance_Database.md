@@ -38,5 +38,5 @@ Muie Cornoiu!!!
 
 # Past Efforts
 
--   [GSoC14](http://brlcad.org/wiki/User:Ankeshanand/GSoC14/logs)
--   [GSoC12](http://brlcad.org/wiki/User:Stattrav/GSoC2012_log)
+-   [GSoC14](user/Ankeshanand/GSoC14/logs)
+-   [GSoC12](user/Stattrav/GSoC2012_log)

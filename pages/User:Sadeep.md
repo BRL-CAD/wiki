@@ -1,1 +1,0 @@
-Dev Log: <https://brlcad.org/wiki/User:Sadeep/DevLog-2020>

@@ -8,7 +8,7 @@ This task would follow up on work from 2012 using automatic graph layout
 libraries to produce a graph based visualization of the structure of .g
 databases:
 
-<http://brlcad.org/wiki/User:Cprecup/GSoC2012_progress>
+[user/Cprecup/GSoC2012_progress](user/Cprecup/GSoC2012_progress.md)
 
 The task is not simply to generate images of graphical geometry
 hierarchies - that is relatively straightforward and can be done with
@@ -47,4 +47,4 @@ library):
 
 # Past Efforts
 
--   [GSoC12](http://brlcad.org/wiki/User:Cprecup/GSoC2012_progress)
+-   [GSoC12](user/Cprecup/GSoC2012_progress)

@@ -41,4 +41,4 @@ with.
 
 # Past Efforts
 
--   [GSoC11,GSoC12](http://brlcad.org/wiki/User:Bhinesley)
+-   [GSoC11,GSoC12](user/Bhinesley.md)

@@ -50,4 +50,4 @@ Documentation of relevance:
 
 # Past Efforts
 
-[GSoC11](http://brlcad.org/wiki/User:Kunigami/GSoc2011/Proposal)
+[GSoC11](user/Kunigami/GSoc2011/Proposal.md)

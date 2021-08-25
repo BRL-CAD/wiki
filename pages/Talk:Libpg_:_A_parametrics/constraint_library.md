@@ -1,4 +1,4 @@
-[Sean](User:Sean.md) 01:19, 16 December 2008 (EST) says: Hrm.
+[Sean](user/Sean.md) 01:19, 16 December 2008 (EST) says: Hrm.
 Don't know if you'll see this, Dawn.. but remind me -- what software did
 you render the architecture diagram with?
 

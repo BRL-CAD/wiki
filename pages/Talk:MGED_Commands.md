@@ -14,4 +14,4 @@ Nov 20, 2009
 Good idea, except that if there's a connection between MGED commands and
 the stuff in the pull-down menus, I've not found it yet. They seem to be
 separate things. If I figure out how that works, I'll add it to the
-commands. --[Ssd](User:Ssd.md) 08:08, 20 November 2009 (EST)
+commands. --[Ssd](user/Ssd.md) 08:08, 20 November 2009 (EST)

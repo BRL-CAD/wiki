@@ -20,7 +20,7 @@ existing functionality robust and fast.
 
 <!-- -->
 
--   <http://brlcad.org/wiki/User:Phoenix/GSoc2013/Reports>
+-   [user/Phoenix/GSoc2013/Reports](user/Phoenix/GSoc2013/Reports.md)
 
 # Requirements
 

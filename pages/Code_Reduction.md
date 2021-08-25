@@ -26,7 +26,7 @@ here.
 
 # Past Efforts
 
--   [GSOC12](User:Ksuzee/Reports.md)
+-   [GSOC12](user/Ksuzee/Reports.md)
 
 # See also
 

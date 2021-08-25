@@ -72,4 +72,4 @@ drawing, etc.
 
 # Past Efforts
 
-[\| GSoC12](http://brlcad.org/wiki/User:Mesut/Reports)
+[GSoC12](user/Mesut/Reports.md)
