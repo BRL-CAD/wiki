@@ -1,6 +1,6 @@
 [category:tutorials](category:tutorials.md)
 
-![](/wiki/img/extrude_example.png)
+![](/wiki/doc/img/extrude_example.png)
 
 You can create an "extrude" object through the normal object creation
 facilities. You can either run the "in" command or use the Create menu.

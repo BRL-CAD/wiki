@@ -365,7 +365,7 @@ Will produce a square bar with a tapered 1/8 turn twist in the middle.
 Of course, more waterlines in the twist and more points per waterline
 would make the twist smoother.
 
-![](/wiki/img/Example_ars.png "fig:Example_ars.png")
+![](/wiki/doc/img/Example_ars.png "fig:Example_ars.png")
 
 The parameters to the above ars command can be dissected as:
 

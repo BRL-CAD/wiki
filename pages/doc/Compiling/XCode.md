@@ -17,7 +17,7 @@ X](http://www.cmake.org/cmake/resources/software.html). Once downloaded,
 follow the instructions to install CMake and be sure to select the box
 for installing the CMake Command Line tools:
 
-![](../img/CMakeCommandLineTools.png)
+![](/wiki/doc/img/CMakeCommandLineTools.png)
 
 The latest version of the BRL-CAD source is also required, which can be
 obtained
@@ -30,7 +30,7 @@ can install the command line tools (or double-check to make sure you
 have them) by navigating to Xcode Preferences &gt; Downloads and in the
 components tab, you should see Command Line Tools:
 
-![](../img/XcodeCommandLineTools.png)
+![](/wiki/doc/img/XcodeCommandLineTools.png)
 
 ## Compiling
 
@@ -38,9 +38,9 @@ Navigate to the BRL-CAD source directory you downloaded and create a new
 folder titled "brlcad-build." This is where we will store the configured
 build:
 
-![](../img/BrlcadFolder.png)
+![](/wiki/doc/img/BrlcadFolder.png)
 
-![](../img/XcodeBRLCADProject.png) Open Terminal
+![](/wiki/doc/img/XcodeBRLCADProject.png) Open Terminal
 (in /User/Applications/Utilities) and cd to the location of the BRL-CAD
 source folder (Note: you can type cd, press the spacebar, and then drag
 the brlcad folder to copy its search path):

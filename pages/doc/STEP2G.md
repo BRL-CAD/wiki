@@ -8,7 +8,7 @@ Consider this .stp file. You can copy the data from this file to your
 working directory and name it bull.stp. We have the output how it should
 look as below.
 
-![](/wiki/img/original.png)
+![](/wiki/doc/img/original.png)
 
 After you have bull.stp and BRL-CAD, just type the following command on
 terminal. " step-g -o bull.g bull.stp "
@@ -28,7 +28,7 @@ You will see the outline for model bull.g created which would look as
 follows :-
 
 <figure>
-![](/wiki/img/s1.png)
+![](/wiki/doc/img/s1.png)
 
 
 For mged, go to File -&gt; Raytrace. This will open a dialog box named
@@ -39,7 +39,7 @@ looking button which will read 'Raytrace the current view'. Click on
 that.
 
 <figure>
-![](/wiki/img/s2.png)
+![](/wiki/doc/img/s2.png)
 </figure>
 
 menu called Framebuffer, select overlay from it.
@@ -50,9 +50,9 @@ that.
 Final View is -
 
 <figure>
-![](/wiki/img/s3.png)
+![](/wiki/doc/img/s3.png)
 </figure>
 
 which is similar to that we saw before-
 
-![](/wiki/img/original.png)
+![](/wiki/doc/img/original.png)

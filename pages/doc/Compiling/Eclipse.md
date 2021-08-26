@@ -16,48 +16,48 @@ executable as you build them. Our second work is that to select the
 generator(the window *cmake-gui* appears when you click **Generate**),
 in our case – Eclipse.
 
-![](../img/Compiling-Eclipse-1.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-1.PNG)
 
 For Eclipse, it is important that the build directory not to be a
 subdirectory of the source directory due to a CMake limitation.
 
-![](../img/Compiling-Eclipse-2.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-2.PNG)
 
 In the next step you have to run Eclipse and import your new project.
 
 `   `*`File/Import/General/`` ``Existing`` ``Projects`` ``into`` ``Workspace`*`, Then just click `**`Next`**`. `
 
-![](../img/Compiling-Eclipse-3.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-3.PNG)
 
 Here you have to *Select root directory*, then check your projects, keep
 "Copy projects into workspace" unchecked and **Finish** import.
 
-![](../img/Compiling-Eclipse-4.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-4.PNG)
 
 Next, we could build everything, but here we build pieces of the project
 with the *benchmark* and *mged* targets. First, the BRL-CAD benchmark:
 *Project/Make Target/Build...*, then select target:*benchmark*(location
 *bench*) and click **Build**
 
-![](../img/Compiling-Eclipse-5.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-5.PNG)
 
 Already built project:
 
-![](../img/Compiling-Eclipse-6.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-6.PNG)
 
 Now in analog of benchmark we will make it with *MGED* and will run it.
 Let’s choose the target...
 
-![](../img/Compiling-Eclipse-7.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-7.PNG)
 
 And the built project:
 
-![](../img/Compiling-Eclipse-8.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-8.PNG)
 
 So let’s run it and choose *mged* from *binaries* and then click **OK**.
 
-![](../img/Compiling-Eclipse-9.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-9.PNG)
 
 And finally we have started *MGED*:
 
-![](../img/Compiling-Eclipse-10.PNG)
+![](/wiki/doc/img/Compiling-Eclipse-10.PNG)

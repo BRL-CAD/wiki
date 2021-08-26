@@ -10,7 +10,7 @@ some TLC. I'm an old hand at mediawiki, so if nobody objects, I'm going
 to start making massive changes here. For starters, I can:
 
 -   categorize every page, looks like there's quite a few untagged pages
--   relabel the stuff in [:Category:MGED](:Category:MGED.md) to
+-   relabel the stuff in [:Category:MGED] (:Category:MGED.md) to
     remove the prefix so it looks nicer (this is a huge job unless it
     gets automated)
 -   Eventually, I'd like to make a page for (almost) every executable in

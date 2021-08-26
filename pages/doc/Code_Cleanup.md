@@ -88,7 +88,7 @@ there. Submit patches or commit changes accordingly.
 
 # Coverity Scan
 
-![](/wiki/img/CoverityExample3.png)
+![](/wiki/doc/img/CoverityExample3.png)
 
 Since 2006, BRL-CAD has been a participant in the [Coverity Scan
 Initiative](http://scan.coverity.com/), an effort funded by the U.S.
@@ -101,9 +101,9 @@ The BRL-CAD scan was previously "stuck" but we're now back online and
 operational! For an interesting preview of some of the kinds of things
 reported, here are some screenshots:
 
-![](/wiki/img/CoverityExample1.png)
+![](/wiki/doc/img/CoverityExample1.png)
 
-![](/wiki/img/CoverityExample2.png)
+![](/wiki/doc/img/CoverityExample2.png)
 
 Those and many other issues are all managed through a private website
 that is only accessible if you have an account. If you're going to help,
@@ -127,7 +127,7 @@ Definitions are provided for "Refactoring", "Zero One or Infinity"
 (ZOI), "Don't Repeat Yourself" (DRY), "Rule of Three", and "Cargo Cult
 Programming".
 
-![](/wiki/img/CodeCleanup.pdf)
+![](/wiki/doc/img/CodeCleanup.pdf)
 
 # CPPCHECK-CLEANUP
 

@@ -10,7 +10,7 @@ and named it <i>cup.r</i> then go to the Combination Editor and input
 "53 20 0" (dark brown color) on the Color GUI.
 
 <figure>
-![](/wiki/img/Outside_cup.PNG)
+![](/wiki/doc/img/Outside_cup.PNG)
 </figure>
 
 <b>2. Handle</b>
@@ -26,7 +26,7 @@ to lessen the creases. Do the same way on how put color on <i>cup.r</i>
 only name the new region <i>handle.r.</i>
 
 <figure>
-![](/wiki/img/Handle.PNG)
+![](/wiki/doc/img/Handle.PNG)
 </figure>
 
 <b>3. Inside of the cup</b>
@@ -41,7 +41,7 @@ of the cup might now looked too small for a cup and also that
 `r inside.r u inside.s - cup.r`
 
 <figure>
-![](/wiki/img/Inside_cup.PNG)
+![](/wiki/doc/img/Inside_cup.PNG)
 </figure>
 
 <b>4. Rim</b>
@@ -52,7 +52,7 @@ the cup's circumference, and "Radius 2" to fit it to the cup's width.
 After that make it into a region named <i>rim.r</i>.
 
 <figure>
-![](/wiki/img/Rim.PNG)
+![](/wiki/doc/img/Rim.PNG)
 </figure>
 
 <b>5. Base</b>
@@ -62,7 +62,7 @@ a region named <i>base.r</i> then type "53 20 0" on the Color GUI in
 Combination Editor.
 
 <figure>
-![](/wiki/img/Base.PNG)
+![](/wiki/doc/img/Base.PNG)
 </figure>
 
 <b>6. Coffee (optional)</b>
@@ -77,7 +77,7 @@ problem on setting the transparency to 0.1 rather than 0 is that the
 Command Window would "complain" on overlapping.
 
 <figure>
-![](/wiki/img/Coffee.PNG)
+![](/wiki/doc/img/Coffee.PNG)
 </figure>
 
 <b>7. Combining all regions</b>
@@ -102,13 +102,11 @@ for best results, set the Background Color to white, the view in
 "az35,el25", and also the Framebuffer option to "Overlay".
 
 <figure>
-![](/wiki/img/Raytrace1.PNG)
+![](/wiki/doc/img/Raytrace1.PNG)
 </figure>
 
 with coffee
 
-<figure>
-![](/wiki/img/Raytrace2.PNG)
-</figure>
+![](/wiki/doc/img/Raytrace2.PNG)
 
 without coffee
