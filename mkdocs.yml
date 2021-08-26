@@ -19,4 +19,5 @@ site_dir: html
 
 nav:
   - 'index.md'
-  - 'User Pages': 'UserPages.md'
+  - 'DocPages': 'DocPages.md'
+  - 'UserPages': 'UserPages.md'
