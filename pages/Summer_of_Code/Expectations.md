@@ -234,7 +234,7 @@ Student can call upon any mentor or other developer, they don't have to
 limit their interactions to just their mentor. They shouldn't limit
 their interactions to just one mentor. Students having difficulties
 communicating with any mentor should contact the
-[administrator](/wiki/user/Sean.md).
+[administrator](/wiki/user/Sean).
 
 If you're stuck, ask for help on IRC and/or on the mailing list. If you
 are still stuck, read the source code. If you're still stuck, ask for

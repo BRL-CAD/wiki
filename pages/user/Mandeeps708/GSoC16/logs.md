@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 
-Name: [Mandeep Singh](/wiki/user/Mandeeps708.md)
+Name: [Mandeep Singh](/wiki/user/Mandeeps708)
 
 IRC: Mandeep_Singh
 

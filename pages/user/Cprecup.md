@@ -1,5 +1,5 @@
 Project proposal for [Visualizing Constructive Solid
-Geometry](/wiki/Visualizing_Constructive_Solid_Geometry_%28CSG%29.md),
+Geometry](/wiki/Visualizing_Constructive_Solid_Geometry_%28CSG%29),
 GSoC 2012
 
 # Personal information

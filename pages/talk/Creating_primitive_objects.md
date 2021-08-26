@@ -1,7 +1,7 @@
 # Why I created this article
 
 I initially set out to revise the introductory section of the [BRL-CAD
-Primitives](/wiki/doc/BRL-CAD_Primitives.md) article, which used to
+Primitives](/wiki/doc/BRL-CAD_Primitives) article, which used to
 briefly discuss the various ways MGED provides for creating such
 objects. I was thinking I would flesh out that discussion and also talk
 about how the properties of such objects can be viewed and edited. But I
@@ -35,11 +35,11 @@ here:
 Instead of putting examples in this article, I'm planning to add them to
 the descriptions of the various types of primitives and add appropriate
 links here. That will probably make [that
-article](/wiki/doc/BRL-CAD_Primitives.md) too long, so I suspect I'll
+article](/wiki/doc/BRL-CAD_Primitives) too long, so I suspect I'll
 split it up at some point (assuming no one objects too strenuously).
 
-[JoelDBenson](/wiki/user/JoelDBenson.md)
-([talk](/wiki/user/talk/JoelDBenson.md)) 21:09, 27 May 2013 (UTC)
+[JoelDBenson](/wiki/user/JoelDBenson)
+([talk](/wiki/user/talk/JoelDBenson)) 21:09, 27 May 2013 (UTC)
 
 I certainly don't object. Make it better. :)
 
@@ -57,5 +57,5 @@ Much of that will eventually find its way onto our wiki (or already
 has), into our XML documentation sources, and integrated with our other
 content.
 
-[Sean](/wiki/user/Sean.md) ([talk](/wiki/user/talk/Sean.md)) 11:37,
+[Sean](/wiki/user/Sean) ([talk](/wiki/user/talk/Sean)) 11:37,
 31 May 2013 (UTC)

@@ -63,7 +63,7 @@ TBD!
 
 ## Geometry Viewer Application for BRL-CAD
 
--   **Student:** [Syed Asadullah Hussain **(Asad)**](/wiki/user/Asadmorgoth.md)
+-   **Student:** [Syed Asadullah Hussain **(Asad)**](/wiki/user/Asadmorgoth)
 -   **Mentor:** Christopher Sean Morrison
 -   [**Development
     Log**](https://github.com/asadpiz/brlcad-viewer/commits/master)
@@ -74,17 +74,17 @@ TBD!
 
 ### Mihai Neacșu
 
--   [Proposal](/wiki/user/Mihaineacsu/proposal2014.md)
--   [Development Logs](/wiki/user/Mihaineacsu/SoCIS2014/Logs.md)
+-   [Proposal](/wiki/user/Mihaineacsu/proposal2014)
+-   [Development Logs](/wiki/user/Mihaineacsu/SoCIS2014/Logs)
 
 ## 2011
 
 ### Abhijit Nandy
 
 For the 2011 ESA Summer of Code, we selected [Abhijit
-Nandy](/wiki/user/Abhijit.md) to work in implementing a non-vacuum
+Nandy](/wiki/user/Abhijit) to work in implementing a non-vacuum
 gravity simulator for BRL-CAD. See his user page at
-[user/Abhijit](/wiki/user/Abhijit.md) for details on the progress he
+[user/Abhijit](/wiki/user/Abhijit) for details on the progress he
 made on that project.
 
-[Category: Summer of Code](Category:_Summer_of_Code.md)
+[Category: Summer of Code](Category:_Summer_of_Code)

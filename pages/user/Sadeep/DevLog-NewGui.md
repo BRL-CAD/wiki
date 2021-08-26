@@ -12,7 +12,7 @@ year is 2019
 
 ## May 21
 
--   Completed the [Checklist](/wiki/Summer_of_Code/Checklist.md)
+-   Completed the [Checklist](/wiki/Summer_of_Code/Checklist)
 
 # Coding Period
 

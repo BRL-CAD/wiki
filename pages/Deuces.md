@@ -10,7 +10,7 @@ know](https://brlcad.zulipchat.com).
 
 # Get Set Up
 
-We suggest you [compile BRL-CAD](/wiki/doc/Compiling.md) yourself or, if
+We suggest you [compile BRL-CAD](/wiki/doc/Compiling) yourself or, if
 you have trouble with that, there's a virtual image with everything
 preconfigured, ready to go:
 
@@ -20,7 +20,7 @@ preconfigured, ready to go:
 3.  Import the disk image, start the VM, and log in (password is
     "Brlcad!" without quotes).
 4.  Run "svn up brlcad-svn-trunk" and
-    [compile](/wiki/doc/Compiling#Configure_your_Build.md).
+    [compile](/wiki/doc/Compiling#Configure_your_Build).
 
 # Pick a Task
 
@@ -902,7 +902,7 @@ interaction*
 # When You're Done
 
 For non-code, just send us your file(s). For code changes, you will be
-expected to [provide a patch file](/wiki/doc/Patches.md). Make sure you
+expected to [provide a patch file](/wiki/doc/Patches). Make sure you
 *read* your patch file before submitting it. Make sure your patch file
 will apply cleanly to an unmodified checkout of BRL-CAD:
 

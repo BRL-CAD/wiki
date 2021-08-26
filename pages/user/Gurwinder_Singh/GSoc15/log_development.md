@@ -322,7 +322,7 @@ linuxcnc.
 25 July - 27 July
 
 -   Communitcation with my mentor.
--   Write down primitives on BRL-CAD wiki page [Povray](/wiki/Povray.md).
+-   Write down primitives on BRL-CAD wiki page [Povray](/wiki/Povray).
 
 28 July
 

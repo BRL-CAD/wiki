@@ -22,7 +22,7 @@ Has done
 -   developed metaball primitive
 -   developed marching cubes functionality for CSG to generate triangle
     meshes
--   mentored André for [MLT](/wiki/Metropolis_Light_Transport.md) impl. His web
+-   mentored André for [MLT](/wiki/Metropolis_Light_Transport) impl. His web
     log is <http://andrecastelo.wordpress.com/>
 -   wrote "save as any image" framework (src/libbu/image.c, later
     src/libicv) and began tool conversion to use it

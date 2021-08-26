@@ -138,7 +138,7 @@ fantastic dreams.
 
 Hyperair has done a good job streamlining the existing MCAD library. The
 [contents of the updated MCAD
-library](/wiki/Contents_of_the_updated_MCAD_library.md) feature 25
+library](/wiki/Contents_of_the_updated_MCAD_library) feature 25
 directories. There are many parts in these libraries, and many more on
 [Thingiverse](http://www.thingiverse.com). It is difficult for the
 average user to find and deploy parts from this library. I will make an

@@ -26,8 +26,8 @@ here.
 
 # Past Efforts
 
--   [GSOC12](/wiki/user/Ksuzee/Reports.md)
+-   [GSOC12](/wiki/user/Ksuzee/Reports)
 
 # See also
 
--   [Code Cleanup](/wiki/doc/Code_Cleanup.md)
+-   [Code Cleanup](/wiki/doc/Code_Cleanup)

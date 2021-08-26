@@ -1,6 +1,6 @@
 ## Proposal draft for adding exec option to search command (WIP)
 
-#### [Personal information](/wiki/user/Bhinesley.md)
+#### [Personal information](/wiki/user/Bhinesley)
 
 ##### [Contact info](/wiki/user/Bhinesley.md#Contact)
 

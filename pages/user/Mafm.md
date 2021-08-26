@@ -8,13 +8,13 @@
 
 # GSoC (Google Summer of Code) 2008
 
--   Project: [OpenGL GUI Framework](/wiki/OpenGL_GUI_Framework.md)
+-   Project: [OpenGL GUI Framework](/wiki/OpenGL_GUI_Framework)
 -   Example for interaction:
     <http://brlcad.org/design/gui/ioe_proto_final.mov> , recommended by
-    [Sean](/wiki/user/Sean.md)
+    [Sean](/wiki/user/Sean)
 -   Another example in the form of a real program: wmii (Plan9 window
     manager) ( <http://www.suckless.org/wiki/wmii> ), recommended by
-    [Sean](/wiki/user/Sean.md)
+    [Sean](/wiki/user/Sean)
 
 # Milestones
 

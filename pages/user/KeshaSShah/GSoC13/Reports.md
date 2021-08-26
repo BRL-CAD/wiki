@@ -104,7 +104,7 @@ Three Cheers for this awesome summer !
 -   Made [first
     patch](https://sourceforge.net/tracker/?func=detail&atid=640804&aid=3611485&group_id=105292)
     and submitted it.
--   Looked through project ideas and found [Code Refacoring](/wiki/Code_Reduction.md) most interesting
+-   Looked through project ideas and found [Code Refacoring](/wiki/Code_Reduction) most interesting
     and suitable for me.
 
 ## April 23-30
@@ -134,14 +134,14 @@ Three Cheers for this awesome summer !
     convertors available for importing and exporting between different
     CAD softwares.
 -   Gone through project ideas again and liked two more ideas-namely
-    Improving [STEP Library](/wiki/STEP_Libraries.md) and STEP AP242
+    Improving [STEP Library](/wiki/STEP_Libraries) and STEP AP242
     Parser.
 
 ## May 3
 
 -   Proposal Submission Deadline on melange.
 -   Made my
-    [User-Wiki-pages](/wiki/user/KeshaSShah/GSoC13.md)
+    [User-Wiki-pages](/wiki/user/KeshaSShah/GSoC13)
 -   Uploaded proposal on
     [Melange](http://www.google-melange.com/gsoc/dashboard/google/gsoc2013#proposals)
     and embedded wiki links in it.
@@ -166,7 +166,7 @@ Three Cheers for this awesome summer !
 -   Untangles some calls from src/fedex_plus to src/clstepcore.
 -   Discussed on IRC about the errors I encounter.
 -   Read about how calls are made, maintainence of [call-stack
-    heap](/wiki/Call_stack.md), the process of
+    heap](/wiki/Call_stack), the process of
     linking and [Compiler
     warnings](http://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 -   Overall, have got some better understanding.
@@ -312,7 +312,7 @@ Three Cheers for this awesome summer !
 
 ## June 22
 
--   Updated [this page](/wiki/Google_Summer_of_Code/2013.md) for all
+-   Updated [this page](/wiki/Google_Summer_of_Code/2013) for all
     the participants, for the release purpose.
 -   Reviewed the comments by Sean on patch and made a new patch for
     that.

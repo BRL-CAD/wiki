@@ -227,4 +227,4 @@ free functions in src/librt/g_hyp.c, and made changes to
 src/librt/Makefile.am, include/raytrace.h, include/rtgeom.h, and
 src/librt/table.c to support the new primitive.
 
--   Design document for [Revolve](/wiki/doc/Revolve.md)
+-   Design document for [Revolve](/wiki/doc/Revolve)

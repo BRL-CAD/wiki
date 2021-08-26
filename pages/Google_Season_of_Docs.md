@@ -35,8 +35,8 @@ across hundreds of manual pages, dozens of tutorials, hundreds of wiki
 pages, dozens of technical papers, and other resources. There are
 literally thousands of features created over decades of development.
 BRL-CAD's set of current manuals, guides, tutorials, and other
-documentation [are listed](/wiki/doc/Documentation.md) on our [website
-wiki](/wiki/doc/Main_page.md).
+documentation [are listed](/wiki/doc/Documentation) on our [website
+wiki](/wiki/doc/Main_page).
 
 # How You Can Help
 

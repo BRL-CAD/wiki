@@ -95,7 +95,7 @@ this feature.
 
 `   `[`https://sourceforge.net/p/brlcad/patches/529/#31d8`](https://sourceforge.net/p/brlcad/patches/529/#31d8)
 
-Here is the link to my [Proposal](/wiki/user/Ali_Haydar.md) The tasks
+Here is the link to my [Proposal](/wiki/user/Ali_Haydar) The tasks
 mentioned in the proposal are either completed or approached partially
 and needs work and discussion with the society.
 
@@ -116,6 +116,6 @@ and needs work and discussion with the society.
 **Documentations**
 
 -   Documentations has been provided
-    [dimension_line](/wiki/Annot_dimension_line.md) ,
-    [label_box](/wiki/Annot_label_box.md)
--   [Link](/wiki/Ali_Haydar_Dev_log.md) to my daily logs.
+    [dimension_line](/wiki/Annot_dimension_line) ,
+    [label_box](/wiki/Annot_label_box)
+-   [Link](/wiki/Ali_Haydar_Dev_log) to my daily logs.

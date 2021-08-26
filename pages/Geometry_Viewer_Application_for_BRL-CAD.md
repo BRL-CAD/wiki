@@ -2,7 +2,7 @@
 
 Mentor: **Christopher Sean Morrison**
 
-Student: [Asad](/wiki/user/Asadmorgoth.md)
+Student: [Asad](/wiki/user/Asadmorgoth)
 
 This document lists down the design for the project. This includes the
 major milestones and deadlines. [Prettier
@@ -172,7 +172,7 @@ which takes this db_i structure as input to do so.
 As we have located the g file bytes, we simply write out these bytes
 onto a temporary file and pass this file onto db_open(). db_open then
 populates the database structure db_i. An
-[**example**](/wiki/doc/Example_db_walk_tree.md) is already available that shows
+[**example**](/wiki/doc/Example_db_walk_tree) is already available that shows
 the usage of db_open. We are utilizing the skeleton of this example to
 populate the struct db_i. A cleaner approach would be to directly
 populate the struct db_i and I am working on that.

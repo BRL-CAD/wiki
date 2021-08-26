@@ -1,7 +1,7 @@
 [category: Summer of Code](category:_Summer_of_Code.md) This is
 the changelog for [more.brlcad.org](http://more.brlcad.org) GSoC
 project. The project plan and specification is located
-[here](/wiki/user/EBautu.md).
+[here](/wiki/user/EBautu).
 
 # April, 20 – May, 23 - Bonding period
 

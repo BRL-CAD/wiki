@@ -8,7 +8,7 @@ This task would follow up on work from 2012 using automatic graph layout
 libraries to produce a graph based visualization of the structure of .g
 databases:
 
-[user/Cprecup/GSoC2012_progress](/wiki/user/Cprecup/GSoC2012_progress.md)
+[user/Cprecup/GSoC2012_progress](/wiki/user/Cprecup/GSoC2012_progress)
 
 The task is not simply to generate images of graphical geometry
 hierarchies - that is relatively straightforward and can be done with
