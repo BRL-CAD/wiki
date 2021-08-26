@@ -8,7 +8,7 @@ users to share their models and to easily locate useful models. An
 advantage of using Drupal both for the repository and the main site is
 that we can integrate the two sites (use the same code base, share users
 accounts, etc). The activity logs for this project are
-[here](More_Changelog.md).
+[here](EBautu/More_Changelog.md).
 
 ## Description
 

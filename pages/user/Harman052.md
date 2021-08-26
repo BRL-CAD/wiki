@@ -12,4 +12,4 @@
     Guru Nanak Dev Engineering College, Ludhiana, India.
 -   Google Code-In 2012 mentor with BRL-CAD.
 
-**Proposal:** [Web Interface of BRL-CAD](Proposal/WebInterface.md)
+**Proposal:** [Web Interface of BRL-CAD](Harman052/Proposal/WebInterface.md)

@@ -37,4 +37,4 @@ easily use BRL-CAD functionality into their own applications.
 # Development Logs
 
 
-[Logs](Logs.md)
+[Logs](Anoop/Logs.md)

@@ -301,4 +301,4 @@ in Computer programming.
 # DEVELOPMENT SCHEDULE
 
 -   My development is kind of my Google Summer of Code Log
-    Book. Anyone can view it [here](Development_logs.md).
+    Book. Anyone can view it [here](Amalia/Development_logs.md).

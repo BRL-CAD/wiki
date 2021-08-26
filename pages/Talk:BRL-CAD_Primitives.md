@@ -39,7 +39,7 @@ Of course, I also anticipate improving the rest of this article as time
 permits.
 
 [JoelDBenson](/wiki/user/JoelDBenson.md)
-([talk](User_talk:JoelDBenson.md)) 20:22, 27 May 2013 (UTC)
+([talk](/wiki/user/talk/JoelDBenson.md)) 20:22, 27 May 2013 (UTC)
 
 Joel, impressive how you were able to gather all of our myriad
 documentation and developer notes that are scattered about. Your cleanup
@@ -82,7 +82,7 @@ documentation. You wouldn't know it but we actually have several
 \*thousand\* pages (million+ words) of documentation when you add it all
 up!
 
-[Sean](/wiki/user/Sean.md) ([talk](User_talk:Sean.md)) 11:31,
+[Sean](/wiki/user/Sean.md) ([talk](/wiki/user/talk/Sean.md)) 11:31,
 31 May 2013 (UTC)
 
 Sean—
@@ -103,7 +103,7 @@ Specifically:
     nice if this site's authoring help worked.
 
 [JoelDBenson](/wiki/user/JoelDBenson.md)
-([talk](User_talk:JoelDBenson.md)) 04:40, 10 June 2013 (UTC)
+([talk](/wiki/user/talk/JoelDBenson.md)) 04:40, 10 June 2013 (UTC)
 
 ## Completion of ARBs section
 
@@ -120,7 +120,7 @@ this article as a true overview. I do plan on adding some illustrations
 as soon as I have time.
 
 [JoelDBenson](/wiki/user/JoelDBenson.md)
-([talk](User_talk:JoelDBenson.md)) 04:40, 10 June 2013 (UTC)
+([talk](/wiki/user/talk/JoelDBenson.md)) 04:40, 10 June 2013 (UTC)
 
 On further reflection, I think I've gone overboard in reducing the
 extent of this section. I need to include details on how the vertices of
@@ -128,4 +128,4 @@ arb8s, arb7s, etc. have to be defined so that they are recognized as
 such. Plus the illustrations, of course.
 
 [JoelDBenson](/wiki/user/JoelDBenson.md)
-([talk](User_talk:JoelDBenson.md)) 15:03, 10 June 2013 (UTC)
+([talk](/wiki/user/talk/JoelDBenson.md)) 15:03, 10 June 2013 (UTC)

@@ -7,4 +7,4 @@ series of *Creating and editing ... primitives* articles, of which this
 is one. It currently contains only the preliminary content that was
 formerly in the main article referenced above. Obviously, more work is
 needed here. [JoelDBenson](/wiki/user/JoelDBenson.md)
-([talk](User_talk:JoelDBenson.md)) 04:06, 10 June 2013 (UTC)
+([talk](/wiki/user/talk/JoelDBenson.md)) 04:06, 10 June 2013 (UTC)

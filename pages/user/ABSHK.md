@@ -21,4 +21,4 @@
 **Proposal** :
  https://drive.google.com/file/d/12R_5mNv8vlvkNK3n-C6rucSvpa86Sd6A/view?usp=sharing
 
-**Devlog**    :  [devlog](GSoC21DevLog.md)
+**Devlog**    :  [devlog](ABSHK/GSoC21DevLog.md)

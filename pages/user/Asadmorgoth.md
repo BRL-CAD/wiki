@@ -16,4 +16,4 @@ is to concatenate the contents of a given “.g” file with the function
 calls from librt, libdm that parse and display a “.g” file, in a
 standard brlcad setup.
 
-[Geometry_Viewer_Application_for_BRL-CAD](Geometry_Viewer_Application_for_BRL-CAD.md)
+[Geometry_Viewer_Application_for_BRL-CAD](/wiki/Geometry_Viewer_Application_for_BRL-CAD.md)

@@ -8,4 +8,4 @@ You can check this in page history at
 <http://brlcad.org/w/index.php?title=Google_Summer_of_Code/2019&action=history>
 and restore your profile if this wasn't you.
 [LordOfBikes](/wiki/user/LordOfBikes.md)
-([talk](User_talk:LordOfBikes.md)) 04:36, 20 May 2019 (EDT)
+([talk](/wiki/user/talk/LordOfBikes.md)) 04:36, 20 May 2019 (EDT)

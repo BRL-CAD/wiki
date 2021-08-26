@@ -2,7 +2,7 @@
 
 #### Handy Links
 
-[Community_Publication_Portal](Community_Publication_Portal.md)
+[Community_Publication_Portal](/wiki/Community_Publication_Portal.md)
 
 #### Introduction to new .deb and .rpm builds
 
