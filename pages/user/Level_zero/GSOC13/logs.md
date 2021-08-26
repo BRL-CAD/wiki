@@ -6,8 +6,8 @@
 |-----------------------------|-------------------------------------------------------------------|
 | **Project Name**            | Consolidating and Adding the Image Processing Functions to LIBICV |
 | **Project Sudent**          | Mohit Daga                                                        |
-| **IRC(nick)**               | zero_level                                                       |
-| **Google-Melange username** | zero_level                                                       |
+| **IRC(nick)**               | zero_level                                                        |
+| **Google-Melange username** | zero_level                                                        |
 | **Phone Number**            | +91 9783582684                                                    |
 |                             |                                                                   |
 
@@ -37,7 +37,7 @@ Will be unavailable on the internet, Visiting the meditation facility.
 '''''10th June to 12th June
 
 -   Api Design and Posting them on BRLCAD website. It can be accessed
-    from [here](Level_zero/GSOC13/api.md).
+    from [here](api.md).
 
 '''''12th June - 14th June
 

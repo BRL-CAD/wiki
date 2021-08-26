@@ -8,4 +8,4 @@
     **[Mandeeps708/GSoC16/logs](Mandeeps708/GSoC16/logs.md)**
 
 I am participating in GSoC 2016 under FreeCAD organization. Proposal
-link: [gsoc_proposal](gsoc_proposal.md)
+link: [gsoc_proposal](Mandeeps708/gsoc_proposal.md)

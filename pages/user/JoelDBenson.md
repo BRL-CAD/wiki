@@ -7,4 +7,3 @@ would have found helpful had it been here when I started :&lt;).
 FWIW, I am running MGED 7.22.0 under both Ubuntu 12.04 and Windows 7.
 
 [JoelDBenson](JoelDBenson.md)
-([talk](talk/JoelDBenson.md)) 16:42, 27 May 2013 (UTC)

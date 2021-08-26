@@ -211,9 +211,8 @@ part.
 
 <!-- -->
 
--   I intend to use my personal [wiki
-    page](Andrei.ilinca24/logs.md) as a host for my work
-    this summer.
+-   I intend to use my personal [wiki page](logs.md) as a host for my
+    work this summer.
 
 <!-- -->
 

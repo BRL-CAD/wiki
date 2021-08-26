@@ -7,5 +7,4 @@ increase the user experience. Last but not the least, this project aims
 to improve the documentation of the project; documentation focus on both
 user and developer documentation.
 
-The detailed project plan can be found
-[here](Theamanjs/GSoC21/Project.md)
+The detailed project plan can be found [here](Project.md)

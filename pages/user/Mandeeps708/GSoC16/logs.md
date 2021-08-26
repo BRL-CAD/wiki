@@ -2,11 +2,11 @@
 
 ------------------------------------------------------------------------
 
-Name: [Mandeep Singh](Mandeeps708.md)
+Name: [Mandeep Singh](/wiki/user/Mandeeps708.md)
 
 IRC: Mandeep_Singh
 
-Project: [The FreeCAD Plugin Installer](Mandeeps708/gsoc_proposal.md)
+Project: [The FreeCAD Plugin Installer](../gsoc_proposal.md)
 
 Commits: [mandeeps708/PluginManager](logs.md#Coding_Period) @GitHub
 

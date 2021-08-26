@@ -177,5 +177,5 @@ These things I did not implement:
 
 ## See also
 
--   [Activities logs](More_Changelog.md)
+-   [Activities logs](EBautu/More_Changelog.md)
 -   [Model Repository site](http://more.brlcad.org)

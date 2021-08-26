@@ -10,5 +10,4 @@
 -   ANSI C code compact grid construction for spatial partitioning
     ([p379](https://sourceforge.net/p/brlcad/patches/379/)).
 
-You can see a more detailed dev log
-[here](Vasco.costa/GSoC15/logs.md).
+You can see a more detailed dev log [here](GSoC15/logs.md).

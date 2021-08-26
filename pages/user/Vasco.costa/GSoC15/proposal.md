@@ -1,6 +1,6 @@
 Hello. I am interested in ray-tracing, and GPGPU. I plan to work on
 [OpenCL (OCL) acceleration of the BRL-CAD librt rendering
-pipeline](Vasco.costa/GSoC15/logs.md).
+pipeline](logs.md).
 
 # Project Information
 

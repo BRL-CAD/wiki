@@ -21,4 +21,4 @@
 **Proposal** :
 <https://docs.google.com/document/d/1bZTr1MgF8TJok7Ai5kI3VDGW3sPttm4-WQ63RLZjJXA/edit?usp=sharing>
 
-**Devlog**    : [GSoC21DevLog](GSoC21DevLog.md)
+**Devlog**    : [GSoC21DevLog](Theamanjs/GSoC21/Log.md)

@@ -19,6 +19,6 @@ Tessellation](http://www.google-melange.com/gsoc/proposal/review/google/gsoc2012
 
 ## Link to progress log
 
-[my progress log](GSoC_2012_log.md)
+[my progress log](Plussai/GSoC_2012_log.md)
 
 ## Some matericals

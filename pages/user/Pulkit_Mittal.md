@@ -11,6 +11,6 @@
 # GSOC 2014
 
 -   My proposal page is
-    [here](Pulkit%20Mittal/GSOC2014/proposal.md).
+    [here](Pulkit_Mittal/GSOC2014/proposal.md).
 -   My project logs can be found
-    [here](Pulkit%20Mittal/GSOC2014/logs.md).
+    [here](Pulkit_Mittal/GSOC2014/logs.md).

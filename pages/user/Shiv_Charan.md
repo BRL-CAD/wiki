@@ -15,4 +15,4 @@
 **Project Title**: Automate Reinforcement Process of Slab and Footing in
 FreeCAD
 
-[gsoc_proposal](gsoc_proposal.md)
+[gsoc_proposal](Shiv_Charan/gsoc_proposal.md)

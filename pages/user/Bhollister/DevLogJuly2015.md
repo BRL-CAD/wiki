@@ -226,7 +226,7 @@ non-brlcad expenditures...
     response)
 -   todo: polish declarative syntax for 'creation' subcommands per
     Sean's suggestions
--   added 'nmg' to [mged cmds](MGED_Commands.md)
+-   added 'nmg' to [mged cmds](/wiki/MGED_Commands.md)
 
 non-brlcad expenditures...
 

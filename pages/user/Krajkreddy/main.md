@@ -22,8 +22,7 @@ student at LNMIIT, Jaipur.
     <https://github.com/raj12lnm/python-brlcad>
 -   OpenNurbs-Python git repository
     <https://github.com/raj12lnm/OpenNurbs-Python>
--   End Term summary is
-    [here](Krajkreddy/GSOC14/end_term_summary.md)
+-   End Term summary is [here](GSOC14/end_term_summary.md)
 
 ## Pre Application Period
 
@@ -33,5 +32,4 @@ student at LNMIIT, Jaipur.
 
 ## Proposal
 
--   My proposal page is
-    [here](Krajkreddy/GSOC14/proposal.md)
+-   My proposal page is [here](GSOC14/proposal.md)

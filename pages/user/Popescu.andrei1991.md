@@ -14,8 +14,8 @@ day. My github account is : <https://github.com/pandrei>
 As I have had the priviledge of being selected twice for Google Summer
 of Code, here are the two separate development logs,one for each year.
 
-[Google Summer of Code 2012](devlogs2012.md)
+[Google Summer of Code 2012](Popescu.andrei1991/devlogs2012.md)
 
-[Google Summer of Code 2014 proposal](proposal2014.md)
+[Google Summer of Code 2014 proposal](Popescu.andrei1991/proposal2014.md)
 
-[Google Summer of Code 2014](devlogs2014.md)
+[Google Summer of Code 2014](Popescu.andrei1991/devlogs2014.md)

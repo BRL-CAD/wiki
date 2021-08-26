@@ -29,7 +29,7 @@ To know more about GSoC please visit
     <https://github.com/raj12lnm/python-brlcad>
 -   OpenNurbs-Python git repository
     <https://github.com/raj12lnm/OpenNurbs-Python>
--   Dev Logs are [here](Krajkreddy/GSOC14/summary.md)
+-   Dev Logs are [here](summary.md)
 
 ## Way forward
 

@@ -10,4 +10,4 @@
 
 **Project Title:** Automate Reinforcement Process in FreeCAD
 
-[gsoc_proposal](gsoc_proposal.md)
+[gsoc_proposal](Suraj/gsoc_proposal.md)

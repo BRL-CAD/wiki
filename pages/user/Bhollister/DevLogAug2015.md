@@ -20,10 +20,10 @@ n/a
 
 -   investigating ways of labelling faces for CLI specification
     -   looked at:
-        -   [E](MGED_CMD_E_upper.md)
-        -   [e](MGED_CMD_e_lower.md)
-        -   [ev](MGED_CMD_ev.md)
-        -   [B](MGED_CMD_B.md)
+        -   [E] (MGED_CMD_E_upper)
+        -   [e] (MGED_CMD_e_lower)
+        -   [ev] (MGED_CMD_ev)
+        -   [B] (MGED_CMD_B)
     -   none label objects with symbols (only color change, etc. and NOT
         faces)
     -   *ev* provides some direction

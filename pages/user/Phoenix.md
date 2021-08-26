@@ -40,9 +40,9 @@ This summer I am involved in the project of ["Implicit to NURBS
 conversion"](/wiki/Implicit_to_NURBS_conversion.md), which
 is to convert implicit CSG primitives to BREPs.
 
-[Click here to see my detailed project proposal](GSoc2012/Proposal.md)
+[Click here to see my detailed project proposal](Phoenix/GSoc2012/Proposal.md)
 
-[Click here to see my development log and reports](GSoc2012/Reports.md)
+[Click here to see my development log and reports](Phoenix/GSoc2012/Reports.md)
 
 # GSoC 2013 Project
 
@@ -52,6 +52,6 @@ I'd like to continue work on the [NURBS
 Intersection](/wiki/NURBS_Intersections.md) project, which is
 partially finished last summer.
 
-[Click here to see my detailed project proposal](GSoc2013/Proposal.md)
+[Click here to see my detailed project proposal](Phoenix/GSoc2013/Proposal.md)
 
-[Click here to see my detailed project log and report](GSoc2013/Reports.md)
+[Click here to see my detailed project log and report](Phoenix/GSoc2013/Reports.md)

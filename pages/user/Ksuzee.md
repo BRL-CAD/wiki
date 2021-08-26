@@ -26,6 +26,6 @@ This summer I am taking part in project ["Code
 Reduction"](/wiki/Code_Reduction.md) and hope to finish it
 successfully
 
-[This is my proposal to GSoC](Proposal.md)
+[This is my proposal to GSoC](Ksuzee/Proposal.md)
 
-[My development logs](Reports.md)
+[My development logs](Ksuzee/Reports.md)

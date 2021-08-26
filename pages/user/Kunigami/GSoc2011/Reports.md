@@ -53,7 +53,7 @@
 ## Week 7 (July 4th to July 11th)
 
 1.  Wrote a small tutorial on how to use OSL in BRL-CAD
-    ([link](Kunigami/GSoc2011/OSL_Tutorial.md))
+    ([link](OSL_Tutorial.md))
 2.  Ported BRL-CAD cloud shader to OSL
     ([screenshot](http://dl.dropbox.com/u/1399996/GSoC/RT_OSL_cloud.png))
 3.  Ported BRL-CAD checker shader to OSL

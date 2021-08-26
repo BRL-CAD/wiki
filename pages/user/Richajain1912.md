@@ -1,4 +1,4 @@
 -   **Name:** Richa Jain
 -   **E-Mail:** richa.jain1912@gmail.com
 -   **IRC Nick:** richa (\#brlcad on freenode)
--   **GSoC Proposal:** [Proposal](GSOC2014.md)
+-   **GSoC Proposal:** [Proposal](Richajain1912/GSOC2014.md)
