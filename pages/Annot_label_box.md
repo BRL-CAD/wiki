@@ -1,6 +1,6 @@
 [category:tutorials](category:tutorials.md)
 
-![](img/Boxaround.png)
+![](/wiki/img/Boxaround.png)
 
 One feature of the annotations in the cad programs is having a box
 around the annotation text this isn't final, it is work undergoing in
@@ -24,4 +24,4 @@ GSoC 2019.
 
 this feature works also with all the position flags of the annotation.
 
-![](img/Labelbox.png)
+![](/wiki/img/Labelbox.png)

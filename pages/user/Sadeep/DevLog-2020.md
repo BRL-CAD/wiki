@@ -216,8 +216,7 @@ failed.
 
 -   24 June 2020
 
-Display lists and managing color done. ![Display Lists,
-color](arbalestj25.png "fig:Display Lists, color")
+Display lists and managing color done. ![](/wiki/user/img/arbalestj25.png)
 
 Removed the C like vlist rendering since BRLCAD::VectorList::Iterate is
 now fast enough with Display lists implemented.

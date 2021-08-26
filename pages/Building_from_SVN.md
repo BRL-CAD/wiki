@@ -35,7 +35,7 @@ run CMake.
 
 For Windows, you can use the CMake GUI where you specify build and
 source
-directories:![](img/Running_cmake_on_windows.png)
+directories:![](/wiki/img/Running_cmake_on_windows.png)
 
 For Linux/Mac/BSD, this looks like:
 

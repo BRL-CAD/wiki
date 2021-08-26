@@ -1,4 +1,4 @@
-![](img/Backstaff.jpg)
+![](/wiki/img/Backstaff.jpg)
 
 Welcome to the BRL-CAD Backstaff! Some will consider this to be a
 development [roadmap](http://en.wikipedia.org/wiki/Technology_roadmap)

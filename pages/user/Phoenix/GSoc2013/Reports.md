@@ -674,8 +674,7 @@ six intersections.
 -   src/librt/tests/arb_intersect.g
     -   Intersection point: brep A_brep intersect B_brep 0 4 (The
         intersection point is marked with a sphere)
-        -   ![Image:Arb
-            point.png](Arb_point.png "fig:Image:Arb point.png")
+        -   ![](/wiki/user/img/Arb_point.png)
     -   Intersection curve (a line segment): brep A_brep intersect
         B_brep 0 1 (The intersection line is marked as green and
         purple)

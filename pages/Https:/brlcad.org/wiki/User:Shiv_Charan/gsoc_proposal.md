@@ -73,7 +73,7 @@ covering of BentShaped rebar.
 </div>
 <div style="margin-left:0.635cm;margin-right:0cm;">
 
-![](img/Bent_shape_rebar_side_view.png)
+![](/wiki/img/Bent_shape_rebar_side_view.png)
 
 </div>
 <div style="margin-left:0.635cm;margin-right:0cm;text-align:center">
@@ -83,7 +83,7 @@ Original
 </div>
 <div style="margin-left:0.635cm;margin-right:0cm;">
 
-![](img/Error_in_one_direction_slab.png)
+![](/wiki/img/Error_in_one_direction_slab.png)
 
 </div>
 <div style="text-align:center">
@@ -99,7 +99,7 @@ covering of Stirrup (in case of footing).
 </div>
 <div style="text-align:center;margin-left:1.27cm;margin-right:0cm;">
 
-![](img/Footing_error_img.png)
+![](/wiki/img/Footing_error_img.png)
 
 </div>
 <div style="margin-left:0.635cm;margin-right:0cm;">
@@ -122,11 +122,11 @@ steps:</span>
 -   Select the face of the slab and create straight rebars (
     Distribution rebars ).
 
-![](img/Config_stright_rebars.png)
+![](/wiki/img/Config_stright_rebars.png)
 
 <div style="text-align:center;">
 
-![](img/Stright_rebar_in_Slab_one_drection.png)
+![](/wiki/img/Stright_rebar_in_Slab_one_drection.png)
 
 </div>
 <div style="text-align:center;">
@@ -142,7 +142,7 @@ Output
 
 <div style="text-align:center;">
 
-![](img/Config_bent_shape_rebars_2.png)
+![](/wiki/img/Config_bent_shape_rebars_2.png)
 
 </div>
 <div style="text-align:center;">
@@ -153,7 +153,7 @@ calculated values.
 </div>
 <div style="text-align:center;">
 
-![](img/Slab_spanning_in_one_direction_(isomatric_view).png)
+![](/wiki/img/Slab_spanning_in_one_direction_(isomatric_view).png)
 
 </div>
 <div style="text-align:center;">
@@ -168,7 +168,7 @@ To create upper distribution bars as shown in below figure.
     rebars, then select straight Rebar. Then calculate Front cover, Top
     cover based on Top/Bottom/Right/left cover of BentShape rebars.
 
-![](img/Upper_distribution_rebars_in_slab_one_direction.png)
+![](/wiki/img/Upper_distribution_rebars_in_slab_one_direction.png)
 
 <div style="margin-left:1.27cm;margin-right:0cm;text-align:center;">
 
@@ -178,7 +178,7 @@ Note : Front cover and Top cover are calculated values.
 
 -   Then calculate custom spacing for upper distribution rebars.
 
-![](img/Custom_spacing_for_upper_distribution_rebars.png)
+![](/wiki/img/Custom_spacing_for_upper_distribution_rebars.png)
 
 <div style="margin-left:1.27cm;margin-right:0cm;text-align:center;">
 
@@ -195,9 +195,9 @@ final output will be as follows.
 
 </div>
 
-![](img/Bent_shape_rebar_side_view.png)
+![](/wiki/img/Bent_shape_rebar_side_view.png)
 
-![](img/Slab_spaning_in_one_direction_final_output.png)
+![](/wiki/img/Slab_spaning_in_one_direction_final_output.png)
 
 <div style="text-align:center">
 
@@ -209,7 +209,7 @@ Final output&lt;\\div&gt;
 Step for Slab spanning in two directions and for different types of the
 footing will need more manual calculations.
 
-![](img/Screenshot_from_2021-04-11_15-35-56.png)
+![](/wiki/img/Screenshot_from_2021-04-11_15-35-56.png)
 
 <div style="text-align:center;">
 
@@ -217,7 +217,7 @@ Slab Spanning in two direction
 
 </div>
 
-![](img/Screenshot_from_2021-04-11_15-37-19.png)
+![](/wiki/img/Screenshot_from_2021-04-11_15-37-19.png)
 
 <div style="text-align:center;">
 
@@ -285,7 +285,7 @@ For Footing:
 Due to the time constraints of GSoC, I will implement the following
 prototypes, but will keep on adding even after GSoC.
 
-![](img/Stright_Rebar_Slab_.png)
+![](/wiki/img/Stright_Rebar_Slab_.png)
 
 <div style="text-align:center;">
 
@@ -293,7 +293,7 @@ Straight rebars in Slab
 
 </div>
 
-![](img/U_shaped_rebar_Slab.png)
+![](/wiki/img/U_shaped_rebar_Slab.png)
 
 <div style="text-align:center;">
 
@@ -301,7 +301,7 @@ U-Shaped rebars in Slab
 
 </div>
 
-![](img/LShaped_rebar_Slab.png)
+![](/wiki/img/LShaped_rebar_Slab.png)
 
 <div style="text-align:center;">
 
@@ -309,7 +309,7 @@ L-Shaped rebars in Slab
 
 </div>
 
-![](img/Slab_spanning_in_one_direction_(isomatric_view).png)
+![](/wiki/img/Slab_spanning_in_one_direction_(isomatric_view).png)
 
 <div style="text-align:center;">
 
@@ -317,7 +317,7 @@ Slab spanning in one direction.
 
 </div>
 
-![](img/Slab_Spanning_in_two_direction.png)
+![](/wiki/img/Slab_Spanning_in_two_direction.png)
 
 <div style="text-align:center;">
 
@@ -325,7 +325,7 @@ Slab Spanning in Two Direction.
 
 </div>
 
-![](img/Footing_output_img.png)
+![](/wiki/img/Footing_output_img.png)
 
 <div style="text-align:center;">
 
@@ -454,7 +454,7 @@ For slab reinforcement, we can have the following prototypes also and
 much more.
 
 [<https://archive.org/details/gov.in.is.sp.34.1987/page/n137/mode/2up>](https://archive.org/details/gov.in.is.sp.34.1987/page/n137/mode/2up)
-: ![](img/Cantilever_slab.png)
+: ![](/wiki/img/Cantilever_slab.png)
 
 <div style="text-align:center;">
 
@@ -470,7 +470,7 @@ much more.
 
 <div style="text-align:center;">
 
-![](img/Common_footing_example.png)
+![](/wiki/img/Common_footing_example.png)
 
 </div>
 <div style="text-align:center;">

@@ -34,7 +34,7 @@ run the following commands at the command line:
 
 ## Usage
 
-![](img/Hexbolt.png)
+![](/wiki/img/Hexbolt.png)
 
 Run one of the commands hexbolt, allenbolt, nut, washer, cheesebolt,
 without parameters. The syntax of the item specification will be

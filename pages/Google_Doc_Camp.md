@@ -5,7 +5,7 @@ A team of contributors got together in California, brainstormed, and
 wrote an entire book for BRL-CAD in just a few days. They created a
 guide for contributing to BRL-CAD.
 
-![](img/DocCamp_WorkingHard.jpg)
+![](/wiki/img/DocCamp_WorkingHard.jpg)
 
 Contrary to and perhaps because of longstanding efforts, people
 interested in improving BRL-CAD sometimes find themselves lost in a sea
@@ -18,7 +18,7 @@ created over decades of development.
 Over the course of a week in October, members from our community
 participated in something fresh. Something different.
 
-![](img/DocCamp_TopicWall.jpg)
+![](/wiki/img/DocCamp_TopicWall.jpg)
 
 A team of individuals traveled from around the world to the Google
 headquarters in Mountain View, California, to participate in a 2-part
@@ -35,7 +35,7 @@ better. This new book focuses on that aspect and introduces people to
 the project while providing detailed information for developers,
 writers, artists, and other potential contributors.
 
-![](img/DocCamp_Relaxing.jpg)
+![](/wiki/img/DocCamp_Relaxing.jpg)
 
 This new effort kick-starts a campaign to dramatically improve BRL-CAD's
 documentation, starting with this new contributor's guide.
@@ -53,4 +53,4 @@ for directing the production.
 For more information on this book or how to contribute to BRL-CAD,
 please join one of our [mailing lists](mailing_lists.md).
 
-![](img/DocCamp_Team.png)
+![](/wiki/img/DocCamp_Team.png)

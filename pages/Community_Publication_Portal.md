@@ -334,7 +334,7 @@ academic schedule, I am trying t
 These are incomplete articles being worked on. Short 250 to 500-word
 articles (not counting tables, images, etc) are usually perfect.
 
-![](img/BRL-CAD_Primitives_Chart.png)
+![](/wiki/img/BRL-CAD_Primitives_Chart.png)
 
 #### Mitchell Roberts: Chart of all Primitives
 
@@ -384,7 +384,7 @@ A team of contributors got together in California, brainstormed, and
 wrote an entire book for BRL-CAD in just a few days. They created a
 guide for contributing to BRL-CAD.
 
-![](img/DocCamp_WorkingHard.jpg)
+![](/wiki/img/DocCamp_WorkingHard.jpg)
 
 Contrary to and perhaps because of longstanding efforts, people
 interested in improving BRL-CAD sometimes find themselves lost in a sea
@@ -396,7 +396,7 @@ resources. It's a lot, created over decades of development.
 Over the course of a week in October, members from our community
 participated in something fresh. Something different.
 
-![](img/DocCamp_TopicWall.jpg)
+![](/wiki/img/DocCamp_TopicWall.jpg)
 
 A team of individuals traveled to the Google headquarters in Mountain
 View, California, to participate in a 2-part event: an unconference and
@@ -412,7 +412,7 @@ better. This new book focuses on that aspect and introduces people to
 the project while providing detailed information for developers,
 writers, artists, and other potential contributors.
 
-![](img/DocCamp_Relaxing.jpg)
+![](/wiki/img/DocCamp_Relaxing.jpg)
 
 This new effort kick-starts a campaign to dramatically improve BRL-CAD's
 documentation, starting with this new contributor's guide.
@@ -426,7 +426,7 @@ for their sponsorship, [Aspiration](http://aspirationtech.org/) for
 magnificently framing the event, and [FLOSS
 Manuals](http://www.flossmanuals.org/) for directing the production.
 
-![](img/DocCamp_Team.png)
+![](/wiki/img/DocCamp_Team.png)
 
 #### Anurag Murty: Voxelizing Geometry
 
@@ -510,7 +510,7 @@ As an example, here is how the graph for the *share/db/axis.g* database
 looks like now:
 
 
-![](img/Graph_editor_v2.png)
+![](/wiki/img/Graph_editor_v2.png)
 
 Further work that can extend the *interactive* trait of the graph layout
 API includes adding user actions upon the graph such as *move* (dragging
@@ -604,7 +604,7 @@ archive with or without the help of the database.
     which generates the javascript code to interact with the Google
     Charts service.
 
-![](img/Absavgperfvsimagescomb.png)
+![](/wiki/img/Absavgperfvsimagescomb.png)
 
 Plumbing between these components is via the python scripts.
 
@@ -784,7 +784,7 @@ interested!
 
 #### Erik Greenwald: Bolting ADRT's libtie under the hood
 
-![](img/BoTvsTie.png)
+![](/wiki/img/BoTvsTie.png)
 
 Initial progress on the integration of ADRT's libtie "triangle
 intersection engine" with LIBRT.
@@ -810,12 +810,12 @@ program that detects duplicated code and allows developers to refactor
 it into space-saving functions, and the built-in CPPCHECK-CLEANUP tool,
 which checks for issues such as stylistic errors or unused functions.
 
-![](img/Simian_analysis_sample_output.PNG)
+![](/wiki/img/Simian_analysis_sample_output.PNG)
 
 *Sample output of Simian similarity analyzer. Screenshot courtesy of
 BRL-CAD wiki.*
 
-![](img/CPPCHECK-CLEANUP_sample_output.PNG)
+![](/wiki/img/CPPCHECK-CLEANUP_sample_output.PNG)
 
 *Sample output of CPPCHECK-CLEANUP tool. Screenshot courtesy of BRL-CAD
 wiki.*
@@ -834,7 +834,7 @@ in the latest scan. This reduced BRL-CAD’s defect density to just 0.22
 defects per thousand lines of code- less than a quarter of the industry
 average.
 
-![](img/CoverityExample2.png)
+![](/wiki/img/CoverityExample2.png)
 
 *Coverity analysis showing secure coding suggestions. Image courtesy of
 BRL-CAD wiki.*
