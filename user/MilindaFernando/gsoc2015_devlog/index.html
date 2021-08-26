@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/MilindaFernando/gsoc2015_devlog/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>STEP Viewer Project Development Log - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/MilindaFernando/gsoc2015_devlog.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#step-viewer-project-development-log" class="nav-link">STEP Viewer Project Development Log</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#week-01052015-to-08052015" class="nav-link">Week 01/05/2015 to 08/05/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-09052015-to-16052015" class="nav-link">Week 09/05/2015 to 16/05/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-16052015-to-23052015" class="nav-link">Week 16/05/2015 to 23/05/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-23052015-to-30052015" class="nav-link">Week 23/05/2015 to 30/05/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-30052015-to-7062015" class="nav-link">Week 30/05/2015 to 7/06/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-7062015-to-week-14062015" class="nav-link">Week 7/06/2015 to Week 14/06/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-14062015-to-22062015" class="nav-link">Week 14/06/2015 to 22/06/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-22062015-to-29062015" class="nav-link">Week 22/06/2015 to 29/06/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-30062015-772015" class="nav-link">Week 30/06/2015 7/7/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-7072015-15072015" class="nav-link">Week 7/07/2015 15/07/2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="step-viewer-project-development-log">STEP Viewer Project Development Log</h1>
+<h2 id="week-01052015-to-08052015">Week 01/05/2015 to 08/05/2015</h2>
+<ul>
+<li>I am getting familiar with the source code of libdm and librt.</li>
+<li>Design and Developing Qt GUI for STEP Viewer program</li>
+</ul>
+<h2 id="week-09052015-to-16052015">Week 09/05/2015 to 16/05/2015</h2>
+<p>As Sean mentioned in brlcad-devel Digest, Vol 607, Issue 1</p>
+<ul>
+<li>Look in to myriad of examples in the src/util directory</li>
+<li>Started a sample project which is capable of generating libdm
+    window.</li>
+</ul>
+<h2 id="week-16052015-to-23052015">Week 16/05/2015 to 23/05/2015</h2>
+<ul>
+<li>Worked on STEP Viewer functionality</li>
+<li>Downloaded the current version of the BRL-CAD code and build it</li>
+<li>Studied the libdm library</li>
+</ul>
+<h2 id="week-23052015-to-30052015">Week 23/05/2015 to 30/05/2015</h2>
+<ul>
+<li>Start coding StepViewer</li>
+<li>First task (as Sean has mentioned) Try to create a libdm window</li>
+<li>Creation of the libdm window of type X and OGL failed.</li>
+<li>Creation of the libdm window type of null and text succeeded.</li>
+<li>Found that libdm is hard to work with</li>
+<li>No Proper Documentation for the libdm library</li>
+</ul>
+<h2 id="week-30052015-to-7062015">Week 30/05/2015 to 7/06/2015</h2>
+<ul>
+<li>Refereed on OpenGL</li>
+<li>Created a separate OpenGL Window</li>
+<li>Trying to embed OGL view to a existing Qt window.</li>
+<li>Success fully embedded the OGL view in the main window.</li>
+</ul>
+<h2 id="week-7062015-to-week-14062015">Week 7/06/2015 to Week 14/06/2015</h2>
+<ul>
+<li>Development of STEPViewer GUI.</li>
+<li>OpenGL view zoom in/out functionality added</li>
+<li>OpenGL view rotation according to mouse movement functionality added</li>
+<li>Displaying the 3D axis system in OpenGL view.</li>
+<li>Current Code can be found at
+    <a href="https://bitbucket.org/milindasf/stepviewer/src">https://bitbucket.org/milindasf/stepviewer/src</a></li>
+<li>Referring on how to use BRLCAD functionality to browse the triangles
+    in a STEP file and visualize them in the OGL viewer.</li>
+</ul>
+<h2 id="week-14062015-to-22062015">Week 14/06/2015 to 22/06/2015</h2>
+<ul>
+<li>Used step2g converter to convert .step file .g file.</li>
+<li>Read the .g file to STEPViewer program</li>
+<li>Conversion from db_i* to rt_brep_internal*</li>
+<li>Iterated brep for edges and visualized those edges in OpenGL view.</li>
+</ul>
+<p>[1]
+<a href="https://bitbucket.org/milindasf/stepviewer/src/f888657ba24b0a1e7cfe9b6de27b6d356089ab22/images/step1.png?at=default">https://bitbucket.org/milindasf/stepviewer/src/f888657ba24b0a1e7cfe9b6de27b6d356089ab22/images/step1.png?at=default</a></p>
+<p>[2]
+<a href="https://bitbucket.org/milindasf/stepviewer/src/f888657ba24b0a1e7cfe9b6de27b6d356089ab22/images/step2.png?at=default">https://bitbucket.org/milindasf/stepviewer/src/f888657ba24b0a1e7cfe9b6de27b6d356089ab22/images/step2.png?at=default</a></p>
+<h2 id="week-22062015-to-29062015">Week 22/06/2015 to 29/06/2015</h2>
+<ul>
+<li>Looked into the brlcad/src/conv/step/step-g code.</li>
+<li>Found that STEPWrapper::convert is responsible for convert the .step
+    file to .g file</li>
+<li>Wrote a new method bool convert(BRLCADWrapper* dot_g,ON_Brep*
+    brep) which doesn't write to .g file but from the
+    AdvancedBrepShapeRepresentation::GetONBrep method we can get the
+    .step file converted to the ON_Brep Structure</li>
+<li>Above mentioned change complies fine. Currently I am looking how to
+    get statically link library instead of .out file</li>
+<li>Finalized the code in current implementation</li>
+</ul>
+<h3 id="current-status-of-the-project">Current status of the project</h3>
+<ul>
+<li>Currently StepViewer reads a .step file and generates temporary .g
+    file.</li>
+<li>.g file is read to db_i structure then converted to the
+    rt_db_internal structure -&gt; rt_brep_internal -&gt; ON_Brep
+    structure</li>
+<li>Once we get the ON_Brep structure of the .step file I iterate
+    through all the edges of the brep and draw them in the OpenGL
+    visualizer. (This looks like the wire frame of the .step file)</li>
+<li>User can interact with the loaded geometry by rotation (using LEFT
+    CLICK + mouse movement) , Zooming (Mouse scroll movement) and
+    panning (to be implemented)</li>
+</ul>
+<h3 id="main-challenges">Main Challenges</h3>
+<p>I believe I have 2 main challenges. 1). How to render a solid object in
+OpenGL viewer using the data in ON_Brep structure. (According to the
+charlie, he mentioned that building the solid from primitive brep shapes
+(i.e vertex, edge,facet etc) is out of the scope of this project. But he
+did not mention some alternative method to do that. Currently I have no
+idea to what to do to solve this)</p>
+<p>2). Build a statically linked library which can get ON_Brep structure
+from .step file. By modifying the step-g conversion code. This is not a
+huge challenge. I think I almost solved it.</p>
+<h3 id="mid-term-evaluation-demo">MID TERM EVALUATION DEMO</h3>
+<ul>
+<li>You can clone the code from the bitbucket repository.</li>
+</ul>
+<p><a href="https://bitbucket.org/milindasf/stepviewer/src">https://bitbucket.org/milindasf/stepviewer/src</a></p>
+<ul>
+<li>Open the project from the Qt Creator. Build the project. Run and you
+    can play with the basic STEPViewer functionality that I have
+    described in "Current Status of the project".</li>
+<li>If you have any questions regarding running the project or any
+    matter related to this project please feel free to contact me by
+    e-mailing to dev-mailing lists (Both BRLCAD and STEPCODE) or
+    personally e-mailing me to milindasf@gmail.com.</li>
+</ul>
+<h2 id="week-30062015-772015">Week 30/06/2015 7/7/2015</h2>
+<ul>
+<li>Changed the step-g conversion code to return the ON_Brep Structure.
+    (.step to .g file conversion is stopped at the binary memory format.
+    )</li>
+<li>Struggling with changing the cmake files to get step-g conversion as
+    a statically linked library (I am not an expert in cmake)</li>
+<li>Since I have completed the step-g conversion to stop at ON_Brep
+    structure and I struggled to build the step-g code as statically
+    linked library (I believe this is a very trivial task) I thought I
+    will complete that task later.</li>
+<li>Started working on How to visualize the ON_Brep shape in OpenGL
+    view.</li>
+<li>Get to know that I need to browse the surface triangles in order to
+    visualize the ON_Brep structure as a solid in OpenGL View.</li>
+</ul>
+<h2 id="week-7072015-15072015">Week 7/07/2015 15/07/2015</h2>
+<ul>
+<li>Start referring the poly2tri_CDT method in
+    librt/src/primitive/brep/brep.cpp file.</li>
+<li>I am still struggling with browsing surface triangles in ON_Brep
+    structure.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

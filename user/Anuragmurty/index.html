@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Anuragmurty/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Personal information - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Anuragmurty.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#personal-information" class="nav-link">Personal information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#about-me" class="nav-link">About me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#about-the-gsoc-project" class="nav-link">About The GSoc Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-log" class="nav-link">Development Log</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="personal-information">Personal information</h1>
+<h1 id="about-me">About me</h1>
+<ul>
+<li>Name: Anurag Murty</li>
+<li>E-mail address: anuragmurty@gmail.com</li>
+<li>IRC username: anuragmurty</li>
+</ul>
+<p><strong>I am an MTech student of Computational Science at IISc Bangalore</strong></p>
+<h1 id="about-the-gsoc-project">About The GSoc Project</h1>
+<p><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/anuragmurty/22001">Brief Description of my project on the GSoC
+page</a></p>
+<h1 id="development-log">Development Log</h1>
+<p>First task is compilation of BRL-CAD</p>
+<p>BRL-CAD succesfully built from source</p>
+<p>Learning to use the Software / Explore the code</p>
+<p>Have Completed the tutorial on BRL-CAD available on the site(Basically
+mged commands and USING the software)</p>
+<p>Raytracing Commands related to my project work</p>
+<p>having learnt to use rt , rtweight from a USERs perspective, going
+through the respective codes and understanding the modules now</p>
+<p>Wrote a small patch for bitv.c in src/libbu.Waiting for feedback:)</p>
+<p>Going through the gqa program as I have been asked to learn to use and
+understand it too</p>
+<p>patch for ctype.c also submitted. waiting for reviews. had some problem
+with the previous patch too. Turned out that it wasnt in the unified
+diff format as required.</p>
+<p>[ PS: Some problem with IRC. Unable to join the brlcad channel. Should
+be fixed in a while hopefully.]</p>
+<p><u><b><code>21st to 23rd</code></b></u><code>-- done understanding code for rtexample.c. discussed with mentor(d_rossberg) about how to extend rt_shootray for getting the voxels.</code></p>
+<p>parameters to be used : size of voxels,rays to be shot per voxel,
+minimum volume to be considered as threshold for considering. have
+started with implementation of a first , very basic program to get
+voxels.(one ray per voxel for now, simple shapes also).</p>
+<p>first patch accepted.. test_bitv.c!! second patch i submitted
+test_ctype has to be modified according to hacking guidelines...</p>
+<p>working on rt_shootray for 3 views, which will be submitted today, but
+in a little while.</p>
+<p>Written rtexample_3view.c that uses the midpoints of the faces of the
+bounding rectangular parallelopiped to shoot three rays in three
+perpendicular directions and gives data of the partitions
+encountered(the hit code is exactly taken from rtexample.c). the same is
+being submitted as a patch.</p>
+<p>Indentation changes made to test_ctype. Also, a typo related patch was
+submitted yesterday. Working on shooting a grid of rays at object to be
+raytraced(towards the negative x-axis). Should be able to submit that as
+a patch tonight or maybe tomorrow.</p>
+<p>i will be going through codes for libanalyze and libged commands as
+directed by brlcad. Also, I will not be available on IRC tonight(as i
+will be travelling)</p>
+<p><b><u>30/5/2012</u></b> : Got commit access today. Lot of time spent
+trying to rebuild brlcad. Some problems with MGED dependencies.
+Everything deleted and rebuilt. Working fine now. Though still unable to
+locate what went wrong. Presently completing the code for shooting a
+grid of rays and putting it in src/conv so I can make my first commit.</p>
+<p><b><u>31/5/2012</u></b> made my first commit. A simple, safe g-voxel
+program which did not actually get voxels. Just shot a grid of rays.</p>
+<p><b><u>1/6/2012</u></b> i wrote a simple voxelize program. right now, it
+just prints if the voxel in the path of each ray is in or out. Right
+now, the parameters are hardcoded(parameters like threshold a voxel is
+to be filled to consider as in, size of voxel in each dimension ,
+others). I think i also will have to consider some other method apart
+from only using the bounding box as in some cases(example, a 3-D plus
+sign) too many rays are shot which might be a waste of time.</p>
+<p><b><u>5/6/2012</u></b> have shifted the evaluation of voxel to main and
+writing code for multiple rays per voxel. though multiple rays through a
+voxel is buggy(minor, most probably). Will commit as soon that is done</p>
+<p><b><u>6/6/2012</u></b> there was problem with voxel calculations when
+hitDistOut was on a voxel boundary. Also, I was computing the ending ray
+data slightly wrong. this was also rectified.</p>
+<p>multiple rays are being shot now-- through same point because i have to
+ask my mentor whether those rays have to be random and how to proceed on
+volume calculations after that.</p>
+<p>I have two variables for now- ray num threshold, threshold- depending on
+how the IN/OUT of a voxel has to be determined. one of these two will be
+discarded.</p>
+<p><b><u>7/6/2012</u></b> studying gqa.c</p>
+<p><b><u>8/6/2012</u></b> Made lots of changes to previous code of
+g-voxel.c. Also, now running "./g-voxel [.g file] [region-name]" in
+bin/ of the build directory outputs a file "voxels.txt" that gives a
+frame by frame representation of the desired region.</p>
+<p><b><u>12/6/2012</u></b> g-voxel.c modified so it allows multiple rays
+per voxel. for input raysPerVoxel what I do is shoot a uniform
+raysPerVoxel*raysPerVoxel rays, so probably this variable name is a
+misnomer. again the output is voxels.txt which gives the output text
+file frame by frame.</p>
+<p><b><u>14/6/2012</u></b> same as last time, floats replaced by fastf_t.
+some unnecessary statements variables and statements removed(mistakes
+pointed out by d_rossberg).. a major error was allocating space for ALL
+voxels. so now as soon as a raytrace is done, the results are printed
+out to file voxels.txt. thus at any point space for only numVoxels[0]
+is assigned, major savings.</p>
+<p>I need to change the structure for rayInfo so it includes region names
+also. this means using pp-&gt;pt_regionp-&gt;reg_name from struct
+partition but i am presently getting bugs in the result. so working on
+this so that I canc hange the output format so it lists data region
+wise.</p>
+<p><b><u>18/6/2012 -20/6/2012</u></b> structure for rayInfo modified.
+rayInfo is structure for storing info each time a raytrace is called. It
+contains a linked list of regions inside each voxel. voxels.txt now has
+data in the format:</p>
+<p>1/0 (coordinates of voxel) (region-name) (fill fraction)</p>
+<p>where 1/0 tell you if the voxel is in or not(according to threshold).</p>
+<p>also to store names in a local variable of main(), i have used
+bu_vls_strgrab function.</p>
+<p><b><u>21/6/2012</u></b> corrected a bug i found while doing some tests
+on g-voxel.c with some .g file inputs</p>
+<p><b><u>26/6/2012</u></b> first step towards moving the voxelize work into
+a library. made a function that is called from main in g-voxel.c and
+takes in as input userparameters for a voxelize and outputs a file with
+the necessary voxel information. used a structure for input parameters
+and additional inputs might be added later. TODO: implement a callback
+function for writing result into the file.</p>
+<p><b><u>28/6/2012</u></b> implemented callback function for printing
+results of g-voxel.c. moving it to libanalyze is next todo. slight
+problem being faced : i am unable to commit using svn commit. svn:
+Commit failed (details follow): svn: OPTIONS of
+'<a href="https://brlcad.svn.sourceforge.net/svnroot/brlcad/brlcad/trunk/src/conv">https://brlcad.svn.sourceforge.net/svnroot/brlcad/brlcad/trunk/src/conv</a>':
+Could not create SSL connection through proxy server: Could not
+authenticate to proxy server: rejected Digest challenge
+(https://brlcad.svn.sourceforge.net) trying to fix for a long time now</p>
+<p><b><u>29/6/2012</u></b> callback committed, some more modifications</p>
+<p><b><u>2/7/2012</u></b> library- libanalyze changed for accommodating
+voxelize functions, in voxels.c in libanalyze , all the functions are
+defined. also, g-voxel.c modified and uses functions from libanalyze</p>
+<p><b><u>2/7/2012</u></b> modified call back and parameters to voxelize
+<b><u>4/7/2012 and 5/7/2012</u></b> comparison against threshold not
+made in voxelize now. sent as callBackData sent as input to callback
+function and decision. same changes made to g-voxel etc also</p>
+<p><b><u>8/7/2012</u></b> went through ged-facetize which is going to be
+template for ged_voxelize.</p>
+<p><b><u>11,12/7/2012</u></b> wrote a voxelize.c program for libged. This
+has function ged_voxelize(struct ged*, int argc, char *argv[]).
+However, There is segementation fault when I run the program.</p>
+<p><b>------------------------------------------------------------------------------</p>
+<p><b><u> POST-MIDTERM EVALUATION WORK</p>
+<p><code>note: this has been updated very late,towards the end of the GSoC duration</code></p>
+<p></u></p>
+<p><code>segmentation fault from the program voxelize.c was removed</code></p>
+<p>the location of rt_prep_parallel was changed from callinf function to
+voxelize</p>
+<p>15 july changed a very roundabout way to bu_vls_strcpy</p>
+<p>16th july -analyze.h unused functions for voxelize removed</p>
+<p><code>callback functions removed from analyze.h and included here</code>
+<code>rt_prep function added into voxelize function of voxels.c, callback removed</code></p>
+<p>19-july ged.h changed to have ged_voxelize function static callback
+functions were added to voxelize.c and g-voxel.c</p>
+<p>MGED hook to voxelize created help.tcl scripts changed to enable
+autocomplete tclcad_obl.c scripts changed to enable autocomplete
+callback function called create boxes made to actually make the voxels
+for a given input primitive/collection some code cleanup was done in
+g-voxel.c create_boxes function is called evrywhere instead of
+printFunction like intial case.</p>
+<p>till now, all the parameters of a voxelize were hard coded, now (with
+Daniel's help), it takes command line arguments plus all the voxels are
+in a user-specified region.</p>
+<p>code cleanup, specially for respecting alphabetical ordering. voxel
+sizes multiplied by local2base, since the user provides the numbers in
+his own choice of units.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

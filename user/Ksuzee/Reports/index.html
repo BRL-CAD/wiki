@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Ksuzee/Reports/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>GSoC 2012 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Ksuzee/Reports.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2012" class="nav-link">GSoC 2012</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#0-week" class="nav-link">0 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1-week" class="nav-link">1 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-week" class="nav-link">2 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-week" class="nav-link">3 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4-week" class="nav-link">4 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#5-week" class="nav-link">5 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#6-week" class="nav-link">6 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#7-week" class="nav-link">7 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#8-week" class="nav-link">8 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#9-week" class="nav-link">9 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#10-week" class="nav-link">10 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#11-week" class="nav-link">11 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#12-week" class="nav-link">12 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#13-week" class="nav-link">13 week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2012">GSoC 2012</h1>
+<h2 id="0-week">0 week</h2>
+<ul>
+<li>2/05/2012 - installing Ubuntu-12.04, XChat</li>
+<li>4-5/05/2012 - downloading sources, successful building with CMake</li>
+<li>8-9/05/2012 - making folder which contains the information about
+    duplications in every folder of /trunk/src</li>
+<li>12/05/2012 - csh script for finding duplications</li>
+<li>15/05/2012 - patch r50549 for adrt/isst_tcltk.c</li>
+<li>16-18/05/2012 - patches:<ul>
+<li>/fb/orle-fb.c</li>
+<li>/util/picbackgnd.c</li>
+<li>/libbu/htonf.c</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-week">1 week</h2>
+<ul>
+<li>
+<ul>
+<li>start fixing duplications, which are situated in different
+        folders</li>
+<li>patch /libbu/convert.c for check</li>
+<li>patch /util/lowp.c for check</li>
+<li>patch /rt/viewarea.c for check</li>
+<li>getting familiar with Astyle</li>
+</ul>
+</li>
+</ul>
+<p>Also I continue to check folders which contain duplications in one file.</p>
+<p>There're folders: util, vfont, tclscripts, sig, shapes, rtthem, remrt,
+proc-fb, nirt, libwdb, libtermio, libsysw, librtserver. All these
+directories are checked. They either have no duplications in one file
+which should be reducted or reductions are put to patch tracker for
+check. I'm working on directories: tab, rt. mged, libtclcad, librt</p>
+<h2 id="2-week">2 week</h2>
+<ul>
+<li>28/05<ul>
+<li>correction to patches: /fb/orle-fb.c and /util/picbackgnd.c
+    (testing)</li>
+<li>working at duplications in /mged/points/process.c</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>29/05<ul>
+<li>there's a huge duplication in rt/worker.c. I'm working on it</li>
+<li>checking some more directories (will write the result later)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>30/05<ul>
+<li>checking some more directories (will write the result later)</li>
+<li>leave worker.c for discuss (ready, but not tested yet)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>31/05<ul>
+<li>correction the util/lowp.c patch</li>
+<li>checking some more directories</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>1/06<ul>
+<li>all the directories are checked for duplications in one file</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>2/06<ul>
+<li>preparing the summary about duplications</li>
+</ul>
+</li>
+</ul>
+<p>tab/tabinterp.c - functions step_interpolate and linear_interpolate --
+the bodies're different but part which contains "for", "while" and "if"
+can be put in common static inline function.</p>
+<p>/rt/worker.c - there're two huge parts in function "void do_pixel" in
+"begin unroll"-"end unroll" and "begin non-ubrolled"-"end non-unrolled".
+However, you told it problem file, so I'll wait your comment here.</p>
+<p>/mged/cmd.c - functions "int cmd_ged_edit_wrapper" and "int
+cmd_ged_simulate_wrapper". The only ddifference is value of av[1].
+Both these functions are used in setup.c, so it's better to use static
+inline function too. I suggest to make one more variable for parameter
+of argv[]</p>
+<p>/libtclcad/tclcadobj.c - 1) functions "HIDDEN int
+to_mouse_move_arb_edge", "HIDDEN int to_mouse_move_arb_face" and
+"HIDDEN int to_mouse_move_pipept". The difference's in: av[0] =
+"move_arb_face"; - to_mouse_move_arb_face av[0] =
+"move_arb_edge"; - to_mouse_move_arb_edge av[0] =
+"move_pipept"; - to_mouse_move_pipept</p>
+<p>and ret = ged_move_arb_edge(gedp, 5, (const char **)av); ret =
+ged_move_arb_face(gedp, 5, (const char **)av); ret =
+ged_move_pipept(gedp, 5, (const char **)av);</p>
+<p>So these functions could call another static function which'd have all
+the body and get char * parameter for av[0] and functional type for
+ret. 2) functions "HIDDEN int to_poly_ell_mode" and "HIDDEN int
+to_poly_circ_mode". Differnce's in consts -
+gdvp-&gt;gdv_view-&gt;gv_mode = TCLCAD_POLY_ELLIPSE_MODE; and
+gdvp-&gt;gdv_view-&gt;gv_mode = TCLCAD_POLY_CIRCLE_MODE; so
+necessary const could be got by common function (type - ged_view, if
+I'm not mistaken). Also difference is in bu_vls_printf, but type
+char* can be transmit too.</p>
+<p>/librt/primitives/nmg/nmg_rt_segs.c - functions "HIDDEN int state5"
+and "HIDDEN int state6". It'd be easy to reduct, because difference's
+only in ret_val (in two situations at the end of functions) which is
+INT. So I'd be necessary only to transmit ret_val1 and ret_val2.</p>
+<p>/libpc/pcParameter.cpp - methods Point::Point(VCSet &amp; vcs, std::string
+n, void *ptr) and Vector::Vector(VCSet &amp; vcs, std::string n, void
+*ptr): the blocks in if (ptr) {...} are the same, so this block can be
+put in other function.</p>
+<p>/liboptical/sh_camo.c - functions HIDDEN int marble_setup and HIDDEN
+int camo_setup. The difference is in bu_log (just static comment) and
+in memcpy.</p>
+<p>/libbn/plot.c - functions void pd_3space and void pd_3line. I made
+static inline function pd_3 which gets the same parameters as those two
+functions + char l. Both functions call pd_3 with l == 'W' for
+pd3_space and l == 'V' for pd_3line. Making was successful.</p>
+<p>/fbserv/server.c - void fb_server_fb_scursor and void
+fb_server_fb_cursor. Difference is: (void)pkg_plong(&amp;rbuf[0],
+fb_cursor(fb_server_fbp, mode, x, y)); and
+(void)pkg_plong(&amp;rbuf[0], fb_scursor(fb_server_fbp, mode, x, y));
+So common function can get just: struct pkg_conn *pcp, char *buf +
+functional type</p>
+<p>/fb/pl-fb.c - int GetDCoords(coords *coop) and int Get3DCoords(coords
+*coop). Difference is only here: if (debug) {fprintf..}. So text for
+fprintf can be transmited like a char * in common function.</p>
+<h2 id="3-week">3 week</h2>
+<ul>
+<li>4/06 - getting familiar with unit tests</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>5/06 - cheking some more directories for duplications</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>6/06 - CMakeFiles and Makefile</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>7/06<ul>
+<li>patch for src/util - files util.c and util.h.</li>
+<li>util_yuv is almost ready (something need to be checked)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>8/06<ul>
+<li>working with util_yuv (ready)</li>
+<li>come back to firt patch (ready *need to send patch)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>9/06<ul>
+<li>/mged/cmd.c is refactored</li>
+<li>work with /libtclcad/tclcadobj.c. Have some problems with
+    functional type</li>
+<li>/fb/pl-fb.c is refactored. Static inline function is added.
+    Making and running are successful</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-week">4 week</h2>
+<ul>
+<li>11/06<ul>
+<li>further checking for duplications in one directory, different
+    files</li>
+</ul>
+</li>
+<li>12/06<ul>
+<li>the same checking. Hope to finish it by today's evening</li>
+</ul>
+</li>
+<li>13/06<ul>
+<li>sent all prepared patches,</li>
+<li>did some making and running of refactored functions to be sure
+    in right result.</li>
+</ul>
+</li>
+<li>14/06<ul>
+<li>/librt/primitives/nmg/nmg_rt_segs.c is refactored</li>
+<li>some more checking</li>
+</ul>
+</li>
+<li>15/06<ul>
+<li>checking for copy-pastes in 1 dir - different files is
+    completed! The count of such places -- 14, +2 are already
+    patched</li>
+</ul>
+</li>
+<li>16/06<ul>
+<li>getting familiar with u-f.c, d-i.c etc. Understanding how they
+    work.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-week">5 week</h2>
+<ul>
+<li>18/06<ul>
+<li>reduction in sig/d-i.c and ../f-i.c. Patch's added</li>
+</ul>
+</li>
+<li>19-20/06<ul>
+<li>reduction in libged/view_obj.c and ../vutil.c. 2 functions're
+    put in util.c</li>
+<li>reduction in libdm. There're quite enough dups, so need a bit
+    more time to finish</li>
+</ul>
+</li>
+<li>21/06<ul>
+<li>reduction in libdm is finished</li>
+</ul>
+</li>
+<li>23/06<ul>
+<li>find a bit more in libdm, add it</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-week">6 week</h2>
+<ul>
+<li>25/06<ul>
+<li>getting familiar with g-nff, g-obj, g-xxx_facets</li>
+</ul>
+</li>
+<li>26/06<ul>
+<li>reduction in src/conv for g-nff, g-obj and g-xxx_facets is done</li>
+<li>made small man pages for src/sig: f-i, d-i, u-f, i-f</li>
+</ul>
+</li>
+<li>27/06<ul>
+<li>made man pages for src/sig: a-d, bw-d, d2-c, d-a, d-bw, d-u,
+    f-d, u-bw, u-d</li>
+</ul>
+</li>
+<li>28-29/06<ul>
+<li>check duplications in different folders. Most dups've already
+    been found. Hope to finish by tomorrow evening and make a whole
+    report by them</li>
+</ul>
+</li>
+<li>30/06<ul>
+<li>all the duplicaions in differesnt foldres are checked. There're
+    about 35 such situations. Some of them are a bit disputed and
+    needed to be discussed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-week">7 week</h2>
+<ul>
+<li>02/06<ul>
+<li>worked with libged/ps.c and png.c but unsuccessful. They
+    couldn't be reducted</li>
+</ul>
+</li>
+<li>03-04/06<ul>
+<li>looked through left TODOs. Tomorrow will finish it and reduct.</li>
+</ul>
+</li>
+</ul>
+<p>TODO: to correct existing patches a bit</p>
+<ul>
+<li>05/06<ul>
+<li>did some reduction in</li>
+</ul>
+</li>
+</ul>
+<p>/liboptical/sh_camo.c and /tclcad/tclcad_obj.c (thanks to ``Erik).
+Will patch them in a few days because of some problems with my laptop</p>
+<h2 id="8-week">8 week</h2>
+<ul>
+<li>09-10/07<ul>
+<li>added patch for /liboptical/sh_camo.c</li>
+<li>submitted my Student Midterm Evaluation</li>
+<li>checked some previous patches</li>
+<li>work on reduction in sig/umod.c and sig/imod.c. It must be the
+    last reduction for 1 directiory - many files</li>
+</ul>
+</li>
+<li>14/07<ul>
+<li>spent some time reading HACKING file</li>
+</ul>
+</li>
+</ul>
+<p>During the first part of GSoC program I:</p>
+<p>1. Found, reducted (where it was possible) and patched all the
+duplications which are contained in ONE (the same) file</p>
+<p>2. Found, reducted (where it was possible) and patched all (except one)
+the duplications which are contained in different files, but in one
+directory. Usually I added 2 new files - util.c and util.h, which
+contained the duplicated code. I need to add some necessary comments to
+the new files.</p>
+<p>3. Created some small manual pages for some programs in src/sig. Will
+commit them after the getting commit access.</p>
+<p>4. Found all the duplications which are contained in different
+directories and have a full list of necessary reductions.</p>
+<h2 id="9-week">9 week</h2>
+<ul>
+<li>16/07<ul>
+<li>working on headers from some previous patches</li>
+</ul>
+</li>
+<li>18/07<ul>
+<li>updated patches for src/util</li>
+</ul>
+</li>
+<li>21-22/07<ul>
+<li>updated patches for other duplications in 1 directiory -
+    different files</li>
+</ul>
+</li>
+</ul>
+<h2 id="10-week">10 week</h2>
+<ul>
+<li>26/07<ul>
+<li>updated patches for src/conv</li>
+<li>added patch for src/librt/primitives/nmg/nmg_rt_segs.c</li>
+</ul>
+</li>
+<li>27/07<ul>
+<li>found several editing methods for duplicate code in different
+    folders</li>
+<li>trying to reduct code in different folders</li>
+</ul>
+</li>
+<li>28/07<ul>
+<li>updated patch for src/fb/pl-fb.c</li>
+<li>updated patches for src/libdm</li>
+<li>closed unnecessary patch for src/libdm</li>
+<li>checking other patches</li>
+</ul>
+</li>
+<li>29/07<ul>
+<li>updated two patches for src/sig</li>
+<li>updated two patches for src/utils</li>
+<li>added comments for patches on patches tracker where it was
+    necessary</li>
+</ul>
+</li>
+</ul>
+<h2 id="11-week">11 week</h2>
+<ul>
+<li>30/07<ul>
+<li>fixed error at patch for src/libdm</li>
+<li>reducted patch for fb/pl-fb.c</li>
+<li>added some screenshots for patches</li>
+</ul>
+</li>
+<li>31/07<ul>
+<li>continue working with clip.c.in libbn</li>
+</ul>
+</li>
+<li>1/08<ul>
+<li>some work on previous patches</li>
+</ul>
+</li>
+<li>2-3/08<ul>
+<li>clip.c.in libbn is ready. Now there're 3 functions, commmon for
+    libdm and libged</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-week">12 week</h2>
+<ul>
+<li>6/08<ul>
+<li>made one more reduction in libbn. Now there're files
+    track_reg.c and track_reg.h. They have common funtions for
+    libged/track.c and libwdb/reg.c</li>
+</ul>
+</li>
+<li>8/08<ul>
+<li>refactoring in libicv and util. The same as previous</li>
+</ul>
+</li>
+<li>9/08<ul>
+<li>refactoring in fb and libfb. Tha same as previous</li>
+</ul>
+</li>
+<li>10/08<ul>
+<li>some more reductions in previous situations for good patches.
+    Almost everything I supposed to do during GSoC is ready</li>
+</ul>
+</li>
+<li>12/08<ul>
+<li>added 2 more prepared patches</li>
+</ul>
+</li>
+</ul>
+<h2 id="13-week">13 week</h2>
+<ul>
+<li>work on cleaning and reviewing the patches</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

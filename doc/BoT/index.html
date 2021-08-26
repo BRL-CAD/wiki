@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/BoT/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>BoT - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/BoT.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#determining-the-mode-of-a-bot" class="nav-link">Determining the mode of a BoT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#bot-types" class="nav-link">BoT types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#bot-advantages-over-stl" class="nav-link">BoT Advantages over STL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>The “Bag o’ Triangles” (BoT) is a BRL-CAD primitive object used for
+representing triangle mesh objects. BoT objects may be surfaces or
+solids; topologically closed or open; clockwise, counter-clockwise, or
+unoriented; and with an optional global or per-face thickness for
+surfaces depending on the BoT mesh type.</p>
+<h1 id="determining-the-mode-of-a-bot">Determining the mode of a BoT</h1>
+<p>Reading the 'mode' parameter in MGED will report the BoT mesh type:</p>
+<p><code>mged&gt; get YOUR_BOT_NAME mode</code>
+<code>volume</code>
+<code>mged&gt; get YOUR_BOT_NAME orient</code>
+<code>rh</code></p>
+<p>That example shows that "YOUR_BOT_NAME" is a volume mode bot that has
+a right-hand (counter-clockwise) face orientation.</p>
+<h1 id="bot-types">BoT types</h1>
+<p>There are four primary BoT mesh modes implemented in BRL-CAD:</p>
+<ol>
+<li>
+<p><strong>“surf” is a surface-only object with no volume information.</strong></p>
+<p>Rays hitting a surf object should return a hit with a
+zero-thickness. Our obj, ply, and dxf importers presently create
+BoTs marked as this type.</p>
+</li>
+<li>
+<p><strong>“volume” is an explicit solid object that is topologically closed
+    and should enclose some non-zero volume of space.</strong></p>
+<p>Our proe export plugin; the stl, intaval, fastgen, and enf
+importers; and the make, inside, E, and facetize commands create
+BoTs marked as this type.</p>
+</li>
+<li>
+<p><strong>“plate” is an implicit solid object defined by a surface (which
+    may or may not be topologically closed) and a specified thickness
+    (similar to extrude).</strong></p>
+<p>There can be e either a global thickness or a per-face thickness.
+The thickness is specified to either be centered about the surface
+(1/2 + 1/2 thickness) or a bidirectional extrusion distance (1 + 1
+thickness). The shotliner mimics FASTGEN’s raytrace behavior when
+encountering this type of BoT object. Our fastgen and intaval
+converters create BoTs marked as this type.</p>
+</li>
+<li>
+<p><strong>“plate_nocos” is a plate mode specialization that is identical in
+    all respects except that shotlining ignores the obliquity angle.</strong></p>
+<p>This means that rays hitting this type of BoT return a segment
+distance equal to the BoT’s thickness regardless of the angle of
+intersection. None of our tools directly generate this object
+type.</p>
+</li>
+</ol>
+<p>The first three modes are exactly what one would expect in order to
+represent the variety of triangle meshes that are commonly created by
+other CAD systems. The last mode, mode #4 (plate_nocose), is obviously
+a peculiar curiosity and prime for removal (in my opinion), but was
+undoubtedly added for some analysis customization. Some investigative
+research would have to be performed if we decide to deprecate this mode
+type (if you’re someone using this mode type, please speak up).</p>
+<p>There’s also obviously not much difference between a #1 (surf) and a
+#3 (plate) with a zero thickness except the following: a) plates are
+defined as implicitly solid (by definition), b) surfaces are not solid
+(by definition), and c) there are a variety of plate mode raytrace
+behaviors implemented specifically to mimic FASTGEN behavior.</p>
+<h1 id="bot-advantages-over-stl">BoT Advantages over STL</h1>
+<p>There are three primary advantages to using BoTs in BRL-CAD instead of
+STL:</p>
+<ol>
+<li>
+<p><strong>STL only supports one object per file.</strong></p>
+<p>This can be worked around (by managing multiple files), but BRL-CAD
+inherently supports an arbitrary number of objects per file that can
+be easily grouped together as needed ensuring that common components
+stay grouped together.</p>
+</li>
+<li>
+<p><strong>STL equivalently only implements surfaces (what we call "surf"
+    mode) with no regard to topology, connectivity, or closure.</strong></p>
+<p>You can write code to assume the geometry is well connected and/or
+encloses a volume and that a ray that enters a face will exit some
+other face(s), but nothing in the format requires it. This can
+impact analysis validity and verifiability. Our “volume” mode BoTs
+are specifically tailored for analysis purposes, requiring that the
+mesh be topologically connectable and closed.</p>
+</li>
+<li>
+<p><strong>STL only supports single-precision floating point.</strong></p>
+<p>We support both single- and double-precision in BRL-CAD, defaulting
+to double-precision for supporting detailed models more accurately.
+This can also impact analysis validity, particularly for highly
+complex models, where error can accumulate and compound more rapidly
+with single-precision data. Double-precision does necessarily use
+more memory, twice as much, but doesn't generally have a meaningful
+performance impact.</p>
+</li>
+</ol>
+<p>STL is definitely in wider use but only because it is basically a lowest
+common denominator “dumb” format with no structure. Going from most any
+format to STL is almost always a lossy conversion.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

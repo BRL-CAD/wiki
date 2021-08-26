@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Tutorial/Blender_to_CAD/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Blender to CAD - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Tutorial/Blender_to_CAD.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>1. Open Blender
+<img alt="" src="/wiki/doc/img/Blender_Step_1.jpg" /></p>
+<p>2.Use the scale manipulator to flatten and expand the cube so it looks
+like a tabletop.
+<img alt="" src="/wiki/doc/img/Blender_Step_2.jpg" /></p>
+<p>3.Go to the Add menu or use the shortcut Shift+A. Add a cube.
+<img alt="" src="/wiki/doc/img/Blender_Step_3.jpg" /></p>
+<p>4.Use the scale manipulator to expand and flatten this cube so it looks
+like a table leg. Then duplicate this table leg 3 times.
+<img alt="" src="/wiki/doc/img/Blender_Step_4.jpg" /></p>
+<p>5.Move the legs of the table so it represents a table.
+<img alt="" src="/wiki/doc/img/Blender_Step_5.jpg" /></p>
+<p>6.Select all the legs and the tabletop, and then click joins on the left
+side of the window under Object.
+<img alt="" src="/wiki/doc/img/Blender_Step_6.jpg" /></p>
+<p>7.Go to File on the top left corner and select export. Under the export
+select obj.
+<img alt="" src="/wiki/doc/img/Blender_Step_7.jpg" /></p>
+<p>8.You will get an export window. Name your file test (optional).</p>
+<p>9.Once you have named your file click on the Export OBJ button, which
+can be found in the top right corner, to export your blender file.
+<img alt="" src="/wiki/doc/img/Blender_Step_9.jpg" /></p>
+<p>10.Go to the BRL-CAD bin directory and give the command to turn you obj
+file into a .g file. This command exports the obj-formatted file to a .g
+file. The syntax of the obj-g command is</p>
+<p><code>&gt;obj-g input.obj output.g</code></p>
+<p>Don’t forget to enter a path for your files. To see all the uses of the
+obj-g command just enter “obj-g.”</p>
+<p>11.Open mged. You will see two windows, a command window that is white
+and a graphics window that is black.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="/wiki/doc/img/MGED_7.22_Step_11.jpg" /></td>
+<td><img alt="" src="/wiki/doc/img/MGED_7.22_Graphics_Step_11.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p>12.Select File and click open. Open you .g file that you just made.
+<img alt="" src="/wiki/doc/img/MGED_7.22.0_Command_Window_Step_12.jpg" /></p>
+<p>13.Then click on Tools. Open Geometry Browser under tools. Double click
+on the top object to display it.
+<img alt="" src="/wiki/doc/img/MGED_7.22.0_Command_Window_Step_13.jpg" /></p>
+<p><img alt="" src="/wiki/doc/img/Geometry_Browser_Step_13.jpg" /></p>
+<p>14.Click on View. Select “az35,el25”
+<img alt="" src="/wiki/doc/img/MGED_7.22.0_Command_Window_Step_14.jpg" /></p>
+<p>15.Click on Tools once again. Select the Raytrace Control Panel. Hit the
+raytrace button.
+<img alt="" src="/wiki/doc/img/MGED_7.22.0_Command_Window_Step_15_-1.jpg" /></p>
+<p><img alt="" src="/wiki/doc/img/Raytrace_Control_Panel_Step_15_and_16_-4.jpg" /></p>
+<p><img alt="" src="/wiki/doc/img/MGED_7.22_Step_15_-2.jpg" /> Once you
+have Raytraced, you should have an image the looks like this:
+<img alt="" src="/wiki/doc/img/MGED_7.22_Step_15.jpg" /></p>
+<p>16.Do you remember what the table looked like when we were done with it
+in Blender? It was upside down and now it’s on its side. Rotating the
+table reorients it correct way. To reorient your table the right way,
+enter these commands in the command window:</p>
+<p><code>sed default.1.1.b.c.s</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="/wiki/doc/img/MGED_7.22_Step_16_-1.jpg" /></td>
+<td><img alt="" src="/wiki/doc/img/Fullscreen_capture_Step_16_-1.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p><code>rot –90 0 0</code>
+<code>{| border="0"</code></p>
+<p>|-
+|<img alt="" src="/wiki/doc/img/Fullscreen_capture_Step_16_-2.jpg" />||<img alt="" src="/wiki/doc/img/Fullscreen_capture_Step_16_-2_-2.jpg" />
+|}</p>
+<p><code>accept</code>
+<code>{| border="0"</code></p>
+<p>|-
+|<img alt="" src="/wiki/doc/img/Fullscreen_capture_Step_16_-3.jpg" />||<img alt="" src="/wiki/doc/img/MGED_7.22_Step_16_-3.jpg" />)</p>
+<p>With that final rendering your import is complete!
+<img alt="" src="/wiki/doc/img/MGED_7.22.0_Graphics_Window_Step_16_-5.jpg" />
+)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

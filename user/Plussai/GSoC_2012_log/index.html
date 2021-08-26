@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Plussai/GSoC_2012_log/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Community bonding period - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Plussai/GSoC_2012_log.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-period" class="nav-link">Community bonding period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#7-may-2012" class="nav-link">7 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#8-may-2012" class="nav-link">8 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#9-may-2012" class="nav-link">9 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#10-may-2012" class="nav-link">10 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#12-may-2012" class="nav-link">12 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#13-may-2012" class="nav-link">13 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#15-may-2012" class="nav-link">15 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#19-may-2012" class="nav-link">19 May 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-period" class="nav-link">Coding period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#week-1" class="nav-link">Week 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-2" class="nav-link">Week 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-3" class="nav-link">Week 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-4" class="nav-link">Week 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-6" class="nav-link">Week 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-7" class="nav-link">Week 7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-10" class="nav-link">Week 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-11" class="nav-link">Week 11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="community-bonding-period">Community bonding period</h1>
+<h2 id="7-may-2012">7 May 2012</h2>
+<ul>
+<li>build the brl-cad svn on VM successfully.</li>
+<li>build the brlcad-7.18.4 on windows(vs2005),but some link error
+    occured from libtclcad.lib(solved go_init(..)undefined)</li>
+</ul>
+<h2 id="8-may-2012">8 May 2012</h2>
+<ul>
+<li>get familiar with the Brep structure.</li>
+</ul>
+<p><code>ON_CurveArray m_C2;//Pointers to parameter space trimming curves (used by trims)</code>
+<code>ON_CurveArray m_C3;//Pointers to 3d curves (used by edges)</code>
+<code>ON_BrepEdgeArray m_E;//edges</code>
+<code>ON_BrepFaceArray m_F;//faces</code>
+<code>ON_BrepLoopArray m_L;//loops</code>
+<code>ON_SurfaceArray m_S;//Pointers to parametric surfaces (used by faces)</code>
+<code>ON_BrepTrimArray m_T;//trims</code>
+<code>ON_BrepVertexArray m_V;//vertexs</code>
+<img alt="" src="/wiki/user/img/brep.jpg" />
+figure:<a href="http://brlcad.org/w/images/5/5e/Brep.jpg">1</a></p>
+<h2 id="9-may-2012">9 May 2012</h2>
+<ul>
+<li>solve the link problem when build brlcad_18.4 in vs2005.(function
+    go_init(..) undefinded)</li>
+<li>understand some important point about NURBS. 3D NURBS is not tensor
+    product surface,but it can be represented into tensor product
+    surface by mapping 3D NURBS into 4D using homogeneous
+    coordinate.(The NURBS BOOK page 30)</li>
+<li>circle Arc can be represented by
+    vector{(1,1,0,1),(1,1,1,1),(2,0,2,2)}in yz plane</li>
+</ul>
+<h2 id="10-may-2012">10 May 2012</h2>
+<ul>
+<li>build brlcad-SVN successfully on my ubantu.(PS:/sh/make_deb.sh is a
+    good tool)</li>
+<li>study some about Nonuniform Scaling of Surfaces.</li>
+</ul>
+<h2 id="12-may-2012">12 May 2012</h2>
+<ul>
+<li>find that the ehy.brep is lack of face and loop in brep
+    structure.add them to make a correct brep.</li>
+</ul>
+<p><code>int surfindex = (*b)-&gt;m_S.Count();</code>
+<code>(*b)-&gt;NewFace(surfindex - 1);</code>
+<code>int faceindex = (*b)-&gt;m_F.Count();</code>
+<code>(*b)-&gt;NewOuterLoop(faceindex-1);</code></p>
+<h2 id="13-may-2012">13 May 2012</h2>
+<ul>
+<li>find that computing the longest edge size is in the
+    bspile/nurb_tess.c and the nurbs is represented by the form of
+    struct face_g_snurb that is different from the ON_BrepSurface.It
+    needs to implement a new interface for the longest edge size.</li>
+</ul>
+<h2 id="15-may-2012">15 May 2012</h2>
+<ul>
+<li>configure some plug-in unit for my vim (e.g ctags,cscope,winmanger)</li>
+</ul>
+<h2 id="19-may-2012">19 May 2012</h2>
+<ul>
+<li>submit a patch of brep_debug.cpp.check if the index is in the range
+    and string of letter.</li>
+</ul>
+<h1 id="coding-period">Coding period</h1>
+<h2 id="week-1"><em>Week 1</em></h2>
+<h3 id="21-may-2012">21 May 2012</h3>
+<ul>
+<li>read the code of brep_debug.cpp which has many functions to debug
+    the geometry in struct of Brep in mged.</li>
+</ul>
+<h3 id="23-may-2012">23 May 2012</h3>
+<ul>
+<li>update the patch of brep_debug.cpp.add the sub command 'info
+    T','info E' for display the information of trims and edges in
+    brep.Also, make the 'info' dispaly the information in a range of
+    indexed elements for keeping sync with the 'plot'.</li>
+</ul>
+<h3 id="25-may-2012">25 May 2012</h3>
+<ul>
+<li>add a subcommand 'plot SCV' to display nurbs control point net</li>
+</ul>
+<h3 id="27-may-2012">27 May 2012</h3>
+<ul>
+<li>waste a lot of time to test the opennurbs' API of:</li>
+</ul>
+<p><code>int CreateMesh(const ON_MeshParameters&amp; mp, ON_SimpleArray&lt;ON_Mesh*&gt;&amp; mesh_list) const;</code></p>
+<ul>
+<li>but,it seems difficult to make a good ON_MeshParameters to create
+    mesh successfully.read the sources of opennurbs_mesh.cpp</li>
+</ul>
+<p><code>ON_Mesh* ON_BrepFace::CreateMesh(</code>
+<code>const ON_MeshParameters&amp; mp,</code>
+<code>ON_Mesh* mesh</code>
+<code>) const</code>
+<code>{</code>
+<code>return 0;</code>
+<code>}</code></p>
+<h2 id="week-2"><em>Week 2</em></h2>
+<h3 id="29-may-2012">29 May 2012</h3>
+<ul>
+<li>do some works on converting nurbs curve and surface to bezier</li>
+</ul>
+<h3 id="31-may-2012">31 May 2012</h3>
+<ul>
+<li>do some works on comput the intersection between a line and a bezier
+    curve/surface</li>
+<li>some materials: the nurbs book and Curves and Surfaces for Computer
+    Aided Geometric Design: A Practical Guide.</li>
+</ul>
+<h3 id="1-june-2012">1 June 2012</h3>
+<ul>
+<li>implement RT_ADD_VLIST(vhead, pt1, BN_VLIST_POINT_DRAW) in
+    src/libdm/dm-plot.c but it seems that dm-plot.c has nothing relation
+    with the brep_debug.cpp</li>
+</ul>
+<h3 id="2-june-2012">2 June 2012</h3>
+<ul>
+<li>implement RT_ADD_VLIST(vhead, pt1, BN_VLIST_POINT_DRAW) in
+    src/libdm/dm-ogl.c and upload the patch.</li>
+<li>make progress for subcommand 'plot SCV' in mged.The patch can
+    display not only the control net,but the control point.</li>
+</ul>
+<h2 id="week-3"><em>Week 3</em></h2>
+<h3 id="4-june-2012">4 June 2012</h3>
+<ul>
+<li>one step that make 2d trimming curve into 3d can be skip because the
+    BREP struct has the edge in 3d corresponding to the 3d trimming
+    curve.</li>
+<li>study the qd tree and kd tree for subdivision of nurbs surface in
+    paper and the approximation error for the subdivision.</li>
+</ul>
+<h3 id="6-june-2012">6 June 2012</h3>
+<ul>
+<li>figure out the coving triangles to avoid cracks when making boundary
+    curve tessellation.</li>
+<li>figure out the trimming curve tracing when splitting the trimming
+    curve into bezier patch.(the active edge,active leaftree)</li>
+</ul>
+<h3 id="8-june-2012">8 June 2012</h3>
+<ul>
+<li>read the opennurbs API and find the
+    ON_NurbsCurve::MakePiecewiseBezier() can clamps ends and adds knots
+    so the NURBS curve has bezier spans (all distinct knots have
+    multiplitity = degree) ,the ON_NurbsSurface also has the same
+    member method.It is a better way to convert trimming curve and
+    surface into bezier</li>
+<li>read the opennurbs API and find the ON_NurbsCurve::InsertKnot() can
+    make the conversion between Nurbs and Bezier if setting the
+    parameter multiplicity equal to degree.,the ON_NurbsSurface also
+    has the same member method.</li>
+</ul>
+<h3 id="10-june-2012">10 June 2012</h3>
+<ul>
+<li>add 'info TB' 'SB' to display information piecewise bezier of
+    trimcurve and surface.patch has been upload</li>
+<li>add 'plot TESS index plotres' to draw the trimesh of a nurbs
+    surface. the tess has not taken apporimmation into consideration and
+    just simply subdivide u,v into plotres steps;</li>
+</ul>
+<h2 id="week-4"><em>Week 4</em></h2>
+<h3 id="12-june-2012">12 June 2012</h3>
+<ul>
+<li>upload the patch to implement the adaptive bezier subdivision and
+    triangle mesh display which includes the function
+    bezierApporixmation(...),bezierSubdivision_kdtree..</li>
+<li>read opennurbs_ext.cpp,especially figuring out the function of</li>
+</ul>
+<p><code>BBNode* SurfaceTree::surfaceBBox(...)</code>
+<code>BBNode* initialBBox(...)</code>
+<code>BBNode*SurfaceTree::subdivideSurfaceByKnots(...)</code>
+<code>BBNode* SurfaceTree::subdivideSurface(...)</code></p>
+<ul>
+<li>SurfaceTree::subdivideSurfaceByKnots and BBNode*
+    SurfaceTree::subdivideSurface can help me to create the kd/qdtree as
+    a represent of bezier subdivision.But the recursion termination
+    condition is different.</li>
+</ul>
+<h3 id="14-june-2012">14 June 2012</h3>
+<ul>
+<li>In function of SurfaceTree::subdivideSurface() at
+    src/opennurbs_exp.cpp,line 1528 to 1531:</li>
+</ul>
+<p><code>const ON_Surface* surf = m_face-&gt;SurfaceOf();</code>
+<code>localsurf-&gt;FrameAt(u.Mid() - uq, v.Mid() - vq, frames[5]);</code>
+<code>localsurf-&gt;FrameAt(u.Mid() - uq, v.Mid() + vq, frames[6]);</code>
+<code>localsurf-&gt;FrameAt(u.Mid() + uq, v.Mid() - vq, frames[7]);</code>
+<code>localsurf-&gt;FrameAt(u.Mid() + uq, v.Mid() + vq, frames[8]);</code></p>
+<p>Interval u,v is in gloable area, So I think the four lines above need to
+be modified.</p>
+<ul>
+<li>Read the BBNode structure in opennurbs_exp.cpp, BBNode will be used
+    to represent the node in qd/kd tree and handling the trimcurve.</li>
+</ul>
+<h3 id="16-june-2012">16 June 2012</h3>
+<ul>
+<li>upload a patch in opennurbs_ext.cpp</li>
+<li>add three functions below to subdivide bezier,in opennurbs_ext.cpp</li>
+</ul>
+<p><code>BBNode* subdivideSurfaceToBezier(...)</code>
+<code>BBNode* subdivideBezier(...)</code>
+<code>double getBezierApporixmation(...)</code></p>
+<ul>
+<li>add two functions below to create BezierTree root as the struct of
+    BBNode</li>
+</ul>
+<p><code>bool setFace(ON_BrepFace* face, bool removeTrimmed);</code>
+<code>BBNode* createBezierTreeNode();</code></p>
+<h2 id="week-5"><em>Week 5</em></h2>
+<h3 id="18-june-2014">18 June 2014</h3>
+<ul>
+<li>compare surface split between</li>
+</ul>
+<p><code>BBNode* subdivideSurfaceToBezier(...)</code>
+<code>BBNode* subdivideBezier(...)</code>
+<code>and</code>
+<code>BBNode*SurfaceTree::subdivideSurfaceByKnots(...)</code>
+<code>BBNode* SurfaceTree::subdivideSurface(...)</code></p>
+<p>the original method seem to be unsymmetric when split ell.brep
+sphere.brep. But the new method has not taken the edge length into
+consideration,so the ratio of lengths in u,v direction may be too long
+or too small.</p>
+<ul>
+<li>understand SurfaceTree::subdivideSurface() at
+    src/opennurbs_exp.cpp,line 1528 to 1531, it comes to the same
+    result when replacing localsurf into surf because the localsurf's
+    domain is change along with the split.</li>
+</ul>
+<h3 id="20-june-2012">20 June 2012</h3>
+<ul>
+<li>figure out the functions below in brep_debug.cpp which is used to
+    draw trimmed BBNode of surface.But these functions seem not be able
+    to remark the intersections of BRNode and trimcurve</li>
+</ul>
+<p><code>void drawBBNode(....)</code>
+<code>void drawisoU(....)</code>
+<code>void drawisoV(....)</code>
+<code>void drawisoUCheckForTrim(.....)</code>
+<code>void drawisoVCheckForTrim(.....)</code></p>
+<ul>
+<li>figure out the trimflag of BBNode: m_trimmed,m_checkTrim and the
+    function of preptrim() in opennurbs_ext.pp.</li>
+</ul>
+<p>when a BBNode is remark as m_trimmed is true, the BBNode has been
+remove out from the surface. When a BBNode is remark as m_trimmed is
+true, the BBNode in uv region has intersections with the BRNode of
+trimcurve,so it need to be check again and compute the interections if
+needed.</p>
+<h3 id="22-june-2012">22 June 2012</h3>
+<ul>
+<li>figure out the functions below in opennurbs_ext.h which can help me
+    to comput the intersection between BBNode and trimcurve.</li>
+</ul>
+<p><code>fastf_t BANode</code><BA><code>::getCurveEstimateOfU(fastf_t v, fastf_t tol) const</code>
+<code>fastf_t BANode</code><BA><code>::getCurveEstimateOfV(fastf_t v, fastf_t tol) const</code></p>
+<ul>
+<li>add a function below to return the parameter t of the intersection
+    based on the two functions above</li>
+</ul>
+<p><code>template</code><class BA>
+<code>fastf_t BANode</code><BA><code>::getCurveEstimateOfT(fastf_t value, bool direction, fastf_t&amp; t, fastf_t tol) const</code></p>
+<ul>
+<li>add a function to sort the BRNode in CurveTree by the t in parameter
+    region.</li>
+</ul>
+<p><code>sortT(BRNode* first, BRNode* second);</code></p>
+<h3 id="24-june-2012">24 June 2012</h3>
+<ul>
+<li>implement TrimNode and TrimLoop to represent the struct of untrimmed
+    regions in parameter area.some functions included below:</li>
+</ul>
+<p><code>TrimLoop(ON_Interval m_u,ON_Interval m_v):tol(0.000001);//construct</code>
+<code>TrimNode* findPos(TrimNode* n);//find the position to insert for a new trimnode</code>
+<code>TrimNode* findSamePoint(const ON_2dPoint&amp; pt);//find the node whose point in parameter is equal to pt</code>
+<code>bool linkOnTrimNode(TrimNode* pre,TrimNode* next);//link two trimnode which both within the bboxing</code>
+<code>bool insertInEdge(TrimNode* pos, TrimNode* n);//insert a new node</code>
+<code>TrimNode* travelLoop(TrimNode* n,int step);//travel from a trimnode to form a close loop</code></p>
+<h2 id="week-6"><em>Week 6</em></h2>
+<h3 id="26-june-2012">26 June 2012</h3>
+<ul>
+<li>start to implement BVNode<BV>::doTrimming function in
+    opennurbs_ext.cpp.</li>
+<li>implement getLeavesIntersection(....) to find the bboxings of
+    curveleaves which have intersections with the BBNode in UV region</li>
+<li>calculate the intersection between edge of bboxing and trimcurve's
+    leaves(bottom,top,left,right)</li>
+<li>solve some special sitiuations: intersection on the conner of
+    bboxing.</li>
+</ul>
+<h3 id="28-june-2012">28 June 2012</h3>
+<ul>
+<li>continue to implement BVNode<BV>::doTrimming function in
+    opennurbs_ext.cpp.</li>
+<li>deal with a special situation: trim curve is collinear with the
+    bboxing's edge. if the start or end point of trim curve is within
+    bboxing's edge, it is regarded as the intersection between edge and
+    trimcurve.</li>
+<li>in function of BANode<BA>::isTrimmed(const ON_2dPoint&amp; uv, fastf_t
+    &amp;trimdist) const , ' &lt;= ' is used to compare float number. It may
+    cause error because float's precision error,So I make some improve
+    for it. This function will be useful in doTrimming.</li>
+<li>link the innerNode in BANode's BBoxing of uv by call the function
+    inline bool TrimLoop::linkOnTrimNode(TrimNode* pre,TrimNode* next)</li>
+</ul>
+<h3 id="30-june-2012">30 June 2012</h3>
+<ul>
+<li>continue to implement BVNode<BV>::doTrimming function in
+    opennurbs_ext.cpp.</li>
+<li>deal with a special situation: the BVNode covers some trimcurve's
+    bboxing which is remarked as m_checkTrim, however, the BVNode has
+    no intersections with any trimcurve. the method which I use may is
+    not precise enough,So I'll try to make a better one.</li>
+<li>add two functions for BANode for judging if a point is contained in
+    a BANode</li>
+</ul>
+<p><code>bool containsUV(const ON_2dPoint&amp; uv);</code>
+<code>bool containsUVClose(const ON_2dPoint&amp; uv);</code></p>
+<ul>
+<li>debug for doTrimming() by subdivide plane surface manually in
+    BBNode* SurfaceTree::subdivideSurface()</li>
+</ul>
+<h2 id="week-7"><em>Week 7</em></h2>
+<h3 id="2-july-2012">2 July 2012</h3>
+<ul>
+<li>continue to implement BVNode<BV>::doTrimming function in
+    opennurbs_ext.cpp.</li>
+<li>deal with a special situation: if a trimcurve is collinear with a
+    edge of BBNode's uv region and a endpoint of the trimcurve is just
+    on the uv region's conner, the conner point will not to be the
+    intersection.</li>
+<li>add a flag 'unTrimmed ' in 'TrimLoop' to mark if a BBNode's uv
+    region has been trimmed, situation of trimcurve lies on edge,
+    endpoint just on edge are included;</li>
+</ul>
+<h3 id="4-july-2012">4 July 2012</h3>
+<ul>
+<li>insert adjacent subdivide hit into every BBNode's uv region.</li>
+<li>add member var into class BVNode<BV> and assign these member when
+    subdividing surface</li>
+</ul>
+<p><code>BVNode</code><BV><code>* north;</code>
+<code>BVNode</code><BV><code>* south;</code>
+<code>BVNode</code><BV><code>* west;</code>
+<code>BVNode</code><BV><code>* east;</code>
+<code>BVNode</code><BV><code>* parent;</code></p>
+<ul>
+<li>add member function into class BVNode<BV> to get adjacent node</li>
+</ul>
+<p><code>BVNode</code><BV><code>* getAdjacentNorth();</code>
+<code>BVNode</code><BV><code>* getAdjacentSouth();</code>
+<code>BVNode</code><BV><code>* getAdjacentWest();</code>
+<code>BVNode</code><BV><code>* getAdjacentEast();</code></p>
+<ul>
+<li>add member function into class BVNode<BV> to insert adjacent
+    subdivide hit</li>
+</ul>
+<p><code>void insertAdjacentHit();</code></p>
+<h3 id="6-july-2012">6 July 2012</h3>
+<ul>
+<li>add a trimcurve for ell.brep and hyp.brep manually to test trimming</li>
+<li>ell:left:top view,right:left view</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ell1.png" />
+<img alt="" src="/wiki/user/img/Ell2.png" /></p>
+<ul>
+<li>ell:left:local view,right:uv region</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ell3.png" />
+<img alt="" src="/wiki/user/img/Ell4.png" /></p>
+<ul>
+<li>hyp:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/HYP1.png" />
+<img alt="" src="/wiki/user/img/HYP2.png" />
+<img alt="" src="/wiki/user/img/HYP3.png" />
+<img alt="" src="/wiki/user/img/HYP4.png" /></p>
+<h3 id="8-july-2012">8 July 2012</h3>
+<ul>
+<li>continue to debug 'doTrimming'.There exists a situation that some
+    trim leafs' bboxings overlap and it is difficult to find the nearest
+    trim leaf above a surface leaf's bboxing in uv. Function 'prepTrim'
+    mark the surface leaf in such situation as 'm_checkTrim = true'.But
+    in some cases, the surface leaf is trimmed out.I changed the
+    subdivision depth to 10 manually and tested the rhino0.s in
+    mged.Some surface leaves which should be trimmed out are still
+    remain.So, need a more accuracy method to check it.</li>
+<li>image: some BBoxing in uv which should be trimmed are still
+    remain(right bottom conner).</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/rhino.png" />
+<img alt="" src="/wiki/user/img/rhino1.png" /></p>
+<h3 id="10-july-2012">10 July 2012</h3>
+<ul>
+<li>find a algorithm for 'TrimLoop' triangulation,algorithm has the
+    steps below:</li>
+</ul>
+<p>a) make the node in 'TrimLoop' to form a linked list.</p>
+<p>b)for each triangle form by p0,p1,p2 successive in linked list,calculate
+the minimum inside angle.</p>
+<p>c)find the triangle which has the max minimum inside angle, then record
+the triangle and remove the point p1 in the triangle</p>
+<p>d)come to (a) until there only exists three points in the linked list</p>
+<h3 id="12-july-2012">12 July 2012</h3>
+<ul>
+<li>Update my patches.</li>
+</ul>
+<h2 id="week-10"><em>Week 10</em></h2>
+<h3 id="1-augest-2012">1 Augest 2012</h3>
+<ul>
+<li>because of pressure of my paper schedule, I need to leave for a long
+    time.I must</li>
+</ul>
+<p>say sorry that I will not complete the final-evaluation for gsoc.</p>
+<h2 id="week-11"><em>Week 11</em></h2>
+<h3 id="6-augest-2012">6 Augest 2012</h3>
+<ul>
+<li>I'v package my patch into three part after cleaning up and adding
+    some comments.</li>
+</ul>
+<p>I think the subdividion is OK some more test must be done to ensure my
+trimming algorithm is accurate enough.</p>
+<ul>
+<li>because of large amount of code need to be cleaned up and test but
+    time is up, I decide to handle my paper firstly.</li>
+<li>But I will come back and complete my work finally.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

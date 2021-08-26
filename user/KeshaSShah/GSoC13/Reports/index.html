@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/KeshaSShah/GSoC13/Reports/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Summary of GSOC Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/KeshaSShah/GSoC13/Reports.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#summary-of-gsoc-project" class="nav-link">Summary of GSOC Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-1-familiarizing-phase" class="nav-link">Week (-1) : Familiarizing Phase</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#april-19-22" class="nav-link">April 19-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#april-23-30" class="nav-link">April 23-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-1" class="nav-link">May 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-2" class="nav-link">May 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-3" class="nav-link">May 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-4-5" class="nav-link">May 4-5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-6-8" class="nav-link">May 6-8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-9" class="nav-link">May 9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-10-11" class="nav-link">May 10-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-12" class="nav-link">May 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-13-14" class="nav-link">May 13-14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-15" class="nav-link">May 15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-17" class="nav-link">May 17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-18-may-26" class="nav-link">May 18-May 26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-0" class="nav-link">Week 0</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#may-27" class="nav-link">May 27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-28-june1" class="nav-link">May 28-June1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-2-june-16" class="nav-link">June 2-June 16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-1" class="nav-link">Week 1</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#june-17" class="nav-link">June 17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-18" class="nav-link">June 18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-19" class="nav-link">June 19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-20" class="nav-link">June 20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-21" class="nav-link">June 21</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-22" class="nav-link">June 22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-23" class="nav-link">June 23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-2" class="nav-link">Week 2</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#june-24" class="nav-link">June 24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-25" class="nav-link">June 25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-26" class="nav-link">June 26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-27" class="nav-link">June 27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-28" class="nav-link">June 28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-3" class="nav-link">Week 3</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#july-1" class="nav-link">July 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-2" class="nav-link">July 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-3" class="nav-link">July 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-4-5" class="nav-link">July 4-5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-4" class="nav-link">Week 4</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#july-8-9" class="nav-link">July 8-9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-10" class="nav-link">July 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-11" class="nav-link">July 11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-12" class="nav-link">July 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#july-15" class="nav-link">July 15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-16" class="nav-link">July 16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-17" class="nav-link">July 17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-18" class="nav-link">July 18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-19" class="nav-link">July 19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-6" class="nav-link">Week 6</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#july-22" class="nav-link">July 22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-23" class="nav-link">July 23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-24" class="nav-link">July 24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-25" class="nav-link">July 25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-26" class="nav-link">July 26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-7" class="nav-link">Week 7</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#july-29" class="nav-link">July 29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-30" class="nav-link">July 30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-31" class="nav-link">July 31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-1" class="nav-link">August 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-2" class="nav-link">August 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-8" class="nav-link">Week 8</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#august-5" class="nav-link">August 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-6" class="nav-link">August 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-7" class="nav-link">August 7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-8" class="nav-link">August 8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-9" class="nav-link">August 9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-9" class="nav-link">Week 9</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#august-12" class="nav-link">August 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-13" class="nav-link">August 13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-14" class="nav-link">August 14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-15" class="nav-link">August 15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-16" class="nav-link">August 16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-10" class="nav-link">Week 10</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#august-19-20" class="nav-link">August 19-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-21-august-23" class="nav-link">August 21-August 23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-11" class="nav-link">Week 11</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#august-26-27" class="nav-link">August 26-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-28" class="nav-link">August 28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-29" class="nav-link">August 29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-30" class="nav-link">August 30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august-31" class="nav-link">August 31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-12" class="nav-link">Week 12</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#september-2" class="nav-link">September 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-3" class="nav-link">September 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-4-5-6" class="nav-link">September 4-5-6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-13" class="nav-link">Week 13</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#september-10" class="nav-link">September 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-11" class="nav-link">September 11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-12" class="nav-link">September 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-13" class="nav-link">September 13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-14" class="nav-link">September 14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-15" class="nav-link">September 15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-14" class="nav-link">Week 14</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#september-16" class="nav-link">September 16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-17" class="nav-link">September 17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-18" class="nav-link">September 18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-19" class="nav-link">September 19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#september-20" class="nav-link">September 20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="summary-of-gsoc-project">Summary of GSOC Project</h1>
+<p>This is the first year in which I was eligible for GSoC program and was
+selected by the highly esteemed open source community BRL-CAD. Before
+joining the project, I had just the glimpse of how large code bases are
+maintained, but had never got hands on experience with them. I used git
+version control, but that just limited to handling my college project.</p>
+<p>I would like to rewind and fast-forward the 4 beautiful months of my
+life, the best in terms of experience and knowledge gaining and learning
+summer quickly below-</p>
+<p>Initially, before the project submission deadline, I submitted few small
+and pretty code refactoring patches to BRL-CAD to get myself famaliar
+with svn version control system and other basics for working with gsoc
+project.</p>
+<p>Upto the student selection date, I worked on an issue of github to get
+famaliar with github version control system, on which STEPcode is
+managed. In this period, I got to know abt diff tools, working with git
+version control in a better way, gdb debugger, doxygen and how to write
+comments and observed some good tactics related to coding followed in
+industry, like taking minute care from declaring variable names to
+introducing magic numbers and to see that in future there will be no
+false positives and bugs introduced that would create problem in long
+run.</p>
+<p>In between the selection period and the actual program period, it was
+the community bonding period as well as time for release process of
+BRL-CAD 7.24.0. I helped in formatting the release notes for this major
+release and got some experience with release procedure.</p>
+<p>After the actual beginning of the program I worked with open issues of
+github and got it merged on the mainstream. One was removing all
+cppcheck warnings from stepcode. There were mainly 6 types of warnings
+reported in STEPcode by cppcheck which included unused variables,
+preference for preincrement/decrement, sscanf() to prevent overflow,
+strncpy not '\0' terminated, C style pointer casting and reducing the
+scope. After clearing those, I ran cppcheck on brlcad trunk and uploaded
+the output to refactoring page of brlcad. Also, I made a patch for
+preference for preincrement/decrement from that output and cleared those
+warnings from cppcheck on BRL-CAD sources.</p>
+<p>The next issue I worked on was installing the headers from the central
+files used in the minimal example. This included installing headers from
+10 directories of stepcode. Now, anyone can just do sudo make install
+and start using the API's like any other library.</p>
+<p>After that, I worked on checking the step-g importer on brlcad and wrote
+regression tests checking the step-g importer with 3 small and simple
+step models. I also read and knew about how to use anything from net
+with a copyright and use the license. I had never dealt with those kind
+of scenes before.This test will confirm the working of step-g importer
+and check for the geometry by checking volume &gt; 0. I also looked upon
+the todo task on brlcad wiki and deleted those which were already done
+and added a prototype and Todo comments in the trunk to make it easily
+visible and more organized. These patches are still awaiting review by
+mentors.</p>
+<p>I forgot to mention about my experience with STEPbot, my experiment with
+a bot for channel #stepcode on IRC. And one fine evening, when I logged
+on to IRC, I was surprised to see an infobot similar to that on #brlcad
+already implemented and hence the logs of that channel could be archived
+very easily.</p>
+<p>A huge thanks to Mark, my mentor who has been the best mentor I could
+ever have. He had been by my side at every 'step' of my project guiding
+me and providing quick response and feedback of my work and effective
+guidelines throughout the project. Thank you Sean. You are the best
+project manager I ever saw. Along-with the help in technical aspects, I
+loved how you used to motivate and inspire me. Also, I liked your way of
+getting answers from me instead of giving solution directly,no matter if
+it took an hour for a simple thing. :) Thanks Cliff, Erik and all other
+GSoC students who had been as a support anytime in the last 4 months. I
+could not imagine my project being complete without you guys. Awesome,
+cool community, i must say. :) Thanks all once again.</p>
+<p>Future plans - In past a week or so, I observed that a lot of people
+were posting queries related to STEPcode. They were asking for good
+tutorials or easy-to-understand links. So, I think, I would first make
+tutorial for beginners on STEPcode. And next, after that I am willing to
+get my hands on step exporter. My plans till next summer is to work and
+get familiar with the step-exporter and dedicate my next summer to it.</p>
+<p>You just walked with me on my journey of past 4 months. I know, this has
+been too long and thanks for your precious time reading this. Hope you
+enjoyed the walk. Below are my daily logs and reports.</p>
+<p>Three Cheers for this awesome summer !</p>
+<h1 id="week-1-familiarizing-phase">Week (-1) : Familiarizing Phase</h1>
+<h2 id="april-19-22">April 19-22</h2>
+<ul>
+<li>Joined #brlcad channel on IRC</li>
+<li>Subscribed to <a href="https://lists.sourceforge.net/lists/listinfo/brlcad-devel">mailing
+    list</a></li>
+<li>Introduced myself to the community through mailing list</li>
+<li>Downloaded Source Code</li>
+<li>Compiled it successfully from the source using cmake</li>
+<li>Made an account on SVN.</li>
+<li>Had a glance at source folder and caught my eyes on an instance of
+    duplication.</li>
+<li>Made <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=640804&amp;aid=3611485&amp;group_id=105292">first
+    patch</a>
+    and submitted it.</li>
+<li>Looked through project ideas and found <a href="/wiki/Code_Reduction">Code Refacoring</a> most interesting
+    and suitable for me.</li>
+</ul>
+<h2 id="april-23-30">April 23-30</h2>
+<ul>
+<li>University Final Exams</li>
+</ul>
+<h2 id="may-1">May 1</h2>
+<ul>
+<li>Checked out some TODO task in the domain of Code Reducing and
+    Refactoring.</li>
+<li>Picked up moving LIBWBD comments.</li>
+<li>Used the grep command to find out the comments that needed to be
+    moved.</li>
+<li>Within just 10 minutes, I was able to successfully move all comments
+    and submitted <a href="http://sourceforge.net/p/brlcad/patches/172/">another
+    patch</a></li>
+<li>Discussed with Sean about my interest when he encouraged me to
+    explore converting and processing geometry.</li>
+</ul>
+<h2 id="may-2">May 2</h2>
+<ul>
+<li>Read <a href="http://brlcad.survice.com/downloads/documentation/BRLCAD_VolumeI.pdf">tutorial
+    I</a>
+    and then <a href="http://brlcad.org/w/images/6/66/Converting_Geometry.pdf">tutorial
+    IV</a> on
+    Converting Geometry and recieved some basic idea on STEP and other
+    convertors available for importing and exporting between different
+    CAD softwares.</li>
+<li>Gone through project ideas again and liked two more ideas-namely
+    Improving <a href="/wiki/STEP_Libraries">STEP Library</a> and STEP AP242
+    Parser.</li>
+</ul>
+<h2 id="may-3">May 3</h2>
+<ul>
+<li>Proposal Submission Deadline on melange.</li>
+<li>Made my
+    <a href="/wiki/user/KeshaSShah/GSoC13">User-Wiki-pages</a></li>
+<li>Uploaded proposal on
+    <a href="http://www.google-melange.com/gsoc/dashboard/google/gsoc2013#proposals">Melange</a>
+    and embedded wiki links in it.</li>
+</ul>
+<h2 id="may-4-5">May 4-5</h2>
+<ul>
+<li>Read about the STEPcode from <a href="http://stepcode.org/mw/index.php?title=STEPcode">its
+    wiki</a></li>
+<li><a href="http://stepcode.org/mw/index.php?title=Files_and_directories">Files and
+    Directories</a>
+    in sc/source</li>
+<li><a href="http://stepcode.org/mw/index.php?title=Building_STEPcode#How_to_build">Build</a>
+    the STEPcode with testing enabled using cmake</li>
+<li>Looked at <a href="http://stepcode.org/mw/index.php?title=Building_STEPcode#Files_created_in_build_dir">files created in build
+    directory</a></li>
+</ul>
+<h2 id="may-6-8">May 6-8</h2>
+<ul>
+<li>Picked up <a href="https://github.com/stepcode/stepcode/issues/47">Issue
+    #47</a> to work upon.</li>
+<li>Made a list of differences between pair of 13 similar files.</li>
+<li>Untangles some calls from src/fedex_plus to src/clstepcore.</li>
+<li>Discussed on IRC about the errors I encounter.</li>
+<li>Read about how calls are made, maintainence of <a href="/wiki/Call_stack">call-stack
+    heap</a>, the process of
+    linking and <a href="http://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html">Compiler
+    warnings</a></li>
+<li>Overall, have got some better understanding.</li>
+</ul>
+<h2 id="may-9">May 9</h2>
+<ul>
+<li>Installed doxygen and looked up some example codes.(for
+    documentation part)</li>
+<li>Made a test-bot for IRC #stepcode (it functionalities still
+    remaining to be discussed with mentors.)</li>
+</ul>
+<h2 id="may-10-11">May 10-11</h2>
+<ul>
+<li>Read from some references and manuals and gone through cheat-sheet
+    for learning GIT and GITHUB. (add, branch, commit, push, pull,
+    reset, log etc.)</li>
+<li>Installed gitk and used it.</li>
+<li>Assigned #47 issue to myself.</li>
+<li>Made a branch and committed and push the removal of 5 similar
+    functions.</li>
+<li>Revised some concept like virtual, pure functions, friend functions,
+    use of const and static, extern etc.</li>
+<li>Discussed with Mark for logs and bot of #stepcode on IRC</li>
+<li>Reading doxygen manual.</li>
+</ul>
+<h2 id="may-12">May 12</h2>
+<ul>
+<li>Almost done with issue #47. Pushed the commits on branch
+    ks-duplicate-files.</li>
+<li>Known about the Debugger gdb- used back-trace feature.</li>
+<li>Quick Guide to <a href="http://betterexplained.com/articles/debugging-with-gdb/">gdb
+    Debugger</a>.</li>
+<li>Installed KDevelop IDE and planning to use it as it has nicer gdb
+    GUI wrapper.</li>
+</ul>
+<h2 id="may-13-14">May 13-14</h2>
+<ul>
+<li>Getting "Abort (core dumped)" error. Pushed it to a new branch for
+    Mark to review it.</li>
+<li>Picked new issue #200.</li>
+</ul>
+<h2 id="may-15">May 15</h2>
+<ul>
+<li>Got Doxygen working correctly and tried few samples. Read manual to
+    see how to comment.</li>
+</ul>
+<h2 id="may-17">May 17</h2>
+<ul>
+<li>Surfed for lazy-loading. Reading the process of loading (ch 7) of
+    Bryant book.</li>
+</ul>
+<h2 id="may-18-may-26">May 18-May 26</h2>
+<ul>
+<li>Read the tutorial series at <a href="http://www.learncpp.com/#ChapterB">http://www.learncpp.com/#ChapterB</a></li>
+<li>Understand old C++ and modern <a href="http://www.learncpp.com/cpp-tutorial/16-1-the-standard-template-library-stl/">STL
+    containers</a></li>
+</ul>
+<p>(</p>
+<h1 id="week-0">Week 0</h1>
+<h2 id="may-27">May 27</h2>
+<ul>
+<li>Accepted Students announced on Melange. Yupiie, selected ! :)</li>
+</ul>
+<h2 id="may-28-june1">May 28-June1</h2>
+<ul>
+<li>I fully confirm and accept the stated participation requirements
+    including giving full rights to my contributions, remaining visibly
+    active, being engaged in discussion, providing regular updates on
+    progress, complying with the development rules, and writing
+    excellent code.</li>
+<li>Reading Hacking Guide.</li>
+<li>Will be returning on 5th June from di's marriage</li>
+<li>Next Target: Obtain commit access till 17th June (before gsoc
+    program begins)</li>
+</ul>
+<h2 id="june-2-june-16">June 2-June 16</h2>
+<ul>
+<li>Community Bonding Period.</li>
+<li>Preparation of Release 7.24.0 - <a href="/wiki/Community_Publication_Portal.md#Draft_Release_Note">Release
+    Note</a></li>
+</ul>
+<h1 id="week-1">Week 1</h1>
+<h2 id="june-17">June 17</h2>
+<ul>
+<li>Worked upon <a href="https://github.com/stepcode/stepcode/issues/21">Issue
+    21</a>: Removed 100
+    warnings, errors and styles shown by cppcheck from about total 455.</li>
+<li>I ran "rm -r *" from stepcode/ instead of build/, and cloned the
+    repo again in stepcode/ through which I lost all my progress. Thanks
+    to git cherry-pick command, through which i recovered it back !
+    #sighofrelief</li>
+</ul>
+<h2 id="june-18">June 18</h2>
+<ul>
+<li>Looked upon 100 more cppchecks to solve <a href="https://github.com/stepcode/stepcode/issues/21">Issue
+    21</a>.</li>
+<li>Strangely, many cppchecks claimed wrong warnings. Like, a warning
+    says, the varaible was not used, but in later part of the code, it
+    was actually used.</li>
+<li>Learnt not to believe any warnings blindly unless looking upon the
+    code.</li>
+<li>(Now onwards, my phone's low battery warning is the only warning I
+    will take seriously :P #alighthumour)</li>
+<li>Github issue - The branch I am working doesn't have master changes,
+    so after this issue completes, I will clone repo again and use the
+    freshly cloned directory's .git/ folder.</li>
+<li><a href="http://ibot.rikers.org/%23stepcode/20130618.html.gz">IRC log</a>.</li>
+</ul>
+<h2 id="june-19">June 19</h2>
+<ul>
+<li><a href="http://www.networketiquette.net/">Netiquette</a> and <a href="http://www.slideshare.net/fullscreen/sandeepkmadaan/mailing-guidelines/2">mailing list
+    guidelines</a></li>
+<li>Cleared some more warnings- almost 65-70% of them sorted out
+    successfully.</li>
+</ul>
+<h2 id="june-20">June 20</h2>
+<ul>
+<li>Done with issue 21. All genuine warnings have been successfully
+    removed.</li>
+<li>The ones which remain are due to bugs in cppcheck. Cppcheck says
+    some variables unused though it has been used, says many functions
+    have not been used, shows some warnings in generated files(generated
+    files can't be changed obviously)</li>
+<li>To ensure all test are running fine as before and nothing has been
+    broken, compiled with testing enable and ran 'make test'. All test
+    are working correctly as before. :)</li>
+</ul>
+<h2 id="june-21">June 21</h2>
+<ul>
+<li>Will push the change to github repo for Mark to review it once, and
+    then it will be merged with master branch. Issue 21 can be closed
+    now.</li>
+<li>Next thing to work on is - STEPcode 0.7 doesn't install all required
+    headers. All .h files need to be in /usr/lib or whatever the install
+    prefix is.So you don't need to reinstall in order to add
+    schemas.Then you could just sudo make install and start using the
+    API:s like any other library.</li>
+<li><a href="http://www.cmake.org/cmake/help/v2.8.8/cmake.html#command:install">CMake
+    Tutorial</a></li>
+</ul>
+<h2 id="june-22">June 22</h2>
+<ul>
+<li>Updated <a href="/wiki/Google_Summer_of_Code/2013">this page</a> for all
+    the participants, for the release purpose.</li>
+<li>Reviewed the comments by Sean on patch and made a new patch for
+    that.</li>
+<li>Got mail from Mark to add myself into AUTHORS file :)</li>
+</ul>
+<h2 id="june-23">June 23</h2>
+<ul>
+<li>Solved the error regarding #214 testcase showing failed while 'make
+    test'.</li>
+<li>Known git add -p command. Its awesome !</li>
+</ul>
+<h1 id="week-2">Week 2</h1>
+<h2 id="june-24">June 24</h2>
+<ul>
+<li>Cloned stepcode @ 4kbps speed ! #crazymoments</li>
+<li>Looked for cmake installations</li>
+</ul>
+<h2 id="june-25">June 25</h2>
+<ul>
+<li>Problem with transferring .git/ folder - The changes after the repo
+    was cloned are also being shown in diff, which were not made by me.</li>
+<li>Still to figure out how to apply just a small subset among them</li>
+<li>Known about Cool IRC apps for mobile. #feelingblessed</li>
+</ul>
+<h2 id="june-26">June 26</h2>
+<ul>
+<li>Solved the git problem after smashing head for 2 hrs. Reason was I
+    ran 'git init ' after cloning the repo.</li>
+<li>Sorting out commits with the same kind of patches in them.</li>
+<li>Like, all unused variable in one commit, all scope reducing in one
+    commit, all strncpy() in one commit, all memory leaks in one commit,
+    all C-style pointers removing in one commit etc.</li>
+<li>Pushing that to a new branch ks-cppcheck</li>
+</ul>
+<h2 id="june-27">June 27</h2>
+<ul>
+<li>Mark suggested not to change src/base/judy</li>
+</ul>
+<p>a) it will make it harder to merge upstream changes, and b) that code
+is particularly complex; some of the changes the author has made to fix
+bugs have been very subtle.</p>
+<ul>
+<li>There is a way to rewrite commits,yet left to figure it out.</li>
+</ul>
+<h2 id="june-28">June 28</h2>
+<ul>
+<li>Unused Variable-Don't just comment out unused variables. If there is
+    no possibility of side effects (i.e. they aren't initialized via a
+    function call), remove them. In case of doubts, delete them and then
+    make a note on github by clicking the message bubble by the
+    line.Oops, no point in modifying clSchemas/* either. I should
+    probably just delete that, since it's old generated code.Other than
+    this and the commented out variables, it looks good.</li>
+<li>Reducing Scope-Looks good, except there are some lines that were
+    commented out instead of being deleted.</li>
+<li>Closing file-Closing the files doesn't hurt, but at that point the
+    program is definitely about to exit. I'm not sure if I would put the
+    effort in to fix the warning.</li>
+<li>Increment/Decrement-I assume you changed these because of a message
+    like "(performance) Prefer prefix ++/-- operators for non-primitive
+    types."That means change 'x++' (++ is the suffix) to '++x' (++ is
+    the prefix). I had to look this one up; the latter is more efficient
+    due to the language spec, which affects how compilers usually
+    implement <a href="http://stackoverflow.com/a/1813008/382458">prefix
+    operator++.</a>\</li>
+<li>Strncpy NULL terminated- Looks good.</li>
+<li>C-style pointer casting- %50c is almost certainly incorrect, and
+    %50s may be too limiting.Adding arbitrary magic numbers like this is
+    really bad in the long term. They're just bugs waiting to present
+    themselves later in very hard-to-discover ways. The usual fix for
+    insecure coding detection from static analyzers is to do manual
+    parsing. We have a replacement in BRL-CAD (src/libbu/sscanf.c) that
+    could be translated to stepCode string data structures, and which
+    prevent the buffer overrun issue of sscanf().</li>
+</ul>
+<h1 id="week-3">Week 3</h1>
+<h2 id="july-1">July 1</h2>
+<ul>
+<li>Found out solution for modifying prev commits, and editing them
+    using 'git rebase -i' and change pick to edit. Then use commands git
+    commit --amend and git rebase --continue</li>
+<li>But there was some problem with the branches.</li>
+<li>Also, I searched for alternative ways on internet and found
+    something like it could be done using filter, but was not working
+    out on my system.</li>
+<li>Asked Mark to comeup on IRC at night, if possible, to resolve it.</li>
+<li>Yeah, finally I have fresh 5GB refilled in my account and can use
+    net with a pretty awesome speed again :)</li>
+</ul>
+<h2 id="july-2">July 2</h2>
+<ul>
+<li>Unfortunately, Mark and I were not online on same time and that prev
+    thing remains.</li>
+<li>So, Looked up for installation in cmake and Build Processes.</li>
+</ul>
+<h2 id="july-3">July 3</h2>
+<ul>
+<li>Pulled branch ks/CppCheck</li>
+<li>Made all necessary changes listed in June 28</li>
+<li>Finally, the thing worked :)</li>
+</ul>
+<h2 id="july-4-5">July 4-5</h2>
+<ul>
+<li>No work for upcoming two days due to placement season at college.</li>
+<li>Sorry for that. I will cover up in upcoming week giving some extra
+    time.</li>
+</ul>
+<h1 id="week-4">Week 4</h1>
+<h2 id="july-8-9">July 8-9</h2>
+<ul>
+<li>Brother going to Germany tomorrow for six months, so spending time
+    with him.</li>
+<li>A small get-together at home with friends and relatives.</li>
+<li>Busy with his last moment packing and all.</li>
+</ul>
+<h2 id="july-10">July 10</h2>
+<ul>
+<li>Went to airport to drop him alongwith some cousins.</li>
+<li>As promised, will get back working hard from tomorrow and cover up
+    the missed things.</li>
+</ul>
+<h2 id="july-11">July 11</h2>
+<ul>
+<li>Looking at the previous comments on the changes on github and
+    modifying code accordingly.</li>
+<li>Linking again the code in head.</li>
+</ul>
+<h2 id="july-12">July 12</h2>
+<ul>
+<li>New branch ks/cpp on github.</li>
+<li>Undone all changes from src/base/judy/* , src/clprobe-ui and
+    src/clSchemas.</li>
+<li>Accidentally capitalized Schema has been changed to schema.</li>
+<li>Magic Number 50 in %50s eliminated. Now, it will accept characters
+    only till upto max BUFSIZ-1 and prevents overflow.</li>
+<li>The previous conflict message taken care of.</li>
+</ul>
+<h1 id="week-5">Week 5</h1>
+<h2 id="july-15">July 15</h2>
+<ul>
+<li>Rebasing kept on giving error, that ks/CPP is a non-fastforward
+    branch. Cloned a fresh copy, pulled my branch from github and then
+    it worked.</li>
+<li>Tried with many sscanf examples to make sure how it actually works.
+    And then suggested what should be done on github.</li>
+<li>It checks for all failing cases of sscanf also.</li>
+<li>If Mark approves, I will change it according, orelse, we will go
+    with the present version of it.</li>
+</ul>
+<h2 id="july-16">July 16</h2>
+<ul>
+<li>Ponder through a quite tricky program -
+    <a href="http://paste.kde.org/p5bf0a67b/raw/">http://paste.kde.org/p5bf0a67b/raw/</a></li>
+<li>Eventhough scanBuf has size 1, it stores a 4 size long string.</li>
+<li>Puzzled why ?</li>
+<li>Suprisingly on windows gcc compiler, it shows "t:)" as output of
+    scanBuf ! :O</li>
+</ul>
+<h2 id="july-17">July 17</h2>
+<ul>
+<li>We need to change %s to %ns to avoid the overflow (where n is an
+    integer)<ol>
+<li>define BUFSIZ 99 //in real code, BUFSIZ would be set in a system
+    header</li>
+</ol>
+</li>
+<li>const unsigned int size = BUFSIZ;</li>
+<li>char fmtString[10] = {0};</li>
+<li>snprintf( fmtString, 99, "%%%ds", size ); /* the first pair of %
+    signs prints a '%', then %d prints an int, followed by 's'*/</li>
+<li>fmtString now contains "%99s"</li>
+</ul>
+<h2 id="july-18">July 18</h2>
+<ul>
+<li>Tried examples from sprintf, sscanf and snprinf</li>
+<li>Found answer to question in log of July 16.</li>
+<li>Because pointer is passed and not the actual value.</li>
+</ul>
+<h2 id="july-19">July 19</h2>
+<ul>
+<li>Found out the value of BUFSIZ in header.<ol>
+<li>define BUFSIZ _IO_BUFSIZ /* in stdio.h */</li>
+<li>define _IO_BUFSIZ _G_BUFSIZ /* in libio.h */</li>
+<li>define _G_BUFSIZ 8192 /* in _G_config.h */</li>
+</ol>
+</li>
+<li>so pushed "%8192s" in place of "%s" in sscanf, where 8192, though is
+    hardcoded but is not actually a magic number !</li>
+</ul>
+<h1 id="week-6">Week 6</h1>
+<h2 id="july-22">July 22</h2>
+<ul>
+<li>Mark's proposed- <a href="http://ideone.com/lmL6Fa">http://ideone.com/lmL6Fa</a></li>
+<li>Made an ideone account. My proposed- <a href="http://ideone.com/aOaJqP">http://ideone.com/aOaJqP</a></li>
+<li>No fmtStr required in second one. Indeed in the first snprintf only
+    "kes" was stored into scanBuf.</li>
+<li>The next sscanf is just like strcpy. I am scanning from scanBuf and
+    placing it again into scanBuf only</li>
+<li>That was required because snprintf returned the number of chars
+    written and code demanded number of items written.</li>
+<li><a href="https://github.com/stepcode/stepcode/commit/c8e4a2f7eb530edbc1afaa8a1afbabf560e6b910">https://github.com/stepcode/stepcode/commit/c8e4a2f7eb530edbc1afaa8a1afbabf560e6b910</a></li>
+</ul>
+<h2 id="july-23">July 23</h2>
+<ul>
+<li>Reviews and suggestions :</li>
+<li>Writing to the same buffer you are reading from qualifies as
+    "undefined behavior", which means that the compiler/libc writers get
+    to do <a href="http://feross.org/gcc-ownage/">whatever they please.</a> It may
+    or not behave as expected on various platforms and with different
+    compiler/libc versions.</li>
+<li>No need to worry about memory here.</li>
+<li>Expand the size of character array assome platform might use a much
+    larger number instead of 8k - such as 16k or 128k.</li>
+<li>Sean suggested- std::stringstream fmtStr1; fmtStr1 &lt;&lt; "#%%d
+    %" &lt;&lt; BUFSIZ-1 &lt;&lt; "s"; ... sscanf(...
+    fmtStr1.str().c_str(), ...);</li>
+<li>Implementing with std::stringstream now.</li>
+</ul>
+<h2 id="july-24">July 24</h2>
+<ul>
+<li>Cppcheck manual and checking cppcheck for style,warning,performance,
+    error,unused functions and variables etc in brlcad source.</li>
+<li>Run the following :</li>
+</ul>
+<p>cd brlcad cppcheck -isrc/other/ include/ src/ --enable=all
+2&gt;cppcheck_brlcad.txt</p>
+<ul>
+<li>It checks for issues in 1690 files under all src/ except src/other
+    and all include/ .</li>
+<li>The manual claims that it supports multithread ( by option -j like
+    -j 4 ), but when I tried, it said, "cppcheck: unusedFunction check
+    can't be used with '-j' option, so it's disabled." So, if not
+    checking for unusedFunction, it can also have mutithreaded checking.</li>
+</ul>
+<h2 id="july-25">July 25</h2>
+<ul>
+<li>Added a section in Code Cleanup of BRL-CAD:
+    <a href="http://brlcad.org/wiki/Code_Cleanup#CPPCHECK-CLEANUP">http://brlcad.org/wiki/Code_Cleanup#CPPCHECK-CLEANUP</a></li>
+<li>Looking up for code cleanup in BRL-CAD.</li>
+<li>Facing a make error. Putting in efforts solving it.</li>
+</ul>
+<h2 id="july-26">July 26</h2>
+<ul>
+<li>A long discussion on IRC with Sean who inspired me alot on IRC as
+    well as positive feedback on my mistakes of which I should take care
+    of.</li>
+<li>Issues discussed included - my visibility. All the technical
+    discussions are now done through stepcode Mailing list</li>
+<li>Second was my availability. I will increase the time spent on my
+    project.</li>
+<li>Thirdly, the issues and problems which I face, I should go deep and
+    analyze the root of it.</li>
+<li>Last, but not least, NULL, '\0' , 0 and nul are all different !</li>
+</ul>
+<p>(The commit message made previously "strncpy() NULL terminated" was
+erroneous.Changed it)</p>
+<h1 id="week-7">Week 7</h1>
+<h2 id="july-29">July 29</h2>
+<ul>
+<li>While adding comments to the remanants of cppcheck on my branch, I
+    realized there were few checks which could be merged in previous
+    commits. I did so, but later while building it, I ran into make
+    error.</li>
+<li>Asked Mark about it, but Sean motivated me that I should do it
+    myself and that would be a great learning experience and that might
+    be difficult at first instance, but not impossible. :)</li>
+<li>Rebased the commits related to reducing scope and figured out that
+    it was dues to src/fedex_plus/classes.c</li>
+<li>Remaining cppcheck with comments here -
+    <a href="https://github.com/stepcode/stepcode/issues/21">https://github.com/stepcode/stepcode/issues/21</a></li>
+<li>Running astyle</li>
+<li>Build without error. Ran test. They were alright.</li>
+<li>pushed the final version to github.</li>
+<li><a href="http://brlcad.org/wiki/Code_Cleanup#CPPCHECK-CLEANUP">http://brlcad.org/wiki/Code_Cleanup#CPPCHECK-CLEANUP</a> -&gt; Cleaned
+    all prefer prefix performance based issues with a patch of 2134
+    lines with all prefix ++/-- issues cleaned. -
+    <a href="https://sourceforge.net/p/brlcad/patches/219/">https://sourceforge.net/p/brlcad/patches/219/</a></li>
+</ul>
+<h2 id="july-30">July 30</h2>
+<ul>
+<li>Refactoring of comments in BRL-CAD</li>
+<li>The ones which are remaining are either empty comments, not function
+    comments or do not have corresponding function in include/*.h</li>
+<li><a href="http://paste.kde.org/p889555e6/raw/">http://paste.kde.org/p889555e6/raw/</a></li>
+<li><a href="http://paste.kde.org/p90d6d90d/raw/">http://paste.kde.org/p90d6d90d/raw/</a></li>
+<li><a href="http://paste.kde.org/p64046984/raw/">http://paste.kde.org/p64046984/raw/</a></li>
+<li><a href="http://paste.kde.org/p4dffd54d/raw/">http://paste.kde.org/p4dffd54d/raw/</a></li>
+<li><a href="http://paste.kde.org/pb65e159e/raw/">http://paste.kde.org/pb65e159e/raw/</a></li>
+<li>Reading now cmake documentation to figure out how installation
+    works -
+    <a href="http://www.cmake.org/cmake/help/v2.8.8/cmake.html#command:install">http://www.cmake.org/cmake/help/v2.8.8/cmake.html#command:install</a></li>
+</ul>
+<h2 id="july-31">July 31</h2>
+<ul>
+<li><a href="http://www.cmake.org/Wiki/CMake_Useful_Variables">http://www.cmake.org/Wiki/CMake_Useful_Variables</a></li>
+<li>Worked upon the changes suggested by Mark on github commits</li>
+<li>Looking for the best place to install headers for the issue -
+    <a href="https://github.com/stepcode/stepcode/issues/235">https://github.com/stepcode/stepcode/issues/235</a></li>
+<li>Now, I have kept a dummy DESTINATION, and tried to install those
+    headers. Got the way to do it.</li>
+<li><a href="http://paste.kde.org/p95cd4501/">http://paste.kde.org/p95cd4501/</a></li>
+<li>Last line has to be changed.</li>
+</ul>
+<h2 id="august-1">August 1</h2>
+<ul>
+<li>While trying to compile, it showed error and I figured out that
+    applying astyle , the CMakelsit.txt had been changed, which was in
+    pushed on github. Worked upon restoring the styling in
+    CMakeLists.txt</li>
+<li>Included headers for src/base in include directory of install.
+    Checked it.</li>
+<li>Now, when I run sudo make install after building the source, an
+    sc-install folder is created in the same place as that of the
+    stepcode repo and sc-install/include/base contains all headers for
+    src/base.</li>
+<li><a href="http://paste.kde.org/pfbf685b6/">http://paste.kde.org/pfbf685b6/</a> :)</li>
+<li>The headers of src/expp and src/express were already being
+    installed.</li>
+<li>Made a new branch for issue 235.</li>
+<li>pushed first commit of this issue to ks/installHeaders</li>
+<li>If this is alright, I will move forward with installing headers of
+    from other directories.</li>
+</ul>
+<h2 id="august-2">August 2</h2>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/tree/issue/21">https://github.com/stepcode/stepcode/tree/issue/21</a></li>
+<li><a href="https://github.com/stepcode/stepcode/commits/issue/21">https://github.com/stepcode/stepcode/commits/issue/21</a></li>
+</ul>
+<h1 id="week-8">Week 8</h1>
+<h2 id="august-5">August 5</h2>
+<ul>
+<li>The patch of performance regarding prefix in BRL-CAD was made on a
+    previous version and didn't apply well.</li>
+<li><a href="http://www.markusbe.com/2009/11/how-to-apply-a-patch-and-solve-hunk-failed-cant-find-file-to-patch-and-others/#patch-command-line">http://www.markusbe.com/2009/11/how-to-apply-a-patch-and-solve-hunk-failed-cant-find-file-to-patch-and-others/#patch-command-line</a></li>
+<li>Updated the trunk, generated again and posted it patch again</li>
+<li>The installation behaved wierdly, on one instance it installed in
+    /home/kesha/../sc-install/include/* and running the same thing
+    again after deleting build directory and making again installed
+    headers in /usr/bin/include/* !</li>
+<li>Suggestion of making checklists to make things flow smooth</li>
+</ul>
+<h2 id="august-6">August 6</h2>
+<ul>
+<li>issue 21 -&gt; build without breaking (checked)</li>
+<li>test doesnt break (checked)</li>
+<li>commented the remaining (checked)</li>
+<li>pull req generated check</li>
+<li><a href="https://github.com/stepcode/stepcode/commits/ks/headers">https://github.com/stepcode/stepcode/commits/ks/headers</a> -&gt; new
+    branch with 2 commits</li>
+<li>Patch for brlcad
+    <a href="https://mail.google.com/mail/u/0/#inbox/140518a231bc16ce">#165</a>
+    accepted.</li>
+<li>Working on other headers now</li>
+</ul>
+<h2 id="august-7">August 7</h2>
+<ul>
+<li>School + first day coaching</li>
+<li>Delivered a talk in IEEE/IAS DA-IICT</li>
+<li>Took a session for orientation of Juniors in programming club as I
+    am in core committee.</li>
+<li>Too tired. Just read the mails and figured out what next.</li>
+</ul>
+<h2 id="august-8">August 8</h2>
+<ul>
+<li>Making changes in the existing commit or deleting a branch would
+    lose the comments, hence Mark told to use git cherrypick / squash or
+    fixup them</li>
+<li>I used the second option and continued editing and committing.</li>
+<li>In the install headers, in the destination, changed the path from
+    CMAKE_INSTALL_HEADERS/* to CMAKE_INTSALL_HEADERS/stepcode/*</li>
+<li>Used "NOT DEFINED" to check if the variables exist or not. In my
+    previous approach, it would work bad if the value was set to
+    true/false</li>
+<li>Installed headers for some more like src/cllazyfile , src/clutils
+    and src/clstepcore</li>
+<li>For src/exppp and src/express, the headers were already included
+    while 'make install'</li>
+<li>For src/fedex_plus and src/fedex_python, I am not able to figure
+    out what exactly to do.</li>
+<li>Another issue I am facing is, whenever I try to push from the local
+    branch to repo on github, it always rejects first saying it a
+    non-fast-forward update. Then I do it using -f option.</li>
+</ul>
+<h2 id="august-9">August 9</h2>
+<ul>
+<li>Net breakdown. Conveyed what I had done and what needs to be done,</li>
+</ul>
+<p>but there was a little communication gap as per Sean.</p>
+<h1 id="week-9">Week 9</h1>
+<h2 id="august-12">August 12</h2>
+<ul>
+<li>Clarified the prev mail.</li>
+<li>the branch is ready to be merged in mainstream :)</li>
+<li>For headers in fedex_plus and fedex_python, "Headers need to be
+    installed for libraries, so that executables that make use of the
+    library can be compiled. It isn't possible to link one executable
+    with another, so headers for executables do not need to be
+    installed."</li>
+<li>In ks/headers issue, the headers of exppp and express which were
+    installed already was not in the correct directory, they need to be
+    in include/stepcode/*. Change that.</li>
+<li>There are two generated headers that should be installed; when you
+    run CMake, they are created in build/include. Install them to
+    include/stepcode</li>
+</ul>
+<h2 id="august-13">August 13</h2>
+<ul>
+<li>Figured out a nicer way. Instead of adding the FILES directly, if we
+    can create a variable who stores the info of all header files, then
+    it would be more readable and expandable.</li>
+<li>Adding that in all the commits.</li>
+<li>Also, adding two generated headers in /include/stepcode/*</li>
+<li>Changing the path for exppp and express.</li>
+</ul>
+<h2 id="august-14">August 14</h2>
+<ul>
+<li>changed path where headers of exppp and express were included
+    .../stepcode/...</li>
+<li>exppp and express were not using ${INCLUDE_INSTALL_DIR}. Done that</li>
+<li>generated headers from build/include/* included</li>
+<li>other headers from stepcode/include/*.h also included</li>
+<li><a href="https://github.com/stepcode/stepcode/commits/ks/headers">https://github.com/stepcode/stepcode/commits/ks/headers</a> - the link
+    to commits on github</li>
+</ul>
+<h2 id="august-15">August 15</h2>
+<ul>
+<li>The build location was hardcoded and can be anywhere in user's
+    system, so make use of CMakeVariable that uses the location of build
+    directory</li>
+<li>Found that variable, cmake_binary_dir /
+    cmake_current_binary_dir --&gt; build/</li>
+</ul>
+<p>and cmake_source_dir / cmake_current_source_dir --&gt; stepcode/</p>
+<ul>
+<li>Tried hard but couldn't work it out.</li>
+</ul>
+<h2 id="august-16">August 16</h2>
+<ul>
+<li>Finally figured out the problem. Silly me, in include/CMakeLists.txt
+    I didn't include {$variable} and was getting it false.</li>
+<li>Corrected that and committed it.</li>
+<li>Tested it. It seems to have installed correctly.</li>
+<li>A small confusion- the extraheaders in include/ should be in
+    sc-install/install/* or sc-install/install/stepcode/* . Right now,
+    kept in first one.</li>
+</ul>
+<h1 id="week-10">Week 10</h1>
+<h2 id="august-19-20">August 19-20</h2>
+<ul>
+<li>Continued with the work of Issue 235.</li>
+<li>Worked in the direction as per comments.</li>
+<li>Pushed it on github.</li>
+<li>Generated Pull requested.</li>
+</ul>
+<h2 id="august-21-august-23">August 21-August 23</h2>
+<ul>
+<li>University midterm 1 exams</li>
+<li>3 papers down, two to go</li>
+</ul>
+<h1 id="week-11">Week 11</h1>
+<h2 id="august-26-27">August 26-27</h2>
+<ul>
+<li>University midterm 1 exams</li>
+<li>All done</li>
+</ul>
+<h2 id="august-28">August 28</h2>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/pull/254">https://github.com/stepcode/stepcode/pull/254</a></li>
+<li>All clean commit</li>
+<li>Generated merge request</li>
+</ul>
+<h2 id="august-29">August 29</h2>
+<ul>
+<li>Made absolute paths relative by removing "{CMAKE_INSTALL_PREFIX}/"
+    (reason: discussion on IRC)</li>
+<li>Merged <a href="https://github.com/stepcode/stepcode/pull/254">https://github.com/stepcode/stepcode/pull/254</a></li>
+<li>Closed the issue. Done with open work of stepCode :)</li>
+</ul>
+<h2 id="august-30">August 30</h2>
+<ul>
+<li>Discussion with Sean on IRC to understand what needs to be done.</li>
+<li>Updating trunk</li>
+<li>Compiling and building. Successfully ran mged and archer from
+    source.</li>
+<li>Next goal: Understanding geometry conversions.</li>
+<li>Manual 4- Geometry Conversion</li>
+<li><a href="http://brlcad.org/private/geometry/">http://brlcad.org/private/geometry/</a></li>
+<li>Manual 2- MGED. Playing with geometry in mged.</li>
+</ul>
+<h2 id="august-31">August 31</h2>
+<ul>
+<li>"pick a few of the importers, say dxf-g, 3dm-g, and stl-g.find some
+    geometry, import them, view them. its' not just to look at it --
+    it's to understand what you imported, how you specified that import,
+    what hierarchy resulted after import. grabcad.com has a ton of
+    stuff. google can give you lots of stuff (just search for
+    "filetype:obj truck" or "filetype:dxf boat" for example)"</li>
+<li>"once you're comfortable and AFTER you've used three other
+    converters, give the step-g importer a try on something 1) using
+    7.22.0 then 2) using trunk"</li>
+</ul>
+<h1 id="week-12">Week 12</h1>
+<h2 id="september-2">September 2</h2>
+<ul>
+<li>Surfing on web about CAD conversions like
+    <a href="http://blog.grabcad.com/2013/05/tips-for-converting-cad-data/">http://blog.grabcad.com/2013/05/tips-for-converting-cad-data/</a></li>
+<li>Grabcad contains very nice models- Most of them for step.</li>
+<li>Downloaded around 15 models(for use within 2-3 days) and some other
+    formats.</li>
+<li><a href="http://blog.grabcad.com/2013/05/kernels-why-cad-systems-dont-play-well-with-others/">http://blog.grabcad.com/2013/05/kernels-why-cad-systems-dont-play-well-with-others/</a></li>
+<li><a href="https://grabcad.com/home">https://grabcad.com/home</a></li>
+<li><a href="http://www.youtube.com/watch?v=VGDbULSvTEA">http://www.youtube.com/watch?v=VGDbULSvTEA</a></li>
+<li><a href="http://opensourceecology.org/wiki/DXF_to_G-code_Conversion_Tutorial">http://opensourceecology.org/wiki/DXF_to_G-code_Conversion_Tutorial</a></li>
+<li>Tried with an importer dxf-g and here are the issues I came across.
+    (asked them on IRC to Sean and Cliff, but waiting for their
+    response)</li>
+<li>EG-FILE Layers.jpg:</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><img alt="" src="/wiki/user/img/layers.jpg" /></li>
+</ul>
+</li>
+<li>
+<p>My screenshot after conversion:</p>
+<ul>
+<li><img alt="" src="/wiki/user/img/ScreenshotForLayers.png" /></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>In this, if you view both figures, two shapes are missing. Does it
+    mean that the conversion is lossy and can it be corrected so that
+    the missing two shapes also get imported correctly ?</li>
+<li>Also, for this, the .jpg file was available, as to how it looks, but
+    for those whose I don't get, how do I confirm that I am viewing it
+    correctly and the hierarchy that resulted after the import is
+    correct ?</li>
+<li>Hope I get answers to them quickly :)</li>
+</ul>
+<h2 id="september-3">September 3</h2>
+<ul>
+<li>Tried with more geometry conversions from the format
+    3dm-g,dxf-g,obj-g, but there are still some questions that concern
+    me and haven't got appropriate reasoning as to why is it happens
+    so..</li>
+<li>two questions from yesterday's log. (figure/.g file not given then?)
+    (lossy conversion)</li>
+<li>Many a times, when I do export, some objects are exported correctly,
+    but it ends with a segmentation fault (almost 50% of those I tried)</li>
+<li>The material property disappears after conversion. The mater and
+    color related information is lost after conversion. Is it normal ?</li>
+<li>Sometimes, converting gives more layers and objects as compared to
+    the original one. Where did the extra regions come from ?
+    (eg-pumpkin example in brlcad.org/private/geometry)</li>
+<li>Will try with 1-2 step conversion now to see if it runs the same
+    way.</li>
+<li>I think, Sean is busy, anybody who reads my queries and has answer
+    to them, please contact me on IRC (nick:kesha/kimzzzz).</li>
+</ul>
+<h2 id="september-4-5-6">September 4-5-6</h2>
+<ul>
+<li>Doing with some more geometry conversions.</li>
+<li>Paryushan atthai</li>
+</ul>
+<h1 id="week-13">Week 13</h1>
+<h2 id="september-10">September 10</h2>
+<ul>
+<li>Cleared a point of misunderstanding- all 3D models should not
+    necessarily work. We just have to find a few that work. Previously I
+    was thinking that each importer should work and was trying with many
+    but Sean said, 2-3 of few types would be enough.</li>
+<li>"To reiterate the purpose, we want to know if we made step-g worse
+    at some point in the past. You'll have to correctly compile and run
+    different versions of the step-g importer, test some geometry with
+    those versions, so you can say with certainty whether a problem was
+    introduced, whether it's better, or anything else actionable"</li>
+<li>Got an idea how importing should be done and look like with various
+    formats.</li>
+</ul>
+<h2 id="september-11">September 11</h2>
+<ul>
+<li>In the beginning, tried with 2-3 models of STEP and imported them
+    with version 7.22.0.</li>
+<li>Found a model, d.stp from starseeker's library ViaOpenBooks, which
+    had gotten worse now and worked well with 7.14.7.</li>
+<li>In between the present and 7.14.7, somewhere it is breaking. I need
+    to find that revision.</li>
+<li>7.24.0, 7.22.0 and r55000, had very little difference, but all of
+    them smelled bad.</li>
+<li>First, I was not clear as to how so many versions can be maintained
+    simultaneously and Sean suggested updating svn and deleting build
+    directory every time.</li>
+</ul>
+<h2 id="september-12">September 12</h2>
+<ul>
+<li>In revisions long back, cmake was not used, instead an autogen
+    script generated configure and ./configure would compile.</li>
+<li>Also, there was no instruction given to make to build step-g.</li>
+<li>Command-&gt; cd src/conv/step &amp;&amp; make step-g &amp;&amp;./step-g -o ....</li>
+<li>Getting some memory-leakage and other errors with different
+    revisions.</li>
+<li>Also, got an idea abt the revisions of our interest-
+    <a href="http://paste.kde.org/pad666f93/">http://paste.kde.org/pad666f93/</a></li>
+<li>In stepcode, Mark had deleted two files mkprobe and dataprobe but
+    forgot to remove it from cmake. Updated CMakeLists.txt
+    <a href="https://github.com/stepcode/stepcode/commit/a297f733dda932127e4a842a66b157b87bfc9677">https://github.com/stepcode/stepcode/commit/a297f733dda932127e4a842a66b157b87bfc9677</a></li>
+</ul>
+<h2 id="september-13">September 13</h2>
+<ul>
+<li>While the different versions are being updated and compiled (it
+    takes a lot of time due to poor connectivity) , made a refactoring
+    patch - <a href="https://sourceforge.net/p/brlcad/patches/237/">https://sourceforge.net/p/brlcad/patches/237/</a>
+-</li>
+</ul>
+<h2 id="september-14">September 14</h2>
+<ul>
+<li>From the list of about 800 revisions to try, 500 have been clearly
+    ommitted. The problem is somewhere within remaining 300.</li>
+<li>Asked for *technical* work as demanded by point 5.</li>
+</ul>
+<h2 id="september-15">September 15</h2>
+<ul>
+<li>known the need of regression test for STEP. The exporter is not yet
+    ready, I will just check for the importer.</li>
+<li>Saw how other regression tests work.</li>
+<li>Side by Side compiling more revisions</li>
+</ul>
+<h1 id="week-14">Week 14</h1>
+<h2 id="september-16">September 16</h2>
+<ul>
+<li>Made first version of how regression test should look like.</li>
+<li>Got feedback abt it from Sean</li>
+<li>no need to touch file (make a file if the file doesn't exist)</li>
+<li>Add some sort of validation to check geometry (eg Volume)</li>
+<li>Use the step file which is small and has right to re-distribute it.</li>
+<li>Update and use svn version control and upload it proper patch
+    format.</li>
+</ul>
+<h2 id="september-17">September 17</h2>
+<ul>
+<li>Working on the regression test now and the four main points of
+    modifications as suggested by Sean.</li>
+</ul>
+<h2 id="september-18">September 18</h2>
+<ul>
+<li>Made regression test checking three stepfiles. Incorporated checking
+    volume.</li>
+<li>First, it was giving error that the average total value was in float
+    and can't be compared to less than by -lt 0, so truncated the part
+    after '.' and added 1 to the volume.</li>
+<li>Regression test almost ready.</li>
+<li>unsure abt the license and copyrights of the model.
+    <a href="http://www.steptools.com/copyright.html">http://www.steptools.com/copyright.html</a></li>
+</ul>
+<h2 id="september-19">September 19</h2>
+<ul>
+<li>Updated patch on sf.net.</li>
+<li>Again in the next patch, added copyrights according to my
+    understanding and submitted.</li>
+<li>Output of "make regress-step2g" -&gt;
+    <a href="http://paste.kde.org/p0a5a98de/">http://paste.kde.org/p0a5a98de/</a></li>
+<li>The 3 stepfiles when importer and viewed in archer looks like the
+    following :<ul>
+<li>instance_stepfile1.g</li>
+<li><img alt="" src="/wiki/user/img/instance_stepfile1.png" /></li>
+<li>instance_stepfile2.g</li>
+<li><img alt="" src="/wiki/user/img/instance_stepfile2.png" /></li>
+<li>instance_stepfile3.g</li>
+<li><img alt="" src="/wiki/user/img/instance_stepfile3.png" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="september-20">September 20</h2>
+<ul>
+<li>Cleaned all " Prefer prefix ++/-- operators for non-primitive types.
+    " issues from <a href="http://brlcad.org/wiki/Code_Cleanup#CPPCHECK-CLEANUP">http://brlcad.org/wiki/Code_Cleanup#CPPCHECK-CLEANUP</a>
+    with reference to patch
+    <a href="http://sourceforge.net/p/brlcad/patches/219/#3f4d">http://sourceforge.net/p/brlcad/patches/219/#3f4d</a> - new patch
+    after updating trunk.</li>
+<li><a href="http://brlcad.org/wiki/Deuces#Code">http://brlcad.org/wiki/Deuces#Code</a> Remove those related to moving
+    header comments. Had tested all of those and confirmed that they
+    were done. Keeping in task list could probably waste some other
+    dev's time in future.</li>
+<li><a href="http://brlcad.org/wiki/Deuces#Implement_a_primitive_surface_area_function">http://brlcad.org/wiki/Deuces#Implement_a_primitive_surface_area_function</a>
+    Removed from the list, whose area had been already calculated and in
+    the rest added a prototype function and TODO in it.
+    <a href="https://sourceforge.net/p/brlcad/patches/239/">https://sourceforge.net/p/brlcad/patches/239/</a></li>
+<li><a href="http://brlcad.org/wiki/Deuces#Implement_a_primitive_volume_function">http://brlcad.org/wiki/Deuces#Implement_a_primitive_volume_function</a>
+    Removed from the list, whose volume had been already calculated and
+    in the rest added a prototype function and TODO in it.
+    <a href="https://sourceforge.net/p/brlcad/patches/240/">https://sourceforge.net/p/brlcad/patches/240/</a></li>
+<li><a href="http://brlcad.org/wiki/Deuces#Implement_a_primitive_centroid_function">http://brlcad.org/wiki/Deuces#Implement_a_primitive_centroid_function</a>
+    Removed from the list, whose centroid had been already calculated
+    and in the rest added a prototype function and TODO in it.
+    <a href="https://sourceforge.net/p/brlcad/patches/241/">https://sourceforge.net/p/brlcad/patches/241/</a></li>
+<li><a href="http://brlcad.org/wiki/Deuces#Implement_a_primitive_UV-mapping_callback">http://brlcad.org/wiki/Deuces#Implement_a_primitive_UV-mapping_callback</a>
+    Removed from the list, whose uv had been already calculated and in
+    the rest added a prototype function and TODO in it.
+    <a href="https://sourceforge.net/p/brlcad/patches/242/">https://sourceforge.net/p/brlcad/patches/242/</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

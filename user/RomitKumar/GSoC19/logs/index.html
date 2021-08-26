@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/RomitKumar/GSoC19/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/RomitKumar/GSoC19/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#community-bonding-period-may-6-may-27" class="nav-link">Community Bonding Period (May 6 - May 27)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#coding-period-may-27-aug-19" class="nav-link">Coding Period (May 27 - Aug 19)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-1-may-27-june-2" class="nav-link">Week 1 (May 27 - June 2)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-2-june-3-june-9" class="nav-link">Week 2 (June 3 - June 9)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-3-june-10-june-16" class="nav-link">Week 3 (June 10 - June 16)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-4-june-17-june-23" class="nav-link">Week 4 (June 17 - June 23)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-5-june-24-june-30" class="nav-link">Week 5 (June 24 - June 30)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-6-july-1-july-7" class="nav-link">Week 6 (July 1 - July 7)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-7-july-8-july-14" class="nav-link">Week 7 (July 8 - July 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-8-july-15-july-21" class="nav-link">Week 8 (July 15 - July 21)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-9-july-22-july-28" class="nav-link">Week 9 (July 22 - July 28)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-10-july-29-august-4" class="nav-link">Week 10 (July 29 - August 4)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-11-august-5-august-11" class="nav-link">Week 11 (August 5 - August 11)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-12-august-12-august-18" class="nav-link">Week 12 (August 12 - August 18)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-13-august-19-august-25" class="nav-link">Week 13 (August 19 - August 25)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="community-bonding-period-may-6-may-27">Community Bonding Period (May 6 - May 27)</h2>
+<h3 id="may-14">May 14</h3>
+<p>Discussed about sharing of mock-up code and prototypes with mentor</p>
+<h3 id="may-15">May 15</h3>
+<p>Developed a prototype for gui implementation of multi-tab feature.
+<a href="https://github.com/RomitKumar/openscad-prototype/tree/master/prototype1">Prototype1
+Code</a></p>
+<h3 id="may-16">May 16</h3>
+<p>Implementing prototype in openscad codebase</p>
+<h3 id="may-17">May 17</h3>
+<p>Implemented the prototype in openscad codebase. Made <a href="https://github.com/openscad/openscad/pull/2949">PR
+#2949</a>. This pr will
+act as a sandbox for prototyping and sharing of coding with mentor.
+Discussion about integrating pre-available editing features in all tabs</p>
+<h3 id="may-18">May 18</h3>
+<p>Implemented the comment feature using signal dispatcher as suggested by
+mentor. Made the pr.</p>
+<h3 id="may-19">May 19</h3>
+<p>Studying the openscad codebase to look for implementation of saving
+feature for each tab.</p>
+<h3 id="may-20">May 20</h3>
+<p>Implemented the feature of saving of tab contents in prototype code.
+Main Window name updates on switching tab.</p>
+<h3 id="may-21">May 21</h3>
+<p>Discussed about correctness of signal dispatcher.</p>
+<h3 id="may-22">May 22</h3>
+<p>Implemented signal dispatcher in a separate class. Made the
+<a href="https://github.com/openscad/openscad/pull/2949/files#diff-99feea0b406e34be128d4299fafad187R2732">pr</a>.
+Discussed about implementation details of multi-tab feature. Decided to
+implement the feature in a separate TabManager class.</p>
+<h3 id="may-23">May 23</h3>
+<p>Studying the openscad codebase for feasibility of implementation of
+TabManager class.</p>
+<h3 id="may-24">May 24</h3>
+<p>Studying openscad codebase.</p>
+<h3 id="may-25">May 25</h3>
+<p>Made a prototype project with similar gui features as multi-tab.
+Implemented those features using with a separate TabManager class as
+suggested by mentors. <a href="https://github.com/RomitKumar/openscad-prototype/tree/master/prototype2">Prototype2
+Code</a></p>
+<h3 id="may-26">May 26</h3>
+<p>Implement basic gui(opening and closing of tabs) of multi-tab in
+openscad code. The feature in implemented in a separate TabManager
+class. Made the <a href="https://github.com/openscad/openscad/pull/2955">pr
+#2955</a></p>
+<h2 id="coding-period-may-27-aug-19">Coding Period (May 27 - Aug 19)</h2>
+<h2 id="week-1-may-27-june-2">Week 1 (May 27 - June 2)</h2>
+<h3 id="may-27">May 27</h3>
+<p>Discussed about possibility and various method of integration of Simple
+and QScintilla Editor with multi-tab editor.</p>
+<h3 id="may-28">May 28</h3>
+<p>Implemented the code for integration of pre-available editor features
+with multi tab. There are some issues that need to be handled like
+checking the undo state, highlighting of error in multiple files.</p>
+<h3 id="may-29">May 29</h3>
+<p>Removed support for legacy editor and corrected the keyboard mapping for
+zoom in/out. Pushed commits
+<a href="https://github.com/openscad/openscad/pull/2955/commits/cfa32dab32175ef6e591abfab757d8b95034cf05">cfa32da</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2955/commits/1ad0f53653a5922abe1d66911f9eacbc1ea9af93">1ad0f53</a>
+to pr <a href="https://github.com/openscad/openscad/pull/2955">#2955</a>.</p>
+<h3 id="may-30">May 30</h3>
+<p>Corrected the updation of undoState and windowModified. Now these states
+behave correctly for multi-tab environment. Realised that stl exports
+and enable status of parameterWidget are not behaving correctly.</p>
+<h3 id="may-31">May 31</h3>
+<p>Corrected the behaviour of stl exports and enable status of
+parameterWidget. Running some basic tests to check the correctness of
+work done till now.</p>
+<h3 id="june-1">June 1</h3>
+<p>Discussed with mentor about behaviour of Customizer widget and animation
+on changing tabs. Implemented those behaviour in codebase of openscad.
+Pushed the commits to pr
+<a href="https://github.com/openscad/openscad/pull/2955">#2955</a></p>
+<h3 id="june-2">June 2</h3>
+<p>Run basic tests on gui implemented so far. Discovered that Find, Find
+and Replace are not behaving correctly for multi-tab.</p>
+<h2 id="week-2-june-3-june-9">Week 2 (June 3 - June 9)</h2>
+<h3 id="june-3">June 3</h3>
+<p>Correcting the behaviour of Find, Find and Replace for multi-tab</p>
+<h3 id="june-4">June 4</h3>
+<p>Implemented the correct behaviour of Find, Find and Replace for
+multi-tab. Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/23129ba51dfe1f62ed8333fe84fd15a63bb0db71">23129ba</a>
+to pr <a href="https://github.com/openscad/openscad/pull/2955/">#2955</a>. Found a
+bug related to previous implementation of Find. Raised issue
+<a href="https://github.com/openscad/openscad/issues/2962">#2962</a>. Discussed
+about implementing save feature for multi-tab and naming of new tabs and
+tabs that have same file names.</p>
+<h3 id="june-5">June 5</h3>
+<p>Studying the openscad codebase for implementation of save features in
+multi-tab.</p>
+<h3 id="june-6">June 6</h3>
+<p>Working on implementing the open feature for multi-tab.</p>
+<h3 id="june-7">June 7</h3>
+<p>Removed the option for single file QScintilla Editor. Instead now
+multi-tab editor will not show tabs in case of single tab, effectively
+giving the feeling of single file QScintilla Editor. Implemented this
+feature in multi-tab editor. Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/d594980fb192da2871dcc1c442ac521624d54b19">d594980</a>
+to pr <a href="https://github.com/openscad/openscad/pull/2955">#2955</a></p>
+<h3 id="june-8">June 8</h3>
+<p>Continuing the work to implement open feature in multi-tab.</p>
+<h3 id="june-9">June 9</h3>
+<p>Completed the work of implementing Open(File menu option, Recent Files,
+Examples), Save, Close feature for multi-tab. Pushed the corresponding
+commits to pr <a href="https://github.com/openscad/openscad/pull/2955/">#2955</a>.</p>
+<h2 id="week-3-june-10-june-16">Week 3 (June 10 - June 16)</h2>
+<h3 id="june-10">June 10</h3>
+<p>Started testing of code submitted.</p>
+<h3 id="june-11">June 11</h3>
+<p>Changed the behaviour of Open and Open Tab as suggested by mentors. Made
+commits
+<a href="https://github.com/openscad/openscad/pull/2955/commits/6a0a1d169be25db80da5f5d9cb9e91251f2414b5">6a0a1d1</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2955/commits/e3ff4d90ef3828a01652d25a15d7fea546f2dcaf">e3ff4d9</a>
+in pr <a href="https://github.com/openscad/openscad/issues/2955">#2955</a>.</p>
+<h3 id="june-12">June 12</h3>
+<p>Testing and cleaning of code.</p>
+<h3 id="june-13">June 13</h3>
+<p>Done cleanup of code. This includes renaming variable/function, removing
+redundant function, removing mdi checkbox from Preferences/Advanced,
+correcting implementation of reload, prevention of double emission of
+currentChanged signal for first tab. Pushed commits
+<a href="https://github.com/openscad/openscad/pull/2955/commits/0e923084003f16c1050aa6ea3ff04c25f0efec52">0e92308</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2955/commits/cdaee5ea6d226efb963b9f38a839fc74e6cad911">cdaee5e</a>
+in pr <a href="https://github.com/openscad/openscad/issues/2955">#2955</a>.</p>
+<h3 id="june-14">June 14</h3>
+<p>Implemented the Save All feature. Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/b0c95e89f7e5028be18ca8e71d5016eb579e7e46">b0c95e8</a>
+in pr <a href="https://github.com/openscad/openscad/issues/2955">#2955</a>.
+Corrected the enabling of Parameter Widget on file load and opening of
+Recent Files and examples in empty tab. Pushed commits
+<a href="https://github.com/openscad/openscad/pull/2955/commits/35e3fe083656fc9d952506f9f0bfdbcc2ce95ba7">35e3fe0</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2955/commits/acc3123308cbe169afbc4134d7a17268307b66a3">acc3123</a>
+corresponding to the changes. Discussed with mentor about the idea of
+Tab Header spanning the whole window.</p>
+<h3 id="june-15">June 15</h3>
+<p>Working on Tab Header spanning whole window length.</p>
+<h3 id="june-16">June 16</h3>
+<p>Implemented the feature of Tab Header spanning whole window length.
+Pushed commits
+<a href="https://github.com/openscad/openscad/pull/2955/commits/087359f3b3ca6b6e2835fc8fb9cdeaf77a0aeebd">087359f</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2955/commits/c59df4498160f8fd5aaadc8b480b82c2263da479">c59df44</a>
+in pr <a href="https://github.com/openscad/openscad/issues/2955">#2955</a>.</p>
+<h2 id="week-4-june-17-june-23">Week 4 (June 17 - June 23)</h2>
+<h3 id="june-17">June 17</h3>
+<p>Shifted Tab Header implementation from dock widget to toolbar. This
+toolbar clings to editor dock widget when it is undocked. Pushed commits
+<a href="https://github.com/openscad/openscad/pull/2955/commits/fd93e57691f272c8f5322eb9d5c8e057b2e49e63">fd93e57</a>,
+<a href="https://github.com/openscad/openscad/pull/2955/commits/a50fd610d0d63f4e11e2adf9bb53a2f8939c1591">a50fd61</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2955/commits/689292c2c53678cf106cb442b0a09315ea204ec1">689292c</a>
+in pr <a href="https://github.com/openscad/openscad/issues/2955">#2955</a>.</p>
+<h3 id="june-18">June 18</h3>
+<p>Testing multi tab implementation</p>
+<h3 id="june-19">June 19</h3>
+<p>Continuation of testing of multi-tab implementation. Looking and
+exploring various methods for auto completion feature.</p>
+<h3 id="june-20">June 20</h3>
+<p>Posted in mailing group inviting users for testing of multi-tab feature.
+Going through the codebase at pr
+<a href="https://github.com/openscad/openscad/pull/2889">#2889</a> to understand
+details of auto completion feature.</p>
+<h3 id="june-21">June 21</h3>
+<p>Updated implementation of tab tool bar such that it is hidden when a
+single tab is present. Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/dff9b9be7afafdf17b0fcc874cc0460076918362">dff9b9b</a>
+in pr <a href="https://github.com/openscad/openscad/issues/2955">#2955</a>.</p>
+<h3 id="june-22">June 22</h3>
+<p>Looking at web resources available to understand auto-completion in
+qscintilla.</p>
+<h3 id="june-23">June 23</h3>
+<p>Made a new pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a>
+implementing auto-completion of openscad keywords. The commit is
+<a href="https://github.com/openscad/openscad/pull/2975/commits/bdc8e10ef54d78e8702f72d10a01872c1a36240b">bdc8e10</a>.
+Also pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/7cda02a796664e45df2abc8af46c8c994b8a7e5e">7cda02a</a>
+to enable qscintilla in travis check. Discussed with mentor about
+various options of providing keyword list for auto-completion.</p>
+<h2 id="week-5-june-24-june-30">Week 5 (June 24 - June 30)</h2>
+<h3 id="june-24">June 24</h3>
+<p>Implemented ctrl+insert shortcut to display template list. Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/10bfc3f8278278b6efd67870c9f55c9ee629ba63">10bfc3f</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a></p>
+<h3 id="june-25">June 25</h3>
+<p>Checking the plausibility of making keyword list for auto-completion at
+Builtin class.</p>
+<h3 id="june-26">June 26</h3>
+<p>Discussed with mentor about implementation details for auto-completion
+keyword list in Builtin class.</p>
+<h3 id="june-27">June 27</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/dc1146bcb41a3c466dcee836491dd546eee4653f">77dfcc5</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a>
+implementing registering of keywords in Builtin class.</p>
+<h3 id="june-28">June 28</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/dc1146bcb41a3c466dcee836491dd546eee4653f">dc1146b</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a> replacing
+qt structures with std structures in core classes.</p>
+<h3 id="june-29">June 29</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/a3e8950788e79cf2293293cecdc2a6989e12460c">a3e8950</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2975/commits/d1dc26ffe48b6c6ed17de8a651de1e008e3bd658">d1dc26f</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a> adding
+other keywords in keyword list. Discussed with mentor regarding html
+formatting of calltips.</p>
+<h3 id="june-30">June 30</h3>
+<p>Working on html formatting of calltips.</p>
+<h2 id="week-6-july-1-july-7">Week 6 (July 1 - July 7)</h2>
+<h3 id="july-1">July 1</h3>
+<p>Made a separate Keyword class for storing information about keywords.
+Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/1eefb4a762185eba6b9adc297f893c49cf0328b4">1eefb4a</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a>. Checked
+about possibilty of html formatted string for calltips. It seems that
+QScintilla does not support formatting of strings in html form.</p>
+<h3 id="july-2">July 2</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/d9246dd06047f2a90b8e599ffa2c1068828fd2ba">d9246dd</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a> modifying
+the structure of Keyword class. Discussed with mentor about final
+structure for implementation of keyword auto completion.</p>
+<h3 id="july-3">July 3</h3>
+<p>Working on implementation of mentor suggested approach.</p>
+<h3 id="july-4">July 4</h3>
+<p>Applying the approach for primitives keywords.</p>
+<h3 id="july-5">July 5</h3>
+<p>Completing the primitive keyword autocompletion.</p>
+<h3 id="july-6">July 6</h3>
+<p>Pushed commits
+<a href="https://github.com/openscad/openscad/pull/2975/commits/6836128ede8f072399483286d14d5c55b3d18452">6836128</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2975/commits/0720ea124f5a5eed93ac4f1c482ef4ef0f29f71d">0720ea1</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a>
+implementing auto completion for all keywords.</p>
+<h3 id="july-7">July 7</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/65676bf72d721183c509ddb85c45cdd947a5d3e1">65676bf</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a> adding
+remaining non-registered keywords in auto-complete list.</p>
+<h2 id="week-7-july-8-july-14">Week 7 (July 8 - July 14)</h2>
+<h3 id="july-13">July 13</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/12c605f2902a3013fef91d6661d0542093d7547a">12c605f</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2955">#2955</a>
+correcting implementation of opening of files in empty editor tab. Also
+pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/30085ff06972de21da09753feecd50472d39950c">30085ff</a>
+so that files with &amp; are shown correctly.</p>
+<h3 id="july-14">July 14</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/a99d689ab9315b0559d5a10e9a315e934bf9abb1">a99d689</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2955">#2955</a> resolving
+merge conflict caused due to merging of pr
+<a href="https://github.com/openscad/openscad/pull/2989">#2989</a> in master
+branch.</p>
+<h2 id="week-8-july-15-july-21">Week 8 (July 15 - July 21)</h2>
+<h3 id="july-19">July 19</h3>
+<p>Discussed with mentor about overall feedback of work done till now. Get
+to know about feedback message on multi-tab regarding multi-tab.</p>
+<h3 id="july-20">July 20</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/87a58ca5c9b5f4798e92be8e6bc11228eea364b3">87a58ca</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a>
+implementing templates being read from json file. Discussed about
+possible improvements in template feature and calltip format. Pushed
+commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/606f743232dd97914955b8b4945f866119428b75">606f743</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2955">#2955</a>
+initializing tabCount variable.</p>
+<h3 id="july-21">July 21</h3>
+<p>Working on improvements of template feature discussed.</p>
+<h2 id="week-9-july-22-july-28">Week 9 (July 22 - July 28)</h2>
+<h3 id="july-22">July 22</h3>
+<p>Discussed with mentor about possible placeholder of cursor in templates</p>
+<h3 id="july-23">July 23</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/a378b236a1bca112dbcf216be1ac648918bb6c88">a378b23</a>
+and
+<a href="https://github.com/openscad/openscad/pull/2975/commits/92c8b2e0ffe8c70eb3595fe2cc7bc2e2c840d5e9">92c8b2e</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a>
+implementing improvements in template feature as discussed with mentor.</p>
+<h3 id="july-24">July 24</h3>
+<p>Working on deciding a calltip format for auto-completion feature</p>
+<h3 id="july-25">July 25</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/b280d9e7103e3e10787e9ee16c857fa5132bcf06">b280d9e</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a> updating
+the calltip format for some keywords.</p>
+<h3 id="july-26">July 26</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/d6a2eec860833270667f2341512159bec46f3274">d6a2eec</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a> adding
+settings in Preferences to enable/disable autocomplete and character
+threshold.</p>
+<h3 id="july-27">July 27</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/92eaaae0655dfb6297da5f630fb77f276ec02164">92eaaae</a>
+improving handling of file drops, commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/a3fe6d228e326f7c0707371eed44f4abcf802e5c">a3fe6d2</a>
+enabling opening of multiple file from open dialog box and commit
+<a href="https://github.com/openscad/openscad/pull/2955/commits/94eac673e9c33bfd090573b6a0794b9ecb52d84c">94eac67</a>
+preventing opening of same file in different tab in pr
+<a href="https://github.com/openscad/openscad/pull/2955">#2955</a></p>
+<h3 id="july-28">July 28</h3>
+<p>Going through the code to analyze the possibility of extending error
+handling and allowing switch to tab / opening tab with error location</p>
+<h2 id="week-10-july-29-august-4">Week 10 (July 29 - August 4)</h2>
+<h3 id="july-29">July 29</h3>
+<p>Continuing reading code base for extending error handling. Discussed
+with mentor about calltip format</p>
+<h3 id="july-30">July 30</h3>
+<p>Pushed commit
+<a href="https://github.com/openscad/openscad/pull/2975/commits/464ac3c867ed344ab54af55f57df5736388f9f03">464ac3c</a>
+in pr <a href="https://github.com/openscad/openscad/pull/2975">#2975</a> improving
+calltip format</p>
+<h3 id="july-31">July 31</h3>
+<p>Made pr <a href="https://github.com/openscad/openscad/pull/3022">#3022</a> adding
+never option in reload confirmation dialog box</p>
+<h3 id="august-1">August 1</h3>
+<p>Discussed with mentor about hotspot feature of use'd/include'd files</p>
+<h3 id="august-2">August 2</h3>
+<p>Going through the QScintilla documentation, trying to find a way to
+implement hotspot feature</p>
+<h3 id="august-3">August 3</h3>
+<p>Still going through the documentation. Realized that this task can be
+achieved by indicator. After discussion, decided to stick to hotspot</p>
+<h3 id="august-4">August 4</h3>
+<p>Found a bug in reading of Preferences settings. Made pr
+<a href="https://github.com/openscad/openscad/pull/3028">#3028</a> removing this
+bug. Discussed with mentor regarding hotspot feature, and decided to
+look into parser for it. A bug was reported in pre-filled file name in
+export dialog box.</p>
+<h2 id="week-11-august-5-august-11">Week 11 (August 5 - August 11)</h2>
+<h3 id="august-5">August 5</h3>
+<p>Made pr <a href="https://github.com/openscad/openscad/pull/3029">#3029</a>
+correcting file name shown in export dialog box.</p>
+<h3 id="august-6">August 6</h3>
+<p>Studying the codebase and looking for possible approach to implement
+hyperlink.</p>
+<h3 id="august-7">August 7</h3>
+<p>Going through the QScintilla documentation looking for possible clues.</p>
+<h2 id="week-12-august-12-august-18">Week 12 (August 12 - August 18)</h2>
+<h3 id="august-12">August 12</h3>
+<p>Discussed with mentor about a possible idea to implement hyperlinks.
+Planning to pass on line and column number information of use's file
+name in FileModule::registerUse.</p>
+<h3 id="august-13">August 13</h3>
+<p>Going through lexer.l and parser.y files, trying to understand their
+working and finding a way to pass line and column number data of use'd
+file.</p>
+<h3 id="august-14">August 14</h3>
+<p>Found LOC macro in parser.y. It appeared to be promising. However, it is
+giving strange results. Besides the location information changes on
+different preview even though there is no change in file. The code
+showing this behaviour is
+<a href="https://github.com/RomitKumar/openscad/tree/temp">here</a>. Checking if I
+have done something wrong.</p>
+<h3 id="august-15">August 15</h3>
+<p>Discussed with mentor and decided to skip the location information part
+of use'd file, assuming it provides correct data, and implement the
+remaining hyperlink part.</p>
+<h3 id="august-16">August 16</h3>
+<p>Reading about the implementation of hotspot to achieve hyperlink. It
+seems that the ScadLexer should be a sub-class of QsciLexerCustom, if we
+want hotspot links, however that is not the case. Decided to drop
+hotspot for hyperlink.</p>
+<h3 id="august-17">August 17</h3>
+<p>Reading about Indicators to implement hyperlink.</p>
+<h3 id="august-18">August 18</h3>
+<p>Working on code to implement hyperlink feature via Indicators.</p>
+<h2 id="week-13-august-19-august-25">Week 13 (August 19 - August 25)</h2>
+<h3 id="august-19">August 19</h3>
+<p>Completed the code for hyperlink feature. Made pr
+<a href="https://github.com/openscad/openscad/pull/3045">#3045</a>. Now the part
+left is regarding correct implementation of character location of use'd
+files. This feature also needs to be extended to include'd files.</p>
+<h3 id="august-20">August 20</h3>
+<p>Discussed with mentor about possible solution for the erroneous behavior
+of Parameter Widget.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

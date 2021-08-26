@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Level_zero/GSOC13/ImplemnetationDetails-1/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>ImplemnetationDetails 1 - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Level_zero/GSOC13/ImplemnetationDetails-1.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#key-points" class="nav-link">Key Points</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#image-conversions" class="nav-link">Image Conversions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#other-image-processing-functions" class="nav-link">Other Image Processing Functions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#crop-or-rect-group1" class="nav-link">Crop or Rect (GROUP#1)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#differences-and-other-arithmetic-operations-group2" class="nav-link">Differences and other arithmetic operations (GROUP#2)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#filters-group3" class="nav-link">Filters, (GROUP#3)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#histograms-and-equalizations-group4" class="nav-link">Histograms and Equalizations (GROUP#4)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#scale-or-shrink-group5" class="nav-link">Scale or Shrink (GROUP#5)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stats-group6" class="nav-link">Stats (GROUP#6)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#thresh-group7" class="nav-link">Thresh (GROUP#7)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interpolatedecimate-group8" class="nav-link">Interpolate/Decimate (GROUP#8)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#background-and-border-group9" class="nav-link">Background and Border (GROUP#9)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#merge-or-split-group10" class="nav-link">Merge or Split (GROUP#10)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#morphing-and-other-misc-group11" class="nav-link">Morphing and other Misc (GROUP#11)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#feasibility" class="nav-link">Feasibility</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Plan for Image Processing Utilities</p>
+<h1 id="introduction">Introduction</h1>
+<p>Carrying forward from my proposal on the wiki page and Google-Mellange.
+In this page I add, improvements for my plan and detail it further. Here
+I add points from my trunk (collected since the proposal day) and would
+like valuable feedback from the core-developers, so that the plan is in
+sync with the organization's goal and needs.</p>
+<h1 id="key-points">Key Points</h1>
+<ul>
+<li>There are arount 125 utilities in total in the /src/util folder. Not
+    all of these utilities, are image processing tools.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>There are around 35 tools which deals in conversion of one format to
+    other.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Other Image Processing Functions to be implemented have been divided
+    into Groups based on there similarities in implementation and such
+    that each week during the</li>
+</ul>
+<p>development phase 1-2 Groups could be implemented. Details of this will
+be discussed in further sections.</p>
+<h1 id="image-conversions">Image Conversions</h1>
+<p>The week from July 1 - July 15 during the development phase is dedicated
+to import/export. I have been working on this front and have submitted
+few patches. Although fine tuning is required. Once the complete Import
+Export Functions (very few are left) are deployed Image conversions
+becomes very easy. Following is a table which describes the current
+image conversions tools.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alias-pix</td>
+<td>Convert ALIAS(tm) PIX format image files to BRL PIX format files.</td>
+</tr>
+<tr>
+<td>ap-pix</td>
+<td>Applicon color ink jet printer to .pix file converter.</td>
+</tr>
+<tr>
+<td>bw-a</td>
+<td>Convert a bw file into an ASCII bitmap.</td>
+</tr>
+<tr>
+<td>bw-pix</td>
+<td>Merge three BW files into one RGB pix file. (i.e. combine the colors)</td>
+</tr>
+<tr>
+<td>bw-png</td>
+<td>Convert bw file to PNG (Portable Network Graphics) format</td>
+</tr>
+<tr>
+<td>bw-ps</td>
+<td>Convert a black and white (bw) file to an 8-bit PostScript image.</td>
+</tr>
+<tr>
+<td>bw-rle</td>
+<td>Encode a .bw file using the Utah Raster Toolkit RLE library</td>
+</tr>
+<tr>
+<td>bw3-pix</td>
+<td>Convert an 8-bit black and white file to a 24-bit color one by replicating each value three times.</td>
+</tr>
+<tr>
+<td>pix-alias</td>
+<td>Convert BRL PIX format image files to ALIAS(tm) PIX format files.</td>
+</tr>
+<tr>
+<td>pix-bw</td>
+<td>Converts a RGB pix file into an 8-bit BW file.</td>
+</tr>
+<tr>
+<td>pix-bw3</td>
+<td>Converts a RGB pix file into 3 8-bit BW files.</td>
+</tr>
+<tr>
+<td>pix-orle</td>
+<td>Encode a .pix file using the old ORLE library</td>
+</tr>
+<tr>
+<td>pix-png</td>
+<td>Convert pix file to PNG (Portable Network Graphics) format</td>
+</tr>
+<tr>
+<td>pix-ppm</td>
+<td>convert BRL .pix files to ppm</td>
+</tr>
+<tr>
+<td>pix-ps</td>
+<td>Convert an RGB (pix) file to an 24-bit color PostScript image.</td>
+</tr>
+<tr>
+<td>pix-rle</td>
+<td>Encode a .pix file using the Utah Raster Toolkit RLE library</td>
+</tr>
+<tr>
+<td>pix-spm</td>
+<td>Turn a pix file into sphere map data.</td>
+</tr>
+<tr>
+<td>pix-sun</td>
+<td>Program to take a BRL-CAD PIX format image file and convert the image to a Sun Microsystems 8-bit deep color "rasterfile" format image.</td>
+</tr>
+<tr>
+<td>pix-yuv</td>
+<td>Convert a .pix file to a .YUV file, i.e. in CCIR-601 format.</td>
+</tr>
+<tr>
+<td>pl-asc</td>
+<td>Plot3(5) to ASCII converter.</td>
+</tr>
+<tr>
+<td>pl-dm</td>
+<td>Example application that shows how to hook into the display manager.</td>
+</tr>
+<tr>
+<td>pl-hpgl</td>
+<td>Convert a unix-plot file to hpgl codes.</td>
+</tr>
+<tr>
+<td>pl-pl</td>
+<td>Gets rid of (floating point, flush, 3D, color, text).</td>
+</tr>
+<tr>
+<td>pl-ps</td>
+<td>Display plot3(5) as PostScript. Based on pl-X and bw-ps</td>
+</tr>
+<tr>
+<td>pl-tek</td>
+<td>Convert 3-D color extended UNIX-plot file to Tektronix 4014 plot. Gets rid of (floating point, flush, 3D, color, text).</td>
+</tr>
+<tr>
+<td>pl-X</td>
+<td>Display plot3(5) on an X Window System display (X11R2) lcolor</td>
+</tr>
+<tr>
+<td>png-bw</td>
+<td>Display info about a PNG (Portable Network Graphics) format file</td>
+</tr>
+<tr>
+<td>png-pix</td>
+<td>Convert PNG (Portable Network Graphics) format to pix</td>
+</tr>
+<tr>
+<td>mac-pix</td>
+<td>Read MacPaint document and output pix(5) or bw(5) raster image</td>
+</tr>
+<tr>
+<td>orle-pix</td>
+<td></td>
+</tr>
+<tr>
+<td>sun-pix</td>
+<td>Program to take Sun bitmap files created with Sun's ``screendump'' command, and convert them to pix(5) format files.</td>
+</tr>
+<tr>
+<td>xyz-pl</td>
+<td>Program to take input with up to 3 white-space separated columns, expressed as x y z and produce a 3-D UNIX-plot file of the resulting space curve.</td>
+</tr>
+<tr>
+<td>yuv-pix</td>
+<td>Convert a .yuv file to a .pix file, i.e. in CCIR-601 format.</td>
+</tr>
+</tbody>
+</table>
+<p>This tools will be converted to IP functions. The structure of the
+function (not finalized) might look like the following.</p>
+<p><code>int icv_convert(char* input_filename, struct icv_size* input_size, char* output_filename, int cvt2status)</code></p>
+<h1 id="other-image-processing-functions">Other Image Processing Functions</h1>
+<p>I have chosen a set of image processing functionalities and divided them
+into groups with similar implementation details. This division will also
+help during development phase. During each week 1-2 Groups will be
+chose. Details of the combinations for each week are being studied at
+present so that load is balanced in each week. This will also ensure and
+bring more structure in the current plan, thus minimizing the
+implementation risk. Details of each group is given in the following
+sections. Although in days to come more group specific comments will be
+added.</p>
+<h2 id="crop-or-rect-group1">Crop or Rect (GROUP#1)</h2>
+<ul>
+<li><strong>bwrect</strong> Remove a portion of a potentially huge .bw file.</li>
+<li><strong>pixrect</strong> Remove a portion of a potentially huge pix file.</li>
+<li><strong>bwcrop</strong> Crop Black and White files.</li>
+<li><strong>pixcut</strong> Extract a piece of a pix file. If the parameters of the
+    file to be extracted do not fit within the original pix file then
+    the extra area is filled with a background solid color.</li>
+</ul>
+<h3 id="comments">Comments</h3>
+<h2 id="differences-and-other-arithmetic-operations-group2">Differences and other arithmetic operations (GROUP#2)</h2>
+<ul>
+<li><strong>bwdiff</strong> Take the difference between two BW files. Output is:
+    (file1-file2)/2 + 127</li>
+<li><strong>pixdiff</strong> Compute the difference between two .pix files. To
+    establish context, a half-intensity monochrome image is produced
+    when there</li>
+<li><strong>pixsaturate</strong> A saturation value of 0 gives monochrome, 1.0 gives
+    the original image, and values larger than 1.0 give a more saturated
+    image.</li>
+<li><strong>bwmod</strong> Modify intensities in Black and White files. Allows any
+    number of add, subtract, multiply, divide, or</li>
+</ul>
+<h3 id="comments_1">Comments</h3>
+<h2 id="filters-group3">Filters, (GROUP#3)</h2>
+<ul>
+<li><strong>bwfilter</strong> Filters a black and white file with an arbitrary 3x3
+    kernel. Leaves the outer rows untouched.</li>
+<li><strong>pixfilter</strong> Filters a color pix file with an arbitrary 3x3 kernel.
+    Leaves the outer rows untouched. Allows an alternate divisor and
+    offset to be given.</li>
+<li><strong>pix3filter</strong> Filters a color pix file set with an arbitrary 3x3x3
+    kernel. Leaves the outer rows untouched.</li>
+<li><strong>pixfade</strong> Fade a picture</li>
+</ul>
+<h3 id="comments_2">Comments</h3>
+<h2 id="histograms-and-equalizations-group4">Histograms and Equalizations (GROUP#4)</h2>
+<ul>
+<li><strong>bwhisteq</strong> Build up the histogram of a picture and output the
+    "equalized" version of it on stdout.</li>
+<li><strong>bwhist</strong> Display, and optionally dump to tty, a histogram of a
+    black and white file. Black is top of screen, white bottom.</li>
+<li><strong>pixhist</strong> Display a color histogram of a pix file. 0 is top of
+    screen, 255 bottom.</li>
+</ul>
+<h3 id="comments_3">Comments</h3>
+<h2 id="scale-or-shrink-group5">Scale or Shrink (GROUP#5)</h2>
+<ul>
+<li><strong>bwscale</strong> Scale a black and white picture.</li>
+<li><strong>pixscale</strong> Scale an RGB pix file.</li>
+<li><strong>bwshrink</strong> scale down a picture by a uniform factor.</li>
+<li><strong>pixshrink</strong> scale down a picture by a uniform factor.</li>
+</ul>
+<h3 id="comments_4">Comments</h3>
+<h2 id="stats-group6">Stats (GROUP#6)</h2>
+<ul>
+<li><strong>bwstat</strong> Compute statistics of pixels in a black and white (BW)
+    file. Gives min, max, mode, median, mean, s.d., var, and skew.</li>
+<li><strong>pixstat</strong> Compute statistics of pixels in a PIX file.</li>
+<li><strong>pixcolors</strong> Count the number of different pixel values in a PIX
+    format image.</li>
+<li><strong>pixcount</strong> Sort the pixels of an input stream by color value.</li>
+<li><strong>imgdims</strong> Guess the dimensions of an image</li>
+</ul>
+<h3 id="comments_5">Comments</h3>
+<h2 id="thresh-group7">Thresh (GROUP#7)</h2>
+<ul>
+<li><strong>bwthresh</strong> Threshold data in BW(5) format. thresholds stream of
+    data.</li>
+<li><strong>pixclump</strong> Quantize the color values in a PIX(5) stream to a set
+    of specified values</li>
+</ul>
+<h3 id="comments_6">Comments</h3>
+<h2 id="interpolatedecimate-group8">Interpolate/Decimate (GROUP#8)</h2>
+<ul>
+<li><strong>pixhalve</strong> Reduce the resolution of a .pix file by one half in
+    each direction, using a 5x5 pyramid filter.</li>
+<li><strong>pixinterp2x</strong> Read a .pix file of a given resolution, and produce
+    one with twice as many pixels by interpolating between the pixels.</li>
+</ul>
+<h3 id="comments_7">Comments</h3>
+<h2 id="background-and-border-group9">Background and Border (GROUP#9)</h2>
+<ul>
+<li><strong>pixbackgnd</strong> Background Maker</li>
+<li><strong>pixbgstrip</strong> Background Un-Maker</li>
+<li><strong>pixborder</strong> Add a 1-pixel-wide border to regions of a specified
+    color</li>
+</ul>
+<h3 id="comments_8">Comments</h3>
+<h2 id="merge-or-split-group10">Merge or Split (GROUP#10)</h2>
+<ul>
+<li><strong>pixmerge</strong> Given two streams of data, typically pix(5) or bw(5)
+    images, generate an output stream of the same size, where the value
+    of the output is determined by a formula involving the first
+    (foreground) stream and a constant, or the value of the second
+    (background) stream.</li>
+<li><strong>pixdsplit</strong> Disentangle the chars from the doubles in a pixd(5)
+    stream</li>
+<li><strong>pixfields</strong> (not exactly Merge Split but similar) * pixfields
+    takes two input pictures and extracts field 1 from the first pix
+    file and field 2 comes from the second pix file. This is useful for
+    creating field-by-field animation for NTSC video display.</li>
+<li><strong>pixfieldsep</strong> (not exactly Merge Split but similar) * Separate an
+    interlaced video image into two separate .pix files.</li>
+</ul>
+<h3 id="comments_9">Comments</h3>
+<h2 id="morphing-and-other-misc-group11">Morphing and other Misc (GROUP#11)</h2>
+<ul>
+<li><strong>pixmorph</strong> Utility for morphing two BRL-CAD pix files.</li>
+<li><strong>pixtile</strong> Given multiple .pix files with ordinary lines of pixels,
+    produce a single image with each image side-by-side, right to left,
+    bottom to top on STDOUT.</li>
+<li><strong>pixuntile</strong> Given a single .pix file with multiple images, each
+    side-by-side, right to left, bottom to top, break them up into
+    separate .pix files.</li>
+<li><strong>pixembed</strong> Embed a smaller pix file in a larger space, replicating
+    the boundary pixels to fill out the borders, and output as a pix
+    file.</li>
+<li><strong>pixpaste</strong> pixpaste will insert an arbitrary pix file into another
+    pixfile. If the image being pasted does not fit within the
+    destination file then the excess is discarded.</li>
+<li><strong>pixmatte</strong> Given four streams of data elements, where element is
+    of arbitrary width, typically pix(5) or bw(5) images, output a
+    stream of the same number of data elements.</li>
+<li><strong>pixelswap</strong> interchange pixel values in an image</li>
+</ul>
+<h3 id="comments_10">Comments</h3>
+<h1 id="feasibility">Feasibility</h1>
+<p>The above functionalities were grouped with associated commonalities.
+These functionalties will be added as part of the ICV library. These
+list of functionalities have been drawn from the Image Processing Tools
+available with brlcad which indeed is the aim of this project.</p>
+<p>Thus the implemnetation task will envolve syncing the tools with
+structures of LIBICV and the said functionalities to the library. This
+will help in inter-function communication with the whole BRLCAD source.</p>
+<p>Also once all the structures are identified (work is cuurently
+underway), syncing and implemneting a function will require very few
+functional points. And thus is also feasible.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

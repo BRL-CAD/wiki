@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Mihaineacsu/implementing_material_obj/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Notes on implementing material object - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Mihaineacsu/implementing_material_obj.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#notes-on-implementing-material-object" class="nav-link">Notes on implementing material object</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="notes-on-implementing-material-object">Notes on implementing material object</h1>
+<p>BRL-CAD uses simple material properties, presently limited to density,
+for calculating weights, moments of inertia and other geometric analyses
+by tools such as rtweight and gqa which rely on text files to gather
+material information. When computing weight,volume, regions are
+interrogated and associated with a material depending on it's GIFTmater
+id.</p>
+<p>It would be more flexible to have (non-geometric) material objects that
+store properties and can be associated with geometric objects from a .g
+database and that can be used with the current set of BRL-CAD
+commands/tools.</p>
+<p>The on-disk version of each object consists of three distinct parts:
+Object Header, Object Interior and Object Footer. Object specific data
+is stored in the Object Interior, either or in both Object Body or
+Object Attributes. Writing on disk is done by rt_db_put_internal()
+which inspects the handle on the internal format of a database object
+for the major/minor type.</p>
+<p>BRL-CAD already has a class for non-geometric objects:
+DB5_MAJORTYPE_ATTRIBUTE_ONLY (major type 3), has no object body and
+only uses Object Attributes to store object information. At the moment
+all DB5_MAJORTYPE_ATTRIBUTE_ONLY objects are minor type 0. There
+should be minor types for material and shader objects.</p>
+<p>Internal object specific methods are stored in the OBJ (struct
+rt_functab array). When building internal objects, the minor type is
+used as an index to point the right methods for that type of object. For
+now, material and shader objects are at the end of the OBJ array.
+<img alt="" src="/wiki/user/img/Rt_material_internal2.png" /></p>
+<p>There should probably be a new array that stores just
+DB5_MAJORTYPE_ATTRIBUTE_ONLY object methods for the material and
+shader minor types.</p>
+<p>Since low-level routines that handle object exporting, store internal
+attributes to the on-disk objects Attributes section it 'd be natural to
+store material properties in idb_avs. I was thinking it would be better
+if rt_material_internal would actually contain just a pointer to
+idb_avs and make operations on it. Right now, on my patch,
+rt_material_internal contains an bu_avs structure that's being copied
+to idb_avs when exporting.</p>
+<p><img alt="" src="/wiki/user/img/Rt_material_internal.png" /></p>
+<p>To associate regions with materials the most sane way I could think of
+was to store the material object's name in one of the region's internal
+representation fields. When a tool (l/...) would want to inspect a
+region's material properties it would check the string (bu_vls) stored
+in the region's internal representation (rt_comb_internal) and perform
+a database lookup for the object with that name. rt_comb_internal
+already has a bu_vls field "material" which is not used anyways. If the
+lookup fails it means that the material doesn't exist (anymore). This is
+convenient because many regions can reference the same material object
+and this way changes to the material properties are "propagated" to all
+the objects that reference that material.</p>
+<p>When raytracing is performed and tree state is built from combs
+(db_apply_state_from_comb), material object name is stored in the
+ts_mater field (struct mater_info). This way rtweight and gqa can
+perform db lookups for local material objects.</p>
+<p>The rough submitted
+<a href="https://sourceforge.net/p/brlcad/patches/302/">patch</a> covers most of
+these details. If the feedback is positive on the implementation details
+the next step is to provide an API to modify material properties and
+make sure all tools work the new type of objects (e.g.:
+adding/modifying/removing properties attr or making it easy for a region
+to reference a material object using mater).</p>
+<p>Another issue I want to tackle is binary attributes. Material properties
+are either float or double types and they're stored in bu_avs which can
+currently only map string to string. I've been following Tom Browder's
+work on this. He wanted each pair in an avs to be flexible enough to
+hold a different mapping. What I don't understand is the format that he
+wants/wanted to use to store the data:</p>
+<p><strong><em>/* format is: <ascii name> NULL &lt;binary length [network order,
+must be decoded]&gt; &lt;bytes...&gt; */</em></strong></p>
+<p>Given we have a pair (string - int/float/double... type), binary length
+(would have to be decoded) stores the length of the pair's value. What I
+don't understand is how we are to determine how long is the binary
+length field. We would probably need another separator (NULL) but that
+might be interpreted as part of the binary length field. An easy way out
+is to just store the binary length as ascii, separated by NULL.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

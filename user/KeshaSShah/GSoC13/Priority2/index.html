@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/KeshaSShah/GSoC13/Priority2/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Priority2 - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/KeshaSShah/GSoC13/Priority2.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-title" class="nav-link">Project Title:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#detailed-project-description" class="nav-link">Detailed project description</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#library-performance" class="nav-link">Library Performance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#code-maintainability" class="nav-link">Code Maintainability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#documentation" class="nav-link">Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#issues-that-needs-to-be-solved" class="nav-link">Issues that needs to be solved</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#irc-bot" class="nav-link">IRC bot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-refactoring-is-needed" class="nav-link">Why Refactoring Is Needed ?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#my-development-reports" class="nav-link">My Development Reports</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#links-to-any-code-or-algorithms-you-intend-to-use" class="nav-link">Links to any code or algorithms you intend to use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#problems-i-would-encounter-and-how-will-i-solve-them" class="nav-link">Problems I would encounter and how will I solve them ?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#importance-of-the-project" class="nav-link">Importance of the Project:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability" class="nav-link">Time availability:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-schedule" class="nav-link">Development schedule:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#phase-i-analysis-and-design-period" class="nav-link">PHASE I: Analysis and Design Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#phase-ii-development-phase" class="nav-link">PHASE II: Development Phase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#phase-iii-testing-cleaning-and-wrapping-up" class="nav-link">PHASE III :Testing, Cleaning and Wrapping Up</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#my-preparation-for-the-project" class="nav-link">My preparation for the Project:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-me" class="nav-link">Why me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="project-title">Project Title:</h2>
+<p>STEP LIBRARIES</p>
+<h1 id="detailed-project-description">Detailed project description</h1>
+<ul>
+<li>Most of my fellow participants are working on how important it is to
+    keep your code in working order and adding functionalities to it,
+    but hardly anyone ever really cares about keeping the container for
+    your code in working order.</li>
+<li>STEP is the current standard for exchange of CAD data between
+    different software packages. BRL-CAD makes use of the NIST STEP
+    Class Libraries code to support its step-g converter, but this
+    source code was written before many current C++ standard practices
+    and libraries were finalized. As a consequence, it needs both
+    cleanup and performance enhancements.</li>
+<li>There is already an existing STEPcode repo at
+    <a href="https://github.com/stepcode/stepcode">https://github.com/stepcode/stepcode</a> which needs to be modernized
+    and improved.</li>
+<li>Right now, I am learning about STEP libraries and studing the
+    directory.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Improvement is needed for</li>
+</ul>
+<p>::**LIBRARY PERFORMANCE</p>
+<p>::**CODE MAINTAINABILITY</p>
+<p>::**better DOCUMENTATION for the STEP libraries.</p>
+<p>::**Resolving some issues</p>
+<h2 id="library-performance">Library Performance</h2>
+<ul>
+<li>The biggest performance problems are related to reading files.</li>
+<li>src/cleditor (especially the STEPfile class) contains the old code
+    for reading and writing Part 21 files. There are probably some small
+    improvements that could be made here, but I'd focus on the newer
+    lazy loading code as per Mark's advice.</li>
+<li>src/cllazyfile implements lazy loading (it scans a file for
+    instances, but doesn't load them into memory until necessary). Mark
+    Pictor wrote it last fall and winter. It's much faster but there is
+    still room for improvement. It works for the files he had tried it
+    on, but it doesn't do everything it claims to do. Under his
+    guidance, I am willing to work on this problem. We would test it
+    much more thoroughly, and some parts would be refactored so that
+    unit testing becomes easier (there are violations of the Law of
+    Demeter, for example).</li>
+</ul>
+<h2 id="code-maintainability">Code Maintainability</h2>
+<ul>
+<li>Duplicate files and functions still exists (like Issue 47 down),
+    though most dead code and most inaccurate comments have been
+    eliminated.</li>
+<li>The testing isn't nearly as thorough as it should be, as lcov
+    shows - <a href="http://stepcode.org/lcov/">http://stepcode.org/lcov/</a> . Ideally, we'd have C++ unit
+    tests that would cover everything. As it stands, probably 99% of our
+    coverage is from Part 21 files. Tests in C++ would make it far
+    easier to locate the source of problems.</li>
+<li>There are also classes like DirObj that are used, that should
+    probably be eliminated.</li>
+<li>If dead code exists in src/cldai or src/clstepcore, care should be
+    taken - most of that code is mandated by STEP Part 22 or Part 23,
+    the Standard Data Access Interface.</li>
+<li>src/clprobe-ui is the remnants of a very old GUI. The only reason it
+    hasn't been removed from the repo is that it is an example of the
+    use of STEPcode. Hence much attention need not be paid to it.</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>Mark always wanted to write a script using doxygen, and possibly
+    doxyassist, to create documentation that is split up logically. Like
+    the v0.5 docs (
+    <a href="http://mpictor.github.io/scl/0.5/doc.StepClassLibrary/doxygen-html/index.html">http://mpictor.github.io/scl/0.5/doc.StepClassLibrary/doxygen-html/index.html</a>
+    ), but with fewer tabs - perhaps one for parsing express (express,
+    exppp, fedex_plus, fedex_python), one for uses of STEPcode (tests,
+    clprobe-ui, SCView, BRL-CAD's stepg
+    (http://stepcode.org/stepcode-use-doxygen/dir_d0040508ea657d1100a6aec0fcb59f22.html),
+    etc. He hasn't moved past the planning stage. This sounds like
+    something I would like to work on. Doxygen has many features that he
+    hasn't delved into; some might help us.</li>
+<li>There are a lot of comments in the code discussing things that
+    aren't implemented or aren't implemented completely. I would try to
+    make a list of them. If they can be tagged such that Doxygen creates
+    a page specifically for unimplemented features, its great.</li>
+<li>Adding more examples on the stepcode wiki.</li>
+</ul>
+<h2 id="issues-that-needs-to-be-solved">Issues that needs to be solved</h2>
+<ul>
+<li>I went through some issues related to cleanup and part21 and would
+    like to contribute fixing them. I am particularly addressing and
+    reviewing these issues and help them getting organized-</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/pull/227">Issue 227</a>:
+        Merge major BRL-CAD SCL changes into stepcode
+        -   Very little work to do (in case of any differences only)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/issues/90">Issue 90</a>:
+        Statistics from p21read
+        -   This issue is almost complete with few things left such as
+            counting the instances, doing a few calculations, and
+            printing some info near #L164 of
+            src/test/p21read/p21read.cc</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/issues/204">Issue 204</a>:
+        fedex_plus: add doxygen-style comments to the generated C++
+        -   Nothing has been done on this issue. Figuring out how
+            fedex_plus and libexpress work can be challenging, and I
+            would need some understanding of the EXPRESS language,which
+            people claim to be quite different from other languages.
+            This might take upon some time.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/issues/197">Issue 197</a>:
+        error handling - option to summarize errors in p21read,
+        fedex_plus
+        -   Nothing has been done on this issue also. Something related
+            that can be done is like to have numbered errors, similar to
+            how MSVC does it. This would make it easy to sort or search
+            the output of fedex_plus. It could be visualized after it
+            that P34 would be a parser error or warning, while F12 would
+            be a fedex_plus error or warning.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/issues/170">Issue 170</a>:
+        STEPfile::MakeBackupFile() is inefficient
+        -   This is a trivial issue</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/issues/21">Issue 21</a>:
+        cppcheck 1.49 issues report
+        -   This requires re-running cppcheck. That tool is probably
+            better now, and STEPcode has changed considerably since the
+            report was generated. There are other tools as well, which
+            may report different problems. clang-analyzer is good for C
+            but doesn't check C++ thoroughly.
+            <a href="http://daniel-wilkerson.appspot.com/oink/index.html">Oink</a>
+            sounds impressive and deserves to be given a try.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li><a href="https://github.com/stepcode/stepcode/issues/47">Issue 47</a>:
+        files with identical name and similar content
+        -   This one is the first issue I have started to work and using
+            as a tool to learn the basics.
+        -   Partially, the work has been done and I have learn a lot
+            many things which I was completely unaware of before.
+        -   I realized how important is the ability to read and examine
+            the ERRORS. I have never encountered the errors related to
+            large codebase before. For the next week or two, I will be
+            focusing on understanding how to read and interpret the
+            errors. I am discussing them with other potential developers
+            on IRC and having hold upon it and getting the pattern in my
+            mind would be one of the best things I will learn. This is
+            the most basic skill upon which I want to have a better
+            grip.
+        -   Next are the COMPILER WARNINGS which I used to ignore before
+            thinking them to be harmless and hence useless. Now, I have
+            got a reason to ponder upon if its useless, why is it
+            actually there. The compiler wants to drag my attention to
+            some syntatically correct but semantically incorrect code
+            which might have some logic bug. I will try to figure out
+            the reason behind WARNINGS.
+        -   Also, I realized that on LARGE CROSS-PLATFORM projects, it
+            is not sufficient if checked on just one platform. The code
+            should be designed and modified with utmost care such that
+            it does work well on other platforms also.
+        -   Some terms like call-stack now seem to be familiar. Right
+            now I am having an error saying it couldn't look up for
+            vtable in the process of linking. I am devoting some time
+            nowadays to understand the process of how calls are made and
+            linked with libraries.
+        -   I also installed a new diff and merge tool MELD to find out
+            differences between two similar files and used them for
+            diffs between pair of 13 similar files.
+        -   In this issue, except for two files, there is almost similar
+            set of files in src/fedex_plus and src/clstepcore from
+            which the other copy need to be kept and the first one
+            should be removed carefully such that the build system is
+            not broken at any point.
+        -   I have down the differences in that files using MELD tool.
+            Now decission has to be taken to untangle calls, replace
+            them, move them, delete them or refactor them in the
+            clstepcore.
+        -   Taken care of 11 similar files. Known about how
+            CMakeLists.txt is organized to include necessary headers,
+            libraries and executable.
+        -   Also, refreshed some concepts about virtual, pure classes,
+            friend classes etc. related to cpp.
+        -   Learnt and used practically some basics of git- to commit,
+            add, remove, push, pull, make branch, switch between
+            branches, going back to a commit, setting head, log ,etc.
+            Installed gitk and used it.
+        -   Taking care of line-endings - CRLF (windows)
+        -   Ran the gdb debugger for the first time on such a large
+            -codebase. Used command-line uptil today. Now, installed
+            KDevelop IDE as it has a nicer gdb GUI wrapper integrated.
+        -   Known other GUIs like kgdb,ddd and insight.</li>
+</ul>
+</li>
+</ul>
+<h2 id="irc-bot">IRC bot</h2>
+<ul>
+<li>Most of the famous IRC channels have a bot which keeps various
+    information and provides functionalities like !logs (on #brlcad),
+    !next (on #gsoc), etc.</li>
+<li>There exist an IRC channel #stepcode, but without a bot. No way to
+    give some news related to stepcode.</li>
+<li>Mark and I are planning to have a bot which keeps track of the logs.</li>
+<li>It would have one more feature of displaying detailed description
+    about an issue when typed issue number.</li>
+<li>For this, till now I have made a bot - STEPbot, which is quite
+    hardcoded now with messages on '!test', '!hello', '!areyoubot?' and
+    '!bye'.</li>
+<li>There is one more drawback. It doesn't function 24*7 . It works
+    only when I turn it on. With my going offline, the bot also leaves
+    IRC.</li>
+<li>Hoping to have a superb STEPbot.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Still I am not completely done with this and would be updating this
+    proposal as and how I understand and get directions.</li>
+</ul>
+<h1 id="why-refactoring-is-needed">Why Refactoring Is Needed ?</h1>
+<ul>
+<li>Poorly designed code usually takes more code to do the same things,
+    often because the code quite literally does the same thing in
+    several places. By eliminating this duplicates, we ensure that the
+    code says everything once and only once, which is the essence of
+    good design.</li>
+<li>Mostly, when the developers are trying to get the program to work,
+    they are not thinking about that future developer. It takes a change
+    of rhythm to make changes that make the code easier to understand.
+    Refactoring helps to make the code more readable. A little time
+    spent refactoring can make the code better communicate its purpose.</li>
+<li>As the code gets clearer, one can see things about the design that
+    he could not see before because its difficult to visualize all this
+    in head. Thus, refactoring is just wiping the dirt off a window so
+    you can see beyond.</li>
+<li>When I myself did some projects on making my own shell, implementing
+    malloc and some data structure projects, I realized, while I’m
+    studying code I find refactoring leads me to higher levels of
+    understanding that otherwise I would miss out.</li>
+<li>Reducing and refactoring the amount of code does, however, make a
+    big difference in modification of the code. The more code there is,
+    the harder it is to modify correctly. Hence, this needs to be done
+    as early as possible as everyday developers are working and adding
+    new and new code to it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The above is what I intend to do as part of GSoC.</li>
+<li>It is not just about 3 months of GSoC, I want to be committed with
+    this code for years. I will keep contributing even after that as
+    thing is an endless job-new codes are definitely going to be added
+    and that in-turn would also require code reducing and refactoring.
+    Moreover, by the end of 3 months, I believe, I would have hacked the
+    entire source code so well that I can work on other projects also
+    and contribute in making BRD-CAL more awesome!</li>
+</ul>
+<h1 id="my-development-reports">My Development Reports</h1>
+<p><a href="../Reports/">Click here to see logs</a></p>
+<h1 id="links-to-any-code-or-algorithms-you-intend-to-use">Links to any code or algorithms you intend to use</h1>
+<p>ALGORITHM I intend to use:</p>
+<ul>
+<li>Step1:Select one or more defect to review.</li>
+<li>Step2: Mark as claimed and being worked on.</li>
+<li>Step3: if ( More than three lines of code ) goto step 4 else Change
+    according to my Judgment</li>
+<li>Step4: If ( More than in a file ) then goto step 5 else goto step 8</li>
+<li>Step5: If ( More than a directory ) then goto step 6 else goto step
+    7</li>
+<li>Step6: Probably warrants a new function in the highest common
+    library and goto step 11</li>
+<li>Step7: Create function, add declaration to private header and goto
+    step 11</li>
+<li>Step8: If ( In a library ) then goto step 9 else goto step 10</li>
+<li>Step9: Create hidden/static function or macro in the same file and
+    goto step 11</li>
+<li>Step10: Create static function or macro in the same file and goto
+    step 11</li>
+<li>Step11: If it warrants a regression test the goto step 12 else goto
+    step 13.</li>
+<li>Step12: Add regression/ unit test and commit and goto step 14.</li>
+<li>Step13: If it is user visible goto step 14 else goto step 15.</li>
+<li>Step14: Update TODO and goto step 15</li>
+</ul>
+<p>/* Here check once again for was it good code to change and leaves back
+no duplication, has a regression or unit test if warranted and it passes
+and all docs were updated like TODO, deprecation.txt, doc-book, doxygen
+comments etc */</p>
+<ul>
+<li>Step15: Commit and mark as 'Needs Review' and goto step 16</li>
+<li>Step 16: Estimate impact, update severity and goto step 17.</li>
+<li>Step 17: Record in the ledger and goto step 1.</li>
+</ul>
+<h1 id="problems-i-would-encounter-and-how-will-i-solve-them">Problems I would encounter and how will I solve them ?</h1>
+<ul>
+<li>The task of code refactoring and reducing is very critical as it
+    play around with most of the folders and files present in the source
+    folder and will modify and delete and add some new lines as per the
+    requirements. There is huge possibility of changing the
+    functionality of the program and make it behave in a bad manner.</li>
+<li>So, what I have though is I would compile after every change.</li>
+<li>BRL-CAD's step-g converter will serve as a test for the
+    functionality of the library and compiler will be set to strict
+    flags.</li>
+<li>Moreover, I will run unit test and test with that there is no run
+    time error also and the behavior of code remains the same.</li>
+<li>Rest, Google, my best friend who knows everything is always with me
+    and will help me in every situation.</li>
+</ul>
+<h1 id="deliverables">Deliverables</h1>
+<ul>
+<li>Modernize the C++.</li>
+<li>Improve library functionalities</li>
+<li>Make code more readable and maintainable</li>
+<li>Document it using doxygen system</li>
+<li>Create Reusable code.</li>
+</ul>
+<h1 id="importance-of-the-project">Importance of the Project:</h1>
+<ul>
+<li>Improving Design :As people change the code to realize short term
+    goals, the code will lose its structure and program will decay.</li>
+<li>Makes Software Easier to Understand : Still compiler taking a few
+    more overheads and delivering output a few milliseconds later is not
+    of huge concern to most of us. But, what worries us is that a new
+    developer will have to spend a week figuring out the part he wants
+    to change which would be actually job of an hour if the code was
+    well managed.</li>
+<li>Easier to add new Features</li>
+</ul>
+<h1 id="time-availability">Time availability:</h1>
+<ul>
+<li>My availability for the project would be possible for the specific
+    GSoC period as I would be having my summer break from 1st May to
+    last week of July. Since in August the new semester would have just
+    begun, I would be able to spare enough time to work on the project
+    as I am not involved in anything else which would be a hindrance.</li>
+<li>In September I have a 3 days in-sem evaluation at university. It is
+    compulsary to have a *present* marked for it, but its weighage is
+    just 10-15% in the total evaluation for the semester which is quite
+    negligible. Except for these 3 days, I am available in September
+    also.</li>
+<li>I will also work on Sundays if needed needed to cope-up in-case if I
+    am unable to meet with my development schedule due to unavoidable
+    circumstances.</li>
+<li>Even after GSoC period I will get enough time to continue
+    contributing to STEPcode and BRD-CAL.</li>
+</ul>
+<h1 id="development-schedule">Development schedule:</h1>
+<p>//* Pre-GSoC Period */</p>
+<ul>
+<li>
+<ul>
+<li>April 19- 22 : Downloaded Source-code and made one initial
+        patch.</li>
+<li>April 23-30 : Final End-Semester Exams at University.</li>
+<li>May 1-3 : Submit some more patches to showcase my work.</li>
+<li>May 4-21: Ensure Build Environment is working fine, stay in
+    constant contact with the mentor to discuss efficient ways and
+    asking them questions and make some more patches.</li>
+</ul>
+</li>
+</ul>
+<p>/* GSoC period Starts */</p>
+<h2 id="phase-i-analysis-and-design-period">PHASE I: Analysis and Design Period</h2>
+<ul>
+<li>May 25- June 20 :<ul>
+<li>Getting familiar with the code</li>
+<li>Examine the existing STEPcode repo at
+    <a href="https://github.com/stepcode/stepcode">https://github.com/stepcode/stepcode</a> and create a list of
+    tasks that need to be done.</li>
+<li>Fix some small issues like #21, #123, #200 ,#204, #233</li>
+<li>At the end of this period : A finalized plan to proceed for the
+    development of the library.</li>
+</ul>
+</li>
+</ul>
+<h2 id="phase-ii-development-phase">PHASE II: Development Phase</h2>
+<ul>
+<li>June 20 – September 11<ul>
+<li>June 20 – June 30 - Write two script using doxygen (or
+    doxyassist possibly) to create documentation which is split up
+    logically.- one for parsing express (express, exppp,
+    fedex_plus, fedex_python) and other for uses of STEPcode
+    (tests, clprobe-ui, SCView,<a href="http://stepcode.org/stepcode-use-doxygen/dir_d0040508ea657d1100a6aec0fcb59f22.html">BRL-CAD's
+    stepg</a>)</li>
+<li>July 1- July 5 :Read the code related to lazy loading</li>
+<li>July 5- July 9 : Make appropriate interface of src/cllazyfile
+    and add #TODO comments</li>
+<li>July 9 - August 15 - Work on completing those todo's. Writing a
+    function, test it and document it in a cyclic manner.</li>
+<li>August 15 – August 24 - submitting and some more review and
+    updating if it is necessary.</li>
+<li>August 24- August 26- Check minutely, if its not leaving behind
+    some bugs.</li>
+<li>August 26 – August 30 - Making mid-term report and completing
+    the task left.</li>
+<li>At the end of this period : src/cllazyfile with all
+    functionalities and all of them having been tested at unit
+    level.</li>
+</ul>
+</li>
+</ul>
+<h2 id="phase-iii-testing-cleaning-and-wrapping-up">PHASE III :Testing, Cleaning and Wrapping Up</h2>
+<ul>
+<li>August 30 - September 27<ul>
+<li>August 30 - September 9 - Testing it on other platforms</li>
+<li>September 9-September 15 - bugs fixing, review to be ready for
+    submitting the final result. Solving some small open issues on
+    github if time permits.</li>
+<li>September 10- 22 -Pencils down ,Code clean up , Documentation
+    (wiki pages)</li>
+<li>Sept. 23 – 27- Final evaluation and Submit code to Google</li>
+<li>At the end of this period: Deliverable mentioned would be
+    successfully be completed.</li>
+</ul>
+</li>
+</ul>
+<h1 id="my-preparation-for-the-project">My preparation for the Project:</h1>
+<ul>
+<li>Joined IRC channel #brlcad</li>
+<li>I have mailed in the mailing list of BRL-CAD talking about my
+    interests and planning for near future.</li>
+<li>Surfed through previous year projects where I found one similar
+    project. I am also in contacting with that candidate who would guide
+    me and share her experience with me.</li>
+<li>Cloned the source-code into my system.</li>
+<li>Opened some src files, saw some codes and found huge cod repition
+    over there. *As my first step, I had modified the file
+    /src/libbn/plot3 and reduced some amount of code.</li>
+<li>I didn't have previous experience with SVN version control system.
+    Made an account on sourceforge.net and submitted my first
+    <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=640804&amp;aid=3611485&amp;group_id=105292">patch.</a></li>
+<li><Right now>I am checking out STEP Libraries and how it functions.</li>
+<li>Due to the burden of final exams I am afraid that I couldn't work to
+    my maximum potential till 30th April. But from 1st May to May 3rd, I
+    am planning to submit some more patches to show my work.</li>
+</ul>
+<h1 id="why-me">Why me?</h1>
+<ul>
+<li>The reason why I am a suitable candidate for "Code Refactoring"
+    project is because most importantly, I love programming in C and C++
+    and figuring others code looks quite fascinating job to me.</li>
+<li>Moreover, I had won 3rd and 1st position respectively in "i-code and
+    C-debugging contest" organized by IEEE as a part of I-Fest at
+    DA-IICT in 2012 and 2011 respectively.</li>
+<li>I have been certified as excellent C and C++ coder with A++ grade by
+    Centre for Development and Advanced Computing(CDAC), Pune, India.</li>
+</ul>
+<h1 id="why-brl-cad">Why BRL-CAD?</h1>
+<ul>
+<li>The code is entirely written in C, the programming language in which
+    I am the stongest.</li>
+<li>Also, I chose BRL-CAD because I think it's great to work on such a
+    powerful Open Source modeling system.</li>
+</ul>
+<p>I promise that if given this opportunity, I will work with full
+dedication, give my 100% efforts, leave no stones unturned and reduce
+the code and make it more readable.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

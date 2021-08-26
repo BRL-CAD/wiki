@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Phoenix/GSoc2012/Reports/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Log - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Phoenix/GSoc2012/Reports.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#log" class="nav-link">Log</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding" class="nav-link">Community Bonding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-1" class="nav-link">Week 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-2" class="nav-link">Week 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-3" class="nav-link">Week 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-4" class="nav-link">Week 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-6" class="nav-link">Week 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-7" class="nav-link">Week 7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-8" class="nav-link">Week 8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#midterm-summary" class="nav-link">Midterm summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-9" class="nav-link">Week 9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-10" class="nav-link">Week 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-11" class="nav-link">Week 11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-12" class="nav-link">Week 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-13" class="nav-link">Week 13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#final-summary" class="nav-link">Final summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#test-results" class="nav-link">Test Results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#original-development-timeline" class="nav-link">Original development timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="log">Log</h1>
+<h2 id="community-bonding">Community Bonding</h2>
+<ul>
+<li>May 2<ul>
+<li>Downloaded the source code of the latest revision from svn
+    checkout and got more familiar with subversion.</li>
+<li>Compiled and built the source both in Ubuntu and Windows (Visual
+    Studio 2010) successfully.</li>
+</ul>
+</li>
+<li>May 13<ul>
+<li>Found and fixed a small bug in eto_brep (the rotation axis of
+    eto is wrong), and submitted a patch on sourceforge.net.</li>
+</ul>
+</li>
+<li>May 15<ul>
+<li>Modified the eto_brep patch with the test case provided by
+    Cliff.</li>
+</ul>
+</li>
+<li>May 16<ul>
+<li>Continued working on the conversion of eto.</li>
+<li>Tested the brep conversion of hyp, but found the raytrace result
+    of implicit CSG hyp quite strange.</li>
+</ul>
+</li>
+<li>May 17<ul>
+<li>The raytrace of implicit hyp is wrong when H is not
+    perpendicular to A.</li>
+<li>Fixed the conversion to brep of hyp (havn't commited yet).</li>
+</ul>
+</li>
+<li>May 18<ul>
+<li>My first SVN Commit: fixed the shearing direction of hyp.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-1">Week 1</h2>
+<ul>
+<li>May 21<ul>
+<li>Fixed the bug of wrong id &amp; od for pipe b-rep, by changing some
+    prevp to curp.</li>
+<li>Dealt with duplicated points by deleting them from the linklist.</li>
+</ul>
+</li>
+<li>May 22<ul>
+<li>Added some control to deal with special cases in pipe_brep.cpp
+    and add a few comments.</li>
+</ul>
+</li>
+<li>May 23<ul>
+<li>Read and tried to understood the code in revolve_brep.cpp, but
+    got confused by the implicit definition.</li>
+<li>Changed the revolution axis and origin of the sketch plane of
+    revolve_brep.</li>
+</ul>
+</li>
+<li>May 24<ul>
+<li>Changed the position of the sketch in extrude_brep according to
+    the parameters.</li>
+<li>Fixed the plane direction of circle arcs in sketch_brep as well
+    as in revolve_brep.</li>
+</ul>
+</li>
+<li>May 25<ul>
+<li>Dealt with non-full revolution of revolve_brep. It took a long
+    time to get the expected result, but I got more familiar to
+    NURBS/BREP during that procedure.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-2">Week 2</h2>
+<ul>
+<li>May 27<ul>
+<li>Tested and examined the implemented brep conversions. Checked
+    the current status of my work.</li>
+</ul>
+</li>
+<li>May 28<ul>
+<li>Added the implicit -&gt; brep conversion to conversion.sh, so
+    that massive testing will be more convenient.</li>
+</ul>
+</li>
+<li>May 29<ul>
+<li>Tested the functionality of conversion.sh and brep conversions.
+    Made a small change.</li>
+<li>Modified brep.c in libged to check whether the conversion is
+    successful.</li>
+</ul>
+</li>
+<li>May 30<ul>
+<li>Read the code in clone.c, and began to implement the temporary
+    unevaluated conversion of comb in the brep command in MGED.</li>
+</ul>
+</li>
+<li>May 31<ul>
+<li>Extended the functionality of the brep command in MGED to deal
+    with comb. Unevaluated breps are generated. More tests are
+    needed.</li>
+</ul>
+</li>
+<li>June 1<ul>
+<li>The unevaluated conversion for comb has been implemented.
+    Changed conversion.sh accordingly. And the whole elasped time
+    for each object is evaluated.</li>
+<li>Handled some exceptions in brep_debug.cpp.</li>
+<li>Freed memories and corrected the "name existed" output in brep.c
+    in libged.</li>
+</ul>
+</li>
+<li>June 2<ul>
+<li>Tested the brep conversion on ktank.g, m35.g, etc. with
+    conversion.sh.</li>
+<li>Modified brep_debug.cpp to deal with empty combs.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-3">Week 3</h2>
+<ul>
+<li>June 3<ul>
+<li>Fixed the wrong malloc size and freed tmpname before returning
+    in brep_debug.cpp.</li>
+</ul>
+</li>
+<li>June 4<ul>
+<li>Modified openNUBRS_ext.cpp to quell set-but-unused warnings.</li>
+<li>Tested brep conversion of all /db/*.g files. Looked into the
+    log to find out what to do next.</li>
+<li>Found a bug in pipe_brep.cpp dealing with colinear points.</li>
+</ul>
+</li>
+<li>June 5<ul>
+<li>Modified pipe_brep.cpp. It's much better now, but problems
+    still remain.</li>
+</ul>
+</li>
+<li>June 6<ul>
+<li>Fixed a concealed bug in pipe_brep.cpp. Now it works properly.</li>
+</ul>
+</li>
+<li>June 7<ul>
+<li>Fixed the destruction failure in pipe_brep.cpp by duplicating
+    the curves.</li>
+</ul>
+</li>
+<li>June 8<ul>
+<li>Modified brep_debug.cpp to skip the conversion of half when
+    converting a comb. The implicit primitive of half remains in the
+    hierarchy.</li>
+<li>Explored the usage of ON_BrepRegion to represent an infinite
+    halfspace, but had no good luck.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-4">Week 4</h2>
+<ul>
+<li>June 11 - June 18<ul>
+<li>Final examination week in our school.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-5">Week 5</h2>
+<ul>
+<li>June 18<ul>
+<li>Final exams finished. Started to work!</li>
+<li>Added pnts to the ignore list when converting a comb.</li>
+<li>Modified the describe and ifree functions in pnts.c checking
+    whether count==0 to avoid segmentation fault.</li>
+</ul>
+</li>
+<li>June 19<ul>
+<li>Corrected the wrong comments in arb8_brep.cpp and
+    arbn_brep.cpp.</li>
+<li>Add a brep conversion function to ars, which first converts it
+    to an nmg and then to b-rep.</li>
+</ul>
+</li>
+<li>June 20<ul>
+<li>Use ft_brep functions for half and pnts, returning a NULL brep
+    pointer, and check within brep_conversion() and
+    brep_conversion_tree().</li>
+</ul>
+</li>
+<li>June 21<ul>
+<li>Tried implementing rt_part_brep() for primitive part. Things
+    get much closer now after much tests and modifications.</li>
+</ul>
+</li>
+<li>June 22<ul>
+<li>Finished a raw version of brep conversion for part. Some special
+    cases need to be considered later.</li>
+</ul>
+</li>
+<li>June 23<ul>
+<li>Enhanced some special cases (sphere) in part_brep.cpp.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-6">Week 6</h2>
+<ul>
+<li>June 24<ul>
+<li>Fixed the wrong normal direction of the brep form of part.</li>
+</ul>
+</li>
+<li>June 25<ul>
+<li>Studied the primitive metaball. Found it quite hard to get
+    started.</li>
+</ul>
+</li>
+<li>June 26<ul>
+<li>Studied the two papers Cliff provided on metaballs, but still
+    cannot find the answer.</li>
+<li>Copied the transformation matrix when converting the leaves in a
+    tree. (Later adjusted to copying all data from the old tree
+    first)</li>
+</ul>
+</li>
+<li>June 27<ul>
+<li>Evaluated the results and uploaded the screenshots to the log
+    page. (See "Test Results")</li>
+<li>Modified dsp_brep.cpp, using the dsp_stom matrix to do the
+    transformation, instead of using the magic numbers.</li>
+</ul>
+</li>
+<li>June 28<ul>
+<li>Implemented a b-rep conversion function for superell.</li>
+</ul>
+</li>
+<li>June 29<ul>
+<li>Tested the results of conversion of superell. (See below)</li>
+</ul>
+</li>
+<li>June 30<ul>
+<li>Uploaded the raytracing results of superells with e or n &gt; 2.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-7">Week 7</h2>
+<ul>
+<li>July 2<ul>
+<li>Added conversion functions to cline. We first convert cline to
+    an implicit pipe, and then convert the pipe to b-rep.</li>
+</ul>
+</li>
+<li>July 3<ul>
+<li>Modified superell_brep.cpp to generate multiple surfaces for
+    superells with e or n &gt; 2.</li>
+<li>Uploaded images with the modified b-rep conversion routine for
+    superell.</li>
+</ul>
+</li>
+<li>July 4<ul>
+<li>Uploaded images of the raytrace results of cline (both implicit
+    and b-rep).</li>
+<li>Fixed the wrong weight when the center (origin) is set to be
+    control points (superell_brep.cpp).</li>
+</ul>
+</li>
+<li>July 5<ul>
+<li>Some minor modifications on brep_debug.cpp, half_brep.cpp and
+    pnts_brep.cpp.</li>
+<li>Add a b-rep conversion function to grip, but it just returns a
+    NULL ON_Brep pointer because grip is a pseudo solid and doesn't
+    have its own shape.</li>
+</ul>
+</li>
+<li>July 6<ul>
+<li>Implemented degree reduction to Bezier curves to simplify the
+    representation of the dsp top surface. But still a long way to
+    go. As I tested it with terra.g, the result made me very upset.
+    There were great differences in the middle of the curves. For
+    dsp with smaller xcnt &amp; ycnt, the result was quite accurate. But
+    it's big xcnt &amp; ycnt that counts, because this is introduced to
+    shorten the raytrace time of dsp with large maps.</li>
+<li>TODO: Calculate the accumulated deviation. A torelance value TOL
+    might be used to decide whether the result is acceptable or not.
+    Or replace it with a better algorithm. (e.g. The specific way
+    for DSP Cliff mentioned in E-mail)</li>
+</ul>
+</li>
+<li>July 7<ul>
+<li>Thought over the specific way to reduce control points on the
+    dsp top surface, but found that finding local minimum and
+    maximum is not quite suitable for Bezier surfaces as this
+    results in non-uniform control points (cannot form a rectangular
+    grid). To keep it uniform may result in even nothing reduced at
+    last. So I'd like to go on with the corrent routines at present.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-8">Week 8</h2>
+<ul>
+<li>July 8<ul>
+<li>Added b-rep conversion function to hf: hf -&gt; dsp -&gt; brep.</li>
+</ul>
+</li>
+<li>July 9<ul>
+<li>Added a tolerance variable to control the max error in degree
+    reduction in dsp_brep.cpp.</li>
+<li>Tested the results of b-rep conversion for dsp. For the 30*30
+    displacement map, it can be reduced to 16*26 within the
+    tolerance (see the images below), while the 256*256 map in
+    terra.g can only reduced to 254*254 within the tolerance (maybe
+    a bigger tolerance value should be used).</li>
+<li>Next step for my project: start studying and implementing NURBS
+    surface-surface intersection.
+    <a href="/wiki/NURBS_Intersections">(/wiki/NURBS_Intersections)</a>
+    Even if I cannot completely finished this project as there is
+    not much time left in this summer, adding some useful "pieces"
+    of it can still be helpful.</li>
+</ul>
+</li>
+<li>July 10<ul>
+<li>Read some papers on surface-surface intersection. It's really a
+    HARD project. Two approaches came to mind:</li>
+<li>1. Using subdivision methods. The two surfaces can be
+    decomposed into small parts, and the calculation turns to the
+    intersection of these small parts. Two papers Cliff offered seem
+    to use this method (One uses surface triangulation, the other
+    uses small bounding boxes). It might be a rather simple
+    approach, but I'm worried about the performance and accuracy of
+    this method.</li>
+<li>2. Using marching algorithms. This approach usually achieve
+    good performance, but lots of math is required. After I went
+    through several papers, I still cannot come up with a complete
+    solution of the first step: Finding starting points using
+    curve-surface intersection. So although this method sounds quite
+    ideal, but the reality is that it's not easy to implement it.</li>
+</ul>
+</li>
+<li>July 11<ul>
+<li>No longer used dynamic memory allocations in hf_brep.cpp.</li>
+<li>Add comment to mark the unused functions in
+    primitives/brep/brep.cpp.</li>
+<li>Went on studying papers on NURBS surface-surface intersection
+    and read the existing code in brep.cpp as well as
+    opennurbs_ext.cpp(h). Things got much closer, but discussions
+    are still needed before a final solution is formed.</li>
+</ul>
+</li>
+<li>July 12<ul>
+<li>In present we decide to focus on the subdivision algorithm which
+    is described in: Adarsh Krishnamurthy, Rahul Khardekar, Sara
+    McMains, Kirk Haller, and Gershon Elber. 2008. Performing
+    efficient NURBS modeling operations on the GPU. In Proceedings
+    of the 2008 ACM symposium on Solid and physical modeling (SPM
+    '08). ACM, New York, NY, USA, 257-268.
+    DOI=10.1145/1364901.1364937
+    <a href="http://doi.acm.org/10.1145/1364901.1364937">http://doi.acm.org/10.1145/1364901.1364937</a></li>
+<li>Taken the first step of NURBS surface-surface intersection.
+    Surface trees of the two surfaces are generated and
+    intersections of the bounding boxes are calculated.</li>
+<li>Added the SSI function to opennurbs_ext.h and
+    opennurbs_ext.cpp.</li>
+</ul>
+</li>
+<li>July 13<ul>
+<li>Continued working on SSI with subdivision - the second step is
+    to estimate the intersection points with trigonal
+    approximations. Implemented a function to calculate the
+    intersection of two triangles (it sounds simple, but the code is
+    rather long). Finished a draft of the whole second step. But I
+    havn't tested it yet.</li>
+<li>It seems that m_u and m_v in the bounding box tree do not
+    work. So maybe I should calculate the u domain and v domain
+    beforehand, or modify the SurfaceTree function to update m_u
+    and m_v when building the surface tree.</li>
+</ul>
+</li>
+</ul>
+<h2 id="midterm-summary">Midterm summary</h2>
+<ul>
+<li>The original milestones of my project:<ul>
+<li><strong>The remained problems with implemented conversions like ehy,
+    hyp, revolve, sph, ell, tor, extrude, pipe, etc. are fixed.
+    Patches will be updated promptly. (Some have been done now,
+    verification needed.)</strong> - After several tests on the solids in
+    db/*.g files, they seems to work well now.</li>
+<li><strong>Conversions of non-orgin located primitives are implemented
+    (if they have not been implemented now)</strong> - Worked on them
+    together with fixing other bugs, completed.</li>
+<li><strong>The missing conversions of implicit primitives are
+    implemented.</strong> - Most of them are implemented, except metaball,
+    pnts, joint, submodel, constraint, and anno.</li>
+<li><strong>At last a converter working for a whole CSG tree is built (The
+    user interface of my work).</strong> - The brep command in MGED can
+    convert a comb now (the code is in brep_debug.cpp and
+    libged/brep.c), and conversion.sh can convert the objects in a
+    file.</li>
+</ul>
+</li>
+<li>About the remaining half of GSoC<ul>
+<li>Work on the NURBS surface-surface intersection project.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-9">Week 9</h2>
+<ul>
+<li>July 15<ul>
+<li>Just did some clean up in opennurbs_ext.cpp - remove unused and
+    shadowed variables to avoid compiler warnings.</li>
+</ul>
+</li>
+<li>July 16<ul>
+<li>m_u and m_v is updated in the surfaceBBox() and initialBBox()
+    functions so that they are valid when we calculate the surface
+    sub-patches.</li>
+<li>Fixed some small bugs in the surface-surface intersection
+    function (copy-paste un-modified). Now that the second step of
+    SSI is finished - points on the curve have been created.</li>
+</ul>
+</li>
+<li>July 17<ul>
+<li>Fit the points into NURBS curves using polyline approximation.</li>
+<li>TODO: (1) Calculate max_dis according to the size of the
+    biggest bounding box. Tests are needed to define a better
+    threshold. (done) (2) Implement a method to test SSI (maybe
+    extend the brep command in MGED with an option "intersect").
+    (done)</li>
+</ul>
+</li>
+<li>July 18<ul>
+<li>Fixed the copy crashing by using pointers to the intersection
+    curves.</li>
+<li>Added an option to the brep command in MGED to test
+    surface-surface intersection. The syntax is: brep obj1.brep
+    intersect obj2.brep i j . This syntax is used mainly because
+    it's easy to implement.</li>
+</ul>
+</li>
+<li>July 19<ul>
+<li>Fixed the bu_malloc(0) failure in
+    surface_surface_intersection().</li>
+<li>Uploaded an image of the intersection of a sph and an ehy.</li>
+<li>TODO: The current intersection routine doesn't work well with
+    plane surfaces, because the bounding box of a plane surface has
+    no volume. (done)</li>
+</ul>
+</li>
+<li>July 20<ul>
+<li>Calculated the threshold according to the size of bounding-box.</li>
+<li>Uploaded an image of the intersection of an epa and a tgc. (Two
+    intersection segments)</li>
+</ul>
+</li>
+<li>July 21<ul>
+<li>Modified the brep command so that the max_dis value can be
+    inputted manually within the command for testing.</li>
+<li>There are still problems with the current intersection:
+    sometimes we get too few points to fit an ideal intersection
+    curve.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-10">Week 10</h2>
+<ul>
+<li>July 23<ul>
+<li>Intersection with a plane surface works well now - for a BBNode
+    with no children within the max depth, copy itself as its child.
+    (An image of related results was uploaded.)</li>
+</ul>
+</li>
+<li>July 24<ul>
+<li>There is a trade off between performance and result quality. If
+    we use bigger INTERSECT_MAX_DEPTH (i.e, 10 instead of 8), we
+    get better results but it costs more time.</li>
+<li>Calculated the coordinates of the intersection points in UV
+    parameter spaces. The next step is to make use of these
+    coordinates to create 2D trimming curves.</li>
+</ul>
+</li>
+<li>July 25<ul>
+<li>Do not generate the whole surface tree - only a small useful
+    subset is generated simultaneously with the intersection
+    process. Much faster.</li>
+<li>TODO: use the tolerance value instead of a constant
+    INTERSECT_MAX_DEPTH.</li>
+</ul>
+</li>
+<li>July 26<ul>
+<li>Do not copy the node as its child - just pass it to the next
+    iteration.</li>
+<li>Fixed the memory leak introduced by this morning's modification.</li>
+</ul>
+</li>
+<li>July 27<ul>
+<li>Calculated the intersection curves in UV parameter spaces
+    (trimming curves), and extended the brep command to test them.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-11">Week 11</h2>
+<ul>
+<li>July 30<ul>
+<li>Modified brep_debug.cpp to plot the 2D trimming polyline curves
+    better. Used KnotCount - 1 as the plotres to avoid the
+    interpolation problems.</li>
+</ul>
+</li>
+<li>July 31<ul>
+<li>Some minor changes to the b-rep conversion functions in
+    brep_debug.cpp. Free the allocated spaces.</li>
+</ul>
+</li>
+<li>Aug 1<ul>
+<li>The first step of manipulating booleans on NURBS b-rep objects.
+    Added a function to /primitives/brep/brep.cpp which is going to
+    deal with the boolean operations of b-reps.</li>
+</ul>
+</li>
+<li>Aug 2<ul>
+<li>Added a function in to deal with NURBS curve-curve intersection,
+    which will be useful in evaluating booleans on NURBS.</li>
+</ul>
+</li>
+<li>Aug 3<ul>
+<li>Continued work on evaluating booleans on NURBS - generate new
+    trimmed faces with intersection curves (not all situations are
+    considered now, still WIP).</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-12">Week 12</h2>
+<ul>
+<li>Aug 6<ul>
+<li>Continued working on dividing trimmed surfaces. It's really
+    quite complicated. Lots of further work and tests are needed.</li>
+</ul>
+</li>
+<li>Aug 7<ul>
+<li>The current method for partitioning a trimmed surface is not
+    elegant and convenient. Looked for some materials online and
+    found some valuable resources.</li>
+<li>Used a new method for partitioning a surface. Followed the
+    algorithms described in: S. Krishnan, A. Narkhede, and D.
+    Manocha. BOOLE: A System to Compute Boolean Combinations of
+    Sculptured Solids. Technical Report TR95-008. Department of
+    Computer Science, University of North Carolina, 1995. Appendix
+    B: Partitioning a Simple Polygon using Non-Intersecting Chains.</li>
+</ul>
+</li>
+<li>Aug 8<ul>
+<li>Finished a draft of partitioning a surface. Modifications for
+    special cases and tests are needed.</li>
+<li>Before starting to write code dealing with inside-outside tests,
+    which is the final step to evaluated NURBS, the current routine
+    of partitioning should be finished beforehand. But it's still a
+    long way to go. I hope I can have good luck with it.</li>
+</ul>
+</li>
+<li>Aug 9<ul>
+<li>Added an option to the brep command in MGED to test boolean
+    evaluations (currently only "union").</li>
+<li>The evaluation processes are still WIP. The final b-rep
+    structure cannot pass IsValid() at present because edges and
+    vertices are not added. Besides, lots of other modifications are
+    needed.</li>
+</ul>
+</li>
+<li>Aug 10<ul>
+<li>Added trims, vertices, edges, etc. to the b-rep structure and
+    checked its validity.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-13">Week 13</h2>
+<ul>
+<li>Aug 13<ul>
+<li>Continued working on adding elements to the ON_Brep structure,
+    trying to make IsValid() succeed. Did some clean up and fixed
+    some bugs, and make the common parts into a separate function.</li>
+<li>Today is the suggested "pencils down" date. As for the project
+    of evaluating NURBS objects, I think I do not have enough time
+    left to finish it all. At present, faces can be partitioned into
+    several trimmed faces, but some conditions are not considered
+    and problems may still exist. As for the week left, I'd like to
+    go back to the code I wrote all these months, do some clean up,
+    add necessary documents, etc.</li>
+</ul>
+</li>
+<li>Aug 14<ul>
+<li>Modified add_elements() and tried using the
+    ON_Surface::Pushup() method first.</li>
+<li>Some clean up on dsp_brep.cpp: modified comments, renamed a
+    variable with typo, eliminated the debug output, and reduced
+    using dynamic allocated pointers.</li>
+<li>Added comment before surface_surface_intersection() to
+    describe the algorithm used in SSI.</li>
+</ul>
+</li>
+<li>Aug 15<ul>
+<li>Modified cline_brep.cpp, ehy_brep.cpp, epa_brep.cpp,
+    eto_brep.cpp and extrude_brep.cpp and eliminated the memory
+    leak.</li>
+</ul>
+</li>
+<li>Aug 16<ul>
+<li>Modified hyp_brep.cpp, part_brep.cpp, pipe_brep.cpp,
+    revolve_brep.cpp, rhc_brep.cpp, rpc_brep.cpp,
+    sketch_brep.cpp and tgc_brep.cpp and eliminated the memory
+    leak.</li>
+<li>Did some clean up and added comments to /libged/brep.c.</li>
+</ul>
+</li>
+<li>Aug 17<ul>
+<li>Add documentation of the brep command in MGED to the wiki page.
+    See: <a href="/wiki/MGED_CMD_brep">1</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="final-summary">Final summary</h2>
+<ul>
+<li>The "Implicit to NURBS conversion" project was mainly done before
+    mid-term evaluation. The milestones and previous goals in the
+    original proposal are finished.</li>
+<li>After mid-term, I focused on the "NURBS Intersection" project, and
+    add many useful features to BRL-CAD, such as calculating
+    surface-surface intersection curves (both in 3d space and 2d UV
+    space), splitting surface and generating new trimmed surfaces, etc.</li>
+</ul>
+<h1 id="test-results">Test Results</h1>
+<p>The brep conversion has been tested on several db/*.g files. Below are
+the screenshots of the raytrace results.</p>
+<ul>
+<li>m35.g: component (left: implicit + csg, right: brep + csg)</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/M35.implicit.png" />
+<img alt="" src="/wiki/user/img/M35.brep.png" /></p>
+<ul>
+<li>ktank.g: tank (left: implicit + csg, right: brep + csg)</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ktank.implicit.png" />
+<img alt="" src="/wiki/user/img/Ktank.brep.png" /></p>
+<ul>
+<li>havoc.g: havoc (the raytrace of brep+csg takes a too long time, so
+    the result hasn't been generated yet)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>A DSP primitive with a 30*30 map: (first: implicit, second: brep,
+    third: reduced to a 16*26 map (sorry for the slightly different
+    views))</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Dsp_implicit.png" />
+<img alt="" src="/wiki/user/img/Dsp_brep.png" /> <img alt="" src="/wiki/user/img/Dsp_reduced.png" /></p>
+<ul>
+<li>Brep form of superell primitives with axes of the same magnitude:
+    (left: n = 0.8, e = 0.2, right: n = 1.0, e = 2.0)<ul>
+<li>Reference page: <a href="http://paulbourke.net/geometry/superellipse/">http://paulbourke.net/geometry/superellipse/</a></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Superell_0.8_0.2.png" />
+<img alt="" src="/wiki/user/img/Superell_1.0_2.0.png" /></p>
+<ul>
+<li>
+<ul>
+<li>There is still some problems when n &gt; 2 or e &gt; 2. (left: n
+        = 0.2, e = 3.0, right: n = e = 3.0)</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Superell_0.2_3.0.png" />
+<img alt="" src="/wiki/user/img/Superell_3.0_3.0.png" /></p>
+<ul>
+<li>
+<ul>
+<li>The problem above was fixed in r51405. (first: n = 0.2, e = 3.0,
+        second: n = e = 3.0, third: n = 3.0, e = 0.2)</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Superell_0.2_3.0_fixed.png" />
+<img alt="" src="/wiki/user/img/Superell_3.0_3.0_fixed.png" />
+<img alt="" src="/wiki/user/img/Superell_3.0_0.2_fixed.png" /></p>
+<ul>
+<li>A cline primitive raytraced in different views. You can see that
+    it's a primitive whose raytrace is view-dependent. We use a pipe to
+    represent it when it's converted to b-rep, whose raytrace is
+    view-independent. The shape of the pipe is according to what we see
+    when plotting a cline with the draw command in MGED. (Two different
+    views, left: implicit, right: brep)</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Cline_implicit_1.png" />
+<img alt="" src="/wiki/user/img/Cline_brep_1.png" />
+<img alt="" src="/wiki/user/img/Cline_implicit_2.png" />
+<img alt="" src="/wiki/user/img/Cline_brep_2.png" /></p>
+<ul>
+<li>The intersection curve (green) of a sph (red) and an ehy (blue).</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Sph_ehy.png" /></p>
+<ul>
+<li>The intersection curves (green) of a tgc (red) and an epa (blue).
+    (Two segments)</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Tgc_epa.png" /></p>
+<ul>
+<li>The intersection curve (green) of a plane surface (red) and an ehy
+    (blue).</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Planar_ehy.png" /></p>
+<h1 id="original-development-timeline">Original development timeline</h1>
+<ul>
+<li>- May 21 (\~4 weeks)<ul>
+<li>Study materials on NURBS/BREP etc</li>
+<li>Read the codes in librt/primitives</li>
+<li>Get familiar to OpenNURBS</li>
+<li>Fix some bugs and make patches</li>
+<li>Implement a method for convenient testing (finished)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>May 21 - June 10 (\~3 weeks)<ul>
+<li>Modify implemented conversions if not finished<ul>
+<li>pipe</li>
+<li>sph, ell, tor, hyp</li>
+<li>eto, extrude, revolve, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 11 - June 18 (\~1 week)<ul>
+<li>Final examination week in our school</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 19 - July 1 (\~2 weeks)<ul>
+<li>Still work on existing conversions</li>
+<li>Work on non-origin primitives<ul>
+<li>Deduce transformation matrices</li>
+<li>Apply the transformation</li>
+<li>Test the results and write documents</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 1 - July 29 (\~4 weeks)<ul>
+<li>Add new conversions to missing primitives<ul>
+<li>Test whether it works well</li>
+<li>Write clear documents</li>
+<li>From easy ones to hard ones</li>
+</ul>
+</li>
+<li>July 1 - July 8 (1 week)<ul>
+<li>rec</li>
+<li>ars</li>
+<li>half</li>
+<li>ell1</li>
+</ul>
+</li>
+<li>July 8 - July 15 (1 week)<ul>
+<li>metaball</li>
+<li>pnts</li>
+<li>part</li>
+<li>grip</li>
+</ul>
+</li>
+<li>July 15 - July 22 (1 week)<ul>
+<li>superell</li>
+<li>cline</li>
+</ul>
+</li>
+<li>July 22 - July 29 (1 week)<ul>
+<li>hf</li>
+<li>other missing primitives</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 29 - August 13 (\~2 week)<ul>
+<li>Write a convert for whole<ul>
+<li>Write a function to walk the tree</li>
+<li>Add a command to MGED</li>
+<li>Discussions and documents</li>
+</ul>
+</li>
+<li>Test the work and fix bugs</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>August 13 - August 20 (\~1 week)<ul>
+<li>Pencil down data<ul>
+<li>Improve documentation</li>
+<li>Evaluations</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Post-GSoc<ul>
+<li>Further involvement with BRL-CAD :)</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

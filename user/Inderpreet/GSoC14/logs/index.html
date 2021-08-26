@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Inderpreet/GSoC14/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Development Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Inderpreet/GSoC14/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-logs" class="nav-link">Development Logs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-period" class="nav-link">Development Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-logs">Development Logs</h1>
+<h2 id="community-bonding-period">Community Bonding Period</h2>
+<ul>
+<li>Explored various options regarding nodejs and non-node frameworks.</li>
+<li>Learnt basics of development with meteor, using templating engines
+    etc.</li>
+<li>Also looked into alternative framework Expressjs.</li>
+<li>Discussed with mentors about the choice of framework.</li>
+<li>Packaged three.js for meteor.</li>
+<li>Ran a simple OBJLoader example in meteor.</li>
+</ul>
+<h2 id="development-period">Development Period</h2>
+<h3 id="week-1">Week 1</h3>
+<p>'''''19th May</p>
+<ul>
+<li>Worked on Authentication Module in meteor</li>
+<li>Wrote LogIn, Registeration, Forgot Password and Reset password form
+    templates.</li>
+</ul>
+<p>'''''20th May</p>
+<ul>
+<li>Completed the views and helpers for the templates and Added
+    validations to the forms</li>
+<li>Modified the directory structure and read Hacking file again and
+    made edits to my code accordingly.</li>
+<li>Pushed the code to github
+    <a href="https://github.com/inderpreetsingh/OGV-meteor">https://github.com/inderpreetsingh/OGV-meteor</a>. Forgot-password
+    form is now able to send the mails but stuck at an error regarding
+    Reset-Password template.</li>
+</ul>
+<p>'''''21st May</p>
+<ul>
+<li>Reset-Password error solved, Authentication is complete now.</li>
+<li>Started looking into file upload. Tried a package called
+    dropzone.js. Published my three.js package
+    <a href="https://atmospherejs.com/package/ogv-threejs">https://atmospherejs.com/package/ogv-threejs</a>.</li>
+</ul>
+<p>'''''22nd May</p>
+<ul>
+<li>Worked on File Upload module, tried various file upload packages.</li>
+<li>At last settled for packaged named formidable from npm.</li>
+</ul>
+<p>'''''23rd May</p>
+<ul>
+<li>Having done the first milestone, today I explored other frameworks
+    and read more about the technologies involved. Did some work in
+    expressJS.</li>
+</ul>
+<p>'''''24th May</p>
+<ul>
+<li>Uptil now, I was dealing with file uploader in a separate app, today
+    I ported file uploader to OGV.</li>
+<li>Now we can upload files in OGV, currently any files can be uploaded
+    but will soon change that so that it only accepts .g files.</li>
+</ul>
+<p>'''''Milestone Set</p>
+<ul>
+<li>Authentication</li>
+</ul>
+<p>'''''Milestones Completed</p>
+<ul>
+<li>Authentication</li>
+<li>Got three.js working with meteor</li>
+<li>File uploader partially completed</li>
+</ul>
+<p>''''' Things yet to do</p>
+<ul>
+<li>Improve UI</li>
+<li>Add routers</li>
+</ul>
+<h3 id="week-2">Week 2</h3>
+<p>'''''26th May</p>
+<ul>
+<li>The ported file uploader started facing errors, mostly regarding
+    styles. I was unable to apply global bootstrap. I couldn't work much
+    due to some power issues at my home.</li>
+</ul>
+<p>'''''27th May</p>
+<ul>
+<li>Today, I improved my earlier file-uploader by removing the
+    dependency from formidable and directly use the 'fs' package.</li>
+<li>As I have time, I am still giving Collection-FS a try, so that I
+    don't miss out on anything useful.</li>
+</ul>
+<p>'''''28th May</p>
+<ul>
+<li>Read about meteor collections, started working on file manager.</li>
+</ul>
+<p>'''''29th May</p>
+<ul>
+<li>I was unable to work, due to some urgent work at home. Will make up
+    for it by working more in coming time.</li>
+</ul>
+<p>'''''30th May</p>
+<ul>
+<li>Completed the new file uploader (except validations), and added it
+    into main code. Looking into rendering part and routers.</li>
+</ul>
+<p>'''''31st May</p>
+<ul>
+<li>Added Basic router file.</li>
+<li>Each user will now have it's own folder and uploaded files go there.</li>
+<li>Added more comments in the code.</li>
+<li>Implemented the file extension check, now only .obj files can be
+    uploaded (will restrict that to .g files when I deal with g-obj
+    conversion)</li>
+<li>A bit stuck on how to pass errors from server to client via meteor.</li>
+</ul>
+<p>'''''Milestones Set:</p>
+<ul>
+<li>File Uploader</li>
+</ul>
+<p>'''''Milestones Completed:</p>
+<ul>
+<li>File Uploader</li>
+</ul>
+<h3 id="week-3">WEEK 3</h3>
+<p>This week I have my final exam on 3rd June and 5th June, So will be busy
+a bit there.</p>
+<p>'''''4th June</p>
+<ul>
+<li>Routers integrated, now we have different URLs for log-in, sign-up
+    etc.</li>
+</ul>
+<p>'''''6th June</p>
+<ul>
+<li>Solved the problem regarding file uploader errors.</li>
+<li>Worked on adding OBJLoader in OGV.</li>
+</ul>
+<p>'''''7th June</p>
+<ul>
+<li>added minimal file manager</li>
+<li>added models collection, now each user has list of models in
+    database</li>
+<li>created the universal header as I showed in mockup</li>
+<li>Unable to send verification email at sign-up.</li>
+<li>added lovemeter to each model (dummy yet).</li>
+</ul>
+<p>'''''8th June</p>
+<ul>
+<li>File Manager completed</li>
+<li>Styling of existing components</li>
+<li>Verification email works fine</li>
+<li>uploaded to <a href="http://ogv.meteor.com/">http://ogv.meteor.com/</a></li>
+<li>more improvements</li>
+</ul>
+<p>'''''Milestone Set:</p>
+<ul>
+<li>File Manager</li>
+</ul>
+<p>'''''Work Done:</p>
+<ul>
+<li>File Manager</li>
+<li>UI</li>
+<li>Routing</li>
+</ul>
+<h3 id="week-4">Week 4</h3>
+<p>9th June</p>
+<ul>
+<li>Solved some deployment problems with ogv.meteor.com</li>
+<li>Forgot Password form stopped working, so corrected it.</li>
+<li>Added preloader</li>
+</ul>
+<p>11th June</p>
+<ul>
+<li>Tried to deploy on my own server (facing problems)</li>
+<li>moved from meteor-router to iron-router</li>
+</ul>
+<p>12th June</p>
+<ul>
+<li>Corrected some iron-router problems</li>
+<li>Struggling to get OBJLoader working with meteor</li>
+</ul>
+<p>13th June</p>
+<ul>
+<li>Tried a lot to get files from private folder to load, but failed.</li>
+<li>Put a mail in meteor mailing list about it.</li>
+</ul>
+<p>14th June</p>
+<ul>
+<li>Added model Viewer, and got it working with OBJLoader. Now we can
+    see the 3d OBJ models rendered in OGV.</li>
+</ul>
+<p>15th June</p>
+<ul>
+<li>Improved the way model Viewer looks.</li>
+</ul>
+<h3 id="week-5">Week 5</h3>
+<p>'''''16th June</p>
+<ul>
+<li>Improved the menu bar (small fix)</li>
+</ul>
+<p>'''''17th June</p>
+<ul>
+<li>Today I was back to hacking file, and added more comments
+    documentation and cleaned my code.</li>
+<li>Added keyboard controls to the model viewer</li>
+</ul>
+<p>'''''18th June</p>
+<ul>
+<li>Keyboard controls were not behaving correctly, improved them.</li>
+<li>Added canvas render support so that it can work even where webgl is
+    not working</li>
+<li>Started searching about running system commands with meteor</li>
+</ul>
+<p>'''''19th June</p>
+<ul>
+<li>Tested the whole app again, and removed few bugs</li>
+</ul>
+<p>'''''20th June</p>
+<ul>
+<li>Started working on g-obj conversion</li>
+<li>Re-installed latest brl-cad</li>
+<li>Added lovemeter to models (similar to '+1' or 'like')</li>
+</ul>
+<p>'''''21st June</p>
+<ul>
+<li>Added Minimal g-obj conversion function.</li>
+</ul>
+<h3 id="week-6">Week 6</h3>
+<p>'''''23rd June, 24th June</p>
+<ul>
+<li>Tried Deployment first on the college server, and then on personal
+    digital ocean droplet. I was able to deploy on digital ocean droplet
+    but still faced some issues with uploader, so then deployed using
+    meteor development server where it worked but with glitches. Will
+    work on these issues soon.</li>
+</ul>
+<p>'''''25th June</p>
+<ul>
+<li>Faced problems with previous file uploader, started using
+    collectionFS.</li>
+</ul>
+<p>''' 26th June</p>
+<ul>
+<li>New file uploader is almost ready, and I wrote a blog post for my
+    mid term evaluation at <a href="http://ishwerdas.com/journal/gsoc-mid-term/">http://ishwerdas.com/journal/gsoc-mid-term/</a></li>
+</ul>
+<p>'''''27th June</p>
+<ul>
+<li>Was unable to work because of some urgent work at home.</li>
+</ul>
+<p>'''''28th June</p>
+<ul>
+<li>Completed working on collectionFS.</li>
+<li>Worked on file extension check.</li>
+</ul>
+<h3 id="week-7">Week 7</h3>
+<p>30th June, 1 July, 2 July, 3rd July Did not work much.</p>
+<p>'''''4th July</p>
+<ul>
+<li>Extension check completed</li>
+<li>Working on better way to show errors</li>
+</ul>
+<p>'''''5th July</p>
+<ul>
+<li>Tried to understand g-obj conversion</li>
+<li>Started writing a separate server method for converting file</li>
+</ul>
+<p>'''''6th July</p>
+<ul>
+<li>Need to store files in a separate directory after g-obj conversion.
+    Able to store them, but trying to figure out a way to get a public
+    url of them to view.</li>
+</ul>
+<h3 id="week-8">Week 8</h3>
+<p>'''''7th July</p>
+<ul>
+<li>Can store files in a separate directory, but could not find a way to
+    get it's public URL. Till now, I have been working on converting all
+    uploaded g-files at once, also tried to get it working for file
+    whenever it's uploaded.</li>
+</ul>
+<p>'''''8th July</p>
+<ul>
+<li>Changed the logic of storing .obj files and the .g file in different
+    directory, instead will add a meta information on each obj file that
+    will contain info about which database it belongs.</li>
+<li>Stuck on an error while getting path of the uploaded .g file, won't
+    be able to convert until I get the path.</li>
+</ul>
+<p>'''''9th July</p>
+<ul>
+<li>Instead of converting files on upload, I will instead now convert
+    files while viewing. This solved the error I was previously facing
+    in converting files. Now g-obj conversion is working.</li>
+</ul>
+<p>'''''10th July</p>
+<ul>
+<li>Tried to get the converted files in CollectionFS but could not find
+    a way to do it.</li>
+</ul>
+<p>'''''12th July</p>
+<ul>
+<li>I got a solution in meteor mailing list, which is about using
+    transformWrite handler and creating a new FS.File object for each
+    OBJ file. I have been able to get transformWrite handler working but
+    facing some problems with creating new FS.File object.</li>
+</ul>
+<p>'''''13th July</p>
+<ul>
+<li>Whenever I created new FS.File object, I got this weird error about
+    meteor fibers. So I learnt more about how "non-blocking" code works
+    and what are meteor fibers but still I could not make it work.</li>
+<li>I posted my problem as issue on CollectionFS github. There, I got
+    another logic to work on. Now instead of transform write I was to
+    work on "stored" listener.
+    <a href="https://github.com/CollectionFS/Meteor-CollectionFS/issues/362">https://github.com/CollectionFS/Meteor-CollectionFS/issues/362</a></li>
+</ul>
+<h3 id="week-9">WEEK 9</h3>
+<p>'''''14th July</p>
+<ul>
+<li>Worked on stored listener, but could not get it to work.</li>
+<li>Asked again on CollectionFS issues, could not get the new "stored"
+    logic to work but was able to solve the error I got in transform
+    write handler.</li>
+</ul>
+<p>'''''15th July</p>
+<ul>
+<li>Added multiple obj loader to the model_viewer.</li>
+<li>Tested new obj loader with various heavy .g files.</li>
+</ul>
+<p>'''''16th July</p>
+<ul>
+<li>Improved the conversion, and removed some bugs.</li>
+<li>Tweaked model_viewer to show some big files.</li>
+<li>Tested with various large .g files.</li>
+</ul>
+<p>'''''18th July</p>
+<ul>
+<li>More testing, laptop hangs at big files.</li>
+<li>Worked a bit on drag and drop uploader</li>
+</ul>
+<p>'''''19th July</p>
+<ul>
+<li>Added server side converting progress</li>
+</ul>
+<p>'''''20th July</p>
+<ul>
+<li>Corrected and update the repository.</li>
+</ul>
+<h3 id="week-10">Week 10</h3>
+<p>'''''21st July</p>
+<ul>
+<li>Added drag and drop functionality to the uploader.</li>
+<li>Working on user dashboard</li>
+<li>Improved File manager to show only files that have been converted</li>
+</ul>
+<p>'''''22nd July</p>
+<ul>
+<li>Added User roles to the authentication for having admin and normal
+    users.</li>
+<li>Made one default admin user and one default normal user.</li>
+</ul>
+<p>'''''23rd July</p>
+<ul>
+<li>Added User Dashboard and admin templates</li>
+<li>Added config.js, a file that store configuration variables</li>
+</ul>
+<p>'''''24th July</p>
+<ul>
+<li>Sign up form stopped working, solved that problem.</li>
+<li>Added log-in/log-out buttons in the header</li>
+<li>Started working on concept of models feed, a list of uploaded models
+    with description and option to like, comment and share. Kind of like
+    timeline on facebook.</li>
+</ul>
+<p>'''''25th July</p>
+<ul>
+<li>Worked on design of model feed.</li>
+</ul>
+<p>'''''26th July</p>
+<ul>
+<li>Wrote model feed template and views.</li>
+<li>Working on model feed, a bug was introduced in file manager, which I
+    solved.</li>
+</ul>
+<p>'''''27th July</p>
+<ul>
+<li>Improved dashboard template with extra fields.</li>
+</ul>
+<h3 id="week-11">Week 11</h3>
+<p>'''''28th July</p>
+<ul>
+<li>Started working on comments section, designed it, wrote it's
+    template and views and hence added it's collection.</li>
+</ul>
+<p>'''''29th July</p>
+<ul>
+<li>Comments section completed.</li>
+<li>Improved some dirty code.</li>
+</ul>
+<p>'''''30th July</p>
+<ul>
+<li>Started working on 'love' button (analogous to like on facebook)</li>
+<li>Wrote templates, views and made love button working.</li>
+<li>Removed a bug from model viewer. Actually model viewer stopped
+    working when we refreshed it. Dig into the problem and solved it.</li>
+</ul>
+<p>'''''31st July</p>
+<ul>
+<li>Improved menu bar, added buttons for file manager, dashboard etc.</li>
+<li>Worked on generating embed code for model.</li>
+</ul>
+<p>'''''1st August</p>
+<ul>
+<li>Took a break today, din't work much. Did add some icons to model
+    viewer though.</li>
+</ul>
+<p>'''''2nd August</p>
+<ul>
+<li>I deployed OGV at <a href="http://104.131.212.220/">http://104.131.212.220/</a></li>
+<li>Improved routing, preloader a number of small fixes and
+    improvements.</li>
+</ul>
+<p>'''''3rd August</p>
+<ul>
+<li>Added images to file manager</li>
+<li>Improved model thumbnail image view template</li>
+<li>Improved model viewer</li>
+<li>Set 70% as acceptable conversion rate.</li>
+</ul>
+<h3 id="week-12">Week 12</h3>
+<p>'''''4th August</p>
+<ul>
+<li>Took a break for a day.</li>
+</ul>
+<p>'''''5th August</p>
+<ul>
+<li>Worked on user dashboard, now users can change their name and write
+    a brief description about themselves (will be used in profile
+    pages).</li>
+<li>Working on adding profile picture, a bit stuck on how to store
+    profile picture in database, so that I can easily grab a url and if
+    there's no pic uplaoded yet a default pic can be seen.</li>
+</ul>
+<p>'''''6th August</p>
+<ul>
+<li>Able to add profile picture to user through user settings, also
+    added them in model feed.</li>
+<li>Improved the styles of comments and lovemeter</li>
+<li>Worked on admin settings, added collections and fixtures for it,
+    changed the code to get settings from database (earlier they were
+    hard coded).</li>
+</ul>
+<p>'''''7th August</p>
+<ul>
+<li>Improved the structure of database regarding profile picture and
+    model's owner. Actually earlier I used to add full user object to
+    model's owner field but that became problem when user object was
+    updated through some other way (for ex:- changing profile pic)</li>
+<li>Now user can change admin settings from the website.</li>
+</ul>
+<p>'''''8th August Had to go out of town, so could not work.</p>
+<p>'''''9th August</p>
+<ul>
+<li>Improved and added a new Error/Notification mechanism.</li>
+</ul>
+<p>'''''10th August</p>
+<ul>
+<li>Read about deployment procedure (on various platforms) and also
+    re-read about coding standards and documentation.</li>
+<li>Gave a seminar to college juniors about OGV and BRL-CAD. They got
+    really excited to be working in OGV.</li>
+</ul>
+<h3 id="week-13">Week 13</h3>
+<p>'''''11th August</p>
+<ul>
+<li>Added embed code generator</li>
+<li>Made the icons in model viewer working</li>
+<li>Started working on documentation</li>
+</ul>
+<p>'''''12th August</p>
+<ul>
+<li>I am stuck on how to show comments on model_viewer page , the
+    technical part is done, I am able to retrieve comments but I am
+    stuck on the UI part, like where to gracefully put them so that it
+    plays well with the model viewer.</li>
+<li>Enabled extension and file type check on profile pic uploads and
+    thumbnail image uploads.</li>
+</ul>
+<p>'''''13th August</p>
+<ul>
+<li>Completed the comments part.</li>
+<li>Started wrapping up the code.</li>
+</ul>
+<p>''''' 14th August</p>
+<ul>
+<li>Started working on developer documentation and improving the code.</li>
+</ul>
+<p>''''' 15th August</p>
+<ul>
+<li>Worked on User documentation and Developer documentation, read
+    Hacking file again.</li>
+</ul>
+<p>''''' 16th August</p>
+<ul>
+<li>Improved security of some models.</li>
+<li>Completed Developer documentation and wrapped up the code. Latest
+    and complete code is on github now.</li>
+<li>Started working on pagination (to improve page load time).</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

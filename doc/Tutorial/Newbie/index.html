@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Tutorial/Newbie/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Newbie - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Tutorial/Newbie.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#modeling" class="nav-link">Modeling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#where-to-go-from-here" class="nav-link">Where to go from here</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>BRL-CAD for Newbies</p>
+<p>By: Cameron Wolfe, wiki-brlcad, and others</p>
+<p>BRL-CAD is a computer-aided design (CAD) software. It allows you to
+design houses if you are an architect, design robotics part, or just
+draw and model things you find in the world.</p>
+<h1 id="installation">Installation</h1>
+<p>In order to take advantage of this tool, you need to download and
+install it on your computer.</p>
+<p><img alt="" src="/wiki/doc/img/BRL-CAD_homepage.PNG" />
+<img alt="" src="/wiki/doc/img/Download.PNG" />
+<img alt="" src="/wiki/doc/img/DownloadPage.PNG" />
+<img alt="" src="/wiki/doc/img/DownloadIt.PNG" />
+<img alt="" src="/wiki/doc/img/Install.PNG" /></p>
+<p>Then what? It installed programs that don't run. They just say "The
+procedure entry point GetSystemTimePreciseAsFileTime could not be
+located in the dynamic link library KERNEL32.dll".</p>
+<h1 id="modeling">Modeling</h1>
+<p>Now you can start modeling!</p>
+<p>First, you need to search for mged in your computer’s finder or on the
+start menu and open the program. Once you have opened up MGED you see
+that there is a terminal with a white background and a graphical window
+with a black background.</p>
+<p><img alt="" src="/wiki/doc/img/Editor_Windows.png" /></p>
+<p>Once you see that you can almost begin to model, but first you need to
+create the file, or database that you are editing. In order to do that
+you need to go to the graphical layout then click File&gt;New</p>
+<p><img alt="" src="/wiki/doc/img/FileNew.PNG" /></p>
+<p>and type in the file name and select the file that will be saved, then
+click save. After that, you will be prompted if you want to make the
+database, click yes and now you can start modeling! The first shape that
+I made was a sphere, but there are many other types of primitive shapes
+<a href="http://brlcad.org/gallery/diagrams/primitives">http://brlcad.org/gallery/diagrams/primitives</a>. Type in the console
+(make sphere1 sph) and then if you look in the graphical window you will
+see a very crude sphere.</p>
+<p><img alt="" src="/wiki/doc/img/Sphere.PNG" /></p>
+<p>Then if you want to make a cube type in (make cube1 arb8) and you will
+have your very own cube.</p>
+<p><img alt="" src="/wiki/doc/img/Cube.PNG" /></p>
+<p>Then you can type in the names of other shapes and you will see that
+they make the object that you type in. After making part of your model,
+you decide that you don’t like the cube floating in space so you want to
+delete it. All you have to do is type in erase cube1 then it will erase
+itself from the graphical layout, but it is not completely gone, if you
+want it back all you have to do is type in draw cube1 and you will have
+your cube back. Only if you need the shape gone for good and will never
+use it again for any reason in that model, type in kill cube1 and it
+will be gone for good. After finishing, type in rt in the console, and
+you will see your model rendered and showing you how it would look with
+faces and lighting instead of a wireframe.</p>
+<p><img alt="" src="/wiki/doc/img/RT.PNG" /></p>
+<p>If you don’t know how to do a certain thing then just type in help. and
+all of the commands will be listed with a description of what they do
+and how you use them.</p>
+<p><img alt="" src="/wiki/doc/img/TutHelp.PNG" /></p>
+<p>Thank you for reading, and good modeling!</p>
+<h1 id="where-to-go-from-here">Where to go from here</h1>
+<p>brlcad-7.26.4/doc/docbook/README:</p>
+<p><code>"...</code>
+<code>This directory holds the DocBook (DB) documentation for BRL-CAD. Over</code>
+<code>time, this should become the repository for all tutorials, man pages,</code>
+<code>and other non-autogenerated, formatted documentation for BRL-CAD.</code>
+<code>...</code>
+<code>The current structure is as follows:</code>
+<code>articles/ ...</code>
+<code>books/ ...</code>
+<code>lessons/ ...</code>
+<code>resources/ ...</code>
+<code>system/ ...</code>
+<code>presentations/ ...</code>
+<code>..."</code></p>
+<p>Unfortunately, as for now, only <a href="Documentation.md">parts of this
+Documentation</a> are available online and only
+in pdf. To acquire these documents you will most likely need to install
+BRL-CAD, and if you are lucky, they were installed as well during the
+installation. The location may vary from System to System.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Gaganjyotsingh/Proposal/LibreCADkickoff/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>GSoC 2014 Project Proposal : LibreCAD Kernel kickoff - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Gaganjyotsingh/Proposal/LibreCADkickoff.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2014-project-proposal-librecad-kernel-kickoff" class="nav-link">GSoC 2014 Project Proposal : LibreCAD Kernel kickoff</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information :</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#time-availability" class="nav-link">Time Availability:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-librecad" class="nav-link">Why LibreCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2014-project-proposal-librecad-kernel-kickoff">GSoC 2014 Project Proposal : LibreCAD Kernel kickoff</h1>
+<h2 id="personal-information">Personal Information</h2>
+<p><strong>Name:</strong> Gaganjyot Singh</p>
+<p><strong>Email Address:</strong> thegaganx@gmail.com</p>
+<p><strong>IRC Username:</strong> gaganjyot</p>
+<p><strong>Brief Background Information:</strong></p>
+<p>Studying in second year bachelors degree in computer science and
+engineering from Chandigarh Engineering College, Chandigarh, Punjab,
+India. Working with CAD softwares like LibreCAD, FreeCAD and BRL-CAD and
+CAD formats as DXF, DWG. GSoC 2013 student.</p>
+<p><strong>Phone number:</strong> +91 988 836 2700</p>
+<p><strong>Programming background :</strong></p>
+<p>As it comes to programming languages I prefer C/C++ and Python, in which
+I also have more experience (about 2 years in Python and more than 4
+years with C/C++). Other programming languages I have experienced: PHP,
+Vala, Bash Scripting, Assembly language. Versioning tools: I am quite
+familiar with Git (I update my work done on github using git) and SVN
+(maintainer of GNU Dr. Geo and commit code using SVN).</p>
+<h2 id="project-information">Project Information :</h2>
+<h3 id="project-title-librecad-kickoff">Project Title: LibreCAD Kickoff</h3>
+<h3 id="brief-summary">Brief Summary:</h3>
+<p>LibreCAD v3 kernel was developed in 2012 by Ries Van Twisk as in
+experimental stage using modern technologies and the new C++11 standard
+code and libraries. A kernel is the part of any software which stands
+the base for software. A CAD kernel is one which manages the various
+operations such as scale, move, copy, trim, rotate. It manages the
+entities, attributes of entities and the data/information of the entity.
+It also manages the way the data is stored in memory and how the data
+will be written to a file ( file format ) or storing the values in a
+database. This project will extend the new completely rewritten code
+base so as to stand as the base for the new LibreCAD.</p>
+<h3 id="detailed-description">Detailed Description:</h3>
+<p>LibreCAD when started was a fork of QCADv2 community edition. The QCAD
+version was only working on QT3 while qt 4 was in the market. So
+LibreCAD was forked and ported to Qt4. This fork was about 10 years ago
+and hence the codebase is quite old. To overcome this problem, Ries
+started developing a new versions of LibreCAD from scratch. This new
+version, so called the LCv3 is divided into 3 parts.</p>
+<ol>
+<li>The UI</li>
+<li>The Kernel</li>
+<li>The CAD viewer</li>
+</ol>
+<p>The Kernel ( My playground ):</p>
+<p>The kernel is the base of this CAD software. It does the operations that
+are to be done on any entity. This kernel follows the immutable entity
+approach. Every entity in this kernel has its own unique ID. This means
+if an entity is created, if any operation is to be performed on it, it
+will be deleted and a new entity will be created with the operation
+performed on it with the same ID as of the deleted entity. Listed below
+are the operations, entities and the intersection pattern which is to be
+implemented.</p>
+<h4 id="operations">Operations :</h4>
+<h5 id="move">Move:</h5>
+<p>The implementation of the Move operation involves ( atleast ) an offset.
+Offset is the value by which the entity needs to be moved.</p>
+<p>For the Line, the move can be implemented as</p>
+<p>void move_line ( coordinate offset ) {</p>
+<p>start_point = start_point + offset;</p>
+<p>end_point = end_point + offset;</p>
+<p>}</p>
+<p>delete_line(id); // Immutable approach, older gets deleted and a new
+will be created.</p>
+<p>new_line(start_point, end_point); // values changed above.</p>
+<p>For Circle and Arc, the center will be moved by the offset value For the
+Ellipse, with the center another attribute will be For the Text entity,
+the placement points will be moved by the offset.</p>
+<p>This pseudo-code refers to very basic move. While moving the user can
+also rotate if he wants. It will look something like, void move_line (
+coordinate offset, double angle ) // angle by which the entity needs to
+be rotated. Though circle is a special case since it will look same on
+rotation.</p>
+<h5 id="copy">Copy :</h5>
+<p>Copy includes almost the same code as the code of Move. Even in the
+copy, the new copy will be placed at some offset. The only difference
+between Copy and move is only that in the move, the older entity is
+deleted but in Copy both the entity remain in the document.</p>
+<p>Copy also supports rotation while copying. void copy_entity (
+coordinate offset, double angle ) // where entity will be replaced by
+specific entity name in the entity specific classes.</p>
+<p>Copy will support a special feature of multiple copies. void
+copy_entity ( coordinate offset, double angle, int copies ) // copies
+will be created each at a difference of offset provided in first
+argument.</p>
+<h5 id="rotate">Rotate:</h5>
+<p>Rotate is required for rotating an entity. It could be rotating with
+respect to any other special point ( such as the origin ) or may be with
+respect to entity it self.</p>
+<p>void rotate ( double angle ) {</p>
+<p>// Rotation around itself at some angle.</p>
+<p>// first the double value will be converted into a coordinate using sin
+cos functions for x and y coordinate respectively and then the algo will
+be applied to rotate the entity. Which is like</p>
+<p>temp_x = x * angle.x – y * angle.y // stored in temp since we need
+older x value</p>
+<p>y = x * angle.y – y * angle.x</p>
+<p>x = temp</p>
+<p>}</p>
+<h4 id="entites">Entites:</h4>
+<p>Two entities will be added. 1) Text 2) Dimension</p>
+<ul>
+<li>Text will have support for the following attributes,</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li>Insertion point : The point at wich entity is to be inserted.</li>
+<li>SecondPoint : It is used by the aligned fit.</li>
+<li>Widthrel : It is the width of reference rectangle around the
+    text.</li>
+<li>Height : Height of text</li>
+<li>Valign : Vertical Alignment of the Dimension value text</li>
+<li>Halign : Horizontal Alignment of the dimension value text</li>
+<li>Text : Text value held by dimension entity</li>
+<li>Style : Style of the text</li>
+<li>Angle : If the text is aligned at some angle</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Dimension has the following attributes,</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li>DefinitionPoint : The point at which dimension is defined</li>
+<li>MiddleOfText : Middle of the dimension text</li>
+<li>Valign : Vertical Alignment of the Dimension value text</li>
+<li>Halign : Horizontal Alignment of the dimension value text</li>
+<li>LineSpacingStyle : Spacing style if any for the dimension</li>
+<li>LineSpacingFactor : Spacing factor if any</li>
+<li>Text : Text value held by dimension entity</li>
+<li>Style : Style of the text</li>
+<li>Angle : If the text is aligned at some angle</li>
+</ul>
+</li>
+</ul>
+<h4 id="intersection-stuff">Intersection Stuff</h4>
+<p>The Kernel manages the intersection of two entities. The types of
+entities being Arc, Line, Ellipse, circle, point if we create the
+functions to check and return intersection between entities, we will get
+a number of functions. For example :</p>
+<p>intersect_line_line(line, line);</p>
+<p>intersect_line_arc(line, arc);</p>
+<p>intersect_line_ellipse(line, ellipse);</p>
+<p>and so on for every entity.</p>
+<p>The quadratic of any entity can be found. Then the quadratic of two
+entities can be passed to a common function that just calculates the
+intersection points from the two quadratic equations.</p>
+<p>quad1 = line.get_quadratic()</p>
+<p>quad2 = circle.get_quadratic()</p>
+<p>quad3 = ellipse.get_quadratic() // ellipse quadratic equation</p>
+<p>get_intersection(quad1,quad2) // will give intersection points of line
+and circle</p>
+<p>get_intersection(quad1,quad3)// will give intersection points of line
+and ellipse</p>
+<p>For example,</p>
+<p>Approach 1 ( Line Line direct intersection calculation )</p>
+<p>void Intersect::visit(shared_ptr<const lc::Line> l1,
+shared_ptr<const lc::Line> l2) {</p>
+<p><code></code><a href="geo::Coordinate"><code>geo::Coordinate</code></a><code>p1 = l1-&gt;start();</code>
+<code></code><a href="geo::Coordinate"><code>geo::Coordinate</code></a><code>p2 = l1-&gt;end();</code>
+<code></code><a href="geo::Coordinate"><code>geo::Coordinate</code></a><code>p3 = l2-&gt;start();</code>
+<code></code><a href="geo::Coordinate"><code>geo::Coordinate</code></a><code>p4 = l2-&gt;end();</code></p>
+<p><code>double num = ((p4.x() - p3.x()) * (p1.y() - p3.y()) - (p4.y() - p3.y()) * (p1.x() - p3.x()));</code>
+<code>double div = ((p4.y() - p3.y()) * (p2.x() - p1.x()) - (p4.x() - p3.x()) * (p2.y() - p1.y()));</code></p>
+<p><code>// TODO: We properly should add a tolorance here ??</code>
+<code>if (fabs(div) &gt; 0.0) {</code>
+<code>double u = num / div;</code>
+<code>double xs = p1.x() + u * (p2.x() - p1.x());</code>
+<code>double ys = p1.y() + u * (p2.y() - p1.y());</code>
+<code></code><a href="geo::Coordinate"><code>geo::Coordinate</code></a><code>coord(xs, ys);</code></p>
+<p><code>if (_method == Method::Any || (_method == Method::MustIntersect &amp;&amp; l1-&gt;isCoordinateOnPath(coord) &amp;&amp; l2-&gt;isCoordinateOnPath(coord))) {</code>
+<code>_intersectionPoints.append(coord);</code>
+<code>}</code>
+<code>}</code></p>
+<p>}</p>
+<p>Approach 2 ( First calculate quadratic of entities and then calculate
+intersection from quadratic )</p>
+<p>void Intersect::visit(const shared_ptr<const lc::Line>&amp; l1, const
+shared_ptr<const lc::Line>&amp; l2) {</p>
+<p>//getIntersection QList<geo::Coordinate>&amp;&amp;
+points=LC_Quadratic::getIntersection(l1-&gt;getQuadratic(),
+l2-&gt;getQuadratic()); // Where getQuadratic is a function to calculate
+quadratic of lines. if (points.empty() == false )</p>
+<p><code>_intersectionPoints.append(points);</code></p>
+<p>}</p>
+<p>References : <a href="http://en.wikipedia.org/wiki/Quadratic_form">http://en.wikipedia.org/wiki/Quadratic_form</a></p>
+<p>Maths will be taken from LibreCAD2 :</p>
+<p><a href="https://github.com/LibreCAD/LibreCAD/blob/master/librecad/src/lib/math/lc_quadratic.h">https://github.com/LibreCAD/LibreCAD/blob/master/librecad/src/lib/math/lc_quadratic.h</a></p>
+<p><a href="https://github.com/LibreCAD/LibreCAD/blob/master/librecad/src/lib/math/rs_math.h">https://github.com/LibreCAD/LibreCAD/blob/master/librecad/src/lib/math/rs_math.h</a></p>
+<h3 id="deliverables">Deliverables:</h3>
+<p>The project can be divided in at least 4 parts, so all of this can be
+considered a specific measurable goal (one for every feature
+implemented). LibreCAD v3 Kernel will be delivered with the support of
+following,</p>
+<ol>
+<li>Operations:<ol>
+<li>Move</li>
+<li>Copy</li>
+<li>Rotate</li>
+</ol>
+</li>
+<li>Entities :<ol>
+<li>Text</li>
+<li>Dimensions</li>
+</ol>
+</li>
+<li>Intersection support extended to Arc, Line, Circle, ellipse.</li>
+<li>Unit tests so as to test the working of implemented stuff.</li>
+</ol>
+<h3 id="milestones-or-plan">Milestones( or Plan ):</h3>
+<p>19 May – 27 May: Move will be implemented to all the entities.</p>
+<p>28 May – 5 June: Copy will be implemented to all the entities.</p>
+<p>6 June – 14 june: Rotate will be implemented to all the entities.</p>
+<p>15 June – 25 June: Text entity will be implemented with support for
+move,copy and rotate.</p>
+<p>26 June - 6 July Dimension support will be added with support for the
+operations.</p>
+<p>7 July – 27 July Visitor pattern will be implemented in this time. (
+Most important and challenging of all tasks so have provided the maximum
+time).</p>
+<p>28 July – 10 August: Unit tests for copy, move rotate will be added.
+Unit test for adding dimension and text will be added.</p>
+<p>11 August – 18 August: Code Cleanup, fixing bugs if any and
+preparing/submitting final submission.</p>
+<h3 id="future-work-scope-post-gsoc">Future work / scope (Post GsoC):</h3>
+<ul>
+<li>After the GSoC, the LibreCAD kernel will have functionalities to be
+    embedded into the LibreCAD v3 and hence on with the development of
+    UI and CAD viewer of LibreCADv3, it will be soon replacing the
+    LibreCADv2.</li>
+<li>Moreover since this is a complete rewrite, this way the license be
+    totally on the LibreCAD team and hence we will be able to avoid the
+    conflict that is going from about 3 years between the LibreCAD and
+    LibreDWG library. This way users will also be able to read the DWG
+    files into LibreCAD hence uplifting the status of CAD on opensource
+    platforms.</li>
+</ul>
+<h2 id="time-availability">Time Availability:</h2>
+<p>I will be available 40 to 48 hours a week, if needed can spend more.</p>
+<h2 id="why-librecad">Why LibreCAD?</h2>
+<p>My interest in CAD programs. There is no CAD program till now which
+satisfies my needs exactly right now on Linux. LibreCAD meets my demands
+more than others. Hence I will be making libreCAD do all my work.</p>
+<h2 id="why-me">Why me?</h2>
+<p>I wish to lift up the level of open source CAD and Linux. With previous
+Summer of code done with a CAD library, I have gained more experience
+about the working of CAD. There is a great need of a person who
+basically has knowledge of softwares like AutoCAD, LibreCAD, BRL-CAD,
+SolidWorks, NX and knowledge in field of machines, I being a mechanical
+engineer and a programmer have undergone rigorous practice for CAD
+softwares listed above. Moreover, My recent college project was also
+first designed on solidworks and BRL-CAD before bringing it to reality.
+I therefore can easily understand user requirements can and bring it to
+reality. At last my wish to work for open source/open source CAD and my
+passion for programming.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

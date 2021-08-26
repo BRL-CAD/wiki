@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Shainasabarwal/Openscad_UI_Brushup/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Openscad UI Brushup - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Shainasabarwal/Openscad_UI_Brushup.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#background-information" class="nav-link">Background Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#milestones" class="nav-link">MILESTONES</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#communication" class="nav-link">Communication</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-openscad" class="nav-link">Why OpenSCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-ui-interface-project" class="nav-link">Why UI interface project?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#future-scope" class="nav-link">Future scope</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>User Interface Brushup</strong> Brief Description: The present Openscad user
+interface is just a window splited into three parts- a code editor,
+rendered object and a console. Under this project, interface will be
+brushed up by removing existing bugs and adding new features.</p>
+<h2 id="personal-information">Personal Information</h2>
+<ul>
+<li><strong>Name</strong>: Shaina Sabarwal</li>
+<li><strong>Email-address</strong>: iamshainasabarwal@gmail.com</li>
+<li><strong>IRC username</strong>: shaina_</li>
+<li><strong>Contact Number</strong>: +917837091321</li>
+<li><strong>Blog</strong>: shainasabarwal.wordpress.com</li>
+</ul>
+<h2 id="background-information">Background Information</h2>
+<ul>
+<li>Computer Science Engineering bachelor student at Guru Nanak Dev
+    Engineering College, Ludhiana, Punjab, India. Presently studing in
+    3rd year.</li>
+<li>Working in C, C++, Wt(www.webtoolkit.eu) for last 2 years. I, in a
+    team of 4 students developed a blogging engine in Wt. It is released
+    under open source GPL license and the code is at
+    <a href="https://github.com/GreatDevelopers/LBE">https://github.com/GreatDevelopers/LBE</a></li>
+<li>Deeply interested in front-end development. Recently developing a
+    wordpress theme for our blog cpp-tricks.com where C++11 will be
+    promoted and different tutorials will be provided for Fundamentals
+    of C++, Wt, Qt, boost. Screen Shots of the theme are:
+    <a href="http://bit.ly/PDdNfq">http://bit.ly/PDdNfq</a></li>
+<li>I am an active member of Linux User Group, Ludhiana where the
+    students are made aware about the open source technologies and
+    motivated to contribute in them.</li>
+<li>I am quite familiar with git. Commit my work on git using github
+    account(github.com/shaina7837).</li>
+</ul>
+<h2 id="project-information">Project Information</h2>
+<h3 id="title-openscad-user-interface-brushup">Title: OpenSCAD User Interface Brushup</h3>
+<h3 id="brief-summary">Brief Summary</h3>
+<p>This project aims to make the User Interface of the software OpenSCAD
+elegant. OpenSCAD is a great software for making 3D solid models and
+parametric designs but its user interface is lacking interesting
+features. The present menu is little messy. The code editor and 3D
+interaction requires proper detailing which increase the scope of the
+software to a higher level.</p>
+<h3 id="detailed-description">Detailed Description</h3>
+<p>Understanding the various requirements of the users of this software,
+following features will be added under the scope of this project.</p>
+<p><strong>Full Screen Editing and Viewing (Detatchable View Pane):-</strong> It would
+be nice if we'll be able to detach the render window and make it
+fullscreen. Currently we can hide the editor and console to get the
+output at full screen, but there is no option to detach it from the main
+window. The <a href="http://qt-project.org/doc/qt-4.8/qdockwidget.html">http://qt-project.org/doc/qt-4.8/qdockwidget.html</a>
+QDockWidgetcan be used to detatch from the main window. For Full screen
+distraction free code editing or viewing we can also hide widgets and
+use Qt size policy to keep the editor expanding when viewer is hidden
+and vice versa.</p>
+<p><strong>Better Code Editor Colors:-</strong> This option should be added in
+preferences to change the color of the syntax. Currently we can change
+the font and size of coding syntax but not the color. For long terms
+coding, the color scheme we chose has a direct effect on strain that our
+eyes suffer. A low contrast theme is advised but at the end it comes to
+personal taste. So I propose to add following color schemes in code
+editor along with an option to choose whatever color scheme the user
+desires</p>
+<ul>
+<li>Zenburn <a href="http://slinky.imukuppi.org/zenburn/">http://slinky.imukuppi.org/zenburn/</a></li>
+<li>Solarized <a href="http://ethanschoonover.com/solarized">http://ethanschoonover.com/solarized</a></li>
+</ul>
+<p>Can add more if required by developers. This will require diving into
+highlighter.cc and adding more color themes. <img alt="" src="/wiki/user/img/improved_code_editor.png" /></p>
+<p><strong>Custom designed toolbar:-</strong> Finding the right menu through the menubar
+is a hectic task for the user. It takes lots of clicks and hassle going
+through various menus and submenus to just say change the font-size. So
+a custom designed toolbar will be designed and added to the application
+so that the icons which user like to use very often can be added to the
+toolbar. This way, it will provide ease to use and precious time of the
+user. Though this toolbar is designed with intention of not covering
+much space of the editor, still there will be option to hide this
+toolbar. Qt has a class QStyle that will be used to develop this
+toolbar. <img alt="" src="/wiki/user/img/Custom_designed_toolbar.png" />
+<img alt="" src="/wiki/user/img/With_Console.png" /></p>
+<p><strong>Better Model Colors:-</strong> ALso we can change the color of output window
+from prefrences but options are less .There should be different themes
+for colors of rendered model. Currently, we can have figures in yellow
+and green color. That must have more options. <img alt="" src="/wiki/user/img/Colored_model.png" />
+)</p>
+<p><strong>Other Editors Review</strong></p>
+<p>These are the editors we can integrate into OpenSCAD application and
+have a better user experience of programming.</p>
+<p><a href="http://www.riverbankcomputing.co.uk/software/qscintilla/intro">http://www.riverbankcomputing.co.uk/software/qscintilla/intro</a></p>
+<p><a href="http://bellard.org/qemacs/">http://bellard.org/qemacs/</a></p>
+<p><a href="https://github.com/pasnox/qodeedit">https://github.com/pasnox/qodeedit</a></p>
+<p>One of these will be chosen and integrated according to the agreement of
+mentor and feedback of the community</p>
+<p><strong>Launching Screen</strong></p>
+<p>A get started window will be provided to ask the user, what is his next
+approach like the one we have in Qt Creator application. Different
+approaches can be</p>
+<ul>
+<li>Examples</li>
+<li>Get started tutorial</li>
+<li>Open existing file</li>
+<li>Create new project</li>
+</ul>
+<p><strong>Code line numbers</strong> An option will be provided in the menu to add line
+number before each line of the code.</p>
+<p><strong>Error Highlighting</strong> The line having error will be highlighted along
+with the line number.</p>
+<p><strong>Better Console</strong> Errors and warning will be shown in better way.
+Warning will also show line number with it. A cross sign to hide the
+console will be on the console itself.</p>
+<p><strong>Export Dashboard</strong> A separate dialog box will be provided to export
+the model in different file formats.</p>
+<p><strong>Code line numbers</strong> An option will be provided in the menu to add line
+number before each line of the code.</p>
+<p><strong>Error Highlighting</strong> The line having error will be highlighted along
+with the line numbers.</p>
+<h2 id="milestones">MILESTONES</h2>
+<p><strong>Community Bonding Period</strong></p>
+<ul>
+<li>Talk to the community members</li>
+<li>Get to know the code</li>
+</ul>
+<p><strong>Week 1(19th May)</strong></p>
+<ul>
+<li>Get started and remove the bug given in issue
+    <a href="https://github.com/openscad/openscad/issues/408">#408</a></li>
+<li>Get comfortable with the code</li>
+</ul>
+<p><strong>Week 2(26th May)</strong></p>
+<ul>
+<li>Take community feedback on the editors that can be integrated.
+    (Given above in editors section)</li>
+<li>Decide one editor and start working on integrating it with openscad.</li>
+</ul>
+<p><strong>Week 3(2nd June)</strong></p>
+<ul>
+<li>Improve on and integrate a good code editor.</li>
+</ul>
+<p><strong>Week 4(9 June)</strong></p>
+<ul>
+<li>Read about color contrast, and theory about designing themes for
+    code editors.</li>
+<li>Add themes to the code editor, at-least three of the proposed
+    themes. 'ZenBurn', 'Monokai' and 'Solarized'</li>
+<li>Give option to users to edit colors and addressing the issue
+    <a href="https://github.com/openscad/openscad/issues/643">#643</a></li>
+</ul>
+<p><strong>Week 5(16 June)</strong></p>
+<ul>
+<li>Add Better Highlighting and warnings.</li>
+<li>Work towards a better console, line numbers are not shown correct
+    even counts them from include files.</li>
+</ul>
+<p><strong>Week 6(23 June)</strong></p>
+<ul>
+<li>Make the View pane detatchable as requested in issue</li>
+</ul>
+<p><a href="https://github.com/openscad/openscad/issues/233">#233</a> and issue
+<a href="https://github.com/openscad/openscad/issues/451">#451</a>.</p>
+<ul>
+<li>Add various views, and allow user to switch between them.</li>
+</ul>
+<p><strong>MID TERM EVALUATION</strong></p>
+<p><strong>Week 7(30 June)</strong></p>
+<ul>
+<li>Take community feedback on toolbar and start working on toolbar.</li>
+<li>Give an option to hide/show toolbar</li>
+</ul>
+<p><strong>Week 8(7 July)</strong></p>
+<ul>
+<li>Add more navigational elements in both editor and viewer. (Expand,
+    Detach etc.)</li>
+<li>Ability to change themes from the toolbar.</li>
+</ul>
+<p><strong>Week 9(14 JuLy)</strong></p>
+<ul>
+<li>Read color theory.</li>
+<li>Work on colors of the viewer.</li>
+<li>Add few color themes (after community feedback) to the viewer.</li>
+</ul>
+<p><strong>Week 10(21 July)</strong></p>
+<ul>
+<li>Create an export dashboard, where a single dialog box can be used to
+    export to various formats as adressed in issue
+    (https://github.com/openscad/openscad/issues/649 )</li>
+</ul>
+<p><strong>Week 11 (28 July)</strong></p>
+<ul>
+<li>Create a first launch screen, where various examples made in
+    openscad will be showcased.</li>
+</ul>
+<p><strong>Week 12(4 August)</strong></p>
+<ul>
+<li>Do heavy testing and clean the code.</li>
+<li>Time to make up for missed milestone (if any).</li>
+</ul>
+<p><strong>Week 13(11 July)</strong></p>
+<ul>
+<li>More testing and cleaning.</li>
+</ul>
+<p><strong>Week 14(18 July)</strong></p>
+<ul>
+<li><strong>FINAL EVALUATION</strong></li>
+</ul>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Better Code Editor</li>
+<li>A Ribbon UI</li>
+<li>Better View Plane</li>
+<li>Better rendered model</li>
+<li>Better render grids</li>
+</ul>
+<h2 id="communication">Communication</h2>
+<h3 id="time-availability">Time Availability</h3>
+<p>I will be available 40 to 48 hours / week, can spend more, if needed.</p>
+<h3 id="emailmailing-list">Email/Mailing List</h3>
+<p>My email address is iamshainasabarwal@gmail.com, I have subscribed to
+both brlcad and openscad mailing lists. I have been in contact through
+these mailing lists with other community members.</p>
+<h3 id="real-time-contact">Real-Time Contact</h3>
+<p>I can interact with the mentors through OpenSCAD's IRC
+channel(#openscad) on freenode. My nick name on IRC is shaina_ . I am
+also comfortable with talking to my mentor via telephone if need arises.
+<strong>Contact Number</strong>: +91 7837091321</p>
+<h3 id="code-review">Code Review</h3>
+<p>My mentor will be able to see my progress as I push the code to the git
+repository of project
+(https://github.com/shaina7837/UI-Brushup-of-OpenSCAD)</p>
+<h2 id="why-openscad">Why OpenSCAD?</h2>
+<p>OpenSCAD is an open source CAD software application used to make 3D
+solid models. It has various applications in mechanical, civil,
+electronics and designing hardware tools for research and education
+purposes. The software has potential to be used by the large number of
+professionals and hardware developers. I personally like the community.
+This is the first time, I am contributing into an open source community
+and participating in GSOC but while discussing on various topics, like
+problems in compilations, issues, projects and proposal on mailing list
+(OpenSCAD@rocklinux.org) and IRC (#openscad), I felt very confortable
+to discuss and come up with new ideas.</p>
+<h2 id="why-ui-interface-project">Why UI interface project?</h2>
+<p>When I decided to work under this community. I explored various
+projects, I can work in and finally liked this one the most. As I am
+very much intersted in working UI. UI are not just looks and colors and
+providing shortcuts. One has to identify the audience and its interest
+and work accordingly. I am sure, I will be able to make the software
+more alive. Also the interface is in Qt and I have great experience in
+Wt(www.webtoolkit.eu) so working effiently in Qt won't be a big deal for
+me. I have also explored various classes and libraries of Qt also to
+make my self ready for working in this project.</p>
+<h2 id="why-me">Why Me?</h2>
+<p>I am very much passionate for the programming and always wanted to work
+under an open source community. Even after the completion of the
+project. I will love to keep on contributing and maintaing various
+projects of the community. Also graphics is my favourite field, I will
+be able to keep on working with full zeal and interest for long. Working
+in this project will enhance my programming, and UI skills and give me
+chance to come up with new ideas to solve real time problems that I will
+love to. Also I personally like to use such softwares for 2D and 3D
+model designing, so I can understand well what a user can expect while
+working with these softwares.</p>
+<h2 id="future-scope">Future scope</h2>
+<ul>
+<li>Add some of the vim bindings to the to code editor</li>
+<li>Store themes in separate theme files which can be then shared among
+    other users</li>
+<li>Improving the Wireframes</li>
+<li>Improving the mouse interaction</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

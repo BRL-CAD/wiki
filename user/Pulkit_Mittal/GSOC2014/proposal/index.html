@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Pulkit_Mittal/GSOC2014/proposal/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Proposal - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Pulkit_Mittal/GSOC2014/proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-introduction" class="nav-link">Project Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#improve-thread-safety" class="nav-link">Improve Thread Safety</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#multi-threading-speedups" class="nav-link">Multi-Threading Speedups</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#performance-tweaks-in-single-threaded-code" class="nav-link">Performance Tweaks in Single Threaded Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#time-line" class="nav-link">Time-Line</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#about-me" class="nav-link">About Me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#miscellaneous" class="nav-link">Miscellaneous</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="personal-information">Personal Information</h2>
+<p><strong>Name:</strong> Pulkit Mittal
+<strong>E-Mail:</strong> <em>bhangarval@gmail.com</em>
+<strong>IRC Nick:</strong> <em>hoiji</em>
+<strong>GitHub:</strong> <em>hoiji09</em></p>
+<h2 id="project-introduction">Project Introduction</h2>
+<h3 id="project-title">Project Title</h3>
+<p>STEP Libraries: Improving thread safety and performance</p>
+<h3 id="motivation">Motivation</h3>
+<p><em>STEP</em> is the current standard for exchange of <em>CAD data</em> between
+different software packages. A <em>STEP-File</em> (also called Part21 file) is
+the most widely used data exchange form of STEP. Part21 files may be
+very huge (hundreds of Mb). These files are known to be heavily resource
+consuming (in terms of computing time or memory consumption) when being
+imported. The computing time taken by the processing of such files can
+be significantly reduced by using multi-thread programming techniques.</p>
+<p>However before incorporating multi-threading into the STEP-Libraries we
+must ensure that the libraries are thread safe or else we might run into
+data races which are hard to debug leading a detrimental impact on
+development.</p>
+<h3 id="project-summary">Project Summary</h3>
+<p>The Project can roughly divided into 3 major tasks. A detailed
+description of each is given in the following sections.</p>
+<p><strong>Improve Thread Safety:</strong> This is the first priority for this project.
+Starting with <em>cllazyfile</em> STEP library, I would introduce thread safety
+in the <em>cleditor</em>, <em>clstepcore</em> &amp; <em>cldai</em> respectively in that order.</p>
+<p><strong>Introduce Multi-threading into the STEP Libraries:</strong> This task is
+highly dependent upon the first task. Once the concerned library has
+been deemed to be thread safe, we can start taking advantage of it to
+boost performance. As a proof of Concept, I intend to at-least one
+multi-threaded task.</p>
+<p><strong>Performance Tweaks in Single Threaded Code:</strong> This is a kind of a
+filler task. Since the 1<sup>st</sup> task would involve going through
+and understanding the code written in the aforementioned libraries. I
+would use that opportunity to point out, discuss and implement small
+tweaks which would increase the performance of the single threaded code.</p>
+<h2 id="improve-thread-safety">Improve Thread Safety</h2>
+<h3 id="approach">Approach</h3>
+<p>The STEP Class Libraries consist of around 20K lines of code. I will
+first scan through the Documentation and ReadMe files and then review
+the code. This will help me figure out what resources could be possibly
+be shared by multiple threads. Once I have found the critical data /
+global variables, it would be easy to find critical sections and apply
+appropriate locking or other means of mutual exclusion. This also
+includes spotting calls to library functions which are thread unsafe and
+moving to their thread safe counterparts. Using mutexes would be the
+last resort. All changes to the code will be well commented, the major
+ones would also be documented. Care will be taken to take dependencies
+on only those C++ libraries which are supported by MSVC as well.</p>
+<p><strong>Shared Resources:</strong> Apart from the <em>std containers</em>, the STEP Library
+also take dependency on resources (<em>i.e</em> data structures) defined in
+<em>src/base/judy/*</em> &amp; <em>src/clutils</em>. In order to improve thread safety
+without hitting performance, some knowledge of the thread safety
+properties offered by the by the above data structures will be needed.
+Some examples of the utilization of such information are as follows.</p>
+<ul>
+<li><strong>Judy Arrays:</strong> A Judy Array is a data structure that has high
+    performance, low memory usage. They are extensively used in lazy
+    loading. The lazy loading code itself is designed to help avoid
+    using huge amounts of memory unless there is an actual need to map
+    various properties in <em>lazyInstMgr.h</em> (Lazy Instance Manager). They
+    are neither <em>concurrent read safe</em> nor <em>concurrent write safe</em>. In
+    order to make a judy object concurrent write safe a mutex need to be
+    allocated. The same can be done to make the judy object thread safe
+    for concurrent read accesses. But this is bound to hit performance
+    in cases where the Judy-Array is used as read-only object once it
+    has been initialized. An alternative way to support concurrent read
+    access would be by cloning the Judy object with <em>judy_clone</em> for
+    use by each thread.</li>
+<li><strong>STL-Containers:</strong> STL containers like vectors are used in various
+    places inside the code. These are concurrent write unsafe but
+    concurrent read safe. Thus, they will need mutexes similar to
+    read-write locks.</li>
+</ul>
+<p><strong>Creating Unit Tests:</strong> Since all the existing units tests are for a
+single threaded code, I will create new tests which will spawn multiple
+threads to check the thread safety of libraries. This can be done by
+asking the threads would to read/write files in different threads
+simultaneously. These test will help me identify any deadlocks or
+data-races that might have crept in the code. Further, these test will
+be of use to any future developers too.</p>
+<h3 id="initial-progress-and-findings">Initial Progress and Findings</h3>
+<ul>
+<li>Introduced myself and discussed about the project in the <em>scl-dev</em>
+    mailing List and the <em>#stepcode</em> IRC channel. (IRC is a savior. I
+    realized that it is the quickest way of communicating with fellow
+    developers.)</li>
+<li>Forked the stepcode project on github to my handle and cloned it on
+    my local machine.</li>
+<li>Gone through the source code of <em>src/cllazyfile</em>. I have read the
+    appropriate documentation of the <em>src/cleditor</em> to get a fair idea
+    of its functionality.</li>
+<li>Read about thread safe properties of <em>judy arrays</em> and <em>std
+    containers</em>.</li>
+</ul>
+<h3 id="deliverables">Deliverables</h3>
+<ul>
+<li>Modify STEP Class Libraries for a more readable, maintainable and
+    <em>thread safe code</em>.</li>
+<li>Modify the Documentation to reflect any major design changes</li>
+<li>Wherever required, Unit Tests will be made for checking thread
+    safety.</li>
+</ul>
+<h2 id="multi-threading-speedups">Multi-Threading Speedups</h2>
+<h3 id="approach_1">Approach</h3>
+<p>Once I have finished <em>part one</em> of the project, I can start making STEP
+Libraries multi-threaded. Their could be possibly many ways of improving
+performance by taking advantage of multi-threading. However as ensuring
+the <em>thread safety</em> can potentially take the majority of the GSOC
+duration, I plan to implement only one feature which would demonstrate
+the advantage of using multi-threading in lazy-loading. If time permits
+I can try adding other multi-threading features as well. For every
+feature I add there will be appropriate documentation and unit tests.</p>
+<h3 id="deliverables_1">Deliverables</h3>
+<ul>
+<li><strong>A Module for Parsing and Processing data in different threads:</strong>
+    Multi-threading can be used in Lazy-Loading by reading a file in one
+    thread and storing the related data into in-memory structures using
+    another thread. This approach might even improve performance on a
+    single processor.</li>
+<li><strong><em>(If Time Permits)</em> A Module for Creating Multiple objects in
+    Parallel:</strong> This module would take a list of objects as input and
+    create multiple in-memory objects for each in parallel. This would
+    especially increase performance on a multiprocessor leading to
+    quicker loading.</li>
+<li><strong><em>(If Time Permits)</em> A Module for Loading Multiple Files in
+    Parallel:</strong> This could benefit some upcoming STEP capabilities such
+    as the use of External Element References[1] to some entities in
+    separate STEP files. So loading these files in parallel and
+    supporting the references between them would increase performance of
+    those applications that will take advantage of this capability.</li>
+</ul>
+<h2 id="performance-tweaks-in-single-threaded-code">Performance Tweaks in Single Threaded Code</h2>
+<h3 id="approach_2">Approach</h3>
+<p>This involves identifying inefficiencies in the code and and discussing
+them with my mentor. If I am not behind schedule I would also implement
+small patches which would remove the inefficiencies and increase
+performance. This part of the project I plan to do concurrently with
+<em>part one</em> of my project. As <em>part one</em> involves lot of reviewing of the
+code, this will increase my familiarity with the code. Also I intend to
+run and profile some already made tests which will help me identify the
+bottlenecks.</p>
+<h3 id="initial-progress-and-findings_1">Initial Progress and Findings</h3>
+<ul>
+<li>I have made a small modification the lazy-loading module. The code
+    has been merged with the main code and gives a 1.5x speedup in
+    lazy-loading. The main idea for the modification was to buffer an
+    already read data in one portion of the code. This buffer prevents
+    the reading of the same data from the disk twice.</li>
+</ul>
+<h2 id="time-line">Time-Line</h2>
+<h3 id="availability-commitments">Availability &amp; Commitments</h3>
+<ul>
+<li><strong>Pre-GSOC:</strong> My college semester ends on 12<sup>th</sup> May. As
+    this period would also require a good amount of commitment towards
+    my college activities (tonnes of assignments, projects and exams). I
+    will be able spend only around 10-20 hours a week on an average to
+    prepare for my GSOC project.</li>
+<li><strong>Early/Mid-GSOC:</strong> My summer vacations would last till
+    20<sup>th</sup> July. As I have no prior-commitments during this
+    period, I will able to spend around 45-55 hrs per week on my GSOC
+    project. In case I find that I am lagging behind, I am willing to
+    spend up to 70 hrs per week for the project.</li>
+<li><strong>Late-GSOC:</strong> After my college reopens on 21<sup>st</sup> July,
+    up-till the GSOC pens down date <em>i.e</em> 18<sup>th</sup> August, I will
+    be able to spend 35-45 hrs per week on the GSOC Project.</li>
+</ul>
+<h3 id="milestones">Milestones</h3>
+<ul>
+<li><strong>Current - April, 15:</strong> Review the source code of <em>src/cllazyfile</em>,
+    test the single threaded version and start working towards making it
+    thread safe.</li>
+<li><strong>April, 15 - April, 30:</strong> Thread safety for <em>src/cllazyfile</em>. (As
+    mentioned before, making Unit Test to check thread safety is
+    implied)</li>
+<li><strong>May, 1 - May, 12:</strong> College Exams!!</li>
+<li><strong>May, 13 - May, 26:</strong> Thread safety for <em>src/cleditor</em>.</li>
+<li><strong>May, 27 - June, 30:</strong> Thread safety for <em>src/clstepcore</em>. I may
+    have to give a large time to this library as it is huge!</li>
+<li><strong>July, 1 - July, 10:</strong> Thread safety for <em>src/cldai</em>.</li>
+<li><strong>July, 11 - July, 31:</strong> Implement multi-threading in lazy-loading.</li>
+<li><strong>August, 1 - August, 18:</strong> Buffer.</li>
+</ul>
+<h2 id="about-me">About Me</h2>
+<p>I am a 4<sup>th</sup> year <em>Dual Degree CSE</em> student studying in <em>Indian
+Institute of Technology (IIT) Delhi, India</em> (UTC+05:30). (Dual Degree in
+IITD is a 5 year course, in which students obtain their Bachelor’s as
+well as their Master’s degree in Technology in the area of Computer
+Science and Engineering.)</p>
+<h3 id="skills">Skills</h3>
+<p><strong>Programming:</strong> I have coded a lot in <em>C, Java, Perl, Bash and PHP</em>. I
+am also familiar with <em>C++, C#, Python, SML, VHDL</em>. I have used
+open-source softwares such as <em>svn, gdb, llvm, gprof, qemu</em> etc.</p>
+<p><strong>Interest Spectrum:</strong> My interest spectrum is quite large and varies
+from software systems (multi-threading, concurrency bug analysis,
+compiler optimizations, security) to hardware-software interface
+(multiprocessor programming, high performance architecture). I never
+miss a chance of making my program more efficient (in terms of computing
+time) and later brag about it!</p>
+<h3 id="major-coding-experiences">Major Coding Experiences</h3>
+<p><strong>Internship:</strong> In summer 2013, I did an internship at <em>Microsoft, India
+Development Center, Hyderabad</em>. The team to which I was assigned to
+there, was impressed with my work and even extended me an offer of
+joining them as a Full-Time employee once I have completed my degree!
+(<em>i.e.</em> in 2015).</p>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<h3 id="why-us">Why Us?</h3>
+<p>Frankly, I was searching for a open source project in which I could put
+my experience with multi-threaded programming to practical use. Thats
+how I spotted the STEPCode project of ensuring thread safety and improve
+performance. Owing to the friendliness of my potential mentors, their
+quick and encouraging responses to my queries, I got started on my
+project in no time. I have learnt lot about open source programming from
+the comments of the people who reviewed my patch. This STEPCode project
+nicely fits into the my interest domain. It gives me an opportunity to
+polish my multi-threading concepts and learn about the caveats
+associated with them. Also I believe the prospect of increasing
+performance of the code (via single thread tweaks, multiple threads)
+would increase my motivation further!</p>
+<h3 id="why-me">Why Me?</h3>
+<ul>
+<li>Thread Safety is an intricate topic, and through my experience I
+    know how painful it is to debug data-races. I will make sure that no
+    fellow developer who takes dependency on STEP Libraries faces that!</li>
+<li>I agree that I can make mistakes, but am I willing to learn from
+    them.</li>
+<li>I have some experience in dealing large code-bases (courtesy
+    assignments, internship), but since this is the first time where I
+    will be contributing to an open source project, I am very
+    enthusiastic about it.</li>
+</ul>
+<h1 id="references">References</h1>
+<p>[1] <a href="http://www.cax-if.org/documents/rec_prac_ext_ref_v21.pdf">http://www.cax-if.org/documents/rec_prac_ext_ref_v21.pdf</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

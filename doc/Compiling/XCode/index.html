@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Compiling/XCode/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>XCode - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Compiling/XCode.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#compiling-brl-cad-with-xcode-on-mac-os-x" class="nav-link">Compiling BRL-CAD with Xcode on Mac OS X</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#obtain-dev-tools" class="nav-link">Obtain Dev Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#compiling" class="nav-link">Compiling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#finishing" class="nav-link">Finishing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><em>Note: Some users have been experiencing problems running through this
+process on Mac OS X Mountain Lion, which dropped support for X11. The
+problems have been noted and are being worked on.</em></p>
+<h1 id="compiling-brl-cad-with-xcode-on-mac-os-x">Compiling BRL-CAD with Xcode on Mac OS X</h1>
+<p>An already built and running version of BRL-CAD for Mac OS X can be
+downloaded from
+<a href="http://sourceforge.net/projects/brlcad/files/BRL-CAD%20for%20Mac%20OS%20X/">here</a>,
+or these steps will guide you through the process of how to compiling it
+yourself.</p>
+<h2 id="obtain-dev-tools">Obtain Dev Tools</h2>
+<p>Download the latest version of <a href="http://www.cmake.org/cmake/resources/software.html">CMake for Mac OS
+X</a>. Once downloaded,
+follow the instructions to install CMake and be sure to select the box
+for installing the CMake Command Line tools:</p>
+<p><img alt="" src="/wiki/doc/img/CMakeCommandLineTools.png" /></p>
+<p>The latest version of the BRL-CAD source is also required, which can be
+obtained
+<a href="https://sourceforge.net/projects/brlcad/files/BRL-CAD%20Source/">here</a>.</p>
+<p>You will also need Xcode, which can be downloaded from the Mac App
+Store. When installing, make sure you install the unix development
+command-line tools. Or if Xcode is already installed on your system, you
+can install the command line tools (or double-check to make sure you
+have them) by navigating to Xcode Preferences &gt; Downloads and in the
+components tab, you should see Command Line Tools:</p>
+<p><img alt="" src="/wiki/doc/img/XcodeCommandLineTools.png" /></p>
+<h2 id="compiling">Compiling</h2>
+<p>Navigate to the BRL-CAD source directory you downloaded and create a new
+folder titled "brlcad-build." This is where we will store the configured
+build:</p>
+<p><img alt="" src="/wiki/doc/img/BrlcadFolder.png" /></p>
+<p><img alt="" src="/wiki/doc/img/XcodeBRLCADProject.png" /> Open Terminal
+(in /User/Applications/Utilities) and cd to the location of the BRL-CAD
+source folder (Note: you can type cd, press the spacebar, and then drag
+the brlcad folder to copy its search path):</p>
+<p><code>cd brlcad-7.22.0</code></p>
+<p>Now, we create a BRL-CAD Xcode project that we can use to compile
+BRL-CAD: (this may take some time)</p>
+<p><code>cd brlcad-build</code>
+<code>cmake .. -G Xcode</code></p>
+<h2 id="finishing">Finishing</h2>
+<p>Open the resulting BRLCAD.xcodeproj file with Xcode and press Build and
+Run. Thats it!</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

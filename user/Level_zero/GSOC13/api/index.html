@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Level_zero/GSOC13/api/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>API CALLS - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Level_zero/GSOC13/api.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#api-calls" class="nav-link">API CALLS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#croppinggroup1" class="nav-link">Cropping(Group1)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#operations-group2" class="nav-link">Operations (Group2)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#filters-group3" class="nav-link">Filters (Group3)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#histogram-group4" class="nav-link">Histogram (Group4)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#scale-group5" class="nav-link">Scale (Group5)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stats-group6" class="nav-link">Stats (Group6)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#threshold-group7" class="nav-link">Threshold (Group7)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interpolate-group8" class="nav-link">Interpolate (Group8)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#structure" class="nav-link">Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="api-calls">API CALLS</h1>
+<h2 id="croppinggroup1">Cropping(Group1)</h2>
+<p><strong>for bwrect, pixrect</strong> <strong>Comments</strong></p>
+<ul>
+<li>Removes a rectangular portion of a potentially huge image.</li>
+<li><em>orig</em>, is the point that corresponds to Bottom left corner to
+    extract the image from</li>
+<li><em>area</em> corresponds to the total number of pixels in the new map.</li>
+<li><em>img_out</em> is the output image.</li>
+</ul>
+<p><code>int</code>
+<code>icv_rect(const icv_image_t *img,</code>
+<code>const icv_point_t *area,</code>
+<code>const icv_point_t *orig</code>
+<code>icv_image_t *img_out);</code></p>
+<p><strong>for bwcrop</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Crops file with arbitrary points</li>
+<li><em>p1</em>, <em>p2</em>, <em>p3</em>, <em>p4</em> are left lower, right lower, left upper and
+    right upper points respectively.</li>
+<li><em>img_out</em> is the output image.</li>
+</ul>
+<p><code>int</code>
+<code>icv_crop(const icv_image_t *img,</code>
+<code>const icv_point_t *p1,</code>
+<code>const icv_point_t *p2,</code>
+<code>const icv_point_t *p3,</code>
+<code>const icv_point_t *p4,</code>
+<code>const icv_size_t *outsize,</code>
+<code>icv_image_t *img_out);</code>
+<code></code></p>
+<h2 id="operations-group2">Operations (Group2)</h2>
+<p><strong>for bwdiff, pixdiff</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Performs arithmetic operations between the pixels of two images.</li>
+<li><em>img_1</em> and <em>img_2</em> are two input images.</li>
+<li><em>opr</em> corresponds to the operation information.</li>
+<li><em>img_out</em> is the output image.</li>
+</ul>
+<p><code>int</code>
+<code>icv_airth2(const icv_image_t* img1,</code>
+<code>const icv_image_t* img2,</code>
+<code>const icv_operation_t *opr,</code>
+<code>icv_image_t *img_out)</code></p>
+<p><strong>for bwmod</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Performs arithmetic operations with a value of the pixels of the
+    input image, the resultant value is replaced in the same input
+    image.</li>
+<li><em>oper</em> is the array corresponding to the operations.</li>
+<li><em>numop</em> is the number of operations.</li>
+<li><em>img_out</em> is the output image.</li>
+</ul>
+<p><code>int</code>
+<code>icv_airth1(icv_image_t* img,</code>
+<code>const icv_operation_t *oper[],</code>
+<code>const int numop);</code></p>
+<p><strong>for Pixsaturate</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li><em>saturation</em> is the saturation value</li>
+<li><em>img_out</em> is the output image.</li>
+</ul>
+<p><code>int</code>
+<code>icv_saturate(const icv_image_t *img,</code>
+<code>const double saturation,</code>
+<code>icv_image_t *img_out);</code></p>
+<h2 id="filters-group3">Filters (Group3)</h2>
+<p>'''for bwfilter, pixfilter, pix3filter, pixfade</p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Performs filtering of image using convolution with the kernel.</li>
+<li><em>kernel</em> corresponds to kernel used for image filter</li>
+<li><em>img_out</em> is the output image.</li>
+</ul>
+<p><code>int</code>
+<code>icv_filter(const icv_image_t *img,</code>
+<code>const icv_kernel_type_t kernel;</code>
+<code>icv_image_ *img_out);</code></p>
+<h2 id="histogram-group4">Histogram (Group4)</h2>
+<p><strong>for bwhist, pixhist</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Finds histogram of the image</li>
+<li><em>bin</em> is the number of bins for calculating histogram</li>
+<li><em>bin_out1</em>, <em>bin_out2</em> and <em>bin_out3</em> are the pointers for output
+    histograms</li>
+<li>For three channel image this is called with all the three output
+    pointers, for bw image this is called with pointers only for first
+    and others are left as NULL</li>
+</ul>
+<p><code>int</code>
+<code>icv_hist(const icv_image_t *img,</code>
+<code>const int bin,</code>
+<code>long *bin_out1,</code>
+<code>long *bin_out2,</code>
+<code>long *bin_out3);</code></p>
+<p><strong>for bwhisteq</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Calculates histogram equalization of the image</li>
+</ul>
+<p><code>int</code>
+<code>icv_histeq(const icv_image_t *img,</code>
+<code>icv_imgage_file_t *img_out);</code></p>
+<h2 id="scale-group5">Scale (Group5)</h2>
+<p><strong>for bwscale, pixscale</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li><em>outsize</em> is the required output size</li>
+<li><em>method</em> is the prescribed method</li>
+</ul>
+<p><code>int</code>
+<code>icv_scale(const icv_image_t *img,</code>
+<code>const icv_size_t *outsize,</code>
+<code>const icv_scale_method_t method,</code>
+<code>icv_image_t *img_out);</code></p>
+<p><strong>for bwshrink, pixshrink</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li><em>factor</em> is shrinking factor.</li>
+<li><em>method</em> is the prescribed method.</li>
+</ul>
+<p><code>int</code>
+<code>icv_shrink(const icv_image_t *img,</code>
+<code>icv_image_t *img_out,</code>
+<code>const int factor,</code>
+<code>const icv_shrink_mehtod_t method);</code></p>
+<h2 id="stats-group6">Stats (Group6)</h2>
+<p><strong>for imgdims, pixcount</strong> Not useful</p>
+<p><strong>for pixstat, bwstat</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>finds the image statistics</li>
+</ul>
+<p><code>int</code>
+<code>icv_stat(const icv_image_t *img,</code>
+<code>icv_stat_t *stat1,</code>
+<code>icv_stat_t *stat2,</code>
+<code>icv_stat_t *stat3);</code></p>
+<p><strong>for pixcolors</strong></p>
+<p><code>int</code>
+<code>icv_colors(icv_image_t *img)</code>
+<code>/* Prints all the colors */</code>
+<code></code></p>
+<h2 id="threshold-group7">Threshold (Group7)</h2>
+<p><strong>for bwthresh</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li><em>val</em> is a pointer to an array of threshold values</li>
+<li><em>num_thresh</em> is the number of the threshold values</li>
+<li><em>img_out</em> is the output image</li>
+</ul>
+<p><code>int</code>
+<code>icv_threshold(const icv_image_t *img,</code>
+<code>icv_image_t *img_out,</code>
+<code>const unsigned char *val,</code>
+<code>const int num_thresh);</code></p>
+<p><strong>for pixclump</strong></p>
+<p><code>int</code>
+<code>icv_clump()</code>
+<code>/* Need Suggestions */</code>
+<code></code></p>
+<h2 id="interpolate-group8">Interpolate (Group8)</h2>
+<p><strong>for pixinterep2x</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Interpolates the image two twice its resolution</li>
+</ul>
+<p><code>int</code>
+<code>icv_interep2x(const icv_image_t *img,</code>
+<code>icv_image_t *img_out);</code></p>
+<p><strong>for pixhalve</strong></p>
+<p><strong>Comments</strong></p>
+<ul>
+<li>Decimates the image</li>
+</ul>
+<p><code>int</code>
+<code>icv_halve(const icv_image_t *img,</code>
+<code>icv_image_t *img_out);</code></p>
+<h1 id="structure">Structure</h1>
+<ul>
+<li>ICV_IMAGE_FILE</li>
+</ul>
+<p><code>struct icv_image_file {</code>
+<code>uint_32 magic;</code>
+<code>char* filename;</code>
+<code>int fd;</code>
+<code>int format;</code>
+<code>int width, height, depth;</code>
+<code>unsigned char *data;</code>
+<code>unisgned long flags;</code>
+<code>};</code></p>
+<ul>
+<li>ICV_SIZE</li>
+</ul>
+<p><code>struct icv_size {</code>
+<code>int height, width;</code>
+<code>};</code></p>
+<ul>
+<li>ICV_POINT</li>
+</ul>
+<p><code>struct icv_point {</code>
+<code>int x,y;</code>
+<code>};</code></p>
+<ul>
+<li>ICV_OPERATION</li>
+</ul>
+<p><code>struct icv_operation {</code>
+<code>char oper;</code>
+<code>double val;</code>
+<code>};</code>
+<code></code></p>
+<ul>
+<li>ICV_KERNEL</li>
+</ul>
+<p><code>struct icv_kernel {</code>
+<code>char *name;</code>
+<code>char *uname;        /* What is needed to recognize it */</code>
+<code>int *kern;</code>
+<code>int kerndiv;    /* Divisor for kernel */</code>
+<code>int kernoffset; /* To be added to result */</code>
+<code>};</code></p>
+<ul>
+<li>ICV_STAT</li>
+</ul>
+<p><code>struct icv_stat {</code>
+<code>int max, min, mode, median;</code>
+<code>double mean, var, skew;</code>
+<code>long sum, partial_sum;</code>
+<code>};</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

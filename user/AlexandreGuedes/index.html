@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/AlexandreGuedes/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>AlexandreGuedes - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/AlexandreGuedes.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#soc-applications-geometry-file-importers-to-brl-cad" class="nav-link">SoC Applications: "Geometry file importers to BRL-CAD"</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="soc-applications-geometry-file-importers-to-brl-cad">SoC Applications: "Geometry file importers to BRL-CAD"</h2>
+<h4 id="patche">Patche</h4>
+<p>I did a simple patche, it's just to show that I had build brl-cad
+correctly and I know how compile and use the development environment.</p>
+<p><a href="https://sourceforge.net/tracker/?func=detail&amp;aid=2765100&amp;group_id=105292&amp;atid=640804">https://sourceforge.net/tracker/?func=detail&amp;aid=2765100&amp;group_id=105292&amp;atid=640804</a></p>
+<h4 id="abstract">Abstract</h4>
+<p>Nowadays there are many geometry formats files, each one is more
+appropriate to a different application field. Consequently it is
+necessary to CAD softwares to support as many file formats as possible,
+aiming to reduce users' efforts.</p>
+<h4 id="content">Content</h4>
+<p><strong>Name</strong>: Alexandre Strapação Guedes Vianna</p>
+<p><strong>Email / IRC</strong> Email: strapacao@gmail.com</p>
+<p>IRC nick: AlexandreGuedes</p>
+<h5 id="context"><strong>Context</strong></h5>
+<p>Nowadays there are many CAD format files, each one is more appropriate
+to a different application field. Consequently it is necessary to CAD
+softwares to support as many file formats as possible, aiming to reduce
+users' efforts. Currently BRL-CAD is not totally compatible with some of
+most popular CAD file formats, such as VRML, X3D and OBJ. Actually
+according to table 1 BRL-CAD can only export to previously cited
+formats. To BRL-CAD would be very interesting if models could be
+imported from these formats.</p>
+<p><img alt="" src="/wiki/user/img/ConverterTable.jpg" /></p>
+<h5 id="synopsis"><strong>Synopsis</strong></h5>
+<p>I intend to develop CAD importers to BRL-CAD. The project's main idea is
+to write model importers - OBJ, VRML and X3D formats - to BRL-CAD, which
+would be respectively called obj-g, vrml-g and x3d-g. Figure 1 show the
+work scope.</p>
+<p><img alt="" src="/wiki/user/img/WorkScope.jpg" /></p>
+<h5 id="benefits-to-brl-cad"><strong>Benefits to BRL-CAD</strong></h5>
+<p>Add importers would increase BRL-CAD level compatibility with CAD file
+formats. Users will have a direct way to import their models to BRL-CAD,
+in other words they should avoid taking alternatives ways that can
+increase errors. As example of compatibility same of popular 3D graphics
+application like Blender can export to OBJ, VRML and X3D.</p>
+<h5 id="deliverables"><strong>Deliverables</strong></h5>
+<p>The main deliverables is implementing the obj-g converter, it requires a
+hard study about BRL-CAD model representation.</p>
+<p>The secondary deliverables is implementing another importers such as
+vrml-g and x3d-g.</p>
+<h5 id="project-schedule"><strong>Project Schedule</strong></h5>
+<p>The work can begin immediately. Currently, I’m in between university
+terms, so currently I’m not attending any classes. Classes will begin
+near mid April, and if time becomes a problem, one or two disciplines
+may be dismissed and done later. I also work at the university; I am a
+trainee in a computer graphics and virtual reality laboratory which
+demands \~20 weekly hours. But I do intend focusing on GSoC, and will do
+my best to give BRL-CAD 30+ weekly hours. That being said, the summer
+plans are detailed below:</p>
+<p>1. April 20th \~ May 11th</p>
+<p>This is referred by Google as the Community Bounding Period. It will be
+used to study the problem and the source code, analyzing other
+converters like g-obj. Finishing this period I should be familiarized
+with BRL-CAD code and understanding structures to represent models in
+BRL-CAD. Also I will implement some samples about reading BRL-CAD
+models.</p>
+<p>2. May 11th \~ June 15th</p>
+<p>Beginning of the program. In this period, I'll research and implement
+the OBJ importer; write code documentation; test the importer.</p>
+<p>3. June 15th \~ July 13st</p>
+<p>In these weeks, Just like step 1 I plan to implement another importer
+probably the VRML importer.</p>
+<p>4. July 13st \~ July 27th</p>
+<p>If I had already done step 1 and step 2 I can develop the X3D importer,
+else I will be concentrating my efforts in finish dependences.</p>
+<p>5. July 27th \~ August 10th</p>
+<p>Although I'll test each importer in their respective periods, I think it
+is useful to allocate time to handle unexpected issues and testing.</p>
+<p>6. August 10th \~ August 17th</p>
+<p>I’ll use this last week to refine code and documentation.</p>
+<h5 id="about-me"><strong>About me</strong></h5>
+<p>I am Alexandre Strapação Guedes Vianna and I am 22. I study Computer
+Science at the Federal University of Paraiba, in João Pessoa, Brazil.
+Currently I am a trainee at LabTEVE[1] a computer graphics and virtual
+reality laboratory. Since youth I always had interest for computers and
+programming and too much curiosity about how programs were done. I used
+to develop some scripts to games like Ultima Online, unavoidably I
+started Computer Science course. My experience with big open source
+projects is not that great but I'm here to learn and to contribute with
+BRL-CAD project. During the graduation course I had many academic
+experiences and few practices. The possibility of get a good practice
+with BRL-CAD project is a great motivation. Also, I intend to continue
+contributing on BRL-CAD after the summer. The participation in GSoC
+might also be of great help in my intentions on spending some time
+studying/working abroad after graduation.</p>
+<h5 id="other-information-and-links"><strong>Other information and links</strong></h5>
+<p>Résumé :</p>
+<p>Portuguese
+<a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4218973E8&amp;tipo=completo&amp;idiomaExibicao=1">http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4218973E8&amp;tipo=completo&amp;idiomaExibicao=1</a></p>
+<p>English version (Incomplete)</p>
+<p><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4218973E8&amp;idiomaExibicao=2">http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4218973E8&amp;idiomaExibicao=2</a></p>
+<p>Sample code</p>
+<p>In this project I develop an obj-&gt;opengl importer.</p>
+<p><a href="http://sites.google.com/site/alexandrestrapacaoproject/Home/sample.rar?attredirects=0">http://sites.google.com/site/alexandrestrapacaoproject/Home/sample.rar?attredirects=0</a></p>
+<p>Paper</p>
+<p><a href="http://sites.google.com/site/alexandrestrapacaoproject/Home/SBAC.doc?attredirects=0">http://sites.google.com/site/alexandrestrapacaoproject/Home/SBAC.doc?attredirects=0</a></p>
+<p>[1] <a href="http://www.de.ufpb.br/~labteve/english/index.html">http://www.de.ufpb.br/~labteve/english/index.html</a></p>
+<p>[2] <a href="http://www.uoherald.com/news/">http://www.uoherald.com/news/</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

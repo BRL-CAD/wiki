@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Code_Cleanup/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Code Cleanup - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Code_Cleanup.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#the-hacking-file" class="nav-link">The HACKING File</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#strict-compilation" class="nav-link">Strict Compilation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#duplication-reduction" class="nav-link">Duplication Reduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coverity-scan" class="nav-link">Coverity Scan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#collaborative-refactoring-best-practices" class="nav-link">Collaborative Refactoring Best Practices</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#cppcheck-cleanup" class="nav-link">CPPCHECK-CLEANUP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>The BRL-CAD source code is large with a lot of history. In order to
+survive decades of development, considerable time and attention is put
+forth towards improving code maintainability and code quality. One of
+the best ways to get involved in BRL-CAD open source development is to
+help clean up source code.</p>
+<p>Cleaning up the source code helps you become familiarized with BRL-CAD
+and improves maintainability. There are a variety of ways you can clean
+up source code, but some of our specific efforts in place to help
+refactor BRL-CAD are:</p>
+<h1 id="the-hacking-file">The HACKING File</h1>
+<p>Our tried and true <a href="http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/HACKING?revision=HEAD">developer guidelines HACKING
+file</a>
+identifies numerous stylistic concerns and source code conventions that
+the entire BRL-CAD source code should conform to. When in doubt, consult
+the dev guidelines.</p>
+<h1 id="strict-compilation">Strict Compilation</h1>
+<p>This code cleanup effort is now considered <strong><em>complete</em></strong> and is
+enforced by default. One excellent and easy way to improve code quality,
+maintainability, and consistency is to pay attention to compilation
+warnings. Sure, the compiler sometimes gets things wrong, but even the
+"false positives" that get reported tend to be code that <a href="http://en.wikipedia.org/wiki/Code_smell">smells
+bad</a>. For BRL-CAD, we turn on
+nearly all compilation warnings that the compiler is able to produce and
+consider all warnings to be errors.</p>
+<h1 id="duplication-reduction">Duplication Reduction</h1>
+<p>As BRL-CAD's source code is large, another way to clean up code is to
+reduce the inevitable duplication that results after years of
+development. There has been considerable success in the past using the
+<a href="http://www.harukizaemon.com/simian/">Simian</a> similarity analyser. This
+shell script snippet should provide a reasonable analysis of BRL-CAD's
+core source code:</p>
+<p><code>#!/bin/sh</code>
+<code>files=`find . \( -name \*.h \</code>
+<code>-o -name \*.c \</code>
+<code>-o -name \*.cxx \</code>
+<code>-o -name \*.cpp \</code>
+<code>-o -name \*.tcl \</code>
+<code>-o -name \*.itcl \</code>
+<code>-o -name \*.itk \</code>
+<code>-o -name \*.tk \) \</code>
+<code>-not -regex '.*src/other.*' \</code>
+<code>-not -regex '.*misc.*' \</code>
+<code>-not -regex '.*libfft.*' \</code>
+<code>-not -regex '.*src/mged/points/.*' \</code>
+<code>-not -regex '.*src/tab/.*'`</code>
+<code>java -Xms200m -Xmx2000m -jar simian-2.2.24.jar -threshold=25 $files</code></p>
+<p>You'll of course probably need to change the version number from 2.2.24
+to whatever version you downloaded. You should get a report that looks
+something like this:</p>
+<p><code>Similarity Analyser 2.2.24 -</code><a href="http://www.redhillconsulting.com.au/products/simian/index.html"><code>http://www.redhillconsulting.com.au/products/simian/index.html</code></a>
+<code>Copyright (c) 2003-08 RedHill Consulting Pty. Ltd.  All rights reserved.</code>
+<code>Simian is not free unless used solely for non-commercial or evaluation purposes.</code>
+<code>{failOnDuplication=true, ignoreCharacterCase=true, ignoreCurlyBraces=true, ignoreIdentifierCase=true,</code>
+<code>ignoreModifiers=true, ignoreStringCase=true, threshold=6}</code>
+<code>Found 10 duplicate lines in the following files:</code>
+<code>Between lines 472 and 485 in /Users/morrison/brlcad/src/libged/wdb_nirt.c</code>
+<code>Between lines 451 and 465 in /Users/morrison/brlcad/src/libged/wdb_nirt.c</code>
+<code>Found 10 duplicate lines in the following files:</code>
+<code>Between lines 42 and 57 in /Users/morrison/brlcad/src/libged/comb.c</code>
+<code>Between lines 44 and 59 in /Users/morrison/brlcad/src/libged/region.c</code>
+<code>...</code>
+<code>Found 332 duplicate lines in the following files:</code>
+<code>Between lines 49 and 525 in /Users/morrison/brlcad/src/libged/wdb_importFg4Section.c</code>
+<code>Between lines 50 and 526 in /Users/morrison/brlcad/src/libged/importFg4Section.c</code>
+<code>Found 416 duplicate lines in the following files:</code>
+<code>Between lines 113 and 836 in /Users/morrison/brlcad/src/rt/viewarea2.c</code>
+<code>Between lines 119 and 842 in /Users/morrison/brlcad/src/rt/viewarea.c</code>
+<code>Found 83039 duplicate lines in 6556 blocks in 815 files</code>
+<code>Processed a total of 330888 significant (572540 raw) lines in 1262 files</code>
+<code>Processing time: 22.329sec</code></p>
+<p>Once you get the output report, focus attention on refactoring the
+largest or most frequently duplicated code into reusable functions. Feel
+free to follow the <a href="http://en.wikipedia.org/wiki/Rule_of_three_(programming)">Rule of
+three</a> or <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY
+principle</a> from
+there. Submit patches or commit changes accordingly.</p>
+<h1 id="coverity-scan">Coverity Scan</h1>
+<p><img alt="" src="/wiki/doc/img/CoverityExample3.png" /></p>
+<p>Since 2006, BRL-CAD has been a participant in the <a href="http://scan.coverity.com/">Coverity Scan
+Initiative</a>, an effort funded by the U.S.
+Department of Homeland Security to improve the quality, safety and
+<a href="http://en.wikipedia.org/wiki/Open_source_software_security">security</a>
+of open source software. Coverity performs a static source code analysis
+(one of the best) and generates a detailed report of issues detected.</p>
+<p>The BRL-CAD scan was previously "stuck" but we're now back online and
+operational! For an interesting preview of some of the kinds of things
+reported, here are some screenshots:</p>
+<p><img alt="" src="/wiki/doc/img/CoverityExample1.png" /></p>
+<p><img alt="" src="/wiki/doc/img/CoverityExample2.png" /></p>
+<p>Those and many other issues are all managed through a private website
+that is only accessible if you have an account. If you're going to help,
+fantastic. Get in touch with a developer to have your account created.</p>
+<p><strong><em>PLEASE don't bother inquiring if you're only interested in looking at
+results or poking around.</em></strong></p>
+<p>We'll probably have you fix an issue or two first to make sure you're
+serious.</p>
+<h1 id="collaborative-refactoring-best-practices">Collaborative Refactoring Best Practices</h1>
+<p>This document covers a peer-reviewed, tested, and documented workflow
+for addressing issues reported by Coverity Static Analysis through the
+Coverity Integrity Center web interface. The document identifies
+categories of medium and high risk defect types, specific refactoring
+pitfalls to watch out for, how to add new unit and regression tests to
+BRL-CAD, and identifies several best practices for code refactoring.
+Definitions are provided for "Refactoring", "Zero One or Infinity"
+(ZOI), "Don't Repeat Yourself" (DRY), "Rule of Three", and "Cargo Cult
+Programming".</p>
+<p><img alt="" src="/wiki/doc/img/CodeCleanup.pdf" /></p>
+<h1 id="cppcheck-cleanup">CPPCHECK-CLEANUP</h1>
+<ul>
+<li>Run the following:<ul>
+<li>cd brlcad</li>
+<li>cppcheck -isrc/other/ include/ src/ --enable=all
+    2&gt;cppcheck_brlcad.txt</li>
+</ul>
+</li>
+<li>It checks for issues in 1690 files under all src/ except src/other
+    and all include/</li>
+<li>By default,(i.e. without --enable=all ) , only error messages are
+    shown.</li>
+<li>To get just Stylistic issues, change --enable=all to --enable=style</li>
+<li>To get just unused function issues, change --enable=all to
+    --enable=unusedFunction</li>
+<li>If not checking for unusedFunction, it can also have multithreaded
+    checking by option -j 4.</li>
+<li>The following issues will be stored in the file
+    cppcheck_brlcad.txt. Note,many a times, cppcheck is wrong about
+    reported errors. There are many bugs it doesn't catch.</li>
+<li>A small snippet of the output is like below -</li>
+</ul>
+<p><code>[src/adrt/librender/spall.c:195]: (warning) scanf without field width limits can crash with huge input data</code>
+<code>[src/adrt/master/master.c:488]: (style) Array index i is used before limits check</code>
+<code>[src/anim/anim_hardtrack.c:185]: (warning) scanf without field width limits can crash with huge input data</code>
+<code>[src [src/burst/Hm.c:347]: (style) The scope of the variable 'bit' can be reduced</code>
+<code>[src/conv/asc/g2asc.c:655]: (error) fprintf format string has 3 parameters but only 1 are given</code>
+<code>.</code>
+<code>.</code>
+<code>.</code>
+<code>[src/util/ttcp.c:612]: (style) The scope of the variable 'cnt' can be reduced</code>
+<code>[src/util/xyz-pl.c:59]: (warning) scanf without field width limits can crash with huge input data</code>
+<code>(information) Cppcheck cannot find all the include files (use --check-config for details)</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

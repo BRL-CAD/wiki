@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Pulkit_Mittal/GSOC2014/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Development Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Pulkit_Mittal/GSOC2014/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-logs" class="nav-link">Development Logs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#project-details" class="nav-link">Project Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-period" class="nav-link">GSOC Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-logs">Development Logs</h1>
+<h2 id="project-details">Project Details</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Project Name</strong></td>
+<td>STEP Libraries: Improving Thread Safety and Performance</td>
+</tr>
+<tr>
+<td><strong>Project Student</strong></td>
+<td>Pulkit Mittal</td>
+</tr>
+<tr>
+<td><strong>IRC(nick)</strong></td>
+<td>hoiji</td>
+</tr>
+<tr>
+<td><strong>Github (handle)</strong></td>
+<td>hoiji09</td>
+</tr>
+</tbody>
+</table>
+<h2 id="milestones">Milestones</h2>
+<h3 id="compulsary">Compulsary</h3>
+<ul>
+<li>Thread Safety in cllazyfile <em>Status</em>: Review Awaiting</li>
+<li>Thread Safety in clstepcore <em>Status</em>: Review Awaiting</li>
+<li>Thread Safety in cleditor <em>Status</em>: Review Awaiting</li>
+<li>Thread Safety in cldai <em>Status</em>: Review Awaiting</li>
+</ul>
+<h3 id="bonus">Bonus</h3>
+<p>In this section I will list down all other modifications which I did
+during the GSOC period.</p>
+<ul>
+<li>Single threaded performance optimizations<ul>
+<li>Removed <em>istream *in2</em> from <em>STEPfile::AppendFile</em>. Originally
+    for the second pass a new <em>istream (in2)</em> was being created and
+    the <em>.step</em> file was being opened again. This was prevented by
+    directing the original <em>istream (in)</em> to the beggining of the
+    <em>.step</em> file.</li>
+</ul>
+</li>
+<li>Code Refractoring<ul>
+<li>In libraries clstepcore and cldai, there were few classes which
+    were very similar. The logic common to these classes was
+    indentified and removed, a new class was created which had that
+    common logic. The original classes were made to inherit from the
+    new class. This removed duplicated code and also made making
+    changes (for thread safety) easier.</li>
+</ul>
+</li>
+</ul>
+<h2 id="gsoc-period">GSOC Period</h2>
+<h3 id="week-1">Week 1</h3>
+<p><strong>17 May (Sat):</strong></p>
+<ul>
+<li>Figured out various functionalities in cllazyfile step library which
+    should be made thread safe.
+    These are<ol>
+<li>Opening multiple files in parallel.</li>
+<li>(lazy) loading separate SDAI_Application_instance in parallel.</li>
+<li>Reading the forward / backward references of instances in
+    parallel.</li>
+<li>Finding instances belonging to same / different types in
+    parallel.</li>
+<li>Initializing / Setting the registry in parallel.</li>
+<li>Registering Data Sections in parallel</li>
+</ol>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Strategizing how the various features will be added into the code.
+    Firstly a test will be created to note the existance of thread
+    safety for the above features. If the test fail then appropriate
+    coding will be done</li>
+</ul>
+<p><strong>18 May (Sun):</strong></p>
+<ul>
+<li>A test was created in <em>lazy_thread_safety_test.cc</em> file, to check
+    the concurrent read safety of <em>getFwdRefs()</em> and <em>getRevRefs()</em> and
+    expectedly it failed.</li>
+<li><em>Note:</em> to run the test, the CMakeFiles:
+    <em>cmake/SC_CXX_schema_macros.cmake</em> &amp;
+    <em>src/cllazyfile/CMakeLists.txt</em> were slightly messed up.</li>
+</ul>
+<p><strong>19 May (Mon):</strong></p>
+<ul>
+<li>Introduced <em>getFwdRefsSafely</em> and <em>getRevRefsSafely</em> which are
+    thread safe. The thread safety test in
+    <em>lazy_thread_safety_test.cc</em> passed. Submitted code through git
+    in a branch called hj/cllazyfile-thread-safety.</li>
+<li>Discussed with mentor about the importance order of functionalities
+    mentioned above. Hence will be covering the functionalities in the
+    following order 3(done)&gt;4&gt;2&gt;1&gt;6</li>
+</ul>
+<p><strong>20-21 May (Tue, Wed):</strong></p>
+<ul>
+<li>Noticed that <em>getFwdRefsSafely</em> and <em>getRevRefsSafely</em> are consume
+    memory each time they are called (as separate clones are made for
+    each invocation). (Blame the use of Judy Structure) The memory is
+    freed only when destructor of <em>lazyInstMgr</em> is called. One way
+    around this problem was to let the user call a function (say)
+    <em>returnFwdRefsSafely</em> which would release the space related to a
+    clone. Hence, I spent 2 days trying to modify the original judy code
+    so that it allows closure of clones. But as I was not able to get a
+    breakthrough, I have left this task for later.</li>
+</ul>
+<p><strong>22 May (Thu):</strong></p>
+<ul>
+<li>Created a test to check the thread safety of <em>getInstances</em> (<em>i.e.</em>
+    finding instances belonging a specific type). As expected the test
+    failed when the number of invocations were very high. This is
+    because <em>getInstances</em> internally uses <em>find</em> operation which is not
+    thread safe.</li>
+</ul>
+<p><strong>23 May (Fri):</strong></p>
+<ul>
+<li>Added the thread-safe <em>getInstancesSafely</em> and
+    <em>countInstancesSafely</em>. Also submitted the code in github.</li>
+</ul>
+<h3 id="week-2">Week 2</h3>
+<p><strong>24 May (Sat):</strong></p>
+<ul>
+<li>Started working towards making lazy-loading of instances thread
+    safe.<ul>
+<li>Created a test which would spawn two threads which try to load
+    instances.<ul>
+<li>In the first half of iterations the threads would try to
+    load same set of instances.</li>
+<li>In the second half of iterations the threads would try to
+    load different set of instances (not necessary disjoint).</li>
+<li>For each thread within one iteration an instance would be
+    loaded twice. This checks the case where the instance may or
+    may-not be already loaded and the case where the instance is
+    already loaded.</li>
+</ul>
+</li>
+<li>The problem that arose during the compilation of the test was
+    that, finally the <em>_mainRegistry</em> was being used, and I had
+    very little idea about the schemas and registries. It could not
+    find the <em>schema.h</em> file.</li>
+</ul>
+</li>
+<li>Couldn't work the earlier half of the day as I was traveling.</li>
+</ul>
+<p><strong>25 May (Sun):</strong></p>
+<ul>
+<li>Got the thread safety test for lazy-loading to compile by doing
+    certain changes in the <em>src/cllazyfile/CMakeLists.txt</em>.<ul>
+<li>This was done by including the directory
+    <em>${CMAKE_BINARY_DIR}/schemas/sdai_cd209</em> for the above test.</li>
+<li>The restriction that the above changes imposed on
+    <em>lazy_thread_safety_test</em> was that, now it has to be given
+    the the step file <em>data/cd209/ATS1-out.stp</em> as input.</li>
+</ul>
+</li>
+<li>
+<p>A potential bug was found while running the above test. The bug
+    would appear if we follow the following steps</p>
+<ol>
+<li><em>lazyInstMgr * mgr = new lazyInstMgr;</em></li>
+<li><em>mgr-&gt;initRegistry( SchemaInit );</em></li>
+<li><em>mgr-&gt;openFile( fileName );</em></li>
+<li><em>delete mgr</em></li>
+<li><em>lazyInstMgr * mgr = new lazyInstMgr;</em></li>
+<li>
+<p><em>mgr-&gt;initRegistry( SchemaInit );</em></p>
+</li>
+<li>
+<p>The last step would cause assertion failure in function
+    <em>setRegistery</em>. (i.e. <em>assert( _mainRegistry == 0 )</em>). This was
+    solved by explicitly initializing <em>_mainRegistry</em> with '0'
+    inside the <em>lazyInstMgr</em> constructor.</p>
+</li>
+<li>When the test was run on the original <em>loadInstance</em> function, it
+gave assertion error related to the input stream.</li>
+<li>Saw the comments posted by Mark on my earlier commits. I decided to
+make corresponding changes in the code, once I had made lazy-loading
+thread safe</li>
+</ol>
+</li>
+</ul>
+<p><strong>26 May (Mon):</strong></p>
+<ul>
+<li>A thread-safe version of <em>loadInstance</em> was created. For this a fat
+    lock was used. It is possible that we can make the lock application
+    finer, however that has been left for later. This version passed the
+    test successfully.<ul>
+<li>However their appeared to be some problem in the step file,
+    because loading of one particular instance always failed,
+    irrespective of the number of threads. A temporary fix was
+    applied by removing a newline character from the step file.</li>
+<li>In the <em>loadInstance</em> function, their was an issue of a warning
+    <em>instance #... not found in any section</em> appearing even if the
+    instance was found in the <em>_instancesLoaded</em> list. The fix was
+    trivial</li>
+</ul>
+</li>
+<li>A thread safe counterpart to <em>mgr-&gt;getAdapter()-&gt;FindFileId(
+    instanceID )-&gt;GetSTEPentity()</em> was made. This was slightly
+    complicated then the previous features as it consisted of 2 complex
+    steps in different classes. Both being thread unsafe.<ul>
+<li>For this each thread was assigned its own mgrNodeHelper. This
+    mgrNodeHelper was created once, for each thread and reused on
+    later invocations.</li>
+<li>Dependency was taken on thread safe <em>loadInstanceSafely</em></li>
+<li>The counterpart was also successfully tested</li>
+</ul>
+</li>
+</ul>
+<p><strong>27 May (Tue):</strong></p>
+<ul>
+<li>As per the advice given by Mark, the macro <em>HAVE_STD_THREAD</em> was
+    utilized in <em>CMakeLists.txt</em>, including header files, mutex / thread
+    safe functions declarations etc.<ul>
+<li>This opportunity was also used to clean up the <em>CMakeLists.txt</em></li>
+</ul>
+</li>
+<li>Fixed the newline issue encountered on 26th May. This was done by
+    modifying the lazyfile parser by instructing it to ignore the
+    newlines in such cases. The temporary fix was reverted back as it
+    was no longer required.</li>
+<li>Prepared the changes done from 24th May in the form of multiple
+    commits. Also the thread safe code was clubbed together wherever
+    possible for easy identification.</li>
+</ul>
+<p><strong>28 May (Wed):</strong></p>
+<ul>
+<li>While introducing <em>HAVE_STD_THREAD</em> in
+    <em>src/cllazyfile/lazyTypes.h</em> a compilation problem was encountered.
+    Somehow <em>HAVE_STD_THREAD</em> macro was not being recognized by
+    <em>lazyTypes.h</em>. This was surprising as <em>HAVE_STD_THREAD</em> was
+    recognized by <em>lazyInstMgr.cc</em>. The final solution was to explicitly
+    declare <em>HAVE_STD_THREAD</em> through the compiler flag in
+    <em>src/cllazyfile/CMakeLists.txt</em>.</li>
+<li>Also continuing from the last point in 27th May, the work done from
+    24th May was organized into 12 different commits and submitted to
+    github.</li>
+</ul>
+<p><strong>29 May (Thu):</strong></p>
+<ul>
+<li>Started adding a test for checking thread safety in while opening
+    multiple files in parallel, using the same lazyInstMgr.<ul>
+<li>The first and foremost problem was identifying the data
+    structures of the lazyInstMgr whose state would change when
+    <em>lazyInstMgr::openFile()</em> is called. Unlike the previous
+    functionalities here more then one data structures were
+    involved. The following data structures were identified.<ul>
+<li><em>instanceRefs_t _fwdInstanceRefs</em></li>
+<li><em>instanceRefs_t _revInstanceRefs</em></li>
+<li><em>instanceTypes_t * _instanceTypes</em></li>
+<li><em>instanceStreamPos_t _instanceStreamPos</em></li>
+<li><em>dataSectionReaderVec_t _dataSections</em></li>
+<li><em>lazyFileReaderVec_t _files</em></li>
+<li><em>unsigned long _lazyInstanceCount</em></li>
+<li><em>int _longestTypeNameLen</em></li>
+<li><em>std::string _longestTypeName</em></li>
+</ul>
+</li>
+<li>The test would create two instances of lazyInstMgr, through
+    first it would call openFile for two different files in a serial
+    manner, through second it would call openFile for these two
+    files parallely. Later it would compare the above data
+    structures of both the instance managers and report any
+    discrepancy it finds.</li>
+</ul>
+</li>
+</ul>
+<p><strong>30 May (Fri):</strong></p>
+<ul>
+<li>The above test was completed.<ul>
+<li>An extra lazyInstMgr API was added to get <em>_instanceStreamPos</em>
+    data structure for comparison.</li>
+<li>The test when run on existing openFile failed. Multiple reasons
+    were attributed to the failure by running the test multiple
+    times. Apart from gracefully failing, the test also failed many
+    times due to <em>segmentation fault</em> or an assertion failure in the
+    <em>cllazyfile parser</em>.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Work was started on making the openFile thread safe.</li>
+</ul>
+<h3 id="week-3">Week 3</h3>
+<p><strong>31 May (Sat):</strong></p>
+<ul>
+<li>At this I was going through the dilemma of following the convention
+    of creating different functions for thread safe code vs. using
+    macros for demarcating code used for ensuring thread safety.<ul>
+<li>Continuing the former meant code duplication.</li>
+<li>Switching to the latter meant that flexibility of letting the
+    user decide which function he wants to call is thrown away.</li>
+<li>I finally took the middle way decision which didn't had any of
+    the above problem.<ul>
+<li>All calls to the <em>mutex</em> are now through a wrapper which
+    directs the call to the <em>mutex</em> functionality if
+    <em>HAVE_STD_THREAD</em> is defined or else to a dummy function
+    which does nothing.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the thread safe counterpart of <em>openFile</em>, <em>openFileSafely</em> fine
+    grain locking was done.<ul>
+<li>Mutexes were added at to safe-gaurd their respective data
+    structures</li>
+<li>Functionalities such as <em>lazyInstMgr::registerDataSection</em> were
+    converted into a two step process.</li>
+<li>Since it was now possible that an element of the <em>_dataSection</em>
+    vector can be null the destructor for <em>lazyInstMgr</em> was changed
+    accordingly.</li>
+</ul>
+</li>
+</ul>
+<p><strong>1 June (Sun):</strong></p>
+<ul>
+<li>The test for checking thread safety was still failing, due to
+    assertion failure in the <em>cllazyfile parser</em>.<ul>
+<li>It was found that this is due to a <em>static</em> variable in
+    <em>sectionReader::getDelimitedKeyword</em>. The function was reworked
+    and named <em>fillDelimitedKeyword</em>. The functions taking
+    dependence on this were slightly modified to reflect this
+    change.</li>
+<li>Another static variable in <em>p21HeaderSectionReader</em> was
+    identified and tackled with.</li>
+</ul>
+</li>
+<li>The test finally succeeded. Some performance statistics<ul>
+<li>File A: <em>3tnv70-asa.stp</em> (\~45mb) was taken from the site
+    examples.</li>
+<li>File B: <em>gtc01-mme01_asm.stp</em> (\~45mb) was taken from
+    <em><a href="http://downloads.openmoko.org/developer/CAD/Neo1973_IGES_STEP.zip">http://downloads.openmoko.org/developer/CAD/Neo1973_IGES_STEP.zip</a></em></li>
+<li>It took \~9 seconds if we tried to open either File A or File B.</li>
+<li>It took \~17 seconds if we tried to open File A and then File B.</li>
+<li>It took \~12.5 seconds when both the files were opened in
+    parallel.</li>
+</ul>
+</li>
+</ul>
+<p><strong>2 June (Mon):</strong></p>
+<ul>
+<li>The locking in <em>loadInstanceSafely( instanceID )</em> was made finer.<ul>
+<li>
+<p>Double checking was also done to enhance performance in cases in
+    which say:</p>
+<ol>
+<li>Thread A is creating a <em>realObject</em> belonging to instance
+    <em>x</em>.</li>
+<li>
+<p>Thread B comes and wants to get an object belonging to
+    instance <em>y</em>.</p>
+</li>
+<li>
+<p>If instance <em>y</em> has been already loaded then Thread B
+    doesn't have to wait for Thread A. This is now handled.</p>
+</li>
+<li>The work done from 29th May was organized into different commits and
+    pushed to github.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>3 June (Tue)</strong></p>
+<ul>
+<li>Going through the code in <em>src/clstepcode</em><ul>
+<li>Learnt about the various files in the library.</li>
+<li>Several Problems were identified:<ul>
+<li>The amount of code is huge.</li>
+<li>What makes the problem worse is that there are lots of small
+    classes. Since a TDD approach is being followed it means
+    that there will have to be lots of test files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>4-6 June (Thu - Fri)</strong></p>
+<ul>
+<li>Very Little work done due to family reunion + travelling.</li>
+</ul>
+<h3 id="week-4">Week 4</h3>
+<p><strong>7 June (Sat)</strong></p>
+<ul>
+<li>Unsuccesfully tried to figure out a way to run the tests such as
+    <em>src/clstepcore/test/test_operators_STEPattribute.cc</em> on my remote
+    machine.</li>
+<li>Created a mutex wrapper: <em>sc_mutex</em> that will contain <em>std::mutex</em>
+    and call its lock, unlock function if <em>HAVE_STD_THREAD</em> is
+    enabled. If on the other hand <em>HAVE_STD_THREAD</em> is disabled, the
+    wrapper will not contain <em>std:mutefx</em> and will call the dummy lock,
+    unlock functions.<ul>
+<li>I will modify cllazyfile to take dependency on it later.</li>
+</ul>
+</li>
+</ul>
+<p><strong>8 June (Sun)</strong></p>
+<ul>
+<li>Changed the branch name from <em>hj/cllazyfile-thread-safety</em> to
+    <em>hj/thread-safety</em>. Now I will keep all the thread-safe code in one
+    branch.</li>
+<li>Modified the <em>CMakeLists.txt</em> of each of the library.<ul>
+<li>It was also found that some of the tests used the header files
+    directly. Hence the cmake files of such libraries will have to
+    be changed when required.</li>
+</ul>
+</li>
+</ul>
+<p><strong>9 June (Mon)</strong></p>
+<ul>
+<li>The test for checking thread safety of <em>instmgr</em> was started.<ul>
+<li>The functions whose thread safety would be checked was append
+    and delete functions.</li>
+<li>Three test scenrios were checked:<ol>
+<li>Two threads appending <em>SDAI_Application_instance</em> pointers
+    to the same <em>instmgr</em>.</li>
+<li>Two threads deleting <em>SDAI_Application_instance</em> pointers
+    to the same <em>instmgr</em>.</li>
+<li>One thread appeding <em>SDAI_Application_instance</em>pointers
+    and other thread trying to delete some other pointers from
+    the same <em>instmgr</em>.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>10 June (Tue)</strong></p>
+<ul>
+<li>The test for checking thread safety of <em>instmgr</em> was completed. It
+    was named as <em>InstMgr_thread_safety_test</em> and put into
+    <em>src/clstepcore</em> directory.<ol>
+<li>In each of the test cases before the insertion / deletion
+    happens on one InstMgr sequentially and other parallely.</li>
+<li>These two are later compared for any disparity.</li>
+</ol>
+</li>
+<li>On each run either <em>InstMgr_thread_safety_test</em> failed gracefully
+    (i.e a disparity was found between two InstMgr) or a seg. fault was
+    encountered.</li>
+</ul>
+<p><strong>11 June (Wed)</strong></p>
+<ul>
+<li>Their was some duplicate code in <em>instmgr</em> class for <em>GetSTEPentity</em>
+    function. Even though the function is obselete, the duplicated code
+    was removed.</li>
+<li>Code was written to make <em>InstMgr</em> Append and Delete function thread
+    safe.<ul>
+<li>This involved some amount of code refractoring and introduction
+    of a mutex.</li>
+<li>A compilation error on invoking <em>make</em> prevented any further
+    progress.</li>
+</ul>
+</li>
+</ul>
+<p><strong>12 June (Thu)</strong></p>
+<ul>
+<li>Was able to finally compile yesterdays code by changing the file
+    <em>SC_CXX_schema_macros.cmake</em> in the cmake directory.</li>
+<li>The <em>InstMgr_thread_safety_test</em> passed in all three cases. Some
+    incorrect code was also corrected.</li>
+</ul>
+<p><strong>13 June (Fri)</strong></p>
+<ul>
+<li>I decided that I will work in the <em>GenNode</em> related classes
+    (<em>GenNodeArray</em>, <em>GenNodeList</em>) defined in clutils and the classes
+    which inherit from them:<ul>
+<li><em>MgrNode</em>: <em>MgrNodeArray</em>, <em>MgrNodeArraySorted</em>, <em>MgrNodeList</em></li>
+<li><em>DispNode</em>: <em>DispNodeList</em></li>
+</ul>
+</li>
+<li>Some of the code was very badly written (seeing from a thread safety
+    perspective)<ul>
+<li>Ex. The Remove function in <em>GenNode</em> modified the state of other
+    <em>GenNode</em> objects. Typically this should be done by the
+    <em>GenNodeList</em> class.</li>
+</ul>
+</li>
+</ul>
+<h3 id="week-5">Week 5</h3>
+<p><strong>14 June (Sat)</strong></p>
+<ul>
+<li>Added <em>containingList</em> pointer in <em>GenericNode</em>. This pointer will
+    point to the list of which the node is part of.<ul>
+<li>This pointer will used whenever the <em>GenericNode</em> or its
+    descendent want to perform any operation on the other Nodes.</li>
+<li>Such operations will now be directed to the list function whose
+    responsibility would be to ensure proper locking.</li>
+<li>Added assertions and checks regarding the same.</li>
+<li>Also used <em>containingList</em> to remove duplicate code.</li>
+</ul>
+</li>
+<li>Some of the code was moved between files, to make the code neater.</li>
+</ul>
+<p><strong>15 June (Sun)</strong></p>
+<ul>
+<li>Organized the work done until 12 June into commits and pushed it
+    into the github repository.<ul>
+<li>This was done so that <em>Mark</em> could review one of the changes</li>
+</ul>
+</li>
+<li>Added sc_recursive_mutex.<ul>
+<li>This will be used to handle situtations where there are 2 public
+    APIs (say A, B).<ul>
+<li>Both modify an internal data structure, hence lock it.</li>
+<li>However one API depends on other. (say B depends on A)</li>
+</ul>
+</li>
+<li>Earlier In such cases I used to make a helper function (H) which
+    would do the main job. A and B would depend on H and can be
+    individually locked.</li>
+<li>Having a recursive lock would eleminate the need to do the
+    above.<ul>
+<li>Made <em>instmgr</em> lock recursive.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>16 June (Mon)</strong></p>
+<ul>
+<li>Corrected locking in <em>getApplication_Instance</em>. Earlier (due to my
+    carrelessness) their was a possibilty that a thread might never
+    release the lock.</li>
+<li>Modified the insert function in gen/mgr/disp lists.<ul>
+<li>The new insert function checks whether the existing node belongs
+    to the same list or not. If it doesn't it does nothing and
+    returns false.</li>
+<li>This will be very helpful when introducing thread safety in list
+    structures. Ex. take the scenerio:<ul>
+<li>Thread A wants to insert x after y.</li>
+<li>Meanwhile Thread B removes y from current list.</li>
+<li>In such a case the thread A's insertion fails.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Finally introduced <em>recursive_mutex</em> in <em>gennodelist</em>.
+    <em>mgrnodelist</em> which inherits <em>gennodelist</em> was also changed
+    accordingly.</li>
+</ul>
+<p><strong>17 June (Tue)</strong></p>
+<ul>
+<li>Added <em>GetGenNode</em> function in <em>GenNodeArray</em>.<ul>
+<li>This function is a safer couterpart to [] function.</li>
+<li>Replaced call to the [] function with calls to <em>GetGenNode</em>
+    function.</li>
+<li>Was feasable since the former is only used for getting
+    <em>GenericNode</em> pointers.</li>
+</ul>
+</li>
+<li>Minor refractoring in <em>MgrNodeArray</em> This will be helpful when we
+    introduce a mutex in <em>GenNodeArray</em>.</li>
+</ul>
+<p><strong>18 June (Wed)</strong></p>
+<ul>
+<li>Added <em>std_recursive_mutex</em> in <em>GenNodeArray</em>. Also modified
+    classes which inherit the above accordingly</li>
+<li>Organized the work done from 14 June into commits and pushed it into
+    the github repository.</li>
+</ul>
+<p><strong>19 June (Thu)</strong></p>
+<ul>
+<li>Could not work, as I devoted my the whole day to my M.Tech Project.</li>
+</ul>
+<p><strong>20 June (Fri)</strong></p>
+<ul>
+<li>Next I decided to work on <em>ExpDict.h/.cc/.inline.cc</em> files. These
+    define classes representing descriptors for EXPRESS schemas,
+    entities, attributes, and types.<ul>
+<li>These file have around \~50 classes. On going through each of
+    them it was found that the potentially thread unsafe classes can
+    be divided into categories.<ol>
+<li>Classes which define a set data structure for a subclass of
+    <em>Dictionary_instance</em></li>
+<li>Classes which inherit from <em>SingleLinkList</em> class.</li>
+<li>Some subclasses of <em>Dictionary_instance</em> which take
+    dependency on std::vector structures or multiple structres
+    which should be consistent with each other.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="week-6">Week 6</h3>
+<p><strong>21 June (Sat)</strong></p>
+<ul>
+<li>Added class <em>Dictionary_instance__set</em>. This class is intended to
+    be a superclass of all the *__set classes.<ul>
+<li>These classes are:<ul>
+<li><em>Explicit_item_id__set</em></li>
+<li><em>Implicit_item_id__set</em></li>
+<li><em>Interface_spec__set</em></li>
+<li><em>Global_rule__set</em></li>
+<li><em>Uniqueness_rule__set</em></li>
+</ul>
+</li>
+<li>Lot of duplicated code was removed this way.</li>
+<li>Making <em>Dictionary_instance__set</em> thread safe would now
+    ensure thread safety of the above subclasses.</li>
+</ul>
+</li>
+</ul>
+<p><strong>22 June (Sun)</strong></p>
+<ul>
+<li>Made <em>Where_rule__list</em> a subclass of
+    <em>Dictionary_instance__set</em>, as it was found to have similar
+    features.</li>
+<li>Work done from 19 June was organized into commits and pushed to
+    github.</li>
+</ul>
+<p><strong>23 June (Mon)</strong></p>
+<ul>
+<li>Some missing code in yesterday commits was added and submitted to
+    github.</li>
+<li>Made <em>Dictionary_instance__set</em> thread safe by adding a mutex.</li>
+<li>Made <em>SingleLinkList</em> class thread safe by adding a mutex.<ul>
+<li>Also a cmake file was modified inorder to compile the above
+    changes.</li>
+</ul>
+</li>
+<li>Made Schema thread safe by using 3 mutexes to protect the
+    <em>_function_list</em>, <em>_procedure_list</em> &amp; <em>_global_rules</em> data
+    structures.<ul>
+<li>The first two are vectors.</li>
+<li>The last is already a thread safe structure, however its being
+    lazy-initilized hence a mutex is needed.</li>
+</ul>
+</li>
+<li>Made <em>Global_rule</em> thread safe by using a mutex.<ul>
+<li>Thread safety in functions <em>entities_</em> and <em>where_rules_</em> was
+    being violated</li>
+</ul>
+</li>
+</ul>
+<p><strong>24 June (Tue)</strong></p>
+<ul>
+<li>The next focus was the <em>Registry</em> class. A test to check the thread
+    safety of Registry class was created.<ul>
+<li>In it the Entity, Schema and Type operations are tested.</li>
+<li>For each, there are 3 checks: Add-Add, Remove-Remove,
+    Add-Remove. ** For every check the two operation are done
+    first serially and then parallely. Their results are then
+    compared.</li>
+</ul>
+</li>
+<li>The test when run either gracefully failed or gave a segFault in
+    every check.</li>
+</ul>
+<p><strong>25 June (Wed)</strong></p>
+<ul>
+<li><em>The curious case of hashtables</em>: The <em>Registry</em> class took
+    dependency on a hashtable data structure defined in
+    clutils/sc_hash.h.<ul>
+<li>These hashtable methods appeared to pass the thread safety
+    check, when the number of elements which were to be inserted in
+    the hash table were small.</li>
+<li>However when lots of element were added into a hash table, an
+    internal function of the hashtable <em>SC_HASHexpand_table</em> is
+    called which is thread unsafe.</li>
+<li>Hence it was decided to put a fat-lock around the hash-table.</li>
+</ul>
+</li>
+<li>Made Registry <em>Entity</em>, <em>Schema</em> and <em>Type</em> operations thread safe
+    by adding a mutex for each.<ul>
+<li>All the checks in <em>Registry_thread_safety_test</em> now pass.</li>
+</ul>
+</li>
+<li>The code written from 23 June was organized into commits and pushed
+    to github.</li>
+</ul>
+<p><strong>26 June (Thu)</strong></p>
+<ul>
+<li>Wrote a blog on my mid-term progress: <a href="../Midterm/">midterm</a></li>
+<li>Devoted the rest of the day on M.Tech. Project.</li>
+</ul>
+<p><strong>27 June (Fri)</strong></p>
+<ul>
+<li>Devoted the day to M.Tech Project.</li>
+</ul>
+<h3 id="week-7">Week 7</h3>
+<p><strong>28 June (Sat)</strong></p>
+<ul>
+<li>
+<p>Divided the rest of <em>stepcore</em> library into three parts.</p>
+<ol>
+<li>Those who define <em>STEP</em> interface. (i.e the STEP*.h/.cc files)</li>
+<li>Those who define <em>sdai</em> interface. (i.e the STEP*.h/.cc files)</li>
+<li>
+<p>Classes listed in complexSupport.h and their implementation in
+    the associated *.cc files</p>
+</li>
+<li>
+<p>It was decided that functions declared in <em>read_func.h/.cc</em> and
+    <em>print.cc</em> files wont be made thread safe as they were not a
+    part of the class and thus didn't had any data structures to
+    protect.</p>
+</li>
+<li>Duplicate code was removed in <em>STEPaggregrate</em>. <em>STEPaggregrate</em> and
+its superclass <em>SingleLinkList</em>.cc had the same destructor.</li>
+</ol>
+</li>
+</ul>
+<p><strong>29 June (Sun)</strong></p>
+<ul>
+<li>Made the classes defined in <em>STEPaggregrate.h</em> thread safe.<ul>
+<li>The function which was identified as a potential thread unsafe
+    function was the <em>ShallowCopy</em>. This function was common to all
+    the subclasses of <em>STEPaggregrate</em>.</li>
+<li>Thread safety was ensured by relying on the mtx defined in
+    <em>SingleLinkList</em>. For this reason the mutex was redefined in the
+    public scope, as inside the <em>ShallowCopy</em> nodes belonging to
+    another instance were iterated upon.</li>
+</ul>
+</li>
+<li>Efforts were also made to condense all the <em>ShallowCopy</em> functions
+    into one, so as to decrease the code amount. This attempt however
+    failed since the function differed slighly in each of the
+    subclasses.</li>
+</ul>
+<p><strong>30 June (Mon)</strong></p>
+<ul>
+<li>I had to prepare a presentation for my M.Tech project meeting with
+    company funding my project.</li>
+</ul>
+<p><strong>1 July (Tue)</strong></p>
+<ul>
+<li>Instead of moving to <em>STEPattribute</em>, I decided to focus my
+    attention to the classes declared in <em>complexSupport.h</em>.<ul>
+<li>Started with Entnode. It was quite tricky since unlike other
+    node-list data structure implementation in the STEP libraries,
+    Entnode didn't had any <em>covering list</em> (i.e a class with
+    variable such as head, tail etc through which the list
+    data-structure could be accessed)</li>
+</ul>
+</li>
+</ul>
+<p><strong>2 July (Wed)</strong></p>
+<ul>
+<li>Made <em>EntNode</em> of <em>complexSupport.h</em> thread safe.<ul>
+<li>For this I used a recursive mutex in a shared manner. The
+    pointer to this mutex was kept with every node.</li>
+<li>This shared mutex was initialized when a specialized <em>EntNode</em>
+    constructor (responsible for creating multiple <em>EntNodes</em>) was
+    called</li>
+<li>The shared mutex would be deleted when the destructor of an
+    <em>EntNode</em> having a live mutex pointer was called.</li>
+</ul>
+</li>
+</ul>
+<p><strong>3 July (Thu)</strong></p>
+<ul>
+<li>M.Tech project presentation with the company.</li>
+</ul>
+<p><strong>4 July (Fri)</strong></p>
+<ul>
+<li>Made SubSuperIterators.h thread safe.<ul>
+<li>This was done by introducing a recursive mutex meant to protect
+    the std::deque 'q' and unsigned integer 'position'</li>
+</ul>
+</li>
+<li>Also Removed duplicated code in SubSuperIterators.cc</li>
+</ul>
+<h3 id="week-8">Week 8</h3>
+<p><strong>5 July (Sat)</strong></p>
+<ul>
+<li>Next I focussed towards making <em>EntList</em> thread safe. Apparently
+    this was very difficult.<ul>
+<li>Tactics which involved <em>coarse grain locking</em> could not be used
+    due to the presence of <em>appendList</em> function in subclass
+    <em>MultList</em>.</li>
+<li>Tactics which involved <em>fine grain locking</em> could not be used as
+    some of the functions like <em>firstNot</em> iterated over the <em>next</em>
+    pointer and <em>lastNot</em> iterated over the <em>prev</em> pointer.</li>
+</ul>
+</li>
+</ul>
+<p><strong>6-8 July (Sun-Tue)</strong></p>
+<ul>
+<li>Thought about the EntList problem. Discussed with my mentor. Posted
+    my problem in the <em>scl-dev</em> group.</li>
+<li>Horror strikes!! While talking to my mentor I realized that I had
+    forgotten to run the 230 unit tests while making my commits.<ul>
+<li>Now, when I ran them, about half of them were failing!!</li>
+<li>The log file was traced to get clues about why so many test
+    failed.</li>
+<li>Various commits were checked out to find what was the <em>bad</em>
+    commit. It was found out that some of the tests which failed
+    were due to the recent uncommited work. These mistakes were
+    quickly rectified.</li>
+</ul>
+</li>
+</ul>
+<p><strong>9 July (Wed)</strong></p>
+<ul>
+<li>Changes in cmake to build lazy tests. Some changes in cmakefiles had
+    caused the test associated with <em>lazy_test</em> to stop building. Those
+    changes were reviewed and corrected.</li>
+<li>Corrected <em>SingleLinkedList</em> mtx bug. The mtx is converted into
+    <em>sc_recursive_mtx</em> deleted in the destructor</li>
+</ul>
+<p><strong>10 July (Thu)</strong></p>
+<ul>
+<li>Organized <em>most</em> of the work done from 26th July into commits and
+    pushed them to github.</li>
+<li>Some of the later tests (about 4) were still failing due todue to
+    assertions failures inside a mutex lock. No success as of today.</li>
+</ul>
+<p><strong>11 July (Fri)</strong></p>
+<ul>
+<li>Had to devote most of the whole day to checking major scripts (a
+    part of my teaching assistant duties. Thankfully now I am free from
+    that)</li>
+</ul>
+<h3 id="week-9">Week 9</h3>
+<p><strong>12 July (Sat)</strong></p>
+<ul>
+<li>Modified <em>add_schema_dependent_test</em> module.<ul>
+<li>The assertion failures before was due to the test file not being
+    equipped with the <em>HAVE_STD_THREAD</em> macro.</li>
+<li>The CMakeFile associated with <em>add_schema_dependent_test</em> was
+    changed and all the tests except of 'test_inverse_attr3' are
+    passing.</li>
+</ul>
+</li>
+</ul>
+<p><strong>13 July (Sun)</strong></p>
+<ul>
+<li>Made <em>STEPattributeList</em> thread safe.<ul>
+<li>The functions <em>STEPattributeList::[]</em> &amp;
+    <em>STEPattributeList::push</em> were identified as vulnerable.</li>
+<li>Instead of declaring a new mutex to protect the state, the mutex
+    defined in its superclass <em>SingleLinkList</em> was used.</li>
+</ul>
+</li>
+<li>Redefined <em>GetMiEntity</em> API belonging to
+    <em>SDAI_Application_instance</em> class.<ul>
+<li>The function now accepts <em>const char *</em> (instead of <em>char *</em>)
+    as parameter.</li>
+</ul>
+</li>
+</ul>
+<p><strong>14 July (Mon)</strong></p>
+<ul>
+<li>Removed the infinite recursion bug in <em>STEPattribute</em>.<ul>
+<li>This bug was identified few days ago when I was going through
+    the code. Finally I was able to discuss it with the mentor.</li>
+<li>The bug would surface if a <em>STEPattribute</em> instance which has
+    been redefined, has its <em>ShallowCopy</em> function invoked.</li>
+</ul>
+</li>
+</ul>
+<p><strong>15 July (Tue)</strong></p>
+<ul>
+<li>Added test for checking thread safety of
+    <em>SDAI_Application_instance</em> class.<ul>
+<li>This test would check thread safety for <em>AppendMultInstance</em> &amp;
+    <em>GetMiEntity</em> functions in class <em>SDAI_Application_instance</em>
+    by using two threads two invoke <em>AppendMultInstance</em> on the same
+    <em>SDAI_Application_instance</em> object. A third thread would call
+    <em>GetMiEntity</em> simultaneously.</li>
+<li>Rest of the functions were not checked since the locking in them
+    was trivial.</li>
+<li>The test failed on the original code.</li>
+</ul>
+</li>
+</ul>
+<p><strong>16 July (Wed)</strong></p>
+<ul>
+<li>Made <em>SDAI_Application_instance</em> thread safe.<ul>
+<li>This was done by introducing a mutex for each
+    <em>SDAI_Application_instance</em>.</li>
+<li><em>AppendMultInstance</em> was made thread safe by doing
+    hand-over-hand locking.</li>
+<li>GetMiEntity was made thread safe acquiring locks in increasing
+    order and releasing locks in decreasing order.</li>
+<li>The checks in sdaiApplication_instance_thread_safety_test
+    now pass.</li>
+</ul>
+</li>
+</ul>
+<p><strong>17 July (Thu)</strong></p>
+<ul>
+<li>Travelling home.</li>
+</ul>
+<p><strong>18 July (Fri)</strong></p>
+<ul>
+<li>Work done from 13 July was divided into different commits and pushed
+    into github.</li>
+</ul>
+<h3 id="week-10">Week 10</h3>
+<p><strong>19 July (Sat)</strong></p>
+<ul>
+<li>Locking was done in <em>ExpDict.cc</em>.<ul>
+<li>There were some functions in <em>ExpDict.cc</em> that were not properly
+    locked before.</li>
+</ul>
+</li>
+</ul>
+<p><strong>20 July (Sun)</strong></p>
+<ul>
+<li>Made <em>sdaiSelect::CanBe( BASE_TYPE )</em> thread safe.</li>
+<li>Started strategizing how to make <em>STEPcomplex</em> thread safe.</li>
+</ul>
+<p><strong>21 July (Mon)</strong></p>
+<ul>
+<li>Travelling back to university.</li>
+</ul>
+<p><strong>22 July (Tue)</strong></p>
+<ul>
+<li>Work done from 19 July was organized into different commits and
+    pushed into github.</li>
+<li>Fixed locking in <em>sdaiApplication_instance.cc</em>. The
+    <em>STEPattributeList</em> data was being iterated and modiefied by the
+    <em>SDAI_Application_instance</em> class without invoking the mutex of
+    the <em>STEPattribute</em> class. This was fixed in this commit.</li>
+<li>Minor <em>STEPcomplex</em> optimization.<ul>
+<li>Collapsed some if conditions into a while condition without
+    changing the semantics</li>
+</ul>
+</li>
+</ul>
+<p><strong>23 July (Wed)</strong></p>
+<ul>
+<li>Made <em>STEPcomplex</em> thread safe.<ul>
+<li>The assumption used was that <em>STEPcomplex</em> class wont in future
+    provide an API through which threads can remove / insert a
+    <em>STEPcomplex</em> node.</li>
+<li>
+<p>Three already declared mutexes were used in for this purpose:</p>
+<ol>
+<li>A recursive mutex for each <em>STEPcomplex</em> node (borrowed from
+    the superclass <em>SDAI_Application_instance</em>)</li>
+<li>A recursive mutex belonging to <em>AttrDescriptorList</em> class
+    (originally defined in <em>SingleLinkList</em> class)</li>
+<li>
+<p>A recursive shared mutex belonging to <em>EntNode</em> class.</p>
+</li>
+<li>
+<p>The fixed order between the locks was: (2) &gt; (1). (3) was
+    independent.</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>24 July (Thu)</strong></p>
+<ul>
+<li>Work done from 22 July was organized into different commits and
+    pushed into github.</li>
+<li>Thread safety in <em>EntList</em>.<ul>
+<li>Under the assumptions that an <em>EntList</em> object cannot be
+    inserted in between two <em>EntList</em> objects and cannot be removed
+    from a list of <em>EntList</em> objects, making this class thread safe
+    became trivially easy.</li>
+<li>One mutex per <em>EntList</em> object was introduced to support
+    appending of <em>EntList</em> objects. This feature would be used by
+    its subclass (<em>MultList</em>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>25 July (Fri)</strong></p>
+<ul>
+<li>Thread Safety in <em>SimpleList</em><ul>
+<li>Used <em>sharedMtxP</em> defined in <em>EntNode</em> class to protect
+    <em>EntNode</em> list structure which was being accessed in functions
+    of <em>SimpleList</em> class</li>
+</ul>
+</li>
+<li>Thread safety in <em>MultList</em><ul>
+<li>The mutex defined in the superclass <em>EntList</em> was used in the
+    function appendList.</li>
+</ul>
+</li>
+</ul>
+<h3 id="week-11">Week 11</h3>
+<p><strong>26 July (Sat)</strong></p>
+<ul>
+<li>Thread safety in <em>JoinList</em>, <em>AndList</em> &amp; <em>AndOrList</em><ul>
+<li><em>sharedMtxP</em> of <em>EntNode</em> class was invoked to keep the list of
+    <em>EntNode</em> consistent whenever the <em>EntNode</em> list was being used
+    multiple times in a function belonging to any of the above
+    classes.</li>
+</ul>
+</li>
+</ul>
+<p><strong>27 July (Sun)</strong></p>
+<ul>
+<li>Thread safety in <em>OrList</em><ul>
+<li>Strategy adopted was similar to <em>AndList</em>. However the mutex
+    belonging to the superclass <em>EntList</em> was used to protect
+    various counters (choiceCount, choice) used by <em>OrList</em></li>
+</ul>
+</li>
+</ul>
+<p><strong>28 July (Mon)</strong></p>
+<ul>
+<li>Thread safety in <em>ComplexList</em><ul>
+<li>Like the classes before, used <em>sharedMtxP</em> to protect the
+    <em>EntNode</em> list whenver it was being iterated upon.</li>
+<li>Also added a public mutex to protect the public next pointer.
+    Resposibilty of using it will fall to the class which is using
+    next pointer (<em>ComplexCollect</em>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>29-31 July, 1 August (Tue-Fri)</strong></p>
+<ul>
+<li>Was down with fever (the first couple of days), followed by eyes
+    pain and weakness. Was advised to take a bed rest.</li>
+</ul>
+<h3 id="week-12">Week 12</h3>
+<p><strong>2 August (Sat)</strong></p>
+<ul>
+<li>Thread Safety in <em>ComplexCollect</em><ul>
+<li>A mutex was introduced to proctect the counter and the pointer
+    to <em>clists</em>.</li>
+<li>The insert and remove functions were tricky to make thread safe
+    as <em>clists</em> may or may-not have been initialized. Hand-over-hand
+    locking was used.</li>
+<li>Note: In the function <em>ComplexCollect::supports( EntNode )</em>,
+    there was a piece of code present in which the next and prev
+    pointer of an EntList were being modified.<ul>
+<li>This could have ruined the thread safe strategy for making
+    <em>EntList</em> thread safe. (violated our assumption)</li>
+<li>The reason it didn't was that, that <em>EntList</em> was created
+    locally.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>3 August (Sun)</strong></p>
+<ul>
+<li>Work done from 24 July was organized into commits and pushed to
+    github.</li>
+<li>Made <em>ReplicateList</em> in <em>cleditor</em> thread safe.<ul>
+<li>Used <em>mtxP</em> of the superclass <em>SingleLinkList</em> to ensure thread
+    safety</li>
+</ul>
+</li>
+<li>Thread safety in <em>CmdMgr</em> of <em>cleditor</em></li>
+</ul>
+<p><strong>4 August (Mon)</strong></p>
+<ul>
+<li>Not much work done as it was a heavy day in college</li>
+</ul>
+<p><strong>5 August (Tue)</strong></p>
+<ul>
+<li>Made <em>DirObj</em> of <em>clutils</em> thread safe.<ul>
+<li>This was achieved introducing a mutex in the <em>DirObj</em> class.</li>
+<li>Course-Level (fat) Locking was done only in publically accessed
+    function.</li>
+</ul>
+</li>
+</ul>
+<p><strong>6 August (Wed)</strong></p>
+<ul>
+<li>Work done from 3 August was organized into commits and pushed to
+    github.</li>
+</ul>
+<p><strong>7 August (Thu)</strong></p>
+<ul>
+<li>Converted <em>GetKeyword</em> to <em>FillKeyword</em>.<ul>
+<li>In the original function a <em>static string</em> was being used.</li>
+<li>The dependency on the static string was removed by passing a
+    string as a parameter from the caller to callee, so that the
+    function could operate without worrying about thread safety.</li>
+<li>The function name change mimics the change in the semantics of
+    the function.</li>
+<li>The various callers were modified to incorperate this change</li>
+</ul>
+</li>
+</ul>
+<p><strong>8 August (Fri)</strong></p>
+<ul>
+<li>Optimized <em>ReadReal</em>. Replaced calls to input stream peek &amp; get with
+    judicious use of get.</li>
+<li>Work done from 7 August was organized into commits and pushed to
+    github.</li>
+</ul>
+<h3 id="week-13">Week 13</h3>
+<p><strong>9 August (Sat)</strong></p>
+<ul>
+<li>No changes were done to <em>Sdai*</em> files of the <em>cleditor</em> library as
+    those files were generated by <em>exp2cxx</em>.<ul>
+<li>Any modifications would be lost if <em>exp2cxx</em> was used to
+    regenerate them.</li>
+</ul>
+</li>
+<li>Went through <em>STEPfile</em> class to determine the areas of thread
+    safety violations.</li>
+</ul>
+<p><strong>10 August (Sun)</strong></p>
+<ul>
+<li>Inspired by a comment written by a developer, removed <em>istream
+    *in2</em> from <em>STEPfile::AppendFile</em>.<ul>
+<li>Originally for the second pass a new <em>istream (in2)</em> was being
+    created and the <em>.step</em> file was being opened again.</li>
+<li>The above was prevented by directing the original istream (in)
+    to the beggining of the <em>.step</em> file.</li>
+<li>The work was commited and pushed into github.</li>
+</ul>
+</li>
+</ul>
+<p><strong>11 August (Mon)</strong></p>
+<ul>
+<li>Protected <em>_headerId</em> in <em>STEPfile</em> <em>(cleditor)</em>.<ul>
+<li><em>_headerId</em> is a counter used in <em>STEPfile</em> class.</li>
+<li>Its value could change in <em>ReadHeader</em> and <em>ReadExchangeFile</em>
+    methods.</li>
+<li>Hence a mutex was introduced specially to protect it.</li>
+</ul>
+</li>
+<li>Added <em>GetApplication_instanceFromFileId</em> method in <em>InstMgr</em>
+    class.<ul>
+<li>The <em>SDAI_Application_instance * GetApplication_instance(
+    MgrNode * )</em> and<em>MgrNode * FindFileId( int )</em> methods of class
+    <em>InstMgr</em> were often being used together in the class
+    <em>STEPfile</em>.</li>
+<li>Therefore a special function was created in class <em>InstMgr</em> of
+    the form <em>SDAI_Application_instance *
+    GetApplication_instanceFromFileId( int )</em> which would take care
+    of locking and consistency issues.</li>
+<li>This function was then used in <em>STEPfile</em>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>12 August (Tue)</strong></p>
+<ul>
+<li>Safe <em>InstMgr</em> iteration in <em>STEPfile</em>.<ul>
+<li>Variables of class <em>InstMgr</em> were being iterated upon in class
+    <em>STEPfile</em> through the variables <em>_instances</em> (including its
+    get function <em>instances()</em>) and <em>_headerInstances</em>.</li>
+<li>The mtx defined in <em>InstMgr</em> was invoked to make them safe.</li>
+</ul>
+</li>
+</ul>
+<p><strong>13 August (Wed)</strong></p>
+<ul>
+<li>Safe <em>attributes</em> iteration in <em>STEPfile</em>.<ul>
+<li>This was done by using mutexes defined for
+    <em>SDAI_Application_instance</em> &amp; <em>SingleLinkList</em> classes.</li>
+</ul>
+</li>
+<li>It was decided that as this class acts like a parser, further
+    locking in this class would be dependent upon how it will be used in
+    a multithreaded way.<ul>
+<li>The current structure of the class was restricting any potential
+    multithreaded use.</li>
+<li>Example: The variable like <em>_fileName</em> restricts this class to
+    parse only one file at a time. If we want to parse more then one
+    then this would have to change.</li>
+</ul>
+</li>
+<li>Thread safety in <em>SDAI_Application_instance__set</em><ul>
+<li>This was done by introducing a <em>recursive_mutex</em> in the
+    <em>SDAI_Application_instance__set</em> class.</li>
+</ul>
+</li>
+<li>Work done from 11 August was organized into commits and pushed to
+    github.</li>
+</ul>
+<p><strong>14 Augest (Thu)</strong></p>
+<ul>
+<li>Removed compile time warning from the previous day commit.</li>
+<li>Added class <em>SDAI__set</em> in <em>cldai</em> library<ul>
+<li>It was noticed that some classes in this library which were very
+    similar: <em>SDAI_DAObject__set</em>, <em>SDAI_Entity_extent__set</em>
+    &amp; <em>SDAI_Model_contents__list</em></li>
+<li>The logic common to these classes was indentified and removed, a
+    new class (<em>SDAI__set</em>) was created which had that common
+    logic.</li>
+<li>The original classes were made to inherit from the new class.</li>
+<li>This removed duplicated code and also made making changes (for
+    thread safety) easier.</li>
+</ul>
+</li>
+<li>Made <em>SDAI__set</em> thread safe<ul>
+<li>This was done by introducing a mutex in the <em>SDAI__set</em> class.</li>
+</ul>
+</li>
+</ul>
+<p><strong>15 Augest (Fri)</strong></p>
+<ul>
+<li>Added <em>SDAI__set::Remove( SDAI_ptr )</em> function<ul>
+<li>The semantics of this function would be similar to
+    <em>SDAI__set::Remove( SDAI__set::Index( SDAI_ptr ) )</em>. The
+    only difference would be that in the new function both the
+    operations are done under a single lock.</li>
+<li>Wherever the old <em>Remove( Index( SDAI_ptr ) )</em> code snippet was
+    found, it was replaced by the new <em>Remove( SDAI_ptr )</em>
+    function.</li>
+</ul>
+</li>
+<li>One more subclass of <em>SDAI__set</em><ul>
+<li>Adding the <em>Remove( SDAI_ptr )</em> API to <em>SDAI__set</em> made
+    <em>SDAI_Application_instance__set</em> a candidate for inheriting
+    common logic from <em>SDAI__set</em>.</li>
+<li>Note: This class was already made thread safe in one of the
+    previous commits. This commit only removes the now apparent
+    duplicate code.</li>
+</ul>
+</li>
+<li>Work done from 14 August was organized into commits and pushed to
+    github.</li>
+</ul>
+<h3 id="week-14">Week 14</h3>
+<p><strong>16 Augest (Sat)</strong></p>
+<ul>
+<li>On the advice of <em>starseeker</em> I decided to perform the <em>acid test</em>
+    by running my version of stepcode through <em>step-g</em> converter.<ul>
+<li>Set up <em>brlcad</em>.</li>
+<li>Ran <em>step-g</em> converter on a sample ap203 file.</li>
+</ul>
+</li>
+</ul>
+<p><strong>17 Augest (Sun)</strong></p>
+<ul>
+<li>Tried to run <em>step-g</em> using my stepcode version. Unfortunately I was
+    not successful partially due to the following reasons.<ul>
+<li>To start with, a lot of time was wasted, identifying the CMake
+    file in brlcad in which I should set <em>CMAKE_CXX_FLAGS</em> (or
+    equivalent) with <em>-std=c++0x</em> so as to run my version of
+    stepcode which uses <em>std::mutex</em> &amp; <em>std::thread</em></li>
+<li>Secondly apart from the changes I did in stepcode through
+    <em>hj/thread-safety</em> branch the stepcode version in
+    <em>brlcad/src/other/stepcode</em> had many differences.<ul>
+<li>It initially gave many build errors.</li>
+<li>When it finally ran it gave a seg-fault on the piece of code
+    I have never changed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added <em>NO_REGISTRY</em> macro to <em>lazy_thread_safety_test</em><ul>
+<li><em>lazy_thread_safety_test</em> had 2 checks which were schema
+    dependent. These checks are now wrapped in <em>NO_REGISTRY</em> macro.</li>
+</ul>
+</li>
+</ul>
+<p><strong>18 Augest (Mon)</strong></p>
+<ul>
+<li>Utilized <em>sc_mutex</em> in <em>cllazyfile</em><ul>
+<li>Earlier <em>std::mutex</em> was being used.</li>
+<li>It was replaced with <em>sc_mutex</em> which acts like a wrapper to
+    <em>std::mutex</em>.</li>
+</ul>
+</li>
+<li>Added <em>sc_thread.h</em> in <em>clutils</em><ul>
+<li>The class acts like a wrapper to some of the thread
+    functionalities (like <em>get_id()</em>) which is being used in
+    stepcode.</li>
+<li>If the compiler does not supports thread functionalities then
+    this class provides dummy types and functionalities.</li>
+<li><em>instMgrAdapter</em> &amp; <em>lazyTypes.h</em> were modified so as to take
+    dependency on <em>sc_thread</em>.</li>
+</ul>
+</li>
+<li>As a result of above two changes <em>HAVE_STD_THREAD</em> macros were
+    removed from cllazyfile library *.cc and *.h as classes
+    <em>sc_thread</em> and <em>sc_mutex</em> internally handles the macros.</li>
+<li>Added exit(success/fail) in thread-safety test</li>
+<li>Organized the work done from 17 augest into commits and pushed into
+    github</li>
+<li>Merged remote-tracking branch <em>origin/master</em> into
+    <em>hj/thread-safety</em><ul>
+<li>As I had never merged the master branch into the branch I was
+    working upon ever since I started working on this project, I was
+    109 commits ahead and 23 commits behind the master branch.</li>
+<li>I merged those the 23 commits into my <em>hj/thread-safety</em> branch.
+    The only conflict was in <em>src/clstepcore/instMgr.cc</em> which was
+    handled by me.</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

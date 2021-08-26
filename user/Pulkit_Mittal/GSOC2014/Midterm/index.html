@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Pulkit_Mittal/GSOC2014/Midterm/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Making Step Libraries Thread Safe - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Pulkit_Mittal/GSOC2014/Midterm.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#making-step-libraries-thread-safe" class="nav-link">Making Step Libraries Thread Safe</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#brief-progess-report" class="nav-link">Brief Progess Report</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#work-done" class="nav-link">Work Done</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#amount-of-coding-done" class="nav-link">Amount of Coding Done</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#the-other-works" class="nav-link">The Other Works</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="making-step-libraries-thread-safe">Making Step Libraries Thread Safe</h1>
+<h2 id="brief-progess-report">Brief Progess Report</h2>
+<p>I have been working on making the Step Libraries thread safe as a part
+of Google Summer of Code program. The libraries which I have targeted
+are (in the following order)</p>
+<ul>
+<li><em>cllazyfile</em></li>
+<li><em>clstepcore</em></li>
+<li><em>cleditor</em></li>
+<li><em>cldai</em></li>
+</ul>
+<p>I am done with making <em>cllazyfile</em> thread safe. I also have covered
+around 6K lines of codes of <em>clstepcore</em> library.</p>
+<p>Considering the fact <em>cllazyfile</em>, <em>cleditor</em> &amp; <em>cldai</em> all contain on
+avg \~3K lines of code and <em>clstepcore</em> contains \~17K lines of code. It
+can be safely said that I am 35% done with the thread safe objective.
+Its clear that I am lagging behind (ideally it should have been around
+50%), but my progress is not disappointing either.</p>
+<h2 id="work-done">Work Done</h2>
+<p>Most work uptill now has been done by using a (Test-Driven Development)
+TDD approach. Under this approach I create a test first and in it invoke
+the features I wish to make thread-safe. Sometimes the classes /
+functions are very small or the change require to make them thread-safe
+is trivial. In such cases to save time I don't follow the TDD approach
+and I directly jump to the development part.</p>
+<h3 id="testing-methodology">Testing Methodology</h3>
+<p>Each of my unit test checks multiple features of a class for
+thread-safety. For a particular feature, the unit test typically consist
+of 3 parts.</p>
+<ol>
+<li>An instance of the class is created. The feature/s (same or
+    different) to be checked are called twice in serial manner.</li>
+<li>Another instance of the class is created. This time the feature/s
+    (same or different) to be checked are called in parallel by
+    different threads, with the same load as in step 1. The load is
+    kept-heavy so that the operations by the two threads overlap in time
+    domain.</li>
+<li>Both instances are compared for any disparity. Harmless differences
+    like order of occurrence, of various entities inside the data
+    structures, are ignored. For checking the internal data structures,
+    already available public API's are used. However wherever needed new
+    API's have also been created for this purpose.</li>
+</ol>
+<p>The step 2 &amp; 3 are repeated multiple times. If a disparity is found it
+is immediately reported and the check fails.</p>
+<h3 id="development-methodology">Development Methodology</h3>
+<p>The features which were targeted were the public APIs. <em>e.g.</em> For
+cllazyfile library the functions of the class <em>lazyInstMgr</em> were
+targeted as it was the only class which was meant to be visible to the
+user of that library. The code changes can be roughly divided into 2
+parts.</p>
+<h5 id="pre-processing">Pre-Processing</h5>
+<p>This part mainly consist of code refactoring. These changes by
+themselves do not make the code thread safe, however they make the job
+of making code thread safe much easier. No mutex (or equivalent) is
+invoked in this part. Couple of examples where I needed preprocessing
+are:</p>
+<ul>
+<li><em>gennodelist</em> and <em>gennode</em> classes: This link-list structure was
+    difficult to make thread-safe in its original form. This was because
+    an operation on one node could change the state of another node. The
+    classes were modified so that a node could modify state of another
+    node only through its parent list.</li>
+<li>ExpDict.h/.cc/.inline.cc files: These contain multiple classes which
+    were similar and not thread-safe. Hence another class was created
+    which would contain all the features and act as superclass. Now only
+    this new superclass was needed to be made thread safe. Lot of
+    duplicated code was removed this way.</li>
+</ul>
+<h5 id="thread-safety">Thread-Safety</h5>
+<p>A feature could be thread-unsafe due to the following reasons.</p>
+<ol>
+<li>It does file I/O.</li>
+<li>It modifies the state of a thread-unsafe data structure / counter.</li>
+<li>It modifies the state of multiple data structures / counters which
+    should be consistent at all time.</li>
+<li>It provides a reference to a read unsafe data structure to the user.</li>
+</ol>
+<p>For 1. &amp; 3. the only way out was using fat lock. For 2. I had an option
+of using a fat-lock or making the structure itself thread safe. I chose
+the latter in cases where many classes were taking dependency on the
+same data-structure. Structures described in 4. were found in
+<em>cllazyfile</em> library. Whenever such a feature was invoked, clones of
+that data structure were made.</p>
+<p>For locking either a <em>std::mutex</em> or a <em>std::recursive_mutex</em> was used.
+The changes also included invoking the HAVE_STD_THREADS macro in the
+cmake files.</p>
+<h3 id="the-grey-area">The Grey Area</h3>
+<p>I started this project with literally no knowledge of <em>cmake</em> files. But
+in-order to compile my changes I had to modify some of the existing
+cmake files. Unlike my C++ coding, I am not very confident about these
+modifications. They should be looked into carefully in future before
+merging the branches.</p>
+<h2 id="amount-of-coding-done">Amount of Coding Done</h2>
+<p>I regularly commit my code to
+<a href="https://github.com/stepcode/stepcode/tree/hj/thread-safety"><em>hj/thread-safety</em></a>
+branch in the github repository. One can see my changes
+<a href="https://github.com/stepcode/stepcode/compare/hj/thread-safety#files_bucket">here</a>.
+In short I have modified / added 43 files, done 1949 additions and 622
+deletions. About 1100 of the additions are due to new unit tests. To see
+my daily logs do visit <a href="logs/md">logs</a>.</p>
+<h2 id="the-other-works">The <em>Other Works</em></h2>
+<p>Apart from participating in GSOC this year I am also doing the following
+work.</p>
+<ul>
+<li>M-Tech Project: I also started M.Tech Project this summer. I am
+    continuing the work started by a senior. In order to prevent my work
+    from getting monotonous I switch back and forth between my M.Tech
+    Project and GSOC Project (giving 85% of the time to the latter). I
+    will have a kick-off meeting on July, 3rd with the company which is
+    funding my project.</li>
+<li>TA'ship: Since I was staying in the college for summers, I opted for
+    being a TA in one of the summer courses. Its a nice experience.
+    However the TAship duties demand 4-5 hrs of my working time on
+    Wednesdays. The summer course will end by July, 10.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

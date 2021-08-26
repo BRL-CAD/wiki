@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Amritpal_singh/GSoC17/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Community Bonding Period - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Amritpal_singh/GSoC17/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-period" class="nav-link">Coding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="community-bonding-period">Community Bonding Period</h1>
+<hr />
+<ul>
+<li>Discussion of a project on FreeCAD forum and on IRC.</li>
+<li>Compile Qt plugin of FreeCAD to load FreeCAD widgets in QT creator.</li>
+<li>Understanding the code of
+    <a href="https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Arch/ArchRebar.py">ArchRebar</a>
+    object.</li>
+<li>Added PlacementList property to the rebar object. The PlacementList
+    holds the placement of all the rebars. <a href="https://github.com/FreeCAD/FreeCAD/pull/780">Pull
+    request</a>.</li>
+</ul>
+<hr />
+<h1 id="coding-period">Coding Period</h1>
+<hr />
+<p><strong>1 June</strong> : Today, officially my all exams are over and from now
+onwards I will give my 100 percent to my GSoC project. I have written
+TODO tasks for upcoming two weeks.</p>
+<p><strong>2 June</strong> : I have found a couple of shortcomings
+<a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760#p176641">bugs</a>
+in my scripts which I have shared before community bonding period. Also
+discussed these bugs with my mentor.</p>
+<p><strong>3 June</strong> : Yesterday, Yorik (my mentor) gave some suggestion that how
+to fix these
+<a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760#p176641">bugs</a>.
+Today, I was trying to make the logic which will work on any type of
+reinforcement and trying to implement that logic through programming.
+Also, explored functions like <code>face.normalAt()</code>, <code>face.CenterOfMass()</code>.</p>
+<p><strong>4 June</strong> : Today, I designed the taskpanel UI of straight rebar in
+Qtcreator by using FreeCAD
+widgets.<img alt="" src="/wiki/user/img/straightrebar_taskpanel.png" /></p>
+<p><strong>5 June</strong> : Today, I have integrated the task panel UI of straight
+rebar with backend scripts. This script will take input values from task
+panel and then pass input values to <code>makeStraightRebar()</code> function which
+will create reinforcement of straight rebar in the structural element.
+For more detail, here are my
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/21c427118a7e502a9a04240fe8ea10661ff45794">commits</a>.</p>
+<p><strong>6 June</strong> : Today, I have shared my scripts to the mentor for review.
+Here are the reviews:
+<a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;sid=edc3a89eda2a484d1af55128b1781e6b#p177059">https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;sid=edc3a89eda2a484d1af55128b1781e6b#p177059</a></p>
+<p><strong>7 June</strong> : Today, I have learnt that how to add an image in the dialog
+box using PySide. For eg. I simply added QLabel object at the top of the
+dialog box using Qtcreator and then use
+<code>label.setPixmap(QtGui.QPixmap(</code><path><code>))</code> command to add an image.
+Also, followed some links/tutorials to learn Inkscape.
+<img alt="" src="/wiki/user/img/Straightrebar_image.png" /></p>
+<p><strong>8 June</strong> : Today, I have added checks to my Python code. These checks
+will verify that user have selected the face or not and if only user
+have selected a single face then only rebar object is created.
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/c329b018a2c28538174f006ac55f057bf35f5de0">Commit</a></p>
+<p><strong>9-10 June</strong>:</p>
+<ul>
+<li>Discussed my approach with structural engineers and found the right
+    way to create reinforcement in the structural element.
+    <a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;p=177570#p177570">Link</a></li>
+<li>Sent <a href="https://github.com/FreeCAD/FreeCAD/pull/811">pull request</a> to
+    FreeCAD (master).</li>
+</ul>
+<p><strong>11 June</strong>: Not done too much, finalised what has done till now and
+made a planned for things coming in the next weeks.</p>
+<p><strong>12 June</strong>: Discussed following things with Yorik:</p>
+<ul>
+<li>How to get previous values (when reinforcement is created) when a
+    user wants to re-edit the current reinforcement?</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Add properties to the rebar object.</li>
+<li>Constraint the sketch of the rebar object.</li>
+</ul>
+<li>
+
+How we can check the given sketch is rectangular or not?
+
+</li>
+</ul>
+<p><strong>13 June</strong>:</p>
+<ul>
+<li>Understand functions present in a
+    <a href="http://free-cad.sourceforge.net/SrcDocu/df/df4/fcgeo_8py_source.html">file</a>.</li>
+<li>Added support when Structural element is derived from Sketch object.</li>
+<li>Defined <code>EdgesAngle(edge1, edge2)</code>, <code>checkRectangle(edges)</code>
+    functions.</li>
+</ul>
+<p>Here is the
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/1c2b0c299eb91592ab2c6011ff50535e43438eaf">commit</a>.</p>
+<p><strong>14 June</strong>:</p>
+<ul>
+<li>Solved a issue related to the placement of rebar. For e.g., Rebar
+    position was not at correct position when structural element not
+    located at orign. So, to fix this problem I have subtracted
+    placement vector of structural element to the coordinates of rebar
+    sketch.</li>
+<li>Defined <code>getBaseObject(obj)</code>, <code>getBaseStructuralObject(obj)</code>
+    functions.</li>
+<li>Refactored the code by creating the seperate file "Rebarfunc.py".
+    This file contains basic functions which will use for creating any
+    type reinforcement in the future.</li>
+</ul>
+<p><strong>15-16 June</strong>:</p>
+<ul>
+<li>Sent <a href="https://github.com/FreeCAD/FreeCAD/pull/822">pull request</a> to
+    FreeCAD master. Detail of PR: Defined custom function
+    (setpropertyRebarShape) in the _ViewProviderRebar class. This
+    function will add properties to the instance of _ViewProviderRebar
+    class as per according to the rebar shape.</li>
+<li>Wrote code so that user will re-edit the rebar through rebar dialog
+    box. To implement this, I have defined two new methods
+    <code>editDialog()</code> and <code>editStraightRebar()</code> in the StraighRebar.py
+    file.</li>
+<li>Also added a couple of methods (<code>getTrueParametersOfStructure()</code>,
+    <code>getParametersOfFace()</code>) in the Rebarfunc.py file.</li>
+<li>Removed minor bugs in the existing code.</li>
+</ul>
+<p>Here is the
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/7efc536ae2be260496b36bc44ba95fadd94626ab">commit</a>.</p>
+<p><strong>17 June</strong>:</p>
+<ul>
+<li>Fix bug and added comments in the StraightRebar.py and Rebarfunc.py
+    files.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/f2fc06a7071d75f6153421f88bf3ec57fb3fe41f">Commit</a></li>
+<li>Updated README.md
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/001ebb1e55025a0cac8ac7998657a196b992626a">Commit</a></li>
+<li>Imporoved of UI of dialog box of straight rebar and also set tab
+    order on input fields of straight rebar dialog
+    box.<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/29719cee9a696884a23aa8a951b3b8728a36e04f">Commit</a></li>
+</ul>
+<p><strong>18 June</strong>: Today, a whole I was struggling to find a reason behind why
+rebar created in a wrong direction when user set an option "remove
+external geometry of base sketches when needed" in the Arch preferences.
+Finally, I found a reason behind this bug and then fix it.
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/0397796b38008254f3d60168f05bd3d3582dde80">Commit</a></p>
+<p><strong>19 June</strong>:</p>
+<ul>
+<li>Fix bug when user created reinforcement more than one times on the
+    same structural element, rebar was not created at right position.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/2e32eed6aefb2fd8f0d209148ae9eb8287ca4e4b"><code>Commit</code></a></li>
+<li>Discussed with Yorik on IRC, that where we can add properties of
+    rebar and then after discussion I am added all the properties to a
+    specific rebar shape as per according to rebar shape.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/8b4213987b9ab0402999fab673bce27c4c330678">Commit</a></li>
+<li>Created the UI dialog box for U-Shape rebar</li>
+<li>Also wrote a code for creating U-Shape rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/24e195d94d46f6c4909d75f7ad9f5a160232fd63">Commit</a></li>
+</ul>
+<p><strong>20 June</strong>:</p>
+<ul>
+<li>Implemented property top cover in U-Shape rebar instead of bent
+    lenght.<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/02966c63e3ce4accae512c20561e3a2bfaf2d9db">Commit</a></li>
+<li>Made an icon for U-Shape rebar and also improved Straight rebar
+    icon.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Straightrebar5.png" />
+<img alt="" src="/wiki/user/img/U-shaperebar.png" /></p>
+</ul>
+<p><strong>21 June</strong>:</p>
+<ul>
+<li>Added two FreeCAD command (<code>Arch_Rebar_Straight</code>,
+    <code>Arch_Rebar_UShape</code>) in the RebarTools.py file.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/30d7b60182c1fda8f6310aeee0da1c3a94ba4e69">Commit</a></li>
+</ul>
+<p><strong>22 June</strong>:</p>
+<ul>
+<li>Changed a title window heading of dialog box.</li>
+<li>Used standard button instead of custom button</li>
+<li>Assigned tasks which I will complete in the coming week.</li>
+</ul>
+<p>Here is a
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/5d9467eacdc2c769703c37dfdb4bacaee6cad3b4">commit</a>.</p>
+<p><strong>23 June</strong>:</p>
+<ul>
+<li>Added checks when sketch support is empty.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/70dbced59d68cef6c13c07b238b8a0e3cee3b4fb">Commit</a></li>
+<li>Learnt how to Constraint Internal Angle between two lines.
+    <code>(https://www.freecadweb.org/wiki/Constraint_InternalAngle)</code></li>
+<li>Added comment to code.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/cbef50b7c4484a8e9002a2b9af18e0b1c38f2b29">Commit</a></li>
+<li>Discussed about license with Yorik.</li>
+</ul>
+<p><strong>24-25 June</strong>:</p>
+<ul>
+<li>Create a UI of dialog box of stirrup shape rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/46c7ea56737bb3c9852459355fb5f54fa6731666">Commit</a></li>
+<li>Experimenting how to create non-planar rebar because current FreeCAD
+    reinforcement system is fully dependent on sketch which is strictly
+    based on 2D. Then found a solution to create non-planar rebar by
+    passing wire(may be planar or non-planar) to <code>Arch.makeRebar()</code>
+    function.</li>
+<li>Also found some bugs which will come by using wire profile to create
+    rebar.
+    <a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=23113">Link</a></li>
+</ul>
+<p><strong>26-27 June</strong>:</p>
+<ul>
+<li>Discussed about old and new properties of Rebar object like distance
+    and direction properties and implemented on Rebar object with Yorik</li>
+<li>Derived formula to get points when length and angle is given</li>
+</ul>
+<p><strong>28 June</strong>:</p>
+<ul>
+<li>Wrote code of Stirrup.py file.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/eb9c65954c9f1d22b1c8dc881ba4d0eaa1be7515">Commit</a></li>
+<li>Discussed doubts regarding stirrup with Yorik on IRC.</li>
+</ul>
+<p><strong>29 June</strong>:</p>
+<ul>
+<li>Learnt all the mathematical concepts of stirrup and derives formulas
+    to find rounding length.<img alt="" src="/wiki/user/img/Stirrup.jpg" /></li>
+<li>Embedded dropdown list icons in my code.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/1a45628fc4478601eac357dcf0455be04dd8e909">Commit</a></li>
+</ul>
+<p><strong>30 June</strong>:</p>
+<ul>
+<li>Today, I have passed my first evaluation and got some good comments
+    from my mentors.</li>
+<li>I have wrote the code for stirrup rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/660cd715990af7ae1d94d45935b4ac82676874cf">Commit</a></li>
+</ul>
+<p>Here are the few screenshots of stirrup created from my code:
+<img alt="" src="/wiki/user/img/stirrup1.png" />
+<img alt="" src="/wiki/user/img/stirrup2.png" /></p>
+<p><strong>1 July</strong>:</p>
+<ul>
+<li>Refactoring the existing code by added two seperate functions which
+    calculates points of Straight and U-Shape rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/cdd5d8707db0eb9aa0ba28b9e3703ac3e9261e7b">Commit</a></li>
+<li>Added License to all the files.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/857f0ac46fb3a964169690a772e4904bf80f937a">Commit</a></li>
+</ul>
+<p><strong>2 July</strong>:</p>
+<ul>
+<li>Read the code of
+    <a href="https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Part/Gui/TaskThickness.cpp">TaskThickness.cpp</a>
+    file.</li>
+<li>Implemented "Pick Selected Face" button in the straight rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/e59ab8d65e762432152b3213463998daffef9c67">Commit</a></li>
+</ul>
+<p><strong>3-4 July</strong>:</p>
+<ul>
+<li>Introduced new property i.e. Bent Factor property in Stirrup.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/6f013f2f7c8dac4175ef72101e4ad14e24185bfb">Commit</a></li>
+<li>Discussed about bar distribution on forum and IRC.</li>
+</ul>
+<p><strong>5-6 July</strong>:</p>
+<ul>
+<li>Implementated "Pick Selected Face" button in all rebar shapes.
+    Commits:
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/f2dd3c23381af4a827605c573304dc78d161bae5">1</a>,
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/c19c7a91281ac07eba96106b753b237df4a8d515">2</a></li>
+<li>Updated <code>getParametersOfFace()</code> function according to Yorik's commit
+    in the FreeCAD master.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/c19c7a91281ac07eba96106b753b237df4a8d515#diff-2b102af403a2e140e40c12a0d845efd2R143">Change</a></li>
+<li>Introduced new custom spacing property in the Rebar object.</li>
+</ul>
+<p><strong>7 July</strong>:</p>
+<ul>
+<li>Sent PR to FreeCAD master and Yorik merged my PR. <a href="https://github.com/FreeCAD/FreeCAD/pull/862">Pull
+    Request</a></li>
+<li>Added PickFaceSelectedLabel in all UI files.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/408b0244b2a8b18ca4ddc62c2764e30b25678a8e">Commit</a></li>
+<li>Added Stirrup Rebar icon in dropdown list.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/4421504b05ea4c095802c887f578029641a8e98c">Commit</a></li>
+</ul>
+<p><strong>8 July</strong>:</p>
+<ul>
+<li>Designed a UI for rebar distribution.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/8f77ded1cd11cbd76a08450c0f7b1736f186bf04">Commit</a></li>
+<li>Saw rebar distribution in Tekla Structures and also found some bugs
+    in Tekla rebar distribution.</li>
+</ul>
+<p><strong>9 July</strong>:</p>
+<ul>
+<li>Wrote code for implementing rebar distribution.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/bcc2ea75e92a775e2cbefa7dbba118cff3150877">Commit</a></li>
+</ul>
+<p><strong>10-11 July</strong>:</p>
+<ul>
+<li>Made an icon for dialog box of rebar distribution.
+    <img alt="" src="/wiki/user/img/Rebardistribution.jpg" /></li>
+<li>Added button for custom spacing in straight rebar dialog box and
+    also added few function in RebarDistribution.py file.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/543aab29000d8766a26fb27b3b83881c6aab012f">Commit</a>
+    <img alt="" src="/wiki/user/img/Rebardistribution2.png" /></li>
+<li>Implemented uniform spacing in all rebar dialog box with a proper
+    way.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/8a3672dc88deb395706773b8291e162b1a1e5f3d">Commit</a></li>
+</ul>
+<p><strong>12 July</strong>:</p>
+<ul>
+<li>Discussed about rebar distibution dialog box on the <a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;start=100#p182185">FreeCAD
+    forum</a>
+    with all FreeCAD testers and also explained how rebar distribution
+    works.</li>
+</ul>
+<p><strong>13-14 July</strong>:</p>
+<ul>
+<li>Added support to rebar add-on when structure element is derived from
+    any object(like wire, sketch etc.).
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/497e29985815d3a1426ab83a6a8076e8584b980d">Commit</a></li>
+<li>Also, read about direction of cosine and exploring properties of
+    edges, faces and boundingbox.</li>
+</ul>
+<p><strong>15 July</strong>:</p>
+<ul>
+<li>Added comments in Rebarfunc.py file.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/6b63b9d5a068625a2a3e0a93c8bdd1c4deb77db7">Commit</a></li>
+<li>Fix bug when user selects face whose length and width are equal.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/0faed773ca38eb2dfe1602d4bbd2a5c318c82821">Commit</a></li>
+<li>As said my mentor, I added line in the code which change Label
+    property to reflect rebar type(Straight Rebar, Stirrup Rebar etc) in
+    the tree view.</li>
+<li>Create UI file for L-Shape rebar.</li>
+</ul>
+<p><strong>16 July</strong>:</p>
+<ul>
+<li>Wrote code of L-Shape rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/6331f87d3c56886c6bd3eb8e13eb39b2e2135b03">Commit</a></li>
+<li>Create differents icons of L-Shape rebar which shows orientation of
+    rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/99bfef2fb6a337b04bfbc15d6e3285970d901073">Commit</a></li>
+<li>Added return statement in all make rebar functions.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/871aaff82c4e9507d88514a79cdc21269c96decc">Commit</a></li>
+<li>Also screencast a video of L-Shape rebar.
+    <a href="https://youtu.be/qPIbB-TlMHY">Video</a></li>
+</ul>
+<p><strong>17-19 July</strong>:</p>
+<ul>
+<li>Imporved geometry of stirrup rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/122d23d147f21fbb8b84fec23b97f9dbe9346910">Commit</a></li>
+<li>Defined [code]translate()[/code] function in Rebarfunc.py file
+    as said by Yorik.</li>
+<li>Discussed many things with Yorik on IRC related to Rebar-Addon.</li>
+</ul>
+<p><strong>20 July</strong>:</p>
+<ul>
+<li>Added orientation property and separated side cover into parts i.e.
+    left and right side cover.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/27a4deb6620068bf580271892148d1452ae06277">Commit</a></li>
+<li>Separate side cover of stirrup into left, right, top and bottom side
+    cover.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/082bfc9d04931c365099425fa486cba0eb4b3919">Commit</a></li>
+</ul>
+<p><strong>21-22 July</strong>:</p>
+<ul>
+<li>Created different icons of U-Shape rebar according to the
+    orientation property.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/d4ba112864c43f30b67bd12fd185eda948a9a647">Commit</a></li>
+<li>Separated side cover of L-Shape rebar into left and right side
+    cover.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/def951eea4480af2011cc519ae8606ec1ebc6957">Commit</a></li>
+<li>Introduced many new properties in straight rebar. The fields present
+    in the straight rebar dialog box is changing according to
+    orientation and cover along
+    property.<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/901d3ea1b6cf5f794ae3ceb48d0ec84d6ae1f532">Commit</a></li>
+</ul>
+<p><strong>23 July</strong>: Didn't do too much just create icon of straight rebar when
+orientation is set to vertical.
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/fca5da2fee3781fe11bc2a557382f56c5afcb3dc">Commit</a></p>
+<p><strong>24 July</strong>: Discussed many new things regarding the drawing of a
+structural element with Yorik on IRC.
+<a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;start=150#p183274">https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;start=150#p183274</a></p>
+<p><strong>25 July</strong>: Found one bug in Chakkree's script and fixed it. Here is
+the discussion: <a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;start=170#p183866">Forum
+Link</a></p>
+<p><strong>26 July</strong>:</p>
+<ul>
+<li>I watched Regis stair reinforcement
+    <a href="https://youtu.be/HWLgcaM5y_g">video</a>.</li>
+<li>Fixed a bug regarding the direction of stirrup expand when a user
+    selected base face of the structural element.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/4ff86e3ef802e8cc8f0697e358817673e4bff3cd">Commit</a></li>
+</ul>
+<p><strong>27-29 July</strong>:</p>
+<ul>
+<li>Created UI for bent up rebars.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/acbae03332d9482ef6afbbb5ef83e7731aac3c41">Commit</a></li>
+<li>Implemented bent up rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/33ebe406b233ed6ae25829299dc914f1d5115768">Commit</a></li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Bentrebar.png" /></p>
+</ul>
+<p><strong>30-31 July</strong>: Didn't do anything. Took rest for two days.</p>
+<p><strong>1 Augest</strong>:</p>
+<ul>
+<li>Created dialog box for pop up image and implemented it.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/159884f86e53d0efc0bda39de05d913e067757cb">Commit</a></li>
+</ul>
+<p><img alt="" src="/wiki/user/img/PopimageUshapeRebar.png" /></p>
+</ul>
+<p><strong>2-4 Augest</strong>:</p>
+<ul>
+<li>Read Chakkree's code for implementing circular stirrup.
+    <a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;start=70#p181904">Code</a></li>
+<li>Created UI of Circular stirrup.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/f4ed0f4d06a34d2a45ec39de6828dc3a1066a623">Commit</a></li>
+<li>Wrote code in CircularStirrup.py file.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/32f883a9014b1f8d59a039245d14e0a3558227e6">Commit</a>
+    <img alt="" src="/wiki/user/img/CircluarStirrup3.png" />
+    <img alt="" src="/wiki/user/img/circluarStirrup4.png" /></li>
+<li>Discussed issues related to circular stirrup with Yorik which comes
+    when I set <code>Part::Helix</code> as a base of rebar object.
+    <img alt="" src="/wiki/user/img/helix.png" /> <img alt="" src="/wiki/user/img/helix2.png" /></li>
+</ul>
+<p><strong>5 Augest</strong>: GSoC party!.</p>
+<p><strong>6 Augest</strong>:</p>
+<ul>
+<li>
+<p>Added <code>Arch_Rebar_CircularStirrup</code> in FreeCAD
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/d55dc9e61eb431956172794afeddd660eb5c1374">Commit</a></p>
+</li>
+<li>
+<p>Removed minor bugs in circular stirrup
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/333189fe87ca101327ceca2f267bc860efb5d863">Commit</a></p>
+</li>
+<li>Discussed few things related to circular stirrup with Chakkree's on
+    the FreeCAD forum.
+    <a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;start=200#p185451">https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=22760&amp;start=200#p185451</a></li>
+</ul>
+<p><strong>7-11 August</strong></p>
+<ul>
+<li>Discussed issue related to helical rebar shape on passing
+    <code>Part::Helix</code> object as base object of Rebar on IRC.</li>
+<li>Implemented "Apply" button in all rebars dialog boxs.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/388c280df1fd217dfac9a747cc7e477680b0942a">Commit</a></li>
+<li>Added description image in Bent shape rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/b7ad0889efa07415dba2551a85a78ab407c2796d">Commit</a>
+    <img alt="" src="/wiki/user/img/Bentshapepopup.png" /></li>
+<li>Fixed bug
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/ea3e56f6059a69b15f1dc0bb2fb5a26e0d0048ea">Commit</a>:
+    No reaction on changing diameter in LShape, UShape and Bent shape
+    rebar. For detail, here is the discussion:
+    <a href="https://forum.freecadweb.org/viewtopic.php?f=34&amp;t=23637&amp;p=186052#p186052">https://forum.freecadweb.org/viewtopic.php?f=34&amp;t=23637&amp;p=186052#p186052</a></li>
+<li>Implemented <code>Part::Helix</code> in circular(helical) rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/888377bc01e6ff0e21fba187bf6821eb46c4c26b">Commit</a>
+    <img alt="" src="/wiki/user/img/Helicalrebar1.png" />
+    <img alt="" src="/wiki/user/img/Helicalrebar2.png" /></li>
+</ul>
+<p><strong>12-13 August</strong>:</p>
+<p>Added detail description icons of Striaght, LShape and Stirrup rebar
+    (made by thschrader).
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/e18c04a066cb2725de3643e4e6b747952b11efb0">Commit</a>
+-   Added rebar tool dropdown list icons of bent shape and helical rebar
+    (made by Yorik).
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/2de16ede89c889b8661b90a5ed62d38c57bba32b">Commit</a>
+-   Created first wiki page on UShape rebar.
+    <a href="https://www.freecadweb.org/wiki/Arch_Rebar_UShape">Link</a></p>
+<p><strong>14-18 August</strong>:</p>
+<ul>
+<li>Added help icon in all rebar dialogs.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/0b1b5268763d65bd9400516366c6139a179d5395">Commit</a></li>
+<li>Updated detailed description icon of helical rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/9946f98d5074e96908eb2cab5cae5c7bcc664241">Commit</a></li>
+<li>Replace Circular Stirrup name to Helical Rebar.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/6051eae0f588ea6d7f7f051a95ffe975326cbc51">Commit</a></li>
+<li>Created wiki pages(user documentation) for all rebar shapes. See
+    given below:<ul>
+<li>Straight Rebar:
+    <a href="https://www.freecadweb.org/wiki/Arch_Rebar_Straight">User_Documentation</a></li>
+<li>UShape
+    Rebar:<a href="https://www.freecadweb.org/wiki/Arch_Rebar_UShape">User_Documentation</a></li>
+<li>LShape Rebar:
+    <a href="https://www.freecadweb.org/wiki/Arch_Rebar_LShape">User_Documentation</a></li>
+<li>Bent Shape Rebar:
+    <a href="https://www.freecadweb.org/wiki/Arch_Rebar_BentShape">User_Documentation</a></li>
+<li>Stirrup:
+    <a href="https://www.freecadweb.org/wiki/Arch_Rebar_Stirrup">User_Documentation</a></li>
+<li>Helical Rebar:
+    <a href="https://www.freecadweb.org/wiki/Arch_Rebar_Helical">User_Documentation</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>19 August</strong>:</p>
+<ul>
+<li>Added comments in StraightRebar.py, BentShapeRebar.py and
+    HelicalRebar.py.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/a6702034e9bed4a7443e7179558b007e1db658dc">Commit</a></li>
+</ul>
+<p><strong>20 August</strong>:</p>
+<ul>
+<li>Added comments in UShapeRebar.py, LShapeRebar.py and Stirrup.py and
+    Rebarfunc.py.
+    <a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/48c57088c3463e5cbff2a33e1c3583297dfb53aa">Commit</a></li>
+</ul>
+<p><strong>21 August</strong>: Discussed few things related to rebar addon code with
+Yorik on IRC.</p>
+<p><strong>22 August</strong>: Added support in LShape dialog to take custom spacing
+when a user create rebar.
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/1bad73492e13fe8fc4e96e915e4f085712efacd2">Commit</a></p>
+<p><strong>23 August</strong>: Also enabled custom spacing button in rest of rebar
+dialog.
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/7cc53c21f304566a5c911959edbbd820ac971a49">Commit</a></p>
+<p><strong>24-26 August</strong>: Update README.md file on GitHub repo.
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/commit/ddba8be594a3abb262b4377946f1d7771ce118bc">Commit</a></p>
+<p><strong>27 August</strong>: Filled GSoC final evaluation form.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

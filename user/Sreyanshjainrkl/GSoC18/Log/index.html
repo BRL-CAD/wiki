@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Sreyanshjainrkl/GSoC18/Log/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Log - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Sreyanshjainrkl/GSoC18/Log.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="development-logs">Development Logs</h3>
+<h4 id="community-bonding-period">Community Bonding Period</h4>
+<ul>
+<li>During the community bonding period, I downloaded BRL-CAD and
+    configured and compiled my build. Initially it had some problems
+    (probably due to my proxy settings), but finally it worked while
+    using Ubuntu 17.04, revision r70379 (last known working version of
+    BRL-CAD with openCL) and AMD APP SDK 2.9.1 as an OpenCL ICD.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I started to write some code in order to get an advance on my
+    project. This consisted of developing HYP and ARBN shot routines in
+    OpenCL as per my project plan.</li>
+</ul>
+<h4 id="weekly-update">Weekly update</h4>
+<ul>
+<li>Week -1<ul>
+<li>May 9: Successfully completed BRL-CAD installation</li>
+<li>May 10: Completed HYP shot routine in OpenCL</li>
+<li>May 11: Started doing ARBN shot routine in OpenCL</li>
+<li>May 12: Continued..</li>
+<li>May 13: Completed ARBN shot routune in OpenCL</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 1<ul>
+<li>May 14: Studied the DSP C code</li>
+<li>May 15: Worked on compiling Tk and its dependencies</li>
+<li>May 16: Started developing DSP shot routine in OpenCL</li>
+<li>May 17: Continued..</li>
+<li>May 18: Completed DSP norm code</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 2<ul>
+<li>May 21: Worked on converting recursion structure to an iterative
+    one using loops and stack</li>
+<li>May 22: Submitted patches for HYP and ARBN primitive for review</li>
+<li>May 23: continued..</li>
+<li>May 24: Configured the VirtualBox and ran the Virtual Disk Image
+    file with BRL-CAD and its dependencies compiled in Ubuntu 18.04.
+    The .vdi file can be found at
+    <a href="https://mega.nz/#!za5GASRZ!t8jkYok9_6Jg9j5Evga0UESaMZ3H46gHYYhuwcjHg9M">https://mega.nz/#!za5GASRZ!t8jkYok9_6Jg9j5Evga0UESaMZ3H46gHYYhuwcjHg9M</a></li>
+<li>May 25: Tested the previous patches for errors</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 3<ul>
+<li>May 28: Studied the bot OpenCL code</li>
+<li>May 29: Submitted patches for DSP primitive for review</li>
+<li>May 30: Started working on PIPE shot routine</li>
+<li>May 31: continued..</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 4<ul>
+<li>Developed METABALL shot routine</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 5<ul>
+<li>First Evaluation Week</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 6<ul>
+<li>June 18: Code perusal and formulating strategies regarding the
+    BREP support</li>
+<li>June 19: Basics of C++</li>
+<li>June 20: continued..</li>
+<li>June 21: Started making a simplified ANSI C version of
+    'rt_brep_shot'</li>
+<li>June 22: continued..</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 7<ul>
+<li>June 25: Converting the C++ class into C structures</li>
+<li>June 26: continued..</li>
+<li>June 27: Converting other member functions</li>
+<li>June 28: continued..</li>
+<li>June 29: Implementing vector definitions of C++ to C</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 8<ul>
+<li>July 2: continued..</li>
+<li>July 4: Converting the C code to OpenCL</li>
+<li>July 5: continued..</li>
+<li>July 6: Implemented the erase() function in C</li>
+<li>July 7: continued..</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 9<ul>
+<li>Second Evaluation Week</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 10<ul>
+<li>Took a week off due to graduation ceremony</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 11<ul>
+<li>Implemented BBNode, BRNode, OpenNURBS library related struct and
+    functions in OpenCL</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 12<ul>
+<li>Drafting detailed documentation of both the projects</li>
+<li>Debugged the previous patches for final submission</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 13<ul>
+<li>Submitted VOL primitive code in OpenCL</li>
+<li>Final Evaluation Week</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

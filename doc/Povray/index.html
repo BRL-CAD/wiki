@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Povray/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Povray - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Povray.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#primitives-that-are-working-properly" class="nav-link">Primitives that are working properly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#arbitrary-convex-polyhedra" class="nav-link">Arbitrary convex polyhedra</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#arb8" class="nav-link">ARB8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#arbn" class="nav-link">ARBN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#ellipsoids" class="nav-link">Ellipsoids</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ell" class="nav-link">ELL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ellg-ell1" class="nav-link">ELLG, ELL1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ehy" class="nav-link">EHY</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#epa" class="nav-link">EPA</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sphere" class="nav-link">Sphere</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#cones-and-cylinders" class="nav-link">Cones and Cylinders</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#truncated-general-cone" class="nav-link">Truncated General Cone</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cone" class="nav-link">Cone</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tec" class="nav-link">TEC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rec" class="nav-link">REC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#trc" class="nav-link">TRC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cylender" class="nav-link">Cylender</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rhc" class="nav-link">RHC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rpc" class="nav-link">RPC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#other-solids" class="nav-link">Other Solids</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#torus" class="nav-link">Torus</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#particle" class="nav-link">Particle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#half" class="nav-link">half</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bot" class="nav-link">BOT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#primitives-that-are-under-progress" class="nav-link">Primitives that are under progress</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#eto" class="nav-link">ETO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#extrude" class="nav-link">extrude</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#primitives-that-are-not-under-work-yet" class="nav-link">Primitives that are not under work yet</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#derived-from-2d" class="nav-link">derived from 2d</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#other-solids_1" class="nav-link">Other solids</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#other" class="nav-link">Other</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>This article provides knowledge about different types of geometric
+primitive objects that can be exported from BRL-CAD to POV-Ray geometry
+file. Their properties, functions used for them, parameters are
+discussed in section below.</p>
+<p>To Know more about POV-Ray, here are some links below:</p>
+<ul>
+<li><a href="http://www.povray.org/documentation/3.7.0/t2_1.html#t2_1_3">Introduction to
+    POV-Ray</a></li>
+<li><a href="http://www.povray.org/documentation/3.7.0/t2_2.html#t2_2_1_2">Adding Standard include files, Camera, Light source in POV-Ray
+    Geometry
+    file</a></li>
+</ul>
+<p>Below is the list of primitives that are working/exported correctly,
+partially and not touched yet.</p>
+<h1 id="primitives-that-are-working-properly">Primitives that are working properly</h1>
+<h1 id="arbitrary-convex-polyhedra">Arbitrary convex polyhedra</h1>
+<h2 id="arb8">ARB8</h2>
+<p>This primitive is formed in POV-Ray using mesh.The mesh object can be
+used to efficiently store large numbers of triangles. Example:</p>
+<p><code>mesh{triangle{a,b,c}triangle{a,c,d}triangle{a,d,f}</code>
+<code>triangle{g,h,c}triangle{e,f,g}triangle{e,g,h}}</code></p>
+<h2 id="arbn">ARBN</h2>
+<p>An arbn record is specified by N sets of intersecting planes, each
+defined by four coefficients:</p>
+<ul>
+<li>the {X, Y, Z} coefficients of the plane's normal vector pointing
+    outward from the center of the arbn shape, and</li>
+<li>the perpendicular distance of that plane from the origin.</li>
+</ul>
+<p>Its exported in POV-Ray by using intersection of Planes. Example:</p>
+<p><code>intersection{ plane{&lt;x, y, z coefficients&gt;, normal} .... }</code></p>
+<h1 id="ellipsoids">Ellipsoids</h1>
+<h2 id="ell">ELL</h2>
+<p>This primitive is named as spheroid in POV-Ray. It is having Center
+Vector, Radius Vector Example:</p>
+<p><code>Spheroid(&lt;-1.50,3.00,-2.00&gt;,&lt;2.0,1.2,2.5&gt; )</code></p>
+<h2 id="ellg-ell1">ELLG, ELL1</h2>
+<p>These primitives are exported under Ell</p>
+<h2 id="ehy">EHY</h2>
+<p>Elliptical Hyperboloid of BRL-CAD can be formed by POV-Ray. Currently
+its coordinates are exported successfully and is done by using quadric
+equartions of POV-Ray</p>
+<h2 id="epa">EPA</h2>
+<p>Elliptical Paraboloid in BRL-CAD. Its coordinates are exported
+successfully and is done by using quadric equartions of POV-Ray</p>
+<h2 id="sphere">Sphere</h2>
+<p>Sphere is formed by Center and Radius Example:</p>
+<p><code>sphere { Center, Radius [OBJECT_MODIFIERS...]}</code></p>
+<h1 id="cones-and-cylinders">Cones and Cylinders</h1>
+<h2 id="truncated-general-cone">Truncated General Cone</h2>
+<p>This primitive of BRL-CAD is formed by using Supercone of POV-Ray.
+Example:</p>
+<p><code>Supercone( //point A, axis Ax, axis Az:&lt;0.0,0.0,0.0&gt;, 0.5, 1.0,</code>
+<code>// point B, axis Bx, axis Bz:&lt;0.0,1.5,0.0&gt;, 0.7, 0.4)}</code></p>
+<h2 id="cone">Cone</h2>
+<p>This primitive of BRL-CAD is named as Cone in POV-Ray. It is formed as
+Center and radius of one end Center and radius of other end Example:</p>
+<p><code>cone {&lt;0, 1, 0&gt;, 0.3  &lt;1, 2, 3&gt;, 1.0 texture { T_Stone25 scale 4 }}</code></p>
+<h2 id="tec">TEC</h2>
+<p>Its also exported under TGC.</p>
+<h2 id="rec">REC</h2>
+<p>Its exported nuder TGC.</p>
+<h2 id="trc">TRC</h2>
+<p>Its also under TGC</p>
+<h2 id="cylender">Cylender</h2>
+<p>This is formed by Cylender of POV-Ray. center_of_one_end,
+center_of_other_end and Radius Example:</p>
+<p><code>cylinder { &lt;0, 1, 0&gt;,&lt;1, 2, 3&gt;,0.5 }}</code></p>
+<h2 id="rhc">RHC</h2>
+<p>Right Hyperbolic Cylinder in BRL-CAD. Coordinates are exported
+successfully. It can be formed by using function</p>
+<p><code>function { pow(x,2) + y }</code></p>
+<p>of POV-Ray.</p>
+<h2 id="rpc">RPC</h2>
+<p>Right Parabolic Cylinder in BRL-CAD. Coordinates are exported
+successfully. It also formed by the using functions of POV-Ray.</p>
+<h1 id="other-solids">Other Solids</h1>
+<h2 id="torus">Torus</h2>
+<p>Torus is created using major radius and minor radius Example:</p>
+<p><code>torus { 4, 1 pigment { Green }}</code></p>
+<h2 id="particle">Particle</h2>
+<p>This primitives of BRL-CAD is formed in POV-Ray by using Round_Cone2 of
+POV-Ray. Example:</p>
+<p><code>Round_Cone2(</code>
+<code>//point A, radius A: &lt;0,0,0&gt;,0.70,</code>
+<code>// point B, radius B:&lt;0,1,0&gt;, 0.40,)</code></p>
+<h2 id="half">half</h2>
+<p>Half primitive of BRL-CAD is export into POV-Ray as Plane. Example:</p>
+<p><code>plane {</code><Normal><code>, Distance }</code></p>
+<h2 id="bot">BOT</h2>
+<p>Bag of triangles in BRL-CAD. Its exported by using triangles in POV-Ray.</p>
+<h1 id="primitives-that-are-under-progress">Primitives that are under progress</h1>
+<h2 id="eto">ETO</h2>
+<p>Elliptical torus of BRL-CAD can be formed by using some methods. One of
+them is by using function i.e. f_torus Example:</p>
+<p><code>f_torus(x,y,z,1*(y+0.4),0.1 )</code></p>
+<h2 id="extrude">extrude</h2>
+<p>Currently, data of extrude is exported successfully. Remaining part is
+how to export sketch and relate it with extrude.</p>
+<h1 id="primitives-that-are-not-under-work-yet">Primitives that are not under work yet</h1>
+<h2 id="derived-from-2d">derived from 2d</h2>
+<h3 id="revolve">revolve</h3>
+<h3 id="dsp">dsp</h3>
+<h3 id="ebm">ebm</h3>
+<h3 id="hf">hf</h3>
+<h2 id="other-solids_1">Other solids</h2>
+<h3 id="pipe">pipe</h3>
+<h3 id="ars">ars</h3>
+<h3 id="metaball">metaball</h3>
+<h3 id="nurb">nurb</h3>
+<h3 id="spline">spline</h3>
+<h3 id="vol">vol</h3>
+<h3 id="poly">poly</h3>
+<h3 id="hrt">hrt</h3>
+<h2 id="other">Other</h2>
+<h3 id="sketch">Sketch</h3>
+<h3 id="grip">grip</h3>
+<h3 id="binunif">binunif</h3>
+<h3 id="submodel">submodel</h3></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

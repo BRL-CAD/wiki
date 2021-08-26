@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/RomitKumar/GSoC19/proposal/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Proposal - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/RomitKumar/GSoC19/proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-title" class="nav-link">Project Title</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#abstract" class="nav-link">Abstract</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#detailed-description-and-implementation" class="nav-link">Detailed Description and Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#if-time-permits" class="nav-link">If Time Permits</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#further-work-based-on-project" class="nav-link">Further work based on project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#about-me" class="nav-link">About Me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="project-title">Project Title</h2>
+<p>Improvement of OpenSCAD Text-Editor Features
+Organization: OpenSCAD</p>
+<h2 id="abstract">Abstract</h2>
+<p>OpenSCAD is a free and open-source software for creating solid 3D CAD
+objects. The application provides its own set of instructions/command to
+create a 3D model. These instructions include various pre-defined
+functions, keywords and a syntax to use them. While there are some
+external editors that facilitate the writing of code for OpenSCAD, its
+integrated editor lacks many of the desired features.</p>
+<p>As modern OpenSCAD usage has advanced, it now makes more extensive use
+of libraries consisting of many files, and the editor features have not
+kept pace with this more advanced workflow. The goal of this project
+will be to add different IDE-like features to the integrated text editor
+thus advancing its usage. This will make the editor more user-friendly
+and easier to handle large codes. Currently, the editor supports
+features like syntax highlighting, bracket matching, numbering of lines,
+besides others. I will work on implementing multi-file editing support
+to the editor and autocompletion of OpenSCAD keywords.</p>
+<h2 id="detailed-description-and-implementation">Detailed Description and Implementation</h2>
+<p>The project can be listed down to two major subtasks:</p>
+<h4 id="phase-i-multi-file-editing">Phase I - Multi-file Editing</h4>
+<p>The editor currently supports editing of one file in a window. Whenever
+a new file in opened, a new window opens with that file. I will work
+towards adding the tabs to the editor. This will allow opening multiple
+files, one at each tab, in a single window. This will include:</p>
+<p>i) <strong>Implementing a GUI</strong>
+A GUI support for Tab Document Interface. The QScintilla editor is
+contained in editorDockContents widget by using its addWidget()
+function. Instead an object of QTabWidget can be made and passed for
+addWidget() function of editorDockContents. Each tab of the QTabWidget
+can hold a widget of QScintilla editor. The tabs will of course be
+movable and closable. An option for creating new tabs will be added in
+the File menu.</p>
+<p>ii) <strong>Making GUI functional</strong>
+Writing code to handle opening and closing of tabs. New tabs can be
+created using the addTab() function of QTabWidget. Similarly, closing of
+tabs can be handled by catching tabCloseRequested() signal or
+equivalent. Drag and Drop features will be re-implemented to open a new
+tab instead of another window.</p>
+<p>iii) <strong>Attaching features to each tab</strong>
+The editor already supports features like indenting, commenting and
+various others. These features need to be extended to all tabs of
+editor. Besides, functionalities like preview or rendering need to be
+attached to current active editor tab such that whenever preview/render
+is clicked, code of current active tab(or as discussed in the community)
+is compiled. This can be done by making a separate QScintilla object for
+each tab. Whenever a tab is changed, the editor object(whose member
+method has implementation of the functionalities) can point to currently
+active tab’s QScintilla object.</p>
+<p>iv) <strong>Saving of changed files</strong>
+Whenever a editor tab is closed, it is needed to check the change status
+of file and to provide a dialog box to ask for saving the changes.
+Again, this can be implemented by implementing tabCloseRequested()
+signal of each tab. Similar checks need to be performed on closing the
+window. This can be done by checking the change status of each open tab.</p>
+<p>The expected GUI should look like the following, generated with mock-up
+code:
+<img alt="" src="/wiki/user/img/Image3.png" />
+Any changed files will be marked by asterisk(*)
+<img alt="" src="/wiki/user/img/Image4.png" />
+Changes in file menu
+<img alt="" src="/wiki/user/img/Image2.png" /></p>
+<h4 id="phase-ii-keyword-autocompletion">Phase II - Keyword Autocompletion</h4>
+<p>The current editor has no mechanism of suggestions for autocompletion
+based on already typed text. The aim of this phase will be to add
+features to provide suggestions based on prefix-matching of typed text.
+The suggestions will only consist of OpenSCAD keywords. This feature has
+a prototype at <a href="https://github.com/openscad/openscad/pull/2889">PR
+#2889</a>. My
+implementation of the feature will be influenced by the prototype. It
+primarily consist of:</p>
+<p>i) <strong>Implementing QsciLexer and QsciAbstractAPIs</strong>
+It includes maintaining a list of OpenSCAD keywords and using them to
+implement the functions lexer and api class. The actual implementation
+part can be done by subclassing QsciLexer and QsciAbstractAPIs classes.
+This provides us with the lexer and api objects. The keywords and the
+related templates will be hard-coded in the subclassed files. This can
+be later(not in scope of project) expanded to write all the keywords in
+a separate json/xml files and the subclassed codes can read the keywords
+from those json/xml files.</p>
+<p>ii) <strong>Integrating with editor</strong>
+The QScintilla editor object requires the api and lexer objects for it
+to suggest for autocomplete keywords. Once the lexer and api objects are
+attained, they can be attached to the editor object. This gives the
+editor functionality of autocomplete with behaviour defined in the lexer
+and api class.</p>
+<p>iii) <strong>Autocompletion Settings</strong>
+This includes options to set enable status of autocompletion feature and
+the time delay before the suggestions appear. This can be implemented by
+storing the settings in QSettings class. The option can be made
+available in Edit - Preferences - Editor.</p>
+<p>Refer gif at <a href="https://github.com/openscad/openscad/pull/2889">PR #2889</a>
+to see the expected result</p>
+<p>Changed GUI at Preferences-Editor
+<img alt="" src="/wiki/user/img/Image1.png" /></p>
+<h2 id="if-time-permits">If Time Permits</h2>
+<p>If the outlined work is completed before time, I will like to further
+extend the feature set of editor. Below are the optional features which
+can be included to the current scope of project:</p>
+<ul>
+<li>Implementing CTRL+TAB key combination for cycling among tabs in
+    editor</li>
+<li>Automatic completion of closing brackets in editor</li>
+</ul>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Complete support of multi-file editing. Users should be able to
+    create and close multiple files in a single window and can access
+    any files in any order. Each file should be able to extend already
+    available editing features. Options for saving and content modified
+    marker will also be available for each file.</li>
+<li>Autocomplete suggestions of all OpenSCAD keywords. The editor will
+    provide keyword suggestions along with various parameters of
+    functions. The suggestions can be chosen through arrow keys and
+    selected by pressing enter.</li>
+</ul>
+<h2 id="timeline">Timeline</h2>
+<h4 id="may-6-may-26-community-bonding-period">May 6 - May 26 (Community Bonding Period)</h4>
+<ul>
+<li>Familiarize myself with the code and community</li>
+<li>Learn and explore Qt Framework - using documentation, books</li>
+<li>Learn and explore QScintilla</li>
+</ul>
+<h4 id="may-27-june-2">May 27 - June 2</h4>
+<ul>
+<li>Choose among various options to implement multi-file editing</li>
+<li>Implement a GUI to support multiple file editor in a single window</li>
+<li>Add option in File menu and Editor dock to open a new file in same
+    window</li>
+</ul>
+<h4 id="june-3-june-9">June 3 - June 9</h4>
+<ul>
+<li>Write code to implement multi-file editing</li>
+<li>Handle opening and closing of file tabs from GUI buttons</li>
+<li>Code to open a new file in same window from file menu and editor
+    dock</li>
+<li>Migrate the support of opening file in new window to different gui
+    option</li>
+</ul>
+<h4 id="june-10-june-16">June 10 - June 16</h4>
+<ul>
+<li>Extend already available editor features(indentation, commenting,
+    colour-scheme, undo/redo, etc) to each new file in a window</li>
+<li>Mapping preview and rendering functionality to currently active tab
+    or as discussed in the community</li>
+<li>Provide drag-and-drop support for opening new file in same window</li>
+</ul>
+<h4 id="june-17-june-23">June 17 - June 23</h4>
+<ul>
+<li>Extensive testing of multi-file editing feature</li>
+<li>Solve any issues encountered while testing</li>
+</ul>
+<h4 id="june-24-june-28-phase-i-evaluation">June 24 - June 28 (Phase I Evaluation)</h4>
+<ul>
+<li>Take suggestions and feedback of work done till now</li>
+<li>Implement changes based on suggestions</li>
+<li>Based on stakeholder feedback, reassess and adjust remaining project
+    scope in an agile manner if needed.</li>
+</ul>
+<h4 id="june-29-july-7">June 29 - July 7</h4>
+<ul>
+<li>Go through the OpenSCAD documentation and create a list of its
+    keywords</li>
+<li>Develop template of keywords and related function signatures</li>
+</ul>
+<h4 id="july-8-july-14">July 8 - July 14</h4>
+<ul>
+<li>Code to implement auto-completion feature</li>
+<li>Use lexer and api class of QScintilla to implement the feature</li>
+<li>Explore the prototype for autocomplete calls</li>
+</ul>
+<h4 id="july-15-july-21">July 15 - July 21</h4>
+<ul>
+<li>Extensive testing of auto-completion feature</li>
+<li>Solve any issues encountered while testing</li>
+</ul>
+<h4 id="july-22-july-26-phase-ii-evaluation">July 22 - July 26 (Phase II Evaluation)</h4>
+<ul>
+<li>Take suggestions and feedback of work done till now</li>
+<li>Implement changes based on suggestions</li>
+<li>Based on stakeholder feedback, reassess and adjust remaining project
+    scope in an agile manner if needed.</li>
+</ul>
+<h4 id="july-27-august-4">July 27 - August 4</h4>
+<ul>
+<li>Add GUI to set enabling/ disabling of autocomplete feature</li>
+<li>Add GUI for autocomplete character threshold</li>
+<li>Code to implement enable status of autocomplete feature</li>
+</ul>
+<h4 id="august-5-august-11">August 5 - August 11</h4>
+<ul>
+<li>Code to implement autocomplete character threshold</li>
+<li>Look for possible optimization and clean up of code</li>
+<li>Resolve any issues encountered</li>
+</ul>
+<h4 id="august-12-august-19">August 12 - August 19</h4>
+<ul>
+<li>Buffer week for any unforeseen circumstances</li>
+</ul>
+<h2 id="further-work-based-on-project">Further work based on project</h2>
+<p>I will like to continue my contribution to the OpenSCAD organization
+even after the GSoC period. There are certain list of features that I
+have in mind and will love to add to the editor. These features include:</p>
+<ul>
+<li>Autocomplete suggestions of user-defined variable/function/module
+    names</li>
+<li>Add shift+scroll trigger to change numeric values</li>
+<li>Functionality to add tab-triggered templates and related gui options</li>
+</ul>
+<h2 id="about-me">About Me</h2>
+<p>I am an undergraduate student in my third year pursuing Computer Science
+and Engineering from National Institute of Technology, Durgapur (West
+Bengal, India). I have experience with Java, C++, Python, SQL, and
+LaTeX. As per my academic curriculum, I have undergone courses on Basic
+of Programming in C, Data Structures, and Object Oriented Programming in
+C++. Besides, I have also done a few self projects which are available
+on my github.</p>
+<p><strong>Contact Information</strong>:
+Name: Romit Kumar
+University: National Institute of Technology, Durgapur
+Email: romitkumar1705@gmail.com
+Github: <a href="https://github.com/RomitKumar">https://github.com/RomitKumar</a>
+IRC Username: RomitKumar
+Gitter Username: RomitKumar
+Country: India
+Timezone: Indian Standard Time (GMT+5:30)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

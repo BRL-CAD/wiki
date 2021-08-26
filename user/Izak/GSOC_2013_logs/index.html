@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Izak/GSOC_2013_logs/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>GSOC 2013 logs - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Izak/GSOC_2013_logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-details" class="nav-link">PROJECT DETAILS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#from-june-3rd-to-june-7th" class="nav-link">From June 3rd to June 7th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#from-june-10th-to-june-14th" class="nav-link">From June 10th to June 14th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#my-development-pictures" class="nav-link">My Development Pictures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#from-june-17th-to-june-21" class="nav-link">From June 17th to June 21</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#from-june-24th-to-june-29th" class="nav-link">From June 24th to June 29th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#from-july-1st-to-july-6th" class="nav-link">From July 1st to July 6th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#from-july-8th-to-july-14th" class="nav-link">From July 8th to July 14th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#monthly-summary" class="nav-link">Monthly Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#from-july-15th-to-july-20th" class="nav-link">From July 15th to July 20th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#from-july-22th-to-july-27th" class="nav-link">From July 22th to July 27th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pre-midterm-evaluation-summary" class="nav-link">Pre-midterm evaluation summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mid-term-evaluation-week" class="nav-link">Mid-term Evaluation week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#august-5th-to-august-9th" class="nav-link">August 5th to August 9th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#august-12th-to-august-17th" class="nav-link">August 12th to August 17th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#august-19th-to-august-24th" class="nav-link">August 19th to August 24th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#august-26th-to-august-31st" class="nav-link">August 26th to August 31st</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#september-2nd-to-september-7th" class="nav-link">September 2nd to September 7th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#september-9th-to-september-14th" class="nav-link">September 9th to September 14th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#september-16th-to-september-21st" class="nav-link">September 16th to September 21st</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2013-summary" class="nav-link">GSoC 2013 summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="project-details">PROJECT DETAILS</h2>
+<p>Project Title : Implementation of a heart primitive.</p>
+<p>Name: Isaac Kamga.</p>
+<p>IRC Name (Handle): Izak</p>
+<p>e-mail: u2isaac@gmail.com</p>
+<p>Phone : +237 74 10 62 97</p>
+<h2 id="introduction">Introduction</h2>
+<p>This page will contain logs of the work I will be doing during and after
+the summer of code period.</p>
+<h2 id="from-june-3rd-to-june-7th">From June 3rd to June 7th</h2>
+<ul>
+<li>Compiled and ran BRL-CAD from source (in 26 minutes) as well as used
+    mged command interface.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Studying /src/librt/primitives/*/*.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Revising red-black trees in "Introduction to algorithms",third
+    edition book by Cormen.</li>
+</ul>
+<h2 id="from-june-10th-to-june-14th">From June 10th to June 14th</h2>
+<ul>
+<li>Fixing rb_delete.c to effectively delete nodes.</li>
+</ul>
+<h2 id="my-development-pictures">My Development Pictures</h2>
+<h2 id="from-june-17th-to-june-21">From June 17th to June 21</h2>
+<p>June 17</p>
+<ul>
+<li>Finished working on rb_delete.c .</li>
+</ul>
+<p>June 18</p>
+<ul>
+<li>Edited raytrace.h by defining ID_HRT 43 ,incrementing ID_MAXIMUM
+    and ID_MAX_SOLID to 44 as shown in this patch .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added the DB5_MINORTYPE_BRLCAD_HRT 42 define to db5.h as shown
+    here .</li>
+</ul>
+<p>June 19</p>
+<ul>
+<li>Hoped to do this today : Need to look at the "Metaball" paper on
+    using the blobby method , read volume rendering by Drebin et al and
+    edit magic.h and rtgeom.h to include the heart primitive .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>However, took ill ( of malaria ) so undergoing treatment .</li>
+</ul>
+<p>June 20</p>
+<ul>
+<li>Ill of malaria so undergoing treatment .</li>
+</ul>
+<p>June 21</p>
+<ul>
+<li>Ill of malaria so undergoing treatment .</li>
+<li>Uploaded some patches
+    <a href="http://sourceforge.net/p/brlcad/patches/191/">here</a>.</li>
+</ul>
+<p>June 22</p>
+<ul>
+<li>Recovering from brief illness....</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Updated GSoC 2013 Accepted projects page on the wiki .</li>
+</ul>
+<h2 id="from-june-24th-to-june-29th">From June 24th to June 29th</h2>
+<p>June 24</p>
+<ul>
+<li>Re-read the Patch submission guidelines in the HACKING file .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Read the research paper titled "Volumetric shape description using
+    the blobby model" which was used to implement the metaball primitive
+    ( by the second method). Since the above method is used with two
+    sphere primitives to create a metaball , I am considering using this
+    same method alongside two spheres ( for the heart lobes ) and an
+    elliptical parabola - epa (for the lower portion of the heart ).
+    Need to verify the correctness of this design approach on the
+    mailing list.</li>
+</ul>
+<p>June 25</p>
+<ul>
+<li>Studying the ray tracing geometry header ( rtgeom.h ) to write the
+    heart primitive's internal representation (struct rt_hrt_internal)
+    .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Searching for more information on the key properties of the heart .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Editing the magic numbers header ( magic.h ) which I have patched
+    <a href="https://sourceforge.net/p/brlcad/patches/203/">here</a> .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Currently writing the struct rt_hrt_internal structure which I
+    have kept <a href="https://sourceforge.net/p/brlcad/patches/204/">here</a>
+    .Also wrote the RT_HRT_CK_MAGIC(_p) macro in rtgeom.h for the
+    heart .</li>
+</ul>
+<p>June 26</p>
+<ul>
+<li>Finished Modifying the magic header file
+    <a href="https://sourceforge.net/p/brlcad/patches/203/">here</a> which I
+    earlier on submitted .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Looking into the internal representations of the tor and the
+    superell .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Reading the rt_???_shot() functions in
+    src/librt/primitives/tor/tor.c and
+    src/librt/primitives/superell/superell.c to understand how they
+    build up and evaluate formulae.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Included the internal representation of the heart in the
+    include/rtgeom.h file used by the ray trace geometry library .That
+    is, added the ID_HRT section ( struct rt_hrt_internal ). Please,
+    take a <a href="https://sourceforge.net/p/brlcad/patches/204/">look</a> :)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Editing the table.c file in src/librt/primitives .Declared a
+    raytrace interface for the heart by RT_DECLARE_INTERFACE(hrt) .
+    Edited the rt_functab[] array by providing an entry ID_HRT for
+    the heart primitive. That is, add RT_FUNCTAB_MAGIC, "ID_HRT",
+    "hrt",rt_hrt_*, just to name a few. You are welcome to look at my
+    <a href="https://sourceforge.net/p/brlcad/patches/205/">progress</a>.</li>
+</ul>
+<p>June 27</p>
+<ul>
+<li>Early in the morning I Left Buea, my home town to collect Google's
+    welcome package in Douala. Collected some cash from the available
+    ATM . Negotiating for Internet access and cool coding
+    environment.Really tired.</li>
+</ul>
+<p>June 28</p>
+<ul>
+<li>Corrected and submitted the db5 header <a href="https://sourceforge.net/p/brlcad/patches/191/">( See db5.patch
+    )</a> based on
+    guidelines given by mentors.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Corrected and submitted the raytrace header <a href="https://sourceforge.net/p/brlcad/patches/191/">( See raytrace.patch
+    )</a> based on
+    guidelines given by mentors.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Corrected and submitted the magic header <a href="https://sourceforge.net/p/brlcad/patches/203/">( See newest_magic.patch
+    )</a> based on
+    guidelines given by mentors. Still to correct the magic.c file to
+    make these changes complete.</li>
+</ul>
+<p>June 29</p>
+<ul>
+<li>Editing the magic.c file to accommodate the heart primitive.
+    Uploaded the <a href="https://sourceforge.net/p/brlcad/patches/203/?page=1">patch
+    here</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Reworking the ray trace geometry header file (rtgeom.h) so that the
+    internal representation of the heart will be accurate.</li>
+</ul>
+<h2 id="from-july-1st-to-july-6th">From July 1st to July 6th</h2>
+<p>July 1</p>
+<ul>
+<li>Working on struct rt_hrt_internal inorder to include the heart
+    primitive into the include/rtgeom.h header. Reading wikipedia and
+    Wolfram pages on heart symbol,Level set,cusps and epicycloids.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Combined magic_h.patch and magic_c.patch into single
+    <a href="https://sourceforge.net/p/brlcad/patches/203/?page=1">magic.tar.gz</a>
+    compressed file .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Combined db5_h.patch and db5_types_c.patch into single
+    <a href="https://sourceforge.net/p/brlcad/patches/207/">db5.tar.gz</a>
+    compressed file.</li>
+</ul>
+<p>July 2</p>
+<ul>
+<li>Still awaiting clarifications which I requested on the mailing list
+    to develope the internal representation of the heart primitive in
+    include/rtgeom.h.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Corrected the
+    <a href="https://sourceforge.net/p/brlcad/patches/203/?page=1">hrt_magic.patch</a>
+    file based on recommendations given by my mentor.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Corrected the
+    <a href="https://sourceforge.net/p/brlcad/patches/207/">hrt_db5.patch</a> file
+    based on recommendations given by my mentor.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Awaiting some answers to questions posted on the mailing list in
+    order to proceed with the editing of rtgeom.h and raytrace.h</li>
+</ul>
+<p>July 3</p>
+<ul>
+<li>Getting requisite authorization to connect Workspace at the Faculty
+    of Science building to the Internet. Not easy dealing with a
+    bureaucratic system in which every administrative decision has to be
+    documented in letters.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Downloaded subversion packages and source code to install. Need this
+    to submit patches that apply cleanly.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The above activities took the whole day. Could not do coding work.</li>
+</ul>
+<p>July 4</p>
+<ul>
+<li>Doing negotiations to get Internet access. This is a prerequisite to
+    submitting perfect patches which are generated from the svn
+    checkout.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Pushing through with authorization for Internet access at my
+    workspace .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Presented the "Implementation of the heart primitive" proposal and
+    progress reports to lectures and students of the Departments of
+    Computer Science and computer Engineering.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Did no coding work today as I was preparing a good environment for
+    coding.</li>
+</ul>
+<p>June 5</p>
+<ul>
+<li>Did detailed mind maps to aid visualization of necessary editing of
+    files to aid submission of logical patches. This will help see
+    exactly how to group file changes like magic numbers , mirror
+    support, mged support, etc.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Got equipment ready for installations of Internet but could not
+    install today due to rainy weather. Hoping to get a sunny window
+    tomorrow morning for installation.</li>
+</ul>
+<p>July 6</p>
+<ul>
+<li>Awaiting the arrival of Head of Department from Bamenda. Discussed
+    with him the need for authorization to install Internet at the
+    laboratory by phone. He said we need to officially discuss it during
+    office hours on Monday,July 8.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Doing research on how to solve the sextic equation of the heart.
+    Read some papers and observed that the sextic equation of the heart
+    does not meet the conditions presented in the literature.</li>
+</ul>
+<h2 id="from-july-8th-to-july-14th">From July 8th to July 14th</h2>
+<p>July 8</p>
+<ul>
+<li>Yoopee:) My Head of Department discusses the need for GSoC students
+    to temporarily install Internet at the laboratory with the Dean of
+    the Faculty of Science.The Dean seconds the idea and writes to the
+    Vice-Chancellor for final authorization. Waiting for the final
+    authorization from the Vice-Chancellor within the week.This is the
+    <a href="https://docs.google.com/file/d/0B4kEIUMOBbU-SlBaeEdqQ0Eta1U/edit?usp=sharing">letter</a>
+    I wrote to the Deputy Vice Chancellor .The Head of Department's
+    letter through the Dean to the Vice-Chancellor can be viewed
+    <a href="https://docs.google.com/file/d/0B4kEIUMOBbU-b2xzMXl2Y2lyaG8/edit?usp=sharing">here</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Modified the internal representation of the heart (struct
+    rt_hrt_internal).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Including an entry into the rt_functab[] array for the heart.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Plan to generate the patches from the work done immediately Internet
+    access is available.</li>
+</ul>
+<p>July 9</p>
+<ul>
+<li>Correcting my M.Sc. thesis in order to submit to supervisor until
+    13:00 UTC.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Finished working on the internal parameters of the heart solid in
+    include/rtgeom.h .It now includes a center point, unit vectors in
+    x,y and z directions and distance from center point to both upper
+    and lower cusps.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added mk_hrt() routine and associated comments to the include/wdb.h
+    header file and src/libwdb/wdb.c file.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added p_hrt[] array and hrt_in() routine to src/libged/typein.c
+    so as to read heart parameters from the keyboard.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Waiting for final authorization for temporal installation of
+    Internet access to generate patches which I worked on using svn.My
+    Head of Department says the Dean still awaits response from the
+    Vice-Chancellor's office.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Intend to test these edits tomorrow. Couldn't do these today because
+    the Faculty building was very noisy today due to a staff meeting.</li>
+</ul>
+<p>July 10</p>
+<ul>
+<li>Had a two-hour entretien today with my supervisor and head of
+    Department until 10:00 UTC.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Created a hrt_magic patch file ( generated from diff -u for now
+    ),the patch applied cleanly and BRL-CAD source compiled.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Created a hrt_stub patch file ( also generated from diff -u for now
+    ), patch applied cleanly and BRL-CAD source compiled.Realised that
+    an empty heart primitive has NULL fields in its rt_functab[]
+    array entry.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Still Awaiting response to letter of authorization from the
+    Vice-Chancellor :(</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>For tomorrow's work, I intend to create a heart object which can be
+    tested in the mged interface.</li>
+</ul>
+<p>July 11</p>
+<ul>
+<li>Debugged and compiled the int mk_hrt(struct rt_wdb *wdbp, const
+    char *name, const fastf_t *center, const fastf_t *xdir, const
+    fastf_t *ydir, const fastf_t *zdir, const fastf_t d) routine
+    which was previously added to src/libwdb/wdb.c file.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Debugged and compliled the p_hrt[] array and the hrt_in(struct
+    ged *gedp, char *cmd_argv[], struct rt_db_internal *intern)
+    function which was previously added to src/libged/typein.c .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested the compiled code by reading in the coordinates of a heart
+    object using the keyboard on the mged interface as shown
+    <a href="https://docs.google.com/file/d/0B4kEIUMOBbU-ZUpmcXpxZlFzVXc/edit?usp=sharing">here</a>.
+    Feeling great!:)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Still awaiting response from the Vice-Chancellor.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Intend to finish any hacks of the mged interface and get into the
+    difficult functions like rt_hrt_shot, rt_hrt_prep , etc.</li>
+</ul>
+<p>July 12</p>
+<ul>
+<li>Added case HRT to the solbld function in src/conv/asc/asc2g.c which
+    parses the heart record and determines which libwdb routine to call
+    in order to replicate it. Debugging asc2g.c.....</li>
+</ul>
+<p>July 13</p>
+<ul>
+<li>Started writing rt_hrt_shot() function for
+    src/librt/primitives/hrt/hrt.c</li>
+</ul>
+<h2 id="monthly-summary">Monthly Summary</h2>
+<p>Work done</p>
+<p>1. Added magic numbers:</p>
+<ul>
+<li>Defined RT_HRT_INTERNAL_MAGIC Ox6872743f in include/magic.h</li>
+<li>Included a case RT_HRT_INTERNAL_MAGIC in src/libbu/magic.c</li>
+<li>I ended up with hrt_magic.patch.</li>
+</ul>
+<p>2. Stubbed in an empty heart primitive</p>
+<ul>
+<li>Defined DB5_MINORTYPE_BRLCAD_HRT in include/db5.h.</li>
+<li>Incremented ID_MAX_SOLID and ID_MAXIMUM to 44 as well as defined
+    ID_HRT as 43.</li>
+<li>Added { DB5_MAJORTYPE_BRLCAD, DB5_MINORTYPE_BRLCAD_HRT, 1,
+    "hrt", "Heart" } as entry for the heart primitive in
+    src/librt/db5_types.c.</li>
+<li>Added struct rt_hrt_internal{} to internally represent the heart
+    and wrote the RT_HRT_CK_MAGIC(_p) macro .</li>
+<li>Declared RT_DECLARE_INTERFACE(hrt) and edited rtfunctab[] to
+    include an entry for the heart in src/librt/primitives/table.c .This
+    entry had many NULL fields.</li>
+<li>With this, I generated hrt_stub.patch.</li>
+</ul>
+<p>3. Added type in support for the heart (so as to read heart parameters
+from the keyboard.)</p>
+<ul>
+<li>Added mk_hrt() routine and associated comments to include/wdb.h and
+    src/libwdb/wdb.c .</li>
+<li>Added p_hrt[] array and hrt_in() routine to src/libged/typein.c</li>
+<li>This gave birth to hrt_type.patch, which was compiled, debugged and
+    tested in the mged interface (See July 11 on my Development log).</li>
+</ul>
+<p>Future work</p>
+<ul>
+<li>Start coding and testing the Intersection of a heart with a ray by
+    writing int rt_hrt_shot(), void rt_hrt_norm, void rt_hrt_uv,
+    etc</li>
+</ul>
+<h2 id="from-july-15th-to-july-20th">From July 15th to July 20th</h2>
+<p>July 15</p>
+<ul>
+<li>Studying how the quartic equation of the torus is built until the
+    roots of this quartic equation is found by the root finder.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on int rt_hrt_shot() function whereby a ray intersects
+    with the heart.This yield a sextic polynomial in t with 7
+    coefficients each with an average of 70 algebraic terms. The
+    coefficient of t^6 has been computed while the coefficient of t^5 is
+    being computed.</li>
+</ul>
+<p>July 16</p>
+<ul>
+<li>Working on the t^5 and t^4 coefficients of the sextic equation in
+    the int rt_hrt_shot() function whereby a ray intersects with the
+    heart.</li>
+</ul>
+<p>July 17</p>
+<ul>
+<li>Finished working on the coefficients of the sextic equation...
+    Pretty tedious.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discussed today with my former mathematics professor who pointed me
+    to the Rouche's theorem to locate complex roots of a polynomial .
+    Researching on this Theorem to locate roots and solve sextic
+    equation.</li>
+</ul>
+<p>July 18</p>
+<ul>
+<li>Following up the letter written to the Vice-Chancellor at the
+    Central Administration. No coding work done today.</li>
+</ul>
+<p>July 19</p>
+<ul>
+<li>Finished writing the rt_hrt_shot() function which has to be
+    debugged and tested.</li>
+</ul>
+<p>July 20</p>
+<ul>
+<li>Had a headache today. Did no coding work. Just did some planning and
+    light observation of toroid and superell primitives in
+    src/librt/primitives/.</li>
+</ul>
+<h1 id="from-july-22th-to-july-27th">From July 22th to July 27th</h1>
+<p>July 22</p>
+<ul>
+<li>Wrote the rt_hrt_parse[] array based on the internal properties
+    of the heart.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Corrected the hrt_specific structure.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote the rt_hrt_prep() function to prepare the heart object for
+    ray shoting.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Making sure that my patches compile, although not yet generated from
+    svn diff -u .</li>
+</ul>
+<p>July 23</p>
+<ul>
+<li>Fixed my S.L. 6.2 system today after a crash. Lost the
+    0rt_hrt_prep() function which I already wrote :(. Not a big deal
+    though.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Helped install Internet at the laboratory.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discussed on IRC with brlcad on setting up a bzflag account.
+    Accepted the usage policy and rules. Got this account set up.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discussed with brlcad and Erik on IRC about correcting my
+    communication (posting) style. Read the more academic
+    <a href="http://en.wikipedia.org/wiki/Posting_style">wikipedia</a> page and
+    Erik's recommended
+    <a href="http://catb.org/jargon/html/T/top-post.html">link</a> in order to
+    correct this.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Checking my patches from A to Z.</li>
+</ul>
+<p>July 24</p>
+<ul>
+<li>Generated and tested the
+    <a href="https://sourceforge.net/p/brlcad/patches/203/?page=1">hrt_magic.patch</a>
+    that it applies cleanly, independently and without any side effects.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Generated and tested the
+    <a href="https://sourceforge.net/p/brlcad/patches/207/">hrt_stub.patch</a>
+    that it applies cleanly, independently and without any side effects.</li>
+</ul>
+<p>July 25</p>
+<ul>
+<li>My mentor
+    <a href="http://sourceforge.net/p/brlcad/patches/203/?limit=10&amp;page=1#836c">accepted</a>
+    the hrt_magic.patch and
+    <a href="http://sourceforge.net/p/brlcad/patches/203/?limit=10&amp;page=1#a682">applied</a>
+    it to r56212. :)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Doing changes to generate hrt_typein.patch.</li>
+</ul>
+<p>July 26</p>
+<ul>
+<li>Removing errors from the hrt_typein.patch</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>My hrt_stub.patch file got
+    <a href="http://sourceforge.net/p/brlcad/patches/207/?limit=10&amp;page=1#99a9">closed-accepted</a>
+    status and
+    <a href="http://sourceforge.net/p/brlcad/patches/207/?limit=10&amp;page=1#f22c">applied</a>
+    to r56235.</li>
+</ul>
+<p>July 27</p>
+<ul>
+<li>Working on a test for the
+    <a href="http://sourceforge.net/p/brlcad/patches/191/">rb_delete.c</a>
+    function.</li>
+</ul>
+<h1 id="pre-midterm-evaluation-summary">Pre-midterm evaluation summary</h1>
+<p>In order to prepare the BRL-CAD source code for the heart primitive , I
+hooked the heart primitive into the BRL-CAD source by adding a magic
+number for the heart in include/magic.h and src/libbu/magic.c, stubbing
+an empty heart in include/db5.h, include/rtgeom.h, include/raytrace.h,
+src/librt/db5_types.c and /src/librt/primitives/table.c and adding
+typing support for the heart in the mged interface in include/wdb.h,
+src/libwdb/wdb.c and src/libged/typein.c as can be seen
+<a href="https://docs.google.com/file/d/0B4kEIUMOBbU-ZUpmcXpxZlFzVXc/edit?usp=sharing">here</a>.
+As regards the ray tracing callback functions in
+src/librt/primitives/hrt/hrt.c , I have built the hrt_specific
+structure, written the rt_hrt_shot() and rt_hrt_prep() functions and
+I am currently testing these.I intend to continue working on other
+callback functions like rt_hrt_import(), rt_hrt_print(), etc and
+finally hook the heart primitive to the mged and archer interfaces with
+associated clean up and documentation.</p>
+<h1 id="mid-term-evaluation-week">Mid-term Evaluation week</h1>
+<p>July 29</p>
+<ul>
+<li>Fixed a typo ( V_vec instead of v_vec on line 286 of
+    src/libger/polyclip.cpp ) and generated a
+    <a href="http://sourceforge.net/p/brlcad/patches/218/">patch</a> which was
+    applied to r56306 by Mohit Daga.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on the starting requirements of Google Developer Group (GDG
+    Buea) : Created GDG Buea Google+ page with links to agents' pages ,
+    GDG Buea google group,etc</li>
+</ul>
+<p>July 30</p>
+<ul>
+<li>Filled Mid-term evaluation form and submitted to google-melange.com</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Compiled and tested the int mk_hrt() routine and p_hrt[] array &amp;
+    the hrt_in( ) function in src/libwdb/wdb.c file and
+    src/libged/typein.c respectively. Generated and uploaded this
+    hrt_typein.<a href="https://sourceforge.net/p/brlcad/patches/220/">patch</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Had an IRC session where I discussed with mentors on the importance
+    of paying attention to detail.</li>
+</ul>
+<p>July 31</p>
+<ul>
+<li>Worked on opening comment, bu_structparse rt_hrt_parse array and
+    hrt_specific structure .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Posed a question to other developers asking for help on writing
+    rt_hrt_bbox() routine and testing callback functions in hrt.c</li>
+</ul>
+<p>August 1</p>
+<ul>
+<li>Presenting the work done to set up the Google Developer group Buea
+    to staff of the Department of Computer Science.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Doing some research on calculating the bounding box volume of an
+    object.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Going through a little irssi-ssh tutorial.</li>
+</ul>
+<p>August 2</p>
+<ul>
+<li>Correcting the rt_hrt_shot() function in
+    src/librt/primitives/hrt/hrt.c</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Chatted with my mentor today : giving me recommendations for commit
+    access.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on a basic hrt/hrt.c</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Just passed the mid-term evaluations</li>
+</ul>
+<h1 id="august-5th-to-august-9th">August 5th to August 9th</h1>
+<p>August 5</p>
+<ul>
+<li>Correcting the bare bones
+    <a href="https://sourceforge.net/p/brlcad/patches/228/">patch</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Building rt_hrt_prep() and rt_hrt_shot()</li>
+</ul>
+<p>August 6</p>
+<ul>
+<li>My operating system crashed due to some accidental system file
+    deletes.Fixing my system , created coding environment and did fresh
+    svn checkouts.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Worked on the logo for the <a href="https://plus.google.com/100289274059280359416">GDG
+    Buea</a> Google+ page.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Did no coding work today.</li>
+</ul>
+<p>August 7</p>
+<ul>
+<li>Wrote the rt_hrt_import() callback function for hrt.c.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Uploaded hrt_import5
+    <a href="https://sourceforge.net/p/brlcad/patches/230/">patch</a> to
+    sourceforge.net.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>A picture for the rt_hrt_import5 test on mged interface can be
+    viewed <a href="http://brlcad.org/~Izak/Import_test.png">here</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote the rt_hrt_export() callback function for hrt.c.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>uploaded hrt_export5
+    <a href="https://sourceforge.net/p/brlcad/patches/229/">patch</a> to
+    sourceforge.net.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>A picture for the rt_hrt_export5 test on archer interface can be
+    viewed <a href="http://brlcad.org/~Izak/Export_test.png">here</a>.</li>
+</ul>
+<p>August 8</p>
+<ul>
+<li>Have been granted commit access. :)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Learned how to use svn commit, svn revert, etc.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Ensured consistent bu_log("rt_hrt_xxx: not implemented yet!\n");
+    in calllbacks functions for hrt.c and committed to
+    <a href="http://sourceforge.net/p/brlcad/code/56694/">r56694</a>.</li>
+</ul>
+<h1 id="august-12th-to-august-17th">August 12th to August 17th</h1>
+<p>August 12th</p>
+<ul>
+<li>Added hrt_invsq vector and hrt_invRSSR matrix to the heart
+    structure in <a href="https://sourceforge.net/p/brlcad/code/56745/">r56745</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added rt_hrt_print() routine and removed rt_hrt_??port4()
+    routines pertaining to version 4 of database in
+    <a href="https://sourceforge.net/p/brlcad/code/56746/">r56745</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added rt_hrt_import5() routine to import the database format to
+    the internal format in
+    <a href="https://sourceforge.net/p/brlcad/code/56747/">r56747</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added rt_hrt_export5() routine to export from internal format to
+    database format in
+    <a href="https://sourceforge.net/p/brlcad/code/56751/">r56751</a></li>
+</ul>
+<p>August 13th</p>
+<ul>
+<li>Went to the Cameroon GCE Board office to apply for duplicate
+    certificate for my younger sister.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote rt_hrt_describe() routine to present the heart solid in
+    human-readable format and committed changes to
+    <a href="http://sourceforge.net/p/brlcad/code/56791/">r56791</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Pictures to demonstrate the working rt_hrt_describe() function
+    using the l command in the mged and archer interfaces can be viewed
+    <a href="http://brlcad.org/~Izak/rt_hrt_describe_mged.png">here</a> and
+    <a href="http://brlcad.org/~Izak/rt_hrt_describe_archer.png">here</a>
+    respectively.</li>
+</ul>
+<p>August 14th</p>
+<ul>
+<li>Working on rt_hrt_prep() routine but electric blackouts in my area
+    halted work.</li>
+</ul>
+<p>August 15th</p>
+<ul>
+<li>Compiled hrt.c after writing rt_hrt_prep(). This routine calls
+    rt_hrt_bbox() routine (which I am still to work on ) and some
+    testing using the rt command. Will commit
+    <a href="http://paste.kde.org/p20fbe4c6/">rt_hrt_prep()</a> later.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Worked on rt_hrt_ifree() to free the storage associated with the
+    rt_db_internal version of this solid and commited to
+    <a href="https://sourceforge.net/p/brlcad/code/56876/">r56876</a>.</li>
+</ul>
+<p>August 16th</p>
+<ul>
+<li>Working on rt_hrt_bbox() routine which needs some testing before I
+    commit.</li>
+</ul>
+<p>August 17th</p>
+<ul>
+<li>Finished working on rt_hrt_bbox() routine today. Used the bb
+    command to test this code in the
+    <a href="http://brlcad.org/~Izak/rt_hrt_bbox_mged_test.png">mged</a> and
+    <a href="http://brlcad.org/~Izak/rt_hrt_bbox_archer_test.png">archer</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Committed changes in rt_hrt_bbox() and rt_hrt_prep() routines to
+    <a href="http://sourceforge.net/p/brlcad/code/56917/">r56917</a>.Will do more
+    work on rt_hrt_prep() function eventually.</li>
+</ul>
+<h1 id="august-19th-to-august-24th">August 19th to August 24th</h1>
+<p>August 19th</p>
+<ul>
+<li>Corrected spelling of polynomial in bn_poly_synthetic_div.c in
+    <a href="http://sourceforge.net/p/brlcad/code/56944">r56944</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote the rt_hrt_free() and rt_hrt_params() functions in
+    <a href="http://sourceforge.net/p/brlcad/code/56947/">r56947</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Still working on rt_hrt_prep().</li>
+</ul>
+<p>August 20th</p>
+<ul>
+<li>Modified rt_hrt_prep() function and commited it to
+    <a href="https://sourceforge.net/p/brlcad/code/57004/">r57004</a>.</li>
+</ul>
+<p>August 21st</p>
+<ul>
+<li>Working on rt_hrt_shot(). Still to commit.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Modified comment to add new constant in rt_hrt_prep() in
+    <a href="http://sourceforge.net/p/brlcad/code/57023/">r57023</a> and
+    <a href="http://sourceforge.net/p/brlcad/code/57035/">r57035</a>.</li>
+</ul>
+<p>August 22nd</p>
+<ul>
+<li>Modifying a comment by punctuating the word primitive in super
+    ellipsoid primitive and commited to
+    <a href="http://sourceforge.net/p/brlcad/code/57058/">r57058</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Understanding how to write the rt_???_shot() function for
+    primitives.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Adding rt_hrt_shot to intersect a ray with the heart in
+    <a href="http://sourceforge.net/p/brlcad/code/57068/">r57068</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tests in the mged using the 'rt' command givers this
+    <a href="http://brlcad.org/~Izak/rt_shot_test.png">result</a>.</li>
+</ul>
+<p>August 23rd</p>
+<ul>
+<li>Removed unused variable polycurve and fixed function declarations in
+    pc header</li>
+</ul>
+<p>and committed to <a href="http://sourceforge.net/p/brlcad/code/57097/">r57097</a>.</p>
+<ul>
+<li>Added rt_hrt_norm() function which Computes the normal to the
+    heart given a point on the heart in
+    <a href="http://sourceforge.net/p/brlcad/code/57100/">r57100</a>.</li>
+</ul>
+<h1 id="august-26th-to-august-31st">August 26th to August 31st</h1>
+<p>August 26th</p>
+<ul>
+<li>Experiencing an infection in my left eye so could not work
+    throughout the weekend until today.Couldn't work with one eye.</li>
+</ul>
+<p>August 27th</p>
+<ul>
+<li>Researching on solving sextic equations. Found an interesting paper
+    by Titus Piezas III.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Correcting sextic equation in comment preceeding rt_hrt_shot()
+    implementation in
+    <a href="http://sourceforge.net/p/brlcad/code/57180/">r57180</a>.</li>
+</ul>
+<p>August 28th</p>
+<ul>
+<li>Reading papers by Piezas and Thomas Hagerdon to come out with
+    algorithm to write bn_poly_sextic_roots.c.</li>
+</ul>
+<p>August 29th - 30th</p>
+<ul>
+<li>Consulting mathematician Titius Piezas for advice on how to solve
+    the sextic equation for rt_hrt_shot() to do ray tracing. Piezas
+    says the equation is solvable using numerical solutions with
+    arbitrary accuracy but is not solvable with respect to radicals in
+    Galois theory.</li>
+</ul>
+<p>August 31st</p>
+<ul>
+<li>Researching on root-finding algorithms which can be used to write
+    bn_poly_sextic_roots.c</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on rt_hrt_plot to plot the heart.</li>
+</ul>
+<h1 id="september-2nd-to-september-7th">September 2nd to September 7th</h1>
+<p>September 5th</p>
+<ul>
+<li>Working on roots_example.c to incorporate test for sextic equation.</li>
+</ul>
+<p>September 6th</p>
+<ul>
+<li>Changed 4 to BN_MAX_POLY_DEGREE in roots_example.c to avoid any
+    further confusions in
+    <a href="http://sourceforge.net/p/brlcad/code/57469">r57469</a>.
+    roots_example.c actually solves a sextic equation now.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Solved the implicit heart equation with x=y=z in order to substitute
+    into the rt_hrt_shot sextic equation and use in roots_example.c</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Running rt command on a hrt object. Picture can be viewed
+    <a href="http://brlcad.org/~Izak/heart.png">here</a>.</li>
+</ul>
+<p>September 7th</p>
+<ul>
+<li>Produced a <a href="http://brlcad.org/~Izak/Movie.odp">slideshow</a> from
+    images produced after running the 'rt' command on a heart object.</li>
+</ul>
+<h1 id="september-9th-to-september-14th">September 9th to September 14th</h1>
+<p>September 9th</p>
+<ul>
+<li>Getting my feet wet with plotting in the mged/archer interface :)</li>
+</ul>
+<p>September 10th</p>
+<ul>
+<li>Fixed the orientation of the heart and invalid implicit equation in
+    rt_hrt_shot() in
+    <a href="http://sourceforge.net/p/brlcad/code/57533/">r57533</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Getting better results from rt_hrt_shot in this <a href="http://brlcad.org/~Izak/Heart.mpg">Heart
+    movie</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Observing the rt_ell_plot() functions to see how the
+    rt_hrt_plot() can be written.</li>
+</ul>
+<p>September 14th</p>
+<ul>
+<li>Corrected rt_hrt_bbox() by Stretching the xdir vector to
+    accommodate the heart and rt_hrt_norm() by Correcting Z component
+    of the normal vector (partials of sextic equation) in
+    <a href="http://sourceforge.net/p/brlcad/code/57653/">r57553</a>.</li>
+</ul>
+<h1 id="september-16th-to-september-21st">September 16th to September 21st</h1>
+<p>September 16th</p>
+<ul>
+<li>Had an entretien with my University's Vice- Chancellor and dean of
+    Faculty of Engineering today talking about Summer of Code and
+    approaching Doc Camp .</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote a private helper function rt_hrt_24pts() for
+    rt_hrt_plot(). Have written code to get 2 iso-contours. Still
+    working on some bugs in archer.</li>
+</ul>
+<p>September 17th</p>
+<ul>
+<li>Following the stack trace which Sean opened my eyes to on IRC.</li>
+</ul>
+<p>September 18th</p>
+<ul>
+<li>Fixed the bumpy areas on the heart by correcting some code in
+    rt_hrt_norm() in
+    <a href="http://sourceforge.net/p/brlcad/code/57728/">r57728</a>.</li>
+</ul>
+<p>September 20th</p>
+<ul>
+<li>Corrected the rt_hrt_norm() function so that the default trace
+    shouldn't be doing from high specular to dark shadows in
+    <a href="http://sourceforge.net/p/brlcad/code/57780/">r57780</a>.</li>
+</ul>
+<h1 id="gsoc-2013-summary">GSoC 2013 summary</h1>
+<p>For the past quarter, I've been implementing a heart primitive for the
+BRL-CAD package. This project focused on writing and testing callback
+functions in the ray tracing library for the aforementioned
+primitive.You are invited to read my diary on
+<a href="http://brlcad.org/wiki/user/Izak/GSOC_2013_logs">http://brlcad.org/wiki/user/Izak/GSOC_2013_logs</a>.</p>
+<p>Despite the challenges I encountered such as the lack of Internet
+connectivity for over 5 weeks before the mid-term evaluation period, I
+hooked the heart primitive into the BRL-CAD source by adding a magic
+number for the heart in include/magic.h and src/libbu/magic.c, stubbing
+an empty heart in include/db5.h, include/rtgeom.h,
+include/raytrace.h,src/librt/db5_types.c,src/librt/primitives/table.c
+and src/librt/primitives/hrt/hrt.c as well as adding typing support for
+the heart in the mged interface in include/wdb.h,src/libwdb/wdb.c and
+src/libged/typein.c.</p>
+<p>After the mid-term evaluations,I implemented ray tracing callback
+functions for serialization (rt_hrt_??port), textual description
+(rt_hrt_describe, rt_hrt_print) and ray tracing (rt_hrt_prep,
+rt_hrt_shot and rt_hrt_norm).I also wrote a test to ensure that
+BRL-CAD's root solver is stable for sextic equations and after
+consulting some mathematicians, I learned that the heart's sextic
+equation cannot be solved in radicals -- A pointer to which method does
+not work :). Feel free to download a heart animation from
+<a href="http://brlcad.org/~Izak/HeartImages/Heart.mpg">http://brlcad.org/~Izak/HeartImages/Heart.mpg</a>. You can also look at
+images of the heart from 360 different angles using
+<a href="http://brlcad.org/~Izak/HeartImages/">http://brlcad.org/~Izak/HeartImages/</a></p>
+<p>As GSoC 2013 comes to an end, my passion to continuously contribute to
+the open source community grows. I intend to finish the callbacks
+functions for the heart primitive and hook the heart to the mged and
+archer interfaces so the heart gets into the next BRL-CAD release :)</p>
+<p>Feeling Great! :)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

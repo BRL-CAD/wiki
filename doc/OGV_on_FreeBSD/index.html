@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/OGV_on_FreeBSD/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>OGV on FreeBSD - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/OGV_on_FreeBSD.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#getting-ready" class="nav-link">Getting Ready</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#installing-a-few-packages" class="nav-link">Installing a few packages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#installing-meteor" class="nav-link">Installing Meteor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#get-ogv" class="nav-link">Get OGV</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#keep-ogv-running-on-a-server" class="nav-link">Keep OGV running on a server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="getting-ready">Getting Ready</h2>
+<p>Since Meteor installer doesn't support freeBSD operating system, we need
+to manually build and compile the meteor source code. Currently, this
+method is tested on version <strong>10.2-RELEASE-p18</strong></p>
+<p>If possible, use a freshly installed freeBSD system. Any trace of
+node/npm can create problems while compilation, Most of the problems I
+faced were because of some old/unsupported version of node and npm.</p>
+<h2 id="installing-a-few-packages">Installing a few packages</h2>
+<p>We need to install some packages in order to start our meteor
+compilation.</p>
+<p><code>$ sudo pkg install -y bash git gmake mongodb node npm python</code></p>
+<h2 id="installing-meteor">Installing Meteor</h2>
+<h3 id="step-1-clone-the-repository">Step 1 : Clone the Repository</h3>
+<p>The first step is to get the meteor source code on your machine. I
+cloned it in home directory, so it's easy to execute meteor script,
+using $HOME variable.
+<code>$ cd $HOME</code></p>
+<p><code>$ git clone --depth 1</code><a href="https://github.com/4commerce-technologies-AG/meteor"><code>https://github.com/4commerce-technologies-AG/meteor</code></a></p>
+<h3 id="step-2-build-the-node-module">Step 2: Build the node module</h3>
+<p>Next cd into the cloned directory by
+<code>$ cd $HOME/meteor</code></p>
+<p>Execute the build node script in scripts folder
+<code>$ scripts/build-node-for-dev-bundle.sh</code></p>
+<p>Execute the generate bundle script
+<code>$ scripts/generate-dev-bundle.sh</code></p>
+<p><em>The above two scripts execution may take some time depending upon the
+configuration of the host machine. So have a little patience while
+executing them ;)</em></p>
+<h3 id="step-3-give-meteor-its-first-try">Step 3: Give meteor it's first try</h3>
+<p>Now meteor is installed successfully and you can give it first try by
+<code>$ $HOME/meteor/meteor --version</code></p>
+<p><em>The above-mentioned code of line assumes that your meteor folder is in
+the home directory</em></p>
+<h2 id="get-ogv">Get OGV</h2>
+<p>Now that meteor is successfully installed, it's time to run OGV on
+system. Clone OGV from it's official repository by
+<code>git clone</code><a href="https://github.com/BRL-CAD/OGV.git"><code>https://github.com/BRL-CAD/OGV.git</code></a></p>
+<p>Go to the OGV app directory
+<code>$ cd /path/to/clone/OGV-Meteor/OGV</code></p>
+<p>Run meteor using the following command
+<code>$ $HOME/meteor/meteor</code></p>
+<h2 id="keep-ogv-running-on-a-server">Keep OGV running on a server</h2>
+<p>If you are working on a cloud server and want OGV to keep running, even
+if you close the connection, you can do so by using tmux.</p>
+<p>Install tmux by
+<code>$ sudo pkg install tmux</code></p>
+<p>Start tmux session by
+<code>$ tmux</code></p>
+<p>Run meteor inside tmux session in the usual way. Get out of the session
+using <code>Ctrl + b</code> and then press the key <strong>D</strong> on keyboard to detach from
+that session. Now you can safely log out and it won't end the meteor
+process you started inside tmux session.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

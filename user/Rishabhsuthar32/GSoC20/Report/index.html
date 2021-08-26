@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Rishabhsuthar32/GSoC20/Report/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project Report - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Rishabhsuthar32/GSoC20/Report.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-report" class="nav-link">Project Report</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#project-plan" class="nav-link">Project Plan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#patches-submitted" class="nav-link">Patches Submitted</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#performance" class="nav-link">Performance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#to-do-list" class="nav-link">To Do List</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="project-report">Project Report</h1>
+<h2 id="project-plan">Project Plan</h2>
+<p>BRL-CAD has one of the oldest and fastest parallel ray tracing
+implementations around but it doesn't currently leverage the GPU very
+much. With implicit geometry and constructive solid geometry (CSG)
+Boolean operations, it also has a very different approach to ray tracing
+that has its own set of academic challenges.</p>
+<p>The project here was to introduce a GPGPU pipeline into BRL-CAD using
+OpenCL for existing primitives and parallelize them for faster
+computation compared to the non-GPGPU implementation.</p>
+<p>Some of the primitives that were planned to be converted in this 2020
+season of Google Summer of Code are polyhedron with an arbitrary number
+(ARBN), FASTGEN4 CLINE, hyperboloids of one sheet (HYP), etc.</p>
+<h2 id="patches-submitted">Patches Submitted</h2>
+<p>Following patches include modifications for better functioning and
+resolution of bugs encountered while rendering via OpenCL in MGED
+terminal.</p>
+<ul>
+<li>OpenCL_CMAKE: <a href="https://sourceforge.net/p/brlcad/patches/549/">https://sourceforge.net/p/brlcad/patches/549/</a></li>
+<li>OpenCL rendering bug:
+    <a href="https://sourceforge.net/p/brlcad/patches/551/">https://sourceforge.net/p/brlcad/patches/551/</a></li>
+</ul>
+<p>Following are the patches submitted for OpenCL versions of some of the
+primitives.</p>
+<ul>
+<li>CLINE: <a href="https://sourceforge.net/p/brlcad/patches/541/">https://sourceforge.net/p/brlcad/patches/541/</a></li>
+<li>ARBN: <a href="https://sourceforge.net/p/brlcad/patches/543/">https://sourceforge.net/p/brlcad/patches/543/</a></li>
+<li>PIPE: <a href="https://sourceforge.net/p/brlcad/patches/545/">https://sourceforge.net/p/brlcad/patches/545/</a></li>
+<li>VOL: <a href="https://sourceforge.net/p/brlcad/patches/547/">https://sourceforge.net/p/brlcad/patches/547/</a></li>
+<li>METABALL: <a href="https://sourceforge.net/p/brlcad/patches/548/">https://sourceforge.net/p/brlcad/patches/548/</a></li>
+<li>HYP: <a href="https://sourceforge.net/p/brlcad/patches/553/">https://sourceforge.net/p/brlcad/patches/553/</a></li>
+</ul>
+<h2 id="performance">Performance</h2>
+<p>We shall take the example of HYP primitive here for comparing the
+performance of C and OpenCL versions of rendering.
+<img alt="" src="/wiki/user/img/Hyp2_c.png" /><img alt="" src="/wiki/user/img/Hyp2_cl.png" />
+<strong>First Test</strong>: Both the C and OpenCL renderings should look same</p>
+<p>On the left is the C rendering of the HYP primitive and on the right is
+its counterpart rendered after enabling OpenCL. Well, on first look,
+they do look same. First test passed!</p>
+<p><strong>Second Test</strong>: The performance of the OpenCL version should be much
+better than the C version</p>
+<p>So, let's compare the time displayed in their rendering logs now. While
+the time taken by the C version to render was 0.31 seconds, the time
+taken by the OpenCL version to render was 0.02 seconds. That is more
+than <strong>15x improvement</strong> in the performance! Hurray!</p>
+<p><img alt="" src="/wiki/user/img/Hyp_pixdiff.png" /></p>
+<p><strong>Third Test</strong>: Checking the difference between images at a pixel level</p>
+<p>Using the pixdiff and pix-png command of BRL-CAD, a pixdiff image shown
+on the right was created. The image shows where the colour values differ
+by more than 1 value in one or more of the RGB channels. Most of the
+pixels are offset in intensity by just a little bit, which implies some
+calculation is just slightly off. However, the hits and misses appears
+to be correct.</p>
+<p><strong>Fourth Test</strong>: To confirm the hits are identical</p>
+<p>On comparing the nirt shotline in both the renderings, the hits were
+found to be identical, which implies the mismatch in intensity found in
+above test is a normal issue.</p>
+<h2 id="to-do-list">To Do List</h2>
+<ul>
+<li><strong>Memory Allocation</strong> : One of the major challenges I faced was
+    finding the OpenCL counterpart of bu_malloc which works fine while
+    passing the variables from .c to .cl file. While I tried with malloc
+    as is used normally in C programs, it apparently didn't work. The
+    renderings were simply not occurring in the OpenCL version. Hence,
+    the HYP and SUPERELL primitives, which didn't use the bu_malloc
+    command, rendered easily while others didn't. The patches submitted
+    above have no compilation or computation error. If the memory
+    allocation thing works, they'd render just as fine.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Using Printf statement</strong>: Another issue where I got stuck was
+    being unable to use printf statement in OpenCL files. The strategy
+    to debug opencl kernels using printf is to enable printf command by
+    passing enumerations stated below in an array of context properties
+    to the function, clCreateContext, which creates opencl context as
+    follows:</li>
+</ul>
+<!-- -->
+
+<pre><code>CL_PRINTF_CALLBACK_ARM    0x40B0
+CL_PRINTF_BUFFERSIZE_ARM  0x40B1
+cl_context_properties context_properties[] =
+{
+ CL_PRINTF_CALLBACK_ARM, (cl_context_properties)printf_callback,
+ CL_PRINTF_BUFFERSIZE_ARM, (cl_context_properties)0x100000,
+ CL_CONTEXT_PLATFORM, (cl_context_properties)platform,
+ 0
+};
+</code></pre>
+<p>This enables the device side printf built in function for OpenCL C
+versions prior to 1.2. It also extends the cl_context_properties
+enumeration to allow a user defined printf callback and/or printf buffer
+size. OpenCL kernel code then has access to:</p>
+<p><code>#pragma OPENCL EXTENSION cl_arm_printf : enable</code></p>
+<p>This pragma must be enabled for a kernel to have access to the printf
+built in function in OpenCL C versions prior to 1.2.</p>
+<p>For the purpose of debugging in mged I used bu_log instead of printf by
+passing following array of context properties</p>
+<pre><code>cl_context_properties context_properties[] =
+{
+ CL_PRINTF_CALLBACK_ARM, (cl_context_properties)bu_log,
+ CL_PRINTF_BUFFERSIZE_ARM, (cl_context_properties)0x100000,
+ CL_CONTEXT_PLATFORM, (cl_context_properties)platform,
+ 0
+};
+</code></pre>
+<p>But unfortunately this doesn't work and reports error that context
+cannot be created. This needs further investigation. The print statement
+would also be useful for debugging the memory allocation issue, as to
+where and why it is failing.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><strong>Project Plan</strong>: <a href="../Project/">Project</a></li>
+<li><strong>Development Logs</strong>: <a href="../Log/">Log</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Sadeep/DevLog-2020/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>DevLog 2020 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Sadeep/DevLog-2020.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li>04 May 2020</li>
+</ul>
+<p>Downloaded Qt, Visual Studio C++, cloned (or whatever it is called in
+svn) the BRL-CAD source code.</p>
+<ul>
+<li>05 May 2020</li>
+</ul>
+<p>Fixed the errors that came up and built BRL-CAD from source on Windows,
+VS2019. Several bugs still remain. A debug assertion failure happens in
+pix-bw.exe. But I guess this won't affect my project in any way. The
+builds still take a long time. I guess this is because everything is
+compiled everytime.</p>
+<ul>
+<li>06 May 2020</li>
+</ul>
+<p>I looked at the possibility of using NMake to build BRL-CAD for Windows
+because it would not take long as building with VS (CMake was lot faster
+when I was doing in Ubuntu last year). Also I need to configure CLion
+instead of VS.</p>
+<p>CMake generates the NMake project successfully. But NMake does not work
+well. It gives an error when building TCL and TK projects. I was
+changing various stuff and tried to see if it succeeds.</p>
+<ul>
+<li>07 May 2020</li>
+</ul>
+<p>Changing CMakeLists files of tcl and tk modules and a change to
+corecrt_io.h in windows 10 SDK made the errors with NMake disappear.
+Archer does not work. Debugging Archer displays that it crashes saying
+tkhtml.dll not found. Also I was trying to find a bug to solve as the
+patch Sean asked for. Looked at
+<a href="https://sourceforge.net/p/brlcad/bugs/385/">https://sourceforge.net/p/brlcad/bugs/385/</a>. Followed some Qt videos.</p>
+<ul>
+<li>08 May 2020</li>
+</ul>
+<p>I was thinking the only command line way of building using Visual Studio
+was via NMake. I realized that I can build via the Visual Studio IDE's
+native way by setting some arguments in CMake. Also realized that the
+build times were long when building with VS IDE was because I built
+ALL_BUILD when I should have built only the target I changed.
+Configured CLion to use VS IDE's tools to build. Everything is working
+now.</p>
+<ul>
+<li>09 May 2020</li>
+</ul>
+<p>Worked on the patch Sean had asked for. The Create new file in MGED had
+a bug. It was saving without the .g extension even though .g extension
+was selected in the Create New dialog box (at least on Windows). I tried
+to debug this. I realized this was a bug (or a unusual behavior) in Tk
+framework and cannot be by changing BRL-CAD code.</p>
+<p>Then I started to create the feature to open recent files in MGED.</p>
+<ul>
+<li>10 May 2020</li>
+</ul>
+<p>Finished implementing opening recent files for MGED.</p>
+<p>The patch can be found here.
+<a href="https://sourceforge.net/p/brlcad/patches/542/">https://sourceforge.net/p/brlcad/patches/542/</a></p>
+<ul>
+<li>11 May 2020</li>
+</ul>
+<p>I did not do anything related to the project.</p>
+<ul>
+<li>12 May 2020</li>
+</ul>
+<p>Qt is using qmake to build by default. But can be configured to use
+CMake too. I encountered several issues when trying to configure
+building Qt applications with CMake in Windows. I fixed those issues and
+built a Qt based project with CMake.</p>
+<ul>
+<li>01 June 2020</li>
+</ul>
+<p>Implemented opening a BRLCAD database and saving a BRLCAD database using
+coreinterface.</p>
+<p>Used QGLWidget to display geometry using the display manager I
+implemented last year. Traversing world with keyboard seems to be
+broken.</p>
+<ul>
+<li>02 June 2020</li>
+</ul>
+<p>Bug fixes relating to displaying geometry.</p>
+<p>Created a class to store and process multiple BRLCAD databases (to
+support keeping multiple documents opened inside the software)</p>
+<ul>
+<li>03 June 2020</li>
+</ul>
+<p>Implemented fetching objects list from a database using
+BRLCAD::ConstDatabase::TopObjectIterator. Displayed the list in a
+QListWidget.</p>
+<p>However this does not still display the nested objects. Added keyboard
+shortcuts for menu item actions.</p>
+<ul>
+<li>04 June 2020</li>
+</ul>
+<p>Disabled AUTOMOC and wrapped manually.</p>
+<p>Replaced QGLWidget with QOpenGLWidget for displaying geometry and fixed
+the bugs that came up.</p>
+<p>Readability improvements (Moved .h files to include directory. Made the
+CMakeList.txt file clear.)</p>
+<p>Created the GitHub repository and pushed everything.</p>
+<ul>
+<li>05 June 2020</li>
+</ul>
+<p>Fixed bug OpenGL widget not refreshing after first drawing.</p>
+<p>Geometry Operations (Creating sphere)</p>
+<ul>
+<li>06 June 2020</li>
+</ul>
+<p>I was struggling to get elements from the VectorList class. Iterator has
+a very weird syntax. After hours of googling I could finally print the
+values from a VectorList. Had to create a separate class just to do the
+iterating (VectorList::Iterate). I'm not sure if I'm doing this
+correctly. Can't still get the elements to a list without using
+something like global variables since local variables are not accessible
+within the class I created for iterating.</p>
+<ul>
+<li>07-10 June 2020</li>
+</ul>
+<p>Started rewriting the display manager since I anyway will need to change
+it to make compatible with the VectorList.</p>
+<p>Created a camera and implemented following functionalities.</p>
+<p>Rotating with mouse. Currently configured to rotate by dragging with
+middle mouse button.</p>
+<p>Moving (perpendicular to the camera direction) with mouse. Currently
+configured to move by dragging with right mouse button</p>
+<p>Moving forward /backward (camera looking direction) with mouse wheel.</p>
+<p>Implemented making the cursor (mouse) jump to the other edge when it
+passes the boundary of opengl display while doing the above operations.</p>
+<p>Implemented Grid lines.</p>
+<p>Keyboard shortcuts for camera.</p>
+<ul>
+<li>11 June 2020</li>
+</ul>
+<p>Implemented the class Document which holds information about a single .g
+file opened in the editor.</p>
+<p>Implemented support for multiple documents. Several .g files can be
+opened and worked with now.</p>
+<p>Struggled to get the elements from VectorList to a list. (later found
+out that this was not possible and was not the intended use of
+VectorList)</p>
+<ul>
+<li>12 June 2020</li>
+</ul>
+<p>Worked on the DM</p>
+<ul>
+<li>13 June 2020</li>
+</ul>
+<p>Finished writing DM to coreinterfaces:VectorList.</p>
+<p>bug fixes in coreinterface.</p>
+<p><img alt="" src="/wiki/user/img/arbalest2.png" /></p>
+<ul>
+<li>14 June 2020</li>
+</ul>
+<p>Minor Bug fixes. Opening file via QFileDialog::getOpenFileName did not
+work when QMdiArea is in subwindow mode rather than tabbed. (For the
+screenshot yesterday I had to hard code file paths &amp; open them in
+opening).</p>
+<ul>
+<li>15 June 2020</li>
+</ul>
+<p>Replaced the objects list with a tree view (I reused the code from rt3 /
+QtGui).</p>
+<p>Studied the Cameras in g3d. It appears I will have to study the logic
+and implement the cameras (rather than reusing the g3d code) since they
+use ORGE.</p>
+<ul>
+<li>16 June 2020</li>
+</ul>
+<p>Added a style sheet through RC. UI improvements (mostly experimenting
+various things I can do with style sheets)</p>
+<ul>
+<li>17 June 2020</li>
+</ul>
+<p>Implemented rendering directly from bn_vlist. Now we can choose between
+using VectorList and bn_vlist by changing bool
+ArbalestSettings::useLegacyVlists.</p>
+<p>It turned out to be significantly faster.</p>
+<ul>
+<li>18-19 June 2020</li>
+</ul>
+<p>Studied how archer, mged, libged, libtclcad, libdm and display_lists
+works.</p>
+<p>I was playing around with the code by placing breakpoints in the code of
+these libraries while doing stuff in archer.</p>
+<ul>
+<li>22-23 June 2020</li>
+</ul>
+<p>Studied the source code.</p>
+<p>Worked on implementing display lists in C++.</p>
+<p>Cloning and setting up qtged branch. Tried to get qged target to build,
+failed.</p>
+<ul>
+<li>24 June 2020</li>
+</ul>
+<p>Display lists and managing color done. <img alt="" src="/wiki/user/img/arbalestj25.png" /></p>
+<p>Removed the C like vlist rendering since BRLCAD::VectorList::Iterate is
+now fast enough with Display lists implemented.</p>
+<p>Worked on object insert toolbar.</p>
+<ul>
+<li>25-26 June 2020</li>
+</ul>
+<p>Implemented line styling (setLineAttr in dm and deciding style for each
+solid). Dashed lines are plotted where necessary now.</p>
+<p>Ported my DM to the qged project in the main repo. Most of the things
+had to be changed since my implementation was on top of coreinterfaces
+and the main repo didn't have access to coreinterfaces. So I rewrote it
+to rely on the C methods.</p>
+<ul>
+<li>28-29 June 2020</li>
+</ul>
+<p>Restructured the code (which is now in main BRLCADrepository / qged) to
+seperate the raw OpenGL commands to a new DisplayManager class which is
+analogous dms in libdm. The plan is to implement methods in dm-generic.c
+in this class as needed.</p>
+<ul>
+<li>30 June 2020</li>
+</ul>
+<p>Fixed the bug which prevented the wireframes from not being drawn in
+starseeker's machine. After a lot of searching I realized that doing
+OpenGL operations in Qt SLOT call cause the bug.</p>
+<p>Installed Ubuntu, configured the environment and built BRLCAD+my project
+on a virtual machine. (this was done to simulate starseeker's
+environment although it would help me in the future to check cross
+platform support)</p>
+<ul>
+<li>1 July 2020</li>
+</ul>
+<p>Changed my project code in the RT^3 repository to account for to
+reimplement the changed made to the code in qged. (see 28-29 June 2020)</p>
+<ul>
+<li>2-3 July 2020</li>
+</ul>
+<p>Implemented traversing the database. Basically a C++ wrapper for
+db_walk_tree. A class TreeLeaf was implemented to support the
+functionality. The feature was implemented to coreinterfaces. A
+WalkTree() method was implemented in ConstDatabase.</p>
+<p><a href="https://sourceforge.net/p/brlcad/patches/546/">https://sourceforge.net/p/brlcad/patches/546/</a></p>
+<p>Implemented methods into GeometryRenderer to utilize the functions I
+implemented in coreinterface for drawing the database.</p>
+<ul>
+<li>4-6 July 2020</li>
+</ul>
+<p>I realized the coreinterface already had a way to support iterating the
+database. Discarded the code I implemented and studied the existing
+methods.</p>
+<p>Implemented methods into GeometryRenderer to utilize the existing
+functions for drawing the database.</p>
+<ul>
+<li>7-9 July 2020</li>
+</ul>
+<p>Removed all references to internal C pointers from the codebase.</p>
+<p>Changed all occurrences of auto keywords to the corresponding type.</p>
+<p>Implemented destructers and properly freeing of memory in all necessary
+the classes (I had not done this earlier).</p>
+<p>Converted pointers to references where possible for readability.</p>
+<p>Implemented the concept Active document, object tree updates when active
+document changes. Bug fixes at file open.</p>
+<p>Seperated UI files in the project structure for readability. Switched to
+manual UIC from AUTO_UIC.</p>
+<p>Added and customized stylesheet. Removed titlebar. Added archer icon
+into the menubar (now title bar).</p>
+<p>Implemented close button into menubar (with on hover/press UI changes)</p>
+<p>It looks with the title bar removed. But Now I can't resize / drag the
+window at least on Windows.</p>
+<ul>
+<li>10-16 July 2020</li>
+</ul>
+<p>Added minimize, maximize, restore buttons (UI changes based on hover /
+press state, functionality implementing).</p>
+<p>Replaced MDI with a tabbed interface.</p>
+<p>Implemented method setBGColor into DisplayManager.</p>
+<p>Replaced brlcad/vmath.h with QMatrix4x4 and QVector3D.</p>
+<p>Created a preprocessor for QSS to support variables. Color scheme
+mapping is stored in a seperate *.theme file now.</p>
+<p>Seperated logic for dock widgets into a new class 'Dockable'.</p>
+<p>Implemented changes to object tree to support properties displaying.</p>
+<p>File open/close UI changes.</p>
+<p>Created Properties widget.</p>
+<p>Made the UI compatible for multiple screen resolutions and scale levels.</p>
+<p>Opening files by passing path.</p>
+<p>Scroll related bug fixes in Dockable.</p>
+<p>Scrollbars styles to look better and be more space efficient</p>
+<p>Implemented CollapsibleWidget</p>
+<p>A lot of experimenting in the Stylesheet for everything in the list
+above.</p>
+<p>Learning about fonts and using them in Qt.</p>
+<p><img alt="" src="/wiki/user/img/aba2.png" /></p>
+<ul>
+<li>17-25 July 2020</li>
+</ul>
+<p>(Commit
+<a href="https://github.com/sadeepdarshana/arbalest/commit/16ec7e464352c13401f2fbe157d4e6b13bdd95e0">https://github.com/sadeepdarshana/arbalest/commit/16ec7e464352c13401f2fbe157d4e6b13bdd95e0</a>
+to
+<a href="https://github.com/sadeepdarshana/arbalest/commit/cd19105679dc9a6db103e0ca725d2638e58aec89">https://github.com/sadeepdarshana/arbalest/commit/cd19105679dc9a6db103e0ca725d2638e58aec89</a>)</p>
+<p>Implemented CollapsibleWidget. Dockable scroll / clear improvements.
+Properties widget reads objects details now</p>
+<p>TypeSpecificProperties</p>
+<p>Improving memory releasing, widget tree managing and default sizes in
+Dockable</p>
+<p>CollapsibleWidget, Properties, Dockable improvements</p>
+<p>QTableWidget experiments for displaying vectors</p>
+<p>creating a table widget since build in is bad.</p>
+<p>Object data tables</p>
+<p>Display property values and editing them</p>
+<p>Editing parameters with handlers (DragEditLineEdit)</p>
+<p>axes in the bottom right corner now</p>
+<ul>
+<li>28 July-7 August 2020</li>
+</ul>
+<p>Removed menubar and statusbar from .ui and added it to the C++ code.</p>
+<p>Merge pull requests. (removed some non standard code)</p>
+<p>Bug fixes in camera.</p>
+<p>Removed the main view from .ui file. Removed the use of .ui files and
+removed UIC from cmake. Everything is in C++ now.</p>
+<p>Bug fixes in DragEditLineEdit</p>
+<p>Document file path related implementations. Save as feature.</p>
+<p>Implemented ObjectTree.</p>
+<p>Changed ObjectTreeWidget to utilize ObjectTree.</p>
+<p>Changed the logic for object rendering to utilize ObjectaTree.</p>
+<p>added color to new ObjectTree based rendering system</p>
+<ul>
+<li>8 - 19 August 2020</li>
+</ul>
+<p>Center view around a single object.</p>
+<p>Properties panel for Combinations.</p>
+<p>Raytracing.</p>
+<p>Multiple viewports for a single document.</p>
+<p>Designed an icon for Arbalest in Illustrator.</p>
+<p>Added toolbar icons.</p>
+<p>Added missing tooltips for buttons.</p>
+<p>About window.</p>
+<p>Implemented Help window as a quick start page displayed when app starts.</p>
+<p>Grid renderer</p>
+<p>Implemented dark theme.</p>
+<p>Did some performance evaluation by measuring execution times and changes
+some stuff based on the results.</p>
+<p>Implemented object creation.</p>
+<p>Implemented changing background color of raytraced outputs.</p>
+<p><img alt="" src="/wiki/user/img/arbalest6.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

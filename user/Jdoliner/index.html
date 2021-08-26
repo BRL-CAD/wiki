@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Jdoliner/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Jdoliner - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Jdoliner.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>technique that represents solids as Boolean combinations of more
+primitive solids. Boundary Representation (B-REP) represents solids by
+their limits. Both of these systems have their own merits. My project
+will bring these two systems together by implementing methods for
+evaluating Boolean operations on B-REP. The algorithm to be implemented
+hinges upon calculating the intersection curves between Bezier patches.</p>
+<p>Proposal: I propose to forward the goal of hybrid model support in
+BRL-CAD by implementing BREP on BREP CSG evaluation. To this end I
+propose an implementation of the BOOLE system detailed in Shankar
+Krishnan, Atul Narkhede, Dinesh Manocha (1996) (see link). The Boole
+system has a number of merits:</p>
+<p>Firstly BOOLE is very robust. It is capable of performing operations on
+curved surfaces (such as NURBS and Bezier patches) and outputting
+trimmed Bezier patches without approximating using polyhedra. This
+prevents data proliferation and yields more useful results as the new
+surfaces can still be modified using control points. Note: although the
+algorithm is meant for curved surfaces, it is very easily applied to
+polyhedral surfaces. The system also uses floating points for arbitrary
+precision.</p>
+<p>Secondly BOOLE is a realistically implementable solution, as is clear
+from the fact that Krishnan et al. details an implementation of the
+system. This was done in FORTRAN but will still be an invaluable
+reference for me throughout the implementation process. This
+implementation is open too.</p>
+<p>Finally the BOOLE systems is concerned with efficiency. Not only is the
+algorithm already streamlined; the paper also details how to parallelize
+the system, which will make for a more lasting solution with today’s
+computers.</p>
+<p>The BOOLE system's algorithm is as follows:</p>
+<p>Data Structures The algorithm requires data stored as trimmed Bezier
+patches which are simply Bezier patches together with a closed sequence
+of curves defined in the domain of the patch. Note, Bezier patches are a
+subset of trimmed Bezier patches. And the paper notes that this
+algorithm is easily applied to algebraically defined surfaces. The
+structure also maintains adjacency information about the surfaces. It
+maintains which patches share a curve, the two patches to which a curve
+is attached, and the edges (in counter-clockwise order) to which each
+vertex is attached (winged edge storage structure). This adjacency
+storage method is easy enough to adapt to whatever fits best with the
+current BRL-CAD structures.</p>
+<p>Assumptions The algorithm assumes that the surfaces form a manifold;
+mathematically this means they are locally homeomorphic to a euclidean
+space, which implies that they have a well-defined inside and outside,
+so boolean operations are well defined. The algorithm also assumes that
+the boolean operations on the these manifolds yield manifolds. To this
+end the system uses regularized boolean operations (see algorithm
+notes). The paper mentions that it is still possible to generate
+non-manifolds from manifolds even with regularized boolean operations;
+this is something I will have to look into as a possible bug. The paper
+states that given these assumptions it has been shown that there exists
+an unambiguous topological representation of the solid.</p>
+<p>Step 1 The main part of the algorithm is computing the intersection
+curves between the two solids. It is also the most computationally
+expensive, and each patch of one solid must be checked with every patch
+from the other. However, a lot of pairs have no intersection, so the
+algorithm uses two techniques to prune the mn patches. The first uses
+bounding boxes (really fast) to eliminate pairs (Bezier patches possess
+the convex hull property); the second is more costly (which is why it's
+second) and uses linear programming (still polynomial) to find planes
+between the patches, which also eliminates the pair.</p>
+<p>Step 2 The intersection between the remaining pairs of patches is
+computed next. This computation is by far the most difficult (but
+interesting) part. It relies on the fact that any space curve can be
+projected onto a plane curve with the correct linear transformation (a
+result from algebraic geometry). The algorithm first finds a suitable
+transformation to obtain the curve in a plane. This makes the
+computation of the intersection more manageable, although there are
+still some interesting twists. The paper goes into some detail on the
+mathematics required for this calculation and cites a number of other
+papers that contain more information. This section is a bit lengthy for
+inclusion in this proposal.</p>
+<p>Step 3 The intersection curves become the trimming curves of our
+resultant Bezier patches. The curves partition each of the patches into
+pieces that are inside the other manifold and pieces that are outside
+the other manifold. We then have all the information needed to
+reconstruct the solid.</p>
+<p>Algorithm Notes Regularized booleans avoid the problem of manifolds
+intersecting in lower-dimensional surfaces, for example unit spheres at
+(0,0,0) and (2,0,0) intersect in a point (1,1,1). Regularized booleans
+avoid this basically by using the interior of sets instead of the entire
+set and then taking the closure.</p>
+<p>Production Notes The final product of my proposal will be a library to
+be added into the BRL-CAD codebase implementing the BOOLE system as
+described above. I am fairly certain that I will be able to use the
+B-REP structures as they are in the BRL-CAD codebase. Although as I
+understand these are presently undergoing rewriting, my project may
+involve some work on these if it makes sense with the project goals.
+Also should my project finish ahead of schedule, I intend to begin
+implementing the CSG primitives in BRL-CAD as B-REP objects. The most
+challenging part of this project is computing the intersection curve
+between two patches. Thus I intend to code this part first, and
+anticipate that it will take 4 weeks. After this I anticipate spending
+the next 4 weeks developing the remainder of the system, that is, making
+it compatible with all of the BRL-CAD structuresand setting up the other
+parts of the algorithm. These include the pruning methods to optimize
+the patch intersection computations and the methods needed to reassemble
+the B-REP from intersection curves. The final task is making sure that
+the outputs are all compatible with BRL-CAD. I anticipate about 1 week
+for each task. This leaves me with about 4 weeks at the end to debug
+everything and possibly if everything is running fine work on some
+related tasks.</p>
+<p>About Myself: I am presently a third year math and computer science
+major at The University of Chicago. I have taken numererous classes on
+C/C++ programming and consider myself very comfortable with the two
+languages. I am also very comfortable with funtional programming
+languages, particularly Scheme and Lisp. Although these will be less
+handy for the BRL-CAD project. This project has very interesting
+mathematical underpinnings and as such piques my mathematical curiosity.
+There are also a number of interesting challanges to be overcome in
+implementing such a system. This project is one of the few in the GSoC
+pool that really interests both the Mathematician and the Programmer in
+me. Over the past 2 summers I have worked at Fermi National Laborartory
+writing a simulation of a liquid argon neutrino detector that was being
+built there. And as a researcher at The University of Chicago doing
+research on genetic programming. My experience in the later involved
+writing a working implementation of my research topic using Lisp and
+Python.</p>
+<p>My dedication: If selected to join the brlcad team over the second as
+part of google summer of code, I would treat that as a full time job and
+feel obligated to work at least 40 hours a week on it. I have select
+brlcad because it's a project I feel I could be very passionate about
+working on, therefore I'm certain I will wind up spending more than
+those 40 hours a week at times when my project has particularly
+interesting hurdles for me to overcome.</p>
+<p>Timeline and deliverables: Step 1, Leveraging ON_Nurb: .5-1 weeks My
+planned solution will use the openNurbs solution the first step will be
+to make sure that these are all setup in the most logical way to be used
+in the intersection algorithms. This will include writing a few helper
+functions. I don't expect this to be a long step at all, it just has the
+potential to save me a lot of headaches down the road. Deliverables:
+Helper functions for ON_Nurb objects.</p>
+<p>Step 2, Intersection (CPU solution): \~3 weeks With a bit of setup I'll
+be ready to get right into the meat of the task, intersecting two
+ON_Nurb objects together. It will take 2 ON_Nurbs, and return the path
+along which they intersect. This will allow us to easily form
+intersections and unions. The main worry with this algorithm is that the
+error will get out of hand. Prior solutions have either lacked the
+accuracy that is required for our solution, or used calculations that
+are far too expensive for our purposes. This will be the main hurdle of
+the project. Deliverables: Intersection Algorithm for ON_Nurb objects.</p>
+<p>Step 3, restitching \~2 weeks After we can take two ON_Nurbs objects
+and intersect them succesfully to get the paths, we need to able to take
+these and restitch them properly into the resultant ON_Nurbs. This
+doesn't have the same algorithmic challenges that the previous step has
+but will really be a matter of bookkeeping. Delivarables: Restitching
+algorithm, leaving us with a functional intersection algorithm.</p>
+<p>Step 4. testing, tweaking 1 week This isn't so much a step with set
+deliverables as a time that I'm sure I'll need just to tweek everything
+with the algorithm and make sure it's all running well and working
+together.</p>
+<p>Step 5 GPU solution \~3 weeks: In
+<a href="http://www.uni-weimar.de/cms/fileadmin/medien/vr/documents/publications/Ray_Casting_of_Trimmed_NURBS_Surfaces_on_the_GPU.pdf">http://www.uni-weimar.de/cms/fileadmin/medien/vr/documents/publications/Ray_Casting_of_Trimmed_NURBS_Surfaces_on_the_GPU.pdf</a>
+a speed up in this algorithm was acheived by leveraging GPUs. This would
+be an ambitious thing to implement. Furthermore I don't have any
+experience programming GPUs. However this would be a very nice feature
+to have since this task parallellizes so well we would get a substantial
+speed boost. Deliverables: A functional GPU version of the above
+algorithm which would be much faster.</p>
+<p>This leaves me with 4 weeks of unallocated time which I'm told is a good
+amount of time to leave in the GSoC period for random things that might
+arise and for integration of my implementation into the trunk.</p>
+<p>Patch (from last year) :
+<a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1944674&amp;group_id=105292&amp;atid=640804">http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1944674&amp;group_id=105292&amp;atid=640804</a></p>
+<p>Progress: Initial Commit:
+<a href="https://sourceforge.net/tracker/?func=detail&amp;aid=2805742&amp;group_id=105292&amp;atid=640804">https://sourceforge.net/tracker/?func=detail&amp;aid=2805742&amp;group_id=105292&amp;atid=640804</a></p>
+<p>June 13th - June 15th -Implemented:</p>
+<p><code>-PointInTriangle</code>
+<code>-SegmentSegmentIntersect</code>
+<code>-SegmentTriangleIntersect</code>
+<code>-TriangleTriangleIntersect</code></p>
+<p>June 15th - June 16th: Worked on making my code conform to all HACKING
+guidelines</p>
+<p>June 16th: Wrote tests and fixed bugs in PointInTriangle Wrote tests for
+SegmentSegmentIntersect (thus far there don't seem to be any bugs)
+Question to look into: Cross products are creating a great deal of
+floating point inaccuracy is this to be expected or can I mitigate it in
+some way?</p>
+<p>June 18th: Fixed numerous bugs both in my code and in test code. Tests
+are now very rigorous using rotations to generate large numbers of tests
+(these are nice becuase intersection is invariant under rotation so I
+still know the answer) At this point it seems that all of the low level
+functions are very robust.</p>
+<p>June 19th,22nd: Implemented the function MeshMeshIntersect. The final
+goal of all of these functions, it doesn't handle degenerate cases yet.
+Next Steps: test the function very rigorously, since this function uses
+all of the lower level stuff it serves as a very good integrative test.
+Also these tests are closer to the sort of thing that it will actually
+be called on.</p>
+<p>June 25th: Added integrative tests and tracked down a number of small
+bugs. MeshMeshIntersect now works perfectly on a nice (meaning not
+degenerate test case). Learned an important less about ON_SimpleArrays,
+nesting them cause them to segfault on initialization. Use
+ON_ClassArray&lt;ON_SimpleArray<T> &gt; instead.</p>
+<p>The only thing left that's need to actually perform CSG on meshes is
+implementing accounting systems to keep track of the curves and insert
+them as trimming curves.</p>
+<p>June 30th: The accounting system to keep track of the CSG meshes is
+proving to be a tricky problem. The main problem is reconstructing the
+mesh and figure out which triangle are internal. And which are external.
+The approach I'm taking toward doing this is to record this information
+by the direction that the edges we return are pointing. At the end any
+face with it's normal pointing the same way as it's superface will be
+part of the external mesh, and any face with it's normally pointing the
+opposite way will be part of the internal. So the problem becomes
+maintaining the edge direction correctly. I believe that I've got most
+of the algorithm worked out but, there are still one or two pathological
+cases that I don't account for.</p>
+<p>Status July 7th: I've spent the last few days going over the algorithm.
+To reiterate the challenge at hand is this. Given a triangle from a mesh
+intersection we need to figure out whether it was inside of the other
+mesh (internal) or (outside). Now to aid in this we have the following
+condition on the lines we get out of the intersection are oriented
+anti-parallel to the normal of the two intersecting faces. Now there are
+5 different types of faces we can get out, note that as of now faces are
+exclusively triangles:</p>
+<p>Type 1: Faces which have intersections but in which every line of
+intersection transverses the triangle in this case the correct thing to
+do is to load all of the segments from the intersection, and the
+segments from the edge of the triangle and use them to make closed
+paths. These closed paths lie along the boundaries between internal and
+external triangles. Furthermore if a path's normal is parallel to the
+original triangle's it's external, anti-parallel indicates internal. We
+then need to triangulate these paths to get the triangles.</p>
+<p>Type 2: Faces which have intersections but have exclusively internal
+edges. This is the case that arises if a corner is poking through the
+triangle but doesn't hit any of the edges. In this case the first step
+is the same as the above we make the segments into paths, now one of
+these paths is going the be the edge of the triangle and then there can
+also be arbitrarily many internal paths. The paths can never cross one
+another, so the must be either inside one another or completely
+distinct. To solve this we arrange the paths in a tree, where path B is
+decedent of path A if B is contained in A. Thus the outer edge is the
+root of the tree. Then each path we triangulate will be the path and all
+its children.</p>
+<p>Type 3: Faces which have intersections of both types, internal and
+transverse. Again we arrange as paths and then can arrange the same tree
+we had from type 2.</p>
+<p>Type 4: Faces which have no intersections but are attached to faces
+which do have intersections. After we have gotten the answers for all of
+the above types. We get the connectivity of the faces. If a face is
+connected to an internal face (through a path which doesn't use external
+faces) then it is also internal. (Same of course with external.) Thus we
+can just get all the connected components for them.</p>
+<p>Type 5: Faces which have no intersections and aren't attached to any
+faces that do. This occurs when we have one surface completely enclosed
+in another. (e.g Two concentric spheres) Then the only way to figure out
+which is inside the other is to do a direct test. The easiest test is
+simply whether a single point is inside or outside the the other mesh.
+To determine this for a point P, we simply choose some point in the
+distance Q, and count the intersections of PQ and the triangles of the
+other mesh. An even number indicates external, an odd internal.</p>
+<p>July 28th: Spent last week starting to add support for intersection
+between paramtric surface. We've decided upon an entirely numeric
+solution, since algebraic one's are both substantially more complex and
+prohibitively slow. Utility Functions:</p>
+<p><code>-Closest Value: returns the closest point in a given interval to a given</code>
+<code>-value used when we step off the edge of a surface.</code>
+<code>-Push: very useful function that updates parameters move a point in a</code>
+<code>-surface along an xyz vector.</code>
+<code>-Step: walks a specified stepsize along the intersection between 2 surfaces.</code>
+<code>-Jiggle: Given 2 points on different surfaces, that are close to equal,</code>
+<code>-tries to find closer ones. Used both to mitigate inaccuracy due to</code>
+<code>-stepsize, and to find starting points.</code>
+<code>-WalkIntersection: Given a starting points walks, the full intersection</code>
+<code>-curve of the two surfaces and returns the resulting Bezier trim Curve.</code>
+<code>-GetStartPoints: divides up the surface and uses bounding box methods to</code>
+<code>-hone in on starting points, has the huge disadvantage that it finds</code>
+<code>-much more than 1 starting point per curve.</code>
+<code>-SurfaceSurfaceIntersect: Puts together all the other functions to find</code>
+<code>-starting points, walk them and eliminate duplicate starting points,</code>
+<code>-getting just the intersection curves.</code></p>
+<p>Aug 19th: Have since added a number of functions to round out the
+functionality of csg system Classes:</p>
+<p><code>-Face_X_Event:</code>
+<code>-analogous to the ON_X_EVENT (which records curve on curve</code>
+<code>-intersections and curve on surface intersections) but for BrepFace on</code>
+<code>-BrepFace intersections.</code></p>
+<p>Methods:</p>
+<p><code>-Face_X_Event::Face_X_Event():</code>
+<code>-on blank constructor to just make a new</code>
+<code>-blank instance and one to fill in the values, really nothing to tricky</code>
+<code>-going on here.</code>
+<code>-Face_X_Event::Render_Curves():</code>
+<code>-The intersection between 2 Faces is a subset of the intersection</code>
+<code>-between the underlying surfaces depending on what the trim loops look</code>
+<code>-like.</code>
+<code>-Face_X_Event::Get_ON_X_Events():</code>
+<code>-Intersects the 2 new curves with all of the trims in the Face loading</code>
+<code>-the result into the x field in the class.</code></p>
+<p>Functions</p>
+<p><code>-SplitTrim:</code>
+<code>-takes a trim and splits it at a given parameter using</code>
+<code>-ON_Curve::Split(). It then replaces the reference in the m_trim_index</code>
+<code>-array to the original trim with references to the left and the right</code>
+<code>-side of the split.</code>
+<code>-ShatterLoop:</code>
+<code>-takes a trimming loop of a face and records its constituent trims and</code>
+<code>-an array. Then it destroys the loop.</code>
+<code>-Compare_X_Parameter:</code>
+<code>-compares ON_X_EVENTS by the parameter of the first curve at which they</code>
+<code>-occurred, used to be passed in to</code>
+<code>-ON_SimpleArray</code><ON_X_EVENT><code>.Quicksort(), and</code>
+<code>-ON_SimpleArray</code><ON_X_EVENT><code>.BinarySearch()</code>
+<code>-Curve_Compare_start:</code>
+<code>-Compares 2 curves by starting point, used in</code>
+<code>-ON_SimpleArray&lt;ON_Curve*&gt;.QuickSort() and</code>
+<code>-ON_SimpleArray&lt;ON_Curve*&gt;.BinarySearch()</code>
+<code>-Curve_Compare_end:</code>
+<code>-same as above yet for endpoints.</code>
+<code>-SetCurveCurveIntersectionDir:</code>
+<code>-Same purpose as ON_SetCurveCurveIntersectionDir, which is actually</code>
+<code>-unimplemented. Sets the dir flags in an intersection event which is</code>
+<code>-very important for what we're doing.</code>
+<code>-MakeLoops:</code>
+<code>-Creates trim loops out of trims by matching them end to end.</code>
+<code>-IsClosed:</code>
+<code>-Checks an ON_2dPointArray to see if it's closed, ie start and end</code>
+<code>-within some tolerance of one another, and atleast one other point</code>
+<code>-outside that tolerance.</code>
+<code>-GetStartPointsInternal:</code>
+<code>-finds starting intersection points between surfaces that are internal</code>
+<code>-to both surfaces.</code>
+<code>-GetStartPointsEdges:</code>
+<code>-finds starting intersection points between surfaces that are one the</code>
+<code>-edges.</code>
+<code>-FaceFaceIntersect:</code>
+<code>-SurfaceSurfaceIntersect has been renamed to FaceFaceIntersect same</code>
+<code>-functionality but it records results in Face_X_Events thus it needs to</code>
+<code>-know where to find the faces.</code>
+<code>-BrepBrepIntersect:</code>
+<code>-handles the work of intersecting 2 breps, intersects all the possible</code>
+<code>-face pairs. Gets the results as Face_X_Events, renders the curves and</code>
+<code>-shatters the loops. Then reconstructs the trims.</code></p>
+<p>Aug 26: New function CurveCurveIntersect to replace the
+ON_Curve::IntersectCurve which doesn't actually exist.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

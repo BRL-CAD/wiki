@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Sharan.nyn/GSoC18/Log/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Log - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Sharan.nyn/GSoC18/Log.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="development-logs">Development Logs</h3>
+<h4 id="community-bonding-period">Community Bonding Period</h4>
+<p>Due to my semester end exams (Apr 26 - May 17), my time spent during
+community bonding period was less but I still managed to do the
+following:</p>
+<ul>
+<li>Week 1<ul>
+<li>Prepared a flowchart to understand how the execution of the
+    rtcheck program works :
+    <a href="http://brlcad.org/w/images/a/ad/Rtcheck_flow.jpeg">rtcheck_flow</a></li>
+<li>Was introduced to 'gdb' which helped me a lot to analyze the
+    flow.</li>
+<li>Understood how the front-end portions of rt and back-end
+    portions are connected by linking the view*.c files</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 2<ul>
+<li>Read the documentation to understand the RTUIF API :
+    <a href="https://brlcad.org/wiki/Developing_applications">https://brlcad.org/wiki/Developing_applications</a></li>
+<li>Understood the origins of libanalyze functions.</li>
+<li>Discussed some ideas on how to implement the libanalyze
+    function, all were bad ideas because they all involved calling
+    the rtcheck program using execvp() as they usually end with
+    exit().</li>
+<li>Was suggested a basic plan on how to proceed.</li>
+<li>Understood how libanalyze functions were used by an example :
+    libged/voxelize.c and libanalyze/voxels.c</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 3<ul>
+<li>Complied a version of the rtcheck program by just copying the
+    relevant files to libanalyze/overlaps/.</li>
+<li>Discussed the plan related to rtcheck in detail.</li>
+<li>Understood the concept of using contexts and callback functions.</li>
+<li>Tried out callback functions, implementing a basic callback
+    function that alters an int.</li>
+</ul>
+</li>
+</ul>
+<h4 id="coding-period">Coding Period</h4>
+<h5 id="week-1">Week 1</h5>
+<ul>
+<li>14/05/18<ul>
+<li>trying to build a new rtcheck command by stripping down the
+    non-necessary parts of the front-end, so that the code is easier
+    to understand.</li>
+<li>discussed a lot of issues with mentor.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>15/05/18<ul>
+<li>started working on the design of the libanalyze function</li>
+<li>all parts of rt/main.c and do_ae() done</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>16/05/18<ul>
+<li>added do_frame(), do_run() and grid_setup() to libanalyze.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>17/05/18<ul>
+<li>added worker() and do_pixel()</li>
+<li>used a worker_context to pass data to worker using the void
+    pointer for bu_parallel</li>
+<li>when I ran the command I was getting segfault at rt_gettrees,
+    thought I'd fix it next day</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>18/05/18<ul>
+<li>figured out the problem but it meant moving a lot of content to
+    libanalyze</li>
+<li>I did it anyway out of curiosity and it fixed the problem with
+    rt_gettrees still it crashed at rt_shootray!</li>
+<li>At the end of the day after a lot of debugging and trials, found
+    out that rt_shootray was calling the hit sequence of gqa :O,
+    not sure why.</li>
+<li>A quick rename of the hit sequence of libanalyze to check_hit
+    solved the problem.</li>
+<li>Still need to figure out how to call rt_gettrees without moving
+    all function calls to libanalyze.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>19/05/18<ul>
+<li>Added code to fill the overlap list passed through callback
+    data.</li>
+<li>Using `gedp-&gt;ged_wdbp-&gt;dbip` to get the db name instead
+    of asking it before objects.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>20/05/18<ul>
+<li>Fixed printing of the overlap list.</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-2">Week 2</h5>
+<ul>
+<li>21/05/18<ul>
+<li>Clean-up of the libanalyze function :<ul>
+<li>Fixed a derp with setting default values of width and height
+    in libanalyze instead of libged.</li>
+<li>Removed redundant header files.</li>
+</ul>
+</li>
+<li>Read code for libged/gqa.c</li>
+<li>Prepare patch for the work done in first week.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>22/05/18<ul>
+<li>Submitted the
+    patch:<a href="https://sourceforge.net/p/brlcad/patches/488">#488</a></li>
+<li>Did follow up and submitted v2.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>23/05/18<ul>
+<li>Didn't do much today : Read the checker.tcl file for
+    understanding.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>24/05/18<ul>
+<li>Updated the patch and submitted v3.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>25/05/18<ul>
+<li>Discussed the plans for refactoring rtcheck.</li>
+<li>Started work on rtcheck.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>26/05/18<ul>
+<li>Added plot file output option.</li>
+<li>Fixed check_overlaps command not showing up in Archer.</li>
+<li>Submitted patch
+    <a href="https://sourceforge.net/p/brlcad/patches/491/">#491</a> fixing
+    some minor issues with the accepted patch #488.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>27/05/18<ul>
+<li>Added old_way of processing stdin.</li>
+<li>Added command driven way of processing stdin.</li>
+<li>Have to test the changes, it compiles fine.</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-3">Week 3</h5>
+<ul>
+<li>28/05/18<ul>
+<li>Couldn't code in the morning hours. My cousin brother came and
+    played games on my PC all day!</li>
+<li>Added getting objects from view feature to ged_check_overlaps</li>
+<li>Tested rtcheck executable for matflag inputs.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>29/05/18<ul>
+<li>Trying my best to get the display of overlaps working for
+    ged_check_overlaps.</li>
+<li>Okay it worked but I used temp file so that I could use two
+    inbuilt functions pdv_3line and rt_process_uplot_value. But
+    using them is not needed. So as suggested by Daniel, I will try
+    to merge them together and remove the file dependency and
+    buildup the list in my overlapsHandler.</li>
+<li>With it I found one more bug with yesterday's work, that if do
+    draw g4 and do checkover_laps g4 then it would consider g4
+    twice! :/. To solve this Daniel suggested to not consider
+    visible objects if objects are mentioned with command.</li>
+<li>Success! all worked out with so much minimal code, just 5 lines
+    instead of my initial work that involved 25 lines.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>30/05/18<ul>
+<li>Fixed bug with overlays considered as visible object on second
+    run.</li>
+<li>while testing matflag for rtcheck:<ul>
+<li>fixed a bug in tree command.</li>
+<li>added parsing of az/el in degree/radians values for cm_ae.</li>
+<li>fixed issue with Multiview giving segfault.</li>
+</ul>
+</li>
+<li>Added -r, -R flag to rtcheck.</li>
+<li>Added -d flag to rtcheck and check_overlaps to print some debug
+    information.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>31/05/18<ul>
+<li>Fixed a major flaw in the overlapsHandler giving the same data
+    for both reg1 and reg2.</li>
+<li>Fixed issue of getting first row of plot file as W 0 0 0 0 0 0</li>
+<li>Added feature to check_overlaps for getting view information
+    from gedp.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>1/06/18<ul>
+<li>Fixed scrambled overlays from check_overlaps.</li>
+<li>Experimenting with bu_list for overlaps list.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>2/06/18<ul>
+<li>Using bu_list for overlaps_list in rtcheck</li>
+<li>Didn't do much other than that, spent some time with family :)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>3/06/18<ul>
+<li>Submitted v2 patch for check_overlaps changes
+    <a href="https://sourceforge.net/p/brlcad/patches/491">#491</a></li>
+<li>Fixed bug with multiview caused by handling overlapList in main,
+    moving to do_frame solved it.</li>
+<li>Submitted patch
+    <a href="https://sourceforge.net/p/brlcad/patches/494/">#494</a> fixing
+    again some issues with #491 :D</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-4">Week 4</h5>
+<ul>
+<li>4/06/18<ul>
+<li>Adapting archer to use check_overlaps instead of rtcheck to
+    libged/rtcheck.c</li>
+<li>Applied fix for fix-me comment as suggested by Daniel.</li>
+<li>Figured out why wireframes weren't displayed in Archer, turned
+    out to be not compiling with openGL.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>5/06/18<ul>
+<li>Submitted patch
+    <a href="https://sourceforge.net/p/brlcad/patches/495/">#495</a> for
+    rtcheck program.</li>
+<li>Continuing work on adaptation of archer.</li>
+<li>Finally figured out how to deal with pane data in archer, spent
+    hours to figure it out and it was a really simple thing xD. Just
+    needed to use to_view_func instead of to_pass_through_func
+    in tclcadobj.c</li>
+<li>with that I think I am done with adapting check_overlaps and
+    ready to remove libged/rtcheck.c</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>6/06/18<ul>
+<li>Started documentation works, it is not much fun :/ so didn't do
+    much.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>7/06/18<ul>
+<li>Changed check_overlaps behavior to get objects only from view,
+    updated the related documentation too. *REVERTED*</li>
+<li>Added handling for when the user mentions duplicate objects for
+    rtcheck</li>
+<li>Submitted patch adapting check_overlaps to archer and mged
+    <a href="https://sourceforge.net/p/brlcad/patches/496/">#496</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>8/06/18<ul>
+<li>Completed documentation.</li>
+<li>Submitted patch for documentation
+    <a href="https://sourceforge.net/p/brlcad/patches/497/">#497</a>.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>9/06/18<ul>
+<li>Had to revert adaption patch because we can't remove rtcheck
+    without deprecation.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>10/06/18<ul>
+<li>Fixed a bug with check_overlaps and rtcheck allocation of
+    memory for region names. committed -
+    <a href="https://sourceforge.net/p/brlcad/code/71063/">r71063</a></li>
+<li>compared the outputs of old rtcheck program and new rtcheck
+    program.<ul>
+<li>got it to match finally after small tweaks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-5">Week 5</h5>
+<ul>
+<li>11/06/18<ul>
+<li>reapply reverted changes for adaption of check_overlaps to
+    archer.<ul>
+<li>committed the changes -
+    <a href="https://sourceforge.net/p/brlcad/code/71065/">r71065</a>,
+    <a href="https://sourceforge.net/p/brlcad/code/71066/">r71066</a> and
+    <a href="https://sourceforge.net/p/brlcad/code/71067/">r71067</a></li>
+</ul>
+</li>
+<li>Had a hard time fighting with sourceforge to push the commits :/</li>
+<li>reworked the documentation because of removal of rtcheck without
+    deprecation.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>12/06/18<ul>
+<li>fixed MGED's overlap tool -
+    <a href="https://sourceforge.net/p/brlcad/code/71068/">r71068</a></li>
+<li>Just read through the checker.tcl file.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>13/06/18<ul>
+<li>Continued reading.</li>
+<li>Fixed rtcheck and matched output with new rtcheck</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>14/06/18<ul>
+<li>Nothing much done today, made a plan to proceed further.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>15/06/18<ul>
+<li>Started work on porting check.sh to a Tcl file.</li>
+<li>Now able to print the list, need something to store the values
+    efficiently.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>16/06/18<ul>
+<li>Storing the overlaps as objects of a class, which is stored in a
+    list.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>17/06/18<ul>
+<li>Took some rest and spent time with family ^_^.</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-6">Week 6</h5>
+<ul>
+<li>18/06/18<ul>
+<li>Continued work on overlap tool.</li>
+<li>Added check for if the objects actually exists.</li>
+<li>Showing status on what the tool is doing.</li>
+<li>Better sorting done.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>19/06/18<ul>
+<li>Using simple lists now in overlap tool instead of using classes
+    and objects which made everything complicated.</li>
+<li>Fixed a bug with check.sh
+    <a href="https://sourceforge.net/p/brlcad/code/71093/">r71093</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>20/06/18<ul>
+<li>Using Itcl and Itk for overlap tool.</li>
+<li>Added progress bar.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>21/06/18<ul>
+<li>Read documentation of Itcl and Itk to get idea on how to use it.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>22/06/18<ul>
+<li>Added overlap menu with options to browse, create new overlaps
+    file and run check</li>
+<li>Integrated everything together</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>23/06/18<ul>
+<li>Read gqa related code, since I was waiting for the feedback on
+    the above works.</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-7">Week 7</h5>
+<ul>
+<li>25/06/18<ul>
+<li>Trying to fix bugs with check_overlaps and gqa with havoc.g.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>26/06/18<ul>
+<li>Added comments to the tcl file for overlaps menu.</li>
+<li>Cleaned up the overlaps menu code.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>27/06/18<ul>
+<li>Didn't do much work, just discussed about the issues with
+    havoc.g.</li>
+</ul>
+</li>
+<li>28/06/19<ul>
+<li>trying to visualize gqa using geogebra with the coordinates
+    printed out with -d option.</li>
+<li>fixed a small bug with gqa :)
+    <a href="https://sourceforge.net/p/brlcad/code/71101/">r71101</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>29/06/18<ul>
+<li>Bind return key to check overlaps button and take focus to text
+    entry in overlaps file tool.</li>
+<li>Fixed a bug with loading of overlaps.</li>
+<li>Browsing is restricted to '.overlaps' file.</li>
+<li>Add a validity check to check if the browsed overlaps file is a
+    valid one.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>30/06/18<ul>
+<li>Didn't code.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>1/07/18<ul>
+<li>Changed the looks of the overlaps menu.</li>
+<li>Added hints for the user.</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-8">Week 8</h5>
+<ul>
+<li>2/07/18<ul>
+<li>Committed :
+    <a href="https://sourceforge.net/p/brlcad/code/71106/">r71106</a> and
+    <a href="https://sourceforge.net/p/brlcad/code/71107/">r71107</a> for
+    overlaps_tool</li>
+<li>Discussed next task.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>3/07/18<ul>
+<li>Fixed check_overlaps crash on windows build.
+    <a href="https://sourceforge.net/p/brlcad/code/71108/">r71108</a></li>
+<li>Trying to figure out the arguments of the grid generator such
+    that it is suitable for both check_overlaps and gqa.</li>
+<li>Thanks to Daniel, I have a good plan to proceed! Will get
+    started on grid generator tomorrow.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>4/07/18<ul>
+<li>Added grid generating function to libanalyze.</li>
+<li>Reduced the parameter list to analyze_overlaps, now it just
+    uses a grid structure and a grid shooting function.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>5/07/18<ul>
+<li>Made changes to gqa and made it use the grid generating
+    function.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>6/07/18<ul>
+<li>Update rtcheck to use the new grid generator function.</li>
+<li>Committed the changes to repo :
+    <a href="https://sourceforge.net/p/brlcad/code/71117/">r71117</a>,
+    <a href="https://sourceforge.net/p/brlcad/code/71118/">r71118</a> and
+    <a href="https://sourceforge.net/p/brlcad/code/71119/">r71119</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>7/07/18, 8/07/18<ul>
+<li>Discussing the next task to do.</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-9">Week 9</h5>
+<ul>
+<li>09/07/18<ul>
+<li>Started the next task of "Better object selection in overlaps
+    tool"</li>
+<li>Added geometry browser in the overlaps tool</li>
+<li>Split the overlaps menu and overlaps file gen as two separate
+    files.</li>
+<li>Improved object selection</li>
+<li>Added listview for selected objects</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>10/07/18<ul>
+<li>Added ability to add/remove manual entry of objects.</li>
+<li>Can add/remove objects using wildcards.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>11/07/18<ul>
+<li>Added doxygen comments for grid-generating functions -
+    <a href="https://sourceforge.net/p/brlcad/code/71147/">r71147</a></li>
+<li>Fixed a bug with gqa -
+    <a href="https://sourceforge.net/p/brlcad/code/71148/">r71148</a></li>
+<li>Committed the whole progress into multiple commits :)<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71149/">r71149</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71150/">r71150</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71151/">r71151</a></li>
+</ul>
+</li>
+<li>Restore handling visible objects -
+    <a href="https://sourceforge.net/p/brlcad/code/71152/">r71152</a></li>
+<li>No need to check the objects again -
+    <a href="https://sourceforge.net/p/brlcad/code/71153/">r71153</a></li>
+<li>Add clear selection button -
+    <a href="https://sourceforge.net/p/brlcad/code/71154/">r71154</a></li>
+<li>Code cleanup -
+    <a href="https://sourceforge.net/p/brlcad/code/71155/">r71155</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>12/07/18<ul>
+<li>Just went through the code.</li>
+<li>Discussed the gqa bug.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>13/07/18<ul>
+<li>Add the 3 axis grid support to check_overlaps.</li>
+<li>Discussed about the API design.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>14/07/18<ul>
+<li>Tried to write a header file for public API for rtcheck and gqa.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>15/07/28<ul>
+<li>Attempted to add az/el supported to gqa(3 axis) but couldn't
+    find a good solution.</li>
+<li>Spent the most of the time with family, but hey it was weekend
+    ;)</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-10">Week 10</h5>
+<ul>
+<li>16/07/18<ul>
+<li>Started work on the check command.</li>
+<li>Added processing of the sub-commands given like overlaps,
+    volume, weight etc</li>
+<li>Added the parsing of the options.</li>
+<li>Added object parsing -- visible and cmd-line.</li>
+<li>Added az/el for single grid.</li>
+<li>Added single grid setup.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>17/07/18<ul>
+<li>Added triple grid related functions to libged and libanalyze.</li>
+<li>Added a general libanalyze function.</li>
+<li>Made the check overlaps sub command to work.</li>
+<li>Submitted for review on zulip.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>18/07/18<ul>
+<li>Fixed grid refining, now it works perfect.</li>
+<li>Added overlay and plot file saving to check overlaps.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>19/07/18<ul>
+<li>Nothing done today.</li>
+<li>Still working on the plan. Once it is set would go at full speed
+    ;)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>20/07/18<ul>
+<li>Committed triple grid functions and refining
+    <a href="https://sourceforge.net/p/brlcad/code/71200/">r71200</a></li>
+<li>Options parsing from libged to libanalyze using bu_hash_tbl
+    implemented.<ul>
+<li>the benefit of using hash_table is that we can pass key
+    value pairs and just grab those options that are set. The
+    other options can have meaningful defaults.</li>
+</ul>
+</li>
+<li>Removed some global variables in libanalyze/api.c and used
+    options passed from libged.</li>
+<li>Added single grid and az/el functions in libanalyze/api.c.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>21/07/18<ul>
+<li>lots of work done on both check.c and api.c</li>
+<li>Got check overlaps and check volume ready.</li>
+<li>Removed hash_table for parsing the options.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>22/07/18<ul>
+<li>Added exp_air sub command (needs testing)</li>
+<li>Committed all the work done so far:<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71204/">r71204</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71205/">r71205</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71206/">r71206</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71207/">r71207</a></li>
+</ul>
+</li>
+<li>Added check gaps command.
+    <a href="https://sourceforge.net/p/brlcad/code/71208/">r71208</a></li>
+<li>Cleaned up some code:<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71209/">r71209</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71210/">r71210</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71211/">r71211</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71212/">r71212</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71213/">r71213</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71214/">r71214</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-11">Week 11</h5>
+<ul>
+<li>23/07/18<ul>
+<li>Added check adj_air -
+    <a href="https://sourceforge.net/p/brlcad/code/71217/">r71217</a></li>
+<li>Bug fixes to api.c -
+    <a href="https://sourceforge.net/p/brlcad/code/71218/">r71218</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71219/">r71219</a></li>
+<li>Added check weight -
+    <a href="https://sourceforge.net/p/brlcad/code/71220/">r71220</a></li>
+<li>Code cleanup -
+    <a href="https://sourceforge.net/p/brlcad/code/71211/">r71221</a>
+    <a href="https://sourceforge.net/p/brlcad/code/r71222/">r71222</a></li>
+<li>Passing bu_vls struct for verbose and debug information -
+    <a href="https://sourceforge.net/p/brlcad/code/71223/">r71223</a></li>
+<li>Fix a derp with check_overlaps -
+    <a href="https://sourceforge.net/p/brlcad/code/71224/">r71224</a></li>
+<li>rename weight to mass -
+    <a href="https://sourceforge.net/p/brlcad/code/71225/">r71225</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>24/07/18<ul>
+<li>Added moments and centroid -
+    <a href="https://sourceforge.net/p/brlcad/code/71240/">r71240</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71241/">r71241</a></li>
+<li>Added check surf_area
+    <a href="https://sourceforge.net/p/brlcad/code/71247/">r71247</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>25/07/18<ul>
+<li>Updated api.c for single_grid -
+    <a href="https://sourceforge.net/p/brlcad/code/71253/">r71253</a></li>
+<li>print per-region stats is now working for volume and mass -
+    <a href="https://sourceforge.net/p/brlcad/code/71258/">r71258</a></li>
+<li>Add -i option to check overlaps -
+    <a href="https://sourceforge.net/p/brlcad/code/71259/">r71259</a></li>
+<li>Add quiet missed report and required number of hits to check
+    command and libanalyze api -
+    <a href="https://sourceforge.net/p/brlcad/code/71260/">r71260</a></li>
+<li>Discussed about surf_area and tried to fix it.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>26/07/18<ul>
+<li>Not much work done today, had to visit college.</li>
+<li>Read glint to add features of glint to libanalyze API</li>
+<li>Improved surface area algorithm, thanks to Daniel for suggesting
+    the trick.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>27/07/18<ul>
+<li>Committed the surf_area algorithm -
+    <a href="https://sourceforge.net/p/brlcad/code/71279/">r71279</a></li>
+<li>Tried to understand the differences in the grids of check and
+    glint.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>28/07/18<ul>
+<li>Placement training classes (26/07 - 28/07) is over -- back to
+    full speed :)</li>
+<li>committed <a href="https://sourceforge.net/p/brlcad/code/71289/">r71289</a>
+    to get correct grid size.</li>
+<li>changed the signature of overlaps_callback function pointer -
+    <a href="https://sourceforge.net/p/brlcad/code/71290/">r71290</a></li>
+<li>start work on glint analysis options -
+    <a href="https://sourceforge.net/p/brlcad/code/71291/">r71291</a></li>
+<li>bug fix for surf_area -
+    <a href="https://sourceforge.net/p/brlcad/code/71292/">r71292</a></li>
+<li>added glint analysis functions and variables -
+    <a href="https://sourceforge.net/p/brlcad/code/71293/">r71293</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>29/07/18<ul>
+<li>Did not work.</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-12">Week 12</h5>
+<ul>
+<li>30/07/18<ul>
+<li>Added unconf_air sub-command -
+    <a href="https://sourceforge.net/p/brlcad/code/71300/">r71300</a></li>
+<li>Move all the left globals to current_state -
+    <a href="https://sourceforge.net/p/brlcad/code/71301/">r71301</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71302/">r71302</a></li>
+<li>Added some more verbose messages -
+    <a href="https://sourceforge.net/p/brlcad/code/71303/">r71303</a></li>
+<li>Added functions for total moments, volume, mass and centroid -
+    <a href="https://sourceforge.net/p/brlcad/code/71305/">r71305</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>31/07/18<ul>
+<li>Added functions for per-region status and total values of
+    surf_area -
+    <a href="https://sourceforge.net/p/brlcad/code/71317/">r71317</a></li>
+<li>Add a new variable gridRatio to set uneven grid cells for
+    rtcheck - <a href="https://sourceforge.net/p/brlcad/code/71320/">r71320</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71322/">r71322</a></li>
+<li>bug-fix for api.c -
+    <a href="https://sourceforge.net/p/brlcad/code/71321/">r71321</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>1/07/18<ul>
+<li>after struggling to understand what aspect does -- added a
+    variable aspect because there was no way around it
+    <a href="https://sourceforge.net/p/brlcad/code/71337/">r71337</a></li>
+<li>replace getfromview by setviewinformation -
+    <a href="https://sourceforge.net/p/brlcad/code/71338/">r71338</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>2/07/18<ul>
+<li>get rtcheck working with libanalyze/api.c as base.</li>
+<li>wrote scripts to test check command with gqa and rtcheck.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>3/07/18<ul>
+<li>Uploaded the final scripts to the repo -
+    <a href="https://sourceforge.net/p/brlcad/code/71355/">r71355</a></li>
+<li>Updated the check overlaps printing style -- now like rtcheck -
+    <a href="https://sourceforge.net/p/brlcad/code/71359/">r71359</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>4/07/18<ul>
+<li>started work on documentation of check command.</li>
+<li>small fix for check overlaps --
+    <a href="https://sourceforge.net/p/brlcad/code/71372/">r71372</a></li>
+<li>documentation work related to check command done -
+    <a href="https://sourceforge.net/p/brlcad/code/71374/">r71374</a></li>
+<li>small build error pointed by Cezar fixed -
+    <a href="https://sourceforge.net/p/brlcad/code/71377">r71377</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>5/07/18<ul>
+<li>Took a break and did not work :)</li>
+</ul>
+</li>
+</ul>
+<h5 id="week-13">Week 13</h5>
+<ul>
+<li>6/07/18<ul>
+<li>Start removal of check_overlaps.</li>
+<li>Removed from Archer; Added check command -
+    <a href="https://sourceforge.net/p/brlcad/code/71388/">r71388</a></li>
+<li>Small fix in api.c -
+    <a href="https://sourceforge.net/p/brlcad/code/71389/">r71389</a></li>
+<li>make use of check overlaps in overlaps_tool -
+    <a href="https://sourceforge.net/p/brlcad/code/71391/">r71391</a></li>
+<li>Add grid size option to check and api.c -
+    <a href="https://sourceforge.net/p/brlcad/code/71392/">r71392</a></li>
+<li>Updated the doc -
+    <a href="https://sourceforge.net/p/brlcad/code/71393/">r71393</a></li>
+<li>Update archer for the new option -
+    <a href="https://sourceforge.net/p/brlcad/code/71394/">r71394</a></li>
+<li>Update overlaps_tool for the new option -
+    <a href="https://sourceforge.net/p/brlcad/code/71395/">r71395</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>7/07/18<ul>
+<li>removed libged/check_overlaps.c --
+    <a href="https://sourceforge.net/p/brlcad/code/71412/">r71412</a></li>
+<li>removed libanalyze/overlaps/analyze_overlaps.c --
+    <a href="https://sourceforge.net/p/brlcad/code/71413/">r71413</a></li>
+<li>started work on gqa.c</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>8/08/18<ul>
+<li>added function to get grid summary --
+    <a href="https://sourceforge.net/p/brlcad/code/71439/">r71439</a></li>
+<li>some w/s and comments in libanalyze/check_options.c --
+    <a href="https://sourceforge.net/p/brlcad/code/71440/">r71440</a></li>
+<li>Add some comments in libanalyze/api.c --
+    <a href="https://sourceforge.net/p/brlcad/code/71441/">r71441</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>9/08/18<ul>
+<li>fix overlaps_tool not able to run checker tool --
+    <a href="https://sourceforge.net/p/brlcad/code/71467/">r71467</a></li>
+<li>Fix indentation of the overlap_tool.xml file --
+    <a href="https://sourceforge.net/p/brlcad/code/71470/">r71470</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>10/08/18<ul>
+<li>Start work on the final project report.</li>
+<li><a href="../Report/">Report</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>11/08/18<ul>
+<li>Had a busy day -- college works and family took up most of my
+    time.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>12/08/18<ul>
+<li>Update the documentation for overlap_tool -
+    <a href="https://sourceforge.net/p/brlcad/code/71498/">r71498</a></li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

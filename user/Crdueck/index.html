@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Crdueck/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Crdueck - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Crdueck.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-info" class="nav-link">Personal Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#contact-info" class="nav-link">Contact Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#programming-experience" class="nav-link">Programming Experience</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-summary" class="nav-link">Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#proposal" class="nav-link">Proposal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#revised-deliverables" class="nav-link">Revised Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#revised-timeline" class="nav-link">Revised Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#me-gsoc" class="nav-link">Me &amp; GSoC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#my-patches" class="nav-link">My Patches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="personal-info">Personal Info</h2>
+<p>Hello, my name is Chris. I'm a first year mathematics student at the
+University of Waterloo (Canada) with a strong interest in computer
+science and programming.</p>
+<h2 id="contact-info">Contact Info</h2>
+<p>email: crdueck@uwaterloo.ca</p>
+<p>irc: crdueck (find me on freenode, I'll be in #brlcad)</p>
+<h2 id="programming-experience">Programming Experience</h2>
+<p>I have experience with C (as well as Scheme and Python), and would be
+more than happy to have an opportunity to learn some C++ while working
+on my project.</p>
+<p>Most of my experience so far has come from school assignments,
+<a href="https://projecteuler.net">projecteuler.net</a> (programming challenges
+with a mathematical twist, check it out if you haven't heard of it
+before), and small personal pet projects.</p>
+<p>I have knowledge of data structures and algorithms from my courses at
+school.</p>
+<p>I have a solid foundation in basic university level mathematics (one of
+my primary reasons for wanting to participate in GSoC is to further my
+mathematical knowledge in the subject of computer generated models)</p>
+<h2 id="project-summary">Project Summary</h2>
+<h5 id="primitive-volume-and-centroid-fuctions">Primitive Volume and Centroid Fuctions</h5>
+<p>Currently, most primitives in BRLCAD do not have volume, centroid, or
+surface area functions. My goal is to implement volume and centroid
+functions for many of these primitives.</p>
+<p>The primitives I have chosen are mostly simple solids of revolution or
+other simple shapes and thus it will be easy to construct explicit
+formulas for their volumes and centroids.</p>
+<p>As well, I will be refactoring major sections of mged's analyze command
+so that it makes use of the functions I will be adding. I also plan on
+cleaning up the comments found in the source code that I will be working
+on throughout my project.</p>
+<h2 id="proposal">Proposal</h2>
+<p>My primary references for this project will be found in
+src/librt/primitives. I will be adding the new callback functions to the
+existing source code for each primitive. The relevant parameters that I
+will use for computing the volume and centroids will come from the
+rb_*_internal struct. I will make use of the existing API functions
+to manipulate this struct and its parameters as much as possible. Using
+my knowledge of solids of revolution, I will then derive formulas for
+the volume and centroid for each primitive and implement these as
+readably, concisely and efficiently as possible.</p>
+<p>My reasoning behind choosing to implement both a volume and centroid for
+some of the primitives as opposed to just one function for all
+primitives is that I believe it will be easier to implement the second
+function after I've already spent time becoming familiar with the
+primitive through my work in implementing the first. In this way I can
+implement twice the number of new functions for the cost of becoming
+acquainted with one new primitive.</p>
+<p>I plan to test my new functions using mged's analyze command (as this is
+how the volume and centroid information will primarily be presented to
+the user. However, separate mged commands could be created to
+specifically display either the volume or centroid of a primitive. This
+is outside the scope of my project, but a potential focus for after
+GSoC). To this end, I will be rewriting substantial portions of
+libged/analyze.c in order to make use of my newly added functions. There
+are many opportunities for refactoring in the analyze_{primitive}
+functions and some opportunities to write new analyze_* functions
+(there is currently no analyze_pipe). My work will make the source code
+for analyze considerably clearer and more concise.</p>
+<p>I will develop a series of test cases for each primitive using analyze
+to ensure that my functions are working as expected. This will include
+verifying that my volume/centroid functions are returning correct
+values, and verifying that the other outputs of analyze are correct as
+well.</p>
+<p>While I am working on the source code for a primitive, I will take time
+to clean up the comments and move them from the *.c source code file to
+the appropriate *.h API header file. I will make changes to the
+formatting if needed, check for typos and other such documentation
+related tasks. This is a simple task that will not detract from my main
+focus of implementing volume and centroid functions.</p>
+<p>During the summer I expect to devote much of my time to fulfilling this
+project. I have no major prior engagements and will be able to spend a
+full 40+ hours per week on my commitments to BRLCAD. During this time I
+will make a strong effort to remain in close contact with my mentor,
+providing updates on my progress, as well as any obstacles I come across
+or questions I may have related to the project. I will be active on the
+#brlcad channel and mailing list in an effort to hopefully contribute
+to the growth of BRLCAD outside the scope of my project.</p>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Volume and centroid functions for the following:<ul>
+<li>ell (and sph)</li>
+<li>tor</li>
+<li>rec</li>
+<li>rcc</li>
+<li>hyp</li>
+<li>arb8</li>
+<li>arbn</li>
+<li>pipe</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Improved documentation for each .{c,cpp} file in:<ul>
+<li>ell</li>
+<li>tor</li>
+<li>rec</li>
+<li>tgc</li>
+<li>hyp</li>
+<li>arb8</li>
+<li>arbn</li>
+<li>pipe</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Refactored analyze_* functions in libged/analyze.c for:<ul>
+<li>ell</li>
+<li>tor</li>
+<li>tgc</li>
+<li>hyp</li>
+<li>arb</li>
+<li>pipe</li>
+</ul>
+</li>
+</ul>
+<h2 id="revised-deliverables">Revised Deliverables</h2>
+<ul>
+<li>Volume, surface area and centroid functions for the following:<ul>
+<li>ell (and sph)</li>
+<li>tor</li>
+<li>tgc and derivatives (rcc, rec, trc, tec)</li>
+<li>arb8</li>
+<li>bot</li>
+<li>epa</li>
+<li>eto</li>
+<li>part</li>
+<li>rpc</li>
+<li>sketch (only surface area)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Refactored/new analyze_* functions in libged/analyze.c for:<ul>
+<li>ell</li>
+<li>tor</li>
+<li>tgc</li>
+<li>arb8</li>
+<li>arbn</li>
+<li>bot</li>
+<li>epa</li>
+<li>eto</li>
+<li>part</li>
+<li>rpc</li>
+<li>sketch</li>
+<li>ars</li>
+</ul>
+</li>
+</ul>
+<h2 id="timeline">Timeline</h2>
+<ul>
+<li>Present - May 21<ul>
+<li>compile BRLCAD from SVN source, ensure build environment is
+    working</li>
+<li>become familiar with submitting patches to SVN</li>
+<li>become familiar with source code in librt/primitives and
+    libged/analyze.c</li>
+<li>get comfortable with using mged to generate and test primitives</li>
+<li>participate with the BRLCAD community on irc, mailing list etc</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 1 (May 22nd to 27th)<ul>
+<li>implement a volume and centroid function for ell</li>
+<li>rewrite sections of analyze_ell</li>
+<li>test implementation for correctness</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 2 (May 28th to June 3rd)<ul>
+<li>implement a volume and centroid function for tor</li>
+<li>rewrite sections of analyze_tor</li>
+<li>test implementation for correctness</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 3 (June 4th to 10th)<ul>
+<li>implement a volume and centroid function for rec and rcc</li>
+<li>rewrite sections of analyze_tgc</li>
+<li>test implementation for correctness</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 4/5 (June 11th to 24th)<ul>
+<li>implement a volume and centroid function for arb8 and arbn</li>
+<li>rewrite sections of analyze_arb</li>
+<li>test implementation for correctness</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 6 (June 25th to July 1st)<ul>
+<li>move comments from each of the primitives visited so far to the
+    appropriate header files</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 7 (July 2nd to 8th)<ul>
+<li>time to review code, more testing</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 8 (July 9th to 15th)<ul>
+<li>prepare midterm evaluation</li>
+<li>discuss with my mentor which primitives I have chosen to
+    implement surface area functions for</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 9/10 (July 16th to 22nd)<ul>
+<li>implement a volume and centroid function for pipe (lin_pipe and
+    bend_pipe)</li>
+<li>write analyze_pipe</li>
+<li>test implementation for correctness</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 11/12 (July 23rd to August 5th)<ul>
+<li>implement surface area functions for chosen primitives</li>
+<li>\~to be updated with list of primitives\~</li>
+<li>test implementations for correctness</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 13 (August 6th to 12th)<ul>
+<li>move comments from additional primitives to the appropriate
+    header files</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 14/15 (August 13th to 26th)<ul>
+<li>final testing, code review to ensure all functions are working
+    as expected</li>
+<li>prepare final evaluation</li>
+</ul>
+</li>
+</ul>
+<h2 id="revised-timeline">Revised Timeline</h2>
+<p>starting from july 13th</p>
+<ul>
+<li>Week 8/9 (July 13th to 22nd)<ul>
+<li>continue work on an area function for the sketch primitive</li>
+<li>finish bezier approximation function using circular arcs</li>
+<li>implement a tesselation algorithm for the sketch primitive for
+    use in rt_sketch_tess() and rt_sketch_surf_area()</li>
+</ul>
+</li>
+</ul>
+<h2 id="me-gsoc">Me &amp; GSoC</h2>
+<p>I want to participate in GSoC 2012 for many reasons. Firstly, to develop
+a stronger understanding of how mathematics is implemented through
+programming in the real world. My courses at school consist of a lot of
+theory, and I haven't seen much of the application side of things yet.
+When searching for a potential organization to apply to, I knew I wanted
+to work on mathematics related software, and BRLCAD caught my eye right
+away.</p>
+<p>I also hope to greatly expand my programming skills in a real world
+development setting. I feel that I can improve myself as a programmer by
+leaps and bounds this summer by working with the devs at BRLCAD. This is
+also a great chance to get involved with the open-source community. As
+an avid user of open-source software, contributing back to an
+open-source project has been something I have wished to pursue for a
+while now, but am just recently confident enough in my skills to be able
+to meaningfully contribute.</p>
+<p>If accepted, I plan on continuing my involvement with BRLCAD after
+GSoC ends, moving on to more challenging tasks. In particular
+<a href="/wiki/General_Tree_Walker">this</a> project interests me as I have a
+good deal of experience working with trees from my Data Structures
+course at school. Having already invested some time familiarizing
+myself with BRLCAD's source library, I'm considering completing some
+of my proposed goals this summer even if my application is
+unsuccessful.</p>
+<h2 id="my-patches">My Patches</h2>
+<p>As a warm up to gain knowledge about the internals of BRLCAD, I decided
+to implement a volume function for a simple primitive. After some
+discussion on #brlcad, I chose a ell for its simplicity. You can find
+my patch notes
+<a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3513421&amp;group_id=105292&amp;atid=640804">here</a>.</p>
+<p>After gaining some familiarity with how primitives are handled, I
+decided to implement a surface area function for ell as well. Patch
+notes can be found
+<a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3515075&amp;group_id=105292&amp;atid=640804">here</a>.</p>
+<p>If you have any comments on these patches please let me know :)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

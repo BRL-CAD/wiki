@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Todor_nikolov/proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Todor_nikolov/proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-proposal" class="nav-link">Project Proposal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="personal-information">Personal Information</h2>
+<hr />
+<p>Name: Todor Nikolov</p>
+<p>Email: tosemkd@gmail.com</p>
+<p>IRC name:todor_nikolov</p>
+<h3 id="about-me">About Me</h3>
+<p>I am a student in my 3-rd year in computer science and engineering, at
+the faculty of Computer Science and Engineering in Skopje, Macedonia.</p>
+<p>The focus of my studies is parallel programming and high performance
+computing, also I have a fondness for embedded systems and low power
+computing.</p>
+<p>Along side this I also take classes in computer graphics and animation,
+partly because it is connected to the previous fields, but mostly
+because it is fun and quite challenging.</p>
+<!-- -->
+
+<p>My hobbies include gaming and learning new ways to torture all the
+processors in my PC. :D</p>
+<h3 id="previous-experience">Previous Experience</h3>
+<p>:*2 months working on a social network as part of an internship,
+february-march 2013 , in this project I used php with the codeigniter
+framework, my tasks were implementing the messaging system and
+configuring sphinxsearch to match the requirements of the design.</p>
+<p>:*A small app in android as part of a teamwork class, its still work in
+progress.</p>
+<h2 id="project-proposal">Project Proposal</h2>
+<hr />
+<h3 id="project-title">Project Title</h3>
+<p>BRLCAD Raytracer library optimization</p>
+<h3 id="brief-project-summary">Brief project summary</h3>
+<p>Currently most of the optimizations in BRLCAD's raytracer library are
+based around the low level math libraries, the space partitioning of the
+scene, and possibly the primitive detection functions. Also there is
+already an extensive performance measuring and data collecting framework
+in the application itself.</p>
+<p>The first half of the project will be dedicated to determining
+optimization opportunities and exposing them through documenting and
+aiming tests at them, to help others involved in the project notice
+them. The second half will be aimed at implementing some of these
+optimizations and testing their feasibility and success.</p>
+<p>The analysis and optimizations I plan are not only meant to provide
+immediate benefit, but also support and promote further speedup and
+porting to other technologies like GPGPU.</p>
+<h3 id="detailed-project-summary">Detailed project summary</h3>
+<p>The raytracer in brlcad calculates around 100k-1M rays/sec meaning a
+render on a current screen (1920x1080) takes 1 - 15 seconds. The new
+archer editor supports much quicker edits, meaning having a quicker
+response by the renderer will improve the workflow and feel of the
+application.</p>
+<!-- -->
+
+<p>The other use of the raytracer is queuing multiple traces in a script
+file for the purpose of either animation or multi-view rendering can
+take minutes to hours depending on the complexity of the scene and the
+amount of frames taken.</p>
+<!-- -->
+
+<p>There are endless possibilities for the scope of the optimization, but
+the most promising are:</p>
+<ul>
+<li>Bundling rays in groups to reuse static data and enable
+    parallelization.</li>
+<li>Split raytracing routine to enable pipelining.</li>
+<li>Locating pipeline hotspots and tighten their execution.</li>
+<li>Research algorithms used in said hotspots and try to find and
+    eliminate unnecessary computations.</li>
+<li>Find and remove expensive and unpredictable operation like memory
+    allocations on fast paths.</li>
+</ul>
+<h3 id="deliverables">Deliverables</h3>
+<p>:* Graphical analysis and paper of the current state of the project
+with additional scripts meant for testing and benchmarking separate
+parts of the library</p>
+<p>:* Coding several optimization in the raytracer or object intersection
+functions</p>
+<p>:* or preparing the pipeline for the purposes of further optimization
+and possible porting to GPGPU</p>
+<h3 id="timeline">Timeline</h3>
+<p>:*May 15 - June - 10 - Analysis of code, getting familiar with
+interacting with the program and creating test scripts and benchmarks.</p>
+<p>:*Rest of June - Finishing the Report on the current state of the
+program, and building a prototype/ first optimizations being finished.</p>
+<p>:*July 1 - July 15 - Testing of code and removing bugs introduced in
+the pipeline</p>
+<p>:*July 15 - August 15 - Iterating on what has been done so far, or
+working on other parts of problem.</p>
+<p>Basic principles that I will follow during this project:</p>
+<ul>
+<li>Steer based on intuition, Do based on numbers.</li>
+<li>10% increased code complexity defeats 10 times speedup</li>
+<li>Document before doing, report after doing</li>
+<li>Stay in contact, stay commiting</li>
+</ul>
+<h3 id="plans-after-finishing-this-program">Plans after finishing this program</h3>
+<p>:#Rest and Relaxation</p>
+<p>:#Examining the current state of raytracing and possible research in
+this field as part of graduation paper. Implementing that research as
+part of an existing open source project is not out of the question.</p>
+<h3 id="why-me">Why me</h3>
+<p>I have deep and intuitive knowledge of current CPU-SIMD and GPU
+architecture, as well as their memory subsystems and their influence on
+code execution speed. I also know how to identify code structures that
+can be barriers to parallelization and speed even if they seem like
+improvements.</p>
+<h3 id="why-get-involved-in-open-source">Why get involved in open source</h3>
+<p>I have always wanted to get involved in open source, even before
+starting my studies. But up until now, my lack of experience and
+confidence in my skills as well as my life situation prevented me from
+making the commitment necessary for fruitful engagement in open source
+projects.</p>
+<h3 id="why-you">Why you</h3>
+<p>You have a complex and promising software that gives me a chance to
+learn more about graphics, and programming than anything I have
+encountered before. Also you have a good documentation and structure I
+feel will help me fit in fast.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

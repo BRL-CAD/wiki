@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/ESA_Summer_of_Code_in_Space/Project_Ideas/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Project Ideas - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/ESA_Summer_of_Code_in_Space/Project_Ideas.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#brl-cad-projects" class="nav-link">BRL-CAD Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#high-priority-topics" class="nav-link">High Priority Topics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rendering-scientific-analysis" class="nav-link">Rendering &amp; Scientific Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#web-development" class="nav-link">Web Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#geometry" class="nav-link">Geometry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#performance-quality" class="nav-link">Performance &amp; Quality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#infrastructure" class="nav-link">Infrastructure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mentors" class="nav-link">Mentors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>If you want to work on <strong>computer-aided design (CAD), geometry,
+simulation, analysis, or graphics</strong>, you've come to the right place!
+Help us improve open source CAx.</p>
+<p><a href="http://brlcad.org/w/index.php?title=Google_Summer_of_Code/Project_Ideas#BRL-CAD_Projects"><a href="http://brlcad.org/images/logo/cutout_sticker_256.png">http://brlcad.org/images/logo/cutout_sticker_256.png</a></a></p>
+<p>Under development for 30+ years, it's big, it's complicated, it's
+powerful. BRL-CAD will consider just about any project that relates to
+computer graphics or existing infrastructure.</p>
+<p>We consider proposals for all skill levels ranging from simple to crazy
+hard and everything in between. <a href="https://lists.sourceforge.net/lists/listinfo/brlcad-devel">Introduce
+yourself</a>,
+and we'll help you plan one right for you.</p>
+<p>Remember that project descriptions are just <em>initial ideas</em>. You must
+expand with <a href="Summer_of_Code/Application_Guidelines.md">considerably more
+detail</a>. Change the
+goals to fit your experience and interests. See our
+<strong><a href="Summer_of_Code/Checklist.md">checklist</a></strong> to get started.</p>
+<p><strong>Project titles link to a page with more details.</strong></p>
+<h1 id="brl-cad-projects">BRL-CAD Projects</h1>
+<h2 id="high-priority-topics">High Priority Topics</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Convert_MGED_from_Tk_to_Qt.md">Convert MGED from Tk to Qt</a>:</strong> Transition BRL-CAD's graphical applications from the Tk toolkit to the Qt toolkit.</td>
+<td align="center">C/C++/Tcl/Qt</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Annotations.md">Annotations</a>:</strong> Implement support for 2D annotations, labels that can be added to geometry.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rendering-scientific-analysis">Rendering &amp; Scientific Analysis</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Shader_Enhancements.md">Shader Enhancements</a>:</strong> We have a functioning custom shader system in BRL-CAD, but there are now folks that specialize and there's lot of room for improvements.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Material_and_Shader_Objects.md">Material and Shader Objects</a>:</strong> This one is a biggie but easy. Implement new object entities for describing shaders and material properties, use them during ray tracing.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="GUI_Integration_of_Analysis_Tools.md">GUI Integration of Analysis Tools</a>:</strong> There are a <em>lot</em> of visualization tools in BRL-CAD, but most aren't integrated with the GUI. Visualizing directly within the GUI would improve usability.</td>
+<td align="center">C</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Generalized_abstracted_spacial_partitioning_capability.md">Generalized abstracted spacial partitioning capability</a>:</strong> Need more be said? If you're familiar with BSPs, KD trees, and grid structures, then this one is for you.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="High_Dynamic_Range_Support.md">High Dynamic Range Support</a>:</strong> We don't have displays supporting this yet, but that's never stopped us before. Implement support for images with more than 8-bits per channel.</td>
+<td align="center">C and/or C++</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Analysis_Library.md">Analysis Library</a>:</strong> There are various tools in BRL-CAD for calculating weights, moments of inertia, and more. They're stand-alone applications. Turn them into a library.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="Celestial_mechanics_particle_system.md">Celestial mechanics particle system</a>:</strong> Simulate solar systems and galaxies.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Non-vacuum_gravity_simulator.md">Non-vacuum gravity simulator</a>:</strong> Simulate falling to earth.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Polarization.md">Polarization</a>:</strong> We already do multispectral ray tracing, but don't simulate polarization effects. Implement ray splitting and filtering.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="Density_functions.md">Density functions</a>:</strong> Accurately represent everything from atmosphere to bone. Implement support for parametric density functions for homogenous materials.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="Bending_light.md">Bending light</a>:</strong> Think gravity wells and satellite cameras.</td>
+<td align="center">C</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Appleseed_renderer_integration.md">Appleseed renderer integration</a>:</strong> Appleseed is rendering infrastructure used by the film industry to make pretty pictures. Make it shoot rays at our native geometry with our ray trace library.</td>
+<td align="center">C</td>
+<td align="center">MEDIUM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="web-development">Web Development</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Benchmark_Performance_Database.md">Benchmark Performance Database</a>:</strong> BRL-CAD's Benchmark has been used for two decades to compare performance across configurations. Build a database website.</td>
+<td align="center">Depends (likely PHP or Python)</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Materials_Database.md">Materials Database</a>:</strong> Create a Materials Database web site for collecting, managing, and providing programmatic interfaces to material properties.</td>
+<td align="center">Depends (likely PHP or Python)</td>
+<td align="center">MEDIUM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="geometry">Geometry</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="NURBS_Editing_Support.md">NURBS Editing Support</a>:</strong> BRL-CAD doesn't currently have support for editing NURBS primitives. Fix that.</td>
+<td align="center">C/Tcl</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Overlap_tool.md">Overlap tool</a>:</strong> Resolving geometric interferences (aka overlaps) is a common geometry editing activity. Design an awesome GUI for resolving conflicts.</td>
+<td align="center">Tcl</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Vector_Drawings_from_NURBS.md">Vector Drawings from NURBS</a>:</strong> Huge impact here if you can update one or more of our raytracers to provide vector output instead of raster. Perhaps render directly to PDF or SVG.</td>
+<td align="center">C and/or C++</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Plate_Mode_NURBS_raytracing.md">Plate Mode NURBS raytracing</a>:</strong> Imported NURBS geometry often does NOT enclose space (i.e., not solid), so add support for specifying an implicit thickness.</td>
+<td align="center">C/C++</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="STEP_exporter.md">STEP exporter</a>:</strong> We have an importer, we need a comprehensive exporter with support for implicit CSG, NURBS, or polygonal mesh geometry.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="STEP_importer_improvements.md">STEP importer improvements</a>:</strong> We have an importer, but it's preliminary. Add support for importing hierarchy information, polygonal geometry, and implicit geometry.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="STEP_AP_242_Parser.md">STEP AP 242 Parser</a>:</strong> We already parse a subset of AP203, but the new kid on the block is AP242. Make AP242 work with BRL-CAD's step-g importer.</td>
+<td align="center">C++</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="IGES_import_improvements.md">IGES import improvements</a>:</strong> We have extensive support for the International Geometry Exchange Standard (IGES) with our g-iges and iges-g converters, but they need updating.</td>
+<td align="center">C</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Geometry_Conversion_Library.md">Geometry Conversion Library</a>:</strong> Probably our biggest open source asset is our extensive collection of importers and exporters. Turn them all into a universal conversion library.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Voxelize.md">Voxelize</a> command:</strong> Convert geometry into voxel data sets by shooting a grid of rays. The finite element analysis and volumetric rendering folks will love you.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="COLLADA_Importer.md">COLLADA Importer</a>:</strong> Create an importer for the COLLADA file format.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="X3D_Importer.md">X3D Importer</a>:</strong> Create an importer for the X3D file format.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="OpenSCAD_Importer.md">OpenSCAD Importer</a>:</strong> Create an importer for OpenSCAD's format.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="OpenSCAD_Exporter.md">OpenSCAD Exporter</a>:</strong> Create an exporter for OpenSCAD's format.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance-quality">Performance &amp; Quality</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="OpenCL_GPGPU_Raytracing.md">OpenCL GPGPU Raytracing</a>:</strong> We have about two dozen primitives that need to have a ray-object intersection function converted from C to OpenCL.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Coherent_Raytracing.md">Coherent Raytracing</a>:</strong> Our current raytrace pipeline dispatches and processes one ray at a time. Send bundles and convert the pipeline into phases.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="NURBS_Booleans.md">NURBS Booleans</a>:</strong> We have NURBS surface-surface intersections working. Now we're using them to create evaluated forms of our CSG geometry. Make it more robust and faster.</td>
+<td align="center">C/C++</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="NURBS_Optimization_and_Cleanup.md">NURBS Optimization and Cleanup</a>:</strong> We have a fantastic implementation of NURBS evaluation but haven't gone back to clean up or speed it up. Make it pretty and fast.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="infrastructure">Infrastructure</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Geometric_Constraint_Solver.md">Geometric Constraint Solver</a>:</strong> Our LIBPC parametric constraint library is the work-in-progress foundation of being able to validate and describe geometry relationships.</td>
+<td align="center">C/C++</td>
+<td align="center">HARD</td>
+</tr>
+<tr>
+<td><strong><a href="Consolidate_image_processing.md">Consolidate image processing</a>:</strong> We have 100+ image processing tools that independently read and write file data. Needs much reuse love.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Astronomical_units.md">Astronomical units</a>:</strong> We already go "big", but accurately modeling at a galactic scale redefines that notion...</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+</tr>
+<tr>
+<td><strong><a href="Point_Clouds.md">Point Clouds</a>:</strong> BRL-CAD has a basic point cloud primitive. Beef it up, make it faster, maybe integrate with the Point Cloud Library (PCL) for evaluation.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+</tr>
+<tr>
+<td><strong><a href="Annotations.md">Annotations</a>:</strong> Implement support for 2D annotations, labels that can be added to geometry.</td>
+<td align="center">Perl</td>
+<td align="center">EASY</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1"><An Idea of Your Own></h2>
+<p>Do you have an idea of your own? Maybe you need <a href="http://brlcad.org/~sean/ideas.html">more
+ideas</a> to inspire you? We're very
+open to areas of academic research, industry applications, and ideas
+that get you hooked on open source CAD development.</p>
+<p>Requirements:</p>
+<ul>
+<li>Passion for the task being suggested</li>
+</ul>
+<h1 id="mentors">Mentors</h1>
+<p>Contact Sean on the brlcad-devel mailing list or via IRC to begin
+discussing your SOCIS project proposal:</p>
+<ul>
+<li>Christopher Sean Morrison<ul>
+<li>brlcad on irc.freenode.net</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

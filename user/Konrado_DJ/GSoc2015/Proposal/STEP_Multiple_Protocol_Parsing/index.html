@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Konrado_DJ/GSoc2015/Proposal/STEP_Multiple_Protocol_Parsing/">
+        <link rel="shortcut icon" href="../../../../../img/favicon.ico">
+        <title>STEP Multiple Protocol Parsing - BRL-CAD Wiki</title>
+        <link href="../../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Konrado_DJ/GSoc2015/Proposal/STEP_Multiple_Protocol_Parsing.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-title-step-multiple-protocol-parsing" class="nav-link">Project Title: STEP Multiple Protocol Parsing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#abstract" class="nav-link">Abstract</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#detailed-description" class="nav-link">Detailed description:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#reference" class="nav-link">Reference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#previous-related-work-patch" class="nav-link">Previous Related work (patch)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#time-line" class="nav-link">Time-line</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#time-availability" class="nav-link">Time Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#about-me" class="nav-link">About Me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-stepcode" class="nav-link">Why STEPcode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="personal-information">Personal Information</h2>
+<p>Name: Djimeli Konrad Niba</p>
+<p>E-mail address: djkonro35@gmail.com</p>
+<p>IRC-nick: konrado</p>
+<h3 id="project-priority-2">Project priority : 2</h3>
+<h2 id="project-title-step-multiple-protocol-parsing">Project Title: STEP Multiple Protocol Parsing</h2>
+<h2 id="abstract">Abstract</h2>
+<p><code>Standard for the Exchange of Product model data (STEP)  is an ISO standard for the computer-interpretable representation and exchange of product manufacturing information which can be used to represent 3D objects in Computer-aided design (CAD) and related information. BRL-CAD makes use of the STEPcode project to implement its step-g importer, which is currently adapted to a specific STEP application protocol (AP).Some examples  of commonly  encountered application protocol  includes AP203(Configuration Controlled Design) which defines the geometry, topology, and configuration management data of solid models for mechanical parts and assemblies, AP214(Automotive Design) which had everything an AP203 file includes, but adds colors, layers, geometric dimensioning and tolerance, and design intent, and AP242(Managed Model-based 3D Engineering) which has everything an AP203 and AP214  file includes, but adds updated kinematics support.The goal of the project is to make it possible for STEPcode to generate a parser, which supports multiple  application protocols simultaneously.</code></p>
+<h2 id="detailed-description">Detailed description:</h2>
+<h3 id="introduction">Introduction</h3>
+<p><code>STEPcode has the ability to generate c++ classes for the various STEP application protocols which are used for parsing STEP files. Developing a step-g parser that would have the ability to parse various STEP files could be achieved by determining the file schema using the FILE_SCHEMA instance within the file header and then switching to appropriate parser but this would not be efficient as there would be so much repeated code generated and it would also lead to an increase in compile and build time of BRL-CAD thus the need for a unified parser.</code>
+<code>The ability to support many protocols within one framework is one of the key strengths of STEP. All the protocols are all built on the same set of Integrated Resources, so they all use the same definitions for the same information. For example, AP203 and AP214 use the same definitions for three dimensional geometry, assembly data and basic product information. Therefore making it possible to enable  STEPcode generate a parser, which supports multiple application protocols simultaneously.</code></p>
+<h3 id="developing-merged-express-schema">Developing Merged Express schema</h3>
+<p><code>The first step in developing an application that works with several application protocols is to construct a merged express schema that covers all of the different entity types that we must work with. This would require a good understanding of the Express data modeling language and the various STEP application protocol schemas to be merged as the merged express schema would be a union of all of the application protocol definitions .</code></p>
+<h3 id="generating-reliable-c-classes">Generating reliable C++ classes</h3>
+<p><code>In generating reliable C++ classes which supports multiple APs simultaneously, we would require some familiarization with how STEPcode presently supports  a single AP.</code>
+<code>STEPcode begins by generating C++ classes for each AP from their respective EXPESS definitions using exp2cxx. When an application is linked to this classes a  STEPfile object is created</code>
+<code></code>
+<code>STEPfile( Registry &amp; r, InstMgr &amp; i, const std::string filename = "", bool strict = true );</code></p>
+<p>The STEPfile constructor instantiates a Registry and InstMgr reference
+which is used to initialize entity registry. Thus generating a
+dictionary with all entity definition, for validating entities passed to
+the program by comparing against those found in the dictionary and thus
+returns a valid instance if its definition is found in the dictionary.</p>
+<p><code>As we move to multiple APs, we must become more aware of this matching process, and may place some of it under application control. These issues could be avoided by using the combined schemas so that classes are only matched once.</code></p>
+<ul>
+<li>If we intend to create fully conforming datasets for several APs, we
+    need more than a common subset of definitions. The conformance
+    classes for each AP will probably mandate a number of AP-specific
+    relationship objects like the <strong>cc_design_*</strong> entities of AP203
+    or the <strong>applied_*</strong> entities of AP214.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>For this project we would need AP-specific classes for each AP that
+    we must support. The physical schema (EXPRESS) of our application
+    would be a union of all of the AP definitions. There are two ways to
+    produce the classes.<ul>
+<li>We could manually merge the AP long form or short form schemas
+    into one, resolve any conflicts, and then generate classes from
+    the merged schema.</li>
+<li>An expedient alternative is to generate C++ classes from each
+    individual schema into the same directory. If there are
+    duplicate entity definitions, the latter source files will
+    simply overwrite earlier ones. We must use caution with this
+    technique. The APs should not have many structure conflicts,
+    since the APs are all based on the same integrated resources,
+    but there may be a few.</li>
+</ul>
+</li>
+</ul>
+<p><code>As seen above we would be using the first options for generating C++ classes  for our various application protocols.</code>
+<code></code>
+<code></code><strong><code>Select</code></strong><code>types in particular, are prone to variability between  APs. When an AP is converted from short form to long form, selects are trimmed to eliminate types outside the AP scope. In extreme cases, the select contains just one type. Consequently, if you compare several long form schemas, the same select type definition may vary widely between them. For example, consider some definitions from AP203 and AP214.</code>
+<code>`       AP203  TYPE unit`
+`          TYPE unit = SELECT `
+`           (named_unit);`
+`          END_TYPE; -- unit`</code>
+<code>AP214  TYPE unit</code>
+<code>TYPE unit = SELECT</code>
+<code>(derived_unit, named_unit);</code>
+<code>END_TYPE; -- 10303-41: measure_schema</code>
+<code>An application will have problems if C++ classes are generated from a definition that does not have all of the required types. To avoid this, we would have to generate the classes for these selects from the most inclusive EXPRESS schema available,like the merged schema.</code></p>
+<h3 id="adding-support-for-ap242">Adding support for AP242</h3>
+<p><code>Updating the unified schema to add support for AP242 needs to be handled with some caution .There some issues to be considered, for example;</code></p>
+<ul>
+<li>The definitions for geometric_tolerance and several related types
+    have been changed.</li>
+</ul>
+<p><code>The geometric_tolerance magnitude is now a length_measure_with_unit instance. Previously, it was given as the more general measure_with_unit  type. More information on this issues an other related issues can be found in the link below.</code>
+<a href="http://www.steptools.com/support/stdev_docs/stpcad/update_ap242dis.html"><code>http://www.steptools.com/support/stdev_docs/stpcad/update_ap242dis.html</code></a>
+<code></code></p>
+<ul>
+<li>The kinematics model originally introduced in AP214 has been updated
+    considerably in AP242. For example</li>
+</ul>
+<p><code>`</code>                    ENTITY resulting_path<code></code>                Changed the supertype from a rep relationship<code></code>                (motion_link_relationship) to a representation<code></code>                (link_motion_representation_along_path), so the attributes are<code></code>                completely different.<code></code>   More information on this issues an other related issues can be found in the link below<code>[</code>http://www.steptools.com/support/stdev_docs/stpcad/kinematics.html<code>](http://www.steptools.com/support/stdev_docs/stpcad/kinematics.html)</code>An external C++ class may have to  be developed to handle the above issues.`</p>
+<h3 id="integrating-new-c-classes-with-step-g">Integrating new C++ classes with step-g</h3>
+<p><code>The next part of this project would be to ensure that step-g converter can</code></p>
+<p>reliably make use of the merged classes in carrying out conversion,
+giving the ability to support multiple APs using a single parser.</p>
+<h3 id="documentation-and-testing">Documentation and testing</h3>
+<p>This phase of the project would have to do with mainly testing the
+functionality of the step-g converter against the newly developed
+parser. Testing would actually have to be carried out after every
+modification through out the development process in order to catch and
+fix bugs introduced early. It would also incorporate bug fixing within
+some existing part of the code, proper code commenting and an update of
+the STEP manual.</p>
+<h2 id="reference">Reference</h2>
+<ol>
+<li><a href="http://www.cax-if.org">http://www.cax-if.org</a></li>
+<li><a href="http://www.steptools.com/support/stdev_docs/stpcad/">http://www.steptools.com/support/stdev_docs/stpcad/</a></li>
+<li><a href="http://www.engen.org.au/index_htm_files/STEP_application_hdbk_63006_BF.pdf">http://www.engen.org.au/index_htm_files/STEP_application_hdbk_63006_BF.pdf</a></li>
+<li><a href="http://en.wikipedia.org/wiki/ISO_10303-21">http://en.wikipedia.org/wiki/ISO_10303-21</a></li>
+</ol>
+<h2 id="previous-related-work-patch">Previous Related work (patch)</h2>
+<p>1. vrml-g converter</p>
+<p><code></code><a href="http://sourceforge.net/p/brlcad/patches/320"><code>http://sourceforge.net/p/brlcad/patches/320</code></a></p>
+<p>2. g-stl default top level objects conversion</p>
+<p><code></code><a href="http://sourceforge.net/p/brlcad/patches/301/"><code>http://sourceforge.net/p/brlcad/patches/301/</code></a></p>
+<h2 id="deliverables">Deliverables</h2>
+<ol>
+<li>Developing merged schema EXPRESS file for at-least AP214 and AP203</li>
+<li>Generating unified C++ classes</li>
+<li>Enabling step-g to make use unified parser</li>
+</ol>
+<h2 id="time-line">Time-line</h2>
+<h3 id="27-april-24-may-4-weeks-community-bonding">27 April – 24 May (4 weeks) Community Bonding</h3>
+<p><code>Initializing communication with mentor. Do more research on project, get setup and ready to begin coding. Learn more about STEP standards and EPRESS data modeling language.</code></p>
+<h3 id="25-may-11-june-2-weeks">25 May – 11 June (2 weeks)</h3>
+<p><code>Developing suitable merged EXPRESS file with supports for both AP214 and AP203</code></p>
+<h3 id="12-june-20-june-1-week">12 June – 20 June (1 week)</h3>
+<p><code>Rework exp2cxx to Generate C++ classes for merged EXPRESS filename</code></p>
+<h3 id="21-june-29-june-1-week">21 June – 29 June (1 week)</h3>
+<p><code>Documentation, test and cleanup of code. By this time the new parser should be able to read AP214 an  AP203 files using p21read_sdai_MERGED_SCHEMA without errors.</code></p>
+<h3 id="30-june-3-july-3-days-mid-term-evaluation">30 June – 3 July (3 days) Mid term evaluation</h3>
+<h3 id="4-july-4-august-4-weeks">4 July – 4 August (4 weeks)</h3>
+<p><code>Updating merged file to add support for AP242 and resolving issues involved with this update to ensure C++ classes are properly generated and handled.</code></p>
+<h3 id="5-august-11-august-1-week">5 August – 11 August (1 week)</h3>
+<p><code>Integrating new C++ parser with step-g.</code></p>
+<h3 id="12-august-16-august-1-week">12 August – 16 August (1 week)</h3>
+<p><code>Code cleanup and documentation.</code></p>
+<h3 id="17-august-23-august-1-week">17 August – 23 August (1 week)</h3>
+<p><code>Suggested “pencils down”. Further code cleanup, testing an documentation.</code></p>
+<h3 id="24-august-28-august-4-days-final-evaluation">24 August – 28 August (4 days) Final Evaluation</h3>
+<h2 id="time-availability">Time Availability</h2>
+<p><code>I have no commitment within the Google summer of code period except for my end of semester exams which would run for about two weeks around 24 June– 11 July , but I would make up for the time by putting in more hour before this period guarantying at-least 40 hours a week.</code></p>
+<h2 id="about-me">About Me</h2>
+<ul>
+<li>2013 – 2014: Freshman Computer Engineering <a href="http://www.ubuea.cm">University Of Buea
+    Cameroon</a></li>
+<li>2014 – 2015: Freshman Computer Science and Mathematics <a href="http://www.ubuea.cm">University
+    Of Buea Cameroon</a></li>
+</ul>
+<p><code>My change in department was because of my passion for coding and mathematics and also due to my low interest/motivation for electronics which was a large part of the engineering curriculum. This has given me the time to focus on the thing I am very passionate about and since this is the first year computer science is being offered as a major for the undergraduate level at my university, participating in the Google summer of code would be an encouragement to others who intend to enroll into this department.</code>
+<code>I am primarily a c/c++ programmer with special interest in computer graphics, computer networking, multi-threading and artificial intelligence.</code></p>
+<h2 id="why-me">Why Me</h2>
+<p><code>I have always had the interest of contributing to open-source and have made some contributions to BRL-CAD like development of a vrml-g converter. Working on the vrml-g converter has given me some experience on what geometry conversion is all about, thus higher chances of success in completing this project. I would also have the opportunity to gain more experience and learn lots of new things.</code></p>
+<h2 id="why-stepcode">Why STEPcode</h2>
+<p><code>I choose STEPcode because having some experience contributing to BRL-CAD on geometry conversion and given that this project encourages cross collaboration between both STEPcode and BRL-CAD it would give me the opportunity to work with a wider range of experienced developers and also improve my knowledge of computer graphics.</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../../js/base.js" defer></script>
+        <script src="../../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

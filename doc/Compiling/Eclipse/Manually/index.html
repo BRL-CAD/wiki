@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Compiling/Eclipse/Manually/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Manually - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Compiling/Eclipse/Manually.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#create-an-eclipse-project" class="nav-link">Create an Eclipse Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#create-eclipse-make-targets" class="nav-link">Create Eclipse Make Targets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#set-up-the-eclipse-cdt-builder" class="nav-link">Set Up the Eclipse CDT Builder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#build-the-project" class="nav-link">Build the Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="Compiling/Eclipse.md">Setting up in Eclipse</a></p>
+<p>BRL-CAD build system uses CMake and so I will show you how to build a
+project from cross-platform CMake on Eclipse. The CMake 2.8 project
+generator for Eclipse does not work, so you must create the project and
+configure it to build with GNU Make. Here’s how to do it on Linux.</p>
+<h2 id="create-an-eclipse-project">Create an Eclipse Project</h2>
+<p>Create an Eclipse CDT (C/C++ Development Tooling) project using the
+<em>File &gt; New &gt; C++</em> Project command for your C++ project, or <em>File
+&gt; New &gt; C</em> Project for a C project. Do not create the project
+using the CMake Eclipse project generator.</p>
+<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-1.png" /></p>
+<h2 id="create-eclipse-make-targets">Create Eclipse Make Targets</h2>
+<p>The conventional approach to using CMake with Eclipse is to create an
+<em>external tool</em> in Eclipse. However, a <em>Make Target</em> is simpler, and
+because it is stored in the Eclipse <strong>.project</strong> file, you can check it
+into your version control system and it will work in every one of your
+working copies, on every computer. Create a Make Target for each
+configuration that you want to build. Here I assume that you have the
+usual <em>Release</em> and <em>Debug</em> configurations:</p>
+<ul>
+<li>Display the <em>Make Target</em> window using the <em>Window &gt; Show
+    View &gt; Make Target</em> menu command. It should appear on the right,
+    with the <em>Outline</em> window.</li>
+<li>Select the folder for the project for which you want to add CMake.
+    CMake will run with this folder as its working directory.</li>
+<li>Right click on the folder and select <em>New</em> from the context menu.
+    The <em>Create Make Target</em> dialog will appear.<ul>
+<li>Type <em>Target name</em> <strong>CMake Release</strong></li>
+<li>In <em>Make target</em>, deselect Same <em>as the target name</em>, and make
+    sure that the <em>Make target</em> field is empty</li>
+<li>In <em>Build Command</em>, deselect <em>Use builder settings</em> and set the
+    <em>Build command</em> to<ul>
+<li><code>cmake -E chdir Release/ cmake -G "Unix Makefiles" ../ -DCMAKE_BUILD_TYPE:STRING=Release</code></li>
+</ul>
+</li>
+<li>Click OK<ul>
+<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-2.png" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Repeat, this time for <em>Target name</em> <strong>CMake Debug</strong>, and <em>Build
+    command</em>:<ul>
+<li><code>cmake -E chdir Debug/ cmake -G "Unix Makefiles" ../ -DCMAKE_BUILD_TYPE:STRING=Debug</code></li>
+</ul>
+</li>
+<li>Create the <strong>Release/</strong> and <strong>Debug/</strong> directories<ul>
+<li><code>mkdir Release Debug</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="set-up-the-eclipse-cdt-builder">Set Up the Eclipse CDT Builder</h2>
+<p>Next, set up the CDT builder to run the Makefiles that CMake builds.</p>
+<ul>
+<li>Right click on a CDT project. In the context menu, select
+    <em>Properties</em>.</li>
+<li>On the left, select C/C++ <em>Build</em><ul>
+<li>Set <em>Configuration</em> to <em>Release</em><ul>
+<li>Choose the <em>Builder Settings</em> tab<ul>
+<li>Deselect <em>Use default build command</em></li>
+<li>Specify the <em>Build command</em>:<ul>
+<li><code>make -C ${ConfigName}</code></li>
+</ul>
+</li>
+<li>Deselect <em>Generate Makefiles automatically</em></li>
+<li>Make the <em>Build directory</em> field blank</li>
+<li>The form should appear as shown below:<ul>
+<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-3.png" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Choose the <em>Behavior</em> tab<ul>
+<li>Select <em>Build (Incremental build)</em> and specify the
+    target name <em>all</em></li>
+<li>Select <em>Clean</em> and specify the target name <em>clean</em></li>
+<li>The form should appear as shown below:<ul>
+<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-4.png" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set <em>Configuration</em> to <em>Debug</em><ul>
+<li>Choose the <em>Builder Settings</em> tab<ul>
+<li>Set all values exactly the same as the <em>Release</em>
+    configuration</li>
+</ul>
+</li>
+<li>Choose the <em>Behavior</em> tab<ul>
+<li>Set all values exactly the same as the <em>Release</em>
+    configuration<ul>
+<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-5.png" /></li>
+<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-6.png" /></li>
+</ul>
+</li>
+<li>Click OK</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="build-the-project">Build the Project</h2>
+<p>Use CMake to generate an out-of-source GNU Make build system:</p>
+<ul>
+<li>In the <em>Make Targets</em> window, double click on <em>CMake Release</em> or
+    <em>CMake Debug</em> to generate the GNU Make build system in <strong>Release/</strong>
+    or <strong>Debug/</strong>, respectively</li>
+</ul>
+<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-7.PNG" /></p>
+<ul>
+<li>If necessary, edit your <strong>CMakeLists.txt</strong> control files</li>
+<li>Delete the contents of the corresponding build directory. For
+    example:</li>
+<li><code>rm -r Release/*</code></li>
+<li>and repeat.</li>
+</ul>
+<p>Actually, for minor edits to your <strong>CMakeLists.txt</strong> control files, you
+need not delete the build directory. However, I cannot tell you exactly
+what the threshold for “minor edits” is.</p>
+<p>Now, build the project the usual way with Eclipse:</p>
+<ul>
+<li>Select the configuration to build (<em>Release of Debug</em>) with the
+    <em>Project &gt; Build Configurations &gt; Set Active</em> command</li>
+<li>Build with the <em>Project &gt; Build Project</em> command</li>
+<li>Edit your source code files, and repeat</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

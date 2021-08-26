@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Ankeshanand/GSoC14/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Development Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Ankeshanand/GSoC14/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-logs" class="nav-link">Development Logs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#project-details" class="nav-link">Project Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-logs">Development Logs</h1>
+<h2 id="project-details">Project Details</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Project Name</strong></td>
+<td>Benchmark Performance Database</td>
+</tr>
+<tr>
+<td><strong>Project Sudent</strong></td>
+<td>Ankesh Anand</td>
+</tr>
+<tr>
+<td><strong>IRC(nick)</strong></td>
+<td>ankesh11</td>
+</tr>
+<tr>
+<td><strong>Github</strong></td>
+<td><a href="https://github.com/ankeshanand">ankeshanand</a></td>
+</tr>
+<tr>
+<td><strong>Website</strong></td>
+<td><a href="http://www.ankeshanand.com/">http://www.ankeshanand.com/</a></td>
+</tr>
+<tr>
+<td><strong>Google-Melange username</strong></td>
+<td>ankeshanand1994</td>
+</tr>
+<tr>
+<td><strong>Phone Number</strong></td>
+<td>+91 8348522098</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="introduction">Introduction</h2>
+<p>This page will contain weekly targets and Updates about the work done.</p>
+<h3 id="community-bonding-period">Community Bonding Period</h3>
+<p><strong><em>(23rd April to 18th May)</em></strong></p>
+<ul>
+<li>Got familiar with the modules and database schema from previous
+    repository.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Had a discussion with H.S. Rai(Project Mentor) about the
+    infrastructure to be used. We settled on Django as a web framework
+    for the project.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Learnt Django by reading through books and building a couple of
+    small applications with it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Set up the development repository on
+    <a href="https://github.com/ankeshanand/benchmark">Github</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discussed about the deployment options on BRL-CAD servers. It
+    already has Python and MySQL support, and since we manage it
+    ourselves, it would be easy install new packages on it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Fixed a few bugs to get the database and parser portions fully
+    working. The benchmark logs can now be parsed and indexed into the
+    database from the command line.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Built a Django app with jquery to support file uploads that let's
+    users(Link to the code is
+    <a href="https://github.com/ankeshanand/benchmark/tree/master/fileupload">here</a>):<ul>
+<li>Upload Benchmark logs</li>
+<li>Does validation checks</li>
+<li>allows the admin to view a list of files.</li>
+</ul>
+</li>
+</ul>
+<h3 id="development-phase">Development Phase</h3>
+<h4 id="week-1-19th-25th-may">Week 1 (19th-25th May)</h4>
+<ul>
+<li><strong>19th May(Monday):</strong> Started working on the plots app. Integrated
+    the legacy database from previous repo with the models in the plots
+    app.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>20th May(Tuesday):</strong>' Continued the work with plots app,
+    integrated both the databases(fileupload and benchmark) to a single
+    database. Read the Django documentation on views and templates to
+    refresh and understand a few details. Updated url mappings, and a
+    simple admin interface for plots app.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>21st May(Wednesday):</strong> I went through the tutorials on Highcharts
+    and emulated a few examples. Created simple bar and line charts to
+    understand the concept of series, axes and how the data is loaded
+    via AJAX.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>22nd May (Thursday):</strong> I decided to JSON as the data source for
+    plots. This would require me to pass JSOn objects from view to
+    templates. I went through the json module of python, particularly
+    <em>json.dumps</em> and <em>json.encode</em> functions which will help in parsing
+    JSON. I also thought about the types of plots I could generate from
+    our app.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>23rd May (Friday):</strong> Brainstormed over the visualizations I should
+    work on, referred to suryajith's work on this and had a look at
+    Openbenchmarking.org. After a discussion on the mailing list, we
+    were able to arrive at a preliminary set of plots I should work on.
+    Fixed a bug in the database connection file. Also got in touch with
+    Sean regarding a server account.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>24th May(Saturday):</strong> Half day of work. I created some charts
+    using AJAX and a JSON file with initial data with the Highcharts
+    library, had a few hiccups along the way. Next step is to refine
+    these prototypes and integrate with the Django application.</li>
+</ul>
+<h4 id="week-2-26th-may-1st-june">Week 2 (26th May-1st June)</h4>
+<ul>
+<li><strong>26th May(Monday):</strong> Did a comparison of various charting
+    frameworks as Rai Sir had asked for. Also mentioned the reasons of
+    choosing the HighCharts library. Further experimentation with
+    HighCharts,I am able to load the series and chart options
+    dynamically now. The url configurations have been modified to
+    provide appropriate mapping for the charts and their data. Threw a
+    couple of stub views which now I have to worked on. Cleaned up the
+    fileupload app which was a mess of useless JS files.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>27th May(Tuesday):</strong></li>
+</ul>
+<p>:* Forked the repository to BRL-CAD's Github organisation, subsequent
+development will take place there. The new home for the repository is:
+<a href="https://github.com/BRL-CAD/benchmark">https://github.com/BRL-CAD/benchmark</a></p>
+<p>:* Wrote the Django template file for charts. This contains the chart
+config and the JS script to make AJAX calls for JSON data.
+(https://github.com/BRL-CAD/benchmark/blob/master/plots/templates/chart.html)</p>
+<p>:* Started work on <strong>plots/data.py</strong>: The script which will return the
+aggregated data from database in the form of a dictionary. Wrote the
+aggregation codes for Avg VGR vs Processor Graphs, other plots should
+follow this structure.
+(https://github.com/BRL-CAD/benchmark/blob/master/plots/data.py)</p>
+<p>:* Wrote the rawdata view in <strong>plots/views.py</strong> that dumps JSON string
+after invoking the appropriate data aggregation function from data.py</p>
+<ul>
+<li><strong>28th May(Wednesday):</strong> Resolved a bug which prevented sending AJAX
+    requests for the raw data in form of a JSON string in Django. Added
+    support for two more plots, Average VGR Rating vs Number of Cores
+    and Average VGR Rating vs OS Type. Made the chart template dynamic
+    so that we don't have to change it depending on the plot. Added doc
+    strings to views and data files.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>29th May(Thursday):</strong> Added support for 4 more plots: Logarithmic
+    VGR Rating vs Processor Family, Logarithmic VGR Rating vs OS Type,
+    Logarithmic VGR Rating vs Number of Cores ,Running Time vs Processor
+    Family. Spent some time resolving a bug in Django ORM.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>30th May(Friday):</strong> Another plot supported now, the Absolute Rays
+    per sec against Reference Images plot is up. Also added the options
+    to export chart in form of a PDF, or an image. This is how one of
+    the plot looks like:</li>
+</ul>
+<p><a href="http://i.imgur.com/NKp1qyz.png">http://i.imgur.com/NKp1qyz.png</a></p>
+<ul>
+<li><strong>31st May(Saturday):</strong> Had to hold off work on HighCharts due to
+    licensing issue. Spent some time figuring out the details of
+    alternative libraries. People on the list have asked me to do a
+    spreadsheet comparing different libraries, and I got started on
+    that.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>1st June(Sunday):</strong> Did a comparison of various charting libraries
+    to arrive at an alternative to HighCharts. After several
+    considerations, I think Flot is the best way to go. The detailed
+    document is here:
+    <a href="https://github.com/BRL-CAD/benchmark/wiki/Selection-of-an-appropriate-Javascript-Charting-Library">https://github.com/BRL-CAD/benchmark/wiki/Selection-of-an-appropriate-Javascript-Charting-Library</a>.
+    Experimented with Flot configurations to better understand the
+    Library</li>
+</ul>
+<h4 id="week-3">Week 3</h4>
+<ul>
+<li><strong>2nd June(Monday):</strong> Created prototypes with Flot to get a better
+    understanding of the API references. Read through Flot's
+    documentation, and was able to emulate earlier plots with plastic
+    data. Also got flot charts to works via AJAX data.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>3rd June(Tuesday):</strong> Ported all the plots from HighCharts to Flot.
+    The template and data modules were modified accordingly. Here is a
+    sample chart in Flot: <a href="http://i.imgur.com/KFQrLdp.png">http://i.imgur.com/KFQrLdp.png</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>4th June (Wednesday):</strong> Resolved a few bugs in data module,
+    changed the format of JSON data to better integrate with Flot, made
+    the code a bit more modular so that it is flexible across all the
+    plots.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>5th June (Thursday):</strong> Drew mockups of the plots page, and started
+    working on the index page in the plots app.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>6th June (Friday):</strong> Made an initial prototype of the plots page.
+    The different charts are loaded via AJAX, so there are on page
+    transitions. Updated URL patterns, added custom styles in the
+    process. This is a screenshot of the initial version, for a higher
+    resolution, see <a href="http://i.imgur.com/eEA99Hm.png">here</a></li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Wireframe-plots-index.png" /></p>
+<ul>
+<li><strong>7th June (Saturday):</strong> Fixed bugs in the front-end, added support
+    for a new plot (Average VGR vs Number of Processors)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>8th June (Sunday):</strong> Took the day off.</li>
+</ul>
+<h4 id="week-4">Week 4</h4>
+<ul>
+<li><strong>9th June (Monday):</strong> Read a few articles on the science behind
+    data-visulaizations and how to achieve better and meaningful
+    results. Also started working on multi-series plots and refereed to
+    the documentation accordingly.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>10th June (Tuesday):</strong> Worked on integrating both the plots and
+    upload applications. Also ensured that they are decoupled so that
+    the code remains independent and modular, besides this is also a
+    recommended Django design principle. Related UI fixes and
+    configuration changes were carried out in the process.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>11th June (Wednesday):</strong> Added efficiency plots(Average VGR Rating
+    against CPU MHz and no. of cores). Studied open benchmark suites and
+    looked at openbenchmarking.org to get a better understanding of the
+    end-usage aspects of a benchmarking tool. Also, requested Sean to
+    provide logs which will assist in testing.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>12th June (Thursday):</strong> Completed the integration of the front-end
+    interfaces of plots and the upload app. Also ensured the line charts
+    and their labels are automatically scaled when the data is not
+    discrete. I still await the benchmark logs from Sean, but I will
+    move forward next to creating scripts that check for new benchmark
+    logs.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>13th June (Friday):</strong> Leveraged the earlier script written by
+    Surjyajith to process files from the queue. Made relevant changes to
+    get it working. The scripts needs to be run periodically, we can use
+    crontab for that. I enquired on the IRC channel and Erik confirmed
+    that crontab is installed on the servers.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>15th June (Sunday):</strong> Added the multi-series plot Performance of
+    Processor Families against Reference Images. Along with that added
+    two plots in the Running Time Section. Fixed some issues with line
+    chart, and added comments to the index page. With this, I think the
+    initial roaster of plots is complete, however I still need to find a
+    way to work with Logarithmic axis for Log charts and think about
+    Distribution charts.</li>
+</ul>
+<h4 id="week-5">Week 5</h4>
+<ul>
+<li><strong>16th June (Monday):</strong> Caught a minor flu so couldn't accomplish
+    much work today. Had a relook on the documentation and tried to
+    brain-storm further aspects of the project. Tried reaching Sean
+    again unsuccessfully, I need further perspectives on the project I
+    think, will draft a detailed mail on the list if IRC discussions are
+    not possible</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>17th June (Tuesday):</strong> Tried to figured out the problems with
+    logarithmic axis in Flot, it turns out logarithmic axis are not
+    supported out of the box and we need to provide ticks manually.
+    Thought of solutions to serve the performance data to developers,
+    and took notes from OpenBenchmarking.org in this aspect. This week
+    is reserved for documentation and testing, so I asked on the list if
+    I should continue the documentation now. Also posted some issues and
+    questions I had.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>18th June (Wednesday):</strong> Had a great IRC discussion with Sean
+    about several aspects of the project. We discussed the possible
+    views of the application, and the importance of displaying immediate
+    results to the user, alongside comparisons with the database.
+    Regarding this I look into the speedtest portal to get an idea of
+    the UI aspects. I will hold off on docs now as advised.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>19th June (Thursday) and 20th June(Friday):</strong></li>
+</ul>
+<p>Couldn't update the logs yesterday due to sudden internet outage. I have
+worked on making the website consistent with the BRL-CAD color scheme. I
+posted a screenshot on IRC.</p>
+<p>Apart from this I worked on making the immediate results view of the
+uploaded logs. I explored how to resolve the issue of conflicting file
+names. Discovered that Python has a uuid library which produces unique
+strings, which can be appended to the filename to get a unique name. To
+generate unique URLs, I can use the hash of this filename and serve the
+results on that URL to the user.</p>
+<ul>
+<li><strong>21st June(Saturday):</strong> Started creating the module for showing
+    individual results. Prepared mock-ups of the design after having a
+    look at a few dashboard sites and other relevant links. Also, fixed
+    a few issues in the new color-scheme.</li>
+</ul>
+<h4 id="week-6">Week 6</h4>
+<ul>
+<li><strong>23rd June (Monday):</strong> Continued the work on results module. Create
+    the starting models and views. Since the models used by this module
+    and the polls module would be same, I looked for ways to share them,
+    and found an answer from the Django community. I worked on UI as
+    well and started implementing my mock-up.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>24th June (Tuesday):</strong> Studied various dashboards to derive inputs
+    from them, continued to work on the frontend of the results page,
+    implemented demo scripts for hashing the file-name and then
+    generating a unique URL as well. For now the unique URL length is
+    rather too long, I will study further to see how I can compress it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>25th June (Wednesday):</strong> Did a bit of code-cleanup and some UI
+    fixes. Also started on the blog for midterm evaluations, a
+    half-draft is done and plan to complete the rest by tomorrow.</li>
+</ul>
+<p><strong>Midterm Report:</strong>
+<a href="http://www.ankeshanand.com/posts/gsoc-midterm-status-quo/">http://www.ankeshanand.com/posts/gsoc-midterm-status-quo/</a></p>
+<ul>
+<li><strong>26th June (Thursday):</strong> Finished writing off the blog today and
+    studied about writing Python setup scripts from here:
+    <a href="https://docs.python.org/2/distutils/setupscript.html">https://docs.python.org/2/distutils/setupscript.html</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>27th June (Friday):</strong> Read about working with Virtual Environments
+    in Python. Deployed the application at: <a href="http://202.164.53.122:3000">http://202.164.53.122:3000</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>28th June (Saturday):</strong> Worked on a sample application using
+    django social-auth for managing user accounts and integrating logins
+    from OAuth providers. Tried to resolve a file upload bug
+    un-successfully even after logging stdout and stderr as there were
+    no error messages logged. Will try to resume it tomorrow.</li>
+</ul>
+<h4 id="week-7">Week 7</h4>
+<ul>
+<li><strong>30th June (Monday):</strong></li>
+</ul>
+<p>:* Ensured unique filenames for all uploaded logs using Python UUID4.</p>
+<p>:* Modified models to make sure all are accessed by Django ORM.</p>
+<p>:* Added show_result view to immediately parse the log and it's
+information is inserted into the database. The data for the file is then
+extracted using Django ORM and returned as a dictionary to the result
+template.</p>
+<ul>
+<li><strong>1st July (Tuesday):</strong> Completed the template markup, linked the
+    view to the template. The front-end now shows all the information
+    extracted from the file immediately uploaded. Next step is to
+    trigger AJAX request from the fileupload app to the results page.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>2nd July (Wednesday):</strong> Was sick due to a minor fever and
+    headaches. Took medication and hope to compensate in the upcoming
+    days.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>3rd July (Thursday):</strong> Completed the Results view I was working
+    on. Here's a screenshot, for a larger version, click
+    <a href="http://i.imgur.com/HN3fc97.png">here</a>. Next up, I have to integrate
+    this with the file-upload app, so that results are shown
+    automatically on file-uploads.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/ResultsInterface.png" /></p>
+<ul>
+<li><strong>4th July (Friday):</strong> Encountered a bug while integrating the
+    fileupload and results module. The database changes were not
+    reflected in Django ORM due to query caching. Tried flushing the
+    transaction, but it didn't work, will look more into this.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>6th July (Sunday):</strong> Integrated the results module with
+    fileupload. Now, upon uploading benchmark logs, users are shown the
+    Benchmark Result immediately. Resolved the bug I was facing earlier
+    my doing a configuration change in MySQL. Also, ensured database
+    connections are closed after parsing the file, which was not the
+    case earlier. Tried deploying the new code to the remote machine,
+    but couldn't login through ssh, maybe the system was shut down.</li>
+</ul>
+<h4 id="week-8">Week 8</h4>
+<ul>
+<li><strong>7th July (Monday):</strong> Couldn't get much work done due to a faulty
+    internet connection.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>8th July (Tuesday):</strong> Deployed the application on the server.
+    Resolved a bug related to CSRF tokens which caused file-uploads to
+    stop midway. Discussed further project plans with Sean on IRC.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>9th July (Wednesday):</strong> Explored the feature of uploading files
+    via a web POST API. I found a library django-tastypie that solves
+    the issue of easily creating APIs. Went through it's documentation
+    and tutorials to understand it better.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>10th July (Thursday):</strong> Worked on an example of POST API with
+    django-tastypie. Was able to do fileuploads with an API key on the
+    example. Also looked at Geekbench Benchmarks to get an understanding
+    of different benchmark systems.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>11th July (Friday):</strong> Went through the documentation on Django
+    Forms in detail. The comparisons page would require filtering from
+    the database, and hence Django Forms would be useful there.</li>
+</ul>
+<h4 id="week-9">Week 9</h4>
+<ul>
+<li><strong>14th July (Monday) to 16th July(Wednesday):</strong> My institute opened
+    from Tuesday, so I had to pack my luggage and travel from my home to
+    my institute on Monday. It took a day to complete the registration
+    and fee payment there, and another day to fix logistics as I had to
+    shift to a new accommodation.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>17th July (Thursday):</strong> Back to work resuming the code for the
+    Comparisons module. Wrote it's further backend logic based on Django
+    Forms ORM which would help to communicate with the database based on
+    different filters. I will set up the demo back tomorrow and continue
+    further work on the module.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>18th July(Friday):</strong> Completed the backend logic of the
+    Comparisons view. After selecting the options, a POST request is now
+    sent which returns the appropriate filtered data. The user is shown
+    his VGR Rating and the Average VGR Rating among the filtered logs.
+    Next up, I have to present the data in a better manner, and include
+    a graph for comparison.</li>
+</ul>
+<h4 id="week-10">Week 10</h4>
+<ul>
+<li><strong>21nd July (Monday):</strong> Almost done with the comparisons module,
+    have added the filters and completed backend querying code. Here's a
+    screenshot, for a larger version, click
+    <a href="http://i.imgur.com/BxIbmTN.png">here</a>.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/ComparisonsInterface.png" /></p>
+<ul>
+<li><strong>22rd July (Tuesday):</strong> Added a Date filter to the comparisons
+    view. It lets filter down logs submitted this week, this month, this
+    year or at all times. Added More-Info modal dialogs which give
+    detailed information of the ratings in the result and comparison
+    view.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>23th July (Wednesday):</strong> Completed minor changes in the
+    Comparisons module and started working on the POST API for file
+    uploads. I am using django-tastypie which facilitates easy
+    development of apis for django projects. Will host the project on
+    BRLCAD's server once this module is done, which would be 2-3 days
+    probably.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>24th July (Thursday):</strong> Continued work on the Web API for file
+    uploads. Was able to send get requests via the API but POST requests
+    were unsuccessful. Also, fixed a few minor bugs and redeployed the
+    demo.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>26th July (Saturday):</strong> Worked on deploying the app to production.
+    Read lots of documentation and articles on this to understand every
+    bits and pieces. Set up Post Receive hooks in the remote repository
+    so that it is synced with Git. Created a makefile for easy
+    installation of dependencies and carry out other deployment related
+    tasks. Will contact admins from the IRC channel tomorrow to set up
+    the apache mod_wsgi configurations and get everything running.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>27th July (Sunday):</strong> Did a bunch of changes to get the production
+    and development environment in proper setup and running. New
+    installation instructions are now in place. Today's commits can be
+    accessed here:
+    <a href="https://github.com/BRL-CAD/benchmark/commits/master">https://github.com/BRL-CAD/benchmark/commits/master</a>.</li>
+</ul>
+<h4 id="week-11">Week 11</h4>
+<ul>
+<li><strong>29th July (Tuesday):</strong> Completed the Web API for file uploads.
+    Now, files can be uploaded from the command line via a POST request
+    such as:</li>
+</ul>
+<p><em>curl -F "slug=test" -F "file=@run-10644-benchmark.log"
+<a href="http://localhost:8200/upload/api/v1/picture/">http://localhost:8200/upload/api/v1/picture/</a></em></p>
+<ul>
+<li><strong>30th July (Wednesday):</strong> In some cases the files uploaded via the
+    Web api were being partially uploaded. Added a deserializer method
+    to take care about of that. Also refractored the api code.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>31st July (Thursday):</strong> Refactored some of the code, and did some
+    mockups of Live feed for the benchmark home page.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>1st August (Friday):</strong> Looked into automatic uploading of logs
+    from the benchmark script. I am able to make file uploads from the
+    script, but need to find a way to make it fault tolerant. I tried a
+    few suggestions mentioned on SO but they were not completely solving
+    the issue. Will dig into this further.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>3rd August (Sunday):</strong> Checking off things from the TODO. Made the
+    social media sharing icons work. Fixed some of the broken links in
+    the navbar. Started working on the home page and file archiving, had
+    a few doubts regarding them, so sent a mail to the mailing list.</li>
+</ul>
+<h4 id="week-12">Week 12</h4>
+<ul>
+<li><strong>4th August (Monday):</strong> Started work on the homepage created a few
+    mockups and continued code-refactoring. Awaiting response from the
+    mailing list about my questions.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>5th August (Tuesday):</strong> Found the solution to the file archiving
+    issue. The recommended way is to organize files in yy/mm/dd
+    directories so that they are searchable by date and less number of
+    files in a directory would also significantly improve performance.
+    Started implementing the home page mockup, refactored some code in
+    the results page.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>6th August (Wednesday):</strong> After experimenting with different
+    designs, settled down on the landing page. I have implemented the
+    mockup, below is a screenshot.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/BenchmarkHome.png" /></p>
+<ul>
+<li><strong>7th August (Thursday):</strong> Pushed the site to deployment after
+    enabling the site in apache, it is now live again at
+    <a href="http://202.164.53.122/benchmark/">http://202.164.53.122/benchmark/</a>. Tested the site across multiple
+    platforms, resolved most of the UI fixes. There is a top margin
+    issue that's left to be resolved. Will work on the file archiving
+    issue tomorrow.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>8th August (Friday):</strong> Implemented file-archiving, the files are
+    now segmented across separate directories for each month. This
+    ensures they are easily searchable and also significantly improves
+    the speed of the app.</li>
+</ul>
+<h4 id="week-13">Week 13</h4>
+<ul>
+<li><strong>11th August (Monday):</strong> Wrote the structure for application feed.
+    The feed would list out all the recently uploaded log files with
+    links to results page for each. I have to plug in the ORM statements
+    to make it working.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>12th August (Tuesday):</strong> Modified the production setup to use
+    virtualenvs as this was causing the other projects to come down.
+    This included a different make configuration and changes to the WSGI
+    file. The setup was also moved from /var/www to
+    /home/benchmark/deployment. The aliases were configured accordingly</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>13th August (Wednesday):</strong> Wrote a view that lists out the most
+    recently uploaded logs by listening to the database for newly
+    uploaded logs. This can be merged with the homepage later.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>14th August (Thursday):</strong> Worked on the script to extract logs
+    submitted via email. Leveraging some part of the work that was done
+    by Suryajith. The IMAP library has limited support now but the
+    script works, tried to port this into the new library by GMail.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>15th August (Friday):</strong> Completed the port of the script to
+    extract email logs. Improved parser scripts to remove hardcoded
+    variables, and use project settings instead.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>16th August (Saturday):</strong> Improved inline documentation in the
+    results and fileupload module. Resolved the issue of navbar
+    responsiveness on iPad. Few other UI tweaks along the way.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>18th August (Monday):</strong> My lab had a visit from Prof. Khosla, the
+    Chancellor of UCSD. I was busy preparing a presentation regarding
+    the same and then giving a talk on the current ongoing research in
+    the lab.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>19th August (Tuesday):</strong> Wrapped up everything and submitted the
+    final evaluation. The whole experience was great and I can
+    definitely say GSoC was one of the best things I have ever done.
+    Thanks to Prof. Rai and Sean for being so helpful along the way.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

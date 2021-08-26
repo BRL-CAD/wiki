@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Jacksixb/Proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Jacksixb/Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#molecular-graphics-programming-for-import-and-visualization" class="nav-link">Molecular Graphics Programming for Import and Visualization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="molecular-graphics-programming-for-import-and-visualization">Molecular Graphics Programming for Import and Visualization</h2>
+<h3 id="academic-focus-areas">Academic Focus Areas:</h3>
+<p>Computer Science, Biology, Chemistry</p>
+<h3 id="summary">Summary:</h3>
+<p>The study endeavors to learn fundamentals of computer programming and
+computer science concepts in order to import and visualize molecular
+structures within an engineering context. The study requires learning
+numerous computer science fundamentals including concepts of data
+management, pointer manipulation, data structures, object-oriented
+design, procedural workflows, file input/output, and 3D visualization.
+It also requires learning several applied scientific concepts involving
+molecular graphics, molecular engineering, biological molecular
+structures, chemical structures, and common data formats. In order to
+demonstrate the academic objectives, computer programming source code
+will be implemented to read molecular data from public repository
+Protein Data Bank (PDB) files. The PDB data will be converted into 3D
+geometry inside of BRL-CAD and subsequently visualized via ray tracing.</p>
+<h3 id="goals">Goals:</h3>
+<ol>
+<li>Finish Calc Class (10/18)</li>
+<li>Gain fundamental understanding of File I/O in C/C++ (10/31)</li>
+<li>Gain fundamental understanding of data structures in C/C++</li>
+<li>Gain fundamental understanding of protein structures and molecular
+    graphics</li>
+<li>Gain fundamental understanding of 3D geometry and rendering</li>
+</ol>
+<h3 id="assignments">Assignments:</h3>
+<ol>
+<li>Data structures program: pointer fundamentals and data abstraction
+    (10/26)</li>
+<li>File I/O program: methods for reading text and binary (11/2)</li>
+<li>Recursion program: procedurally generated geometry</li>
+<li>Software design: object-oriented and procedural workflow analysis</li>
+<li>Midterm report (1/18)</li>
+<li>Parse PDB file into a data structure</li>
+<li>Create simple molecular geometry from PDB data</li>
+<li>Putting it all together: “pdb-g: PDB to BRL-CAD importer”</li>
+<li>Molecular structures visualization survey</li>
+<li>Visualization of molecular geometry, ray tracing</li>
+<li>Molecular geometry engineering analysis</li>
+<li>Final report (5/31)</li>
+</ol>
+<h3 id="schedule">Schedule:</h3>
+<ul>
+<li>Aug: Finish up Calculus independent study (will cut into September
+    and October)</li>
+<li>Sep: Continued from August</li>
+<li>Oct: Study fundamentals of file I/O in C w/ program that outputs an
+    array to a file and inputs an array from that file</li>
+<li>Nov: Study fundamentals of data structures and pointers</li>
+<li>Dec: Parse PDB file into a data structure via pdb-g tool</li>
+<li>Jan: Procedurally create geometry of atom structure of a protein
+    from PDB data structure and midyear report</li>
+<li>Feb: Study features of molecular graphics, scope extension that
+    calculate a protein properties, including: surface properties,
+    Molecular Lipophilic Potential, and Electrostatic Potential</li>
+<li>Mar: Implement extension to calculate properties</li>
+<li>Apr: Procedurally create geometry for molecular surface and other
+    molecular graphics of a protein from PDB data structure</li>
+<li>May: Integrate code and final report (includes midyear report)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

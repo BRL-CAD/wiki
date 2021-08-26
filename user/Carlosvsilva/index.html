@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Carlosvsilva/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Carlosvsilva - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Carlosvsilva.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-proposal" class="nav-link">Project Proposal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>My name is Carlos Silva, and I'm from Portugal.</p>
+<p>I would be delighted to improve BRL-CAD project under Google Summer of
+Code 2009 program, so I submitted the following application to improve
+the IGES converter importer/exporter.</p>
+<p>I am getting familiarized with the source code and IGES documentation,
+and i made my first patch:</p>
+<ul>
+<li><a href="https://sourceforge.net/tracker/?func=detail&amp;aid=2765379&amp;group_id=105292&amp;atid=640804">https://sourceforge.net/tracker/?func=detail&amp;aid=2765379&amp;group_id=105292&amp;atid=640804</a></li>
+</ul>
+<h2 id="project-proposal">Project Proposal</h2>
+<h3 id="project-title">Project Title</h3>
+<p>IGES importer/exporter enhancements</p>
+<h3 id="project-goals">Project Goals</h3>
+<p>The main goal is to update the IGES converter importer/exporter to
+version 5.3 (6.0 in the future) of the IGES standard, and producing
+quality code ready to be included in svn mainline brlcad.</p>
+<h3 id="project-benefits">Project Benefits</h3>
+<p>BRL-CAD project will support the latest 5.3 version (and later support
+version 6.0) of the industry wide prevalent IGES standard to exchange
+geometry data between CAD systems. The converter will be re-designed to
+support multiple file formats when importing/exporting for full
+compatibility with all existing projects and systems. The code produced
+will be clean, stable, portable and maintainable, which will be of
+utmost importance in a project as complex as BRL-CAD. BRL-CAD project
+will be one of the best alternatives for workflows involving the 5.3
+version of the IGES format and above.</p>
+<h3 id="project-tasks-and-deliverables">Project Tasks and Deliverables</h3>
+<p>I started the work on my BRL-CAD application based on the list of
+changes for version 5.3 of the IGES standard. Since the current
+converter in BRL-CAD is at version 5.1 level support, i will first need
+to add the features/behaviour of the 5.2 version of the standard.</p>
+<p>So, I propose the following precise schedule:</p>
+<h4 id="phase-1-april-21-april-30">Phase 1 (April 21 - April 30)</h4>
+<p>Test the code for feature support and correct operation converting
+to/from the 5.1 version of the standard, with different 5.1 version IGES
+files covering the features detailed here:</p>
+<p><a href="http://www.iges5x.org/archives/eco/eco-51.htm">http://www.iges5x.org/archives/eco/eco-51.htm</a></p>
+<p>I already went through most resources, and there don't seem to be any
+outstanding issues or problems with 5.1 version support.</p>
+<h4 id="phase-2-may-1-may-15">Phase 2 (May 1 - May 15)</h4>
+<p>Continue getting myself up to speed with the brlcad/src/conv/iges source
+code structure with the help of cscope, which I already started to do.
+Continue researching BRL-CAD’s primitives and entities to understand the
+mappings between IGES and BRL-CAD formats. Most of the mappings seem
+direct so far.</p>
+<h4 id="phase-3-may-16-may-31">Phase 3 (May 16 - May 31)</h4>
+<p>If there are any issues with version 5.1 support, fix them, debating any
+bigger issue with the BRL-CAD dev team if needed.</p>
+<p>Implement a command-line parameter to specify the version of the IGES
+standard to import or export. Redesign the converter to use the code
+specific for each version of the standard, in places where they differ.
+Be careful to avoid duplication of code.</p>
+<h4 id="phase-4-june-1-june-30">Phase 4 (June 1 - June 30)</h4>
+<p>Start implementing and testing for conformance the changes listed for
+the 5.2 version of the standard, here:</p>
+<p><a href="http://www.iges5x.org/archives/eco/eco-52.htm">http://www.iges5x.org/archives/eco/eco-52.htm</a></p>
+<p>Some of the these changes are refinements of the wording of previous
+versions of the standard. The changes that require code or behaviour to
+be changed, will be implemented and then tested with hand-created IGES
+5.2 files and with example files and other resources available from
+www.iges5x.org.</p>
+<p>The new attributes/entities (like Minimum Design Wall Thickness
+attribute) will be matched with BRL-CAD's existing ones. If necessary,
+new ones will be created for BRL-CAD, debating with the dev team on the
+best path to take to develop them.</p>
+<h4 id="phase-5-july-1-august-10">Phase 5 (July 1 - August 10)</h4>
+<p>With the official document of the IGES 5.3 standard, and its list list
+of changes, begin to implement any new code behaviour required like the
+"Change to Flow Associativity Entity", or implement new code to convert
+new features of the 5.3 standard, like 'Add Attributes for Geometry of
+Cataloged Parts".</p>
+<p>Research BRL-CAD's support of Unbounded Lines in the Line entity, and if
+there's no support, implement it, and then implement the code to convert
+this feature.</p>
+<p>Also implement the BREP Objects as CSG Primitives in the places
+mentioned by the standard.</p>
+<p>Consult with the BRL-CAD dev team for best practices in improving the
+converter architecture and for information on this
+standard/implementation, valuable for this project. By July 6, date of
+mid-term student evaluations, work should have been started on this
+phase, and preferably, at least half of the changes list should already
+be implemented in BRL-CAD's IGES converter. By the end of this phase,
+version 5.3 support will be complete, tested and documented.</p>
+<h4 id="phase-6-august-11-august-17">Phase 6 (August 11 - August 17)</h4>
+<p>Test all the code produced and write the necessary documentation.</p>
+<p>If time allows, implement the features of IGES 6.0 version of the
+standard listed in <a href="http://www.iges5x.org/archives/eco/eco-60.htm">http://www.iges5x.org/archives/eco/eco-60.htm</a></p>
+<p>I'm happy i will be working directly on the trunk, without any
+sub-branches involved, so I can get instant feedback on my work and
+contribute faster, with higher quality code.</p>
+<p>I have a lot of enthusiasm to contribute to the BRL-CAD project, and I
+will implement this project teaming with my mentor and the BRL-CAD
+developers to reach the best design decisions and create clean, stable,
+portable and maintainable, release-quality code.</p>
+<p>I will take advantage of the extensive C experience I got while
+successfully working on the MSN protocol plugin in libpurple - it's part
+of Pidgin [1] - under Summer of Code 2007 [2], and from other other
+personal projects. I updated the C-based MSN protocol plugin
+successfully to the latest version, reverse-engineering Microsoft's
+official client encrypted network communications and reading unofficial
+documentation of this closed protocol, that I found on-line. I had to
+improve another student’s previous SoC work with hard to maintain code
+to successfully complete this project. In 2008 i applied with Pidgin
+again, because of the familiarity with the source code, and due to the
+involvement with the project, i know which areas libpurple could benefit
+the most from improvements. Even though my application was considered
+solid by the team, i found out at the last minute that they have a
+policy of not taking repeat students, in the spirit of GSoC. So i also
+applied for FreeBSD's mtund, with a really short time-frame as best as i
+could, but between the time available to the proposal, and FreeBSD not
+being interested in all the projects of their ideas list, i wasn't
+selected.</p>
+<p>I believe i can accomplish this project for BRL-CAD successfully, and
+bring in tested, release-quality code. I have no classes this semester,
+only short papers without a deadline, and will be available and comitted
+full time as soon as I'm accepted into the program. I will have a lot of
+free time to work so I’m enthusiastic about it. After completing my
+project I hope to continue contributing code and bug-fixes to BRL-CAD
+project.</p>
+<p>Hopefully I will grow as a software engineer, and gain real-word
+experience with CAD systems design and interoperability.</p>
+<h3 id="personal-bio">Personal Bio</h3>
+<p>I am a 25 year old student from the small town of Maia which is located
+in the north of Portugal. I moved to the city of Braga to study
+Informatics Engineering (CS) at one of the best universities in
+Portugal, Universidade do Minho, and I’m a software engineer by heart.
+I’ve been involved with the free software community since I started
+using RedHat Linux 6 and I was involved in informal communities in
+Portugal. I gave a lecture in high-school on how to install RedHat Linux
+and have been to some IT conferences. In the past I used regularly BSD
+based systems, Linux systems, Mac OS X and others. I've used countless
+free software projects, in server and desktop, contributing code, bug
+reports, and I'm happy to be part of this community.</p>
+<p>I appreciate the feedback, and if there's anything else you want to
+comment on, i'll be more than happy to hear about it ! Snippets of code
+from my previous work in Google Summer of Code 2007 are available at</p>
+<ul>
+<li><a href="http://planet.homeunix.org">http://planet.homeunix.org</a></li>
+</ul>
+<p>I will be available on IRC at Freenode network, with the nickname
+<strong>typ0</strong>.</p>
+<h3 id="references">References:</h3>
+<p>[1] Pidgin Instant Messenger and libpurple, <a href="http://pidgin.im/">http://pidgin.im/</a></p>
+<p>[2] Abstract of Google Summer of Code 2007 successful Pidgin
+application,
+<a href="http://code.google.com/soc/2007/gaim/appinfo.html?csaid=C682D350CA504A3C">http://code.google.com/soc/2007/gaim/appinfo.html?csaid=C682D350CA504A3C</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

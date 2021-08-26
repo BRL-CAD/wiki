@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Thethirdone/GSoC18/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Thethirdone/GSoC18/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#slic3r-face-based-rotation" class="nav-link">Slic3r Face based rotation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#implementation-plans" class="nav-link">Implementation Plans</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#background" class="nav-link">Background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="slic3r-face-based-rotation"><strong>Slic3r Face based rotation</strong></h2>
+<p>==<strong>Abstract</strong>=</p>
+<p>The primary goal of this project would be to implement a solution to
+issue #3047. This issue is basically about implementing a way for users
+to select a face and choose it to be the face that connects to the
+plate.</p>
+<p><code>Specifically, after implementing this feature, I expect that a user would be able to click a face (which should be highlighted to make clicking the right face easy) on an object and then click menu button to rotate that face to bottom of the model. If there is a part of the object below the plate after the rotation, it should either error or push the model up until it is no longer intersecting the plate (I’m not sure which is more intuitive).</code></p>
+<p>Potential Extensions:</p>
+<p><code>In the process of writing up the plan for this, I found that I don’t think it will take me very much time. I expect a working prototype will take me a week, even if that is a dramatic underestimate, that would still leave a significant of time to be working on other issues in Slic3r.</code></p>
+<p>If different parts of the GUI can be ported to C++ independently, it
+could make sense to port 3DScene as an extension to this proposal. By
+the time I finish working on adding face-based part rotation, I should
+be quite familiar with it so porting would be more efficient than moving
+onto another area of Slic3r. Another possible extension is to work on
+adding manual support pillars which would solve #3062. I would
+certainly be familiar enough with 3DScene to be able to do that side of
+it, but I haven’t look at the code for support generation at all yet.</p>
+<h2 id="implementation-plans"><strong>Implementation Plans</strong></h2>
+<p><code>Given a normal to rotate to the -z direction, the actual rotation is fairly simple. A rotation about the z axis so that the normal lies in the xz plane followed by a rotation about the y axis to rotate it to -z is quite straightforward. Therefore, most of the work of implementing this feature will be in determining the normal to use from user input.</code></p>
+<p><code>In order to select a face, it is important to be able to find the triangle that the users mouse is over. This is currently already done, but with entire objects instead of individual triangles. Objects are currently determined from mouse position by changing the color of the object based the looking up the color at the position of the mouse. It should be possible to extend the method to a per triangle basis without much trouble. However, it will require an extra rendering pass. The highlighting of a single face (can be multiple triangles) will likely require keeping a buffer of colors for every triangle in the object.</code></p>
+<p><code>When selecting a face, ideally the entire (flatly) connected face would be highlighted. This requires detecting which triangles make up a face. I don’t know of any algorithms which detect flat connected faces off the top of my head, but I am sure they exist. It is fairly easy though to detect triangles which lie of the same plane though. If for some reason highlighting just the connected face is impractical, highlighting all triangles on the same plane should be sufficient.</code>
+<code></code></p>
+<p>So in a concise form the plan for each of the subtasks:</p>
+<ul>
+<li>Selecting the face<ul>
+<li>Assign a color to every triangle in the mesh</li>
+<li>Render and test the color at the mouse location</li>
+</ul>
+</li>
+<li>Highlighting the face<ul>
+<li>Detecting which triangles are on the same face</li>
+<li>Adding a Color buffer for rendering</li>
+</ul>
+</li>
+<li>Rotating the object<ul>
+<li>Get normal</li>
+<li>Rotate normal along z to xz plane</li>
+<li>Rotate normal along y to -z</li>
+</ul>
+</li>
+</ul>
+<p>I don’t have any concrete implementation ideas for any potential
+extensions to the proposal yet.</p>
+<h2 id="timeline"><strong>Timeline</strong></h2>
+<ul>
+<li>May 14 - May 28<ul>
+<li>Work on a first concept of rotating a base to the plate</li>
+</ul>
+</li>
+<li>May 29 - June 4<ul>
+<li>Get feedback of it and fix any bugs and ensure that it is
+    sensibly listed with other rotation options.</li>
+</ul>
+</li>
+<li>June 5 - 11:<ul>
+<li>Look over more code and decide which extension is should be
+    taken on.</li>
+</ul>
+</li>
+<li>June 12 - August 6<ul>
+<li>Work on the selected extension</li>
+</ul>
+</li>
+<li>August 7 - August 21<ul>
+<li>Do any final work needed to finish up the extension</li>
+</ul>
+</li>
+</ul>
+<h2 id="background"><strong>Background</strong></h2>
+<p>I’m a student University of California Merced planning to graduate next
+December. I am taking a course in Computer Graphics so when looking
+through organizations I was drawn to BRL-CAD. I used Slic3r a few times
+when I had access to a 3d printer during high school. With a quick look
+through the code for Slic3r, it seems reasonably approachable. My only
+reservation was the amount of Perl, I have never worked with any large
+(more than 500 lines) Perl project, but given that I don’t have to
+change the overall structure, I am comfortable working on it.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

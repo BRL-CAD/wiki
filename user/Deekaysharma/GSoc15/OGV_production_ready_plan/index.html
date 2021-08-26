@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Deekaysharma/GSoc15/OGV_production_ready_plan/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>OGV production ready plan - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Deekaysharma/GSoc15/OGV_production_ready_plan.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Online Geometry Viewer Front-End, production ready at the end of
+GSoC'15</p>
+<p><strong>IN ORDER OF PRIORITY</strong></p>
+<ul>
+<li><strong>Landing Page</strong></li>
+</ul>
+<p>Landing page is almost empty. It should explain to users how to use OGV
+in say, "X" simple steps like <a href="https://360.autodesk.com/viewer">https://360.autodesk.com/viewer</a>. Use
+graphics (images of 3D models, or explain steps graphically etc.)
+(8-9 Days)</p>
+<ul>
+<li><strong>Loader Indicator</strong></li>
+</ul>
+<p>There should be indication about how much model has been loaded. E.g.
+“67% loaded”.
+(1 week)</p>
+<ul>
+<li><strong>Feedback system Front-End</strong></li>
+</ul>
+<p>UI or the Front-End for sending the developer feedbacks and reporting
+bugs will be created.
+(5-6 Days)</p>
+<ul>
+<li><strong>Error Messages</strong><ul>
+<li><strong>Proper Error Messages</strong></li>
+</ul>
+</li>
+</ul>
+<p>While saving details during file uploading, it shows a red error box
+without error message and those red error boxes keep on stacking when
+one clicks on save button multiple times.</p>
+<ul>
+<li>
+<ul>
+<li><strong>g to obj Conversion Failed Message</strong></li>
+</ul>
+</li>
+</ul>
+<p>If g to obj conversion fails, user should be notified in user friendly
+manner with instructions to do the needful. User’s time never be wasted
+at any cost.
+(1 week)</p>
+<ul>
+<li><strong>Upload Model without Sign-In / Sign-Up : ( Discarded for now, to
+    be done at the later stage )</strong></li>
+</ul>
+<p>User should be able to upload model without signin/signup. That will
+help to engage users in OGV.
+(10 Days)</p>
+<ul>
+<li><strong>Design a 404 Page</strong></li>
+</ul>
+<p>Design / Create a 404 page if user search or goto wrong url.
+(4 Days)</p>
+<ul>
+<li><strong>Zoom Limit</strong></li>
+</ul>
+<p>There is a range of zoom-in and zoom-out within which every model can be
+viewed or say, visible. Restrict user not to zoom-in and zoom-out beyond
+those limits.
+(10 Days)</p>
+<ul>
+<li><strong>Swtich to Different View</strong></li>
+</ul>
+<p>An option needed that enable user to quickly see back, front, top,
+bottom, left, right view of the model and switch among them.
+(8-9 Days)</p>
+<ul>
+<li><strong>Responsiveness</strong></li>
+</ul>
+<p>Make it mobile first site. For UI improvement I'm going to use "zurb
+foundation" or "Twitter Bootstrap".
+(1 week)</p>
+<p><strong>Documentation</strong></p>
+<p>It would be done side by side at the end of every milestone as much as
+possible.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Schindler97/GSoC18/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Schindler97/GSoC18/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#wrapping-brlcad-primitives-in-python" class="nav-link">Wrapping BRLCAD primitives in python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="wrapping-brlcad-primitives-in-python"><strong>Wrapping BRLCAD primitives in python</strong></h2>
+<h3 id="abstract"><strong>Abstract</strong></h3>
+<p>BRL-CAD is an open source solid modeling system that includes
+interactive geometry editing, ray-tracing for rendering and geometric
+analysis, geometry libraries for application developers and a lot more.
+BRL-CAD has various geometric primitive objects it uses for modelling
+complicated solids. This project aims to wrap BRL-CAD functionality in
+python.</p>
+<h3 id="introduction"><strong>Introduction</strong></h3>
+<p>Python BRLCAD is an ongoing project that aims to enable using BRLCAD
+APIs in python. It mainly focuses on wrapping BRLCADs primitives in
+python. These bindings parse the header files of the primitives from the
+installed version of BRLCAD, and uses them to construct a standard
+library of abstractions around the bindings. These python-bindings
+warrant simple and non-complicated access to the BRLCAD primitives for
+geometry construction and manipulation. This project uses ctypes to wrap
+the BRLCAD libraries. The main motivation behind python wrappers was to
+enable faster iterations and avoid the pain of with pointers and
+data-type casting</p>
+<p>By loose coupling these bindings, we enable these bindings to interact
+with the bleeding edge version (and most other versions) of BRLCAD. We
+do this by using a dynamic wrapper generator ctypesgen which parses
+BRLCAD’s primitive header files (*.h) and generates the ctypes wrapper
+code and then writes it into a python file.</p>
+<h3 id="past-work"><strong>Past Work</strong></h3>
+<p>Python BRL-CAD was last worked upon in the summer of 2014 as a GSoC
+project. During this project, more primitives were added to the
+repository. Some test cases were written and close to no documentation
+was done.</p>
+<h3 id="issues-in-the-current-project">Issues in the current project</h3>
+<ul>
+<li>Fixing the current project. There are certain issues in the current
+    version of python BRL-CAD, they are :</li>
+<li>Outdated and non-maintained codebase (4 Years old)</li>
+<li>Incomplete installation scripts</li>
+<li>Support for only python2.7</li>
+<li>No support for OS-X</li>
+<li>Non-exhaustive tests for primitives</li>
+<li>Unwrapped primitives</li>
+<li>Close to no documentation</li>
+</ul>
+<h3 id="goals">Goals</h3>
+<ul>
+<li>Extending support to python3.x</li>
+<li>Create robust installation scripts for Windows, Linux and OS-X</li>
+<li>Introduce bindings for 16 new primitives<ul>
+<li>annot</li>
+<li>brep</li>
+<li>datum</li>
+<li>dsp</li>
+<li>ehy</li>
+<li>eto</li>
+<li>extrude</li>
+<li>hf</li>
+<li>hrt</li>
+<li>joint</li>
+<li>nmg</li>
+<li>pnts</li>
+<li>poly</li>
+<li>rec</li>
+<li>revolve</li>
+<li>rhc</li>
+</ul>
+</li>
+<li>Documenting the project. Documentation would be done for :<ul>
+<li>Installing and setting up python BRL-CAD</li>
+<li>How python BRL-CAD works? (ctypesgen interactions)</li>
+<li>How to build wrappings for primitives in python</li>
+<li>How to and when to use python BRL-CAD</li>
+<li>List of future tasks for the project</li>
+</ul>
+</li>
+</ul>
+<h3 id="deliverables">Deliverables</h3>
+<p>Over the course of GSoC ‘18, I will be submitting three deliverables.
+These deliverables would be followed as strictly as possible with minor
+updates during the community bonding period. The 3 deliverables are :</p>
+<ul>
+<li>First Deliverable<ul>
+<li>Python bindings for 5 primitives (annot, ehy, hrt, nmg, poly)</li>
+<li>Tests for these 5 primitives</li>
+<li>Documentation on installation and using python BRL-CAD</li>
+<li>Documentation of primitives</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Second Deliverable<ul>
+<li>Python bindings for 5 primitives (brep, datum, eto, hf, rhc)</li>
+<li>Tests for these 5 primitives</li>
+<li>Documentation on how to build wrappings for primitives in python</li>
+<li>Documentation of primitives</li>
+<li>Partially completed tasks of future possible tasks</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Final Deliverable<ul>
+<li>Python bindings for 6 primitives (extrude, joint, pnts, rec,
+    revolve)</li>
+<li>Tests for these 6 primitives</li>
+<li>Contribution guidelines for python BRL-CAD</li>
+<li>Documentation of primitives</li>
+<li>List of future possible tasks</li>
+<li>Updates on the wiki</li>
+</ul>
+</li>
+</ul>
+<h3 id="timeline">Timeline</h3>
+<p>Tentative timeline of the project over the summer of 2018.</p>
+<ul>
+<li>Community Bonding Period :<ul>
+<li>Get familiarized with different file types and constructs</li>
+<li>Contact active contributors and ask them about possible doubts.</li>
+<li>Log everything under ‘python BRL-CAD Development'</li>
+<li>Would help in fixing prior errors</li>
+<li>Fix installation scripts to extend support for OSX (Start)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 1 (May 14 - May 20) :<ul>
+<li>Primitive Completed : annot</li>
+<li>Make final changes to the outdated code (if any remaining)</li>
+<li>Setup a platform for my : Daily logs</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 2 (May 21 - May 27) :<ul>
+<li>Primitives Completed : ehy, nmg (first half)</li>
+<li>Documentation of primitives constructed so far</li>
+<li>Write test cases for previously created primitives</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 3 (May 28 - June 3) :<ul>
+<li>Primitives Completed : hrt, nmg (second half)</li>
+<li>Documentation : Installation and usage of python BRL-CAD (V1)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 4 (June 4 - June 10) :<ul>
+<li>Primitives Completed : poly</li>
+<li>Documentation : Installation and usage of python BRL-CAD (Final)</li>
+<li>Final tests for 5 primitives : annot, ehy, hrt, nmg, poly</li>
+</ul>
+</li>
+</ul>
+<h4 id="first-deliverable">First Deliverable</h4>
+<ul>
+<li>Week 5 (June 11 - June 17) :<ul>
+<li>Primitives Completed : brep, dsp</li>
+<li>Start chalking out possible future tasks (Weak Document)</li>
+<li>Complete support for porting to OSX</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 6 (June 18 - June 24) :<ul>
+<li>Primitives Completed : datum, eto</li>
+<li>Documentation of primitives constructed so far</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 7 (June 25 - July 1) :<ul>
+<li>Primitives Completed : hf</li>
+<li>Documentation : Building wrappers for primitives in python (V1)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 8 (July 2 - July 8) :<ul>
+<li>Primitives Completed : rhc</li>
+<li>Final tests for 6 primitives : dsp, brep, datum, eto, hf, rhc</li>
+<li>Documentation : Building wrappers for primitives in python
+    (Final)</li>
+</ul>
+</li>
+</ul>
+<h4 id="second-deliverable">Second Deliverable</h4>
+<ul>
+<li>Week 9 (July 9 - July 15) :<ul>
+<li>Primitives Completed : extrude</li>
+<li>Start porting to OS-X</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 10 (July 16 - July 22) :<ul>
+<li>Primitives Completed : joint, pts</li>
+<li>Contribution guidelines for python BRL-CAD (V1)</li>
+<li>Finish porting to OS-X</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 11 (July 23 - July 29) :<ul>
+<li>Primitives Completed : rec</li>
+<li>Updates on the wiki page</li>
+<li>Contribution guidelines for python BRL-CAD (Final)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 12 (July 30 - Aug 5) :<ul>
+<li>Primitives Completed : revolve</li>
+<li>Documentation of primitives</li>
+<li>Test for 5 primitives : extrude, joint, pnts, rec, revolve</li>
+<li>Final documentation updates</li>
+</ul>
+</li>
+</ul>
+<h4 id="final-deliverable">Final Deliverable</h4>
+<h3 id="who-am-i">Who am I?</h3>
+<p>I'm Jaipal, a final year student pursuing my Bachelors in Computer
+Science with coupled with an MS by research in Computational
+Linguistics. I'm a massive python fanboy and love running. I have been
+contributing to open source since 2015. My Open-source contributions
+include work with organization like like Mozilla, Plone, and Apertium.
+Other than contributing, I also volunteer and take part in local FOSS
+workshops organized by Drupal and Mozilla. I was selected to work with
+Apertium as a part of Google Summer of Code 2016.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

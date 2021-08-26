@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Amalia/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Amalia - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Amalia.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-title-conic-curve-support-for-librecad" class="nav-link">Project Title: Conic Curve Support for LibreCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#brief-project-summary" class="nav-link">Brief Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#detailed-project-summary" class="nav-link">Detailed Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#hyperbola" class="nav-link">Hyperbola</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#parabola" class="nav-link">Parabola</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#links-to-some-pictures" class="nav-link">Links to some Pictures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-schedule" class="nav-link">Development schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-period-april-27th-may-24th" class="nav-link">Community Bonding Period ( April 27th - May 24th )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pre-mid-term-evaluation-work-period-may-25th-june-25th" class="nav-link">Pre Mid-term Evaluation Work Period ( May 25th - June 25th )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#post-mid-term-evaluation-work-period-july-6th-august-20th" class="nav-link">Post Mid-term Evaluation Work Period ( July 6th - August 20th )</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#time-availability" class="nav-link">Time availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-librecad" class="nav-link">Why LibreCAD ?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me ?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#anything-else" class="nav-link">Anything Else</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-schedule_1" class="nav-link">DEVELOPMENT SCHEDULE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h4 id="conic-curve-support-for-librecad">CONIC CURVE SUPPORT FOR LibreCAD</h4>
+<h4 id="introduction">INTRODUCTION</h4>
+<h2 id="personal-information">Personal Information</h2>
+<p>Name: Ngassa Amalia Finjap</p>
+<p>Email: ngassafinjap@gmail.com</p>
+<p>IRC Nick: amalia237</p>
+<p>Github : Ngassa</p>
+<p>Google+ Handles: Ngassa Amalia</p>
+<p>Time Zone: UTC + 01:00</p>
+<p>Brief Background Information: I am Ngassa Amalia, a senior year
+management science major from the Catholic University Institute of Buea,
+Cameroon who's interested in participating in Google Summer of Code
+under LibreCAD. I am ready to work for for over 40+ hours on my project
+during the summer holidays and will do everything to meet my project
+goals on nights and weekends even when my tests and examinations come
+up.</p>
+<h4 id="project-description">PROJECT DESCRIPTION</h4>
+<h2 id="project-title-conic-curve-support-for-librecad">Project Title: Conic Curve Support for LibreCAD</h2>
+<h2 id="brief-project-summary">Brief Project Summary</h2>
+<p>It has been observed that designers start from using small shapes called
+primitive to attain more complex ones. This project aims at building
+conic curve support into the LibreCAD software package by implementing
+the hyperbola and parabola primitives entity types. This will enable
+users of the LibreCAD software to use conics in modeling the Dulles
+Airport Tower in Virginia, process just as in the . Hyperbolas in
+particular can be used in preliminary sketches of beautiful butterflies,
+nuclear cooling towers, hyperbolic shadows on the wall, hyperbolodial
+gears in skew shafts and buildings while parabolas can be used by
+architects to design rainbows, suspension bridges, roller coasters and
+much more. During this Summer of Code period, I'll be incorporating
+these two primitives into LibreCAD by defining necessary classes and
+implementing member functions within interface and implementation files
+(lc_hyperbola.h, lc_parabola.h and lc_hyperbola.cpp,
+lc_parabola.cpp) in librecad/src/lib/engine/ and librecad/src/actions/.</p>
+<h2 id="detailed-project-summary">Detailed Project Summary</h2>
+<p>Here, I give more detailed information on how I intend to build conic
+curve support into the LibreCAD software package. From my recent studies
+of the ellipse and circle primitives (rs_circle.* and rs_ellipse.*)
+in librecad/src/lib/engine/, I observe that for each primitive type is
+designed as a class with data members which are attributes of that
+primitive and member functions implementations which define properties
+of the primitive. In LibreCAD, the framework of engine (math) support
+for ellipses can be applied readily to hyperbola/parabola, so only minor
+extension is needed to get those features. This is primarily because
+LibreCAD equation solvers can solve quartic equations.</p>
+<h1 id="hyperbola">Hyperbola</h1>
+<p>The equation of the hyperbola is (x-x0)^2/a^2 – (y-y0)^2/b^2 = 1.</p>
+<p>The hyperbola will be defines as a class with data members ;</p>
+<ul>
+<li>center</li>
+<li>majorP ( a in equation above)</li>
+<li>ratio ( of minor radius to major radius)</li>
+<li>angle1</li>
+<li>angle2</li>
+<li>reversed ( whether it's reversed or not )</li>
+</ul>
+<p>Dongxu Li already started implementing the hyperbola primitive in
+lc_hyperbola.*. In the lc_hyperbola.h interface file, the Hyperbola
+Data and Hyperpola Entity classes are defined and their data members,
+corresponding accessor and mutator functions as well as other predicate
+functions are declared. In the lc_hyperbola.cpp implementation file,
+the member functions of the above classes are implemented. However, I
+think functions like the following still have to be implemented (and of
+course much more)</p>
+<ul>
+<li>Computing the direction of tangents at some points</li>
+<li>Create a hyperbola from equation</li>
+<li>Scale a hyperbola</li>
+<li>Rotate a hyperbola</li>
+<li>Move a hyperbola</li>
+<li>Draw a hyperbola</li>
+<li>Determine if a point is on the hyperbola</li>
+<li>etc still have to be implemented.</li>
+</ul>
+<p>I am ready to follow Dongxu Li's instructions to do any clean-up and
+modifications to the hyperbola primitive which he started implementing.</p>
+<h1 id="parabola">Parabola</h1>
+<p>The equation of the parabola with vertex (x0, y0) which opens downwards
+is (y-y0)^2 = 4a(x-x0)</p>
+<p>The parabola will be defined as a class with data members ;</p>
+<ul>
+<li>vertex,</li>
+<li>focus,</li>
+<li>latus rectum,</li>
+<li>flag for direction in which parabola opens up. Or the rotate
+    functions will come in handy to replace this data member.</li>
+</ul>
+<p>The parabola with vertex (x0, y0) which opens upwards is given by the
+equation (x - xo)^2 = 4a(y – yo). To implement the parabola primitive,
+we define Parabola Data and Parabola Entity classes with their data
+members and declare their corresponding geometric member functions in
+lc_parabola.h. In the lc_parabola.cpp implementation file, I'll be
+implementing the geometric member functions of the aforementioned
+Parabola classes. The geometric member functions to be implemented
+include;</p>
+<ul>
+<li>Computing the position vector of the focus.</li>
+<li>Compute focal length</li>
+<li>Create a parabola from equation</li>
+<li>Find the tangential points and directions from a given point</li>
+<li>Rotate a parabola</li>
+<li>Scale a parabola</li>
+<li>Mirror a parabola against a given axis</li>
+<li>Draw a parabola</li>
+<li>And much more</li>
+</ul>
+<h2 id="links-to-some-pictures">Links to some Pictures</h2>
+<p>1. <a href="http://www.pleacher.com/mp/mlessons/calculus/apphyper.html">http://www.pleacher.com/mp/mlessons/calculus/apphyper.html</a></p>
+<p>2. <a href="http://britton.disted.camosun.bc.ca/jbconics.htm">http://britton.disted.camosun.bc.ca/jbconics.htm</a></p>
+<p>3.
+<a href="http://www.thecoastercritic.com/2010/04/intimidator-carowinds-roller-coaster-reviews.html">http://www.thecoastercritic.com/2010/04/intimidator-carowinds-roller-coaster-reviews.html</a></p>
+<p>4. <a href="https://mschrist.wikispaces.com/Art">https://mschrist.wikispaces.com/Art</a></p>
+<p>5.
+<a href="http://en.wikipedia.org/wiki/Parabola#/media/File:Parabola-antipodera.gif">http://en.wikipedia.org/wiki/Parabola#/media/File:Parabola-antipodera.gif</a></p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://mathworld.wolfram.com/Hyperbola.html">http://mathworld.wolfram.com/Hyperbola.html</a></li>
+<li><a href="http://mathworld.wolfram.com/Parabola.html">http://mathworld.wolfram.com/Parabola.html</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parabola">http://en.wikipedia.org/wiki/Parabola</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_curve">http://en.wikipedia.org/wiki/Parallel_curve</a></li>
+</ul>
+<h4 id="project-timeline">PROJECT TIMELINE</h4>
+<h2 id="deliverables">Deliverables</h2>
+<p>Pre Mid-term evaluation goals</p>
+<p>1. Define the Hyperbola Data and Entity classes.</p>
+<p>2. Declare the geometric member functions.</p>
+<p>3. Write the lc_hyperbola.cpp file.</p>
+<p>Post Mid-term evaluation goals</p>
+<p>4. Define the parabola Data and Entity classes.</p>
+<p>5. Declare the geometric member functions.</p>
+<p>6. Write the lc_parabola.cpp file.</p>
+<h2 id="development-schedule">Development schedule</h2>
+<h1 id="community-bonding-period-april-27th-may-24th">Community Bonding Period ( April 27th - May 24th )</h1>
+<ul>
+<li>Study LibreCAD's manuals and documentation.</li>
+<li>Study LibreCAD's code base to understand project more.</li>
+<li>Refine my project proposal based on updated knowledge.</li>
+<li>Write patches and remove bugs.</li>
+<li>Discuss with other developers and LibreCAD mentors on project
+    orientations.</li>
+<li>Brush up my C++, Qt Creator and git development skills.</li>
+</ul>
+<h1 id="pre-mid-term-evaluation-work-period-may-25th-june-25th">Pre Mid-term Evaluation Work Period ( May 25th - June 25th )</h1>
+<p>Week 1 (May 25th - May 29th)</p>
+<ul>
+<li>Defining the Hyperbola Data class</li>
+<li>Defining the Hyperbola Entity class</li>
+</ul>
+<p>Week 2 (June 1st - June 5th)</p>
+<ul>
+<li>Computing the direction of tangents at some points</li>
+<li>Create a hyperbola from equation</li>
+</ul>
+<p>Week 3 (June 8th - June 12th)</p>
+<ul>
+<li>Scale a hyperbola</li>
+<li>Rotate a hyperbola</li>
+</ul>
+<p>Week 4 (June 15th - June 19th)</p>
+<ul>
+<li>Move a hyperbola</li>
+<li>Draw a hyperbola</li>
+</ul>
+<p>Week 5 (June 22nd - June 26th)</p>
+<ul>
+<li>Determine if a point is on the hyperbola</li>
+<li>Return the equation of the hyperbola as LC_Quadratic to aid in
+    finding intersection points between any LC_Quadratic object and a
+    hyperbola.</li>
+</ul>
+<p>Week 6 : Mid-term Evaluation Week ( June 29th - July 3rd )</p>
+<ul>
+<li>Offset function to compute the direction and distance of an offset</li>
+<li>Fill mid-term evaluation form.</li>
+</ul>
+<h1 id="post-mid-term-evaluation-work-period-july-6th-august-20th">Post Mid-term Evaluation Work Period ( July 6th - August 20th )</h1>
+<p>Week 7 (July 6th - July 10th)</p>
+<ul>
+<li>Computing the position vector of the focus of the parabola</li>
+<li>Compute the area occupied by the parabola</li>
+</ul>
+<p>Week 8 (July 13th - July 17th)</p>
+<ul>
+<li>Return the equation of the parabola as LC_Quadratic to aid the
+    finding of intersection points between any LC_Quadratic object and
+    the parabola.</li>
+<li>Compute focal length of parabola</li>
+</ul>
+<p>Week 9 (July 20th - July 24th)</p>
+<ul>
+<li>Create a parabola from equation</li>
+<li>Find the tangential points and directions from a given point on the
+    parabola</li>
+</ul>
+<p>Week 10 (July 27th - July 31st)</p>
+<ul>
+<li>Rotate a parabola</li>
+<li>Scale a parabola</li>
+</ul>
+<p>Week 11 (August 3rd - August 7th) Mirror a parabola against a given axis
+Draw a parabola</p>
+<p>Week 12 &amp; 13 - Pencils down Period ( August 10th - August 21st )</p>
+<ul>
+<li>Offset member function to compute the direction and distance of
+    offset</li>
+<li>Continue integrating conics into other aspects of LibreCAD.</li>
+<li>Testing and debugging of librecad/src/lib/engine/{lc_hyperbola.* &amp;
+    lc_parabola.*} code.</li>
+<li>Documenting conic curve primitives in LibreCAD.</li>
+<li>Producing animated videos of conics from LibreCAD.</li>
+</ul>
+<p>Final Evaluation Week ( August 24th - August 28th )</p>
+<ul>
+<li>Fill Final evaluation form</li>
+<li>Submit code to Google</li>
+</ul>
+<h2 id="time-availability">Time availability</h2>
+<p>I'll be available to start and finish my Google Summer of Code project
+from May 25th through August 25th 2015 wherein I'll work 40+ hours
+weekly. To compensate for examination periods in school, I'll work
+harder during nights and weekends to make sure I meet the goals of my
+project.</p>
+<h4 id="about-myself">ABOUT MYSELF</h4>
+<h2 id="why-librecad">Why LibreCAD ?</h2>
+<p>First off, the very word “Libre” in LibreCAD is a word I like because I
+love the french language. I chose LibreCAD because it's an open source
+community-driven initiative and is aligned with my dream of serving
+within a game-manufacturing software company.This dream will become
+materialized with sustained contributing to LibreCAD and learning about
+Computer Aided Design erstwhile.</p>
+<h2 id="why-me">Why Me ?</h2>
+<p>I got introduced to computers (my dad literally imposed that on my
+siblings and I) when I attended the LUKMEF computer training in Limbe,
+Cameroon. After that I got interested in computer programming in C/C++
+and the Organizers of the Google Developer Group Buea helped orientate
+me on how to learn programming. I've used Linux OSes especially Ubuntu
+since 2013 and would really be happy to get introduced to open source
+development through LibreCAD through the Google Summer of Code 2015
+program. In November 2014, I helped set up FATE Automated Testing System
+in ffmpeg,the open source multimedia framework , on the Fedora 20
+platform and submitted the results to fate.ffmpeg.org. If I am selected
+for the program, I will make sure I communicate my progress on a daily
+basis by chatting on IRC and writing on the mailing lists.</p>
+<h2 id="anything-else">Anything Else</h2>
+<p>I believe that software development is about passion and not about what
+students major in while at University. Selecting me will really pass
+across a message that gender and race doesn't matter in open source
+development with LibreCAD and would encourage more students ( especially
+girls ) who aren't Computer Science/Engineering majors to get interested
+in Computer programming.</p>
+<h1 id="development-schedule_1">DEVELOPMENT SCHEDULE</h1>
+<ul>
+<li>My development is kind of my Google Summer of Code Log
+    Book. Anyone can view it <a href="Development_logs/">here</a>.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

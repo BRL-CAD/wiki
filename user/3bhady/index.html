@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/3bhady/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Community Bonding Period - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/3bhady.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-period" class="nav-link">Coding Period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#may-27-june-15" class="nav-link">May 27-June 15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-15-june-20" class="nav-link">June 15-June 20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-20-june-28" class="nav-link">June 20 -June 28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-28-july-4" class="nav-link">June 28-July 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-4-july-21" class="nav-link">July 4- July 21</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-21-july-26" class="nav-link">July 21-July 26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july-26-aug-9" class="nav-link">July 26-Aug 9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#aug-9-aug-19" class="nav-link">Aug 9-Aug 19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="community-bonding-period">Community Bonding Period</h1>
+<ol>
+<li>Played around with code and build GUI.</li>
+<li>Found where is auto-arrange is being called and how it's called so
+    that I could get a grasp of how it should be replaced.
+    <a href="https://github.com/supermerill">Supermill</a> helped by giving me
+    another use of auto-arrange.</li>
+<li>Looked for a faster way to build the project rather than waiting for
+    15 minutes when changing anything, LoH helped me with a faster way
+    to build it.</li>
+<li>Investigated SVGNest JS code to get a feel of how the code is
+    structured.</li>
+<li>Started investigating in the SVGNest desktop application as
+    <a href="https://github.com/gege2b">gege2b</a> has pointed out there is an
+    implementation in C for SVGNest. After investigating I found the
+    implementation isn't fully in C only one function of it is C and the
+    rest is the previous JS code.</li>
+<li>Today I'll start reading one of the papers.</li>
+<li>I've started reading <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.440.379&amp;rep=rep1&amp;type=pdf">"Complete and robust no-fit polygon generation
+    for the irregular stock cutting
+    problem"</a>
+    paper and it was very helpful. I went through the rabbit hole as the
+    paper references other papers so I dived head first into reading
+    them. I got a better understanding of the No-Fit Polygon and what
+    role does it play in the whole auto-arrange algorithm, why it's
+    useful and why it's better than it's predecessors.</li>
+<li>Tomorrow I'll take a look at SVGNest and compare how they implement
+    the NFP with what the paper suggests. Today I'm studying for my
+    final exams in my University tomorrow.</li>
+<li>Finished Reading the required papers and took notes to start
+    summarizing them.</li>
+</ol>
+<h1 id="coding-period">Coding Period</h1>
+<h2 id="may-27-june-15">May 27-June 15</h2>
+<h3 id="required">Required</h3>
+<p>Final Exams period.</p>
+<ul>
+<li>Delivering summary on the related papers. (O)</li>
+<li>Investigating SVGNest JS library (structure, utilities).</li>
+</ul>
+<h3 id="activity-log-for-this-period">Activity Log For This Period</h3>
+<p>From 27/5 to 2/6 is my final exams week so my productivity won't be much
+and I'm making up for this time in the weekends and by working extra
+hours after 2/6. Deliverables won't be affected as I'm following the
+timeline for each period.</p>
+<ol>
+<li>Investigated SVGNest C and JS code to find out what has changed
+    between these two projects and if I can make use of the C
+    implementation.</li>
+<li>Took notes on the related papers and started summarizing them.</li>
+<li>Designing bounding object function to get a 2d boundaries for the
+    objects to work with.</li>
+<li>Finished my final exams and working full time.</li>
+<li>Faced some issues with wxWidgets library and trying to fix them.</li>
+<li>Continued working on designing an efficient bounding object function
+    to get 2D outer contours of 3D objects to work on them. I've looked
+    for similar function in the current 2D preview functionality in the
+    application but the method I want isn't there so I'll continue
+    coding it.</li>
+<li>Tried concave hull and found papers on generating a bounding concave
+    object to generate a 2D equivalent for the objects but I found that
+    there are some cases that concave hull will fail in so we'll need
+    convex hull.</li>
+<li>Created a class "BoundingHull" to hold the bounding shape to
+    transform 3D into 2D and still maintain the boundaries of the object
+    so that no two objects would intercept with each other.</li>
+<li>Eid Elfetr Holiday so I'm working between family visits.</li>
+<li>Completed <a href="https://github.com/3bhady/Slic3r/commit/ce678e817fb82642c68da1bd545a3bbddcee8325">calculating bounding
+    hull</a>
+    for each model with each copy of it after applying transformations
+    on it.</li>
+<li>Going through SVGNest code to find important functions to start
+    writing tests for them.</li>
+<li>Debugging SVGNest JS code and commenting on it while comparing the
+    code to the papers.</li>
+<li>Added comments and played with functions in SVGNest JS library and
+    compared it to the read papers. Summary of the papers would make
+    more sense being written into the code to help later in porting each
+    function which relates to how each function contributes to the whole
+    algorithm.</li>
+<li>Forked the SVGNest repo and commenting on it
+    <a href="https://github.com/3bhady/svgnest">here</a></li>
+</ol>
+<h2 id="june-15-june-20">June 15-June 20</h2>
+<h3 id="required_1">Required</h3>
+<ul>
+<li>Extract useful functions from SVGnest JS.</li>
+<li>Write skeleton for unit tests for extracted functions.(T)</li>
+</ul>
+<h3 id="activity-log-for-this-period_1">Activity Log For This Period</h3>
+<ul>
+<li>
+<p>NFP (No Fit Polygon) is the core of the polygon packing algorithm
+    but it makes more sense to start with implementing it now and port
+    helper functions along the way to understand the functions being
+    ported more as Their use appears instead of porting helper functions
+    by themselves.</p>
+</li>
+<li>
+<p>Creating the basics of the NFP function.</p>
+</li>
+<li>Continuing porting NFP function and useful functions which are
+    required for it to run.</li>
+<li>Calculated the touching edges for polygons to help creating the NFP.</li>
+<li>Generated the translation vectors for orbiting shape to slide
+    alongside the stationary shape.</li>
+</ul>
+<h2 id="june-20-june-28">June 20 -June 28</h2>
+<h3 id="required_2">Required</h3>
+<ul>
+<li>Write unit test for the geometry functions to be used.(T)</li>
+<li>Implement the geometry utility functions.(C)</li>
+</ul>
+<h3 id="activity-log-for-this-period_2">Activity Log For This Period</h3>
+<ul>
+<li>
+<p>All the following functions are utility functions used in the NFP
+    function which is the core of the packing algorithm this was
+    supposed to be implemented next month but it makes sense to start
+    with it and porting each helper function along the way.</p>
+</li>
+<li>
+<p>Started rejecting the translation vectors which will cause
+    intersection.</p>
+</li>
+<li>Wrote a skeleton code for a function to calculate the maximum
+    distance a polygon can slide in a given direction without
+    intersecting with another polygon.</li>
+<li>Created a function that takes two edges and finds the maximum
+    distance one edge can travel in a given direction without
+    intersection.</li>
+<li>Found each possible arrangement for the edges to be in without
+    intersecting with each other.</li>
+<li>Created a function to calculate the maximum distance a vertex can
+    travel in a given direction.</li>
+<li>Finished calculating the maximum sliding distance for each
+    translation vector.</li>
+<li>Day off studying for a job interview wish me luck.</li>
+</ul>
+<h2 id="june-28-july-4">June 28-July 4</h2>
+<h3 id="required_3">Required</h3>
+<ul>
+<li>Writing unit test skeleton for placement algorithm.(T)</li>
+</ul>
+<h3 id="activity-log-for-this-period_3">Activity Log For This Period</h3>
+<ol>
+<li>Fixing the flow in the NFP function as it wasn't working correctly.</li>
+<li>Development laptop got stuck in a login loop after installing CUDA
+    so I spent the whole day trying to fix it.</li>
+<li>Continued modifying and fixing the NFP function.</li>
+<li>Debugging and fixing issues with the placement algorithm. ( the NFP
+    had very large values )</li>
+</ol>
+<h2 id="july-4-july-21">July 4- July 21</h2>
+<h3 id="required_4">Required</h3>
+<ul>
+<li>Implementing unit testing for placement algorithm.(T)</li>
+<li>Implementing placement algorithm.(C)</li>
+<li>Parallelizing the placement algorithm.(C)</li>
+</ul>
+<h3 id="activity-log-for-this-period_4">Activity Log For This Period</h3>
+<ul>
+<li>Taking two days off to finish my graduation project. (I've already
+    started working on this period's work 2 weeks ago).</li>
+<li>Debugging and tracing the placement algorithm.</li>
+<li>Fixing issues with the Point and Pointf in the placement algorithm
+    as what everything should be.</li>
+<li>Fixed issues with trimming the vectors as it wasn't working
+    correctly.</li>
+<li>Designed test case for the placement algorithm.</li>
+<li>Continued working on the placement algorithm and fixed issues with
+    sliding as it wasn't moving correctly.</li>
+<li>Solved couple of issues as it was producing some garbage values.</li>
+<li>Looked for a way to visualize it's output to understand the results
+    better.</li>
+<li>Fixed multiple issues where the variables names were wrong like
+    replacing next_A_index with prev_A_index which were causing
+    wrong results.</li>
+<li>Fixed issue with the starting point.</li>
+<li>Fixed issues with polygon slide distance.</li>
+<li>Fixed issues with segment distance.</li>
+<li>Created NFP for convex shapes.</li>
+<li>Working on moving the objects to a point on the NFP.</li>
+<li>Finished moving objects and now they are packed close to each other.</li>
+<li>Found an interesting method which takes a simpler and much faster
+    approach to the NFP problem but needs at least one of the shapes to
+    be convex which fits perfectly to our problem as we're starting with
+    a convex hull for each shape.</li>
+</ul>
+<h2 id="july-21-july-26">July 21-July 26</h2>
+<h3 id="required_5">Required</h3>
+<ul>
+<li>Design skeleton code for unit testing optimization algorithm.(T)</li>
+</ul>
+<h3 id="activity-log-for-this-period_5">Activity Log For This Period</h3>
+<ul>
+<li>
+<p>Continued working on the placement algorithm as I took a new simpler
+    approach and read multiple papers with simpler and faster approaches
+    than the orbiting polygon with sliding edges presented in the
+    SVGNest library.</p>
+</li>
+<li>
+<p><a href="http://www.diva-portal.org/smash/get/diva2:699750/FULLTEXT01.pdf">"JONAS LINDMARK Thesis at
+    CSC"</a></p>
+</li>
+<li>"A comprehensive and robust procedure for obtaining the nofit
+    polygon using Minkowski sums" Which I thank <a href="https://www.researchgate.net/profile/Julia_Bennell">JULIA A
+    BENNELL</a> for
+    providing me with the full text when I requested it.</li>
+<li>Fixed the IFP with orbital approach.</li>
+</ul>
+<h2 id="july-26-aug-9">July 26-Aug 9</h2>
+<h3 id="required_6">Required</h3>
+<ul>
+<li>Implementing unit testing for optimization algorithm. (T)</li>
+<li>Implementing optimization algorithm.(C)</li>
+<li>Determining threshold for when to stop optimizing.</li>
+<li>Adding needed buttons in GUI for allowing user to specify threshold
+    for stopping optimization. (C)</li>
+</ul>
+<h3 id="activity-log-for-this-period_6">Activity Log For This Period</h3>
+<p>N/A</p>
+<h2 id="aug-9-aug-19">Aug 9-Aug 19</h2>
+<h3 id="required_7">Required</h3>
+<ul>
+<li>Testing the whole auto-arranging module against SVGnest library and
+    fixing bugs if the outputs are not identical. (T)</li>
+<li>Testing the output through the perl GUI. (T)</li>
+</ul>
+<h3 id="activity-log-for-this-period_7">Activity Log For This Period</h3>
+<p>N/A</p>
+<hr />
+<p>Deliverables are marked in the timeline as follows:</p>
+<ul>
+<li>Code is marked as (C).</li>
+<li>Tests are marked as (T).</li>
+<li>Others are marked as (O).</li>
+</ul>
+<p>Code and comments on existing code can be found on my forks
+<a href="https://github.com/3bhady/Slic3r">Slic3r</a>
+<a href="https://github.com/3bhady/SVGnest">SVGNest</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

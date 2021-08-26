@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Kunigami/GSoc2011/Proposal/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Proposal - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Kunigami/GSoc2011/Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-description" class="nav-link">Project description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="project-description">Project description</h2>
+<h3 id="project-title">Project Title</h3>
+<p>Shader Enhancements</p>
+<h3 id="brief-project-summary">Brief project summary</h3>
+<p>Shaders in BRL-CAD are implemented using C language. Recently Sony
+released its shading language as open source, now called OSL. This is a
+C-like language that works like a framework to write shaders. It was
+specially developed to work with raytracers, which is also the
+application of BRL-CAD shaders. To this end, an idea is to implement
+BRL-CAD shaders using OSL. In this proposal I provide a brief
+description of BRL-CAD shader system and OSL specification. Then I
+describe a top-level approach to accomplish this task.</p>
+<h3 id="detailed-project-description">Detailed project description</h3>
+<h4 id="introduction">Introduction</h4>
+<p>I've little (if none) experience with shaders, but I really want to
+learn about them and this project is an opportunity to both learn and
+contribute to open source. To this end, I'm declaring this project to
+have the greatest priority among the others I'm applying. In the past
+weeks, I've been researching BRL-CAD code and OSL to better understand
+how shaders sytems work. I can now devise how BRL-CAD could benefit in
+using OSL language to implement their shaders.</p>
+<h4 id="brl-cad-shader-system">BRL-CAD Shader System</h4>
+<p>A shader is implemented at liboptical with the name sh_<shader name>.c.
+It may have several particular functions, but one of them is always
+required and is named <shader name>_render. It returns the color of the
+light that will be seen when a ray shot by the raytracer hits the
+surface of an object using this shader. In general, shaders models
+properties like color, transparency, reflection and diffraction. The
+default shader of an object is the plastic texture, modeled by the phong
+shader. There are several other types of material such as cloud, wood,
+fire, etc. Lights in BRL-CAD are treated as a special type of shader
+that emits light [5].</p>
+<p>BRL-CAD shaders are currently written in plain C. They're mainly used by
+the raytracer system, both in the stand-alone rt application or through
+mged application using librt. Shaders are compiled as shared libraries
+and are loaded dynamically at runtime.</p>
+<h4 id="osl">OSL</h4>
+<p>Recently Sony opened the code of their shader language [3]. Chatting
+at IRC and from the project description, it's clear that this language
+is to be carefully analyzed in order to benefit BRL-CAD shader system,
+specially because it is developed for raytracers, which is the same use
+BRL-CAD current system has. OSL is a C-like language that can be used to
+write shaders.</p>
+<p>One can write individual shaders using OSL and integrate them afterwards
+using shaders groups. These groups are basically a network (more
+specifically, a directed acyclic graph, also known as DAG) of individual
+shaders, called layers, and they're connected like UNIX pipes: the
+output of one is the input of the other. Using OSL, setting up this
+network is simple as coding the individual shaders and defining a set of
+pairs of (ouput shader, input shader). This is like the stacking of
+shaders present in BRL-CAD.</p>
+<p>In general, the output of a shader is not a final color but instead it's
+a structure called closure. It stores parametrized formulas that would
+be used to evaluate the final color but the variables are maintained.
+This has several advantages such as:</p>
+<p>We can recompute colors more quickly when there are changes only in the
+lights We can compute the final color for given only a direction. Given
+an input and output direction, it's possible to get the amount of light
+propagated from the input to the output. The last two items are quite
+interesting for raytracers.</p>
+<h3 id="proposal-idea">Proposal Idea</h3>
+<p>The OSL represents a interesting framework to develop shaders. BRL-CAD
+shaders could benefit from it by improving performance with the concept
+of closures. Also, we could take advantage of already implemented
+shaders for OSL and when developing new shaders for BRL-CAD we would be
+contributing to OSL database, which is, according to [6] (may be
+outdated) quite sparse.</p>
+<p>There are some issues to solve first. In the OSL specification document
+from January 2010, it's said that some components are assumed to exist
+in order to implement shaders using OSL. One of them is the integrator,
+which combines the color closure, lights and view-dependent variables.
+They say in the future they would provide a way to implement them
+through OSL, though I'm not sure what is the current state. If not, it
+would need to be included in the project.</p>
+<p>Here is how I plan to execute this project: study the details of BRL-CAD
+and OSL shader. This includes implementing shaders for these systems as
+well a simple integration test, which can be done using the single ray
+shooter from BRL-CAD with no optics or shaders and plugging in the OSL
+shader. This will assess the feasibility of the project as well as
+provide an idea on which changes are necessary to adapt OSL shaders. So,
+we'll be able to design and implement these changes to the BRL-CAD
+shader system.</p>
+<p>Reuse shaders that are already implemented with OSL and that fits the
+current shaders of BRL-CAD. Then, implement possibly missing shaders.
+After implementing/porting the first shader, we must check consistency
+of the new shader system, testing if it works well with the raytracers.
+Also, after each shader is added, we need to check if the result is
+similar to the replaced one. Extra tasks that can be done, if time
+allows it, is to implement new shaders with this language and/or write a
+small tutorial on how to implement shaders using OSL.</p>
+<h3 id="timeline">Timeline</h3>
+<ul>
+<li>Community Bonding (4 weeks)<ul>
+<li>Compile OSL [ok]</li>
+<li>Discover how testrender application works [ok]</li>
+<li>Implement and compile a shader using OSL [ok]</li>
+<li>Test the shader with testrender [ok]</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 1 (May 23th to May 30th)<ul>
+<li>Implement a sample texture/material shader (polka-dot texture)
+    for BRL-CAD [ok]</li>
+<li>Test it by assigning it to an object and rendering it. [ok]</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 2-6 (May 30th to Jul 4th)<ul>
+<li>Implement a special shader for BRL-CAD that will be an interface
+    for OSL system [ok]</li>
+<li>Integrate a shader implemented in OSL and this interface [ok]</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 7-8 (Jul 4th to Jul 18th)<ul>
+<li>Implement some BRL-CAD shaders as OSL shaders<ul>
+<li>Mirror</li>
+<li>Glass</li>
+<li>Cloud</li>
+<li>Checker</li>
+</ul>
+</li>
+<li>Check if any additional changes in the system is necessary to
+    render the new shaders</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 9-12 (Jul 18th to Aug 15th)<ul>
+<li>Resolve the multi-threading issue</li>
+<li>Extra: implement a mode in rt so the framebuffer updates the
+    screen at every sample</li>
+<li>Extra: write a tutorial</li>
+</ul>
+</li>
+</ul>
+<h3 id="references">References</h3>
+<ol>
+<li>src/liboptical/init.c</li>
+<li>src/liboptical/material.c</li>
+<li><a href="http://opensource.imageworks.com/?p=osl">http://opensource.imageworks.com/?p=osl</a></li>
+<li><a href="http://code.google.com/p/openshadinglanguage/wiki/OSL_Introduction">http://code.google.com/p/openshadinglanguage/wiki/OSL_Introduction</a></li>
+<li><a href="http://brlcad.org/w/images/2/2c/Optical_Shaders.pdf">http://brlcad.org/w/images/2/2c/Optical_Shaders.pdf</a></li>
+<li><a href="http://code.google.com/p/openshadinglanguage/wiki/GSoC">http://code.google.com/p/openshadinglanguage/wiki/GSoC</a></li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

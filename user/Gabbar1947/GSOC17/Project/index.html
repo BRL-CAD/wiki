@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Gabbar1947/GSOC17/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Gabbar1947/GSOC17/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#annotations-implement-support-for-2d-annotations-labels-that-can-be-added-to-geometry" class="nav-link">Annotations: Implement support for 2D annotations, labels that can be added to geometry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="annotations-implement-support-for-2d-annotations-labels-that-can-be-added-to-geometry"><strong>Annotations: Implement support for 2D annotations, labels that can be added to geometry</strong></h2>
+<p>The project is divided into two parts:</p>
+<ul>
+<li>Creating a new primitive for annotations</li>
+<li>Rendering the primitives to the wireframe view</li>
+</ul>
+<h3 id="creating-a-new-primitive-for-annotations"><strong>Creating a new primitive for annotations</strong></h3>
+<ul>
+<li>Annotations comprise of:<ul>
+<li>Notes and Labels : Single line or Multiline text</li>
+<li>Leader Lines (includes GD&amp;T)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The primary goal is to implement simple leader lines, so that we
+    have a basic frame for further amendments.</li>
+<li>Support for view Independent annotations: This is resolved by using
+    a separate coordinate system in two dimensions for the labels. This
+    coordinate system has a direct mapping with the original 3D
+    coordinate system that comprises of the wireframes.</li>
+<li>Coordinate system is nothing but a transformation matrix. This
+    matrix projects all the points in the 3D coordinate system to the 2D
+    coordinate system that will contain the annotations.</li>
+<li>The plan of action comprises of the creation of a new primitive
+    “annotation”. The basic workflow can be related to that of the
+    sketch primitive.</li>
+<li>The annotation primitive will comprise of various parameters that
+    define the labels.</li>
+<li>Here we are aiming for manual annotations. The parameters will be
+    provided by the user through the command line. ”in” followed by
+    various parameters some of which are:<ul>
+<li>Position</li>
+<li>Text - leader line</li>
+<li>Additional object reference name</li>
+</ul>
+</li>
+</ul>
+<p><strong>Container for annotations</strong></p>
+<ul>
+<li>The container for annotations will be defined in geom.h or other
+    desired location.</li>
+<li>The container will comprise of structs, each of which will
+    correspond to an annotative identity.</li>
+<li>The structs to be included are(subject to modification after further
+    discussions):<ul>
+<li>struct line_seg</li>
+<li>struct curve</li>
+<li>struct carc_seg</li>
+<li>struct text_label</li>
+<li>struct linear_dimen</li>
+<li>struct angular_dimen</li>
+</ul>
+</li>
+</ul>
+<p>[ linear_dimen &amp; angular_dimen: Not a priority, may be added later
+on]</p>
+<ul>
+<li>Once we have a fully functional primitive comprising of arcs,
+    segments and text, beizer_seg and nurb_seg will be also ported.</li>
+<li>The final struct will be of the annotation_internal that contains:<ul>
+<li>The point in the 3D coordinate system that maps to the origin in
+    the 2D annotation coordinate system.</li>
+<li>The curves of the primitive.</li>
+<li>Some other required parameters and flags.</li>
+</ul>
+</li>
+<li>Next step would be to define annotations.c</li>
+<li>The annotations.c will comprise of various functions:(these
+    functions basically append the annotations according to the details
+    found in the internal object)<ul>
+<li>Annotation_validation function</li>
+<li>Functions for appending the line with text and corresponding
+    parameters.</li>
+<li>Returning the appended annotation details though an external
+    return object</li>
+</ul>
+</li>
+</ul>
+<p><strong>Properties</strong></p>
+<ul>
+<li>Provision for altering the properties of the annotation created
+    through the command line, if time permits. *Otherwise this is
+    something that is to be done once we have a basic frame ready for
+    the annotations. The properties can be changed using the annotation
+    keyword in the command line.</li>
+<li>These properties include(subject to change after discussion) :<ul>
+<li>Font</li>
+<li>Color</li>
+<li>Line Width</li>
+<li>Text alignment and placement</li>
+<li>Some other parameters</li>
+</ul>
+</li>
+</ul>
+<h3 id="representation-in-the-3d-view"><strong>Representation in the 3D view</strong></h3>
+<ul>
+<li>The second part of the project is to render the annotation object
+    formed.</li>
+<li>As mentioned before, we aim for view-independent annotations.</li>
+<li>For this to be accomplished we cannot define the annotations in the
+    primitive coordinate system as on rotation or zoom the annotations
+    remains of no use to the viewer.</li>
+<li>coordinates from the primitive -&gt; 3D world coordinates -&gt; 2D
+    plane (e.g. with a perspective) -&gt; 2D screen coordinates[working
+    on this]</li>
+<li>So a new coordinate system needs to be defined for the annotations.</li>
+<li>This coordinate system unlike the other is two dimensional.</li>
+<li>By a new coordinate system we mean the existence of a transformation
+    matrix that maps all points of the 3D system to the 2D one.</li>
+<li>The process is quite similar to calibrating a camera.</li>
+<li>For the rendering part, rest is the same as that for other
+    primitives only thing being that no ray tracing takes place here (as
+    of now).</li>
+<li>If time permits the project, I will provide functionalities to
+    portray the annotations on a rendered image.</li>
+</ul>
+<p><strong>Project Extension</strong></p>
+<p>After discussions with the mentors, some extension ideas came up:</p>
+<ul>
+<li>Functionality to set up the annotation properties for the primitive</li>
+<li>Extension for the geometric shape of the annotation</li>
+<li>Common functionality for the annotation and the sketch primitive in
+    order to reduce redundancy</li>
+<li>Features related to the coordinate system like the annotation
+    scaling</li>
+<li>Algorithm to provide a bounding box for the text using the relative
+    coordinates</li>
+</ul>
+<h3 id="timeline"><strong>Timeline</strong></h3>
+<p>As per the Google Summer of Code guidelines, work is supposed to begin
+on May 5, 2017 upto August 21,2017. This is a tentative timeline, as I
+am not sure regarding the time to be taken by some parts of the project.
+Results are to be announced on May 4, so schedule goes accordingly. I’ll
+start working from April itself, and try to improve my proposal as much
+as I can till the start of community bonding period, irrespective of the
+project selection.</p>
+<p><strong>Deliverables</strong> :</p>
+<p>Community bonding period</p>
+<p>[ May 5 - May 20 ]:Review the pipeline Take inputs from the community
+Gain insight into the on screen rendering of the primitive</p>
+<p>Coding period ( I aim to start coding from May 21 onwards)</p>
+<ul>
+<li>[May 21 - June 1]:Define the annotation container with all the
+    basic forms( line, curve)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[June 1 - June 20]:Start writing functions in annotation.c</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[June 20 - June 26]:Tests for the written functions</li>
+</ul>
+<p>Clear any backlog if present</p>
+<ul>
+<li>1st Mid Term Evaluation[June 27 - June 30]</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[July 1 - July 20]:Implement support for the new coordinate system
+    and port the functions left</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[July 20 - July 24]:Write the tests and solve any issue if arises</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>2nd Mid Term Evaluation[July 25 - July 27]</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[July 28 - Aug 5]:Support for rendering the primitives</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[Aug 5 - Aug 15]:Overlay rendered image with annotations</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[Aug 15 - Aug 20]:Write tests and clear any issue if arises</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[Aug 20 - Aug 25]:Documentation support for the written primitive</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Final Evaluation[Aug 25 - Aug 29]</li>
+</ul>
+<p>[ If the work does not complete in the period by any chance, then I’ll
+work even after the coding period ends. The timeline is subject to
+change after discussion with the mentors]</p>
+<h3 id="milestones"><strong>Milestones</strong></h3>
+<ul>
+<li>Fully functional annotations for basic leader line callouts.</li>
+<li>Fully functional annotations for GD&amp;T labels.</li>
+<li>Tests for those annotative elements</li>
+<li>Documentation Support</li>
+</ul>
+<h3 id="why-brl-cad-why-me"><strong>Why BRL-CAD ? Why me?</strong></h3>
+<p>I love the way the community members encourage a person to work. I was
+looking for a project that could match my research interests and BRL-CAD
+provided me with the project. I was always helped by the community
+members while I was working on my first patch, even if I was going
+totally wrong. I thought of applying last year itself but resisted,
+because I felt the need to gain more experience in this field and this
+is the last opportunity for me to be a part of the organization and I
+simply don’t want to miss it.</p>
+<p>Open source has been a part of my life, since I joined college. I have a
+decent number of contributions to Joomla! and The Processing Foundation.
+Later on I started working in the field of Computer Vision. I started
+working on modeling systems as a part of my research. I was looking for
+something that could match my research interest as well as preserve my
+interest for open source. After gaining enough knowledge in this area I
+thought of finally applying with BRL-CAD. I have submitted three patches
+till now and will continue to do so in the near future. Development
+process is something with which I’m familiar. I am active on irc and as
+well as the mailing list and am in contact with the mentors and will do
+the same in the coming time.</p>
+<h3 id="personal-details"><strong>Personal Details</strong></h3>
+<ul>
+<li><strong>Name</strong> : Shubham Rathore</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Country</strong> : India(UTC+5.30)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Contact Details</strong><ul>
+<li>Email : shubhamrathore1947@gmail.com</li>
+<li>University Email : shubham.rathore@students.iiit.ac.in</li>
+<li>IRC Nick : gabbar1947</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Education</strong><ul>
+<li>Centre for Visual Information Technology(CVIT)[1],</li>
+<li>International Institute of Information Technology,
+    Hyderabad(IIIT-H), India</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Github</strong>:GABBAR1947</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

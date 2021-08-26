@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Early_Raytracing_History/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Early Raytracing History - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Early_Raytracing_History.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#magic" class="nav-link">MAGIC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#gift" class="nav-link">GIFT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brl-cad" class="nav-link">BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#other-early-computational-analysis-efforts" class="nav-link">Other Early Computational Analysis Efforts</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-air-forces-magic-system" class="nav-link">The Air Force's MAGIC System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Even though the BRL-CAD computer aided design package has a very long
+development history by the standards of most modern software, it is
+actually the latest in a line of raytracing systems dating back to the
+1960s. Much of that history is documented in technical reports from the
+Ballistic Research Laboratory (later the U.S. Army Research Laboratory.)
+A first hand account of Richard Hoyt's earliest work on vehicle shotline
+calculations by Davidson C. Hardison can be found in
+<a href="http://www.arl.army.mil/arlreports/1999/ARL-SR-90.pdf">ARL-SR-90</a>,
+starting at the bottom of page 29. Although the report does not
+explicitly date Hoyt's work, from context it appears to have taken place
+in the mid to late 1950s. This account details what may very well be the
+first true raytracing of a geometric model, done quite literally <em>by
+hand!</em> Although not computerized, this work appears to be the original
+foundation on which all of the Ballistic Research Laboratory's
+subsequent computerized raytracing systems were designed - if anyone
+knows more about this very early work and whether any records of it
+still survive, the BRL-CAD developers would be quite interested to see
+it!</p>
+<h1 id="magic">MAGIC</h1>
+<p>Although there were immediately efforts to use available computer
+systems like ORDVAC to assist with the enormous bookkeeping involved in
+shotline calculations, the first computerized raytracer at the Ballistic
+Research Laboratory that appears in technical reports was the MAGIC
+system, developed by Mathematical Applications Group, Inc. (MAGI) in the
+mid 1960s. Richard Hoyt is listed as BRL's technical supervisor on the
+project. MAGI later went on to play a <a href="https://design.osu.edu/carlson/history/tree/magi.html">significant
+role</a> in the
+commercial development of CGI. The seminal report detailing the original
+MAGIC work is "A Geometric Description Technique Suitable for Computer
+Analysis of Both the Nuclear and Conventional Vulnerability of Armored
+Military Vehicles," published in August 1967. This report slightly
+pre-dates even Appel's papers and cites no previous reports as source
+material for its raytracing techniques (which is suggestive but not
+conclusive - if anyone knows of earlier reports bearing on this topic we
+would very much like to know about them.) As it was not approved for
+public release until much later, its direct impact outside military
+circles was limited. Also, the primary purpose of this technique from
+the Army's point of few was analysis rather than realistic images.
+Nevertheless MAGI-6701 stands out as an important historical document in
+the field of computer graphics.</p>
+<p>The other significant sources of information known to exist about the
+first MAGIC system are a set of manuals prepared by the Joint Technical
+Coordinating Group for Munitions Effectiveness (JTCG/ME) in 1970-71 and
+the proceedings of the first (and apparently last?) conference held for
+the users of the MAGIC and SAM-C codes in 1971.</p>
+<table>
+<thead>
+<tr>
+<th>Report Title</th>
+<th>Number</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/847576.pdf">A Geometric Description Technique Suitable for Computer Analysis of Both the Nuclear and Conventional Vulnerability of Armored Military Vehicles</a></td>
+<td>MAGI-6701</td>
+<td>August 1967</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a567888.pdf">MAGIC Computer Simulation - Volume I. User Manual</a></td>
+<td>61 JTCG/ME-71-7-1</td>
+<td>1970</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a567889.pdf">MAGIC Computer Simulation - Volume II. Analyst Manual Part 1</a></td>
+<td>61 JTCG/ME-71-7-2-1</td>
+<td>1971</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a567890.pdf">MAGIC Computer Simulation - Volume II. Analyst Manual Part 2</a></td>
+<td>61 JTCG/ME-71-7-2-2</td>
+<td>1971</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/728124.pdf">The First Conference of Users of the Magic and SAM-C Programs</a></td>
+<td>AD728124</td>
+<td>1971</td>
+</tr>
+</tbody>
+</table>
+<p>(Note: Subsequent reports mention something called the SHOT GENERATOR
+Computer program that appears to date to the same time period as MAGIC,
+but I currently have no information about this code, the JTCG/ME reports
+that document it, or what role it played - it is referenced as an
+influence in the GIFT code design, so more information (if available)
+would be interesting.)</p>
+<h1 id="gift">GIFT</h1>
+<p>Geometric Information for Targets (GIFT) succeeded MAGIC as BRL's
+primary raytracer. By 1975, the first volume of a GIFT user manual had
+been published documenting the new system. The second volume followed in
+1979.</p>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Number</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/b006037.pdf">The Gift Code User Manual. Volume I. Introduction and Input Requirements.</a></td>
+<td>BRL-1802</td>
+<td>1975</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a078364.pdf">The Gift Code User Manual. Volume II. The Output Options.</a></td>
+<td>ARBRL-TR-02189</td>
+<td>1979</td>
+</tr>
+</tbody>
+</table>
+<p>Unlike MAGIC, which apparently lasted only a couple years, GIFT was in
+production use at BRL for a long period of time. Consequently, there are
+a significant number of reports that detail uses of the GIFT system and
+the development of solid modeling at BRL during the GIFT years.</p>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Number</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a037898.pdf">MIFT: GIFT Combinatorial Geometry Input to VCS Code.</a></td>
+<td>ADA037898</td>
+<td>MAR 1977</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a089818.pdf">The Prone Protected Posture</a></td>
+<td>AMSAA-TR-284</td>
+<td>August 1980</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/b060185.pdf">Combinatorial Geometry Computer Models of Sitting and Standing Crew Personnel</a></td>
+<td>ARBRL-MR-03125</td>
+<td>AUG 1981</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a145001.pdf">COM-GEOM Interactive Display Debugger (CIDD)</a></td>
+<td>ARBRL-TR-02574</td>
+<td>August 1984</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/dtic/tr/fulltext/u2/a161828.pdf">A Combinatorial Geometry Target Description of the High Mobility Multipurpose Wheeled Vehicle (HMMWV)</a></td>
+<td>BRL-TR-2686</td>
+<td>October 1985</td>
+</tr>
+</tbody>
+</table>
+<h1 id="brl-cad">BRL-CAD</h1>
+<p>The final transition from GIFT to BRL-CAD was accomplished in (??). A
+number of reports in this era deal with solid modeling as a technique
+more than the specifics of BRL-CAD vs. GIFT, and so may reasonably be
+regarded as applying to both.</p>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Number</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="other-early-computational-analysis-efforts">Other Early Computational Analysis Efforts</h1>
+<h2 id="the-air-forces-magic-system">The Air Force's MAGIC System</h2>
+<p>Although it is not a direct ancestor of BRL-CAD, Bell Aerospace was also
+developing an early computer based analytical system in the late 1960s
+and early 1970s for the Air Force Flight Dynamics Laboratory called
+MAGIC:</p>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0685190">MAGIC: An Automated General Purpose System for Structural Analysis. Volume 1.</a></td>
+<td>Engineer's Manual</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0691893">MAGIC: An Automated General Purpose System for Structural Analysis. Volume 2.</a></td>
+<td>User's Manual</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0685191">MAGIC: An Automated General Purpose System for Structural Analysis. Volume 3.</a></td>
+<td>Programmer's Manual</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0726564">MAGIC II: An Automated General Purpose System for Structural Analysis. Volume 1.</a></td>
+<td>Engineer's Manual (Addendum)</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0726565">MAGIC II: An Automated General Purpose System for Structural Analysis. Volume 2.</a></td>
+<td>User's Manual</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0726566">MAGIC II: An Automated General Purpose System for Structural Analysis. Volume 3.</a></td>
+<td>Programmer's Manual</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0755368">MAGIC III: An Automated General Purpose System for Structural Analysis Volume 1.</a></td>
+<td>Engineer's Manual</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0755369">MAGIC III: An Automated General Purpose System for Structural Analysis. Volume 2.</a></td>
+<td>User's Manual</td>
+</tr>
+<tr>
+<td><a href="http://www.dtic.mil/docs/citations/AD0755370">MAGIC III: An Automated General Purpose System for Structural Analysis. Volume 3.</a></td>
+<td>Programmer's Manual</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

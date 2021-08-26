@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Overview/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Overview - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Overview.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#what-is-brl-cad" class="nav-link">What is BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-csg-modeling" class="nav-link">Why CSG Modeling?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#package-content" class="nav-link">Package Content</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#libraries" class="nav-link">Libraries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#tools-and-utilities" class="nav-link">Tools and Utilities</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#benchmark-testing" class="nav-link">Benchmark Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#acknowledgements" class="nav-link">Acknowledgements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Since 1979, the U.S. Army Research Laboratory has been developing and
+distributing the BRL-CAD constructive solid geometry (CSG) modeling
+package for a wide range of military and industrial applications. The
+package includes a large collection of tools and utilities including an
+interactive geometry editor, ray tracing and generic framebuffer
+libraries, a network-distributed image-processing and signal-processing
+capability, and an embedded scripting language.</p>
+<h2 id="what-is-brl-cad">What is BRL-CAD?</h2>
+<p>Since the late 1950's, computers have been used to assist with the
+design and study of combat vehicle systems. The result has been a
+reduction in the amount of time and money required to take a system from
+the drawing board to full-scale production as well as increased
+efficiency in testing and evaluation.</p>
+<p>In 1979, the U.S. Army Ballistic Research Laboratory (BRL) (now the U.S.
+Army Research Laboratory [ARL]) expressed a need for interactive tools
+that could assist with the computer simulation and engineering analysis
+of combat vehicle systems and environments. When no existing
+computer-aided design (CAD) package was found to be adequate for this
+purpose, BRL software developers began assembling a suite of utilities
+capable of interactively displaying, editing, and interrogating
+geometric models. This suite became known as BRL-CAD.</p>
+<p>Now comprising almost a million lines of C code, BRL-CAD has become a
+powerful constructive solid geometry (CSG) modeling package that has
+been licensed at over 2,000 sites throughout the world. It contains a
+large collection of tools, utilities, and libraries including an
+interactive geometry editor, ray tracing and generic framebuffer
+libraries, a network-distributed image-processing and signal-processing
+capability, and a customizable embedded scripting language. In addition,
+BRL-CAD simultaneously supports dual interaction methods, one using a
+command line and one using a graphical user interface (GUI).</p>
+<p>A particular strength of the package lies in its ability to build and
+analyze realistic models of complex objects using a relatively small set
+of "primitive shapes." To do this, the shapes are manipulated by
+employing the basic Boolean operations of union, subtraction, and
+intersection. Another strength of the package is the speed of its ray
+tracer, which is one of the fastest in existence. Finally, BRL-CAD users
+can accurately model objects on scales ranging from the subatomic
+through the galactic and get "all the details, all the time."</p>
+<h2 id="why-csg-modeling">Why CSG Modeling?</h2>
+<p>Although BRL-CAD has been used for a wide variety of engineering and
+graphics applications, the package's primary purpose continues to be the
+support of (1) ballistic and (2) electromagnetic analyses. Accordingly,
+developers have found CSG modeling to be the best approach in terms of
+model accuracy, storage efficiency, precision, and speed of
+computational analysis.</p>
+<p>While polygonal and boundary representation (B-rep) modeling often
+focuses on just the surfaces of objects, CSG modeling focuses on the
+entire volume and content of objects. This gives BRL-CAD the capability
+to be "more than skin deep" and build objects with real-world materials,
+densities, and thicknesses so that analysts can study physical phenomena
+such as ballistic penetration and thermal, radiative, neutron, and other
+types of transport.</p>
+<h2 id="package-content">Package Content</h2>
+<p><img alt="" src="/wiki/doc/img/Data_flow_structure.png" /> In keeping
+with the UNIX philosophy of developing independent tools to perform
+single, specific tasks and then linking the tools together in a package,
+BRL-CAD is basically a collection of libraries, tools, and utilities
+that work together to create, raytrace, and interrogate geometry and
+manipulate files and data. The basic data flow structure of the package
+is provided in Figure 1.</p>
+<h2 id="libraries">Libraries</h2>
+<p>The BRL-CAD libraries (designated by the prefix "lib") are designed
+primarily for the geometric modeler who also wants to tinker with
+software and, perhaps, design custom tools. Each library fits into one
+of three categories: (1) creating and/or editing geometry, (2)
+raytracing geometry, or (3) image handling. The following is a list of
+the major BRL-CAD libraries and descriptions of their functions.</p>
+<ul>
+<li>libbu – a basic utility (bu) library containing fundamental computer
+    science types of routines, including manipulating data (e.g.,
+    converting from host format data to network format data), parallel
+    processing, parsing parameters, handling variable-length strings,
+    performing error checks, converting units from one format to
+    another, manipulating bit vectors, running parallel-safe versions of
+    input/output (I/O) routines, and maintaining symbol tables.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libbn – a library of routines to support basic numerical (bn)
+    handling, including 2-D/3-D vector, matrix, and quaternion
+    manipulation; 3-D plotting support; automatic inference of image
+    size (BRL-CAD images have no internal header; image dimensions are
+    intuited from the size of the file); and wavelet decomposition and
+    reconstruction, etc.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libdm – BRL-CAD's primary graphics display manager (dm) library. It
+    handles opening windows onto the display and displaying geometry in
+    the graphics window, etc.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libfb – the framebuffer (fb) library, which supports having a window
+    in which the user puts pixel data when raytracing.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libmultispectral and liboptical – the shader and texturing libraries
+    for the raytracer.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libpkg – a library that implements a remote procedure call (rpc)
+    mechanism. This library is a predecessor of the modern rpc system.
+    Unlike the typical UNIX rpc service, applications can set up
+    services and handle requests without requiring configuration by a
+    system administrator.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>librt – the library that contains all of the geometry support,
+    including data representations for the primitives, support for
+    raytracing (rt), and binary I/O support for CSG geometric
+    descriptions.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libz – a public-domain compression library.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libtcl, libtk, and libitcl – libraries that provide the Tcl/Tk
+    scripting language.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>libpng – a library that provides portable network graphics (png).</li>
+</ul>
+<h2 id="tools-and-utilities">Tools and Utilities</h2>
+<p>The application side of BRL-CAD also offers a number of tools and
+utilities. They primarily concern (1) geometric conversion, (2)
+geometric interrogation, (3) image format conversion, and (4)
+command-line-oriented image manipulation. The following is a list of the
+major BRL-CAD tools and utilities.</p>
+<ul>
+<li>MGED (Multiple-Device Geometry Editor) – BRL-CAD's graphics editor.
+    (For detailed guidance on the use of MGED as well as a list of all
+    the MGED commands currently available, see Butler et al. [2001].)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tools for raytracing and interrogating raytraced geometric objects.<ul>
+<li>rt – the main raytracer for rendering images in BRL-CAD.</li>
+<li>nirt – a package for firing rays interactively and getting
+    information about what the rays run into.</li>
+<li>remrt – a network-distributed raytracing package.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>An assortment of geometric converters to convert to and/or from
+    other geometry formats, including Euclid, ACAD, AutoCAD DXF,
+    TANKILL, Wavefront OBJ, Pro/ENGINEER, JACK (the human factors model
+    for doing workload/usability studies), Viewpoint Data Lab, NASTRAN,
+    Digital Equipment's Object File Format (OFF), Virtual Reality
+    Mark-up Language (VRML), Stereo Lithography (STL), Cyberware
+    Digitizer data, and FASTGEN4.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>bwish – a Tcl/Tk interpreter in a windowing shell with enhancements
+    compiled into it for accessing BRL-CAD libraries. It also includes
+    various other extensions to the Tcl language.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>irprep – produces input to the PRISM (Physically Realistic Infrared
+    Simulation Model) code.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>JOVE (Jonathan's Own Version of Emacs) – a fast, light
+    implementation of Emacs.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Applications for displaying images of various types on the
+    framebuffer application and retrieving data from that framebuffer
+    into images of various types.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tools for generating geometry for common objects such as fences,
+    walls, and geometric mathematical oddities (e.g., the sphereflake
+    shown in Figure 2 in Section 4).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Data manipulation programs to (1) convert integers to floats, floats
+    to doubles, etc. (e.g., cv); (2) perform mathematical operations on
+    file elements (e.g., imod, umod, and dmod); (3) compute statistics
+    of file elements (e.g., istat, ustat, and dstat); etc.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Utilities for building animation scripts – keeping track of columnar
+    data and interpolating it to allow one to produce input to the rt
+    program to render multiple items for animation.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Utah Raster Tool Kit – image manipulation of all RLE-based images.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Programs for manipulating images and converting between different
+    image file types. The two primary BRL-CAD types are pix (24-bit red,
+    green, and blue [RGB] color images) and bw (8-bit greyscale
+    images). Converters exist for various image formats including alias,
+    png, ppm, etc.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Programs for filtering images, doing histograms on the image data,
+    and extracting rectangles from the images.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tools for combining two images and blending them together. (These
+    tools were created before good image editing tools for video
+    production were available; today users would typically load the
+    images directly into a video editing package.)</li>
+</ul>
+<h2 id="benchmark-testing">Benchmark Testing</h2>
+<p>As changes are implemented in BRL-CAD, ARL developers run a standard set
+of computationally intensive image files (shown in Figure 2) on a common
+machine in order to benchmark and compare raytrace performance. In
+addition, these images are provided with each source distribution of the
+package so that users can also test performance on their machines, if
+desired.</p>
+<p>To run the benchmark images, run the script run.sh in the "bench"
+directory of the source directory tree.</p>
+<p>Image:Benchmarking Moss.jpg|Moss Image:Benchmarking World.jpg|World
+Image:Benchmarking Star.jpg|Star Image:Benchmarking Bldg 391.jpg|Bldg
+391 Image:Benchmarking M35.jpg|M35 Image:Benchmarking
+Sphflake.jpg|Sphflake</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>The authors would like to thank the members of the Advanced Computer
+Systems Team, who reviewed this document in a timely manner and made
+many helpful suggestions to improve its accuracy and presentation. At
+the time this document was prepared team members included John Anderson,
+TraNese Christy, Bob Parker, Ron Bowers, and Sean Morrison.</p>
+<p>In addition, the authors would like to especially acknowledge Mike
+Muuss, a team member and the original architect of BRL-CAD, who passed
+away in the fall of 2000. Without his vision, this work would not have
+been possible. Therefore, the BRL-CAD Tutorial Series is dedicated to
+his memory.</p>
+<p><a href="Category:Documentation.md">Category:Documentation</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

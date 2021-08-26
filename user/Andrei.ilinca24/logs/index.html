@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Andrei.ilinca24/logs/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Webpage for development logs for GSoC 2015 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Andrei.ilinca24/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#webpage-for-development-logs-for-gsoc-2015" class="nav-link">Webpage for development logs for GSoC 2015</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#coding-period" class="nav-link">Coding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#midterm-evaluation-period" class="nav-link">Midterm Evaluation Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#coding-period-2nd-half" class="nav-link">Coding Period (2nd half)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="webpage-for-development-logs-for-gsoc-2015">Webpage for development logs for GSoC 2015</h1>
+<h2 id="community-bonding-period">Community Bonding Period</h2>
+<p><strong>TODO list</strong></p>
+<ul>
+<li>figure out if there is any major difference between .csg and .scad,
+    except of expressions and modules</li>
+<li>figure out what parser to use (if it’s yacc/bison or re2c or any
+    other, I’ll get involved and research what benefits does each offer)</li>
+<li>figure out how to use it, have a very simple demo set up within
+    BRL-CAD build hooks</li>
+</ul>
+<p><strong>15 May Update</strong></p>
+<p>- made wiki pages for account, proposal, logs</p>
+<p>- reread participation expectations and HACKING</p>
+<p>- came up with the following grammar for parsing group() functions:</p>
+<p>expr -&gt; group_begin token group_end</p>
+<p>token -&gt; group_content token | expr</p>
+<p>where group_begin is "group() {"</p>
+<p>token is [a-z]+ "("*")";</p>
+<p>and group_end is "}"</p>
+<p>- looked over other BRL-CAD importer re2c lemon parsers ( wfobj and
+dom2dox) in order to understand how to integrate mine into BRL-CAD but
+with no luck so far</p>
+<p>- currently investigating perplex tool and how is it used and
+integrated over the re2c layer</p>
+<p><strong>17 May</strong></p>
+<p>- dom2dox is not compiling with the rest of BRL-CAD's code so its
+CMakeFiles can not be used as an example of an integration of a re2c
+lemon parser</p>
+<p><strong>18 May</strong></p>
+<p>- cleared some empty holes in my understanding of the .csg OpenSCAD
+files format due to a thread on their mailing list regarding just that;
+it seems that there will be a new function added to the language soon,
+called trace() and also OpenSCAD2 will implement some changes in the
+existing methods</p>
+<p>- got some help compiling dom2dox from Kalpit</p>
+<p><strong>24 May</strong></p>
+<p>- today was my birthday and I celebrated by erasing BRL-CAD and rebuilt
+it from svn sources to have a fresh start of Coding Period</p>
+<h2 id="coding-period">Coding Period</h2>
+<p><strong>Week 1</strong></p>
+<p>25 May : read about the lemon parser, tried to develop some simple
+numerical calculations in order to attain some skill using it</p>
+<p>26 May : applied Cliff's csg makefile integration patch to my machine,
+built BRL-CAD successfully</p>
+<p>27 May : small progress on the lemon
+<a href="http://souptonuts.sourceforge.net/readme_lemon_tutorial.html">tutorial</a>
+, been occupied with school exam</p>
+<p>28 May : finished the lemon tutorial, got some understanding of how
+lemon parsing is done, I have now a fully working calculator parser</p>
+<p>29 May : not much work done today, posted an email on the mailing list
+with conclusions regarding the last few days work on lemon parser
+calculator</p>
+<p>30 May : prepared for Monday school exam, no work done for GsoC today</p>
+<p>31 May : got response from Cliff on mailinglist and cleared what I have
+to do next which is adding some simple parsing grammar for 1-2 csg
+functions (group() ,multimatrix() ) to the newly integrated parser in
+src/conv; started working on it</p>
+<p><strong>Week 2</strong></p>
+<p>1 June : worked on grammar, got some compiling errors, fixed a few, hope
+to have some valid parsing by tomorrow</p>
+<p>2 June : more work on grammar, restrained the errors to just 1:</p>
+<p>home/andrei/buildbrlcad/src/conv/csg/csg_scanner.c:1:0: error: ISO C
+forbids an empty translation unit [-Wpedantic]</p>
+<p>I posted on mailinglist the error and the patch with the code that I
+wrote today.</p>
+<p>3 June : prepared for next exam, did nothing for GSoC</p>
+<p>4 June : further investigations on the empty translation unit error, not
+much progress , stayed on IRC</p>
+<p>5 June : did not feel very well (headache and flu), did nothing for GSoC</p>
+<p>6 June : got Cliff's mail response on my small grammar compiling error,
+applied the changes and it compiled well; segmentation fault at
+execution and gdb says the error is in PERPLEX_LEXER_private;</p>
+<p>7 June : worked out the error and finally had group() parsed well</p>
+<p><strong>Week 3</strong></p>
+<p>8 June: just some code cleanup, prepared for tomorrow's exam</p>
+<p>9 June: been at school for exam all day, did nothing for GSoC</p>
+<p>10 June: tested and sent a <a href="https://sourceforge.net/p/brlcad/patches/375/">valid csg parser
+patch</a> for "group() {" ;
+started working on parsing "group(){ "some content" }"</p>
+<p>11 June: worked on bonding group_content and group_end tokens with the
+existing grammar, almost done</p>
+<p>12 June: the grammar that I proposed for group_content and group_end
+parsing is good but there seems to be a problem with the perplex scanner
+code; further investigations</p>
+<p>13 June: prepared for Monday's exam, no work for GSoC</p>
+<p>14 June: prepared for tomorrow's exam, no work for GSoC</p>
+<p><strong>Week 4</strong></p>
+<p>15 June: been at school for exam almost all day, did some small research
+on lemon grammar</p>
+<p>16 June: started reworking on group() parsing, it seems that the latest
+patch didn't applied cleanly</p>
+<p>17 June: sent the new patch which applies very well on my clean
+checkout; did some more work with the group_content parsing</p>
+<p>18 June: further work on group_content parsing</p>
+<p>19 June: finished the last exam, more work on group_content parsing,
+resolved some of the errors, hope to come up with a valid patch soon</p>
+<p>20 June: finalised group_content and group_end parsing, made a
+<a href="https://sourceforge.net/p/brlcad/patches/383/">patch</a>, tested it on a
+clean checkout, posted it on sourceforge and sent a mail to the list
+with project updates</p>
+<p>21 June: last patch got committed by Cliff, added tokens for all the
+functions/methods that can appear in a .csg file, started working on
+grammar for union() and difference()</p>
+<p><strong>Week 5 (pre-Midterm)</strong></p>
+<p>22 June: further work on the functions token, trying to expand the regex
+for group_content to cover all the functions formats in a .csg file and
+also trying to expand the grammar</p>
+<p>23 June: made token for parsing dimension parameters for cube(),
+sphere(), cylinder() and polyhendron(), linked it with the existing
+grammar</p>
+<p>24 June: designed non-terminals for assignation of parameters ( for
+example for parsing things like "convexity = 1" or "size = [3,4,5]")</p>
+<p>25 June: heavy work on the csg grammar, lots of tests, working on edge
+cases, almost done &amp; ready for a patch submission</p>
+<h2 id="midterm-evaluation-period">Midterm Evaluation Period</h2>
+<p>At the beginning of the coding period I haven't had anything related to
+lemon and re2c integrated into BRL-CAD. I decided to take some time to
+study how to use this parsing tools before getting to the actual writing
+of the code. Because of my summer exam session, my progress was little
+in the first few weeks and, after working out some simple calculators
+using lemon, I finally started working on the .csg grammar. Initially, I
+though I could gradually parse and interpret functions and methods but I
+soon realised that having a fully functional grammar first is a better
+idea. With lots of help from Cliff and Andrei Constantin Popescu, I
+managed to finish the grammar just 2 days after the Midterm Evaluation
+Period opening and have it merged.</p>
+<p>To run my code, just go in build/src/conv/csg , write an input file with
+some .csg text in it (or save a .csg there) and then just run ./csg
+input.txt output.txt . It should print on the screen various messages
+containing the tokens matched in the parsing process.</p>
+<p>26 June: sent a <a href="https://sourceforge.net/p/brlcad/patches/386/">patch</a>
+regarding the .csg grammar which is almost complete , needs some work in
+the priorities section to be just right</p>
+<p>27 June: filled midterm form on melange, worked on priorities</p>
+<p>28 June: sorted out the priorities section, changed some of the internal
+structure of the grammar to parse imbricated functions better, added a
+new rule for assignation, made a <a href="https://sourceforge.net/p/brlcad/patches/388/">new
+patch</a> with the complete
+grammar and sent a mail to the list with the latest updates</p>
+<p>29 June: talked with teepee from OpenSCAD about the conversion from
+.scad to .csg, found out how to properly test the proposed grammar
+(running the OpenSCAD test suite) and also got some insight about the
+functions that generate the .csg from the .scad ( toString for
+<a href="https://github.com/openscad/openscad/blob/master/src/primitives.cc#L610">primitives</a>
+and <a href="https://github.com/openscad/openscad/blob/master/src/transform.cc#L190">special
+functions</a>
+)</p>
+<p>30 June: did nothing for GSoC</p>
+<p>1 July: tested my grammar using some .csg files provided by OpenSCAD,
+modified it to also parse "group();" , not only "group() {...}", added
+DEBUG macro and tried to print some matched functions using
+bu_vls_addr(&amp;A-&gt;value) but with no luck</p>
+<p>2 July: further work on printing matched functions, renamed some tokens
+in the grammar for a clearer code</p>
+<h2 id="coding-period-2nd-half">Coding Period (2nd half)</h2>
+<p>3-6 July : had a mental breakdown because of the lack of progress and
+sleep in the last few days, took some time to organise my days and get
+back on track with everything</p>
+<p><strong>Week 6</strong></p>
+<p>7 July : restarted reading dom2dox code to learn about interpreting
+lemon grammar, understood some basic principles</p>
+<p>8 July : cleared some confusions about the "END_TEXT;" macro after a
+discussion with Sean on IRC, decided not to use macros to prevent
+complexity issues</p>
+<p>9 July : found the /doc/parsers/writing_perplex_lemon_parsers.doc and
+also the templates in there and read through them , they seem well
+explained and detailed</p>
+<p>10-11-12 July : not much progress, tried a different approach by
+modifying the grammar to match functions as 1 token to reduce the number
+of terminals, ended up not parsing the function parameters</p>
+<p><strong>Week 7</strong></p>
+<p>did nothing for GSoC</p>
+<p><strong>Week 8</strong></p>
+<p>20 July : got Sean's mail about communicating more and staying more on
+IRC, tried to install tmux to be 24/7 on IRC but failed due to some
+incompatibility issues, decided to stick to XChat</p>
+<p>21-23 July : documented about perplex, re2c and lemon in order to
+understand better what is not working and why and asking the right
+questions</p>
+<p>24 July : sent an email to Sean and Isaac with questions about why
+fprintf(appData-&gt;outfile, "%s", bu_vls_addr(&amp;A-&gt;value)) does not
+print anything but the token is matched, about the generated tree and
+also discussed updating deliverables</p>
+<p>25 July : more work on sending matched strings to main, restrained the
+problem to a memory allocation issue</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Online_Geometry/TODO/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>TODO - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Online_Geometry/TODO.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2016-task-list" class="nav-link">GSoC 2016 Task List</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#new-features" class="nav-link">New Features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#enhancements" class="nav-link">Enhancements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#bugs" class="nav-link">Bugs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#research-work" class="nav-link">Research work</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#future-plans" class="nav-link">Future plans</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Below is a list of potential development activities remaining for the
+geometry service. No single task should take more than a month of effort
+to implement.</p>
+<h1 id="gsoc-2016-task-list">GSoC 2016 Task List</h1>
+<p><strong>github branch structure (proposed)</strong>
+developer branch - <name>_dev
+release branch (brlcad) - release
+master branch (mentor) - master</p>
+<p>Product release at the end of midterm and final term (official)
+Merge student branch at every product release
+{| ! Task status |- | style="background:#FFC7CA;"| Not Done |- |
+style="background:#FAF8C5;"| In Progress |}</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Tag</td>
+<td>Short Description</td>
+<td>Priority</td>
+</tr>
+<tr>
+<td>Community Bonding</td>
+<td>Pub-Sub</td>
+<td>Learn in-depth about publication and subscription, on which meteor is based</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add color</td>
+<td>brlcad code and API to add color parameters from g to obj file</td>
+<td></td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>Code Integration</td>
+<td>Merge and clean code from GSOC15-merged to master, remove branches</td>
+<td>P0</td>
+</tr>
+<tr>
+<td></td>
+<td>Deployment</td>
+<td>Deploy initally the update master branch. Do not make it public</td>
+<td>P0</td>
+</tr>
+<tr>
+<td></td>
+<td>Refactor Database</td>
+<td>Only where needed</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>Social Integration</td>
+<td>Like, Share, Comment</td>
+<td>UI/UX Improvement</td>
+<td>P0</td>
+</tr>
+<tr>
+<td></td>
+<td>Following users</td>
+<td>Primarily UX related issues</td>
+<td>P0</td>
+</tr>
+<tr>
+<td></td>
+<td>Dashboard</td>
+<td>UI improvement and database query issues</td>
+<td>P0</td>
+</tr>
+<tr>
+<td></td>
+<td>Notifications</td>
+<td>User must get notified of things</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>Model Lifecycle</td>
+<td>Publish Control</td>
+<td>User can keep data private or publish it publically</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>View Models</td>
+<td>Large files*</td>
+<td>Laptop freezes, unable to finish the conversion</td>
+<td>P0</td>
+</tr>
+<tr>
+<td></td>
+<td>UI/UX</td>
+<td>Improve user experience at view model page</td>
+<td>P0</td>
+</tr>
+<tr>
+<td></td>
+<td>Thumbnails*</td>
+<td>Thumbnail generation from the model view itself (phantomJS)</td>
+<td>P1</td>
+</tr>
+<tr>
+<td></td>
+<td>Manage views</td>
+<td>Look for other technologies or improve existing (datGUI)</td>
+<td>P1</td>
+</tr>
+<tr>
+<td></td>
+<td>Enable color*</td>
+<td>Enable upload of models with color parameters</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>Admin Panel</td>
+<td>User Tables</td>
+<td>All data and navigation</td>
+<td>P2</td>
+</tr>
+<tr>
+<td></td>
+<td>Push Notifications</td>
+<td>The ability to notify users via mail, or web-app notification</td>
+<td>P1</td>
+</tr>
+<tr>
+<td></td>
+<td>Blog or news page</td>
+<td>News and blog updates by brlcad admin</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>User</td>
+<td>Temporary User</td>
+<td>Upload and view your Models without sign-in</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Publication/Subscription</td>
+<td>Check safe publication-subscription workflow</td>
+<td>P2</td>
+</tr>
+</tbody>
+</table>
+<p>* High priority hard level problems to look at.</p>
+<p># P0 tasks - 10</p>
+<p># P1 tasks - 5</p>
+<p># P2 tasks - 3</p>
+<h1 id="new-features">New Features</h1>
+<p><strong>User Dashboard</strong></p>
+<!-- -->
+
+<p>Currently, OGV is lacking an important feature of user dashboard. At
+present user cannot see his previously uploaded files. We need to design
+the workspace for user where he can add, delete and share files among
+developers, recent activity etc. Just like Google drive or cloud service
+he should be able to create folders, categorize files according to
+project(s) and much more.</p>
+<p><span style="color:red"><strong>update</strong></span>- User can see his previously
+uploaded files, and even the files uploaded by the user he follows.
+There are some UI/UX issues but the backend development is complete.</p>
+<!-- -->
+
+<p>Inspiration:</p>
+<ul>
+<li><a href="https://360.autodesk.com/">https://360.autodesk.com/</a> (Create your account)</li>
+<li><a href="http://www.youtube.com/watch?v=aXklwQ8OFY8">http://www.youtube.com/watch?v=aXklwQ8OFY8</a></li>
+</ul>
+<p><strong>Model Sharing and embedding</strong></p>
+<!-- -->
+
+<p>Share option of OGV can be extended such that user could embed his
+models on their websites, blogs and social websites as discussed in
+recent mails.</p>
+<p><span style="color:red"><strong>update</strong></span>- iframes are available and is
+functional at the backend level, but is buggy. The navbar, notification
+div, datGUI div and other icons also come in the iframe. This needs to
+be fixed. Only the div that consists of the model needs to get embedded.</p>
+<!-- -->
+
+<p><strong>Comments on model</strong></p>
+<!-- -->
+
+<p>A feature to enable users to comment on their own and shared models.
+This would help a lot in collaborating viewing, and after some time,
+collaborative editing. Even we can add chat for easy experience.</p>
+<p><span style="color:red"><strong>update</strong></span>- Likes and comments have been
+added to the models in online geometry viewer</p>
+<!-- -->
+
+<p><strong>BRL-CAD viewer: Mobile App</strong></p>
+<!-- -->
+
+<p>For ideas for BRL-CAD viewer mobile app:
+<a href="http://www.youtube.com/watch?v=Cy7kENzHzao#t=35">http://www.youtube.com/watch?v=Cy7kENzHzao#t=35</a></p>
+<p><span style="color:red"><strong>update</strong></span>- Meteor as a framework is
+mobile-friendly, therefore it is easy to reproduce it to mobile devices.
+There is a need to check for responsiveness in recently created/changed
+pages (newsfeed, profile page, model viewer page etc.)</p>
+<!-- -->
+
+<p><strong>Options to change colours of model</strong></p>
+<!-- -->
+
+<p>Currently a model got a random default color when loaded in ThreeJS and
+user has not control to change it. There should some color options for
+user to play with.</p>
+<!-- -->
+
+<p>Reference::</p>
+<ul>
+<li><a href="http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage">http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage</a></li>
+<li><a href="http://davidwalsh.name/dat-gui">http://davidwalsh.name/dat-gui</a></li>
+</ul>
+<p><span style="color:red"><strong>update</strong></span>- datGUI has been integrated
+with OGV with options like ambient, emissive, wireframe, opacity,
+transparent, shininess and a few others. This can be expanded to add
+colors to specific layers of the uploaded model, which becomes a hard
+problem - low priority problem. There is a need to add the colors from
+the parent g file to the converted obj file.</p>
+<!-- -->
+
+<p><strong>Login through Google, Facebook, Twitter</strong></p>
+<!-- -->
+
+<p>Enabling users to login with their already existing accounts on above
+sites.</p>
+<p><span style="color:red"><strong>update</strong></span>- Done</p>
+<!-- -->
+
+<p><strong>Realistic models</strong></p>
+<!-- -->
+
+<p>Exporting material, color, lightening and other information from .g file
+and use it to give realistic look to models in ThreeJS.</p>
+<p><span style="color:red"><strong>update</strong></span>- This has been done using
+ThreeJS and datGUI.</p>
+<!-- -->
+
+<p><strong>Cross section view</strong></p>
+<!-- -->
+
+<p>A feature to allow CAD users to see the cross section of the model.</p>
+<p><span style="color:red"><strong>update</strong></span>- cross section view has not
+been implemented and how it needs to be done is yet to be decided.</p>
+<h1 id="enhancements">Enhancements</h1>
+<p><strong>Use of framework</strong></p>
+<!-- -->
+
+<p>As the issue was raised in recent mails, OGV needs framework for more
+robust infrastructure. Frameworks provide inbuilt facilities such as
+authentication module, validations, testing etc., also they save
+significant time and efforts. Laravel and node.js were proposed during
+discussions but you can propose another one if you feel it is more
+suitable for this project.</p>
+<p><span style="color:red"><strong>update</strong></span>- OGV has been developed using
+the Meteor Framework.</p>
+<!-- -->
+
+<p><strong>Security of application</strong></p>
+<!-- -->
+
+<p>OGV is using simple sign-in signup module but it is not much secure and
+lack robustness which need a fix. It is using swift mailer library for
+email sending. If we adopt some framework for this project, it can be
+easily done.</p>
+<p><span style="color:red"><strong>update</strong></span>- Handled by the use of Meteor
+framework.</p>
+<!-- -->
+
+<p><strong>Add prefix to obj files</strong></p>
+<!-- -->
+
+<p>All obj files of different .g files are stored in same directory and
+conflicts may occur when if two OBJs from different .g files have same
+name. It can be fixed by editing code so that each time when obj
+created, a prefix of its database is added to its name.</p>
+<p><span style="color:red"><strong>update</strong></span>- All the object files are
+identified by a unique ID in the mongo Database.</p>
+<!-- -->
+
+<p><strong>Loader indication</strong></p>
+<!-- -->
+
+<p>While entity loads, some indication / status about "loading" should
+appear. ﻿If entity loaded successfully, a confirmation message should be
+given to user and if entity already loaded, a user friendly message
+should be displayed otherwise if error occurred appropriate message
+should be given with instruction to take further steps.</p>
+<p><span style="color:red"><strong>update</strong></span>- A loader is required to
+indicate that the object is being converted. Until the object is fully
+converted, the user must not proceed further. Confirmation messages have
+been added. Minimal changes needed in the alert messages.</p>
+<!-- -->
+
+<p><strong>OBJ search</strong></p>
+<!-- -->
+
+<p>Before drawing an entity, a search should be made in 'obj' directory of
+corresponding user to check whether the required obj file is already
+made. If file found, it should be loaded, otherwise new should be
+generated.</p>
+<p><span style="color:red"><strong>update</strong></span>- One can search uploaded
+object files from the entire object database. This has been implemented.
+Additionally, search for users (by username) was also been added.</p>
+<!-- -->
+
+<p><strong>Set focus</strong></p>
+<!-- -->
+
+<p>At present position of camera is fixed and sometimes size of entity is
+too small or too big. In either case, user have to find it by zoom-in /
+zoom-out. As soon as the entity is drawn, it should always in the focus
+of the camera. Either the position of camera should be adjustable
+according to size of entity or there must be option of scaling.</p>
+<p><span style="color:red"><strong>update</strong></span>- Has been completed more or
+less. The model viewer page needs a considerable amount of changes in
+UI/UX.</p>
+<!-- -->
+
+<p><strong>Configuration form</strong></p>
+<!-- -->
+
+<p>A global configuration file is made to set different variables. User can
+change value of variables in that configuration file rather than editing
+individual files. Now this file should be written through a web form.</p>
+<p><span style="color:red"><strong>update</strong></span>- A configuration form for
+models was implemented.</p>
+<!-- -->
+
+<p><strong>GUI</strong></p>
+<!-- -->
+
+<p>OGV needs better GUI. Simple and clean rich of features. Use of buttons,
+icons, menus, radio buttons, drop down lists to make it easier for users
+to find the functions they want. Principles of GUI design must be
+considered during planing and implementing phase. Look at following
+services for ideas:</p>
+<p><span style="color:red"><strong>update</strong></span>- This is one of the most
+important areas of focus for Online Geometry Viewer. The work regarding
+this is incomplete at many levels. One must also need to check the
+overall user experience at all levels (login, uploading, viewing, social
+collaboration etc.).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoCAD 360 Beta:</td>
+<td><a href="http://app.autocad360.com">http://app.autocad360.com</a></td>
+</tr>
+<tr>
+<td>GrabCAD:</td>
+<td><a href="http://www.grabcad.com/library">http://www.grabcad.com/library</a></td>
+</tr>
+<tr>
+<td>Revizto:</td>
+<td><a href="http://www.revizto.com">http://www.revizto.com</a></td>
+</tr>
+<tr>
+<td>Sunglass.io:</td>
+<td><a href="http://www.sunglass.io">http://www.sunglass.io</a></td>
+</tr>
+<tr>
+<td>TeamPlatform:</td>
+<td><a href="http://www.teamplatform.com">http://www.teamplatform.com</a></td>
+</tr>
+<tr>
+<td>TftLabs' Json3d Gallery:</td>
+<td><a href="http://json3d.tftlabs.com">http://json3d.tftlabs.com</a></td>
+</tr>
+<tr>
+<td>TinkerCAD:</td>
+<td><a href="http://www.tinkercad.com">http://www.tinkercad.com</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="bugs">Bugs</h1>
+<ul>
+<li>Data from upload_file.php is transferred to model_display.php
+    through URL by GET method of PHP. When the length of GET method is
+    exceeded by a certain limit, OGV stops. It happens mostly in the
+    case of large models. We need a reliable method for transfer of data
+    to resolve this serious issue.</li>
+</ul>
+<p><span style="color:red"><strong>update</strong></span>- This is also a primary area
+of focus at the present moment. There are quite a decent number of
+features that have gone in OGV, but needs bug-fixes. Bug-fixes is a more
+important issue as compared to introducing enhancements.</p>
+<h1 id="research-work">Research work</h1>
+<ul>
+<li>More smoothness of model.</li>
+<li>Representation type. Changing ploygons to something more reliable
+    and robust.</li>
+<li>Making 2D drawings and annotations in OGV. We can use 3D model data
+    to produce 2D drawings. However, for this we may need to use third
+    party library. For example,
+    <a href="http://jonobr1.github.io/two.js/">Two.js</a></li>
+<li>Performing analysis in OGV with ThreeJS.</li>
+<li>Continue...</li>
+</ul>
+<h1 id="future-plans">Future plans</h1>
+<ul>
+<li>Writing an API to use BRL-CAD's existing code in OGV.</li>
+<li>Support for other CAD formats.</li>
+<li>Continue...</li>
+</ul>
+<p>If you're interested in getting involved, please join the <a href="Mailing_Lists.md">brlcad-devel
+mailing list</a> and introduce yourself.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

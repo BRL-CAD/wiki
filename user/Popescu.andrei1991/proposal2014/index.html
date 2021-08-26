@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Popescu.andrei1991/proposal2014/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Proposal2014 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Popescu.andrei1991/proposal2014.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            <li class="nav-item" data-level="2"><a href="#project-abstract" class="nav-link">Project abstract</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#i-geometry-enginecore-interface-tuning" class="nav-link">I) Geometry engine(core interface) tuning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#ii-enhancing-geometry-engine-with-additional-primitives_1" class="nav-link">II) Enhancing geometry engine with additional primitives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#general-oop-design-aspects" class="nav-link">General OOP design aspects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#approach-implementation-plan" class="nav-link">Approach &amp; Implementation plan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#primitives" class="nav-link">Primitives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability-timeline" class="nav-link">Time availability &amp; timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-me" class="nav-link">Why me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="bio">Bio</h3>
+<p>I’m Andrei, a CS undergraduate at Polytechnic Univ. of Bucharest,
+current in the 4th and last year.When I’m not coding, I’m playing
+basketball, going to the gym or just hanging out. I’ve been with BRL-CAD
+for GSoC 2012 and Code-in ’13. In my opinion, those projects offer me a
+much better view on this and how I should tackle situation, it’s been a
+great learning experience.</p>
+<p>In the past two years, I’ve been working(mostly open source) as well as
+improved my CS knowledge all around. While I’m not an avid CAD user and
+there’s no secret behind this, I do like the software development
+aspects of BRL-CAD(on short, I find writing code for CAD applications
+interesting as it involves several areas like math, os, oop etc) and the
+community which, even if small, it’s enthusiastic and willing to help.</p>
+<p>Regarding my proposal, I’ll avoid ‘advertising talk’ and be as honest
+and upfront as I can. Also, I was rather short on the Bio as I believe
+it’s no point reiterating known data all over again.</p>
+<p>E-mail: popescu.andrei1991@gmail.com</p>
+<p>Full name: Popescu Andrei-Constantin</p>
+<p>Timezone: UTC +2:00</p>
+<p>Communication availability: IRC/Mail/Skype/phone, anything will do</p>
+<h2 id="project-abstract">Project abstract</h2>
+<p>Implementing a geometry engine from scratch involves a tremendous amount
+of work. BRL-CAD's geometry kernel relies on the already existing
+implementation that's found in the BRL-CAD binaries. After doing some
+research through code, IRC and commit logs, my understanding is that the
+existing code is written in 'OOP C' except for Nurbs which are already
+written as OOP C++.</p>
+<p>BRL-CAD's engine(core interface) already has several primitives
+implemented, as well as database handling. My whole GSoC project is
+split into two main parts. The main part is completing the primitives
+list, Geometry engine tuning is something to be discussed and there's no
+certain plan towards it, I will work on it only if the community decides
+so.</p>
+<h3 id="i-geometry-engine-tuning">I) Geometry engine tuning</h3>
+<p>Right now, this is a generic part and there's no technical planning on
+it.</p>
+<h3 id="ii-enhancing-geometry-engine-with-additional-primitives">II) Enhancing geometry engine with additional primitives</h3>
+<p>With the increasing number of implemented primitives in core interface,
+increases the usability and external development interest towards the
+geometry engine. Primitives where chosen based on how important they are
+and how difficult it is to implement them. The goal is to tackle as many
+primitives as possible, starting with the easiest ones. Some items from
+the list are rec, rcc, ellg, sph etc.</p>
+<p>Project details &amp; deliverables</p>
+<p>I already have commit access, a somewhat decent understanding of BRL-CAD
+concepts and where to look in the source code. This allows me to skip
+the ‘obtaining commit access’ step.</p>
+<h2 id="i-geometry-enginecore-interface-tuning">I) Geometry engine(core interface) tuning</h2>
+<p>Additional actions will be taken to facilitate API usage for
+applications, I don't have a view on what type of applications use it
+and what environment it is usually used under. This is a
+generic(currently unknown) part of my proposal. It depends on what the
+'easy-to-deploy' definition the mentor/community have. This part should
+be finished before coding starts, or at worst a couple of weeks into
+coding, if exceptional circumstances occur.</p>
+<p>Deliverables: Undefined</p>
+<h2 id="ii-enhancing-geometry-engine-with-additional-primitives_1">II) Enhancing geometry engine with additional primitives</h2>
+<h1 id="general-oop-design-aspects">General OOP design aspects</h1>
+<p>All primitive classes will only inherit Object, regardless of
+similarities between one another. For example, sph will not inherit
+anything from ell although sph is a form of ell with additional
+constraints.</p>
+<p>The class design will be decided based on community feedback because, in
+my opinion, I lack the experience to take the decision by myself, you
+can, however, see my intended approach . Only after the class
+interface(actually, abstract class, as C++ does not have an interface
+keyword) has been sketched will I begin implementing it. This will be
+done in an overlapping manner, testing class1 and designing class2 will
+take place in the same period of time, to avoid coding downtime.</p>
+<h1 id="approach-implementation-plan">Approach &amp; Implementation plan</h1>
+<p>A general, natural approach is to take the structure members and convert
+them to class members and the functions to methods. Obviously this will
+not be a 1:1 transformation in all cases and code refactoring will
+happen on the OOP end to avoid duplicated code, breaking OOP principles.
+On short, the idea is to do cleanup when designing the class, so we
+respect hacking as well as keep the code quality as high as possible.</p>
+<p>Obviously, fields &amp; constructors will be implemented first, then pairing
+each method with a test, so I don't end up with a period when I have to
+do only testing. Also, if I am stuck on a method, I could switch to
+testing an already implemented one. I can't write this on the timeline
+since I don't know the exact days, but the 'testing' period at the end
+of each class is not meant to happen all after the class is fully
+written. Another positive aspect of this idea is that it will keep me
+from burning out or getting bored/frustrated with issues, since I can
+bounce around to different types of activities.</p>
+<h1 id="primitives">Primitives</h1>
+<p>Each of the below mentioned primitives exists in librt, has a well
+defined behavior and structure. The idea is to adapt that behavior to a
+class, taking the OOP concepts into consideration. Additionally, some
+primitives have a more generic version already implemented (rcc has tgc
+and sph has ell) so I will use that as a starting point.</p>
+<p>The complete list, in chronological order is this : rcc,rec , ellg, sph,
+sketch, vol, ars, extrude, bot, pipe and hrt.</p>
+<p>If possible, the list will be discussed in the review period and changed
+according to how the implementation is going and of mentors' view upon
+it.</p>
+<p>1) rcc (right circular cylinder)</p>
+<p>Rcc is a primitive that can be used to draw wheels, rods, posts. It is,
+in fact, a special case of tgc and as such it's class design will mimic
+the tgc with respect to the additional constraints. The main reason rcc
+is the first one to be implemented is to practice class design on it.</p>
+<p>Deliverables</p>
+<p>- fully functional rcc class with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>2) rec( righ elliptical cylinder)</p>
+<p>Similar to rcc, rec is a special case of tgc.</p>
+<p>Deliverables</p>
+<p>-fully functional rec class with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>3) ellg</p>
+<p>special case of ellipsoid, similar to sph it will mimic Ellipsoid
+implementation.</p>
+<p>Deliverables</p>
+<p>-fully functional ellg class with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>4) sph (optional, depending on progress)</p>
+<p>similar to rcc – tgc situation, sph is, in fact, a special case of ell.</p>
+<p>Deliverables</p>
+<p>-fully functional rcc class, with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>5) sketch</p>
+<p>2D outline</p>
+<p>Deliverables</p>
+<p>-fully functional sketch class, with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>6) vol</p>
+<p>A voxel represents a value on a regular grid in three-dimensional space.
+Voxel is a combination of "volume" and "pixel" where pixel is a
+combination of "picture" and "element" (Wikipedia)</p>
+<p>Deliverables</p>
+<p>Functional voxelize algorithm</p>
+<p>tests(probably unit tests) for it, perhaps other testing (i.e.
+profiling)</p>
+<p>7) extrude</p>
+<p>extrude face distance mged command; uses arb data, implementation might
+differ from others.</p>
+<p>Deliverables</p>
+<p>-Extrude implementation</p>
+<p>-Tests</p>
+<p>8) bot (bag of triangles)l</p>
+<p>According to BRL-CAD wiki, The “Bag o’ Triangles” is a CAD primitive
+object used for representing triangle mesh objects. BoT objects may be
+surfaces or solids, topologically closed or open, clockwise or counter
+clockwise.</p>
+<p>Deliverables</p>
+<p>-fully functional bot class, with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>9) pipe</p>
+<p>An interesting example of a pipe usage is generating a coil. I consider
+that this primitive can be more challenging, so it has been added after
+two were already implemented. Based on that, I should have a better
+understanding of the process, as well as class design experience.</p>
+<p>Deliverables</p>
+<p>-fully functional pipe class, with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>10) ars (arbitrary rectangular solid)</p>
+<p>I decided to implement this primitive because, to me, it seems a very
+usable primitive(because of the waterlines), it can be easily shaped
+into many complicated forms. Having arb8 already implemented, I have an
+example of a non-curvature shape primitive.</p>
+<p>Deliverables</p>
+<p>-fully functional ars class, with behavior similar to librt one</p>
+<p>-tests(probably unit tests) for it</p>
+<p>As you know, GSoC is flexible regarding project scope. If this proposed
+project is under scoped, we will discuss additional classes to
+implement. Similarly, if things take longer than expected due to
+unforeseeable factors, primitives will be prioritized. If finished
+early, hrt primitive will be implemented.</p>
+<h1 id="time-availability-timeline">Time availability &amp; timeline</h1>
+<p>There will be work done between 21 March and 21 April, however, not 40
+hours a week. This will be discussed in detail via IRC/mails. The
+timeline assumes zero work is done until then. During coding period, the
+standard 40 hours will be maintained, with the possibility to extend to
+48 if there is need.</p>
+<p>Each interval is to be read like this: [Start, finish)</p>
+<p>21st April –28th April</p>
+<p>Discuss rec and rcc class design, begin basic class implementation</p>
+<p>28th April – 5th May</p>
+<p>Finish rec and rcc implementation; cleanup; testing; sph and ellg design
+discussion;</p>
+<p>5th May – 12th May</p>
+<p>Sph &amp; ellg implementation; cleanup; doc/testing;</p>
+<p>12th May – 19th May</p>
+<p>Univ Tests period, sketch design discussions. (probably 15-20h) basic
+sketch implementation;</p>
+<p>19th May - 26th May</p>
+<p>Sketch implementation;</p>
+<p>26th of May - 2nd June</p>
+<p>Sketch cleanup/testing; vol implementation; extrude discussion</p>
+<p>2nd June – 9th June</p>
+<p>Extrude implementation</p>
+<p>9th June – 16th June</p>
+<p>Extrude cleanup/testing/doc; discussion of bot primitive;</p>
+<p>16th June – 23rd June</p>
+<p>Bot implementation;</p>
+<p>23rd June – 30th June</p>
+<p>Mid term; break; bot implementation; Limited availability (10 – 20
+hours)</p>
+<p>30th June - 7th July</p>
+<p>Bot cleanup/testing; pipe discussion; sketching class, writing
+constructors.</p>
+<p>7th July – 14th of July</p>
+<p>Pipe implementation;</p>
+<p>7th July – 14th of July</p>
+<p>finishing pipe implementation; pipe cleaup/testing; ars class discussion</p>
+<p>14th of July – 21st July</p>
+<p>Ars implementation;</p>
+<p>21st of July – 28th July</p>
+<p>Finish ars implementation; class testing and cleanup.</p>
+<p>1st of August – 11th August</p>
+<p>Finishing ars class(testing &amp; cleanup), hrt design discussion</p>
+<p>11th – 18th of August</p>
+<p>Hrt implementation; clean up, writing doc, testing</p>
+<p>The timeline will be adjusted upon discussions with mentors and based on
+progress.</p>
+<p>Motivation</p>
+<h1 id="why-me">Why me?</h1>
+<p>You know a bit more about me than about newcomers so this question my
+seem useless. My impression is that over time I’ve gotten the reputation
+of an underachiever as I always start out strong and fall of some time
+after. It’s happened with GCI 2014, last part of 2013 and a part of GSoC
+2012.</p>
+<p>Being honest, I think the best way to figure out if you should pick me
+or not(aside the proposal, obviously) is to look at how the period until
+taking decisions is spent. I can’t guarantee that I won’t “fall off
+again”, but this time I am much more determined, as you will see below.</p>
+<p><code>I’ve improved my general CS knowledge considerably from ago two years, that project was much more for me, than for the real benefit of BRL-CAD. I want to change that now,  I want this GSoC project to actually make a difference. So I/you could show the difference between the two projects. Actually, now, I am a bit surprised that I was accepted back then, but nevertheless that lead to this.</code></p>
+<p><code>Previously, I applied with two proposals, but not this year. My goal is not only to get accepted (as it was) but do this project, this is what I want to do and nothing else. If I don’t get selected, that’s alright, it can happen, but I want to work on this project and none other. I’m saying this because it’s a project that I find extremely interesting for many reasons: making the transition from procedural to OOP, designing classes when you don’t know the exact, full usage of your class, shaping geometry entities into objects.</code></p>
+<h1 id="why-brl-cad">Why BRL-CAD?</h1>
+<p>Initially, I tried other orgs because I was pursuing a C++ project that
+involved compilers aswell( like llvm, lttng, gcc etc) so that’s why I
+arrived a bit late around here.</p>
+<p>As I am not an CAD expert (or avid user, even) I didn’t want to stay
+here just cause it’s easier to get accepted(because I know the process,
+what I have to do etc)</p>
+<p>So far, I’ve just said why not BRL-CAD. My opinion is that CAD software
+is one of the toughest categories of software there is, while I’m not
+attracted that much to using it, I find it’s structure, constraints and
+general concepts extremely interesting. I simply like how it works more
+than what it does.</p>
+<p>Another reason for this, except of the project(which I mentioned I’m
+interested in probably around 7 times) is the community. For such a
+small organization, there’s so much drive in the community (GCI, GSoC
+etc), I got to know you folks and it would really be awesome to continue
+working with you.</p>
+<p>All in all, I believe this project would be a meaningful progress from
+my first contact with BRL-CAD.</p>
+<p>This is a long shot, but I’d love taking part as a GSoC mentor on the
+follow-up of this project next year.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

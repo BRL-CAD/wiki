@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2015/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>GSoC 2015 With BRL-CAD - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2015.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2015-with-brl-cad" class="nav-link">GSoC 2015 With BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accepted-projects" class="nav-link">Accepted Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#gpu-accelerated-ray-trace-rendering-for-brl-cad" class="nav-link">GPU Accelerated Ray Trace Rendering for BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#online-geometry-viewer-ogv-front-end" class="nav-link">Online Geometry Viewer (OGV) : Front-End</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#online-geometry-viewer-ogv-back-end" class="nav-link">Online Geometry Viewer (OGV): Back-end</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#synchronize-wiki-with-docbook" class="nav-link">Synchronize Wiki with Docbook</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#povray-export" class="nav-link">Povray export</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#openscad-importer" class="nav-link">OpenSCAD Importer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#object-oriented-c-geometry-api" class="nav-link">Object-Oriented C++ Geometry API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-geometry-viewer" class="nav-link">STEP Geometry Viewer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nmg-bot-editing" class="nav-link">NMG / BoT Editing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#x3d-importer" class="nav-link">X3D Importer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#scadlexer-for-openscad" class="nav-link">ScadLexer for OpenSCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2015-with-brl-cad">GSoC 2015 With BRL-CAD</h1>
+<p><strong>BRL-CAD was accepted as a <a href="http://www.google-melange.com/">mentoring
+organization</a> for the Google Summer of
+Code!</strong></p>
+<p>We accepted <strong>12</strong> students that prepared quality proposals and
+demonstrated commitment, with details below for those students that were
+successful. As an umbrella org, several students were selected for
+associated orgs LibreCAD, STEPcode, and OpenSCAD.</p>
+<h1 id="accepted-projects">Accepted Projects</h1>
+<h2 id="gpu-accelerated-ray-trace-rendering-for-brl-cad">GPU Accelerated Ray Trace Rendering for BRL-CAD</h2>
+<ul>
+<li>OpenCL-based accelerated ray trace rendering</li>
+<li>Student: <a href="/wiki/user/vasco.costa">Vasco Costa</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/vasc/5657382461898752">Abstract</a></li>
+<li><a href="/wiki/user/vasco.costa/GSoC15/proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/vasco.costa/GSoC15/logs">Development Logs</a></li>
+</ul>
+<h2 id="online-geometry-viewer-ogv-front-end">Online Geometry Viewer (OGV) : Front-End</h2>
+<ul>
+<li>Geometry Model Viewer on Web : Front-End Development</li>
+<li>Student: <a href="/wiki/user/Deekaysharma">Deepak Kumar Sharma</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/details/google/gsoc2015/deepakkumarsharma/5764640680181760">Abstract</a></li>
+<li><a href="/wiki/user/Deekaysharma/GSoC2015/Proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Deekaysharma/GSoc15/OGV_production_ready_plan">Front-End : Production Ready Plan</a></li>
+<li><a href="/wiki/user/Deekaysharma/logs">Development Logs</a></li>
+</ul>
+<h2 id="online-geometry-viewer-ogv-back-end">Online Geometry Viewer (OGV): Back-end</h2>
+<ul>
+<li>Geometry Model Viewer on Web: Back-end Development</li>
+<li>Student: <a href="/wiki/user/MeShubham99">Shubham Chauhan</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/meshubham99/5639274879778816">Abstract</a></li>
+<li><a href="/wiki/user/MeShubham99/GSoc15/proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/MeShubham99/GSoc15/OGV_production_ready_plan">Production Ready Plan</a></li>
+<li><a href="/wiki/user/MeShubham99/GSoc15/log_development">Development Logs</a></li>
+</ul>
+<h2 id="synchronize-wiki-with-docbook">Synchronize Wiki with Docbook</h2>
+<ul>
+<li>merge the all docs with website and provide the editing option to
+    user.</li>
+<li>Student: <a href="/wiki/user/Hiteshsofat">Hitesh Sofat</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/hitesh123/5757334940811264">Abstract</a></li>
+<li><a href="/wiki/user/Hiteshsofat/GSoc15/proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Hiteshsofat/GSoc15/log_development">Development Logs</a></li>
+</ul>
+<h2 id="povray-export">Povray export</h2>
+<ul>
+<li>Converting BRL-CAD geometry into POV-Ray format</li>
+<li>Student: <a href="/wiki/user/Gurwinder_Singh">Gurwinder Singh</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/gurwinder_singh_bains/5639274879778816">Abstract</a></li>
+<li><a href="/wiki/user/Gurwinder_Singh/GSoc15/proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Gurwinder_Singh/GSoc15/log_development">Development Logs</a></li>
+</ul>
+<h2 id="openscad-importer">OpenSCAD Importer</h2>
+<ul>
+<li>Converting OpenSCAD geometry into BRL-CAD format</li>
+<li>Student: <a href="/wiki/user/Andrei.ilinca24">Andrei Ilinca</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/andrei_il/5676830073815040">Abstract</a></li>
+<li><a href="/wiki/user/Andrei.ilinca24/Proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Andrei.ilinca24/logs">Development Logs</a></li>
+</ul>
+<h2 id="object-oriented-c-geometry-api">Object-Oriented C++ Geometry API</h2>
+<ul>
+<li>Adding Volume, Centroid and Surface Area functions for primitives
+    (Enhancing GE)</li>
+<li>Student : <a href="/wiki/user/Dracarys983">Kalpit Thakkar</a></li>
+<li>Mentor : Daniel Roßberg (d_rossberg)</li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/dracarys983/5750085036015616">Abstract</a></li>
+<li><a href="/wiki/user/Dracarys983/Proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Dracarys983/Development_Logs">Development Logs</a></li>
+</ul>
+<h2 id="step-geometry-viewer">STEP Geometry Viewer</h2>
+<ul>
+<li>A stand-alone STEP file viewer with great functionalities.</li>
+<li>Student : <a href="/wiki/user/MilindaFernando">Milinda Fernando</a></li>
+<li>Mentor : Charlie Stirk</li>
+<li><a href="/wiki/user/MilindaFernando/abstract">Abstract</a></li>
+<li><a href="/wiki/user/MilindaFernando/gsoc2015_project_proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/MilindaFernando/gsoc2015_devlog">Development Logs</a></li>
+</ul>
+<h2 id="nmg-bot-editing">NMG / BoT Editing</h2>
+<ul>
+<li>Command-line interface for NMG / BoT editing.</li>
+<li>Student : <a href="/wiki/user/Bhollister">Brad Hollister</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/brad_h/5697982787747840">Abstract</a></li>
+<li><a href="/wiki/user/Bhollister/Proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Bhollister/DevLog">Development Logs</a></li>
+</ul>
+<h2 id="x3d-importer">X3D Importer</h2>
+<ul>
+<li>A converter to convert from X3D file format to BRL-CAD format</li>
+<li>Student: <a href="/wiki/user/Konrado_DJ">Konrad Djimeli</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/djimeli/5634387206995968">Abstract</a></li>
+<li><a href="/wiki/user/Konrado_DJ/GSoc2015/Proposal/X3D_Importer">Project Proposal</a></li>
+<li><a href="/wiki/user/Konrado_DJ/GSoc2015/logs">Development Logs</a></li>
+</ul>
+<h2 id="scadlexer-for-openscad">ScadLexer for OpenSCAD</h2>
+<ul>
+<li>Lexer for QScintilla Editor.</li>
+<li>Student: <a href="/wiki/user/Shainasabarwal">Shaina Sabarwal</a></li>
+<li><a href="https://www.google-melange.com/gsoc/project/details/google/gsoc2015/shaina/5684049913839616">Abstract</a></li>
+<li><a href="/wiki/user/Shainasabarwal/ScadLexer_for_ScintillaEditor.md#Title:_SCAD_lexer_for_QScintilla_Editor">Proposal</a></li>
+<li><a href="/wiki/user/Shainasabarwal/GSoC15/logs">Development Logs</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

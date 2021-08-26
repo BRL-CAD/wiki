@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Appleseed/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Appleseed Integration Project - BRL-CAD Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Appleseed.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#appleseed-integration-project" class="nav-link">Appleseed Integration Project</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#progress" class="nav-link">Progress</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#to-do" class="nav-link">To-Do</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="appleseed-integration-project">Appleseed Integration Project</h1>
+<p>Integration with appleseed (https://github.com/appleseedhq/appleseed)
+has been a long-standing BRL-CAD project. In essence, the idea is to
+render BRL-CAD geometry through a custom plugin to the appleseed
+renderer. The ultimate goal of the project is to be able to support as
+many rt features as possible.</p>
+<h2 id="progress">Progress</h2>
+<p>The appleseed integration project takes advantage of appleseed's support
+for procedural objects, which allows for the creation of a custom plugin
+to execute custom ray-intersect logic. By linking with librt, the plugin
+is thus able to render BRL-CAD geometry. Aside from simply being able to
+render the geometry, art.exe currently supports a few select rt
+features. At the moment, art.exe is capable of:</p>
+<ul>
+<li>selecting the geometry model and the regions to render</li>
+<li>defining the render image pixel dimensions</li>
+<li>setting the azimuth/elevation and perspective angle</li>
+</ul>
+<p>As mentioned, the goal of the project is for art.exe to implement the
+same features as rt.exe, so that, in a sense, they can be used
+interchangeably. Therefore, if possible, it would be preferred if art
+could reuse the same helper functions and variables used by rt. For
+example, much of the command-line option parsing performed by art
+directly comes from opt.c/usage.cpp, which was originally used by rt.
+This makes the code much cleaner and easier to maintain.</p>
+<h2 id="to-do">To-Do</h2>
+<h3 id="separating-regions">Separating Regions</h3>
+<ul>
+<li>The custom BRL-CAD plugin currently combines all the BRL-CAD regions
+    into a single object. While this works to some extent, it would be
+    more ideal to separate each region into a separate object. This
+    would make other features, such as assigning region-specific colors,
+    much easier to implement.</li>
+</ul>
+<h3 id="colorsmaterials">Colors/Materials</h3>
+<ul>
+<li>Right now, the entire BRL-CAD object is rendered by appleseed as a
+    single hard-coded color. However, BRL-CAD geometry supports the use
+    of different colors and materials for individual primitives/regions.
+    After the custom plugin has been updated to separate BRL-CAD
+    regions, implementing colors/materials would be a relatively
+    high-priority feature.</li>
+</ul>
+<h3 id="using-existing-functions">Using Existing Functions</h3>
+<ul>
+<li>Although art supports setting azimuth/elevation, the current
+    implementation was done as a bit of a hack; the function used to
+    perform relevant calculations, do_ae(), was copied from the do.c
+    file. It would be much preferred to directly use the function from
+    do.c, but including do.c into the project also creates a lot of
+    unresolved external symbol errors. This should be resolved soon.</li>
+</ul>
+<h3 id="multithreading-support">Multithreading Support</h3>
+<ul>
+<li>Both appleseed and librt are capable of multithreaded rendering, but
+    at the moment, the plugin will only work on a single thread. At some
+    point, multithreading support should be implemented in order to
+    fully take advantage of appleseed/librt capabilities.</li>
+</ul>
+<h3 id="refining-cmake">Refining CMake</h3>
+<ul>
+<li>Setting up the appleseed project requires a lot of hacky and manual
+    work. Once the project has progressed further, the CMake should be
+    updated to make this process easier for all platforms.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

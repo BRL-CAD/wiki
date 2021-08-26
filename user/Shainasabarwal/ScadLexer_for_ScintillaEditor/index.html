@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Shainasabarwal/ScadLexer_for_ScintillaEditor/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>ScadLexer for ScintillaEditor - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Shainasabarwal/ScadLexer_for_ScintillaEditor.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#background-information" class="nav-link">Background Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#milestones" class="nav-link">MILESTONES</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#deliverable" class="nav-link">Deliverable</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#communication" class="nav-link">Communication</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-openscad" class="nav-link">Why OpenSCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-scad-lexer-project" class="nav-link">Why SCAD lexer project?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="personal-information">Personal Information</h2>
+<ul>
+<li><strong>Name</strong>: Shaina Sabarwal</li>
+<li><strong>Email-address</strong>: iamshainasabarwal@gmail.com</li>
+<li><strong>IRC username</strong>: shaina</li>
+<li><strong>Contact Number</strong>: +917837091321</li>
+<li><strong>Blog</strong>: shainasabarwal.wordpress.com</li>
+</ul>
+<h2 id="background-information">Background Information</h2>
+<ul>
+<li>Computer Science Engineering student at Guru Nanak Dev Engineering
+    College, Ludhiana, Punjab, India. Presently studying in 4th year.</li>
+<li>I have worked in C++, Qt, Wt, HTML, CSS, Javascript, Ruby on rails,
+    flex and Bison and Wordpress.</li>
+<li>Have worked with OpenSCAD in 2014 on project UI Brushup of OpenSCAD
+    that was about enhancing the interface for users of OpenSCAD by
+    adding QScintilla Editor and its various features, Toolbars with
+    small 2D icons. Options to choose color scheme of the solid models,
+    and launching screen of OpenSCAD.</li>
+<li>I am active member of Linux User Group, Ludhiana where the students
+    are made aware about the open source technologies and motivated to
+    contribute in them.</li>
+</ul>
+<h2 id="project-information">Project Information</h2>
+<h3 id="title-scad-lexer-for-qscintilla-editor">Title: SCAD lexer for QScintilla Editor</h3>
+<p>This project aims to make lexer specifically for SCAD language.
+Currently, QScintilla is using CPP lexer, which cause syntax problem as
+CPP language is very large as compared to SCAD language of OpenSCAD.
+With this, some scintilla and GUI related issues will also be solved.</p>
+<p><strong>QsciLexerCustom inherited lexer</strong> In my project UI brushup of
+OpenSCAD, I added QScintilla editor and used its CPP lexer class
+QsciLexerCPP for syntax highlighting. It worked fine. But after testing,
+some issues arises as SCAD is small and simple language as compared to
+CPP. In this project, we found the solution of the problem - Writing a
+lexer specifically for SCAD language. QScintilla library has a class
+QsciLexerCustom
+(http://pyqt.sourceforge.net/Docs/QScintilla2/classQsciLexerCustom.html)
+which can be used as a base class for new language lexers. The advantage
+of using this class is that it doesn't require to make any change in
+QScintilla code or to re-compile it. This will be inherited by our new
+class for Scad lexer and its virtual functions will be redefined.</p>
+<p><strong>Defining style index for SCAD language</strong> SCAD language includes
+various categories of keywords including mathematical functions, solid
+primitives as defined: <a href="http://www.openscad.org/cheatsheet/">http://www.openscad.org/cheatsheet/</a> ,Operators,
+Numbers, Comments - single line as well as multiline, single quoted and
+double quoted strings, parenthesis and variable names. The lexer firstly
+requires to index the styles of different keywords for the purpose of
+syntax highlighting using functions of qsciLexerCustom. This indexing
+can be done using an enum as <code></p>
+<p><code>enum {</code>
+<code>Default = 0</code>
+<code>Keyword = 1</code>
+<code>Comment = 2</code>
+<code>Operator = 3</code>
+<code>}</code></p>
+<p></code></p>
+<p><strong>Syntax Highlighting</strong> Syntax highlighting is very important feature of
+an editor as it improves the readability of the code and context of
+text. QScintilla editor in OpenSCAD as used CPP lexer, caused problems
+in highlighting as <a href="https://github.com/openscad/openscad/issues/1172">https://github.com/openscad/openscad/issues/1172</a>
+Writing lexer for SCAD language will solve such problems. For this,
+different functions for highlighting of keywords, operators, numbers,
+mathematical functions etc will be defined in the lexer.
+For Example
+<code> void highlightKeywords(const QString &amp;source, int start){</p>
+<p><code>foreach(QString word, keywordsList) {    //iterate keywords</code>
+<code>if(source.contains(word)) {</code>
+<code>int p = source.count(word);    // consider joining</code>
+<code>int index = 0;    // begin to consider the indices</code>
+<code>while(p != 0) {</code>
+<code>int begin = source.indexOf(word, index);    //consider an index entry</code>
+<code>index = begin+1;    //give point of reference for next iteration</code>
+<code>startStyling(start + begin);    //begin to style with an index entry</code>
+<code>setStyling(word.length(), Keyword);    //for the length of a given style word.length Keyword</code>
+<code>startStyling(start + begin);    //finish styling</code>
+<code>p--;</code>
+<code>}</code>
+<code>}</code>
+<code>}</code></p>
+<p>}</p>
+<p></code> As shown, the function is using respective style index 'Keyword'
+for styling. The complete DEMO for keyword highlighting is:
+<a href="https://github.com/shaina7837/Scad-Lexer-demo">https://github.com/shaina7837/Scad-Lexer-demo</a></p>
+<p><strong>Different Color scheme</strong> Not every color suits to everyone. People
+like to have choices specially in case of colors, so it is very
+important to have different color schemes as options in preferences to
+be selected by the user. This feature helps to improve the usability of
+software a lot. It will require checking the selected scheme and define
+style index accordingly.</p>
+<p><strong>Issue #1108 Customizable Icon set</strong> I liked the idea that user may
+add its own icon set for toolbars. It will require user to add his/her
+icons in a file such as icons/icon.svg and openscad will fetch and put
+them onto toolbar instead adding them into mainwin.cc code directly.</p>
+<p><strong>Issue #1056 Toolbar Buttons</strong> Toolbars requires more icons as
+demanded here <a href="https://github.com/openscad/openscad/issues/1056">https://github.com/openscad/openscad/issues/1056</a></p>
+<p><strong>Issue #1172 Syntax highlighting: # affects the whole line</strong> As
+presently, qscintilla uses CPP lexer, so it takes the whole line as
+preprocessor directive, started with #. With writing lexer specifically
+for SCAD language, this problem will be tackled.</p>
+<p><strong>Issue #905 AutoComplete/ Calltips for QScintilla Editor</strong> Many times,
+a programmer makes mistakes while writing syntax which can cause
+irritable errors and reduce productivity. In this case, auto completion
+or call tips helps a lot, which is considered as a great feature of an
+editor. As a first step, only the functions defined in the scad language
+will be added to be shown in call tips. Further after the feedback of
+the community, names of the modules related to current project can be
+added.</p>
+<p><strong>Issue #1075 Add multi-line, nested list '[' ']' indentation and
+tree folding to QScintilla Editor</strong> The feature of multi line, nested
+indentation and folding can be added into the scad lexer using functions
+like setFoldAtElse(), setFoldComments() etc.</p>
+<p><strong>Issue #915 Scintilla Editor issues</strong> The remaining issues such as
+auto scroll to error line after compilation, convert tab into spaces and
+highlighting the folded region will be solved.</p>
+<h2 id="milestones">MILESTONES</h2>
+<p><strong>Community Bonding Period</strong></p>
+<ul>
+<li>Talk to the community Members</li>
+<li>Start reading understand existing code of scintillalexer of openscad</li>
+</ul>
+<p><strong>Week 1(25th May)</strong></p>
+<ul>
+<li>Get started and solving issue #1056 Toolbar buttons</li>
+</ul>
+<p><strong>Week 2(1 june)</strong></p>
+<ul>
+<li>Read and get confortable of qscilexercustom and its base class
+    qscilexer to understand its virtual functions that will be defined
+    in scad lexer</li>
+<li>Start writing scad lexer</li>
+</ul>
+<p><strong>Week 3(8 june)</strong></p>
+<ul>
+<li>List all keywords, operators, mathematical functions, solid
+    primitive functions</li>
+</ul>
+<p>etc of the SCAD language and define their style index.</p>
+<p><strong>Week 4(15 june)</strong></p>
+<ul>
+<li>Start redefining the functions of qscilexercustom in scad lexer</li>
+<li>Define function to color keywords.</li>
+<li>Define function to color comments.</li>
+</ul>
+<p><strong>Week 5(22 june)</strong></p>
+<ul>
+<li>Define function to color Operators.</li>
+<li>Define function to color solid primitive functions</li>
+<li>Define function to color mathematical functions</li>
+</ul>
+<p><strong>Week 6(29 june)</strong></p>
+<ul>
+<li>Define function to color transformation functions.</li>
+<li>Read about existing color scheme code in scintilla editor code in
+    openscad and try to understand how to add those color scheme option
+    through new scad lexer.</li>
+</ul>
+<p><strong>Week 7(6 july)</strong></p>
+<ul>
+<li>Define various color scheme options for users.</li>
+<li>Read and improve code.</li>
+</ul>
+<p><strong>Week 8(13 july)</strong></p>
+<ul>
+<li>Solve scintilla related issues listed in issue #915</li>
+<li>Add autocomplete feature solving issue #905</li>
+</ul>
+<p><strong>Week 9, 10(20 july)</strong></p>
+<ul>
+<li>Find a way to fetch icons from a icons file rather than directly
+    coded in mainwin.cc</li>
+<li>Solve issue #1108 i.e. allow users to add its own icon set.</li>
+</ul>
+<p><strong>Week 11, 12(23 july)</strong></p>
+<ul>
+<li>Solve issues #1075 and #1172</li>
+</ul>
+<p><strong>Week 13(6 August)</strong></p>
+<ul>
+<li>Solve the remaining errors.</li>
+<li>Get feedback by mentors and other community members</li>
+<li>Test on various platforms</li>
+</ul>
+<p><strong>Week 14(20 August)</strong></p>
+<ul>
+<li>Improve code and testing before final submission of code.</li>
+</ul>
+<h2 id="deliverable">Deliverable</h2>
+<ul>
+<li>A special lexer for SCAD language with syntax highlighting and other
+    features.</li>
+<li>A file to add custom icons by users.</li>
+<li>More icons for toolbar</li>
+<li>Improvement of scintilla editor by removing its issues.</li>
+</ul>
+<h2 id="communication">Communication</h2>
+<h3 id="time-availability">Time Availability</h3>
+<p>I will be available for 40 to 48 hours / week, can spend more, if
+required.</p>
+<h3 id="emailmailing-list">Email/Mailing list</h3>
+<p>My email address is iamshainasabarwal@gmail.com, I have subscribed to
+both brlcad and openscad mailing lists. I have been in contact through
+these mailing lists with other community members.</p>
+<h3 id="real-time-contact">Real-Time Contact</h3>
+<p>I can interact with the mentors through OpenSCAD's IRC
+channel(#openscad) on freenode. My nickname on IRC is shaina. I am also
+comfortable with talking to my mentor via telephone if need arises.
+<strong>Contact Number</strong>: +91 7837091321</p>
+<h3 id="code-review">Code Review</h3>
+<p>I already has commit access to openscad respository at
+<a href="https://github.com/openscad/openscad">https://github.com/openscad/openscad</a>. I will push my code in separate
+branch of same repository and send pull request so that mentors can
+review my code and then merge it up in master branch after testing.</p>
+<h2 id="why-openscad">Why OpenSCAD?</h2>
+<p>OpenSCAD is an open source CAD software application used to make 3D
+solid models. It has various applications in mechanical, civil,
+electronics and designing hardware tools for research and education
+purposes. The software has potential to be used by the large number of
+professionals and hardware developers. I have already contributed in
+this community and worked in UI brushup of OpenSCAD as my last year GSOC
+project. I have very good interaction with mentors and community members
+of the community as I also attended Reunion at California in 2014. I
+feel very confortable to discuss and come up with new ideas.</p>
+<h2 id="why-scad-lexer-project">Why SCAD lexer project?</h2>
+<p>I came up with this idea of adding scad lexer as gsoc project, because
+last time, I, in my project 'UI brushup of OpenSCAD' used QsciLexerCPP
+as a base class for SCAD lexer class. But as the CPP is very large
+language as compared to SCAD so it is causing various issues, which I
+came to know later. In this year, I want to solve all those issues by
+writing a lexer specifically for scad lexer.</p>
+<h2 id="why-me">Why Me?</h2>
+<p>As we have very less number of women in technical study as compared to
+men, I want to be the part of technical community and spread awareness
+about women in tech in our society. I learnt a lot being the part of
+this community and want to contribute more through this program and
+afterwards. I also shared idea of improving the website of OpenSCAD but
+that couldn't be the part of this project, so I have plans to do so
+after completion of this project.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

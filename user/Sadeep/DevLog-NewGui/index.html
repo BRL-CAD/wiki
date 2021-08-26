@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Sadeep/DevLog-NewGui/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>DevLog NewGui - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Sadeep/DevLog-NewGui.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#before-bonding-period" class="nav-link">Before Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#bonding-period" class="nav-link">Bonding Period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#may-21" class="nav-link">May 21</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-period" class="nav-link">Coding Period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#may-27-may-31" class="nav-link">May 27 - May 31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-1" class="nav-link">June 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-2" class="nav-link">June 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-3" class="nav-link">June 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-4" class="nav-link">June 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-5" class="nav-link">June 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-6" class="nav-link">June 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-8-14" class="nav-link">June 8-14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-15" class="nav-link">June 15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-23" class="nav-link">June 23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-24" class="nav-link">June 24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-25" class="nav-link">June 25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-26" class="nav-link">June 26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-27" class="nav-link">June 27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>year is 2019</p>
+<h1 id="before-bonding-period">Before Bonding Period</h1>
+<ul>
+<li>Create a Simple Qt Ui for a CAD software (no functionalities)</li>
+<li>Built from sources and run</li>
+<li>Learnt some Tcl/Tk</li>
+<li>Studied a CoreInterfaces</li>
+<li>Studied and made modifications to RT^3 Qt project</li>
+</ul>
+<h1 id="bonding-period">Bonding Period</h1>
+<h2 id="may-21">May 21</h2>
+<ul>
+<li>Completed the <a href="/wiki/Summer_of_Code/Checklist">Checklist</a></li>
+</ul>
+<h1 id="coding-period">Coding Period</h1>
+<h2 id="may-27-may-31">May 27 - May 31</h2>
+<ul>
+<li>I am trying to understand how things are happening in BRL-CAD.
+    Things aren't very easily understandable. So I am doing things like
+    breaking and studying the function call stack to understand what
+    happens underneath. I need to do this because I believe I should
+    implement displaying of geometry first since the existing thing in
+    RT^3 project (ray tracing) is not sufficient even for development.</li>
+<li>Now understand how different DMs display Vlists using OpenGL or
+    Window system methods.</li>
+<li>I'm studying Vlist creation.</li>
+</ul>
+<h2 id="june-1">June 1</h2>
+<ul>
+<li>Vlist obtained for a single solid in RT^3 project</li>
+</ul>
+<h2 id="june-2">June 2</h2>
+<ul>
+<li>Added QOpenGLWidget to the application. Line creation is not
+    straight-forward like in the earlier OpenGL version which existing
+    OpenGL DMs use in BRL-CAD. glBegin and glEnd are have been
+    deprecated and now removed in QOpenGLWidget. Studying the new
+    method.</li>
+<li>Added the deprecated component QGLWidget instead of QOpenGLWidget
+    since the later doesn't support the methods used in BRL-CAD.</li>
+<li>Studied OpenGL API</li>
+</ul>
+<h2 id="june-3">June 3</h2>
+<ul>
+<li>Implemented displaying an object on the QGLWidget using wireframes</li>
+</ul>
+<h2 id="june-4">June 4</h2>
+<ul>
+<li>Experimented with some keyboard controls to move around in the scene</li>
+</ul>
+<h2 id="june-5">June 5</h2>
+<ul>
+<li>Abandoning ft_plot, need to implement Facetize.</li>
+<li>Obtained NonManifoldGeometrys for a db.</li>
+</ul>
+<h2 id="june-6">June 6</h2>
+<ul>
+<li>Working on trying to use Facetize for DM.</li>
+</ul>
+<h2 id="june-8-14">June 8-14</h2>
+<ul>
+<li>No implementations, following qt tutorials.</li>
+</ul>
+<h2 id="june-15">June 15</h2>
+<ul>
+<li>Laptop broke</li>
+<li>I learnt some AutoCAD during the days my laptop wasn't working.</li>
+</ul>
+<h2 id="june-23">June 23</h2>
+<ul>
+<li>Started a new project QtNewGUI rather than doing the QtGUI as per
+    Daniel's suggestion.</li>
+<li>Started creating toolbox. (still can't work in my laptop well)</li>
+</ul>
+<h2 id="june-24">June 24</h2>
+<ul>
+<li>Got laptop repaired.</li>
+<li>Added GraphicsViewOpenGL and placed it as the central widget.</li>
+</ul>
+<h2 id="june-25">June 25</h2>
+<ul>
+<li>Opening DB, displaying geometry names in Objects list.</li>
+<li>Tried to configure BRL-CAD for windows (either of VS or Clion)
+    failed.</li>
+</ul>
+<h2 id="june-26">June 26</h2>
+<ul>
+<li>Geometry is displayed in QtNewGUI graphics screen now.</li>
+<li>Tried to configure BRL-CAD for windows (either of VS or Clion)
+    failed.</li>
+</ul>
+<h2 id="june-27">June 27</h2>
+<ul>
+<li>Saving database to a file.</li>
+<li>Tried to configure BRL-CAD for windows (either of VS or Clion)
+    failed.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

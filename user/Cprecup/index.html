@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Cprecup/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Cprecup - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Cprecup.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#personal-information" class="nav-link">Personal information</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#about-me" class="nav-link">About me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#background-information" class="nav-link">Background information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#project-information" class="nav-link">Project information</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#project-title" class="nav-link">Project title</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brief-project-summary" class="nav-link">Brief project summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#detailed-project-description" class="nav-link">Detailed project description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#links-to-any-code-or-algorithms-i-intend-to-use" class="nav-link">Links to any code or algorithms I intend to use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-schedule" class="nav-link">Development schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#describe-time-availability" class="nav-link">Describe time availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-you" class="nav-link">Why you?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-progress" class="nav-link">Development progress</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Project proposal for <a href="/wiki/Visualizing_Constructive_Solid_Geometry_%28CSG%29">Visualizing Constructive Solid
+Geometry</a>,
+GSoC 2012</p>
+<h1 id="personal-information">Personal information</h1>
+<h2 id="about-me">About me</h2>
+<ul>
+<li>Name: Cristina Precup</li>
+<li>E-mail address: cp.cristina.pre.cup@gmail.com</li>
+<li>IRC username: cristina</li>
+</ul>
+<p>I am in my third year as a student of Software Engineering at the
+Babeș-Bolyai University (Cluj-Napoca, Romania).</p>
+<h2 id="background-information">Background information</h2>
+<ul>
+<li>A successful attendance in the GSoC 2011 during which I worked on
+    the “Netgen: Constructive Solid Geometry in 2D” project for the TU
+    Wien organization. The goal was to create an extension for the
+    Netgen mesh generator that would allow the user to construct complex
+    2d shapes starting from some basic shapes, just by applying boolean
+    operations over them. Apart from the implementation of geometric
+    construction, there was also needed a parser for the input file
+    format defined. The programming language used was C++ and for the
+    geometric part the Open Cascade library. More information can be
+    found on my <a href="http://www.iue.tuwien.ac.at/cse/wiki2011/doku.php?id=wiki:blog:cristina">wiki
+    page</a></li>
+</ul>
+<p>Tags: C/C++, OpenCascade, Netgen, Doxygen</p>
+<ul>
+<li>Internship at National Instruments where I’ve developed an
+    application that would process images in order to classify the
+    objects in it and reconstruct a LabView schema</li>
+</ul>
+<p>Tags: C++, OpenCV, LabView</p>
+<ul>
+<li>For my thesis I am working on a scientific computing project
+    developed in C++ as well. Staying in touch with the TU Wien
+    organization made the possibility of developing my thesis in
+    collaboration with the administrator of the organization.</li>
+</ul>
+<p>Tags: C++, Qt, ViennaGrid, ViennaSHE</p>
+<hr />
+<h1 id="project-information">Project information</h1>
+<h2 id="project-title">Project title</h2>
+<p>Visualizing Constructive Solid Geometry (CSG)</p>
+<h2 id="brief-project-summary">Brief project summary</h2>
+<p>BRL-CAD already offers the possibility of generating geometry
+hierarchies corresponding to <em>.g</em> databases but this can be eventually
+interpreted just by images. However, the purpose of this project is to
+provide more than this: an interactive graph editor that allows the user
+to modify the .g database just by interacting with its displayed graph.</p>
+<p>A hierarchy in Constructive Solid Geometry is shaped as a tree. But this
+is nothing but a directed acyclic graph and thus an automatic graph
+layout API would be useful for representing the structure of the .g
+databases.</p>
+<p>The visual layout will be built with interactive <strong>Tcl/Tk</strong> widgets and
+will make use of graph algorithms to alter the graph structure as well
+as the .g geometry structure as the user modifies the visualized graph.</p>
+<p>In the end, this graph based visualization should be part of <strong>mged</strong>
+and/or <strong>archer</strong>.</p>
+<h2 id="detailed-project-description">Detailed project description</h2>
+<p>In my opinion, this interactive graph editor would be very useful for
+the user. It would provide the ability to modify the .g geometry in a
+more intuitive, fast and user-friendly way. Moreover, construction flaws
+could be discovered by the representation of the CSG tree and imediately
+alter it.</p>
+<p>Firstly, I'd extract the corresponding BRL-CAD's geometry hierarchy.
+After some familiarization with the part of the source code that
+concerns me, I've got an idea of where I should try to get this
+information from. There is this file,</p>
+<p><em><code>brlcad/src/mged/bool_rewrite.c</code></em></p>
+<p>which has methods that might be useful in accessing the boolean tree.</p>
+<p>Secondly, I intend to format this data structure such that it can be fed
+to a graph layout API. Here I'm thinking of using the tool <strong>GOBLIN</strong>.
+It's a C++ class library which will help me in handling the boolean tree
+represented internally as a graph. Two of the file formats that it can
+import are Dimacs and Steinlib so I could format the geometry's boolean
+tree into one of these file formats. In this way, afterwards I could
+handle the graph. Another method of formatting the boolean tree would be
+to build the graph from scratch and then feed it to GOBLIN.</p>
+<p>My Tcl/Tk lack of knowledge can be enriched within the next step in an
+effective way: GOBLIN has its GUI <strong>GOBLET</strong> that, among other things,
+it can be used to edit graphs. This could help me understand how the C++
+data can be graphically represented with Tcl/Tk (the editor code for
+GOBLIN is written in the Tcl/Tk scripting language).</p>
+<p>Further on, the output of the graph generator GOBLIN has to be used in
+the interactive visual layout. This will be implemented in Tcl/Tk and
+implies two phases:</p>
+<ol>
+<li>implement it as a stand-alone application</li>
+<li>hook it into mged and/or archer -&gt; this needs advanced knowledge
+    in using capabilities of mged/archer for their widgets</li>
+</ol>
+<p>(A second approach was discussed about the implementation of the visual
+layout by using Qt. I chose to work with Tcl/Tk because althought I have
+to learn the capabilities of mged/archer, I can use them eventually in
+developing the graph editor.)</p>
+<p>Actions of the user upon the boolean tree represented graphically
+include changing the location of a node in the graph, excluding nodes
+from the graph.</p>
+<p>Remarks:</p>
+<ul>
+<li>To this part are to be added other actions available for the user.</li>
+<li>Mockups are to be included in a future version of the proposal.</li>
+</ul>
+<h2 id="links-to-any-code-or-algorithms-i-intend-to-use">Links to any code or algorithms I intend to use</h2>
+<ul>
+<li>GOBLIN graph library:</li>
+</ul>
+<p>:# project page: <a href="http://goblin2.sourceforge.net/">http://goblin2.sourceforge.net/</a></p>
+<p>:# source code repository: <a href="http://sourceforge.net/projects/goblin2/">http://sourceforge.net/projects/goblin2/</a></p>
+<ul>
+<li>BRL-CAD mged/archer:</li>
+</ul>
+<p>source code repository: <a href="http://sourceforge.net/projects/brlcad/">http://sourceforge.net/projects/brlcad/</a></p>
+<h2 id="deliverables">Deliverables</h2>
+<ol>
+<li>Feed the geometry hierarchy to GOBLIT</li>
+<li>Create the interactive visual layout for the boolean trees</li>
+<li>Eventually, hook it into mged/archer</li>
+</ol>
+<h2 id="development-schedule">Development schedule</h2>
+<ol>
+<li>April 23 - May 20 (community bonding period)<ul>
+<li>Decide how to extract the data about the geometry hierarchy</li>
+<li>Further study of the way in which I will represent the C++ data
+    into Tcl/Tk graphics</li>
+<li>Further study of potential user actions for the interactive
+    graph visualization tool</li>
+<li>Clarify the approach followed, the implementation needed to be
+    done, and the future tasks</li>
+</ul>
+</li>
+<li>May 21 - June 03 (coding period start)<ul>
+<li>Extract BRL-CAD's geometry hierarchy</li>
+</ul>
+</li>
+<li>June 04 - June 17<ul>
+<li>Format the data extracted so that it can be fed to GOBLIT
+    (either by implementing from scratch or using one of the two
+    file formats Dimacs or Steinlib)</li>
+</ul>
+</li>
+<li>June 18 - June 24<ul>
+<li>wrap graph algorithms of GOBLIN needed for handling the boolean
+    tree</li>
+<li>start representing the C++ data into Tcl/Tk graphics</li>
+</ul>
+</li>
+<li>June 25 - July 12<ul>
+<li>continue representing the transition from C++ data to Tcl/Tk
+    graphics</li>
+<li>start working on the interactive capabilities of the visual
+    layout</li>
+</ul>
+</li>
+<li>July 13 - July 26<ul>
+<li>continue working on the interactive side of the project</li>
+<li>study the hooking into mged/archer</li>
+</ul>
+</li>
+<li>July 27 - August 17<ul>
+<li>integrate the application into mged/archer</li>
+<li>bugs tracking: make sure that the work is flawless by testing
+    and carefully checking if there are any errors</li>
+<li>document the source code</li>
+</ul>
+</li>
+<li>August 18 - August 24<ul>
+<li>buffer for unexpected delay</li>
+</ul>
+</li>
+</ol>
+<h2 id="describe-time-availability">Describe time availability</h2>
+<p>I will dedicate 40 hours/week, but will be capable of expanding this
+limit.</p>
+<h3 id="known-commitments">Known commitments</h3>
+<p>Between June 11 and July 1 I will have my exams session. Although this
+represents an interval of three weeks, I have to take only three exams.
+Therefore, I will still have time available for maintaining the pace of
+the development.</p>
+<p>Apart from this, sometime during my summer holiday (not necessarily
+during GSoC) I will have to participate in a three week internship (I
+have been in the same situation in the previous year, GSoC + a three
+week internship and I tackled the situation just fine). The problem with
+my university is that it won’t accept a GSoC participation as an
+internship so I need to participate in one separately. However, I will
+still consider GSoC as a primary focus because it is the most exciting
+thing for me. During these three weeks I could work up to 30 hours/week
+but, as I explained above, when in need I can invest a larger number of
+hours dedicated to work (this would be in order to compensate the ones
+lost during the internship).</p>
+<h2 id="why-brl-cad">Why BRL-CAD?</h2>
+<p>I chose BRL-CAD because I think it's great to work on such a powerful
+Open Source modelling system.</p>
+<h2 id="why-you">Why you?</h2>
+<p>The reason why I want to apply for the "Visualizing CSG" project is
+because I enjoyed working on the previous GSoC project which contributed
+in forming a CSG background. I am aware that it's not the type of
+knowledge mostly needed for this project but I hope that my C++
+experience along with the desire to learn new interesting things (such
+as work with Tcl/Tk, GOBLIN, see how mged/archer are implemented) will
+suite the requirements for it.</p>
+<h1 id="development-progress">Development progress</h1>
+<p>Information regarding my general progress can be found
+<a href="GSoC2012_progress/">here</a>.</p>
+<p><strong>Midterm overview of milestones</strong></p>
+<p><em>Summary:</em></p>
+<ul>
+<li>Studied the two potential graph libraries: <strong>Adaptagrams</strong> and
+    <strong>GOBLIN</strong>. Adaptagrams was eventually chosen to work with.</li>
+</ul>
+<p>:* Integrated the Adaptagrams' <strong>libavoid</strong> library into BRL-CAD (see
+the files: <em>misc/CMake/FindADAPTAGRAMS.cmake</em>,
+<em>src/libged/CMakeLists.txt</em>, and <em>src/libged/Makefile.am</em>) -- gained
+knowledge in working with cmake configurations and in how they are set
+inside BRL-CAD.</p>
+<p>:* Worked on the <em>model</em> part of this project. It can be found in the
+<em>src/libged/dag.cpp</em> file. The accomplished goals so far are:</p>
+<p>:** traverse a geometry</p>
+<p>:** identify its objects based on their type: solid / comb</p>
+<p>:** for each such object, add a shape (Avoid::ShapeRef) to the graph
+(internally, by attaching it to a router (Avoid::Router))</p>
+<p>:** there are 3 hash table structures corresponding to each type of
+objects (solid, regions and groups (the last two are subtypes of comb))</p>
+<p>:** depending on the type of object do one of these things:</p>
+<p>:*** for a solid: add a rectangle to the graph</p>
+<p>:*** for a comb: add a rectangle along with connections between this
+shape and the ones belonging to its "subtree"</p>
+<p>:** assign IDs to each object. This helped in avoiding node
+duplications which rose when an object was first considered a solid and
+then, later, a comb.</p>
+<p><em>Updated goals for the next period:</em></p>
+<ul>
+<li>Milestone 1: create a user-visible feature in Archer/MGED, i.e., a
+    command (possibly, called "<strong>igl</strong>") that opens a window showing the
+    graph for the currently displayed geometry.</li>
+<li>Milestone 2: align the graph's nodes and structure it.</li>
+<li>Milestone 3: work on the interactive capabilities of the visual
+    layout: commands such as <strong>delete</strong> and <strong>move</strong> for nodes.</li>
+<li>Milestone 4: track bugs; make tests. Document the source code.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

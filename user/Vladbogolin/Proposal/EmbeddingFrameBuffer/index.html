@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Vladbogolin/Proposal/EmbeddingFrameBuffer/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Personal Information - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Vladbogolin/Proposal/EmbeddingFrameBuffer.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#brief-background-info" class="nav-link">Brief background info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#project-title" class="nav-link">Project Title</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brief-project-summary" class="nav-link">Brief project summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#detailed-project-description" class="nav-link">Detailed project description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#testing" class="nav-link">Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#links-to-any-code-or-algorithms-you-intend-to-use" class="nav-link">Links to any code or algorithms you intend to use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#deliverables-specific-measurable-goals" class="nav-link">Deliverables (specific, measurable goals)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-schedule" class="nav-link">Development schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#describe-time-availability-40-hoursweek-assumed" class="nav-link">Describe time availability (40+ hours/week assumed)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-me" class="nav-link">Why me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="personal-information">Personal Information</h1>
+<ul>
+<li>Name: Bogolin Simion Vlad</li>
+<li>E-mail address: vladbogolin@gmail.com</li>
+<li>IRC username: vladbogo</li>
+</ul>
+<h2 id="brief-background-info">Brief background info</h2>
+<p>I am a fourth year student at "Politehnica" University of Bucharest,
+Computer Science and Engineering Department. The main areas that I am
+interested in are: algorithms, computer graphics and operating systems.</p>
+<p>My skills consist in a strong background in algorithms and data
+structures. As it comes to programming languages I prefer C/C++ and
+Java, in which I also have more experience (about 2 years in Java and
+more than 6 years with C). Apart C/C++ and Java, I have experienced the
+next programming languages: Python, Haskell, Scheme, Bash Scripting,
+Matlab, Assembly language, Clips, Prolog. When it comes to versioning
+tools, I am quite familiar with Git (I have developed several school
+team projects using it) and SVN.</p>
+<h1 id="project-information">Project Information</h1>
+<h2 id="project-title">Project Title</h2>
+<p>Embedding a framebuffer window</p>
+<h2 id="brief-project-summary">Brief project summary</h2>
+<p>The purpose of this project is to create a new cross platform Qt
+framebuffer and embedding a framebuffer window in the actual Qt display
+manager. I have chosen this project in order to have a fully functional
+display manager in Qt.</p>
+<h2 id="detailed-project-description">Detailed project description</h2>
+<p>BRL-CAD displays its raytracing output as it is generated by using a
+framebuffer. Currently BRL-CAD has specific framebuffers for X11 Opengl
+(ogl), Windows OpenGL (wgl), and raw X11 (X), in addition to a variety
+of more special purpose and experimental framebuffers. The project aims
+to create a new Qt framebuffer that would be fully integrated with mged
+and archer and also with the actual Qt display manager. Even though
+embedding a framebuffer window is one of the main purposes of the
+project this will not interfere in any way with having a completely
+independent 2D Qt framebuffer.</p>
+<h3 id="framebuffer-features">Framebuffer features</h3>
+<ul>
+<li>per-scan-line drawing</li>
+<li>good drawing performance</li>
+<li>keyboard and mouse input</li>
+</ul>
+<p>In order to have a completely functional framebuffer the above features
+should be implemented. During the whole project I will have in mind
+performance so that the framebuffer could provide a good response time.</p>
+<h3 id="implementation-details">Implementation details</h3>
+<ul>
+<li>Step 1: Open/Close - Initializing all necessary structures, setting
+    up the state information data such as parent window, colormap,
+    width, height / free all resources</li>
+<li>Step 2: Read/Write to the framebuffer</li>
+<li>Step 3: Read/Write colormap to framebuffer</li>
+<li>Step 4: Flush</li>
+<li>Step 5: Embedding a framebuffer window (overlay, interlay, underlay)
+    is strongly related to raytracing. Actually, in this case there is
+    another BRL-CAD program that mget lunches (rt) that does the actual
+    raytrace. Also a framebuffer refresh is necessary to perform this
+    action. Doing this in Qt should be very similar. When this feature
+    is called, the actual raytrace must be done and the framebuffer used
+    by Qt has to be refreshed.</li>
+</ul>
+<h2 id="testing">Testing</h2>
+<p>In order to make a good project, writing code is just not enough so I
+will highly focus on testing. First of all I plan to do a step by step
+test, meaning that after every new feature implemented, I will test it.
+After the project is implemented (hopefully with at least 2-3 weeks
+before the deadline) I will focus just on testing.</p>
+<p>Testing will consist in creating and loading different models and
+raytracing the models to make sure everything works as expected and has
+a good response time.</p>
+<h2 id="links-to-any-code-or-algorithms-you-intend-to-use">Links to any code or algorithms you intend to use</h2>
+<p>Below can be found some general information links:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Framebuffer">http://en.wikipedia.org/wiki/Framebuffer</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Ray_tracing_%28graphics%29">http://en.wikipedia.org/wiki/Ray_tracing_%28graphics%29</a></li>
+</ul>
+<p>but the main resource I am going to use is the actual code from libfb.</p>
+<h2 id="deliverables-specific-measurable-goals">Deliverables (specific, measurable goals)</h2>
+<p>At the end of the project a fully functional Qt display manager (with
+all required features) should be delivered. In order to achieve this a
+2D Qt framebuffer will be implemented.</p>
+<h2 id="development-schedule">Development schedule</h2>
+<ul>
+<li>Community bonding: discuss with mentors, research, start
+    implementing</li>
+<li>Week 1: opening/closing the framebuffer (fb_open, fb_close)</li>
+<li>Week 2 - 4: implementing the libfb functions/ testing as they are
+    done.</li>
+<li>Week 5: testing to make sure that everything works as expected.
+    Also, preparing for midterm evaluation.</li>
+<li>Week 6 - finishing implementing the libfb functions (at least
+    fb_read, fb_write, fb_flush, fb_poll, fb_rmap, fb_rmap should
+    be implemented at this time)</li>
+<li>Week 7-8: make the display manager use the framebuffer - open the
+    new framebuffer so that the display manager can use it, implement
+    the open_existing function</li>
+<li>Week 8-9: integrate the framebuffer with the rt command so that the
+    raytracing can be done (modify pkg_open and rem_open so that the
+    framebuffer can be used)</li>
+<li>Week 10: testing the embedding of a framebuffer window in the
+    display manager</li>
+<li>Week 11-12: more testing and time for unexpected problems.</li>
+<li>Week 13: final testing and preparing the final evaluation</li>
+</ul>
+<p>The above schedule is orientative. I tried making it as realistic as
+possible and reserved time for unexpected problems that might appear.</p>
+<h1 id="describe-time-availability-40-hoursweek-assumed">Describe time availability (40+ hours/week assumed)</h1>
+<p>The starting coding period overlaps a bit with my exam period (I will
+probably have one or two exams in the last weeks of May), but this
+shouldn’t be an issue: if necessary I will start coding earlier so that
+everything goes according to schedule. Also, in July I will have my
+final paper presentation (one or two days). This shouldn't be an
+inconvenient because I plan to have my final paper done until the coding
+period starts. Apart from this, I don’t have any other commitments.</p>
+<h1 id="why-brl-cad">Why BRL-CAD?</h1>
+<p>First off all, I started working with BRL-CAD last year and I really
+enjoyed the project and the community. I learned a lot of new things,
+got in touch with amazing people and I want to have the same experience
+again.</p>
+<h1 id="why-me">Why me?</h1>
+<p>I don’t like having work done partially so I would like to add new
+features to the project I started last year so that it would be fully
+functional.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

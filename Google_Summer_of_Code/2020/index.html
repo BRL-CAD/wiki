@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2020/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>GSoC 2020 With BRL-CAD - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2020.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2020-with-brl-cad" class="nav-link">GSoC 2020 With BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accepted-projects" class="nav-link">Accepted Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#opencl-gpgpu-raytracing" class="nav-link">OpenCL GPGPU Raytracing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#openscad-gui-text-editors-interactivity-enhancements" class="nav-link">OpenScad GUI &amp; Text Editor’s Interactivity Enhancements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-brl-cad-application" class="nav-link">New BRL-CAD Application</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#librecad-3-gui-revamp" class="nav-link">LibreCAD 3 GUI Revamp</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2020-with-brl-cad">GSoC 2020 With BRL-CAD</h1>
+<p><strong>BRL-CAD was accepted as an <a href="https://summerofcode.withgoogle.com">umbrella mentoring
+organization</a> for the Google Summer
+of Code!</strong></p>
+<h1 id="accepted-projects">Accepted Projects</h1>
+<h2 id="opencl-gpgpu-raytracing">OpenCL GPGPU Raytracing</h2>
+<ul>
+<li>This project is to introduce a GPGPU pipeline into BRL-CAD using
+    OpenCL for existing primitives and parallelize them for faster
+    computation.</li>
+<li>Org: BRL-CAD</li>
+<li>Student: <a href="/wiki/user/rishabhsuthar32">Rishabh Suthar</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#4537636858888192">Abstract</a></li>
+<li><a href="/wiki/user/rishabhsuthar32/GSoC20/Project">Project Plan</a></li>
+<li><a href="/wiki/user/rishabhsuthar32/GSoC20/Log">Dev Log</a></li>
+</ul>
+<h2 id="openscad-gui-text-editors-interactivity-enhancements">OpenScad GUI &amp; Text Editor’s Interactivity Enhancements</h2>
+<ul>
+<li>The goal of this project will be to add different GUI &amp; Text Editor
+    Enhancements like User-Defined Shortcut Configuration, jump to Error
+    Location from Console Box, a new ‘Error Log’ dockable widget and
+    allowing the users to scroll the values/numbers via mouse.</li>
+<li>Org: OpenSCAD</li>
+<li>Student: <a href="/wiki/user/Hrishabh">Hrishabh Sharma</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6337400843796480">Abstract</a></li>
+<li><a href="/wiki/user/Hrishabh/GSoC20/proposal">Project Plan</a></li>
+<li><a href="/wiki/user/Hrishabh/GSoC20/logs">Dev Log</a></li>
+</ul>
+<h2 id="new-brl-cad-application">New BRL-CAD Application</h2>
+<ul>
+<li>MGED and Archer have been created a long time ago with the
+    technology available at that time. The project aims to create a new
+    application to encapsulate the tools and functions of BRL-CAD.</li>
+<li>Org: BRL-CAD</li>
+<li>Student: <a href="/wiki/user/Sadeep">Sadeep Weerasinghe</a></li>
+<li><a href="/wiki/user/Sadeep/DevLog-2020">Dev Log</a></li>
+</ul>
+<h2 id="librecad-3-gui-revamp">LibreCAD 3 GUI Revamp</h2>
+<ul>
+<li>Revamp of the GUI of LibreCAD 3 by shifting the GUI window
+    management from Lua to C++ and addition of a Lua GUI API.</li>
+<li>Org: LibreCAD</li>
+<li>Student: <a href="/wiki/user/Jedi18">Akhil J Nair</a></li>
+<li><a href="https://dokuwiki.librecad.org/doku.php/gsoc:gsoc2020#the_project">Abstract</a></li>
+<li><a href="https://dokuwiki.librecad.org/lib/exe/fetch.php/gsoc:gsoc2020proposal.pdf">Project
+    Plan</a></li>
+<li><a href="https://dokuwiki.librecad.org/doku.php/gsoc:log2020">Dev Log</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/OGV/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Online Geometry Viewer - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/OGV.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#online-geometry-viewer" class="nav-link">Online Geometry Viewer</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#history" class="nav-link">History</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#motivation" class="nav-link">Motivation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#features" class="nav-link">Features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#technical-information" class="nav-link">Technical Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#to-do-list" class="nav-link">To Do List</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="online-geometry-viewer">Online Geometry Viewer</h1>
+<p>Online Geometry Viewer is an online web app, where users can upload,
+view and share 3D CAD models. They can also host these models online,
+can like (love) or comment on them. In a nutshell it can be looked at as
+<strong>a social blogging platform for 3D models</strong>.</p>
+<h2 id="history">History</h2>
+<p>OGV started as a <a href="Google_Summer_of_Code.md">Google Summer of
+Code</a> project in 2013 by Harmanpreet
+Singh. It was written in PHP on server side and HTML, CSS and Javascript
+on the client side. It used MySQL for database. For viewing models in
+web browser a webGL based library called three.js was used. Users could
+upload 3D models and view them in 3D online. After the GSoC 2013 was
+complete, there were discussions at BRL-CAD mailing list regarding
+infrastructure of OGV. It started with moving from vanilla PHP to using
+some framework and then moved towards using nodejs for OGV. Thus in GSoC
+2014, another GSoC project by Inderpreet Singh aimed at moving OGV from
+PHP to nodejs using a full stack framework meteorjs. Few extra features
+mostly regarding making it social were also added.</p>
+<h2 id="motivation">Motivation</h2>
+<p>When we built our initial HTML web pages in 90s we din't have an <img>
+tag. Just a few years back Video was a foreign element added via third
+party plugins. Today images,videos and audio all have become first class
+citizens of the web. HTML 5 has introduced many new members to the
+family. Canvas, WebGL and SVG being few of them. These technologies
+allow us to manipulate and access 2d and 3d graphics right in the
+browser. Today we have incredible power in our hands when it comes to
+handling graphics on web. Even with technologies like WebGL, 3D graphics
+have not yet become a part of our daily web experience. We believe in
+OGV as one of those platforms that will make sharing 3D models on the
+web as normal as sharing videos on youtube or images on flickr.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Real Time:-</strong> Online Geometry Viewer is written using metoerJS
+    which is Real Time by default. Thus if a user comments on your
+    model, it magically gets updated in real time and you can see it
+    without need of any refresh or much delay.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''Authentication &amp; User Profiles<ul>
+<li>Email Verification: Users can easily sign up on the website by
+    just filling out a small form but before they can upload
+    anything, they need to verify their email Id otherwise they get
+    an error. For verification an email is sent to user with a link,
+    clicking on this link completes the verification.</li>
+<li>User Roles: There are currently two kinds of users in OGV, admin
+    and normal. By default any user that signs up is a normal user.
+    One admin user with email id (test@example.com) is automatically
+    created during the first start.</li>
+<li>Profile settings: Users can change their name, add a short bio
+    and a profile picture to their profile. These settings are
+    easily available at a url Root_url/settings where Root_url is
+    as you might have guessed the main url where OGV is hosted.</li>
+</ul>
+</li>
+</ul>
+<p>Login page of Online Geometry Viewer.
+<img alt="" src="/wiki/doc/img/LoginOGV.png" /> Sign Up
+page of Online Geometry Viewer.
+<img alt="" src="/wiki/doc/img/SignupOGV.png" /></p>
+<ul>
+<li><strong>Uploader: -</strong> OGV uses CollectionFS a file handling package
+    available at Atmosphere. Using this package, OGV uploader provides
+    both <em>drag 'n' drop</em> as well as input field for uploading the model
+    files.</li>
+</ul>
+<p><img alt="" src="/wiki/doc/img/UploaderOGV.png" /></p>
+<ul>
+<li><strong>File types supported:-</strong> Currently OGV supports only .g file as
+    input for uploader, in future it will support more of them.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Model Meta:-</strong> Each model can have a representative image, that
+    will be shown in model feed. Along with that it can also have a
+    description that can accompany the image. Users can also change name
+    of the model. This editing option is visible to user immediately
+    after user uploads the model.</li>
+</ul>
+<p><img alt="" src="/wiki/doc/img/ModelmetaOGV.png" /></p>
+<ul>
+<li><strong>Model Feeds: -</strong> The front page of OGV is named as model feed. It
+    consists of all the model posts. A model posts consists of
+    representative image, model description, comments, lovemeter, model
+    name and info about the user who uploaded it. Clicking on
+    representative image takes user to the model viewer page.</li>
+</ul>
+<p><img alt="" src="/wiki/doc/img/ModelfeedOGV.png" /></p>
+<ul>
+<li><strong>File manager:-</strong> Every user has a file manager, where he can see
+    and edit his own models.</li>
+</ul>
+<p><img alt="" src="/wiki/doc/img/FileManagerOGV.png" /></p>
+<ul>
+<li><strong>Model Viewer:-</strong> Model Viewer is a place where user actually sees
+    his models in 3D. He can pan, rotate, zoom in and out and take a
+    good look at model. Here you can also get <strong>embed code for models</strong>
+    which then you can use to show models from OGV in your website.</li>
+</ul>
+<p><img alt="" src="/wiki/doc/img/ModelViewerOGV.png" /></p>
+<h2 id="technical-information">Technical Information</h2>
+<p>As earlier pointed out Online Geometry viewer is built using Meteorjs
+and threejs. Meteorjs handles all the application logic whereas threejs
+handles the rendering part. There have been various other packages that
+have been used from atmospherejs. List of packages can be found in file
+named smart.json in the code.</p>
+<h3 id="directory-structure">Directory Structure</h3>
+<p>At the top level meteor's default coding structure is used for
+separating server code, client code, collections etc. Inside client
+there are two folders one for templates and other views. Templates hold
+the html content while views hold the logic part, the JS content for
+client. All other folders are self-explanatory.</p>
+<h3 id="coding-standards">Coding Standards</h3>
+<p>It has been tried to follow BRL-CAD hacking guide as much as possible
+with exception in callback functions where the curly brackets '{' of the
+function that's being passed as parameter does not start in next line
+(as it's done with other functions).</p>
+<h2 id="to-do-list">To Do List</h2>
+<ul>
+<li>Improve the code, test a lot, find bugs.</li>
+<li>Set up an installation procedure that would ask for admin account's
+    credentials and also other site specific settings.</li>
+<li>Obj files get duplicated when converting from g to obj, need to fix
+    that.</li>
+<li>Show uploading percentage and converting percentage.</li>
+<li>Different modes such as wireframe in model viewer.</li>
+<li>List obj files in a model and an option to choose only few of all
+    the obj files.</li>
+<li>Allow users to change the colors in model viewer.</li>
+<li>Support more file formats.</li>
+<li>Allow search and selective viewing of OBJ models.</li>
+<li>Ask for default account username and password during first run.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Shiv_Charan/gsoc_proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Gsoc proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Shiv_Charan/gsoc_proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-title-automate-reinforcement-process-of-slab-and-footing-in-freecad" class="nav-link">Project Title: Automate Reinforcement Process of Slab and Footing in FreeCAD.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#brief-project-summary" class="nav-link">Brief Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#detailed-project-description" class="nav-link">Detailed Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#current-scenario" class="nav-link">Current Scenario</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#how-to-solve-the-problem" class="nav-link">How to solve the problem?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#future-scope" class="nav-link">Future Scope:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#time-availability" class="nav-link">Time Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-freecad" class="nav-link">Why FreeCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-you" class="nav-link">Why you?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<div style="text-align:center;">
+
+**Automate Reinforcement Process of Slab and Footing in FreeCAD**
+
+</div>
+
+<h2 id="personal-information">Personal Information</h2>
+<p><strong>Name:</strong> Shiv Charan</p>
+<p><strong>Email Address:</strong>shivcharanmt@gmail.com</p>
+<p><strong>Gitter:</strong>ShivCharanSharma</p>
+<p><strong>GitHub:</strong><a href="https://github.com/ShivCharanSharma">https://github.com/ShivCharanSharma</a></p>
+<p><strong>Blog:</strong><a href="https://codebuddy.code.blog/">https://codebuddy.code.blog/</a></p>
+<p><strong>Brief Background Information</strong></p>
+<p>I am a B.Tech. (4th year) student of Computer Science at Guru Nanak Dev
+Engineering College, India. Practiced in writing code in C/C++, Python,
+Java, JavaScript and used Git, Django, Android Development, web
+development, Embedded C.</p>
+<p>I solved an
+<a href="https://github.com/amrit3701/FreeCAD-Reinforcement/issues/10">issue</a>
+with Rebar Addon and here is merged PR:</p>
+<p><a href="https://github.com/amrit3701/FreeCAD-Reinforcement/pull/144"><a href="https://github.com/amrit3701/FreeCAD-Reinforcement/pull/144">https://github.com/amrit3701/FreeCAD-Reinforcement/pull/144</a></a></p>
+<p>I have implemented different types of reinforcement in FreeCAD that can
+be found at :
+<a href="https://github.com/ShivCharanSharma/FreeCAD-Examples"><a href="https://github.com/ShivCharanSharma/FreeCAD-Examples">https://github.com/ShivCharanSharma/FreeCAD-Examples</a></a></p>
+<h2 id="project-information">Project Information</h2>
+<h2 id="project-title-automate-reinforcement-process-of-slab-and-footing-in-freecad">Project Title: Automate Reinforcement Process of Slab and Footing in FreeCAD.</h2>
+<h2 id="brief-project-summary">Brief Project Summary</h2>
+<p>This project is to automate Reinforcement process of slab and footing by
+using the Reinforcement Workbench in FreeCAD. The idea is to create UI
+and functions on top of the current implementation to combine different
+types of Rebars in a single Dialog Box as per the user requirements. For
+example, combine BentShape and Straight Rebars ( or different types of
+rebars) in case of Slab and Footing Reinforcement.</p>
+<h2 id="detailed-project-description">Detailed Project Description</h2>
+<h2 id="current-scenario">Current Scenario</h2>
+<ol>
+<li>To create Reinforcement in a Slab or Footing, user needs to do a lot
+    of work like creating Bent shape rebars, distribution
+    rebars/Straight rebars in slab and Stirrup rebars , UShape rebars,
+    straight rebars in case of footing and perform all calculations
+    involved manually.</li>
+<li>If user decides to make changes in any parameter of Slab/Footing
+    Reinforcement like covers of bentShape or Distribution rebars (int
+    slab) or Covers of Stirrup (in footing), he/she needs to manually
+    adjust Cover and Spacing of all Rebars provided. Doing so manually
+    needs efforts never less than applying Reinforcement from scratch
+    and involves lots of calculations. And obviously, there are going to
+    be a number of Slab/Footing in a building and no one wants to apply
+    Reinforcement to all Slab/Footing manually. So, this is a very time
+    consuming task.</li>
+</ol>
+<div style="margin-left:3.016cm;margin-right:0cm;">
+
+Example: You can see below how the things went wrong after modifying the
+covering of BentShaped rebar.
+
+</div>
+<div style="margin-left:0.635cm;margin-right:0cm;">
+
+![](/wiki/img/Bent_shape_rebar_side_view.png)
+
+</div>
+<div style="margin-left:0.635cm;margin-right:0cm;text-align:center">
+
+Original
+
+</div>
+<div style="margin-left:0.635cm;margin-right:0cm;">
+
+![](/wiki/img/Error_in_one_direction_slab.png)
+
+</div>
+<div style="text-align:center">
+
+After Modifying
+
+</div>
+<div style="margin-left:3.016cm;margin-right:0cm;">
+
+Example: You can see below how the things went wrong after modifying the
+covering of Stirrup (in case of footing).
+
+</div>
+<div style="text-align:center;margin-left:1.27cm;margin-right:0cm;">
+
+![](/wiki/img/Footing_error_img.png)
+
+</div>
+<div style="margin-left:0.635cm;margin-right:0cm;">
+</div>
+<div style="margin-left:0.635cm;margin-right:0cm;">
+
+Example: In case of Slab Reinforcement ( Slab spanning in one direction
+).
+
+</div>
+<div >
+
+<span style="background-color:#ffffff;">To create reinforcement in a
+Slab for </span>slab spanning in one direction
+<span style="background-color:#ffffff;">, user has to do following
+steps:</span>
+
+</div>
+
+<ul>
+<li>Select the face of the slab and create straight rebars (
+    Distribution rebars ).</li>
+</ul>
+<p><img alt="" src="/wiki/img/Config_stright_rebars.png" /></p>
+<div style="text-align:center;">
+
+![](/wiki/img/Stright_rebar_in_Slab_one_drection.png)
+
+</div>
+<div style="text-align:center;">
+
+Output
+
+</div>
+
+<ul>
+<li>To create BentShape rebars, first the user needs to select one of
+    the face, perpendicular to the previously selected face and then
+    calculate ‘Front Cover’ and ‘Top/Bottom’ based on the values of
+    Top/Bottom/Left/Right Cover of the distribution rebars.</li>
+</ul>
+<div style="text-align:center;">
+
+![](/wiki/img/Config_bent_shape_rebars_2.png)
+
+</div>
+<div style="text-align:center;">
+
+Note : Bottom cover, Front cover and Anchor Length value are manually
+calculated values.
+
+</div>
+<div style="text-align:center;">
+
+![](/wiki/img/Slab_spanning_in_one_direction_(isomatric_view).png)
+
+</div>
+<div style="text-align:center;">
+
+Output
+
+</div>
+
+<p>To create upper distribution bars as shown in below figure.</p>
+<ul>
+<li>User will select face perpendicular to face selected for bentShape
+    rebars, then select straight Rebar. Then calculate Front cover, Top
+    cover based on Top/Bottom/Right/left cover of BentShape rebars.</li>
+</ul>
+<p><img alt="" src="/wiki/img/Upper_distribution_rebars_in_slab_one_direction.png" /></p>
+<div style="margin-left:1.27cm;margin-right:0cm;text-align:center;">
+
+Note : Front cover and Top cover are calculated values.
+
+</div>
+
+<ul>
+<li>Then calculate custom spacing for upper distribution rebars.</li>
+</ul>
+<p><img alt="" src="/wiki/img/Custom_spacing_for_upper_distribution_rebars.png" /></p>
+<div style="margin-left:1.27cm;margin-right:0cm;text-align:center;">
+
+Note : Here spacing is Manaully calculated values
+
+</div>
+
+<p>Output:</p>
+<div style="margin-left:2.54cm;margin-right:0cm;">
+
+Repeat steps IV - V for upper distribution rebars on opposite side.then
+final output will be as follows.
+
+</div>
+
+<p><img alt="" src="/wiki/img/Bent_shape_rebar_side_view.png" /></p>
+<p><img alt="" src="/wiki/img/Slab_spaning_in_one_direction_final_output.png" /></p>
+<div style="text-align:center">
+
+Final output&lt;\\div&gt;
+
+<div style="margin-left:2.54cm;margin-right:0cm;">
+</div>
+
+Step for Slab spanning in two directions and for different types of the
+footing will need more manual calculations.
+
+![](/wiki/img/Screenshot_from_2021-04-11_15-35-56.png)
+
+<div style="text-align:center;">
+
+Slab Spanning in two direction
+
+</div>
+
+![](/wiki/img/Screenshot_from_2021-04-11_15-37-19.png)
+
+<div style="text-align:center;">
+
+Column Footing Reinforcement.
+
+</div>
+</div>
+
+<h2 id="how-to-solve-the-problem">How to solve the problem?</h2>
+<p>To solve above mentioned issues, an interactive UI will be developed on
+top of the current implementation of Rebar Addon in FreeCAD.</p>
+<ul>
+<li>Dialog Box will be developed where users will input the required
+    data as per the design requirements.</li>
+<li>When the user will press apply button, this input data will be
+    passed to functions makeBentShapeRebar(), makeStraightRebar(),
+    makeStirrup(), makeLShapeRebar(), makeUShapeRebar() etc. of the
+    Rebar Addon as per the requirements of Slab or Footing
+    reinforcement.</li>
+<li>The Reinforcement will be created using core functionality of the
+    Rebar Addon.</li>
+<li>To edit Reinforcement provided, the user will double click on the
+    created Reinforcement object. Then he/she will be shown the same
+    Dialog Box as while creating Reinforcement. And then users can make
+    changes and apply them as did before.</li>
+<li>There will be a separate Dialog Box for footing reinforcements.</li>
+</ul>
+<p>So, the developed UI will contains following features:</p>
+<ol>
+<li>User will add only basic details for Reinforcement and all the
+    calculations (like for cover and spacing of rebars) will be done by
+    script.</li>
+<li>User can create different types of Rebars in a single step. Like
+    creating Bent Shape, Straight rebars in case of slab and Stirrups
+    and Rebars (of different types) for footing reinforcement.</li>
+<li>User can add number of layers and number of Rebars in each layer in
+    slab or footing.</li>
+<li>For Slab and footing Reinforcement, user will be presented with a
+    list of prototypes of some default configurations, which we will
+    choose from “SP 34: Handbook on Concrete Reinforcement and
+    Detailing” as present here:</li>
+</ol>
+<div style="margin-left:1.27cm;margin-right:0cm;">
+
+For Slab:
+
+</div>
+<div style="margin-left:1.27cm;margin-right:0cm;">
+
+<https://archive.org/details/gov.in.is.sp.34.1987/page/n129/mode/2up>
+
+</div>
+<div style="margin-left:1.27cm;margin-right:0cm;">
+
+For Footing:
+
+</div>
+<div style="margin-left:1.27cm;margin-right:0cm;">
+
+<https://archive.org/details/gov.in.is.sp.34.1987/page/n77/mode/2up>
+
+</div>
+
+<p>Due to the time constraints of GSoC, I will implement the following
+prototypes, but will keep on adding even after GSoC.</p>
+<p><img alt="" src="/wiki/img/Stright_Rebar_Slab_.png" /></p>
+<div style="text-align:center;">
+
+Straight rebars in Slab
+
+</div>
+
+<p><img alt="" src="/wiki/img/U_shaped_rebar_Slab.png" /></p>
+<div style="text-align:center;">
+
+U-Shaped rebars in Slab
+
+</div>
+
+<p><img alt="" src="/wiki/img/LShaped_rebar_Slab.png" /></p>
+<div style="text-align:center;">
+
+L-Shaped rebars in Slab
+
+</div>
+
+<p><img alt="" src="/wiki/img/Slab_spanning_in_one_direction_(isomatric_view).png" /></p>
+<div style="text-align:center;">
+
+Slab spanning in one direction.
+
+</div>
+
+<p><img alt="" src="/wiki/img/Slab_Spanning_in_two_direction.png" /></p>
+<div style="text-align:center;">
+
+Slab Spanning in Two Direction.
+
+</div>
+
+<p><img alt="" src="/wiki/img/Footing_output_img.png" /></p>
+<div style="text-align:center;">
+
+Column Footing Reinforcement.
+
+</div>
+<div style="margin-left:1.905cm;margin-right:0cm;">
+</div>
+<div style="margin-left:1.905cm;margin-right:0cm;">
+
+<span style="background-color:#ffffff;">I also implemented above
+prototypes manually and can be found at
+</span>[<https://github.com/ShivCharanSharma/FreeCAD-Examples>](https://github.com/ShivCharanSharma/FreeCAD-Examples)
+
+</div>
+<div style="margin-left:1.27cm;margin-right:0cm;">
+</div>
+<div style="margin-left:1.27cm;margin-right:0cm;">
+</div>
+
+<h2 id="implementation">Implementation:</h2>
+<ul>
+<li>An icon for slab and footing Reinforcement will be made and
+    integrated in drop down menu of Rebar Addon. Integration in drop
+    down menu can be done by modifying RebarTools.py file of Rebar
+    Addon.</li>
+<li>The dialog box will be developed using QtDesigner. Users will
+    provide input through this dialog box.</li>
+<li>The inputs provided by the user will then be passed to prebuilt
+    functions of Rebar Addon. Below is the list of that functions:<ul>
+<li>makeStraightRebar(f_cover, coverAlong, rt_cover, lb_cover,
+    diameter, amo unt_spacing_check, amount_spacing_value,
+    orientation = "Horizontal", structure = None, facename = None):
+    Adds the straight reinforcement bar to the selected structural
+    object.</li>
+<li>makeUShapeRebar(f_cover, b_cover, r_cover, l_cover,
+    diameter, t_cover, rounding, amount_spacing_check,
+    amount_spacing_value, orientation = "Bottom", structure =
+    None, facename = None): Adds the U-Shape reinforcement bar to
+    the selected structural object.</li>
+<li>makeLShapeRebar(f_cover, b_cover, l_cover, r_cover,
+    diameter, t_cover, rounding, amount_spacing_check,
+    amount_spacing_value, orientation = "Bottom Left", structure =
+    None, facename = None): Adds the L-Shape reinforcement bar to
+    the selected structural object.</li>
+<li>makeBentShapeRebar( f_cover, b_cover, l_cover, r_cover,
+    diameter, t_cover, bentLength, bentAngle, rounding,
+    amount_spacing_check, amount_spacing_value,
+    orientation="Bottom Left", structure=None, facename=None).Adds
+    Bent-Shaped reinforcement bar to the selected structural object.</li>
+<li>makeStirrup(l_cover, r_cover, t_cover, b_cover, f_cover,
+    bentAngle, bentFactor, diameter, rounding,
+    amount_spacing_check, amount_spacing_value, structure =
+    None, facename = None): Adds the Stirrup reinforcement bar to
+    the selected structural object.</li>
+</ul>
+</li>
+</ul>
+<h2 id="timeline">Timeline</h2>
+<p>An overview of working on tasks is as follows.</p>
+<ul>
+<li><strong>Community Bonding Period (17 May - 7 June)</strong><ul>
+<li>Having interaction on mailing list and IRC regarding important
+    aspects of the project.</li>
+<li>Get to be more familiar with the code and workflow of FreeCAD
+    and Rebar Addon.</li>
+<li>Learn more about reinforcement in Slab and Footing.</li>
+<li>Learn more about tools that will be used in implementation.</li>
+<li>Learn Doxygen syntax and inkscape.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>7 June - 7 July (30 days)</strong><ul>
+<li>Implement slab (having Straight , U-shaped, L-shaped rebars)
+    reinforcement detailing function for passing user input to
+    prebuilt Rebar Addon functions.</li>
+<li>Create UI for slab reinforcement (having Straight , U-shaped,
+    L-shaped rebars).</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>7 July - 12 July (5 days)</strong><ul>
+<li>Backup days for any backlog or pending task and preparation for
+    phase I evaluation.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>12 July - 16 July (5 days, Phase I evaluation)</strong><ul>
+<li>Developer documentation using Doxygen.</li>
+<li>Submitting all the work to mentor.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>16 July - 25 July (9 days)</strong><ul>
+<li>Implement slab (spanning in one or two direction) reinforcement
+    detailing function for passing user input to prebuilt Rebar
+    Addon functions.</li>
+<li>Implement UI for slab spanning in one and two direction
+    reinforcement.</li>
+<li>Create required images and icons using inkscape.</li>
+<li>Integrate UI with Rebar Addon UI.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>25 July - 9 August (15 days)</strong><ul>
+<li>Implement footing reinforcement detailing function for passing
+    user input to prebuilt Rebar Addon functions.</li>
+<li>Create UI for footing reinforcement.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>9 August - 16 August (1 week)</strong><ul>
+<li>Work on UI enhancement to improve user experience.</li>
+<li>Work on backlogs and bug fixes.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>16 August - 23 August (8 days, Final evaluation)</strong><ul>
+<li>Developer documentation using Doxygen.</li>
+<li>Submitting all the work to mentor.</li>
+<li>User documentation through detailed tutorial and post on FreeCAD
+    wiki with screenshots.</li>
+</ul>
+</li>
+</ul>
+<h2 id="future-scope">Future Scope:</h2>
+<p>For slab reinforcement, we can have the following prototypes also and
+much more.</p>
+<p><a href="https://archive.org/details/gov.in.is.sp.34.1987/page/n137/mode/2up"><a href="https://archive.org/details/gov.in.is.sp.34.1987/page/n137/mode/2up">https://archive.org/details/gov.in.is.sp.34.1987/page/n137/mode/2up</a></a>
+: <img alt="" src="/wiki/img/Cantilever_slab.png" /></p>
+<div style="text-align:center;">
+
+Cantilever slab continuous over brick
+
+</div>
+
+<p>For Footing reinforcement, we can have the following prototypes also and
+much more.</p>
+<p><a href="https://archive.org/details/gov.in.is.sp.34.1987/page/n81/mode/2up"><a href="https://archive.org/details/gov.in.is.sp.34.1987/page/n81/mode/2up">https://archive.org/details/gov.in.is.sp.34.1987/page/n81/mode/2up</a></a>
+:</p>
+<div style="text-align:center;">
+
+![](/wiki/img/Common_footing_example.png)
+
+</div>
+<div style="text-align:center;">
+
+Combined Column Footing
+
+</div>
+
+<h2 id="time-availability">Time Availability</h2>
+<p>I will be able to dedicate 40 hours per week. As this is my training
+semester I can dedicate my 6-7 hours per day. And as there will be only
+one exam day in this semester which will be completed in May month. So I
+will be available full time to work on this project. Also, my graduation
+will be completed in June, thus there will not be any time constraint
+from college and I can dedicate my full time to this project.</p>
+<h2 id="why-freecad">Why FreeCAD?</h2>
+<p>The very first reason that makes me curious about FreeCAD is the
+flexibility and automation that it provides to its users to create
+complex designs efficiently and with a simplified design process. Users
+can utilize features from a wide variety of workbenches while working on
+a design and can easily switch and manage them. FreeCAD has a
+well-established community of excellent coders and engineers of
+respective domains and this project will give me an opportunity to work
+with them. So, this project will provide me a wide variety of learning
+opportunities.</p>
+<h2 id="why-you">Why you?</h2>
+<p>I am a software engineering studententhusiast, and have a good
+programming skill in C/C++, Python, Data Structure and Algorithms. I
+like to use my skill to bring automation to different tasks and try to
+help people to ease their work with automation. I like to do challenging
+tasks in programming and explore new things. I will also contribute
+actively and maintain the code even after GSoC and will work on adding
+new features in FreeCAD.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

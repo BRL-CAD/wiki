@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Theamanjs/GSoC21/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Theamanjs/GSoC21/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-plan-of-open-geometry-viewerogv-under-gsoc-2021" class="nav-link">Project plan of Open Geometry Viewer(OGV) under GSoC 2021</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="project-plan-of-open-geometry-viewerogv-under-gsoc-2021">Project plan of Open Geometry Viewer(OGV) under GSoC 2021</h2>
+<h4 id="no-error-shown-if-upload-fails"><u> No error shown if upload fails </u></h4>
+<p><strong>GitHub Description:</strong> If due to any reason, the upload of the model
+fails, there's no error indicating the same.</p>
+<p><strong>Proposed Solution:</strong> Apply the toast notification in the
+cfs_uploader.js file from where the models are being uploaded. Also,
+make sure there is no other place that is linked with this issue.</p>
+<h4 id="email-server-error"><u> Email Server Error </u></h4>
+<p><strong>GitHub Description:</strong> Don’t allow the creation of a user account until
+the admin has set an email server. A better way is to create a set of
+settings called required settings and signup/login; nothing should even
+begin before these requirements are met.</p>
+<p><strong>Proposed Solution:</strong> As mentioned in the issue, I’ll go for the
+required settings and stop anything from happening before those required
+settings are done.</p>
+<h4 id="upload-progress"><u> Upload Progress </u></h4>
+<p><strong>GitHub Description:</strong> Show an upload progress bar when uploading a
+model.</p>
+<p><strong>Proposed Solution:</strong> I will get code help from the PR that is already
+there by someone. If I think there is a need to implement it again on my
+own, I’ll do it.</p>
+<p>Reference: Link to the solution PR</p>
+<h4 id="code-linting"><u> Code linting </u></h4>
+<p><strong>GitHub Description:</strong> This is a two-step process Lint all of the
+existing code (JS and CSS) Make sure no non-standard code is added again
+using Husky</p>
+<p><strong>Proposed Solution:</strong> Lint all the files using a linting config
+example: Airbnb. Installing configuration through the VS code extension
+eslint. Using Husky, check all the code and add that to pre-commit to
+make sure that the code is following linting config. There are no
+standard spaces in the file, also it does not follow JavaScript ES6.
+Linting will help to keep the code in sync with the latest technology.</p>
+<h4 id="remove-the-cfs-dependency"><u> Remove the CFS dependency </u></h4>
+<p><strong>GitHub Description:</strong> Collection FS has been depreciated(and recently,
+the depreciation label was removed). It would be better to move away
+from Collection FS, and use npm packages directly to upload models. (Can
+s3 be used?)</p>
+<p><strong>Proposed Solution:</strong> Get some more details about the task and change
+the package Collection FS and use the Slingshot package to upload it to
+s3.</p>
+<h4 id="css-code-improvement-code-quality"><u> CSS code improvement [Code Quality] </u></h4>
+<p><strong>GitHub Description:</strong> All of the current CSS code is in one file.
+Divide it into multiple files and improve the code quality. Discuss
+possible porting to SCSS.</p>
+<p><strong>Proposed Solution:</strong> Breakdown CSS into small files related to the
+specific components. Remove the unwanted CSS and keep the CSS files
+cleaner. Port all the CSS to SCSS, which will help the CSS to shrink and
+create some reusable mixins/ variables to keep the code shorter.</p>
+<h4 id="write-tests"><u> Write Tests </u></h4>
+<p><strong>GitHub Description:</strong> One of the major things required to get the code
+quality of OGV up is by writing tests for it. As recommended in meteor’s
+official guide, we would like to use ‘mocha’ and ‘chai’</p>
+<p><strong>Proposed Solution:</strong> I’ll write the tests to do unit testing for
+components using Mocha and Chai for BDD/TDD assertions. Mocha is fun to
+use. I also have a little bit of experience with Mocha.</p>
+<p>Reference: <a href="https://guide.meteor.com/testing.html">https://guide.meteor.com/testing.html</a></p>
+<h4 id="ogv-mediawiki-plugin"><u> OGV Mediawiki Plugin </u></h4>
+<p><strong>GitHub Description:</strong> Idea is to create a mediawiki plugin, that asks
+wiki admin to enter the OGV server details and allows users to Search
+for a public model from OGV server Upload modal to OGV (depends on issue
+#59 ) Embed into mediawiki page. Allow mediawiki plugin to be used
+without server (OBJ uploads)</p>
+<p><strong>Proposed Solution:</strong> Get some more detail about the task and learn the
+new things that are required for the fulfillment of this task. Create a
+JS function that will allow the user to search for the public model.
+Users will be able to upload OVG publicly after the Mediawiki oAuth is
+implemented. It will make the application easy to understand by
+mentioning which model is uploaded by whom.</p>
+<h4 id="mediawiki-oauth"><u> Mediawiki oAuth </u></h4>
+<p><strong>GitHub Description:</strong> Currently, users need to have separate accounts
+on BRL-CAD site(mediawiki) and OGV. We would like to be able to add
+login with mediawiki to OGV</p>
+<p><strong>Proposed Solution:</strong> Mediawiki provides an extension to provide OAuth
+to the user. There is a tutorial depicting how to integrate an OAuth
+extension to users. It is easy to do if we get the extension installed
+on time.</p>
+<p>Reference: <a href="https://www.mediawiki.org/wiki/Extension:OAuth">https://www.mediawiki.org/wiki/Extension:OAuth</a></p>
+<h4 id="edit-link-is-not-working"><u> Edit link is not working </u></h4>
+<p><strong>GitHub Description:</strong> The edit link currently goes to the 404 page.</p>
+<p><strong>Proposed Solution:</strong> Debug the code in the mode_editor.js file and
+see why the issue occurred and solve that. Add the try-catch and show
+error for certain events that are causing an error.</p>
+<h4 id="bring-custom-coloring-back"><u> Bring Custom Coloring back </u></h4>
+<p><strong>GitHub Description:</strong> OGV used to have a custom coloring panel which
+was removed when we chose to add colors directly from the .g file.
+However, as we also allow the upload of single obj files, it's worth
+allowing the users to change colors of different parts according to
+their choice.</p>
+<p><strong>Proposed Solution:</strong> Take a look at the old code where it was first
+introduced. Make the feature of adding color directly from the .g file
+optional, and provide support for adding custom color.</p>
+<h4 id="auto-position-depending-upon-objects-widthheight"><u> Auto position depending upon object’s width/height </u></h4>
+<p><strong>GitHub Description:</strong> Idea is to get the visible width/height of the
+obj file/files in the scene and make sure they are in the center and
+zoomed enough. <strong>Proposed Solution:</strong> Get the coordinates of the model
+image. Set offset space on sides according to the size. After having the
+coordinates zoom the object accordingly on the screen. There is a pen on
+codepen that gives the exact idea to set the object width/height
+according to the size link to the pen Reference: find the coordinates of
+image in js</p>
+<h4 id="add-responsiveness-to-the-application-bonus-task"><u> Add Responsiveness to the application (Bonus task) </u></h4>
+<p>Proposed Idea: The application is not responsive to different screen
+sizes. Today, making the application responsive is the basic requirement
+especially when it’s a web application. From my prior experience, a
+non-responsive website or web application always has difficulty keeping
+the user from having a good experience and limits the user to a desktop
+machine. It ends the sense of having portable web applications. I’ll
+make the application responsive using the media queries with custom CSS
+or look for a CSS grid library to make it responsive.</p>
+<h4 id="improve-the-directory-structure-and-component-files-structure-bonus-task"><u> Improve the directory structure and component files structure (Bonus task) </u></h4>
+<p>Proposed idea: Currently, the directory structure for the components is
+messed up. All the components are in the same directory which downgrades
+the code quality. I’ll improve the directory structure of the components
+and put related components to a subdirectory and segregate the
+components. This improvement will prove itself a very useful one while
+scaling up the application in the future.</p>
+<h2 id="timeline">Timeline</h2>
+<h3 id="coding-period-7-june-15-july">Coding Period (7 June - 15 July)</h3>
+<ul>
+<li>Start with the ‘No error shown if upload fails’ bug. This will take
+    around 1-2 days to fix this issue.</li>
+<li>Continue with the ‘Email server error’ bug. This will take around
+    4-5 days to fix.</li>
+<li>Then go for ‘Upload Progress’ enhancement. This will take around 1-2
+    days.</li>
+<li>Furthermore, go with ‘Code linting’. The expected time of completion
+    for this will be 3-5 days</li>
+<li>Will go ahead toward the ‘Remove the CFS dependency’ major issue.
+    This will take a bit longer, ETA will be 6-10 days.</li>
+<li>Then go for ‘CSS code improvements [Code quality]’ enhancement.
+    This will take around 2-3 days</li>
+<li>Will move further to ‘Write tests’ enhancement. This will take
+    around 4-6 days.</li>
+<li>For the remaining 1-2 days, I’ll go for a shorter issue ‘Edit link
+    is not working’</li>
+<li>Bug fixing and documentation improvement</li>
+</ul>
+<h3 id="coding-period-16-july-16-august">Coding Period (16 July - 16 August)</h3>
+<ul>
+<li>First do the task ‘OGV Mediawiki Plugin’. This will take 7-10 days.</li>
+<li>Further, go for ‘Mediawiki oAuth’. This will take around 4-6 days.</li>
+<li>Then move with ‘Bring custom coloring back’ enhancement. This will
+    take around 1-3 days.</li>
+<li>Then go for ‘Auto position depending upon object’s width/height’
+    enhancement. This will take around 1-3 days.</li>
+<li>Then add a few additional things like ‘Responsiveness to the
+    application’ and do the enhancement ’improve the directory structure
+    for components’.</li>
+<li>Pending bug fixing and documentation improvement.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

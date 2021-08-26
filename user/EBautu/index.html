@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/EBautu/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>EBautu - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/EBautu.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#abstract" class="nav-link">Abstract</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#schedule" class="nav-link">Schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#completion-criteria" class="nav-link">Completion criteria</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#results" class="nav-link">Results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#conclusions-added-at-the-end-of-the-project" class="nav-link">Conclusions (added at the end of the project)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#see-also" class="nav-link">See also</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="category:_Summer_of_Code.md">category: Summer of Code</a></p>
+<h2 id="abstract">Abstract</h2>
+<p>The more.brlcad.org website (MoRe as in Model Repository) will help
+build a common repository of BRL-CAD models, which will allow BRL-CAD
+users to share their models and to easily locate useful models. An
+advantage of using Drupal both for the repository and the main site is
+that we can integrate the two sites (use the same code base, share users
+accounts, etc). The activity logs for this project are
+<a href="More_Changelog/">here</a>.</p>
+<h2 id="description">Description</h2>
+<p>This project will focus on developing a Drupal-based web application
+that will allow BRL-CAD users to browse BRL-CAD model repositories,
+search, download and comment on models, as well as publish their own.
+This will permit users to share their models with the community, in
+order for others learn from their models, to increase their productivity
+and reduce modeling time. At the beginning, the application will be
+hosted on the more.brlcad.org (MoRe = Model Repository), but in the end
+it will also be packaged as a Drupal installation profile, allowing
+other users to quickly setup their own repositories.</p>
+<p>I plan to build the model repository website using mostly existing
+Drupal modules and to develop new ones only where needed (i.e. extract
+metadata from models, generate thumbnails from models, convert models).
+The site will have a light design based on strict XHTML and CSS
+standards. It will use clean URLs in order to increase the friendliness
+towards users and search engines.</p>
+<p>The CCK module will be used to define custom fields for each model node
+and comments and fivestar voting will allow users to provide feedback on
+the models they used. Each model will have its own page with information
+on the model (name of the model, author, description, comments) and
+links to related pages: model file downloads, similar models,
+screenshots, etc. A versioning system will be setup so that version
+updates of models are preserved and available to users.</p>
+<p>Apart from model pages, the site will also feature book node pages
+allowing user to share their modeling know-how with others. I hope that
+with time and help from the community, some of these will evolve into
+real tutorials or even books (as was the case for Drupal, Moodle, and
+other open source projects).</p>
+<p>When submitting new models, users will provide some information about
+the model (name, description, tags, etc), and upload their file(s).
+Users may also upload image files of the model that best showcases their
+features. Administrators will be able to promote interesting images to
+brlcad.org’s gallery.</p>
+<p>Models may be uploaded in various file formats supported by BRLCAD and a
+custom module that will use BRL-CAD tools to automatically create
+thumbnails and to convert to other formats (as a cron job or on the fly,
+depending on the server configuration).</p>
+<p>The site will allow various searching and browsing methods: browsing by
+author and by tags, searching by model name and advanced searching, tag
+clouds to show largest model categories, etc.</p>
+<p>The MoRe BRLCAD site will support automatic content translation
+(english, french, german, italian, etc) and critical activities (user
+registration, model submission, model commenting etc) will be protected
+by CAPTCHA validation in order to prevent spam.</p>
+<h2 id="schedule">Schedule</h2>
+<ul>
+<li>April, 20 – May, 23 – discus web site features with the mentor;
+    collect feedback from the mentor and community (both BRLCAD and
+    Drupal).</li>
+<li>May, 25 – June, 7 – setup more.brlcad.org with Drupal and existing
+    modules; adapt the site theme of www.brlcad.ord</li>
+<li>June, 8 – July, 10 – develop custom modules for specific tasks
+    (import model metadata, thumbnail generation);</li>
+<li>July, 12 – August 8 – develop custom modules for specific tasks
+    (automatic model conversion);</li>
+<li>August, 9 – August, 15 – remove reported bugs</li>
+<li>September, 3 – submit code and resource files to Google</li>
+</ul>
+<h2 id="completion-criteria">Completion criteria</h2>
+<p>The more.brlcad.org will allow users to search and browse for models
+using various criteria, download models, and submit new models.</p>
+<h2 id="results">Results</h2>
+<p>The more.brlcad.org website will help build a common repository of
+BRL-CAD models, which will allow BRL-CAD users to share their models and
+to easily locate useful models. An advantage of using Drupal both for
+the repository and the main site is that we can integrate the two sites
+(use the same code base, share users tables, etc).</p>
+<h2 id="conclusions-added-at-the-end-of-the-project">Conclusions (added at the end of the project)</h2>
+<p>When the "Firm pencils down" day arrived for GSoC 2009 this was the
+implementation status of the requirements for our model repository
+project (collected from IRC chats with starseeker, brlcad, ``erik, and
+others, and presented in random order):</p>
+<ul>
+<li>have a clear licensing: implemented using a taxonomy</li>
+<li>HTTP upload method: implemented using a customized filefield module
+    (which allows normal and Ajax uploads)</li>
+<li>other non-HTTP upload methods: implemented using a customized
+    filefield module; users can upload their files through FTP (or other
+    methods) and then select those files in the submit model form (using
+    Ajax completion)</li>
+<li>possibility to report abuse (licence infringement): implemented
+    using the the flag module (initially was node_queue, but was later
+    replaced)</li>
+<li>automatic metadata extraction: the brlcad custom module reads the
+    summary, title, units, database version, objects list, and top
+    objects from the models.</li>
+<li>information from the model to be accesible on web (web-ready
+    information capabilities): metadata extracted from the model is
+    filled into CCK fields which can be further edited</li>
+<li>categorize the model through the website: implemented using
+    taxonomies (one for licence, one for keywords)</li>
+<li>visualize the model: the imagefield module is used to store model
+    raytrace renderings (automatically generated and/or uploaded by the
+    user)</li>
+<li>automatic raytracing: the brlcad custom module automatically
+    raytraces models, convert the raytraced rendering to png and adds
+    them to the imagefield CCK fields.</li>
+<li>captcha points for submissions: implemented with recaptcha</li>
+<li>uploaded geometry gets queued for addition, views are queued for
+    rendering, etc: when submitted or edited, all models get flaged as
+    "requiring BRLCAD processing". The brlcad custom module process
+    these models one by one, when the cron task is triggered (or when
+    started manually).</li>
+<li>import cad geometry: the site accepts uploads in many formats (g,
+    asc, dxf, stl, iges, euclid, etc); when processed, for each model a
+    .g model file is produced.</li>
+<li>export cad geometry: the site allows the conversion of the .g file
+    to multiple formats (asc, dxf, stl, iges, euclid, x3d, dxf, vrml,
+    etc). This is enabled automatically by creating a filefield CCK
+    field named ``format``_file in the group_files group of the
+    model content type (where format can be: asc, acad, autocad, euclid,
+    iges, stl, tankill, vrml, x3d)</li>
+<li>browse: implemented with views, using various ordering methods</li>
+<li>provide a strong feedback loop (like cia and/or e-mail notifications
+    on changes): the cianotify custom module sends cia notification on
+    various (customized) site events (e.g. a model is submitted, a model
+    was processed by BRLCAD, a user registered, etc)</li>
+<li>rating system: implemented through fivestar module</li>
+<li>submission should have a cited source and the submission process
+    allowing that source to be specified: there is a required CCK field
+    for it.</li>
+</ul>
+<p>Other things (not explicitly required, but implemented):</p>
+<ul>
+<li>download count: implemented with a custom made very light download
+    count module which works both for private and public files</li>
+<li>tag clouds: implemented with taggadelic module (customized to fix
+    some caching bugs)</li>
+<li>brlcad processsing optimizations: A non-preemptiv processing time
+    limit is implemented to prevent long task from keeping the server
+    busy. Many other optimisation methods are also implemented: files
+    are not converted between same format (just linked together), only
+    the misssing renderings are generated, only the missing file formats
+    are converted, etc.</li>
+<li>support for multiple version of BRLCAD: all BRLCAD related task are
+    externalized in TCL scripts (these scripts will be very similar for
+    most versions, but have some special processing for a few versions).</li>
+<li>customized view points and view sizes: the number, size and the view
+    points of the automatic raytrace renderings can be changed in the
+    site admin UI.</li>
+<li>allow users to select which objects should be to render: object list
+    is read from the model file and custom made CCK widget (a
+    multicolumn select list) allows users to select to object to render
+    (by default, the top objects are selected).</li>
+</ul>
+<p>These things I did not implement:</p>
+<ul>
+<li>a special flag to note whether it's a solid model or not: i didn't
+    focused on this one (it can be done by parsing the object list:
+    there's only 3 primitive types we support that aren't solid)</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="More_Changelog/">Activities logs</a></li>
+<li><a href="http://more.brlcad.org">Model Repository site</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

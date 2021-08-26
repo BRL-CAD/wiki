@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Marco-domingues/GSoC17/Log/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Log - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Marco-domingues/GSoC17/Log.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="development-logs">Development Logs</h3>
+<h4 id="community-bonding-period">Community Bonding Period</h4>
+<ul>
+<li>During the community bonding period, I read the code and asked some
+    questions about the ANSI C boolean evaluation algorithm to better
+    understand some concepts and to plan the necessary things to port to
+    OpenCL.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I started to write some code in order to get an advance on my
+    project. This consisted in creating the kernels in OpenCl to weave
+    the segments and to evaluate the partitions, and setting the
+    arguments for those kernels. Ended with an initial version of the
+    "weave_segs" kernel.</li>
+</ul>
+<h3 id="may-30-2017">May 30, 2017</h3>
+<ul>
+<li>Coding Period officially begins!!</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Because I misunderstood an important concept about the weave of
+    segments, the resulting number of partitions with the initial
+    version of the 'weave_segs' kernel was incorrect. Started to
+    implement a new version of the code</li>
+</ul>
+<h3 id="week-1-30-may-2-june">Week 1: 30 May - 2 June</h3>
+<ul>
+<li>Finalized the "weave_segs" kernel and the the solution seems ok.
+    When testing the code with a simple CSG scene (two spheres
+    intersecting), the number of partitions and the number of segments
+    in each partition is correct. 1, 2 or 3 partitions per ray at most,
+    and the rays with 3 partitions have only 2 segments in the second
+    partition, which is supposed according to the testing example.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>After evaluating the partitions, the results also seemed correct.
+    Every partition evaluated with "TRUE" value is from a ray with 3
+    partitions, and only</li>
+</ul>
+<p>the middle partition of the ray has the "TRUE" value.</p>
+<ul>
+<li>Planning to shade the segments from the evaluated partitions next
+    week.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Csg_simple_example.png" /></p>
+<h3 id="week-2">Week 2:</h3>
+<h3 id="5-june">5 June</h3>
+<ul>
+<li>Worked on an initial solution to shade the segments resulting from
+    boolean evaluation. The resulting image differs from the expected
+    result, so i will have to get back to this and figure out what is
+    missing</li>
+</ul>
+<h3 id="6-june">6 June</h3>
+<ul>
+<li>After suggestion from my mentor, implemented a white/black shading
+    of the resulting partitions. From the resulting image, I could
+    figure out that a large number of partitions that should be
+    evaluated with 'true' were missing</li>
+</ul>
+<h3 id="7-8-june">7-8 June</h3>
+<ul>
+<li>After debugging the 'weave_segs' and the code to evaluate
+    partitions, found some issues on the 'weave_segs' kernel that
+    caused the missing resulting partitions. After fixing the bugs on
+    the code, the total number of partitions evaluated with true by the
+    OCL code matched with the total number of partitions evaluated by
+    the Ansi C code and the resulting white/black image was correct!</li>
+</ul>
+<h3 id="9-june">9 June</h3>
+<ul>
+<li>Adaptaded the code of the 'shade_segs' kernel to shade the segments
+    of the resulting partitions. There are still some problems in the
+    resulting image.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The next figure contains images with the results of the OCL code and
+    a comparison with the Ansi C code.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/ocl_results.png" /></p>
+<ul>
+<li>Planning to refractor the 'weave_segs' kernel next week to a
+    solution that does not use a bounded array for the segments in each
+    partition and to clean up the code in order to submit an initial
+    patch.</li>
+</ul>
+<h3 id="week-3">Week 3</h3>
+<h3 id="12-14-june">12-14 June</h3>
+<ul>
+<li>Implemented the 'weave_segs' kernel without using a bounded array
+    to store the segments in each partition. The number of evaluated
+    partitions matches the number of evaluated partitions in the ansi c
+    code and the resulting image is correct.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tomorrow I will create some more CSG scenes and will test the code
+    with those new scenes to make sure everything is okay before
+    submitting the patch to weave segments into partitions.</li>
+</ul>
+<h3 id="15-june">15 June</h3>
+<ul>
+<li>Reviewed the code with my mentor and will make some improvements
+    based on the received feedback</li>
+</ul>
+<h3 id="16-17-june">16-17 June</h3>
+<ul>
+<li>Fixed an issue on the code that would occur when inserting new
+    partitions on the partitions list</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Implemented a bitvector to represent the segments in each partition</li>
+</ul>
+<h3 id="week-4">Week 4</h3>
+<h3 id="19-june">19 June</h3>
+<ul>
+<li>Fixed a bug on the code that would cause some missing partitions
+    when running the OCL code in the GPU</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Refactored the code and submitted an initial patch to weave the
+    segments into partitions
+    (https://sourceforge.net/p/brlcad/patches/468/)</li>
+</ul>
+<h3 id="21-june">21 June</h3>
+<ul>
+<li>Added a lightmodel to the ansi code to perform white shading, in
+    order to have a more exact comparision between the Ansi C and the
+    OpenCL code</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/White_shading_results.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Ansi C</th>
+<th>OCL - Intel i5 4690k</th>
+<th>OCL - Nvidia GTX 970</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Union</td>
+<td>0,314 sec</td>
+<td>0,098 sec</td>
+<td>0,173 sec</td>
+</tr>
+<tr>
+<td>Difference</td>
+<td>0,318 sec</td>
+<td>0,098 sec</td>
+<td>0,175 sec</td>
+</tr>
+<tr>
+<td>Intersection</td>
+<td>0,301 sec</td>
+<td>0,097 sec</td>
+<td>0,164 sec</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-june">22 June</h3>
+<ul>
+<li>Removed pointers from struct cl_partition and updated patch
+    (https://sourceforge.net/p/brlcad/patches/468/)</li>
+</ul>
+<h3 id="23-june">23 June</h3>
+<ul>
+<li>shade_segs kernel shading only segments from evaluated partitions</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>optimized struct cl_partition to store indexes to segments instead
+    of cl_segs, making it more memory efficient</li>
+</ul>
+<h3 id="24-26-june">24 - 26 June</h3>
+<ul>
+<li>working on a list structure to store the partitions instead of an
+    array of partitions and implementing a dynamic bit vector to
+    represent the segments in each partition. Still some issues to fix</li>
+</ul>
+<h3 id="27-june">27 June</h3>
+<ul>
+<li>Fixed an issue that would occur when duplicating partitions.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Inverted the loop used to perform boolean evaluation with the
+    bitvector of segments, which should reduce the total number of
+    iterations.</li>
+</ul>
+<h3 id="28-june">28 June</h3>
+<ul>
+<li>Code refactored and cleaned up</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Updated the patch with the weave_segs
+    (https://sourceforge.net/p/brlcad/patches/468/). The patch contains
+    code to perform the weave of segs using a dynamic bitarray to
+    represent the segments in each partition and the partitions
+    represented in a list structure, which should optimize the insertion
+    of partitions</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>GSOC 2017 Phase 1 Evaluations period</li>
+</ul>
+<h3 id="29-30-june">29-30 June</h3>
+<ul>
+<li>Started to port rt_boolfinal into OpenCl</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Prepared and sent the boolean regions to the 'eval_partitions'
+    kernel, instead of sending only the boolean trees</li>
+</ul>
+<h3 id="3-july">3 July</h3>
+<ul>
+<li>Working on an algorithm to create the list with all the boolean
+    regions involved in the partition. This requires iterating over all
+    the segments of the partition and over all of the regions, which may
+    not be the best solution yet.</li>
+</ul>
+<h3 id="4-5-july">4-5 July</h3>
+<ul>
+<li>Created a regiontable bitvector to hold the boolean regions involved
+    in each partition. The regiontable is necessary to evaluate the
+    partitions only against all the regions involved, and to resolve
+    overlapping partitions.</li>
+</ul>
+<h3 id="6-july">6 July</h3>
+<ul>
+<li>Found and fixed a bug in the insertion of partitions that would
+    generate partitions with wrong 'back_pp/forw_pp' pointers. Now is
+    possible to iterate over the partitions list in a sequential manner
+    in the 'eval_partitions' kernel, and test the partitions against
+    additional conditions before evaluation.</li>
+</ul>
+<h3 id="7-july">7 July</h3>
+<ul>
+<li>Removed the pointers from the bool_region structure. Now, I created
+    an OpenCl buffer that contains boolean trees from all the regions,
+    and I use other buffer to know the offset for each region.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Worked on the shading of evaluated partitions. Before, I was wrongly
+    shading segments from the evaluated partitions, but now I shade with
+    the information of the 'inhit' and the results seem to match with
+    the ansi c results. There are some slightly differences in the
+    illumination, but those differences were already there before.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Shading_eval.png" /></p>
+<h3 id="10-july">10 July</h3>
+<ul>
+<li>Debugged the code trying to identify the cause for the wrong results
+    when evaluating partitions in the share/db/operators.g scene, since
+    the regiontable seems to be correctly built. By comparing the output
+    produced by the ansi c version and the OpenCl version, could
+    identify several occurrences of segments in partitions with wrong
+    'seg_sti', which would explain the wrong results when evaluating
+    partitions. Despite the wrong 'seg_sti', the segments of the
+    partitions have the correct values (hit_dist values of the segments
+    match the values of the ansi c partitions).</li>
+</ul>
+<h3 id="11-july">11 July</h3>
+<ul>
+<li>After further investigation on the 'seg_sti' issue, it appears that
+    the boolean trees have the bits of the ordered primitives, and the
+    'seg_sti' calculated by the 'store_segs' kernel are the same as
+    the 'rtip-&gt;rti_Solids-&gt;st_bit'. To confirm this, I
+    translated the bits of the boolean trees to the
+    'rtip-&gt;rti_Solids' bits before sending the boolean trees to
+    OpenCL, and was able to get the following results:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Operators.png" /></p>
+<ul>
+<li>Hopefully this help us find the cause for the 'seg_sti' mismatch
+    between the segments and the bits in the boolean tree.</li>
+</ul>
+<h3 id="12-14-july">12 - 14 July</h3>
+<ul>
+<li>Cleaning and refactoring the code in order to submit the patch
+    against the opencl branch in svn.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>While testing the code against some more complex scenes, found and
+    fixed the bug that was causing some of those scenes to take more
+    time than expected to render.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Found and fixed the bug that was causing some 'holes' in some views.
+    Here is an example of a view that was having this problem, now
+    fixed:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Operators_v1.png" /></p>
+<ul>
+<li>Will finish the rt_boolfinal kernel, by implementing the handler
+    for overlapping partitions before submiting the patch in the svn.</li>
+</ul>
+<h3 id="17-july">17 July</h3>
+<ul>
+<li>Implemented an overlap handler to resolve the overlapping of
+    partitions</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Completed the rt_boolfinal kernel. There are still some bugs with
+    more complex scenes, that I believe are caused by some partitions
+    reporting overlap when they shouldn't (by comparison with the ansi c
+    code), but still have to investigate.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Cleaned and refactored the code and submitted the patch in the svn:
+    <a href="https://sourceforge.net/p/brlcad/patches/472/">https://sourceforge.net/p/brlcad/patches/472/</a> (This was created
+    against the opencl code branch)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Planning to optimize the code next, starting by implementing a list
+    for the regiontable, instead of using a dynamic bitvector.</li>
+</ul>
+<h3 id="18-july">18 July</h3>
+<ul>
+<li>Debugged the code and found the cause for weird results when drawing
+    geometry with the command 'e *'. It comes from a bug in the overlap
+    handler, that might be hard to resolve using bitarrays.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on a solution that uses an array to represent the
+    regiontable, instead of a bitarray</li>
+</ul>
+<h3 id="19-july">19 July</h3>
+<ul>
+<li>Adjacent partitions should no longer write to the same memory
+    positions of the bitarray. This was causing CSG scenes with more
+    than 32 regions and/or more than 32 segments per ray to produce
+    wrong results.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Optimized the code to iterate over bitarrays, now iterating only
+    over set bits in the bitarrays.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on a fix to the overlap handler problem</li>
+</ul>
+<h3 id="20-21-july">20-21 July</h3>
+<ul>
+<li>Resolved the weird results when drawing geometry with the command "e
+    *"</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Changed the code to use only 1 regiontable per ray, instead of 1
+    regiontable per partition, which reduces the necessary memory.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Prepared the code and submitted the patch in the svn
+    (https://sourceforge.net/p/brlcad/patches/472/)</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/results1.png" /></p>
+<p><img alt="" src="/wiki/user/img/results2.png" /></p>
+<h3 id="24-july">24 July</h3>
+<ul>
+<li>Made some changes on the 'shade_segs' kernel to replicate the
+    "Surface normals" lighting model. It looks like there is an issue
+    with the interior normals, but I am not sure if this comes from the
+    known issue of the primitives having the ids in a different order or
+    not.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Collected some time measurements over some scenes in the 'share/db'
+    directory. Wasn't quite lucky with the profiling tools, so ended
+    doing this with the elapsed time given from the ray tracing command.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tomorrow will add some more measurements and will share the document
+    with the results.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/operators_normals.png" /></p>
+<h3 id="25-july">25 July</h3>
+<ul>
+<li>Did some further testing over some scenes in 'share/db' to gather
+    more statistics to optimize the code</li>
+</ul>
+<h3 id="26-july">26 July</h3>
+<ul>
+<li>Fixed the issue that was causing some interior normals to be wrongly
+    represented</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/normals_fixed.png" /></p>
+<ul>
+<li>Working on a solution to iterate only over partitions evaluated in
+    the shading process</li>
+</ul>
+<h3 id="27-july">27 July</h3>
+<ul>
+<li>Optimized the process of building the regiontable by precomputing a
+    table with all the regions involved in each primitive instead of
+    doing this for each partition in the rt_boolfinal kernel.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>This change on the code resulted in a significant improvement on the
+    performance, as you can see in the following table:</li>
+</ul>
+<p>(Running the OpenCL over the NVIDIA OpenCL SDK on GPU - Debug build)
+<img alt="" src="/wiki/user/img/time_comparison.png" /></p>
+<h3 id="31-july">31 July</h3>
+<ul>
+<li>Changed the code to skip unevaluated partitions during the shading
+    process. This change doesn't appear to have much impact over the
+    performance of the code (2.58sec before vs 2.52sec now) for the
+    havoc.g scene.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The major bottleneck on the code right now seems to be the
+    bool_eval() function. Disabling the function results in rendering
+    the havoc scene in only 0.35sec (vs 2.52sec function enabled), for
+    what it's worth.</li>
+</ul>
+<h3 id="1-august">1 August</h3>
+<ul>
+<li>Found and fixed the bug that was causing some scenes to shade the
+    wrong partitions in the ray. The closest partition in the ray is
+    being shaded now.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Example of what was happening before vs what is happening now:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/shade_closest_partition.png" /></p>
+<h3 id="2-4-august">2 - 4 August</h3>
+<ul>
+<li>Working on a linearized binary tree representation to perform
+    bool_eval() in OpenCL in a similar way of the current code in the
+    trunk, instead of using the boolean tree in RPN.</li>
+</ul>
+<h3 id="6-august">6 August</h3>
+<ul>
+<li>Changing the bool_eval() and other auxiliary functions in order to
+    use the new tree structure during boolean evaluation.</li>
+</ul>
+<h3 id="7-august">7 August</h3>
+<ul>
+<li>Finished the implementation of bool_eval() using the new tree
+    representation. The new code seems to be slightly slower than the
+    version on the trunk for some scenes, but still considerable faster
+    than the previous method that uses the RPN tree. Thus, porting the
+    new code to OpenCL should improve the performance of the code, which
+    currently uses the RPN tree method.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Here is a table with a time comparison between the code in the
+    trunk, the code with the new tree structure and the code currently
+    in the opencl branch (RPN tree):</li>
+</ul>
+<p>(Release build) <img alt="" src="/wiki/user/img/comparison.png" /></p>
+<ul>
+<li>Removed the 'next_evalpp' from the partition structure, which
+    wasn't necessary in the first place</li>
+</ul>
+<h3 id="8-august">8 August</h3>
+<ul>
+<li>Made some optimizations in the ANSI C bool_eval() prototype and now
+    the new code is slightly faster than the code currently in the
+    trunk! This difference is more noticeable when rendering the havoc
+    scene with the command "rt -s2048": 2.53sec vs 2.18sec.</li>
+</ul>
+<p>(Release build) <img alt="" src="/wiki/user/img/time.png" /></p>
+<h3 id="9-august">9 August</h3>
+<ul>
+<li>Manually merged the new code over the opencl branch code.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Changed the function 'rt_pr_bit_tree()', used to debug the new
+    tree structure, so the output matched the output from the union tree
+    debug function. (before the function was printing newlines out of
+    place)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Updated some structures and some host functions to create the new
+    OpenCL buffer with the new tree representation.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Planning to finish the bool_eval() function of the OpenCL code
+    tomorrow.</li>
+</ul>
+<h3 id="10-august">10 August</h3>
+<ul>
+<li>Finished the port of the new_bool() function to OpenCL. This new
+    bool_eval() function uses a new boolean tree representation, and
+    follows the behaviour of the current ANSI C code in the trunk.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Here is a table with the time comparison of the previous
+    implementation (bool_eval() with RPN tree) and the current version
+    with the new tree representation:</li>
+</ul>
+<p>(running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
+<img alt="" src="/wiki/user/img/new_tree_times.png" /></p>
+<h3 id="11-august">11 August</h3>
+<ul>
+<li>Cleaning the code to prepare for commit.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>General testing over the ANSI C boolean evaluation and the OpenCL
+    boolean evaluation, trying to identify where the bottlenecks are
+    located.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Committed the new code to perform boolean evaluation in the opencl
+    branch code (https://sourceforge.net/p/brlcad/code/70074/)</li>
+</ul>
+<h3 id="14-august">14 August</h3>
+<ul>
+<li>Discussed with my mentor, Vasco, the plan for the next weeks via
+    skype.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Will be cleaning the current code and prepare a patch ticket against
+    the trunk with the new CSG boolean evaluation in OpenCL.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Next will start changing the rendering loop of the OpenCL code to
+    follow the behaviour of the ANCI C code, where boolean evaluation is
+    performed in a parcial fashion.</li>
+</ul>
+<h3 id="15-august">15 August</h3>
+<ul>
+<li>Cleaning and refactoring the code</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Preparing patch against trunk code</li>
+</ul>
+<h3 id="17-august">17 August</h3>
+<ul>
+<li>Submitted patch with code to perform boolean evaluation of CSG with
+    OpenCL (https://sourceforge.net/p/brlcad/patches/474/)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started working on new rendering loop, where the 'store_segs', the
+    'rt_boolweave' and 'rt_boolfinal' kernels will be merged into a
+    single kernel, so the weave of segments and evaluation of partitions
+    can take place as soon as new segments are created.</li>
+</ul>
+<h3 id="18-august">18 August</h3>
+<ul>
+<li>Merged the 'store_segs' and 'rt_boolweave' kernels into a new
+    kernel. Still trying to avoid repeating the weave of segments
+    already weaved in the ray.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Planning to add the 'rt_boolfinal' kernel next to follow the
+    behaviour of the ANSI C code.</li>
+</ul>
+<h3 id="21-25-august">21 - 25 August</h3>
+<ul>
+<li>Changes on 'rt_boolfinal' function in order to add this kernel into
+    the single kernel (rt_shootray kernel: store_segs +
+    rt_boolweave + rt_boolfinal).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Fixed a bug that caused the ray tracing to crash with this new
+    system, by storing the index of the head of partitions for the
+    current ray and passing it by argument to the rt_boolweave
+    function.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Trying to fix the problem of some partitions being evaluated too
+    early, that caused some pixels to shade the incorrect partitions.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>In the end, I couldn't figure out a way to weave and evaluate
+    partitions in a partial way using the BVH (bounding volume
+    hierarchy) because the BVH nodes aren't in spatial order. This
+    optimization was promising and it should work if we change the code
+    to store the nodes in a spatial subdivision structure like the
+    kd-tree, as the Ansi C code does.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Since we are processing all the hits before weaving segments and
+    evaluating partitions, there is no need to keep evaluating
+    partitions after the first opaque partition in the ray is evaluated.
+    Because the partitions are already ordered by its in_hit point, and
+    because all segments of the ray are processed, there is no
+    possibility to have a partition closer to the ray origin after
+    evaluating the first partition, so it is unnecessary and expensive
+    to keep evaluating partitions for the ray.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>By stopping the evaluation of partitions after the first partition
+    evaluated of the ray is found, the performance of the OpenCl code
+    increased significantly, as we can see in the following table:</li>
+</ul>
+<p>(running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
+<img alt="" src="/wiki/user/img/times.png" /></p>
+<h3 id="gsoc17-is-over">GSoC17 is Over!!</h3>
+<ul>
+<li>Google Summer of Code 2017 comes to an end! It was an amazing
+    experience and I couldn't be happier with this first introduction to
+    open source software development!</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I would like to thank the BRL-CAD community for giving me this
+    opportunity and for always being available to help!</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>A special thanks to Vasco Costa, for the great mentoring and
+    guidance through the summer!!</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Here is the work product link that I submitted:
+    <a href="https://github.com/MarcoSDomingues/GSoC17">https://github.com/MarcoSDomingues/GSoC17</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

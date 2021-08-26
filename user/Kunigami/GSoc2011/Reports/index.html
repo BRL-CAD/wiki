@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Kunigami/GSoc2011/Reports/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Reports - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Kunigami/GSoc2011/Reports.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#reports" class="nav-link">Reports</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#week-13-august-15th-to-august-22th" class="nav-link">Week 13 (August 15th to August 22th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-12-august-8th-to-august-15th" class="nav-link">Week 12 (August 8th to August 15th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-11-august-1st-to-august-8th" class="nav-link">Week 11 (August 1st to August 8th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-10-july-25th-to-august-1st" class="nav-link">Week 10 (July 25th to August 1st)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-9-july-18th-to-july-25" class="nav-link">Week 9 (July 18th to July 25)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-8-july-11th-to-july-18th" class="nav-link">Week 8 (July 11th to July 18th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-7-july-4th-to-july-11th" class="nav-link">Week 7 (July 4th to July 11th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-6-june-27th-to-july-4th" class="nav-link">Week 6 (June 27th to July 4th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-5-june-20th-to-june-27th" class="nav-link">Week 5 (June 20th to June 27th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-4-june-13th-to-june-20th" class="nav-link">Week 4 (June 13th to June 20th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-3-june-6th-to-june-13th" class="nav-link">Week 3 (June 6th to June 13th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-2-may-30th-to-june-6th" class="nav-link">Week 2 (May 30th to June 6th)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-1-may-23th-to-may-30th" class="nav-link">Week 1 (May 23th to May 30th )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-0-community-bonding" class="nav-link">Week 0 (Community Bonding)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="reports">Reports</h1>
+<h2 id="week-13-august-15th-to-august-22th">Week 13 (August 15th to August 22th)</h2>
+<ol>
+<li>Used BCP tool to compress Boost to \~50MB (svn version is \~ 100MB)</li>
+<li>Wrote a script that compiles the bundled libraries (except LLVM,
+    which we assume to be already instlled)</li>
+<li>Tests made on different machine (Ubuntu 10.04) is crashing when
+    running the oslc application from OSL.</li>
+</ol>
+<h2 id="week-12-august-8th-to-august-15th">Week 12 (August 8th to August 15th)</h2>
+<ol>
+<li>Started adding osl dependencies to a separated svn repository.</li>
+<li>Added ilmbase, openexr, oiio and osl, though boost and llvm
+    libraries are too big to be added (\~500MB and \~250MB
+    respectively).</li>
+</ol>
+<h2 id="week-11-august-1st-to-august-8th">Week 11 (August 1st to August 8th)</h2>
+<ol>
+<li>Implemented a multi-sample mode (similar to increasing mode, but it
+    keeps the average of the sampled pixels and always uses full
+    resolution)</li>
+<li>Implemented a random shoot mode, but it seems there's a bug with
+    rendering in unbuffered mode</li>
+<li>Investigated the bug with the unbuffered mode, still without
+    success.</li>
+</ol>
+<h2 id="week-10-july-25th-to-august-1st">Week 10 (July 25th to August 1st)</h2>
+<ol>
+<li>Studied OSL code in order to discover how to use it with a ray
+    tracer.</li>
+<li>Implemented a simple mode for ray tracer, but I don't know how to
+    add reflection and refraction to it. I intend to come back to it in
+    the future.</li>
+<li>Studied BRL-CAD code to design the new framebuffer mode (similar to
+    incremental).</li>
+</ol>
+<h2 id="week-9-july-18th-to-july-25">Week 9 (July 18th to July 25)</h2>
+<ol>
+<li>[19/07] Implemented a basic texture shader written in OSL.</li>
+<li>[20/07] Stopped using the hypersampling option (-H) and added a
+    loop in the sh_osl to avoid shooting the same ray many times.</li>
+</ol>
+<h2 id="week-8-july-11th-to-july-18th">Week 8 (July 11th to July 18th)</h2>
+<ol>
+<li>Implemented a thread-safe version of sh_osl, though no advantages
+    were being taken from parallelism.</li>
+<li>Studied some OSL code to figure out how to use it with multiple
+    threads</li>
+<li>[07/18] Implemented a new thread-safe version of sh_osl with less
+    blocking.</li>
+</ol>
+<h2 id="week-7-july-4th-to-july-11th">Week 7 (July 4th to July 11th)</h2>
+<ol>
+<li>Wrote a small tutorial on how to use OSL in BRL-CAD
+    (<a href="../OSL_Tutorial/">link</a>)</li>
+<li>Ported BRL-CAD cloud shader to OSL
+    (<a href="http://dl.dropbox.com/u/1399996/GSoC/RT_OSL_cloud.png">screenshot</a>)</li>
+<li>Ported BRL-CAD checker shader to OSL
+    (<a href="http://dl.dropbox.com/u/1399996/GSoC/RT_OSL_checker_glass.png">screenshot</a>)</li>
+<li>Implemented support for group of shaders</li>
+</ol>
+<h2 id="week-6-june-27th-to-july-4th">Week 6 (June 27th to July 4th)</h2>
+<ol>
+<li>Implemented support for reflection and refraction in the OSL Shader
+    that is used by rt</li>
+<li>Implemented support for refraction in the stand alone application
+    that uses BRL-CAD shooting system to render BRL-CAD scenes with osl
+    shaders
+    <a href="http://dl.dropbox.com/u/1399996/GSoC/OSL_RT-Refraction-Corrected-2011-06-30.png">screenshot</a></li>
+<li>Started getting errors due to different version of libpng. BRL-CAD
+    uses 1.4 and OIIO used 1.2. Recompiled OIIO to use 1.4 and the
+    problem was solved.</li>
+</ol>
+<h2 id="week-5-june-20th-to-june-27th">Week 5 (June 20th to June 27th)</h2>
+<ol>
+<li>Implemented an osl shader, which seems not to give correct results</li>
+<li>Implemented a stand-alone application to render BRL-CAD scenes with
+    OSL shaders
+    <a href="http://kuniga.files.wordpress.com/2021/06/osl-rt-2011-06-25.png">screenshot</a></li>
+</ol>
+<h2 id="week-4-june-13th-to-june-20th">Week 4 (June 13th to June 20th)</h2>
+<ol>
+<li>Discovered that the crashing was due to multi-threaded issues. I'm
+    currently using -P 1 on my tests.</li>
+<li>Re-defined the OSLRenderer interface, so that it considers recursion
+    rays needed for reflection and transmission</li>
+<li>Start studying how the rt application works.</li>
+</ol>
+<h2 id="week-3-june-6th-to-june-13th">Week 3 (June 6th to June 13th)</h2>
+<ol>
+<li>Adapted the OSL raytracer so that it can be called by the osl
+    shader.</li>
+<li>The rt application is currently crashing. Inspecting with valgrind I
+    suspect that it is due to memory leaks.</li>
+</ol>
+<h2 id="week-2-may-30th-to-june-6th">Week 2 (May 30th to June 6th)</h2>
+<ol>
+<li>Not very productive week. With the help of the mentors I managed to
+    solve the compile error.</li>
+</ol>
+<h2 id="week-1-may-23th-to-may-30th">Week 1 (May 23th to May 30th )</h2>
+<ol>
+<li>Implemented a (poor) polka dot for BRL-CAD, to get familiarized with
+    the shaders syntax. <a href="http://kuniga.files.wordpress.com/2021/05/goblet1.png">polka dot
+    goblet</a></li>
+<li>Trying to compile the OSL raytracer outside OSL build, but getting
+    compile errors, that I have no idea on how to solve. I've emailed
+    the dev list asking for help.</li>
+</ol>
+<h2 id="week-0-community-bonding">Week 0 (Community Bonding)</h2>
+<ol>
+<li>Compiled OSL sources both in Ubuntu 10.10 and Mac OS X Snow Leopard.
+    (had trouble with 11.04, mainly due to LLVM)</li>
+<li>Found a raytracer developed by Erich Ocean and Brecht
+    <a href="https://groups.google.com/forum/#!topic/osl-dev/B-JrY8KBo7I/discussion">1</a>
+    that uses OSL-written shaders. It currently renders refraction
+    wrongly.
+    <a href="http://kuniga.files.wordpress.com/2021/04/image2.png">screenshot</a></li>
+<li>Discovered the cause of the above error: I was using the wrong
+    shader for glass. Now, the image is correctly rendered.
+    <a href="http://kuniga.files.wordpress.com/2021/04/testrender_closures_fixed_refraction.jpg">screenshot</a></li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

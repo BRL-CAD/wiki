@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Xuwei/DevLog2019/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Coummunity Bonding Period - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Xuwei/DevLog2019.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#coummunity-bonding-period" class="nav-link">Coummunity Bonding Period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#may-16th" class="nav-link">May 16th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-17th" class="nav-link">May 17th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-19th" class="nav-link">May 19th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-20th" class="nav-link">May 20th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-21st" class="nav-link">May 21st</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-22nd" class="nav-link">May 22nd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-23rd" class="nav-link">May 23rd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#may-24th" class="nav-link">May 24th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-period" class="nav-link">Coding Period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#may" class="nav-link">May</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june" class="nav-link">June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#july" class="nav-link">July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#august" class="nav-link">August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="coummunity-bonding-period">Coummunity Bonding Period</h1>
+<ul>
+<li>Set up the Development log</li>
+<li>Set up the development environment such as OS.</li>
+<li>Start to look at the different potential libraries code base.</li>
+<li>Discuss with mentors which external library to choose.</li>
+</ul>
+<h2 id="may-16th">May 16th</h2>
+<ul>
+<li>Start to check the checklist.<ul>
+<li>Agreement sent.</li>
+<li>Dev log created.</li>
+<li>My Profile created.</li>
+</ul>
+</li>
+</ul>
+<h2 id="may-17th">May 17th</h2>
+<ul>
+<li>Had four of my wisdom teeth extracted. The progress for the
+    following week may be slow due to teeth extraction.</li>
+</ul>
+<h2 id="may-19th">May 19th</h2>
+<ul>
+<li>Looking at
+    <a href="https://bitbucket.org/Coin3D/dime/src/default/">Coin3D/Dime</a> code
+    base, a possible library for DXF import/export.<ul>
+<li>It has no external dependency.</li>
+<li>It supports all past and should support the future version of
+    DXF format.</li>
+<li>It compiles on Windows, Linux, MacOS, etc.</li>
+<li>But it only loads DXF files into Dime object hierarchies and
+    saves Dime object hierarchies as files conforming to DXF format.</li>
+<li>Seems only support 3D.</li>
+</ul>
+</li>
+</ul>
+<h2 id="may-20th">May 20th</h2>
+<ul>
+<li>Looking at
+    <a href="https://sourceforge.net/p/brlcad/code/HEAD/tree/brlcad/trunk/src/conv/dxf/">BRL-CAD</a>
+    DXF import/export code. Trying to understand how it works and see if
+    it is suitable for OpenSCAD.<ul>
+<li>It converts DXF format to .g and .g to DXF which is a BRL-CAD
+    format.</li>
+<li>It seems that BRL-CAD does not support the entire format, only
+    the part that is relative to solid-model.</li>
+</ul>
+</li>
+</ul>
+<h2 id="may-21st">May 21st</h2>
+<ul>
+<li>Looking at <a href="https://qcad.org/en/90-dxflib">dxflib</a> which is used by
+    QCAD and works fine, but it only supports 2D which is not ideal
+    since OpenSCAD is already supporting 2D.<ul>
+<li>Maybe we can add the 3D part. But not sure how hard it is to add
+    that.</li>
+</ul>
+</li>
+</ul>
+<h2 id="may-22nd">May 22nd</h2>
+<ul>
+<li>Searching for a library that supports both 3D and 2D DXF
+    import/export.<ul>
+<li>Libraries above are for either 2D or 3D.</li>
+<li>Found some libraries support both but they are written in python
+    instead of C++.</li>
+</ul>
+</li>
+</ul>
+<h2 id="may-23rd">May 23rd</h2>
+<ul>
+<li>Continue on searching for the potential library.</li>
+</ul>
+<h2 id="may-24th">May 24th</h2>
+<ul>
+<li>Looking at and Compile
+    <a href="https://github.com/LibreCAD/libdxfrw">libdxfrw</a> code base which is
+    used by LibreCAD.</li>
+<li>Will be out of town for the next two days.</li>
+</ul>
+<h1 id="coding-period">Coding Period</h1>
+<h2 id="may">May</h2>
+<h3 id="may-27th">May 27th</h3>
+<ul>
+<li>Looking at both libdxfrw(libdxfrw.h, dxfreader.cpp) and
+    OpenSCAD(dxfdata.cc, dxfdim.cc, import.cc) relative code.<ul>
+<li>Comparing the differences between these two on how they handle
+    DXF data.</li>
+<li>Trying to form a connection between these two.</li>
+<li>dxfdata.cc seems a bit complicated. Need some time to digest.</li>
+<li>The way that libdxfrw reads DXF file is kind of mixing with DRW
+    code.</li>
+<li>libdxfrw encounters problems when dealing with elevated arcs(no
+    response yet).<a href="https://sourceforge.net/p/librecad/bugs/596/">1</a></li>
+</ul>
+</li>
+<li>Looking at dxflib code base as well.<ul>
+<li>dxflib does not store any entities, only pass supported
+    entities.</li>
+<li>A useful link for understanding dxflib data
+    structure.<a href="https://qcad.org/doc/dxflib/2.5/classref/class_d_l___dxf.html">2</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="may-28th">May 28th</h3>
+<ul>
+<li>Move on to reading dxflib code for now<ul>
+<li>Continue reading the link about the data structure of dxflib
+    above.</li>
+<li>Trying to understand form the connection between dxflib and
+    OpenSCAD code base.</li>
+</ul>
+</li>
+<li>Continue reading dxfdata.cc</li>
+</ul>
+<h3 id="may-29th">May 29th</h3>
+<ul>
+<li>Found another one existing integration with dxflib that I can use it
+    as
+    reference.<a href="https://github.com/CauldronDevelopmentLLC/CAMotics/tree/master/src">CAMotics</a></li>
+<li>Continue on reading dxflib and import.cc, dxfdata.cc.<ul>
+<li>Keep trying to write some code that may help understanding how
+    to integrate the library.</li>
+</ul>
+</li>
+<li>Fill out the comparison <a href="https://github.com/openscad/openscad/wiki/DXF-Library-overview">wiki
+    page</a></li>
+</ul>
+<h3 id="may-30th">May 30th</h3>
+<ul>
+<li>Had to go the dentist this morning, will catch up the afternoon and
+    at night.</li>
+<li>Keep browsing for more information for those four libraries.</li>
+<li>Reading <a href="https://images.autodesk.com/adsk/files/autocad_2012_pdf_dxf-reference_enu.pdf">DXF
+    standard</a>
+    to learn how DXF format works</li>
+</ul>
+<h3 id="may-31th">May 31th</h3>
+<ul>
+<li>Searching more information for potential libraries.<ul>
+<li>Add more information that found to the comparison page.</li>
+</ul>
+</li>
+<li>Learning how to integrate the library from the
+    <a href="https://ribbonsoft.com/doc/dxflib/2.5/reference/contents.html">instruction</a>
+    written by QCAD.</li>
+</ul>
+<h2 id="june">June</h2>
+<h3 id="june-3rd">June 3rd</h3>
+<ul>
+<li>We stick with using BRL-CAD's code for now.</li>
+<li>Try to implement the circle entity.<ul>
+<li>Add a callback function on
+    <a href="https://github.com/leonplust/brlcadDXF/commit/1abc40cbe24793fbd9f94001b1a8d30e28602780#diff-3db848059130b96c98744620379df21a">dxf-g.c</a>
+    to pass the data back to openSCAD.</li>
+<li>Add processentitiyecircle() to
+    <a href="https://github.com/leonplust/openscad/blob/dxflibrary/src/dxfdata.cc">dxfdata.cc</a>
+    and some other changes to enable that function.</li>
+<li>Having some issue with ADDLINE. Will dig into that later.</li>
+</ul>
+</li>
+</ul>
+<h3 id="june-4th">June 4th</h3>
+<ul>
+<li>Push few commits on <a href="https://github.com/leonplust/openscad/tree/dxf-import">import_dxf
+    branch</a>.<ul>
+<li>Basically create a new import_dxf() function that replace the
+    old dxfdata.cc</li>
+<li>Implement a simple geometry to test out the function</li>
+</ul>
+</li>
+</ul>
+<h3 id="june-5th">June 5th</h3>
+<ul>
+<li>Modify the code committed yesterday to output a simple circle.</li>
+<li>Trying to understand layer, block.</li>
+</ul>
+<h3 id="june-6th">June 6th</h3>
+<ul>
+<li>Created a new branch
+    <a href="https://github.com/leonplust/brlcadDXF/tree/prototype">prototype</a>
+    on brlcadDXF repo.<ul>
+<li>Trying to clean up the code so that it could compile
+    independently.</li>
+</ul>
+</li>
+</ul>
+<h3 id="june-7th">June 7th</h3>
+<ul>
+<li>Switch some functions and datatype and continue on cleaning up the
+    code.</li>
+<li>Spend most of my day studying the exam tonight. Will make up the
+    time tomorrow.</li>
+</ul>
+<h3 id="june-8th">June 8th</h3>
+<ul>
+<li>Walked through the whole file line by line and cleaned up as much as
+    I can so far. There are still many details that I need to learn to
+    clean up the rest.</li>
+</ul>
+<h3 id="june-10th">June 10th</h3>
+<ul>
+<li>Made changes to dxf-g.c according to the answer from brlcad.</li>
+</ul>
+<h3 id="june-11th">June 11th</h3>
+<ul>
+<li>fix bu_list with std::list and related functions, etc.</li>
+</ul>
+<h3 id="june-12th">June 12th</h3>
+<ul>
+<li>Add functions for circle eclipse from vmath.h, color.h.</li>
+</ul>
+<h3 id="june-13th">June 13th</h3>
+<ul>
+<li>Added more functions from dependencies.</li>
+<li>uploaded a file that records to-do list, question, notes, etc.</li>
+</ul>
+<h3 id="june-14th">June 14th</h3>
+<ul>
+<li>few fixes on dxf-g.cc.</li>
+<li>Study for the midterm tonight for the most of the day will make up
+    the hours tomorrow.</li>
+</ul>
+<h3 id="june-15th">June 15th</h3>
+<ul>
+<li>Finished converting all bu_list data structure to std::list except
+    in one function drawmtext().<ul>
+<li>drawmtext() may be removed later.</li>
+</ul>
+</li>
+</ul>
+<h3 id="june-17th">June 17th</h3>
+<ul>
+<li>Finished fixing all bu_vert_tree structure.</li>
+<li>Started on fixing vls a bit.</li>
+</ul>
+<h3 id="june-18th">June 18th</h3>
+<ul>
+<li>Finished fixing all vls except those in the main().</li>
+</ul>
+<h3 id="june-19th">June 19th</h3>
+<ul>
+<li>Finished most of the parts of dxf-g.c.<ul>
+<li>Create a new branch
+    <a href="https://github.com/leonplust/brlcadDXF/tree/test">test</a> for
+    testing and commented out some less necessary functions to test.</li>
+<li>Upload test files from openSCAD testdata/dxf</li>
+<li>Need to fix the segmentation fault.</li>
+</ul>
+</li>
+</ul>
+<h3 id="june-20th">June 20th</h3>
+<ul>
+<li>Fixed numbers of segmentation faults mainly caused by malloc.</li>
+</ul>
+<h3 id="june-21st">June 21st</h3>
+<ul>
+<li>Fix strncmp function error</li>
+<li>Tested with circle, ellipse, failed at block section.</li>
+<li>Tried to reconstruct block_list, block_head data structure.</li>
+</ul>
+<h3 id="june-24th">June 24th</h3>
+<ul>
+<li>Fix block_list data structure</li>
+<li>Now dxf-g.cc can go through the whole dxf file and spit out data to
+    file output</li>
+<li>Done basic testing with circle, ellipse, polygons, lwpolyline. files
+    from openscad testdata/dxf.<ul>
+<li>Found the correct geometry.</li>
+<li>coordinates of the vertices are correct.</li>
+</ul>
+</li>
+</ul>
+<h3 id="june-25th">June 25th</h3>
+<ul>
+<li>Randomly picking files from openscad/testdata/dxf to check geometry
+    and coordinates.</li>
+<li>Trying to figure out if the data structure is actually storing the
+    correct data.</li>
+</ul>
+<h3 id="june-26th">June 26th</h3>
+<ul>
+<li>Trying to extract data from the data structure to test if it's
+    reading correct data.<ul>
+<li>For circle, extract cirlce_pts.</li>
+<li>For line, extract line_pts.</li>
+<li>For lwpolyline, extract polyline_vertice.</li>
+<li>For elllipse, center and majorAxis</li>
+<li>For point, pt.</li>
+</ul>
+</li>
+</ul>
+<h3 id="june-27th">June 27th</h3>
+<ul>
+<li>More data extracting continue from yesterday.</li>
+<li>Try to start integrating openscad and dxf-g.cc just for circle
+    entities.</li>
+</ul>
+<h3 id="june-28th">June 28th</h3>
+<ul>
+<li>Run openscad together with dxf-g.cc.</li>
+<li>Implemented circle entities using dxf-g.cc called a openscad
+    function.<ul>
+<li>Later the day discussion concluded that this is not the
+    preferred way. deprecated.</li>
+</ul>
+</li>
+</ul>
+<h2 id="july">July</h2>
+<h3 id="july-1st">July 1st</h3>
+<ul>
+<li>Added structs for each geometry for storing the data.</li>
+<li>Some minor fixes for original data type point_t.</li>
+</ul>
+<h3 id="july-2nd">July 2nd</h3>
+<ul>
+<li>storing all the data parsed to the respect vectors.<ul>
+<li>Except polyline is a bit tricky, not done yet.</li>
+</ul>
+</li>
+</ul>
+<h3 id="july-3rd">July 3rd</h3>
+<ul>
+<li>Added polyline struct and the storing part.</li>
+<li>Added code for passing circle entity information to openscad and
+    openscad draw it.<ul>
+<li>Having trouble with compilation.</li>
+</ul>
+</li>
+</ul>
+<h3 id="july-4th">July 4th</h3>
+<ul>
+<li>Added arc, line, points, lwpolyline.<ul>
+<li>Still have some problems with lwpolyline.</li>
+</ul>
+</li>
+</ul>
+<h3 id="july-5th">July 5th</h3>
+<ul>
+<li>fix lwpolyline.</li>
+<li>Added ellipse.</li>
+<li>Found problem with mesh.</li>
+</ul>
+<h3 id="july-8th">July 8th</h3>
+<ul>
+<li>Trying to fix mesh</li>
+</ul>
+<h3 id="july-9th">July 9th</h3>
+<ul>
+<li>Change the structure of the entire code to use the code of dxfdata
+    to fix the mesh problem</li>
+<li>The code still not able to produce the correct polygon yet.</li>
+</ul>
+<h3 id="july-10th">July 10th</h3>
+<ul>
+<li>Fix the mesh problem and now the code can properly import a single
+    dxf file.<ul>
+<li>For some reason, the data is store and fill in the next polygon
+    if the second dxf is imported.</li>
+</ul>
+</li>
+</ul>
+<h3 id="july-11th">July 11th</h3>
+<ul>
+<li>Fix the data leakage between document.</li>
+<li>Now the code is passing all the test file except nothing decimal
+    comma and transform insert.<ul>
+<li>the reader has an issue with insert entity</li>
+</ul>
+</li>
+</ul>
+<h3 id="july-12th">July 12th</h3>
+<ul>
+<li>Trying to figure out how to fix the insert.</li>
+<li>Learning the insert spec from dxf manual</li>
+</ul>
+<h3 id="july-14th">July 14th</h3>
+<ul>
+<li>Fix the block list and curr_block is not storing value properly</li>
+<li>There is an infinite loop caused by the file offset in the
+    process_enitites_unknown<ul>
+<li>It jumps to the previous line but does not jump back</li>
+</ul>
+</li>
+<li>Continue on fixing insert</li>
+</ul>
+<h3 id="july-15th">July 15th</h3>
+<ul>
+<li>Clean up most of the commented code in dxf.cc and dxf.h</li>
+<li>fix the curr_block memory issue by using a global variable indx
+    that indicate the position of the block in block_list</li>
+<li>Continue on fixing insert</li>
+</ul>
+<h3 id="july-16th">July 16th</h3>
+<ul>
+<li>Adding back_file_offset to state_data to have the program jump
+    back<ul>
+<li>Still getting the wrong result, the geometries are scattered but
+    shapes are the same.</li>
+</ul>
+</li>
+<li>Continue on fixing insert</li>
+</ul>
+<h3 id="july-17th">July 17th</h3>
+<ul>
+<li>replace all memory allocation function related to insert with new
+    and delete<ul>
+<li>valgrind now output no error or warning</li>
+</ul>
+</li>
+<li>Continue on fixing insert</li>
+</ul>
+<h3 id="july-18th">July 18th</h3>
+<ul>
+<li>Download and build brlcad to test out what's the difference and if
+    it can output the correct result<ul>
+<li>There is no problem with the curr_state-&gt;file_offset</li>
+</ul>
+</li>
+<li>Continue on fixing insert</li>
+</ul>
+<h3 id="july-19th">July 19th</h3>
+<ul>
+<li>Found that the brlcad xform is different than my version.<ul>
+<li>Can't figure out why it's different</li>
+</ul>
+</li>
+<li>Continue on fixing insert</li>
+</ul>
+<h3 id="july-20th">July 20th</h3>
+<ul>
+<li>Found the BU_LIST_POP actually assign curr_state to the last
+    element of the list<ul>
+<li>This fix the infinity loop and remove back_file_offset.</li>
+</ul>
+</li>
+<li>Continue on fixing insert</li>
+</ul>
+<h3 id="july-21st">July 21st</h3>
+<ul>
+<li>By switching the push_back and new_state = curr_state this fix
+    the xform problem.<ul>
+<li>Insert is fixed but it looks there is an issue with different
+    compiler</li>
+</ul>
+</li>
+</ul>
+<h3 id="july-22nd">July 22nd</h3>
+<ul>
+<li>Cleaning up dxf.cc, import-dxf.cc, dxf.h.</li>
+</ul>
+<h3 id="july-23rd">July 23rd</h3>
+<ul>
+<li>Finished cleaning up dxf.cc, import-dxf.cc, dxf.h.</li>
+<li>Make <a href="https://github.com/openscad/openscad/pull/3005">#pr3005</a> to
+    test in various platform.</li>
+</ul>
+<h3 id="july-24th">July 24th</h3>
+<ul>
+<li>Fix scale, xyorigin, layername problem.</li>
+<li>Test result <a href="https://github.com/openscad/openscad/pull/3006">3</a></li>
+</ul>
+<h3 id="july-25th">July 25th</h3>
+<ul>
+<li>Starting working on spline entity.</li>
+<li>Reading spline related code on QCAD.</li>
+<li>Learning dxf spline entity spec.</li>
+</ul>
+<h3 id="july-26th">July 26th</h3>
+<ul>
+<li>QCAD is using an external library opennurbs to deal with the spline.</li>
+<li>Reading spline related code on BRL-CAD.<ul>
+<li>BRL-CAD code can be implemented on openscad.</li>
+</ul>
+</li>
+</ul>
+<h3 id="july-29th">July 29th</h3>
+<ul>
+<li>Replicate and integrate brlcad spline code to openscad.</li>
+</ul>
+<h3 id="july-30th">July 30th</h3>
+<ul>
+<li>Continue integrating blrcad spline code to openscad.</li>
+</ul>
+<h3 id="july-31st">July 31st</h3>
+<ul>
+<li>Testing brlcad code with openscad, comparing with brlcad and qcad.<ul>
+<li>Creating test cases using AutoCAD.</li>
+<li>Both brlcad and qcad seems to not supporting the spline created
+    by autocad properly due to dxf version problem.</li>
+<li>brlcad encounter segmentation fault with one of the spline test
+    cases.</li>
+</ul>
+</li>
+</ul>
+<h2 id="august">August</h2>
+<h3 id="august-1st">August 1st</h3>
+<ul>
+<li>Switch to reading LibreCAD spline related code.<ul>
+<li>LibreCAD 2.x version is using their own code.</li>
+</ul>
+</li>
+<li>Also reading openscad bezier curve related code.</li>
+</ul>
+<h3 id="august-2nd">August 2nd</h3>
+<ul>
+<li>LibreCAD can handle the spline created by autocad unlike brlcad and
+    qcad.</li>
+<li>OpenSCAD code can handle degree 2, 3 normal spline(Beizer curve)
+    properly.<ul>
+<li>Starting adding openscad code to import_dxf.</li>
+</ul>
+</li>
+</ul>
+<h3 id="august-3rd">August 3rd</h3>
+<ul>
+<li>Modified openscad code and integrated it to import_dxf.</li>
+</ul>
+<h3 id="august-4th">August 4th</h3>
+<ul>
+<li>Testing the spline import of openscad<ul>
+<li>Able to import 3 control points for degree 2 spline and 4 for
+    degree 3 spline.</li>
+<li>Fail to generate continuous bezier curve.</li>
+</ul>
+</li>
+</ul>
+<h3 id="august-5th">August 5th</h3>
+<ul>
+<li>Trying to figure an algorithm or a way to generate continuous bezier
+    curve like this
+    <a href="https://www.algosome.com/articles/continuous-bezier-curve-line.html">article</a>.</li>
+</ul>
+<h3 id="august-6th">August 6th</h3>
+<ul>
+<li>OpenSCAD is now able to import degree 1-3 spline with certain
+    numbers of control points.<ul>
+<li>spline knots, weights, fit points are ignored.</li>
+</ul>
+</li>
+</ul>
+<h3 id="august-7th-14th">August 7th - 14th</h3>
+<ul>
+<li>Family trip.</li>
+<li>Originally from 7th-12th, due to the riots in Hong Kong airport and
+    the typhoon in Osaka, flight got cancelled and delayed. ** Due to
+    the typhoon, updated flight time is 16th.</li>
+</ul>
+<h3 id="august-15th">August 15th</h3>
+<ul>
+<li>Starting working on polyline entity.</li>
+</ul>
+<h3 id="august-16th">August 16th</h3>
+<ul>
+<li>Rearrange code and fix error in storing polyline vertex in the
+    importer.</li>
+<li>On the flight home</li>
+</ul>
+<h3 id="august-17th">August 17th</h3>
+<ul>
+<li>Integrate 2D polyline entity to openscad ignoring 3D polyline
+    features and curve-fit.</li>
+</ul>
+<h3 id="august-18th">August 18th</h3>
+<ul>
+<li>Improve polyline with the spline-fit flag, can generate by both
+    spline vertex and control points.</li>
+<li>Test polyline.</li>
+<li>Add test cases to the test suite.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

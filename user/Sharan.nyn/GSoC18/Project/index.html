@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Sharan.nyn/GSoC18/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Sharan.nyn/GSoC18/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#project-title-implementing-check-command-in-c-and-its-gui-in-tcltk" class="nav-link">Project Title: Implementing Check command in C and its GUI in Tcl/Tk</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brief-project-summary" class="nav-link">Brief Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#detailed-project-description" class="nav-link">Detailed Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability" class="nav-link">Time Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#additional-information" class="nav-link">Additional Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-me" class="nav-link">Why Me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>Name:</strong> Saran Narayan</p>
+<p><strong>Project Mentor:</strong> Daniel Rossberg</p>
+<p><strong>IRC Nick:</strong> SaranNarayan</p>
+<p><strong>SourceForge Profile:</strong> <strong><a href="https://sourceforge.net/u/sharannyn">https://sourceforge.net/u/sharannyn</a></strong></p>
+<p><strong>Brief Background Information</strong></p>
+<p>3rd year B.Tech student aspiring Computer Science and Engineering at
+Govt. Model Engineering College, Thrikkakara, India.</p>
+<p>Google Code-In 2012 and 2013 finalist for BRL-CAD. I did 10 tasks in
+2012 and 20 tasks in 2013. Most of them were modeling, graphics
+designing and a few related to finding bugs.</p>
+<p>I am well versed with C/C++ and have experience in graphic designing, UI
+designing.</p>
+<h1 id="project-information">Project Information</h1>
+<h1 id="project-title-implementing-check-command-in-c-and-its-gui-in-tcltk">Project Title: Implementing Check command in C and its GUI in Tcl/Tk</h1>
+<h1 id="brief-project-summary">Brief Project Summary</h1>
+<p>This project aims to bring cross platform compatibility to the existing
+check command that is used by the Overlap tool. Also designing a GUI in
+TCL that runs the check command. The output of this check command is
+then used by the existing checker GUI.</p>
+<h1 id="detailed-project-description">Detailed Project Description</h1>
+<p><strong>Introduction</strong></p>
+<p>This project is amongst the user interface project ideas under the high
+priority list. The overlap tool is used very often when creating models.
+Overlaps are undesirable but they are bound to happen most of the times.
+This tool provides features like detecting the overlaps, listing the
+overlaps, visualizing it and giving options on how to eliminate them.</p>
+<p><strong>Major Issue</strong></p>
+<p>One of the major issues with the current implementation is the Linux
+dependency of the overlap tool.The check.sh is a Linux script that is
+used to detect overlaps and save them in an overlap file which is then
+used by the overlap tool to tabulate, visualize and solve them. After
+going through the current implementation of the check.sh, these are the
+following steps that happen:</p>
+<p><b></p>
+<li>
+
+Finding the locations of the commands
+
+</li>
+
+<p></b></p>
+<p>The first step that happens in the script is that it finds the locations
+of the commands the tool uses which are rtcheck, gqa, mged and loop.</p>
+<p><b></p>
+<li>
+
+Getting list of top objects if not provided
+
+</li>
+
+<p></b></p>
+<p>Next step is getting the list of top objects in the database file
+provided, this list of objects are used to run the rtcheck and gqa
+command.</p>
+<p><b></p>
+<li>
+
+Running rtcheck
+
+</li>
+
+<p></b></p>
+<p>Now for each object in the list, the rtcheck command is run for all
+possible combinations of az, el ( 0, 45, 90, 135). Which gives 16
+combinations for all objects. The logs of the rtcheck command is saved.</p>
+<p><b></p>
+<li>
+
+Parsing the logs of rtcheck
+
+</li>
+
+<p></b></p>
+<p>The logs of rtcheck are then processed by sed, cut and awk to return
+just the overlap pairs, volume. This data is stored to a pairings file.</p>
+<p><b></p>
+<li>
+
+Running gqa
+
+</li>
+
+<p></b></p>
+<p>For a second opinion, the overlaps are checked for the same objects
+again with grid spacing set to 1mm,1mm. The logs of the gqa command is
+saved.</p>
+<p><b></p>
+<li>
+
+Parsing logs of gqa
+
+</li>
+
+<p></b></p>
+<p>The logs of gqa are now parsed using sed and awk to return just the
+overlap pairs and volume. This data is appended to the pairing file.</p>
+<p><b></p>
+<li>
+
+Sorting and removing duplicate overlaps
+
+</li>
+
+<p></b></p>
+<p>The next step involves sorting the overlaps and removing duplicate
+overlaps to get just the unique pairings. This output is then passed to
+the checker.tcl file.</p>
+</ol>
+<p>Now to implement the above described features in C, I need to remove the
+use of text processing done on the outputs of rtcheck and gqa commands
+and refactor these commands so that they return required outputs which
+can be directly used by the main program without the need of parsing.</p>
+<p>The rtcheck command’s code is in /src/rt/viewcheck.c, the overlap list
+is a linked list that has the following node structure:</p>
+<ol>
+<li>A pointer to the next node in the list, it’s a must in linked list.
+    So that we can iterate the list</li>
+<li>Two character variables to store the overlapping regions</li>
+<li>A size_t type to store the unsigned count of overlaps</li>
+<li>A double type variable to store the depth of the overlaps</li>
+</ol>
+<p>What I have to do is refactor the rtcheck command to a libanalyse
+function, then make rtcheck use this function. Exactly what happens in
+gqa command, which calls the add_unique_pair( ) function stored in
+/src/libanalyse/overlaps.c The add_unique_pair function has the
+parameters of the form:</p>
+<ol>
+<li>Pointer to a type of region_pair, which gets the address of the
+    local overlap list used in gqa command.</li>
+<li>Two region structures which are passed from gqa after finding the
+    overlapping pairs.</li>
+<li>A double type variable to pass the depth/thickness of the overlap.</li>
+<li>A point_t type variable to pass the coordinates where the overlap
+    happens.</li>
+</ol>
+<p><strong>User Interface</strong></p>
+<p>I have thought of an interface that is easy to use, there will be two
+ways to define the objects list to check the overlaps:</p>
+<ol>
+<li>Manually typing and add to the list of the objects to check</li>
+<li>Select from tree display of all items.</li>
+</ol>
+<p>For a better idea look at the prototype I have in mind :</p>
+<p><center></p>
+<figure>
+![](/wiki/user/img/CheckGUI.png)
+</figure>
+
+<p></center></p>
+<p>There are five components:</p>
+<ol>
+<li>Tree display of all objects in DB.</li>
+<li>List of the selected objects to check.</li>
+<li>Text input field to manually add or remove items from the list of
+    selected objects.</li>
+<li>Check top objects button.</li>
+<li>Check and Clear buttons.</li>
+</ol>
+<p>For tree display, I will look into the code for the browse geometry
+tool, located in /src/tclscripts/geometree/</p>
+<p>Adding the list would be fairly simple, I would look into the
+checker.tcl which uses a list to display overlap pairs.</p>
+<p>For the manual inputs, I need to check if it exists already in the list
+of objects before removing or adding items and show an error if an
+already added item is being added or an item is deleted which doesn’t
+exist in the list.</p>
+<p>The check top objects button calls the check.c command without any
+arguments so it automatically run the tool on top objects.</p>
+<p>The clear button would be useful to discard the list of selected objects
+and start over.</p>
+<p>The check button executes the newly written check.c command with
+selected objects as arguments.</p>
+<h1 id="deliverables">Deliverables</h1>
+<ul>
+<li>First Deliverable:<ul>
+<li>Libanalyze function.</li>
+<li>Refactored rtcheck command.</li>
+<li>Basic implementation of check command.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Second Deliverable:<ul>
+<li>Complete implementation of the check command</li>
+<li>Basic GUI for the check command.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Final Deliverable:<ul>
+<li>Finished GUI for the check command.</li>
+</ul>
+</li>
+</ul>
+<h1 id="timeline">Timeline</h1>
+<ul>
+<li>Week 1:<ul>
+<li>Implement a libanalyze function - analyze_overlaps() to do the
+    work rtcheck does.</li>
+<li>Start implementation of the check command - call this libanalyze
+    function like the current shell script does for rtcheck, get the
+    results as overlapList.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 2:<ul>
+<li>Continue work on rtcheck if it was incomplete in the previous
+    week.</li>
+<li>Add capabilities of gqa to this libanalyze function.</li>
+<li>Call the libanalyze function for the newly added gqa features
+    and get the results as the overlapList in check command</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 3:<ul>
+<li>Continue work on gqa if it was incomplete in the previous week.</li>
+<li>Refactor the existing rtcheck to use the new libanalyze
+    function.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 4:<ul>
+<li>Testing, debugging and cleanup.</li>
+<li>Getting the check command ready for the first deliverable.</li>
+<li>Start adding functions to do the processing of the overlapList.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 5:<ul>
+<li>1st evaluation report submission.</li>
+<li>Add the remaining work done by the shell script to the check
+    command, like sorting, removing duplicates and writing output to
+    a pairing files to be used by the overlap GUI.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 6:<ul>
+<li>Calling the overlap checker tool from the check command.</li>
+<li>Start working on the GUI part of the check command.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 7:<ul>
+<li>Finish a basic GUI to call the check command before the 2nd
+    evaluation.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 8:<ul>
+<li>Testing, debugging, documentation and cleanup to prepare for the
+    second deliverable.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 9:<ul>
+<li>2nd evaluation report submission.</li>
+<li>Start adding more advanced features to the check commands GUI
+    like tree list view.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 10 &amp; 11:<ul>
+<li>Complete the GUI part with the proposed features fully
+    implemented.</li>
+<li>If time allows add ability to use * wild card for bulk
+    add/remove objects to the list.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 12:<ul>
+<li>Final testing and bug fixing.</li>
+<li>Documentation and code cleanups before final submission.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 13:<ul>
+<li>Prepare final report on the project.</li>
+</ul>
+</li>
+</ul>
+<h1 id="time-availability">Time Availability</h1>
+<p>I will be devoting at least 40 hours/week for this project and more if
+needed. During my vacations that is from May 17,2018 to August 1,2018, I
+have no other obligations planned that overlaps with the coding period.
+I will be having my end semester exams from April 26,2018 to May
+17,2018. I will manage by allocating time judiciously.</p>
+<h1 id="additional-information">Additional Information</h1>
+<p>I have submitted the following patches during application period and
+application review period:</p>
+<p>Fixed a bug with the existing overlap tool:</p>
+<p><code></code><a href="https://sourceforge.net/p/brlcad/patches/476/"><code>https://sourceforge.net/p/brlcad/patches/476/</code></a></p>
+<p>A task assigned by Sean, a simple command that prints hello message</p>
+<p><code></code><a href="https://sourceforge.net/p/brlcad/patches/478/"><code>https://sourceforge.net/p/brlcad/patches/478/</code></a></p>
+<p>A TODO task under libged, in src/libged/tables.c where a temporary file
+is getting used, is created by bu_temp_file( ).</p>
+<p><code></code><a href="https://sourceforge.net/p/brlcad/patches/479/"><code>https://sourceforge.net/p/brlcad/patches/479/</code></a></p>
+<p>A TODO task, added support to rt tools and gtools for specifying az/el
+in radians or degrees with an explicit 'rad' suffix and an implicit
+'deg' suffix.</p>
+<p><code></code><a href="https://sourceforge.net/p/brlcad/patches/481/"><code>https://sourceforge.net/p/brlcad/patches/481/</code></a>
+<code></code><a href="https://sourceforge.net/p/brlcad/patches/482/"><code>https://sourceforge.net/p/brlcad/patches/482/</code></a></p>
+<h1 id="why-brl-cad">Why BRL-CAD?</h1>
+<p>CAD softwares and making models in 3D were always my interests. BRL-CAD
+gave me the taste for open source development in my experience with
+Google Code-In. The mentors are really friendly and helpful. The
+projects under BRL-CAD are interesting and practical.</p>
+<h1 id="why-me">Why Me?</h1>
+<p>I am really excited to work with BRL CAD on this project. I am always
+looking forward to opportunities to learn new things. I am persistent
+and hardworking.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

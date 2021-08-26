@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Bhinesley/gsoc2011/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Gsoc2011 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Bhinesley/gsoc2011.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#log" class="nav-link">Log</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#general-plan" class="nav-link">General plan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="log">Log</h2>
+<ul>
+<li>08/16/11<ul>
+<li>Fixed edit support for batch operations and accepting multiple
+    arguments.</li>
+<li>I disabled support for the batch operator as an argument to
+    -x/-y/-z options. It isn't going to work without significant
+    changes to several functions.</li>
+<li>Finished migrated get_solid_keypoint() to libged; all
+    primitive types have a default keypoint.</li>
+<li>Began testing/recording working argument sets to translate.</li>
+</ul>
+</li>
+<li>08/15/11<ul>
+<li>Started migrating get_solid_keypoint() to libged. BSPLINE and
+    ARS are not working.</li>
+<li>Enabled -n option (use of natural origin, via
+    get_solid_keypoint())</li>
+</ul>
+</li>
+<li>08/14/11<ul>
+<li>Fixed -x/-y/-z options. They seem to be fully functional now.
+    I'll take a step back and test everything more thoroughly once
+    the other major issues are resolved.</li>
+<li>Tracked down several bugs in edit.c</li>
+</ul>
+</li>
+<li>08/13/11</li>
+<li>08/12/11<ul>
+<li>Worked on getting -x/-y/-z options working</li>
+<li>Fixed several bugs in edit.c</li>
+<li>Fixed a couple ged_path_validate bugs</li>
+</ul>
+</li>
+<li>08/11/11<ul>
+<li>The translate command works for many (most?) cases now:<ul>
+<li>translate 0 0 obj</li>
+<li>translate -a 5 0 10 obj</li>
+<li>translate -k obj -a obj2 obj3</li>
+<li>translate -k 21.7 3 -r 10 20 30 obj</li>
+<li>translate -k obj1 4 1 7 -r . obj</li>
+</ul>
+</li>
+<li>Here are the translate features that don't work yet:<ul>
+<li><s>supplying multiple objects to translate (and obviously
+    the "." batch operator isn't incredibly useful until this is
+    fixed)</li>
+<li>specifying individual coordinates is untested (-x/-y/-z),
+    such as:<ul>
+<li>translate -z 5 obj</li>
+<li>translate -k -y obj1 4 2 -r 3.78 9 obj2</li>
+</ul>
+</li>
+<li>using the natural origin of objects (-n)</s></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>08/10/11<ul>
+<li>Worked towards making -x/-y/-z options functional. This goes
+    hand in hand with fixing multiple failures related to the simple
+    "translate 5 obj" syntax. I basically forgot about those options
+    when I was writing edit(); there is missing functionality all
+    over the place. Lesson learned: put the full design in writing.</li>
+</ul>
+</li>
+<li>08/09/11<ul>
+<li>Got translate working for a few narrow cases; "translate -k obj1
+    -a obj2 obj3" and "translate -a obj1 obj2" are tested, but there
+    are problems with many other cases. Automatic redrawing doesn't
+    work, so translated objects have to be blasted (this is a TCL
+    issue).</li>
+<li>edit() wasn't handling arguments built with -x/-y/-z options. I
+    wrote a function that fills in any omitted coordinates in the
+    argument vectors. There are still some issues preventing this
+    from working. Until it is, commands like "translate 5 obj" won't
+    work.</li>
+<li>In commands like "translate 5 obj", 5 and obj were mistakenly
+    being paired (5 was treated as an offset to obj). Works properly
+    now.</li>
+<li>Plan<s><ul>
+<li>Fix whatever is preventing translate from working (there may
+    be an issue in the functions that get the apparent
+    coordinates of objects).</li>
+<li>Test translate thoroughly</li>
+<li>This is an excellent waypoint; I'll test any odd/wrong
+    combinations, trying to crash and find unhelpful/broken
+    error messages.</li>
+<li>Begin work on the rotate subcommand</s></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>08/08/11<ul>
+<li>Changed many edit.c variables/parameters to const's, which
+    revealed several issues in edit.c and some in path.c.</li>
+<li>Batch arguments were expanding properly, but only the first set
+    of arguments was being sent to the subcommands. I simply forgot
+    about that.</li>
+<li>Several problems were revealed and resolved in adding the
+    aforementioned capabilities to edit().</li>
+</ul>
+</li>
+<li>08/06/11 - 08/07/11</li>
+<li>08/05/11<ul>
+<li>Close to being done with the functions for converting arguments
+    to coordinates; just need to test/debug. Actually, everything
+    needs to be thoroughly tested/debugged now, since everything
+    except the rotate/scale subcommands is practically done.</li>
+</ul>
+</li>
+<li>08/04/11<ul>
+<li>Fixed batch argument expansion functionality.</li>
+<li>Wrote the body of the edit_translate() function.</li>
+<li>Removed all dead/obsolete code.</li>
+<li>Worked on functions for converting arguments from {path +
+    object + offset} to absolute coordinates, since vect_t's are
+    all the subcommand functions are designed to accept.</li>
+</ul>
+</li>
+<li>08/03/11<ul>
+<li>Decided that the reason the bug from yesterday was so difficult
+    to find, was that edit() was difficult to read/follow. I broke
+    out the ability to perform batch argument expansion into another
+    function, and created/modified several edit_arg helper
+    functions.</li>
+</ul>
+</li>
+<li>08/02/11<ul>
+<li>Not-so-fun day trying to find a bug.</li>
+</ul>
+</li>
+<li>08/01/11<ul>
+<li>Many of the edit_cmd/edit_arg helper functions were out of
+    date with recent changes. All known issues for code that existed
+    prior to this week, were resolved this week.</li>
+<li>Added ability to expand batch arguments to edit().</li>
+<li>Further improvements to generic argument handling. Ex:
+    enforcement of the rule that '-k' makes '-a/-r' mandatory for
+    every command that uses those options.</li>
+</ul>
+</li>
+<li>07/30/11 - 07/31/11</li>
+<li>07/25/11 - 07/29/11<ul>
+<li>Set up subcommand functions, with pointers to those functions in
+    the edit_cmd struct array.</li>
+<li>Improvements to ged_edit() option/argument parsing.</li>
+<li>Changed union edit_cmd args to pointers(which led to many other
+    changes).</li>
+<li>Lots of debugging. Tracked down several edit.c bugs.</li>
+<li>Wrote the body of the command-specific argument handling
+    function for translate, edit_translate_add_cl_args().</li>
+<li>Wrote several other command-specific functions for all currently
+    planned subcommands (translate/rotate/scale), to help with
+    initialization, looping through arguments, etc.</li>
+</ul>
+</li>
+<li>07/18/11 - 07/22/11<ul>
+<li>Worked on getting generic sub-argument handling working in
+    ged_edit.</li>
+<li>Added a basic help subsystem for ged_edit and its subcommands.</li>
+<li>Implemented support for reading multiple sub-arguments per
+    option.</li>
+</ul>
+</li>
+<li>07/16/11 - 07/17/11</li>
+<li>07/15/11<ul>
+<li>Changed how subcommands are added to the edit command.</li>
+<li>Added a help system to ged_edit, which displays the longest
+    synopsis available for a given subcommand; the usage statement
+    displays the shortest.</li>
+</ul>
+</li>
+<li>07/14/11<ul>
+<li>Added validation of subcommand names</li>
+<li>Cleanup</li>
+</ul>
+</li>
+<li>07/13/11<ul>
+<li>Changed name of alter -&gt; edit throughout BRL-CAD</li>
+<li>Add edit command to Archer/MGED, and to all the special areas :)</li>
+<li>Add edit subcommands to Archer; start on making ged_edit aware
+    of what command is calling it.</li>
+</ul>
+</li>
+<li>07/12/11<ul>
+<li>Set up union, structs, and flags for subcommand handling</li>
+<li>Added helper functions for manipulating the argument structs</li>
+</ul>
+</li>
+<li>07/11/11<ul>
+<li>Added examples to manual for scale command</li>
+<li>More corrections to manuals</li>
+</ul>
+</li>
+<li>07/10/11<ul>
+<li>Made corrections to existing manuals</li>
+<li>Wrote manual for scale command</li>
+</ul>
+</li>
+<li>07/09/11</li>
+<li>07/08/11<ul>
+<li>Worked on manual for rotate command</li>
+</ul>
+</li>
+<li>07/07/11<ul>
+<li>Design/mock manual page for the rotate command seems to be
+    mostly done. It could probably use some more examples to ensure
+    that I haven't missed anything.</li>
+<li>Plan for the week<ul>
+<li><s>Finish all 3 command mock manuals</s></li>
+<li><s>Ensure the proposed operations are acceptable to everyone
+    (asked on mailing list)</li>
+<li>Implement alter command syntax handling (WIP)</li>
+<li>Get translate working again (but through alter this
+    time)</s></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>07/06/11<ul>
+<li>Improved some things with the proposed translate command
+    functionality.</li>
+<li>Resolved all known conflicts and ambiguities in rotate command
+    manual page. Started adding to EXAMPLES section, to help define
+    behavior further.</li>
+<li>Laid out skeleton of scale command's manual page</li>
+</ul>
+</li>
+<li>07/05/11<ul>
+<li>Started inventing new rotate command behavior by writing a mock
+    manual page for it, as inspired by translate command. Much more
+    complicated, though.</li>
+</ul>
+</li>
+<li>07/02/11 - 07/04/11</li>
+<li>07/01/11<ul>
+<li>Revised translate command manual page per conversation with
+    Sean.</li>
+<li>Started setting up for consolidating translate/rotate/scale
+    -&gt; alter, for common syntax handling.</li>
+</ul>
+</li>
+<li>06/30/11<ul>
+<li>Proposed new functionality for the translate command, and wrote
+    a mock manual page for it. Hashed out the details with Sean.</li>
+<li>Cleaned up some translate command logic.</li>
+</ul>
+</li>
+<li>06/29/11<ul>
+<li>translate now supports all 4 types of translations mentioned
+    yesterday.</li>
+<li>Plan<ul>
+<li><s>Work on making ged_translate() support the remaining 3
+    main types of translations</li>
+<li>Add support for absolute positioning using preset or default
+    keypoints</li>
+<li>Rename translate() (probably), and further prepare it for
+    being exposed via ged_private.h</li>
+<li>Implement on ged_rotate() and ged_scale(). I may pull
+    common functionality out of ged_translate() and put it into
+    one large function or wrapper that handles all 3 commands,
+    such as "ged_oed()", if they are similar enough.</li>
+<li>Implement one of the simpler commands on my list, to ensure
+    that my GSoC milestone #2 is satisfied.</s></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>06/28/11<ul>
+<li>Translation of all objects in a single combination's tree now
+    works.</li>
+<li>Note: not including absolute translations using a keypoint, the
+    mged oed equivalents of the 4 main types of translations are:<ul>
+<li><s><code>oed / comb1.c/kp.s ;# all instances of comb1.c</code></s></li>
+<li><s><code>oed comb1.c comb2.c/kp.s ;# only the instance of comb2.c in comb1.c</code></s></li>
+<li><s><code>oed / shape.s ;# all instances of shape.s</code></s></li>
+<li><s><code>oed comb1.c shape.s ;# only the instance of shape.s in comb1.c</code></s></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>06/27/11<ul>
+<li>Isolated core of ged_translate functionality into a separate
+    function, which will eventually be exposed so that other
+    functions can use it (ex: otranslate)</li>
+</ul>
+</li>
+<li>06/26/11</li>
+<li>06/25/11</li>
+<li>06/24/11<ul>
+<li>Wrote ged_validate_path()</li>
+<li>Quieted all 511 warnings about using number formatting other
+    than %zu for a size_t argument.</li>
+<li>Plan<ul>
+<li>The next step for the translate command is to perform the
+    actual translations.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>06/22/11, 06/23/11<ul>
+<li>Created a ged_is_path function to determine if db_full_path
+    structs contain valid paths (this will be used by the translate
+    command, at least)</li>
+</ul>
+</li>
+<li>06/21/11</li>
+<li>06/17/11, 06/20/11<ul>
+<li>Fell behind on this log. I took the day off on Saturday, Sunday,
+    and Tuesday.</li>
+<li>I've become more familiar with how the .g database is used
+    internally, and also cleared up some misunderstandings of how
+    the MGED oed operations work.</li>
+<li>Implemented fairly robust argument handling for translate
+    command.</li>
+<li>Plan<ul>
+<li>Continue working on 'translate'. The first target is a
+    working command with defaults only.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>06/16/11<ul>
+<li>Started setting up the translate command (temporarily translate2
+    for mged)</li>
+</ul>
+</li>
+<li>06/15/11<ul>
+<li>Reading code and messing around with MGED/Archer to get a handle
+    on how oed works</li>
+<li>Replaced 'erase_all' command with 'erase -r'</li>
+</ul>
+</li>
+<li>06/14/11<ul>
+<li>Reading code; I couldn't really get anything accomplished today,
+    so perhaps we'll call this my day off.</li>
+<li>Plan<ul>
+<li>Start work on migrating next set of commands</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>06/13/11<ul>
+<li>Tried to fix a bug in Archer's ls command, where any arguments
+    are echoed, regardless of whether they are objects. Identifying
+    the problem was the easy part... it would be complex to fix it
+    properly.</li>
+<li>Tracked down a commit that revealed a bug, which prevented
+    ray-tracing.</li>
+</ul>
+</li>
+<li>06/12/11<ul>
+<li>Fixed a bug in Archer/MGED man command handling</li>
+<li>Fixed a bug in ManBrowser</li>
+<li>Fully documented and cleaned up ManBrowser</li>
+</ul>
+</li>
+<li>06/11/11</li>
+<li>06/10/11<ul>
+<li>Did a manual inspection of all 58 lsort calls, and ensured that
+    any lsearch's that immediately followed them used the -sorted
+    switch to force binary rather than linear searching.</li>
+<li>Plan<ul>
+<li>Patch bugs, clean up Archer commands, etc.</li>
+<li>Continue reading code to figure out how a libged registry
+    might work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>06/09/11<ul>
+<li>Spent about 1/2 the day trying to build with cmake (I've been
+    using automake up until now). Ended doing a fresh checkout and
+    building outside the source directory, as recommended by
+    ``Eric.</li>
+<li>Committed all of the patches that I had submitted before I was
+    given commit access.</li>
+<li>Reading code to gain an understanding of how a libged registry
+    might be constructed.</li>
+</ul>
+</li>
+<li>06/08/11<ul>
+<li>Made ManBrowser fully operational as a replacement for existing
+    faculties.</li>
+<li>Added -disabledPages and -enabledPages options to ManBrowser, to
+    allow for fine-tuning of available pages.</li>
+<li>Modified Archer/MGED to use ManBrowser, and removed obsoleted
+    faculties.</li>
+</ul>
+</li>
+<li>06/07/11<ul>
+<li>Changed ManBrowser to inherit from iwidgits::dialog. It now
+    creates the window properly, activates, loads the table of
+    contents and Introduction.html. Selection binding of the ToC is
+    not working yet. Still some cleanup to do.r</li>
+<li>Plan: I'd really like to have ManBrowser done within a day or
+    two, so that I still have about a week before my first
+    milestone. We'll see.</li>
+</ul>
+</li>
+<li>06/06/11<ul>
+<li>Tried to figure out how to reliably center the Manual Page
+    Browser without manually determining the center, etc. Could not
+    get it working correctly if my life depended on it.</li>
+<li>Read a chapter on Itcl, and made some changes to ManBrowser
+    because of it.</li>
+<li>I received commit access today, so I cleaned things up so that I
+    could start committing regularly. I submitted my working changes
+    to the man command, and my nonworking progress on the ManBrowser
+    mega-widget.</li>
+</ul>
+</li>
+<li>06/05/11</li>
+<li>06/04/11<ul>
+<li>Reading documentation today.</li>
+</ul>
+</li>
+<li>06/03/11<ul>
+<li>Since the man command was made functional yesterday, today I
+    started work on moving it into it's own file/class in
+    tclscripts/man_browser.tcl. The class is now partially
+    functional, and Archer.tcl has been mostly modified to work with
+    it. I'm having problems with some Itcl/Itk stuff, so it's back
+    to the books tomorrow.</li>
+</ul>
+</li>
+<li>06/02/11<ul>
+<li>I was still having problems today, but I knew that I really just
+    need to read some more, so that's what I did. A couple hours
+    later I figured out what I was doing wrong and made some
+    progress.</li>
+<li>The man command only accepts commands that in fact have man
+    pages as an argument, launches the man page browser,<s> but I'm
+    not sure how to load the page for a particular command yet.</s>
+    and loads the man page from the args. It appears to be fully
+    working, plus improvements. There is still some
+    refactoring/cleanup to do, though.</li>
+<li>Note: It would be nice if the man page browser TOC would jump to
+    commands based on keyboard input, or if it had a filter. I've
+    proposed it in #brlcad; I'll look into this once <s>I have a
+    better handle on things</s> I'm done migrating it.</li>
+</ul>
+</li>
+<li>06/01/11<ul>
+<li>Reading documentation. Resuming migration of man command
+    tomorrow.</li>
+</ul>
+</li>
+<li>05/31/11<ul>
+<li>Started logging progress to this wiki.</li>
+<li>Submitted patch
+    <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3309910&amp;group_id=105292&amp;atid=640804">3309910</a>.
+    This modifies Archer's opendb command, so that when no arguments
+    are passed it behaves similarly to MGED. There is a small bug
+    that I'm not sure how to fix yet.</li>
+<li>Taking (probably) the rest of the day to read Tcl/Tk and Itcl
+    documentation.</li>
+</ul>
+</li>
+<li>05/30/11<ul>
+<li>Mostly done adding the man command to Archer; running into a
+    wall with my Tcl/Tk and Itcl knowledge.</li>
+</ul>
+</li>
+<li>05/29/11<ul>
+<li>Submitted patch
+    <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3309107&amp;group_id=105292&amp;atid=640804">3309107</a>.
+    The Archer closedb command is an explicit part of my project.</li>
+<li>Submitted patch
+    <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3309109&amp;group_id=105292&amp;atid=640804">3309109</a>.
+    Changed MGED's new file input box to a dialog.</li>
+</ul>
+</li>
+</ul>
+<h2 id="general-plan">General plan</h2>
+<p><s>My development timeline is rear-loaded. My plan is to migrate the 2
+commands in each of the first two milestones quickly. I can then focus
+on cleaning up Archer commands in order to become proficient with the
+relevant code. The remaining commands will be more challenging, so this
+will help later on.</s></p>
+<p>The focus of my work during GSoC has changed from my submitted proposal.
+I am working not only on migrating the oed commands to libged, but on
+adding entirely new capabilities as well.</p>
+<ul>
+<li>What's left is:<ul>
+<li><s>path + object + offset to vect_t conversion functions</s></li>
+<li>resolve issues relating to batch operations</li>
+<li>enable use of natural origins of objects as points</li>
+<li>most rotate functions</li>
+<li>most scale functions</li>
+<li>converting mock-manuals in edit.c into actual man pages</li>
+</ul>
+</li>
+</ul>
+<p>My plan for the remainder of GSoC (and beyond) is as follows. <s>The
+first order of business is the object conversion functions. Once those
+are finished,</s> I will thoroughly test everything that is done so far
+using the translate command. The rotate command is next, which may be
+challenging due to the versatility of the design in performing
+rotations. I believe that it will be possible to complete it in phases,
+however, adding support for only a few argument groups during each
+phase. Therefore, the first phase will probably support arguments
+similar to the translate command. The translate and rotate commands are
+probably much more important than the scale command, so the remainder of
+GSoC may well be spent perfecting them. I estimate that I won't be able
+to start on the scale command and the mock-manuals until after GSoC has
+ended.</p>
+<p>Having been a 3d modeler for several years, there are certain functions
+that I found to be of such value, that it seems that every modeling
+program should have them. Likewise, there are functions that I have
+never seen implemented, but would be of great use (ex: why is it so
+difficult to simultaneously rotate the same faces of a large number of
+objects towards the same point?). Once everything is completed, I <em>may</em>
+experiment with adding additional commands (ex: mirror, align) or
+additional options (ex: using the midpoint between two 'or more' objects
+as an argument).</p>
+<h3 id="original-development-timeline-from-proposal">Original Development timeline (from proposal)</h3>
+<ul>
+<li>June 14th<ul>
+<li>Milestone 1<ul>
+<li>A minimum of 2 commands will have been migrated to Archer by
+    this date.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>July 5th<ul>
+<li>Milestone 2<ul>
+<li>A minimum of 4 commands will have been migrated to Archer by
+    this date.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>July 5th to 11th<ul>
+<li>Prepare for mid-term evaluation: cleanup, review, handle of
+    unanticipated issues</li>
+</ul>
+</li>
+<li>July11th – July 15th<ul>
+<li>Mid-term evaluations due</li>
+</ul>
+</li>
+<li>August 2nd<ul>
+<li>Milestone 3<ul>
+<li>A minimum of 7 commands will have been migrated to Archer by
+    this date.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>August 16th<ul>
+<li>Suggested 'pencils down' date</li>
+<li>Milestone 4<ul>
+<li>A minimum of 10 commands will have been migrated to Archer
+    by this date.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>August 16th - 22nd<ul>
+<li>Prepare for firm 'pencils down' date: cleanup, review, handle
+    unanticipated issues</li>
+</ul>
+</li>
+<li>August 22nd<ul>
+<li>Firm 'pencils down' date</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/NyahCheck/Survey_of_CSG_Algorithms/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Project Title - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/NyahCheck/Survey_of_CSG_Algorithms.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-title" class="nav-link">Project Title</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#background-information" class="nav-link">Background Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programming-background" class="nav-link">Programming Background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#synopsis-proejct-summary" class="nav-link">Synopsis/ Proejct Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#detailed-project-description" class="nav-link">Detailed Project Description</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#csg-algorithm-for-openscadcurrent-implementation" class="nav-link">CSG Algorithm for OpenSCAD(Current Implementation)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bsp-tree-based-implementation-of-boolean-operations" class="nav-link">BSP Tree based Implementation of Boolean Operations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#algorithm" class="nav-link">Algorithm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sample-algorithmslinks" class="nav-link">Sample Algorithms/Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#testing-and-verification" class="nav-link">Testing and Verification</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-scheduletimeline" class="nav-link">Development Schedule/Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability" class="nav-link">Time availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-me" class="nav-link">Why Me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#contributions" class="nav-link">Contributions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#past-coding-work" class="nav-link">Past Coding Work</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#current-openscad-work" class="nav-link">Current OpenSCAD work</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="project-title">Project Title</h1>
+<p>Survey of CSG Algorithms</p>
+<h1 id="personal-information">Personal Information</h1>
+<p>Name: Nyah Watad Check. Email: check.nyah@gmail.com. IRC Nick: Ch3ck,
+Ch3ck_.</p>
+<h2 id="background-information">Background Information</h2>
+<p>I am a third year Computer Engineering student of the University of Buea
+and one of the two first GSoC participants in Francophone Africa; worked
+with BRL-CAD in GSoC 2013, participated in the Google Doc Camp where I
+documented the BRL-CAD, OpenMRS and GNome projects. Participated as an
+X.org Evoc participant with X.org in 2014. I participated in as a Mentor
+in the 2014 Google Code-In for BRL-CAD.</p>
+<h2 id="programming-background">Programming Background</h2>
+<ul>
+<li>X.org Evoc Participant, X.org, July – October 2014<ul>
+<li>Added Shatter Support to the X server project using Xephyr.</li>
+<li>Clip Impedance layer to Xephyr and ran unit tests like Xts
+    fixing bugs</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Google Summer of Code Participant, BRL-CAD, April - September 2013<ul>
+<li>Implemented a pull routine to reverse the effects of a push on
+    Geometry.</li>
+<li>Integrated command into MGED interface. (C, XML, 500+ lines of
+    code)</li>
+<li>Tested the polynomial and matrix math routines, improving the
+    speeds of the inverse matrix and matrix determinant routines by
+    over 10%. (C, 300+ lines of code)</li>
+<li>Integrated the xpush routine which pushes objects having more
+    than a single matrix transformation into the push which pushes
+    object matrix transformations to leaf nodes. ( C, 1000 lines of
+    code.)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Book Sprint Participant, Google Doc Camp, October 2013<ul>
+<li>Participated in creating a contributors guide to BRL-CAD which
+    will encourage a greater number of contributors to working on
+    the BRL-CAD project.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>SKILLS<ul>
+<li>Languages: C(Excellent), Java( Excellent ), C++( Beginner),
+    Bash(Excellent), SQL(Proficient)</li>
+<li>Tools: Secure Shell, subversion, Git, Linux, Netbeans, gdb,
+    valgrind.</li>
+</ul>
+</li>
+</ul>
+<h1 id="synopsis-proejct-summary">Synopsis/ Proejct Summary</h1>
+<p>This project aims at performing a comparison studies of 2D and 3D CSG
+algorithms, looking at the efficiency and robustness vis a vis the
+current implementations in OpenSCAD. Constructive Solid Geometry being
+one of the primary modeling techniques in the CAD industry is a major
+part of OpenSCAD. This involves studying the Clipper and CGAL library
+implementations in OpenSCAD and coming up with improvements on existing
+implementations.</p>
+<h1 id="detailed-project-description">Detailed Project Description</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Constructive Solid Geometry is a technique used in Solid modeling which
+allows a modeler to create a complex surface using Boolean operators to
+combine objects. This is often referred to as procedural modeling and
+can be performed on polygonal meshes. Here, the simplest solid objects
+used for representation are called primitives which are used to
+construct more complex objects using allowable Boolean operators such as
+union, intersection, difference and well as geometric transformations on
+those sets of objects.</p>
+<p>OpenSCAD uses the Clipper Library to implement CSG in 2D and CGAL
+libraries to model 3D surfaces. My objective in this study is to look at
+the CSG Algorithms implemented by OpenSCAD and do a comparative study
+with other CSG algorithms, performing and algorithmic analysis and
+implement prototypes which can be useful in the OpenSCAD framework. This
+entails studying 4 main research papers together with various
+implementations of the algorithms associated with them and implementing
+the most efficient on the OpenSCAD platform.</p>
+<h2 id="csg-algorithm-for-openscadcurrent-implementation">CSG Algorithm for OpenSCAD(Current Implementation)</h2>
+<p>OpenSCAD is a parametric CSG based modelling software; which means
+objects are manipulated by editing the CSG descriptions of objects being
+rendered. It employs two different mechanisms for processing CSG
+descriptions. It uses the OpenCSG library for visualization during
+editing and the CGAL library for export created a meshed BREP output.
+However, the OpenCSG Library uses the Goldfeather and SCS algorithms to
+evaluate the 2D images of a CSG object from the given perspective. This
+is beneficial because of its speed and ability to render complex images
+within a short time.</p>
+<p>However, CGAL employs the Nef Polyhedra for evaluating boolean
+operations on CSGs. It is robust and is able to handle non manifold
+input but proves incredibly slow in practice and not very suitable for
+time critical applications . There are also overflow issues that arise
+with using large size polyhedra. The used of BSP tree proves more
+efficient for CSG evaluations than CGAL's Nef based polyhedra . Below
+describes the use of BSP based algorithm for CSG evaluations than CGAL's
+Nef-based Polyhedra system.</p>
+<h2 id="bsp-tree-based-implementation-of-boolean-operations">BSP Tree based Implementation of Boolean Operations</h2>
+<p>Bernstein et all[1] presented an exact and more efficient method for
+evaluating 3D polyhedra already supported by OpenSCAD. Results from
+tests showed for a BSP tree implementation which 16-28X faster at
+performing iterative computations than CGAL's Nef polyhedra . The use of
+a BSP-tree based boolean algorithm allows the explicit handling of all
+geometric degeneracies without treating a large number of cases. There
+are also efficient CSG to BSP algorithms which could be used for easy
+representations in both formats.</p>
+<p>BSP trees afford an alternative to B-rep algorithms that avoid their
+concomitant case explosion by explicitly handling all degenerate
+configurations of geometry. They have demonstrated to have suitable
+performance for interactive volumetric sculpting.</p>
+<ul>
+<li>Numeric Substrates</li>
+</ul>
+<p>In this system, a plane is a quadruple of floating point numbers
+interpreted as coefficients of a plane equation.</p>
+<ul>
+<li>
+<ul>
+<li>Concidence: Two planes p, q are coincident if and only if the
+        determinant of all 2x2 minors are 0</li>
+<li>coincident orientation: if p and q are coincident and Pa.Qa,
+    Pb.Qb, Pc.Qc, Pd.Qd are non negative.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li>Point Validity: if a point A(p,q,r) is valid if i'ts determinant
+        is non zero</li>
+</ul>
+</li>
+</ul>
+<p><code>Pa Pb Pc</code>
+<code>Qa Qb Qc</code>
+<code>Ra  Rb Rc</code></p>
+<ul>
+<li>
+<ul>
+<li>Orientation: Given a point A(p, q, r) is valid and it lies
+        behind, on, or in-front of the plane S if and only iff the
+        following expression is negative, zero or positive</li>
+</ul>
+</li>
+</ul>
+<p><code>Pa Pb Pc  Pd</code>
+<code>Pa Pb Pc                    Qa Qb Qc Qd</code>
+<code>Qa Qb Qc       *            Ra Rb Rc Rd</code>
+<code>Ra Rb Rc                    Sa Sb Sc  Sd</code></p>
+<p>These predicates are implemented as static filtered floating-point
+predicates in the style of shewchuk, but deviations will be done to
+support double precision.</p>
+<ul>
+<li>Geometric Substrates</li>
+</ul>
+<p>In the preceding step, we defined planes as primitives, points as
+triples of planes and 4 predicates operating on these plans; now we
+define a convex polygon type for a constructor and splitting routine.</p>
+<ul>
+<li>
+<ul>
+<li>Convex polygon: This is a plane of support, s with a bounding
+        plane {Bi} I £ Z. This vertices given by Vi = (s, Bi-1, Bi).</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li>Construction of a Convex Polygon from a Plane: Given a plane h,
+        this operation constructs a convex polygon representing h
+        clipped by a very large box. The output polygon serves as a
+        stand in for the infinite extent plane. A consistent axis
+        aligned “very large box” is used for all calls to the
+        constructor and consists of volume spaced bounded by planes X+,
+        X-, Y+, y- , Z+, Z-.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li>Splitting a Convex Polygon by a Plane: Since polygon splitting
+        may be viewed as two successive and complementarty instances of
+        polygon clipping. The algorithm below similar to the
+        Sutherland-Hodgman style polygon clippers, rather than deciding
+        if and when to insert a crossing point to the output stream, we
+        decide if and when to insert the splitting plane into the output
+        stream.</li>
+</ul>
+</li>
+</ul>
+<h2 id="algorithm">Algorithm</h2>
+<p>If s is concident with h</p>
+<p><code>if s is similarly oriented to h</code>
+<code>Return (s, {Bi}i e Zn)</code>
+<code>Else</code>
+<code>Return nothing</code></p>
+<p>Else</p>
+<p><code>For I e Zn(in order)</code>
+<code>Output planes as specified by table lookup using:</code>
+<code>o(s, bi-2, bi-1, h)</code>
+<code>o(s, bi-1, bi, h);</code>
+<code>o(s, bi, bi+1, h)</code>
+<code>Return (s, output)</code>
+<code>Algorithm: Clip(s, {bi}i e Zn) by h</code></p>
+<p>The Above algorithm works in interoperability between input and output
+that is between the Point-based polygon soup and the Plane-based
+Representation working with Boolean operations.</p>
+<h1 id="sample-algorithmslinks">Sample Algorithms/Links</h1>
+<ul>
+<li>Gilbert Bernstein and Don Fussell: Fast, Exact, Linear Booleans</li>
+<li>Sebastian Steuer: Methods for Polygonalization of a Constructive
+    Solid Geometry Description in Web-based Rendering Environments</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>MEPP: Exact and Efficient Booleans for Polyhedra</li>
+<li>Cork - by Gilbert Bernstein</li>
+<li>CGAL: <a href="http://www.cgal.org/">http://www.cgal.org/</a></li>
+<li><a href="http://liris.cnrs.fr/mepp/">http://liris.cnrs.fr/mepp/</a></li>
+</ul>
+<h1 id="testing-and-verification">Testing and Verification</h1>
+<p>Test would be written to verify and test the robustness of the BSP-tree
+based algorithm for CSG evaluations. This could apply Octoball tests
+from single operations between sizable meshes to Random Boxes tests and
+Sculpt Bunny depending on the efficiency. Also, the heat sink test which
+has proven to have a worst case performance of O(n2) in the size of
+input can be applied to the aforementioned implementation. Unit tests
+will be developed to handle different aspects of the BSP-tree
+evaluations and appropriate documentation attached for later works on
+the system. Also, any bugs coming up during this process will be fixed
+and documentation of this work done during development since OpenSCAD is
+actively developed and this will keep other developers informed on any
+changes taking place in the CSG module for OpenSCAD.</p>
+<h1 id="deliverables">Deliverables</h1>
+<ul>
+<li>A paper containing the CSG Algorithm survey and it's relation to
+    OpenSCAD</li>
+<li>Prototype implementations integrated with OpenSCAD on the more
+    efficient and robust CSG Algorithms.</li>
+<li>An Evaluation of how more advanced modeling techniques could be
+    realised with each algorithm.</li>
+</ul>
+<h1 id="development-scheduletimeline">Development Schedule/Timeline</h1>
+<p>This is a tentative plan which will be modified and developed as GSoC
+proceeds.</p>
+<ul>
+<li>May 17 – June 06( 3 weeks)<ul>
+<li>Study papers on this topic</li>
+<li>Discuss with developers on implementation specifics and further
+    clarifications on CSG Algorithms supported by OpenSCAD.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>May 24 – June 13 ( 3 weeks)<ul>
+<li>Check current implementation of the BSP tree algorithm for
+    evaluating CSGs and porting to OpenSCAD.</li>
+<li>Implement the BSP-tree representations in OpenSCAD or optimize
+    current implementation.</li>
+<li>Testing, debugging and documentation.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 14 – June 20( 1 week)<ul>
+<li>Unit tests for BSP-tree routines</li>
+<li>Testing degenerate cases.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 21 – July 4 ( 2 Weeks) Mid Term Evaluations<ul>
+<li>Add functionality for CSG to BSP-tree conversion</li>
+<li>Testing for robustness and degenerate cases.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 5 – July 11( 1 week)<ul>
+<li>Implement testing suite for BSP tree implementation of the
+    Bernstein algorithm.</li>
+<li>Adding documentation to OpenSCAD framework</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 12 – July 25 ( 2 weeks)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li>Implement and test subroutines for Numeric substrates.</li>
+<li>Testing and debugging.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<ul>
+<li>July 26 – August 8 ( 2 Weeks)</li>
+<li>Add functionality for Geometric Substrates together with sub
+    routines.</li>
+<li>Testing and debugging of Convex polygon constructor for clipped
+    plane</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>August 9 – August 22( 2 Weeks)<ul>
+<li>Inside-out tests, address robustness issues with modules and
+    improve performance of libraries.</li>
+<li>Write paper on Comparison of CSG based algorithms in relation to
+    OpenSCAD Implementations.</li>
+<li>Check code for memory leaks and performance analysis, with unit
+    tests added for implemented modules.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>August 23 – August 29( 2 weeks)<ul>
+<li>Pencils Down, Code clean up.</li>
+<li>Review documentation and Finalize paper writing.</li>
+<li>Final evaluation, Submission of code to melange.</li>
+</ul>
+</li>
+</ul>
+<h1 id="time-availability">Time availability</h1>
+<p>I would be able to offer over 40 hours on the project. However, since
+the project would start during our second Semester; I would be coding
+mostly during the nights up to late June or early July when our semester
+ends. Also, to meet up with the demands of the project, I would be
+coding during weekends and regularly informing my mentors on the status
+of the project and regularly updating my logs in this respect.</p>
+<h1 id="why-brl-cad">Why BRL-CAD</h1>
+<p>After participating in GsoC 2013 with BRL-CAD, I fell in love with CAD
+and will love to spend my summer contributing code to improve BRL-CAD
+software.</p>
+<h1 id="why-me">Why Me</h1>
+<p>First of all hailing from Africa with lack of computing infrastructure
+posed a lot of great challenges to ascend to hackerdom especially with
+the scarcity of good programmers and lack of Internet access. Working
+with BRL-CAD in 2013 taught me a great deal especially working with the
+brightest researchers in this field. I believe my participation in GSoC
+this year would not only give me a great learning experience but also
+heighten my ambition of being a great Computer Science researcher in
+Africa. I see this project as both an intellectual challenge to impact
+change through open source software.</p>
+<h1 id="contributions">Contributions</h1>
+<h2 id="past-coding-work">Past Coding Work</h2>
+<ul>
+<li>GSoC 2013:<ul>
+<li><a href="http://www.google-melange.com/gsoc/project/code_samples/google/gsoc2013/ch3ck/5721450489053184">http://www.google-melange.com/gsoc/project/code_samples/google/gsoc2013/ch3ck/5721450489053184</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Xorg Evoc 2014<ul>
+<li><a href="https://github.com/Ch3ck/xorg-xserverhttps://github.com/Ch3ck/xorg-xserver">https://github.com/Ch3ck/xorg-xserverhttps://github.com/Ch3ck/xorg-xserver</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Other Projects<ul>
+<li><a href="https://github.com/Ch3ck/SAMS">https://github.com/Ch3ck/SAMS</a></li>
+<li><a href="https://github.com/openmrs/openmrs-core">https://github.com/openmrs/openmrs-core</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="current-openscad-work">Current OpenSCAD work</h2>
+<p>Here are my current and ongoing contributions on OpenSCAD</p>
+<ul>
+<li>Rework AbstractFunction::evaluate to virtual function only fixing
+    calls<ul>
+<li><a href="https://github.com/openscad/openscad/pull/1285">https://github.com/openscad/openscad/pull/1285</a></li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

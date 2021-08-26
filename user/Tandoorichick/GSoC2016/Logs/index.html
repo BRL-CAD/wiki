@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Tandoorichick/GSoC2016/Logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Tandoorichick/GSoC2016/Logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#development-logs" class="nav-link">Development Logs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Blog with week-wise work including all ideation and explanation at:
+<a href="http://tandoorichick.github.io/">http://tandoorichick.github.io/</a></p>
+<h2 id="development-logs">Development Logs</h2>
+<p>23/5/16, 24/5/16 - Confusion regarding the indexed and unindexed format
+of BRL-CAD and OpenSCAD -&gt; researched other ways to implement the
+portable module. Confusion regarding the use of DCEL as well.</p>
+<p>25/5/16 - Outlined the PolygonalMesh abstract class. Listed out the
+functions that will be required for the conversion from PolygonalMesh to
+the DCEL.</p>
+<p>26/5/16 - Outlined the doubly-connected edge list class. Declared
+virtual functions (that will obtain information from the intermediate
+mesh to convert to the DCEL) in the PolygonalMesh abstract class. Others
+will be added later on when the need arises.</p>
+<p>27/5/16 - Set up the BrlcadMesh class and defined functions. Implemented
+few geometry utility functions - orientation checking. Went through
+source to find function function: rt_bot_same_orientation() to check
+if an edge and a triangle are oriented the same way.</p>
+<p>28/5/16 - Vertex record functions definition</p>
+<p>29/5/16 - Face record functions definition</p>
+<p>30/5/15 - Edge record functions definition</p>
+<p>31/5/16 - Setting up OpenSCAD and going through the code. Little bit
+confusion regarding the Vector3D variable.</p>
+<p>1/6/16 - Implemented some geometry util functions - checking if two
+triangles are oriented the same way, calculating determinant. Face
+record functions</p>
+<p>2/6/16 - Vertex record functions and some of edge record functions</p>
+<p>3/6/16 - Edge record functions</p>
+<p>4/6/16 - Classes' design changes. Functions common to both native
+structures were implemented in the PolygonalMesh class itself.</p>
+<p>5/6/16 - UI commands support - added a dummy command "heal" and tested
+with a sample message</p>
+<p>6/6/16 - Changes in the conversion module code according to Daniel's
+suggestions</p>
+<p>7/6/16 - Defined the queue element for the zipper gaps algorithm, set up
+the files and started with outline.</p>
+<p>8/6/16 - Wrote functions for initializing priority queue and listed out
+other utility functions that might be needed</p>
+<p>9/6/16 - Function to zipper gaps</p>
+<p>10/6/16 - Implemented utility functions - finding orthogonal projection,
+calculating feature pair, etc.</p>
+<p>11/6/16 - Out of station</p>
+<p>12/6/16 - Out of station</p>
+<p>13/6/16 - Set up the module inside the libanalyze folder in the BRL-CAD
+source. Functions to update the DCEL structure - like splitting a face,
+inserting a vertex on an edge</p>
+<p>14/6/16 - Created a separate header Geometry.h to keep all geometry
+related functions like finding if a point can be orthogonally projected
+to a line, find such a projection, distance between two points, distance
+between a point and a line, etc. Continued writing functions to update
+the DCEL structure and inserted calls to them.</p>
+<p>15/6/16 - Wrote utility functions for accessing and updating the
+rt_bot_internal structure.</p>
+<p>16/6/16 - Had set the unbounded face id to be the number of faces
+initially, changed that after facing problems while adding and deleting
+faces. Updated all relevant functions. Came up with an approach for
+finding the closest edge that does not cross any existing
+vertex/edge/face. Solved other errors. Built code successfully.</p>
+<p>17/6/16 - Had to write TCL command binding again (because i had checked
+out revision without saving the work). Analysed the closest edge
+function logic.</p>
+<p>18/6/16 - Personal commitments</p>
+<p>19/6/16 - Moved header files around to include directory, but undid.
+Build errors due to missing headers when i included a header file in the
+existing code. Asked for help on the IRC.</p>
+<p>20/6/16 - Wrote analyse_heal_bot to link to the TCL command. Function
+to find free edge chains that are not loops was also written. Including
+C++ headers in the MeshConversion.h file gives errors while including
+MeshConversion.h in src/libwdb/bot.c for analyse_heal_bot(). Yet to
+figure out. Went through earlier code to correct any apparent mistakes.</p>
+<p>21/6/16 - Modified code for finding closest edge. And modified code to
+conform to BRL-CAD coding standards. Uploaded modified patch on
+SourceForge. Started work with stitching gaps since compilation was
+unsuccessful. Got solution, made changes. Yet to compile successfully.</p>
+<p>22/6/16 - Error while linking C++ code to C. Started with stitching in
+the meanwhile. Compiled module later on. Started debugging.</p>
+<p>23/6/16 - Tested code. Conversion module gets DCEL to shape. Testing of
+zippering gaps going on.</p>
+<p>24/6/16 - Changed logic for closest edge function, to handle feature
+edge and feature vertex properly. Works for most cases. Rest yet to be
+fixed.</p>
+<p>25/6/16 - Figured out way to separate the boundary of a mesh from the
+defects (using orientation). Till initization of the priority queue
+works fine (finding free edge chain, finding closest edge for those,
+calculating error and inserting into the priority queue. Memory
+corruption error with the zipperGaps() function. I'm trying to resolve
+it.</p>
+<p>26/6/16 - Resolved one memory corruption error. Another popped up with
+the priority queue. Finding ways to resolve that.</p>
+<p>27/6/16 - Resolving memory corruption errors</p>
+<p>28/6/16 - Made changes in the zipperGaps() function. Tested them. Errors
+in logic still exist in some of them. Looking into it.</p>
+<p>29/6/16 - Errors with the functions modifying the DCEL. Rectifying them.</p>
+<p>30/6/16 - Still modifying the DCEL access functions. Wasn't well for a
+part of the day.</p>
+<p>1/7/16 - Errors with function addEdge rectified. Setting references
+while deleting edge modified.</p>
+<p>2/7/16 - Rectified errors with delete functions. Edge contraction and
+vertex contraction processes working fine.</p>
+<p>3/7/16 - Corrected minor errors.</p>
+<p>4/7/16 - Next and previous edge references set right after the
+contractions. Sorted out memory issues, changed function prototypes
+accordingly. Parameters with double pointers changed to reflect that
+they are 3D arrays. Undefined behavior w.r.t even memory issues seen.
+Trying to resolve. Started coding stitching algorithm.</p>
+<p>5/7/16 - Memory corruption issue wrt push operation with priority queue.
+Looked for solutions. Couldn't find any fix. Coding the stitching
+algorithm. Made changes from yesterday - that both chains move in
+opposite directions by virtue of being a part of the same loop.</p>
+<p>6/7/16 - Coded the rest of the stitching algorithm. Included a part in
+the zippering gaps algorithm to accommodate for gaps that are square in
+shape (in which case none of the vertices on the chain would have any
+valid feature - hence it needs to be treated separately). Changed some
+function parameters to const as Daniel had suggested.</p>
+<p>7/7/16 - Tried fixing the memory corruption error with the priority
+queue, but couldn't. Check the stitching algorithm code. Went through
+the overlaps fixing algorithm for coding.</p>
+<p>8/7/16 - Held up with some other work. Thought about changes to the
+existing zipper module code, and the stitching algo.</p>
+<p>9/7/16 - Zippering gaps modified to include boundary edges. bool vector
+is used to avoid multiple checks to the same chain of edges. Stitching
+gaps algo modified slightly. Zippering - vertex contraction has not been
+done right. Debugging.</p>
+<p>10/7/16 - Weekend</p>
+<p>11/7/16 - Issues with vertex contraction resolved. Facelist starting
+edge references are out of place. Degenerate cases wrt orientation of
+triangles causing those issues. Changes to stitching gaps module
+outline.</p>
+<p>12/7/16 - deleteEdge() function changed to cope with the degeneracy wrt
+orientation. Works fine. Checking the functions that might be causing
+the memory issues. Added changes to stitching algorithm.</p>
+<p>13/7/16 - Memory issues resolved. Found cases where triangles might
+cross over each other due to the transformations. Thus, need to check if
+the orientation of the triangle changes. Changes made in the
+rt_bot_internal struct pointer not being reflected with draw. Need to
+figure out.</p>
+<p>14/7/16 - Changes could be seen. But with distorted triangles. Changes
+for orientation check was added. Works. Few more cases of erroneous
+detection of feature edges, looking into them.</p>
+<p>15/7/16 - Zippering gaps module works fine. Need to test with other
+meshes where the tolerance and the size of the triangles is not so
+comparable.</p>
+<p>16/7/16 - Cleared out dead code. Wrote includes properly. Added a bit of
+stitching code.</p>
+<p>17/7/16 - Weekend</p>
+<p>18/7/16 - Had to test a few times with a mesh that needs no healing.
+Made changes for the case when the defect is a square (the normal case
+does not work, special case was written for a square) - works fine.
+Created two disconnected hemispheres on Blender to test, and exported
+the geometry as an .obj file. Testing it.</p>
+<p>19/7/16, 20/7/16 - Was not well. Couldn't spend much time. Fixing two
+hemispheres works okay, but needs more testing.</p>
+<p>21/7/16 - Came up with results.</p>
+<p>22/7/16 - 25/7/16 - Fell ill again</p>
+<p>26/7/16 - Made changes according to Daniel's suggestions.</p>
+<p>27/7/16 - 11/8/16 - Had fallen ill and couldn't get to work.</p>
+<p>12/8/16 - Outlining skewed lines support for 3-D lines (while
+calculating feature).</p>
+<p>13/8/16, 14/8/16 - Debugging the instance of the heal command being
+called on a mesh on which the heal command had already been called.</p>
+<p>15/8/16 - Debugging the coplanar condition addition while finding the
+closest edge.</p>
+<p>16/8/16 - Debugging errors in making the DCEL, with a torus.</p>
+<p>17/8/16 - Testing with meshes to figure out the point of breaking. Wrote
+blogs for weeks missed.</p>
+<p>18/8/16 - Started with taking tolerance as user input. Errors popped up.
+Could not identify what was causing them even after falling back to old
+code.</p>
+<p>19/8/16 - Build error resolved. Added feature to take in zipper
+tolerance as user input. Debugged with Daniel's suggestions. Error seems
+to be with setting the incident face reference - because of the
+orientation checking. With the spheres the origin was within the whole
+sphere, so orientation was consistent. With the torus, the origin is not
+inside the object, so inconsistencies with orientation don't allow some
+edges to get the right incident face. Hence, the next and previous
+references get messed up too. Yet to think of a fix.</p>
+<p>20/8/16 - Dealing with the mesh not being completely healed because some
+vertices don't get valid feature pairs, even while having them. Added a
+special case for when the hole is triangular to reduce compute time.</p>
+<p>21/8/16 - Had missed a condition in checkAndSetTwins() routine. Debugged
+and found it. This prevented the case where, when a mesh is healed with
+the heal command, and the heal command is called again on the mesh, the
+algorithm hung. This was because of the presence of singular vertices
+which was in turn because the mesh was not completely healed. This was
+rectified.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

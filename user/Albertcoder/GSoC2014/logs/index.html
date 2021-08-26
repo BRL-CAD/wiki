@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Albertcoder/GSoC2014/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Development Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Albertcoder/GSoC2014/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-logs" class="nav-link">Development Logs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-period" class="nav-link">Development Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-logs">Development Logs</h1>
+<h2 id="community-bonding-period">Community Bonding Period</h2>
+<ul>
+<li>Couldn't do much GSoC-oriented in this period owing to the clash of
+    my end-semester exams with this period, still I tried to study those
+    subjects with uttermost care whose concepts could be used in my GSoC
+    project like Relational Database Management Systems, Web
+    Technologies(including PHP, JavaScript, XML and so on), Software
+    Engineering etc. during this period. I am sure I utilised this
+    period doing so.</li>
+</ul>
+<h2 id="development-period">Development Period</h2>
+<h3 id="week-1">Week 1</h3>
+<p>'''''21st May(Wednesday)</p>
+<p>Installed MediaWiki. Faced some problems doing that, encountered a few
+warnings, removed them.</p>
+<p>Studied about MediaWiki extensions. Failed to make a simple extension
+due to some problem in the tutorial. Still studying about
+extension-making.</p>
+<p>'''''22nd May(Thursday)</p>
+<p>Followed the extension-tutorial at mediawiki.org for other sample
+extensions. Extension making process still in progress.</p>
+<p>Installed a couple of extensions and tested them on my system like
+"Awesome" extension and "CategoryGallery" extension.</p>
+<p>'''''23rd May(Friday)</p>
+<p>Being mainly a C/C++ developer, had to explore some concepts of PHP. So
+studied some PHP tutorials in detail.</p>
+<p>Also studied/studying HTML forms in MediaWiki which are used in
+extension-making.</p>
+<p>'''''24th May(Saturday)</p>
+<p>Writing my log just a couple of minutes past 12:00 AM. Apologies for not
+been able to write right in time.</p>
+<p>Today I made a form which can take input from the user using the special
+page functionality.</p>
+<p>Also studied the present database in detail and will ask about some
+queries on the IRC.</p>
+<p>'''''25th May(Sunday)</p>
+<p>The form which I created yesterday, needed validations but I struggled
+to accomplish it. Hope I will get over it by tomorrow.</p>
+<p>Studied about Data Entry and connecting/storing that data into the
+database.</p>
+<h3 id="week-2">Week 2</h3>
+<p>'''''26th May(Monday)</p>
+<p>Tried to apply validations but still not done with that.</p>
+<p>Read previous logs and mails which I couldn't read due to my final
+exams.</p>
+<p>'''''27th May(Tuesday)</p>
+<p>Browsed various Materials Database websites, observed how these stored
+data, in which format. Also observed various features like advanced
+search, import/export and sorting.</p>
+<p>'''''28th(Wednesday) and 29th May(Thursday)</p>
+<p>Had issues with my health. :(</p>
+<p>'''''30 May(Friday)</p>
+<p>Talked on #mediawiki IRC about the version of mediawiki to be used.
+Although had a fruitful discussion yet, got puzzled. So talked on
+#brlcad IRC and finally got the solution(maths22 would update the older
+version of BRL-CAD wiki).</p>
+<p>Installed mediawiki 1.22.7 and started working on it.</p>
+<p>'''''31 May(Saturday) and 1st June(Sunday)</p>
+<p>As per my milestone sign in/sign up process is also done as my extension
+will use the login-module of BRLCAD-wiki.</p>
+<p>Making my previous extension work in latest version 1.22.7. Not working.
+:(</p>
+<p>Studied BRL-CAD supports which formats for import/export.</p>
+<p>Tested a model by applying material on it in BRL-CAD and trying to
+understand the STEP format.</p>
+<p>'''''2 June(Monday)</p>
+<p>I have made a simple extension which will work in BRL-CAD 1.22.7. I will
+upload it on my college server tomorrow. I have some parts missing, I
+will complete it by tomorrow.</p>
+<p>Followed some mediawiki tutorials which would help in database insertion
+through form. I will display this all tomorrow.</p>
+<h3 id="week-3">Week 3</h3>
+<p>'''''3rd June(Tuesday)</p>
+<p>I have submitted my first simple extension on the mailing list. I have
+understood the basic structure of mediawiki extension. I am just too
+close to end up making an extension which can take the data from the
+user and store in the database.</p>
+<p>'''''4th June(Wednesday)</p>
+<p>Today I felt I needed a break from mediawiki stuff as my brain felt
+suffocated so I did a lot of analysis of various CAD softwares. Created
+various figures in BRL-CAD, FreeCAD, OpenSCAD and LibreCAD using
+difference, union and intersection functions.</p>
+<p>Applied materials to BRL-CAD model. Learnt how to use various commands
+in like rt. Also had a glimpse of LUA script. And now I have resumed
+learning advanced object oriented PHP for mediawiki.</p>
+<p>'''''5th June(Thursday)</p>
+<p>Made an HTML form which can take the inputs from the users. I am also
+almost done with the database connectivity work. In no time I will show
+the status on the mailing list.</p>
+<p>Also went through the advanced concepts of object oriented PHP. Like how
+mediawiki works with classes and objects and arrays inside arrays inside
+arrays. I am having a bit of problem here but will overcome this soon.</p>
+<p>'''''6th June(Friday) and 7th June(Saturday)</p>
+<p>Successfully made the extension which can store the materials and their
+properties in the database. Had some problems in displaying the data and
+implementing search feature. It will be done too.</p>
+<p>Uploaded on the mailing list.</p>
+<p>'''''8th June(Sunday)</p>
+<p>Today I went on exploring the structure and working of a bit
+sophisticated mediawiki extensions. Got some valuable
+responses/suggestions on my extension in the mailing list from my
+mentor.</p>
+<p>Showed the data stored by making a mysql user and letting everyone view
+his stored data by logging in phpmyadmin using that user.</p>
+<p>Did critical study of the current database for further improvements. IP
+address of the user who edited some data may be recorded.</p>
+<p>'''''9th June(Monday)</p>
+<p>Implemented the feature with the help of which a user can see the
+properties that are stored.</p>
+<p>Implemented the search feature(search material by name).</p>
+<p>Pushed all my work to my github account.</p>
+<h3 id="week-4">Week 4</h3>
+<p>'''''10th June(Tuesday)</p>
+<p>Today I studied about how to embed the code of separate php
+app(basically database of previous years' work) into the extension that
+I have made. It is not possible directly so I was stuck.</p>
+<p>I asked for the solution / guidance for this on #mediawiki IRC which is
+pending. Also I have asked a doubt about the database in the brlcad
+mailing list.</p>
+<p>'''''11th June(Wednesday)</p>
+<p>Today I tried to embed the code of previous years' work into my
+extension. Well, I was unsuccessful in doing. I got some help on the
+#mediawiki but that was not specific. Got to learn many a new thing in
+the present database after critical study.</p>
+<p>Installed a couple of more similar extensions to do reverse engineering
+and learn more.</p>
+<p>'''''12th June(Thursday)</p>
+<p>Although I might have done quite with the extension and GUI part, the
+database still posed me some problems. Like I was stuck at what is the
+difference between materialID and table_materialID in table "traits".
+Also I feel there is not much normalization which lead me think again on
+the database design.</p>
+<p>Studied various resources similar to Materials Database like matweb.com,
+matdat.com and so on. Got to know various features of the website and
+the how of categorization of materials.</p>
+<p>Also exported file in JSON, CSV etc. formats from current database using
+phpmyadmin and used it in CAD softwares.</p>
+<p>'''''13th June(Friday)</p>
+<p>I had a few problems with the current database so I eliminated those
+problems by making some enhancements in it. It was not connected using
+primary and foreign keys. Also I have created a few more tables which
+are needed.</p>
+<p>Also I have classified the materials and their properties in the
+database itself.</p>
+<p>Also made a note of a few more features like units converter etc. in the
+GUI.</p>
+<p>'''''14th June(Saturday)</p>
+<p>Connected the database-tables with primary and foreign keys. But still
+encountering a problem. There are separate tables for each trait so JOIN
+has to be applied accross each table. So if we need to see 20 traits of
+a material, 20 JOINS. Trying to get over this problem.</p>
+<p>Explored the deep use of SQL IN operator, JOINS, loop programming.
+Talked with Yaron on #mediawiki and got to learn how a query can be
+inserted in mediawiki.</p>
+<p>'''''16th June(Monday)</p>
+<p>Tried to implement the MediaWiki extension as such with the current
+database but had some problems with some attributes. Proposed some
+modifications in the database which would help in better filtering and
+searching. Mockup of the database mailed to the mailing list with some
+modifications.</p>
+<h3 id="week-5">Week 5</h3>
+<p>'''''17th June(Tuesday)</p>
+<p>Had a very long and hard chat on #mediawiki IRC. They suggested to use
+SemanticMediaWiki for the data storage through forms.</p>
+<p>Installed SemanticMediaWiki and Created a simple template for storing
+data.</p>
+<p>'''''18th June(Wednesday)</p>
+<p>Made some templates
+<a href="http://202.164.53.122/~albertcoder/mediawiki-1.22.6/index.php/Template:Material">http://202.164.53.122/~albertcoder/mediawiki-1.22.6/index.php/Template:Material</a>
+and studied SMW(semantic mediawiki) stuff.</p>
+<p>Studied database in MediaWiki. Had problems regarding applying JOINS
+across more than two tables and getting their value on the page.
+Resolved to some extent.</p>
+<p>'''''19th June(Thursday)</p>
+<p>Resolved the problem of applying the JOINS in MediaWiki on tables and
+display the fetched data too in tabular form.</p>
+<p>Created an extension to test the working,
+<a href="http://202.164.53.122/~albertcoder/mediawiki-1.22.6/index.php/Special:Joins">http://202.164.53.122/~albertcoder/mediawiki-1.22.6/index.php/Special:Joins</a>
+.</p>
+<p>Committed all my pending work on github.</p>
+<p>'''''20th June(Friday)</p>
+<p>Made the extension work with the enhanced database design. Had several
+problems in inserting the data into the database because of separate
+table for each trait but encountered them.</p>
+<p>Added support to add new material and properties in new database.</p>
+<p>Got some quick suggestions from #mediawiki IRC during hurdles like
+getting userID of currently logged in user.</p>
+<p>'''''21st June(Saturday)</p>
+<p>Brought about a number of changes in the working of the extension.
+Removed check-boxes to select traits to maintain user-ease, used radio
+buttons, drop-down and required features of HTML.</p>
+<p>Pushed my latest extension(with proper database) into my github account.</p>
+<p>'''''22nd June(Sunday)</p>
+<p>Made certain enhancements like user cannot add a material again which is
+already there in the database, dropdown for Material Privacy set as
+public by default.</p>
+<p>Accomplished the task of showing the values of all the traits for all
+materials by applying joins on multiple tables and using for loops. The
+code works fine in another extension right now.</p>
+<p>Code updated and pushed to github.</p>
+<p>'''''23rd June(Monday)</p>
+<p>Accomplished the task of showing material names and values of traits in
+the same extension. Added the feature such that no material can be added
+again and again in the database.</p>
+<p>Added units' table in the database to make it easy for the user to enter
+the values of traits only in float rather than entering units alongwith.</p>
+<h3 id="week-6">Week 6</h3>
+<p>'''''24th June(Tuesday)</p>
+<p>Displayed all the required columns like material name, value and
+timestamp but felt stuck at one point. Made two separate extensions, one
+for adding material properties and other for viewing those properties.
+Tried to ask for the solution on IRC #mediawiki to merge these two
+extensions but still to get response after they asked for the my code.</p>
+<p>'''''25th June(Wednesday)</p>
+<p>Got the solution to merge any number of extensions through URLs. Talked
+about this on MediaWiki mailing list. They suggested using Semantic
+MediaWiki. Explored the MediaWiki administration.</p>
+<p>'''''26th June(Thursday)</p>
+<p>Finally found the way to load any number of classes into the .php file
+and also creating any number of special pages.</p>
+<p>After a good discussion on #mediawiki IRC, got the equivalent of using
+hooks to create table in database.</p>
+<p>Committed all my work to github and deployed the latest code on my
+college server too.</p>
+<p>'''''27th June(Friday)</p>
+<p>User made eligible to add trait only after logging in.</p>
+<p>Each time a user adds a new trait, a new table is created at the
+back-end for that trait.</p>
+<p>The variable in for loop which showed all the properties of materials
+changed from static to dynamic.</p>
+<p>Added hyperlinks to navigate from one page to another.</p>
+<p>Updated the blogpost in the BRL-CAD mailing list:</p>
+<p><a href="http://coderalbert.wordpress.com/2014/06/26/mediawiki-extension/">http://coderalbert.wordpress.com/2014/06/26/mediawiki-extension/</a></p>
+<p>'''''28th June(Saturday)</p>
+<p>I was out on pilgrimage to <a href="http://en.wikipedia.org/wiki/Harmandir_Sahib">Golden
+Temple</a> . I will
+compensate all my work by working on Sunday.</p>
+<p>'''''29th June(Sunday) and 30th June(Monday)</p>
+<p>Did some progress in advanced search of material by name.</p>
+<p>Tried to link the whole database using foreign key references but there
+exists some problem in the innoDB database style.</p>
+<p>Explored the libraries used for import/export.</p>
+<p>Wrote a few lines of code for adding new material type etc. by making
+new classes in the main file.</p>
+<h3 id="week-7">Week 7</h3>
+<p>'''''1st July(Tuesday)</p>
+<p>Applied validations in the forms wherever necessary.</p>
+<p>Combated with the problem of applying foreign keys using innoDB storage
+engine.</p>
+<p>'''''2nd July(Wednesday)</p>
+<p>Studied the formatting of wiki page at user level including how to make
+hyperlinks and headings, bold etc.</p>
+<p>Studied/studying this handbook <a href="http://goo.gl/iMsx4R">http://goo.gl/iMsx4R</a> of MediaWiki
+Administrators Handbook.</p>
+<p>'''''3rd July(Thursday)</p>
+<p>Added constraints for all the trait-tables using foreign keys.</p>
+<p>Stuck at the problem of making this process automated like when a user
+adds a new trait i.e. new table, it should automatically get linked
+using foreign keys.</p>
+<p>'''''4th July(Friday)</p>
+<p>Struggled a lot to add foreign key constraint in dynamically created
+tables in extension in an automated way. Talking on the #mysql IRC I
+got this ANSWER "forget about adding those automatically." They
+seriously questioned the credibility of database design. Totally
+refreshed all my concepts with respect to real world projects,
+requirements and performance. (Need to head towards a wayout soon)</p>
+<p>Learnt to add menus through MediaWiki:Sidebar and also went through the
+various namespaces in MediaWiki.</p>
+<p>'''''5th July(Saturday)</p>
+<p>Finally added foreign key constraints in dynamically created tables
+despite the words of #mediawiki developers, "forget about adding those
+automatically.". They might have said this in some other sense but
+finally I got what I needed. :-)</p>
+<p>Resolved the problem of data inconsistency occurring due to
+miss-matching ids of values across all tables.</p>
+<p>'''''6th July(Sunday)</p>
+<p>Added search facility such that user can search material and its
+properties by name.</p>
+<p>'''''7th July(Monday)</p>
+<p>Installed and learnt how to use the extension AdminLinks.</p>
+<p>Traversed the whole code for following the coding standards.</p>
+<h3 id="week-8">Week 8</h3>
+<p>'''''8th July(Tuesday)</p>
+<p>Added foreign key constraints to all the tables that were pending.</p>
+<p>Added one more table `trait_units` to specify the units of each
+trait.</p>
+<p>Adding this extra table kind of disturbed the work flow because now a
+new trait cannot be added without its units. For this I have to now add
+a separate text field/dropdown which will ask for the units of the trait
+and also change the INSERT and SELECT queries at the backend but doing
+this, encountered a few problems.</p>
+<p>'''''9th July(Wednesday)</p>
+<p>Finally resolved all the errors that occurred due to the addition of new
+table `trait_units`.</p>
+<p>Added dropdown for Units when adding a new trait. Amended all the
+queries in the backend for proper insertion of data.</p>
+<p>Updated _SERVER variable wherever it was necessary.</p>
+<p>'''''10th July(Thursday)</p>
+<p>Added ON CASCADE DELETE. Whenever any value is deleted from master
+table, correspponding values in foreign keyed tables are also deleted.</p>
+<p>Added userID to trait_table too, so that it can be tracked who added
+that particular trait.</p>
+<p>'''''11th July(Friday)</p>
+<p>Added a new Special page in the extension wherefrom a user can delete a
+trait. Only the traits added by a particular user can be deleted by
+him/her.</p>
+<p>'''''12th July(Saturday)</p>
+<p>Added a new Special Page in the extension wherefrom a user can delete a
+material from his added list of materials.</p>
+<p>Added another Special page which has links to all the call to action
+buttons like add material, delete trait etc.</p>
+<p>'''''14th July(Monday)</p>
+<p>Added Special Page for view all materials.</p>
+<p>Tried to implement search by trait, almost done.</p>
+<p>Tested the extension by installing on various other systems locally and
+remotely.</p>
+<h3 id="week-9">Week 9</h3>
+<p>'''''15th July(Tuesday)</p>
+<p>Studied about the import/export libraries to be used for the extension.</p>
+<p>Search by trait implemented. Now a user can either search for values of
+traits either by material name or by trait name.</p>
+<p>'''''16th July(Wednesday)</p>
+<p>Explored MediaWiki <strong>Editing rules, editing conventions, and
+formatting</strong>. Were very extensive topics, took more time than expected.</p>
+<p>Tried to manipulate MediaWiki as a normal user rather than an
+administrator with the help of the following and many more links:</p>
+<p><a href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a></p>
+<p><a href="http://www.mediawiki.org/wiki/Help:Links">http://www.mediawiki.org/wiki/Help:Links</a> .</p>
+<p>Also studied how to format <strong>lists, images, tables etc.</strong> on wiki pages.</p>
+<p>'''''17th July(Thursday)</p>
+<p>Made a separate <strong>Special Pages</strong> for search TRAIT by name and search
+MATERIAL by name.</p>
+<p>Used functions like <strong>ucwords(), header() and str_ireplace()</strong> to make
+improvements like automating Initials of words in capital letters, page
+refreshing, replacing '_' in names with space for displaying(like
+boiling_point).</p>
+<p>Stuck at <strong>passing an array</strong> of table-names in MW-Joins query in place
+of a single table name to do selective search.</p>
+<p>'''''18th July(Friday)</p>
+<p>Added <strong>menu bars</strong> on the top to <strong>navigate</strong> through the extension.
+Replaced old ugly links' Special Page with the new menu bar.</p>
+<p>Added almost all the <strong>units</strong> of main traits(30 at present, will be
+more) in the <strong>drop-down</strong> menu to prevent users from inputting wrong
+values of traits.</p>
+<p>'''''19th July(Saturday)</p>
+<p>Whole day struggled with user rights management in MW. There was a good
+user-manual to explain how permissions can be given to various groups
+but it did not have anything to say about reverse i.e. having to give
+permissions to multiple groups for accessing a single Special Page.</p>
+<p>Asked on IRC about the solution they suggested two ways either to create
+a new right which can be granted to multiple groups or give the right as
+a second argument while calling the parent constructor in Special Page
+class.</p>
+<p>Improved the menu bar on the top of each Special Page. Thinking to add
+images/icons in sometime after achieving all the basic functionality.</p>
+<p>'''''21st July(Monday)</p>
+<p>Applied <strong>validations</strong> across all the text-fields mainly of traits,
+like only <strong>decimal/integer</strong> values can be added for traits like
+boiling point etc.</p>
+<p><strong>Cleaned</strong> the code edited a few things like repositioning the forms at
+proper place in the code to make it more readable.</p>
+<h3 id="week-10">Week 10</h3>
+<p>'''''22nd July(Tuesday)</p>
+<p>Data <strong>updations</strong> done. Values of traits can be updated by specifying
+the trait name, material name and its value.</p>
+<p>Set the <strong>order</strong> of traits(alphabetically) in which they are displayed
+on add material page.</p>
+<p>Added a new field <strong>status</strong> in all the tables for specifying whether or
+not a particular value is approved by the <strong>admin</strong> or not.</p>
+<p>'''''23rd July(Wednesday)</p>
+<p>Made a few changes in the database data types to retain the
+<strong>precision</strong> of values.</p>
+<p>'''''24th July(Thursday)</p>
+<p><strong>Searching improved</strong> further by adding dropdown for search both
+material and trait lest a user commits mistake in spellings while
+searching.</p>
+<p>Encountered some problem in implementing the <strong>status flag</strong> to be
+administered by the admin.</p>
+<p>'''''25th July(Friday)</p>
+<p>Worked on <strong>export feature</strong>, almost done. Used <strong>json_encode()</strong> to
+export the data by storing it in an array. Now working on passing
+multiple attributes in <strong>multidimensional array</strong>.</p>
+<p><strong>Status flag</strong> still in pipeline.</p>
+<p>'''''26th July(Saturday)</p>
+<p>Could not do much <strong>GSoC</strong> oriented today, as I was engaged in attending
+inevitable <strong>seminars</strong> in my college related to other technologies.</p>
+<p>'''''28th July(Monday)</p>
+<p><strong>Progress</strong>: Been able to write the data from the backend(tables) in
+<strong>.json</strong> file. I passed an array to json_encode(), whose result I
+wrote in a file. The contents written in the file are absolutely what
+they should be.</p>
+<p><strong>Problem</strong>: When I try to prompt the user to download the same file,
+some futile/useless data seems to get appended at the end of the file.</p>
+<p>Did some manipulations with the <strong>LocalSettings.php</strong> like changing the
+logo, skin, enabling the image uploads and so on.</p>
+<h3 id="week-11">Week 11</h3>
+<p>'''''29th July(Tuesday)</p>
+<p>For exporting the data in json, found and implemented another
+<strong>solution</strong> to store the material names and the values of different
+traits in two <strong>separate arrays.</strong></p>
+<p>Used <strong>array_combine()</strong> to make an <strong>associative array</strong> of material
+name and value as <strong>key : value</strong> pair.</p>
+<p>'''''30th July(Wednesday)</p>
+<p>Made json export work but there are some glitches like the file in which
+the json material is written is perfect but the exported file from web
+interface contains some needless data appended at the end.</p>
+<p>'''''31th July(Thursday)</p>
+<p>Removed the problem of <strong>futile data</strong> getting appended in <strong>.json
+file</strong>.</p>
+<p>Added a <strong>new file</strong> which has the code to <strong>export</strong> the data in JSON
+format.</p>
+<p>Added <strong>option</strong> to select any trait which is to be exported by storing
+it in <strong>variables.</strong></p>
+<p>'''''1st August(Friday)</p>
+<p><strong>Status flag</strong> nearly accomplished which was in pipeline. <strong>Updations</strong>
+that can be only done by <strong>Sysop and bureaucrat</strong> are just left.</p>
+<p><strong>Status visible</strong> in view all materials page.</p>
+<p><strong>Export</strong>(call to action button) added in the menu bar.</p>
+<p><strong>Search bar</strong> hidden from the <strong>main login page</strong> where is wasn't
+required.</p>
+<p>'''''2nd August(Saturday)</p>
+<p>Couldn't work today because of engagements like depositing college fees
+and shifting to new hostel. Also there was power supply's problem so I
+could not keep my laptop charged.</p>
+<p>'''''4th August(Monday)</p>
+<p>Learned how to embed <strong>JavaScript</strong> in MediaWiki. Used in the
+<strong>navigation bar</strong> on the top of each page.</p>
+<h3 id="week-12">Week 12</h3>
+<p>'''''5th August(Tuesday)</p>
+<p><strong>Status</strong> now visible in <strong>Search by Trait</strong> and <strong>Search by Material</strong>
+too. All the <strong>approved</strong> material properties are denoted by "1" and the
+<strong>pending</strong> by "0". The privilege(for bureaucrat and sysop) to approve
+still pending.</p>
+<p>'''''6th August(Wednesday)</p>
+<p>Facing a bit of challenge to set the privilege for approval. Because
+unlike <strong>Wiki</strong> pages, <strong>Special</strong> pages cannot be edited.</p>
+<p>'''''7th August(Thursday)</p>
+<p>Done with the <strong>approval part.</strong> Now the values can be approved from the
+<strong>Special Page itself</strong>.</p>
+<p>'''''8th August(Friday) and 9th August(Saturday)</p>
+<p>Visited a funeral ceremony.</p>
+<p>Couldn't work, I also had to visit my doctor regarding respiratory
+problem.</p>
+<p>'''''11th August(Monday)</p>
+<p>Made the navigation bar more interactive using <strong>javascript.</strong> Also
+renamed a few variable for better <strong>readability</strong>.</p>
+<h3 id="week-13">Week 13</h3>
+<p>'''''12th August(Tuesday)</p>
+<p>Found a minor glitch in export. The <strong>indices</strong> of the <strong>two arrays</strong>
+don't match and making the json more readable by replacing the "value"
+attribute with trait name.</p>
+<p>'''''13th August(Wednesday)</p>
+<p>Perfectly done with the <strong>json export</strong> now grappling with <strong>CSV
+format.</strong></p>
+<p>'''''14th August(Thursday)</p>
+<p>Export in <strong>CSV done</strong>, using PHP <strong>header</strong> function and <strong>array</strong>
+manipulation.</p>
+<p><strong>Status</strong> which was approved by the admin is <strong>now visible</strong> on the
+<strong>front-end</strong> too.</p>
+<p>'''''15th August(Friday)</p>
+<p><strong>Exporting</strong> data in <strong>XML</strong> format now possible. Now grappling with
+data import.</p>
+<p>'''''16th August(Saturday)</p>
+<p>Added <strong>update</strong> , <strong>import</strong> call to action buttons.</p>
+<p>Done with <strong>import</strong> of data in <strong>JSON.</strong></p>
+<p>'''''17th August(Sunday)</p>
+<p>Set the permissions such that only <strong>sysop</strong> and <strong>bureaucrat</strong> can
+delete <strong>materials</strong> and <strong>traits.</strong></p>
+<p>'''''18th August(Monday)</p>
+<p>As today is the last day of GSoC, I have given my level best to add
+everything possible to the code before final evaluation.</p>
+<p>I have added support for importing the data by <strong>selecting</strong> the trait
+name which earlier was <strong>static.</strong></p>
+<p>I have updated the <strong>update page</strong> which now allows to update all the
+values of a particular material <strong>in one go</strong>, which wasn't possible
+earlier.</p>
+<p>I have also added the facility to the user to <strong>add</strong> only <strong>selective</strong>
+traits at a time in case he does not know all the values at present.</p>
+<p>Apart from <strong>normal users</strong>, a separate <strong>call to action button</strong> is
+added for <strong>admins</strong> to delete materials and traits and approve the
+values added by users.</p>
+<p>And finally <strong>removed</strong> the <strong>unnecessary</strong> data <strong>exported</strong> from XML
+like mat_id, timestamp etc.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

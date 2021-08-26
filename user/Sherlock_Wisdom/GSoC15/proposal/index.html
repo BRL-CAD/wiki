@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Sherlock_Wisdom/GSoC15/proposal/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Proposal - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Sherlock_Wisdom/GSoC15/proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>- Title: Massive Code Reduction - -- Personal Information -- -- Brief
+Background info -- -- Brief summary -- -- Detailed project Description
+-- -- What else I plan on doing -- -- Deliverables -- -- Timeline -- --
+Availability -- -- Why us -- -- Why me -- -- Anything else --</p>
+<p>- Title: Massive Code Reduction - -- Personal information --</p>
+<p><code>Name (in full): Nde Wisdom Nji</code>
+<code>E-mail address: wisdomnji@gmail.com</code>
+<code>IRC username: Sherl0ck</code></p>
+<p>-- Brief Background info --</p>
+<p><code>I'm a freshman at the Catholic University of Bamenda (CATUC), studying Computer science. I've had 3 years of coding experience and have participated in some major codes development for my school and organizations in my vicinity.</code>
+<code>I'm proficient in c/c++ and Java (I also do some preliminary work in python and just begin working on some c#).</code></p>
+<p>--Brief summary --</p>
+<p>As it's stated on the wiki, this project entails identifying common
+patterns of duplication throughout the code, but with a method I call
+"Massive Code Reduction (MCR)", I plan on utilizing for optimum
+refactoring.</p>
+<p>-- Detailed Project Description --</p>
+<p>I plan on working on not only reducing the codes, but on also taking out
+un-used variables and "recycling" some variables, with great accuracy
+and optimization, while mantaining optimum functionality. As stated in
+the wiki, tools are already at the availability for such task (problem
+is such tools might be general purpose tools and constructed for general
+programming), but I propose on developing my own tools specific for the
+BRL-CAD framework codes. How would my own tool be better you might ask;
+the answer is pretty simple, I'd spend a considerable amount of time,
+recoginizing the unique pattern/format used in the codes of BRL-CAD and
+formulate a standard algorithm. With that, I can implement my massive
+code reduction technique on the my algorithm and behold would be BRL-CAD
+refactoring tool.</p>
+<p>How I plan to do that:</p>
+<p><code>- Templates: For source files which are almost doubled but just maintain differences in their data types, implementating a standard template for that would utilize not only the lines of codes, but amount of source files itself.</code>
+<code>- Functions: Eliminate every trace of reoccuring code, using functions, in source files.</code></p>
+<p><code>So my plan of action is: Templates, for reducing source files and functions, for reducing lines of code. Now every other refactoring would be variable allocation and common programming styles.</code></p>
+<p><code>e.g</code>
+<code>//reading from a file....</code>
+<code>ifstream read("myfile.txt");</code>
+<code>string temp;</code>
+<code>read &gt;&gt; temp;</code>
+<code>bool flag = false;</code>
+<code>while(flag == false)</code>
+<code>{</code>
+<code>read &gt;&gt; temp;</code>
+<code>if(temp.empty() == true) flag = true;</code>
+<code>}</code></p>
+<p>but this could be reduced to...</p>
+<p><code>ifstream read("myfile.txt")</code>
+<code>while(read.eof() == false)</code>
+<code>{</code>
+<code>string temp;</code>
+<code>read &gt;&gt; temp;</code>
+<code>}</code></p>
+<p>The above is just a dummy example of line reduction, which leaves space
+for more accurate checking! Due to long hours dedicated to finding code
+bugs and resizing code to optimize memory usage, I'm confident to say,
+BRL-CAD would be an awesome project to utilize the skills.</p>
+<p>-- What else I plan on doing -- Since making the refactoring won't take
+in lots of hours, I would optimize the remaining time for testing! To
+make sure the code is optimum for use on the BRL-CAD. As I always say,
+testing with the worst case scenerio makes the normal case scenerio
+accurate! Reading and writing is optimum for this project, not just
+pouring hours of coding to develop generalized tools! I'm very skilled
+at both and propose my skills be utilized for this project.</p>
+<p>-- Deliverables --</p>
+<p>-- Timeline --</p>
+<p>May 25th to June 1st:</p>
+<p><code>- Extensive study of BRL-CAD code formats (Beginning of research phase).</code></p>
+<p>June 2nd to June 7th:</p>
+<p><code>- Development and Coding of MCR</code></p>
+<p>June 8th to June 15th:</p>
+<p><code>- Finalization of MCR and testing on BRL-CAD framework begins.</code></p>
+<p>June 16th to June 20th:</p>
+<p><code>- Testing of code on BRL-CAD framework and debugging of MCR</code></p>
+<p>June 21th to June 25th:</p>
+<p><code>- Uploading of code for standard review.</code></p>
+<p>June 26th to July 6th:</p>
+<p><code>- Creating documentation for first phase of code.</code></p>
+<p>July 7th to July 14th:</p>
+<p><code>- Further extensive research on BRL-CAD code to build on already collected data.</code>
+<code>- Development further advanced algorithm</code>
+<code>- Test algorithm</code></p>
+<p>July 15th to July 21st:</p>
+<p><code>- Coding of newly developed algorithm.</code>
+<code>- Standard testing begins</code></p>
+<p>July 22nd to July 29th:</p>
+<p><code>- Finalize codes and begin full test of code on BRL-CAD framework.</code>
+<code>- Focus on amount of refactoring is taken place.</code>
+<code>- Test for maintainability of refactored codes.</code></p>
+<p>July 30th to August 4th:</p>
+<p><code>- Final cleaning up.</code>
+<code>- Creation of final documentations and wikis</code></p>
+<p>August 5th:</p>
+<p><code>- Submission of work</code>
+<code>- Sitting back to hope for the best!</code></p>
+<p>-- Time availability for each project --</p>
+<p>7 hours Mon - Fri 3 hours Weekends. Total of 55 hours per week.</p>
+<p>-- Why us -- BRL-CAD has a massive framework of source codes, as the
+developing team is huge. Factoring code for such such an organization
+would boost my motivation and I'll finally have a contribution to the
+open-souce community (BRL-CAD for that matter).</p>
+<p>-- Why me -- I'm very skilled at reading, writing, and developing
+algorithms and codes. This project isn't technically difficult, but
+requires a great deal of time input and motivation. Most programmers
+prefer developing the testing, that's why after a few weeks of coding,
+they loss motivation, but I'm dedicated to testing and developing (the
+science spirit), which means the more I work on refactoring for the
+BRL-CAD, the more motivated I'll become to not give up. My skill would
+be of great use to the team.</p>
+<p>-- Anything else -- From the dates stated till September, I'll have no
+engagements and as such would dedicate my time to working on the BRL-CAD
+project, and do some xbox gaming on Sundays!</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

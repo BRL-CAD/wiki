@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Shainasabarwal/GSoC14/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Development Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Shainasabarwal/GSoC14/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-logs" class="nav-link">Development Logs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-period" class="nav-link">Development Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-logs">Development Logs</h1>
+<h2 id="community-bonding-period">Community Bonding Period</h2>
+<ul>
+<li>Read OpenSCAD source and test files.</li>
+<li>Learnt some important Qt classes used in OpenSCAD.</li>
+<li>Explore different editors that can be integrated into OpenSCAD
+    editor.</li>
+<li>Discussed with community about the editor and finalized QScintilla.</li>
+</ul>
+<h2 id="development-period">Development Period</h2>
+<h3 id="week-1">Week 1</h3>
+<p>'''''19th May Worked on Detachable rendering window.</p>
+<p>'''''20th May Read about QScintilla integration after discussion with
+community</p>
+<p>'''''21st May Completed the task of Detachable window and made a pull
+request in branch detatchrenderwindow of OpenSCAD.</p>
+<p>'''''22nd May</p>
+<ul>
+<li>Submitted patch for detachable render window, which my mentor said,
+    can be a good addition to
+    <a href="https://github.com/openscad/openscad/pull/787">https://github.com/openscad/openscad/pull/787</a>.</li>
+<li>Discussed about the integration of editor.</li>
+<li>Added class Qscintilla and make two separate objects of QTextEditor
+    and QScintilla classes in Editor class.</li>
+</ul>
+<p>'''''23 May</p>
+<ul>
+<li>Removed errors and Added some built in functions of QScintilla class
+    so that its minimal functionality can be seen.</li>
+<li>Discussed about it with mentors and I got that two separate classes
+    should be made say legacyEditor and ScintillaEditor which will
+    inherit QTextEdit and QScintilla classes respectively and an
+    Interface class Editor will be used to call the functions of both
+    these classes.</li>
+</ul>
+<p>'''''24 May</p>
+<ul>
+<li>Refactored some code and made two separate classes as discussed.</li>
+<li>More code need to be refactored yet.</li>
+</ul>
+<h3 id="week-2">Week 2</h3>
+<p>'''''26 May</p>
+<ul>
+<li>Searched about how to change the color of rendered model.</li>
+<li>Checked rendersettings.cc renderer.cc preferences.cc. Preferences.cc
+    has color scheme for preview but not for rendered model.</li>
+</ul>
+<p>'''''27 May</p>
+<ul>
+<li>The functions defined in legacyEditor.cc can be called in mainwin.cc
+    by object of interface class i.e. Editor.</li>
+</ul>
+<p>'''''28 May</p>
+<ul>
+<li>Still not able to find the code that affects the color of rendered
+    model. Struggling for it.</li>
+<li>Facing a segmentation fault because of toPlainText() function call
+    in mainwin.cc at some places. Trying to solve it.</li>
+</ul>
+<p>'''''29 May</p>
+<ul>
+<li>Completed the editor class as interface and defined virtual
+    functions into it using which the derived class functions can be
+    called into the mainwin.cc</li>
+</ul>
+<p>'''''30 May</p>
+<ul>
+<li>The size of the editor is creating problem. It is not fitting into
+    the DockWidget. Read about size hint, size policy and customizing Qt
+    widgets.</li>
+</ul>
+<p>'''''31 May</p>
+<ul>
+<li>Cloned new openscad as a lot of changes are made by the developer
+    and installed required libraries. Build OpenSCAD with Qt5 and remove
+    errors caused to old libraries versions. My mentor suggested me to
+    shift to Operating system Ubuntu 14.04 as 12.04 is not supporting
+    new libraries required by OpenSCAD.</li>
+</ul>
+<h3 id="week-3">Week 3</h3>
+<p>'''''2 June</p>
+<ul>
+<li>Installed QScintilla editor API and read its example to understand
+    how to it can be integrated into OpenSCAD.</li>
+<li>Made Scintilla class derived from Editor class.</li>
+</ul>
+<p>'''''3 June</p>
+<ul>
+<li>Install OS Ubuntu 14.04 lts.</li>
+<li>Cloned OpenSCAD and build required libraries</li>
+<li>Scintilla editor is not working. Trying to figure out the problem.</li>
+</ul>
+<p>'''''4 June</p>
+<ul>
+<li>As the editor is removed from MainWindow.ui file, the editor defined
+    as object of legacyEditor is facing some size issues. Trying to
+    figure out how to set its size equal to its parent
+    editorDockContents.</li>
+</ul>
+<p>'''''5 June</p>
+<ul>
+<li>Integrated QScintilla editor into openscad with minimal
+    functionality.</li>
+</ul>
+<p>'''''6 June</p>
+<ul>
+<li>Solved size problem of legacy and scintilla editors successfully.
+    Now they are occupying the full editorDock widget space.</li>
+</ul>
+<p>'''''7 June</p>
+<ul>
+<li>Read and became familiar with QScintilla documentation to add new
+    features into the scintilla Editor.</li>
+</ul>
+<h3 id="week-4">Week 4</h3>
+<p>'''''9 June</p>
+<ul>
+<li>Made a wiki page showing what features need to be implemented in
+    editor</li>
+<li>Line numbers at the margin.</li>
+<li>Brace Matching.</li>
+<li>Auto Indentation</li>
+</ul>
+<p>'''''10 June</p>
+<ul>
+<li>Included line wrap and flags at wrapping to make the editor
+    responsive to the window size.</li>
+<li>Add margin width to the line numbers so show the full line number,
+    previously it was showing just the last digit.</li>
+</ul>
+<p>'''''11 June</p>
+<ul>
+<li>Discussed with mentors, how to add error indicators. This was bit
+    confusing, as with scintilla editor we are not using the existing
+    highlighter class which is used for highlighting and error
+    indicating</li>
+</ul>
+<p>'''''12 June</p>
+<ul>
+<li>Understanding how to do error indicating using qscintilla functions
+    provided in documentation.</li>
+</ul>
+<p>'''''13 June</p>
+<ul>
+<li>Error indicator is implemented</li>
+<li>Facing problem in unhighlighting when the user solve the error</li>
+<li>Finally implemented error indicators with marker at line number
+    which will help to identify line having error in case there is no
+    line wrapping</li>
+</ul>
+<p>'''''14 June</p>
+<ul>
+<li>Today's task was to work towards syntax highlighting. Qscintilla has
+    different lexer classes such as QsciLexerCPP, QsciLexerJava etc for
+    highlighting syntax of different languages. But all the keywords
+    used in openscad are not supported in single language. Planning how
+    to tackle this problem.</li>
+</ul>
+<h3 id="week-5">Week 5</h3>
+<p>'''''16 June</p>
+<ul>
+<li>A new class ScadLexer is made that is inherited from QsciLexerCPP
+    class, which contain the enum having labels for different style IDs.</li>
+<li>A keyword method in QsciLexerCPP is overridden in ScadLexer to
+    define Openscad set of keywords.</li>
+</ul>
+<p>'''''17 June</p>
+<ul>
+<li>DefaultColor function of QsciLexerCPP is overridden in ScadLexer
+    which return colors for different sets of keywords defined in
+    keyword method in the same class.</li>
+<li>Preference syntaxhighlight string is called to know the current
+    value of Edit/Preference/Editor set by the user in the openscad
+    window.</li>
+<li>Provide different colors to keywords according to dark, light or no
+    background color.</li>
+</ul>
+<p>'''''18 June</p>
+<ul>
+<li>Unable to change the syntax color when the user changes the
+    settings.</li>
+<li>The defaultColor method in ScadLexer and setHighlightScheme method
+    in ScintillaEditor needs to be connected somehow. Tried some methods
+    getting ideas from existing Highlighter class for legacyEditor.</li>
+</ul>
+<p>'''''19 June</p>
+<ul>
+<li>The idea of DefaultColor method is dropped because it is
+    automatically called by the lexer and two such functions for
+    different backgrounds can't be defined.</li>
+<li>The inbuilt lexer function setColor is used in setHighlightScheme
+    function to provide colors to different keyword sets, operators,
+    numbers etc according to their style IDs mentioned in
+    qscilexercpp.h.</li>
+</ul>
+<p>'''''20 June</p>
+<ul>
+<li>Appropriate colors to the keyword sets are given using to monokai
+    color pallete.</li>
+<li>Set editor utf8 for supporting unicodes.</li>
+<li>provided inconsolata font.</li>
+<li>Committed my changes for the mentor's review.</li>
+</ul>
+<p>'''''21 June</p>
+<ul>
+<li>Explored about adding custom toolbar having most usable actions.</li>
+<li>Downloaded and edited required Icons.</li>
+<li>Made toolbar at the top of the MainWindow</li>
+</ul>
+<h3 id="week-6">Week 6</h3>
+<p>'''''23 June</p>
+<ul>
+<li>Reviewd toolbar from mentor but due to a Qt bug, toolbar styles were
+    not supported at every platform.</li>
+<li>Explored for different option how to get user's desktop settings.</li>
+</ul>
+<p>'''''24 June</p>
+<ul>
+<li>Regenerate all the icons in black color.</li>
+<li>The icons will be black if the default desktop setting as light gray
+    color and white if it has dark color as default settings.</li>
+</ul>
+<p>'''''25 June</p>
+<ul>
+<li>Made more icons for wireframe and surface</li>
+<li>Tested all icons by adding them in light gray toolbar</li>
+</ul>
+<p>'''''26 June</p>
+<ul>
+<li>Made two different toolbars one at editor side and other at glView
+    (rendering window) side.</li>
+<li>Added more suitable icons</li>
+</ul>
+<p>'''''27 June</p>
+<ul>
+<li>Some actions like showaxes, showedges in toolbar are not working.
+    Trying with different methods.</li>
+<li>Added direct actions and icons in mainwin.cc instead of ToolBar
+    class and it worked.</li>
+</ul>
+<h3 id="week-7">Week 7</h3>
+<p>'''''3 July</p>
+<ul>
+<li>Read about the color theory and tried to modify existing themes of
+    rendering window of openscad</li>
+</ul>
+<p>'''''4 July</p>
+<ul>
+<li>My mentor suggested that I should add new themes with new names
+    rather than modifying existing one. So tried to made new ones</li>
+</ul>
+<p>'''''5 July</p>
+<ul>
+<li>Added icons for preview, perspective. orthogonal for both dark and
+    light default color scheme.</li>
+</ul>
+<p>'''''6 July</p>
+<ul>
+<li>Added icons for animate and cross hairs for both dark and light
+    default toolbar color scheme.</li>
+</ul>
+<p>'''''7 July</p>
+<ul>
+<li>Improved syntax highlighting color scheme.</li>
+<li>Improved new added rendered model themes and provided them new
+    names.</li>
+</ul>
+<h3 id="week-8">Week 8</h3>
+<p>'''''8 July</p>
+<ul>
+<li>Committed and pushed themes</li>
+<li>Started working towards adding run time option for switching editor
+    from legacy to scintilla</li>
+</ul>
+<p>'''''9 July</p>
+<ul>
+<li>Added combo box in Preferences.ui with the help of designer and
+    added both editors as different options.</li>
+<li>Tried to get the current value of selected editor option in
+    preferences in mainwin.cc but it is causing some errors.</li>
+</ul>
+<p>'''''10 July</p>
+<ul>
+<li>Successfully got the value of selected editor option in mainwin.cc
+    and changed editor in mainwindow according to the user's selected
+    editor option.</li>
+</ul>
+<p>'''''11 July</p>
+<ul>
+<li>Solved the problem of not showing previously selected editor option
+    in Preferences dialog box.</li>
+<li>Solved the problem of showing unnecessary warning for save changes
+    even when nothing has been modified in scintilla editor.</li>
+</ul>
+<p>'''''12 July</p>
+<ul>
+<li>Decided what should be done next with mentors and planned to work
+    towards making launching screen for openscad.</li>
+<li>Started working towards making mock up of launching screen design.</li>
+</ul>
+<h3 id="week-9">Week 9</h3>
+<p>'''''14 July</p>
+<ul>
+<li>Looked at launching screen of few famous software for inspiration</li>
+</ul>
+<p>'''''15 July</p>
+<ul>
+<li>Tried making different designs but still not satisfied :(</li>
+</ul>
+<p>'''''16 July</p>
+<ul>
+<li>Made a good launching screen design mock up and showed to my mentor
+    to get review for further improvements.</li>
+</ul>
+<p>'''''17 July</p>
+<ul>
+<li>Made new class LaunchingScreen in openscad and added basic widgets
+    using Qt designer.</li>
+</ul>
+<p>'''''18 July</p>
+<ul>
+<li>Added background and colors to the buttons in launchingscreen of
+    openscad.</li>
+</ul>
+<p>'''''19 July</p>
+<ul>
+<li>LaunchingScreen is added in the scope of MainWindow but this way
+    launching screen get showed up on every new window. Need to have
+    some different logic.</li>
+</ul>
+<h3 id="week-10">Week 10</h3>
+<p>'''''21 July</p>
+<ul>
+<li>LaunchingScreen is added in openscad.cc but it is showing launching
+    screen even when a filename is given at command line.</li>
+</ul>
+<p>'''''22 July</p>
+<ul>
+<li>A bool variable is added that checks if the file size is 0 at cmd
+    line or not and shown launching screen accordingly.</li>
+</ul>
+<p>'''''23 July</p>
+<ul>
+<li>Tried adding signal slots of new, open and help buttons in
+    openscad.cc but it is creating a mess there because the slots are
+    defined in mainwin.cc. Need to adopt some different way.</li>
+</ul>
+<p>'''''24 July</p>
+<ul>
+<li>To have better and clean code, LaunchingScreen object is defined in
+    mainwin.cc but the launcher is shown in openscad.</li>
+</ul>
+<p>'''''25 July</p>
+<ul>
+<li>Added recent files in List Widget but currently it is not working on
+    clicking the file name.</li>
+</ul>
+<p>'''''26 July</p>
+<ul>
+<li>Added recent file path instead of just name and added a button Open
+    Recent, by clicking which, the selected item in List Widget will
+    open up in the editor.</li>
+</ul>
+<h3 id="week-11">Week 11</h3>
+<p>'''''28 July</p>
+<ul>
+<li>Disable Open Recent button if nothing selected.</li>
+<li>Added TreeWidget for examples parallel to Recent List Widget with
+    the help of designer.</li>
+</ul>
+<p>'''''29 July</p>
+<ul>
+<li>Added Categories names as top level elements in treeWidget.</li>
+<li>Got the names of the examples in show_example() function in
+    mainwin.cc and added in treeWidget.</li>
+</ul>
+<p>'''''30 July</p>
+<ul>
+<li>Examples are not working after clicking on them so added button Open
+    Example using the same logic of Open Recent button.</li>
+<li>Examples are still not working on opening the currentItem.</li>
+</ul>
+<p>'''''31 July</p>
+<ul>
+<li>Gave full path of example instead of file name as parameter to
+    openFile function and now examples are working :)</li>
+</ul>
+<p>'''''1 August</p>
+<ul>
+<li>Made the check box work to hide the launcher and save the user
+    settings.</li>
+<li>Made an option in Preferences/features to show the launcher again.</li>
+</ul>
+<p>'''''2 August</p>
+<ul>
+<li>Made the size of the launcher dialog box fixed.</li>
+<li>Pushed the code for reviewing</li>
+</ul>
+<p>'''''3 August</p>
+<ul>
+<li>Wrote the blog post about the major contribution of the project to
+    openscad software
+    <a href="https://shainasabarwal.wordpress.com/2014/08/03/gsoc-project-ui-brushup-of-openscad/">https://shainasabarwal.wordpress.com/2014/08/03/gsoc-project-ui-brushup-of-openscad/</a></li>
+</ul>
+<h3 id="week-12">Week 12</h3>
+<p>'''''4 August</p>
+<ul>
+<li>Read about the Monokai theme for our new QScintilla Editor</li>
+<li>Set the monokai theme for Qscintilla Editor and provided its option
+    in Preferences box</li>
+</ul>
+<p>'''''5 August</p>
+<ul>
+<li>Read about the Solarized theme.</li>
+<li>Set the Solarized theme for QScintilla Editor and also provided the
+    option in Preferences.</li>
+</ul>
+<p>'''''6 August</p>
+<ul>
+<li>The find and replace functions are not working into the QScintilla
+    Editor. Studying for how to implement these functions.</li>
+</ul>
+<p>'''''7 August</p>
+<ul>
+<li>Read the QScintilla documentation and find various function to
+    implement find and replace in our new editor.</li>
+<li>Made the find, replace, and find next operations working in the
+    qscintilla editor but there is no function available for find
+    previous.</li>
+</ul>
+<p>'''''8 August</p>
+<ul>
+<li>As we have editor interface for both editors - Legacy editor and
+    QScintilla editor. So it is required to make the common function for
+    find and replace operations for both the editors.</li>
+<li>Discussed with mentors about this.</li>
+</ul>
+<p>'''''9 August</p>
+<ul>
+<li>Made the common functions for find, replace, find next in the editor
+    interface for both editors.</li>
+</ul>
+<h3 id="week-13">Week 13</h3>
+<p>'''''11 August</p>
+<ul>
+<li>Hide the options of indent/unindent comment/uncomment from the Edit
+    Menu when the QScintilla editor is on as these options are no more
+    required in the qscintilla editor.</li>
+</ul>
+<p>'''''12 August</p>
+<ul>
+<li>Trying to find the way how to implement find previous and replace
+    all options in the scintilla editor</li>
+</ul>
+<p>'''''13 August</p>
+<ul>
+<li>Tweaked some icons in the toolbar. Shifted render icon in rendered
+    window toolbar from editor toolbar and removed some icons that are
+    less often used.</li>
+</ul>
+<p>'''''14 August</p>
+<ul>
+<li>Worked towards making the font and size options in preferences
+    window working for the qscintilla editor.</li>
+</ul>
+<p>'''''15 August</p>
+<ul>
+<li>Font and size can be changed in qscintilla editor through preference
+    option.</li>
+<li>Removed the problem of articrafts in open Example and open Recents
+    buttons.</li>
+</ul>
+<p>'''''16 August</p>
+<ul>
+<li>Cleaned up code of branches scintillaeditor and launchingscreen</li>
+</ul>
+<p>'''''17 August</p>
+<ul>
+<li>Working towards changing the launching screen checkbox text from
+    "show me everytime" to "Don't show again" on suggestions of mentors.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

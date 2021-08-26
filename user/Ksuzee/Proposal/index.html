@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Ksuzee/Proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Project title - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Ksuzee/Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-title" class="nav-link">Project title</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brief-summary" class="nav-link">Brief summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#detailed-description" class="nav-link">Detailed description</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#proposes-for-reduction" class="nav-link">Proposes for reduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tests-and-patches" class="nav-link">Tests and patches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#simian" class="nav-link">Simian</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-schedule" class="nav-link">Development schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability" class="nav-link">Time availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-me" class="nav-link">Why me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="project-title">Project title</h1>
+<p>Code Reduction</p>
+<h1 id="brief-summary">Brief summary</h1>
+<p>BRL-CAD has the really huge project. There are a lot of libraries and
+different files, so there is such problem as code duplication. The
+sources must be cleaner and smaller. The code must be easy to read and
+understandable. This reduction will help new developers to make their
+work more effective and faster. So, the main aim is to shorten the count
+of lines of code without disrupting the project. Special tests will help
+not to disrupt the project after reduction.</p>
+<h1 id="detailed-description">Detailed description</h1>
+<p>I decided to choose this project, because, I am sure, I have enough
+knowledge in c/c++ for doing it. I've been working with it since
+19.03.2012. Unfortunately, I have a lot of subjects (about 12) this
+year, so I don't have enough time for working with BRL-CAD and patches
+every day now. Nevertheless, after the 1-5 of May I will be absolutely
+free and ready to work hard.</p>
+<h2 id="proposes-for-reduction">Proposes for reduction</h2>
+<p>BRL-CAD has quite useful Virtual Machine, which helped me to do my first
+steps with it. Mentor Sean helped me to become quite familiar with it.
+After several tests with "Simian" I understood that the work for
+reduction will be really huge. There are a lot of duplications (e.g.
+just copy-pasts). After testing I can propose such ideas:</p>
+<ul>
+<li>Duplication in one file.</li>
+</ul>
+<p>Example:</p>
+<p>................</p>
+<p><code>if (!invert) {</code>
+<code>for (line = file_height-1; line &gt;= 0; line--) {</code>
+<code>unsigned char *op;</code>
+<code>vp = &amp;vert_buf[line*3];</code>
+<code>op = &amp;horiz_buf[(file_width*3)-1];</code>
+<code>while (op &gt; horiz_buf) {</code>
+<code>*op-- = vp[2];</code>
+<code>*op-- = vp[1];</code>
+<code>*op-- = *vp;</code>
+<code>}</code>
+<code>ret = write(1, horiz_buf, file_width*3);</code>
+<code>if (ret &lt; 0)</code>
+<code>perror("write");</code>
+<code>}</code>
+<code>} else {</code>
+<code>/* Inverted: top-to-bottom. Good with cat-fb */</code>
+<code>for (line=0; line &lt; file_height; line++) {</code>
+<code>unsigned char *op;</code>
+<code>vp = &amp;vert_buf[line*3];</code>
+<code>op = &amp;horiz_buf[(file_width*3)-1];</code>
+<code>while (op &gt; horiz_buf) {</code>
+<code>*op-- = vp[2];</code>
+<code>*op-- = vp[1];</code>
+<code>*op-- = *vp;</code>
+<code>}</code>
+<code>ret = write(1, horiz_buf, file_width*3);</code>
+<code>if (ret &lt; 0)</code>
+<code>perror("write");</code>
+<code>}</code>
+<code>}</code></p>
+<p>..................</p>
+<p>This part is situated in file src/util/picbackgnd.c. We can see that the
+code in the first "for" is the same as in the second. So I propose to
+write the function with all necessary parameters which will contain this
+code:</p>
+<p><code>void</code>
+<code>my_reduction (unsigned char *horiz_buf, unsigned char *vert_buf, unsigned char *vp, ssize_t ret, int line)</code>
+<code>{</code>
+<code>unsigned char *op;</code>
+<code>vp = &amp;vert_buf[line*3];</code>
+<code>op = &amp;horiz_buf[(file_width*3)-1];</code>
+<code>while (op &gt; horiz_buf) {</code>
+<code>*op-- = vp[2];</code>
+<code>*op-- = vp[1];</code>
+<code>*op-- = *vp;</code>
+<code>}</code>
+<code>ret = write(1, horiz_buf, file_width*3);</code>
+<code>if (ret &lt; 0)</code>
+<code>perror("write");</code>
+<code>}</code></p>
+<p>The function call will have such view:</p>
+<p>..................</p>
+<p><code>if (!invert) {</code>
+<code>for (line = file_height-1; line &gt;= 0; line--)</code>
+<code>my_reduction(horiz_buf, vert_buf, vp, ret, line);</code>
+<code>} else {</code>
+<code>for (line=0; line &lt; file_height; line++)</code>
+<code>my_reduction(horiz_buf, vert_buf, vp, ret, line);</code>
+<code>}</code></p>
+<p>.................</p>
+<p>We can see that the code would be more understandable and short</p>
+<ul>
+<li>Duplication in one directory but different files</li>
+</ul>
+<p>In such situation I suggest to make file like "utils.c" which would be
+common for this directory. I have already done the patch for such
+situation: <a href="http://sourceforge.net/tracker/?func=detail&amp;aid=3512039&amp;group_id=105292&amp;atid=640804">my first
+patch</a></p>
+<ul>
+<li>Duplication in different directories</li>
+</ul>
+<p>Such duplication must be the most careful and difficult, because every
+change can influence working the whole project. Common functions will be
+situated in the libraries.</p>
+<h2 id="tests-and-patches">Tests and patches</h2>
+<p>I am sure, it is necessary to make tests as much as possible to avoid
+mistakes or to find them before big changes. I think that simple unit
+tests would be the best way in this situation.</p>
+<p>As for patches, I think, they must be doing very often during the whole
+period of working for the same reason as tests.</p>
+<h2 id="simian">Simian</h2>
+<p>I think the tool "Simian" is really useful and easy in use. Also it
+works rather fast. If I am involved into this project I want to use it
+specifically. But, of course, if my mentor advises me something else, I
+will improve my skills in other tool</p>
+<h1 id="deliverables">Deliverables</h1>
+<p>The main expectation is much clearer code with much fewer lines with no
+bugs or errors after reduction. My personal aim is getting useful
+experience and knowledge which could help me in my future and, maybe,
+would give me a chance to work with this company even after this project</p>
+<h1 id="development-schedule">Development schedule</h1>
+<ul>
+<li>before 23.04 - continuing to get familiar with project</li>
+<li>23.04 - 21.05 - active communication with mentor(s), asking
+    questions, getting ready for start</li>
+<li>21.05 - 15.06 - coding. Complete reduction of the duplications that
+    take place in one file.</li>
+<li>15.06 - 3.07 - Reduction of as large as possible number of files
+    that contains duplications (duplications in different files, the
+    same directory). Writing some tests</li>
+<li>3.07 - 9.07 - bugs fixing, review to be ready for submitting</li>
+<li>9.07 - 13.07 - submitting, some more review if it is necessary</li>
+<li>13.07 - 23.07 - reduction of the reminder of duplication in
+    different files and tests.</li>
+<li>23.07 - 13.08 - coding the last part of the project, removing
+    duplications in files that contains in different directories, making
+    necessary tests and libraries.</li>
+<li>13.08 - 20.08 - bugs fixing, review to be ready for submitting the
+    final result</li>
+</ul>
+<h1 id="time-availability">Time availability</h1>
+<p>I will not have any other jobs or project during participation in the
+project. My exams ends on the 18th of May because of EURO-2012, so I
+will have a lot of free time. All trips or vocations I am going to have
+in the end of August (after GSoC). I am going to work almost every day
+(6 days per week; not 7 - because, I am sure, every person must have a
+weekend for effective working) and 8 hours per day (for example: 8-00 -
+14-00 and 19-00 - 21-00). If it is necessary for me to go somewhere
+during working on the project, I will work longer and harder before it
+to compensate this time.</p>
+<h1 id="why-brl-cad">Why BRL-CAD</h1>
+<p>Recently, I have started being interested in computer graphic and
+modeling, so I would like to improve my skills with the help of this
+company. But I am not so good at these things yet, so I decided to try
+to take part in the project where my skills are better. Also it is
+really pleasantly that I always get sensible answers from mentor (Sean
+Morrison) for my questions. All the responses are totally complete. It
+seems people are interested in success of their project, therefore,
+there is also a moral reason of my desire to work with BRL-CAD.</p>
+<h1 id="why-me">Why me</h1>
+<p>I would not like to tell that I am "excellent" programmer or something
+like that. I want only to say that I am ready to work hard and to study
+new important knowledge. And I hope, BRL-CAD will help me with it.
+Studying and getting experience are on the first place of this period of
+my life.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

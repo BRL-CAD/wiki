@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/NyahCh3ck20/GSoc2013/Design_Document/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Design Document - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/NyahCh3ck20/GSoc2013/Design_Document.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#intended-implementation-approach" class="nav-link">Intended Implementation Approach:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#milestones-and-deliverables" class="nav-link">Milestones and Deliverables:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#original-development-schedule" class="nav-link">Original Development Schedule:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#references-and-resources" class="nav-link">References and Resources:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="implementation-of-pull-routine-design-document">Implementation of Pull routine Design Document</h3>
+<h2 id="introduction">Introduction:</h2>
+<p>The Pull command/routine restores the original state of a CSG tree by
+reversing all the geometric transformations from the leaf(primitive)
+nodes applied during the Push operation on the CSG tree. The pull
+routine reverses the matrix operation on the primitives and recursively
+restores all matrix transformations on the parent nodes up the CSG tree
+during an inorder tree walk, from the leaf to the designated head of the
+tree.</p>
+<h2 id="intended-implementation-approach">Intended Implementation Approach:</h2>
+<p>The pull routine works down a tree from a specific node(head) pushing
+the directory pointers to a linked list till when it reaches the
+leaves(primitives); It then copies the geometric transformation on the
+primitive and restores the primitives to its initial state and moves
+back up the tree restoring the original matrix transformations on the
+parent nodes by performing an Inverse of the current matrix
+transformation stored on the linked list; hence it restores the local
+coordinates of the parent nodes.</p>
+<p>On a CSG tree, the transformation matrices are always a 4x4 matrix</p>
+<p>Code:</p>
+<p><code>[ Xx Xy Xz Tx ]</code></p>
+<p>M = [ Yx Yy Yz Ty ]</p>
+<p><code>[ Zx Zy Zz Tz ]</code>
+<code>[  0  0  0  1 ]</code></p>
+<p>The unit X vector in new coordinates [ 1 0 0 ] matches [ Xx Xy Xz ]
+in old coordinates. The unit Y vector in new coordinates [ 0 1 0 ]
+matches [ Yx Yy Yz ] in old coordinates. The unit Z vector in new
+coordinates [ 0 0 1 ] matches [ Zx Zy Zz ] in old coordinates. The
+origin [ 0 0 0 ] in new coordinates is moved to [ Tx Ty Tz ] in old
+coordinates.</p>
+<p>With the matrix transformation matrix M defined as above, inverse matrix
+R = M-1(Inverse of M) defines the rotation back to the original
+coordinate system. R is simple to calculate: Code: d = Det(M) = Zz Xx Yy
+- Zz Yx Xy - Zx Xz Yy - Zy Xx Yz + Zy Yx Xz + Zx Xy Yz</p>
+<p>So I'll require a routine(Inverse_transf() and det_trans() routines)</p>
+<p><code>[ (Zz Yy - Zy Yz)/d  (Zy Xz - Zz Xy)/d  (Xy Yz - Xz Yy)/d   (Xy Ty Zz - Xy Yz Tz + Xz Tz Yy - Xz Zy Ty - Tx Zz Yy + Tx Zy Yz)/d ]</code></p>
+<p>R = [ (Zx Yz - Zz Yx)/d (Zz Xx - Zx Xz)/d (Yx Xz - Yz Xx)/d (Xx Yz Tz -
+Xx Ty Zz + Ty Zx Xz - Yz Zx Tx - Yx Xz Tz + Yx Tx Zz)/d ]</p>
+<p><code>[ (Zy Yx - Zx Yy)/d  (Zx Xy - Zy Xx)/d  (Yy Xx - Xx Xy)/d   (Tz Yx Xy - Tz Xx Yy + Zx Tx Yy + Zy Xx Ty - Zy Yx Tx - Zx Xy Ty)/d ]</code>
+<code>[        0                  0                  0                             1                                 ]</code></p>
+<p>R(Inverse_transf()) algorithm will be used in determining the inverse
+of the transformation taking into consideration othogonal
+matrices(transpose of matrix is the same as the inverse of the matrix.)</p>
+<p>In a case where d=0, the matrix is degenerate (also called singular),
+and does not describe a true transformation. Such a matrix flattens the
+space into a flat plane or a single point. In practice, d is always near
+one.</p>
+<p>In a case of more than one transformation matrices, the matrices are
+multiplied in the order below:M = MN MN-1 ... M2 M1</p>
+<p>Assuming the transformation matrix Mself transforms parent coordinates
+to current object coordinates, and Mchild transforms current object
+coordinates to child object coordinates. To transform current object
+coordinates to world coordinates we use</p>
+<p>M = Mself Mparent ... Mancestor and to transform child object
+coordinates to world coordinates you use M = Mchild Mself Mparent ...
+Mancestor</p>
+<p>To transform world coordinates to current object coordinates, you use R
+= Mancestor-1 ... Mparent-1 Mself-1 = (Mself Mparent ... Mancestor)-1</p>
+<p>Considering the small tree below: Code:</p>
+<p><code>World</code>
+<code>|</code>
+<code>Ancestor</code>
+<code>|</code>
+<code>Grandparent</code>
+<code>/       \</code>
+<code>Parent     Uncle</code>
+<code>/    \        \</code>
+<code>Self  Sibling  Cousin</code>
+<code></code></p>
+<p>Starting with an identity matrix, M = I = [ [ 1 0 0 0 ] [ 0 1 0 0 ]
+[ 0 0 1 0 ] [ 0 0 0 1 ] ] If you move down, multiply the
+transformation by the target transform on the left: M â† Mtarget M If
+you move up, multiply the transform by the inverse of the source
+transform on the left: M â† Msource-1 M</p>
+<p>In both cases the source/target transform corresponds to the lower node
+in the tree. Example:</p>
+<p>We need to transform current coordinates to coordinates in uncle's
+coordinate system. The path is Selfâ†‘Parentâ†‘Grandparentâ†“Uncle:
+[INDENT]M = I M â† Mself-1 M M â† Mparent-1 M M â† Muncle M
+[/IDENT] or, in other words, M = Muncle Mparent-1 Mself-1 and
+describes the transformation from current coordinates to Uncle's
+coordinate system.</p>
+<p>Generally, in implementing the pull routine, i'll need the matrix
+transformation of the leaf(primtive) nodes and recursively compute its
+inverse while moving up the tree and restoring the various matrix
+transformations. So, (Muncle Mparent-1 Mself-1)-1 = Mself Mparent
+Muncle-1 which also matches the inverse path,
+Uncleâ†‘Grandparentâ†“Parentâ†“Self!</p>
+<p>However, in implementing the pull routine I would need the following:</p>
+<ul>
+<li>. pull_obj -create a structure to hold the original matrix and
+    corresponding local coordinate systems while calling
+    inverse_tranf() routine.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>. inverse_tranf(): this performs the inverse of a 4x4 matrix using
+    the procedure shown above.</li>
+<li>.</li>
+<li>. det_trans(): This determines the determinant of a 4x4 matrix as
+    shown above.</li>
+<li>. create a loop to move down the tree to the leaf and then
+    recursively move up restoring the original matrix transformations.</li>
+<li>. pull leaf() routine : which runs in parallel restoring the
+    original primitive state and copies the matrix transformation which
+    then calls the det_transf() routine to seperate the different
+    matrix tranformations.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>. mat_restore() routine: which restores the original matrix
+    transformation and coordinate system at each node, which will
+    consist in calling the rt_matrix_tranform() as defined in
+    (/src/librt/transform.c)</li>
+</ul>
+<p>1.) The det_trans() routine:</p>
+<p><code>This determines the determinant of a 4x4 matrix which is to be called in inverse_tranf() routine.</code></p>
+<p>2.) The inverse_transf() routine:</p>
+<p><code>This routine takes any of matrix transformations determined by the det_trans() routine and determines the inverse of the transformation which will then be applied to all the nodes up the CSG tree from the primitive by pull leaf() in restoring the original state of the matrix transformations up the CSG tree. This routine will consider orthogonal matrices in order to increase runtime for some matrix transformations.</code></p>
+<p>3.) The mat_restore() routine:</p>
+<p><code>This routine called by pull_leaf() uses rt_matrix_transform() routine to restore the original transformation matrix at the parent nodes up the tree.</code></p>
+<p>4.) The pull_leaf() routine:</p>
+<p><code>This routine starts reversing all the geometric transformations the leafs then calls mat_restore(), inverse_tranf() routines to determine and restore the original matrix transformations up the CSG tree.</code></p>
+<p>Tests and Verification:</p>
+<p>I believe test driven development would be key in finding and fixing
+problems with the pull routine and then with more tests to ensure the
+code functions correctly and its bulletproof to all forms of object
+inputs. This will be enhanced with the creation of a special regression
+tests for the pull command to avoid modification of unwanted
+nodes/objects.Also, this command will be included among the MGED
+commands and a well written manual will be made so support the usage of
+the command.</p>
+<h2 id="milestones-and-deliverables">Milestones and Deliverables:</h2>
+<p>Implementation of the inverse_tranf(), mat_restore(), det_transf()
+routines and other pull subroutines.</p>
+<p>Implementation of the complete pull routine with further
+testing.:(pull_leaf())</p>
+<p>Integration of the Pull routine into MGED command interface together
+with Documentation containing(summary together with usage capabilities)</p>
+<h2 id="original-development-schedule">Original Development Schedule:</h2>
+<p>Since my semester ends by late june or early july, i will start coding
+on July 1st.</p>
+<p><code>July 1st (~ 3 weeks)</code>
+<code>Study of BRLCAD Manuals and other Documentation on the Push Command</code>
+<code>Discuss with other developers concerning implementation details.</code>
+<code>Study the (src/libged , /include ) libraries and the implementation of push/xpush       commands.</code>
+<code>Discuss more coding specifications and implementations details with mentor.</code>
+<code></code>
+<code>July 21 - July 28 (1 week)</code>
+<code>Implementation of the det_trans() and InverseTransf() routines with</code>
+<code>determination of original matrix tranformations.</code>
+<code>Tests on sample primitive matrices</code>
+<code></code>
+<code>July 29 - Aug 17(3 weeks)</code>
+<code>Implementation of do_restore() routine(1 week)</code>
+<code>which traverses nodes restoring the original matrix and tests</code>
+<code>Implementation of pull routine(pull_leaf() and others)(2 weeks)</code>
+<code>Testing and functionality verification of function.</code>
+<code></code>
+<code>Mid-term evaluation in July 29 - Aug. 2</code>
+<code></code>
+<code>Aug. 18  - Aug. 31 (2 weeks)</code>
+<code>Finalization of complete pull routine</code>
+<code>Tests</code>
+<code>Tests of the final pull routine on primitives</code>
+<code></code>
+<code>Sept 01 - Sept 14( 2 weeks)</code>
+<code>Integration of Pull into MGED command interface.</code>
+<code>Testing of functionality of command</code>
+<code>and debugging</code>
+<code></code>
+<code>Sept 15 - Sept 21(1 week)</code>
+<code>Tests</code>
+<code>Fix bugs and improve performance of routine</code>
+<code>Documentation and code clean up</code>
+<code></code>
+<code>Sept 23 - Sept 27(1 week)</code>
+<code>Final Evaluation</code>
+<code>Submission of Final code to Google.</code>
+<code></code></p>
+<h2 id="references-and-resources">References and Resources:</h2>
+<p>Graphics Gems: Matrix identities, transformation axes, Fast matrix
+multiplication, Matrix orthogonalization, www.graphicsgems.org
+Wikipedia: Composing and inverting transformations, Quaternion-derived
+rotation matrix, Invertible
+matrix(www.wikipedia.org/transformation_matrix,
+www.wikipedia.org/Rotation_matrix)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

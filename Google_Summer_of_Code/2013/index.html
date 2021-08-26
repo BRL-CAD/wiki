@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2013/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>GSoC 2013 With BRL-CAD - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2013.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2013-with-brl-cad" class="nav-link">GSoC 2013 With BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accepted-projects" class="nav-link">Accepted Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#image-processing-library-libicv" class="nav-link">Image Processing Library (LIBICV)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nurbs-intersections" class="nav-link">NURBS Intersections</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-libraries" class="nav-link">STEP libraries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pull-routine-for-reversing-the-effects-of-push-on-geometry" class="nav-link">Pull Routine for reversing the effects of push on Geometry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-cross-platform-3d-display-manager" class="nav-link">New Cross-Platform 3D Display Manager</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#web-interface-of-brl-cad" class="nav-link">Web Interface of BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#heart-primitive" class="nav-link">Heart primitive</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#additional-information" class="nav-link">Additional Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2013-with-brl-cad">GSoC 2013 With BRL-CAD</h1>
+<p><strong>BRL-CAD was again accepted as a <a href="http://www.google-melange.com/">mentoring
+organization</a> for the Google Summer of
+Code!</strong></p>
+<p>Following is a summary of our <strong>7</strong> GSoC students accepted to work on
+projects for BRL-CAD, all successful. As an umbrella org, 1 of those
+students work for STEPcode. See the links to their personal profile,
+development logs, and project page.</p>
+<h1 id="accepted-projects">Accepted Projects</h1>
+<h2 id="image-processing-library-libicv">Image Processing Library (LIBICV)</h2>
+<ul>
+<li><a href="/wiki/Consolidate_image_processing">Summary</a> : To
+    consolidate and add image processing functions to LIBICV an image
+    processing library in BRL-CAD.</li>
+<li>Student :<a href="/wiki/user/Level_zero/index">Mohit Daga</a></li>
+<li><a href="/wiki/user/Level_zero/proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Level_zero/GSOC13/logs">Development Logs</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2013/zero_level/15001">Google-Melange</a></li>
+</ul>
+<h2 id="nurbs-intersections">NURBS Intersections</h2>
+<ul>
+<li><a href="/wiki/NURBS_Intersections">Summary</a>: Calculate
+    NURBS surface-surface intersections for NURBS evaluation.</li>
+<li>Student :<a href="/wiki/user/Phoenix">Jianbang Wu</a></li>
+<li><a href="/wiki/user/Phoenix/GSoc2013/Proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/Phoenix/GSoc2013/Reports">Development Logs</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2013/phoenixyjll/40001">Google-Melange</a></li>
+</ul>
+<h2 id="step-libraries">STEP libraries</h2>
+<ul>
+<li><a href="/wiki/STEP_Libraries">Summary</a>: Cleanup and
+    performance enhancements in STEP, current standard for exchange of
+    CAD data.</li>
+<li>Student: <a href="/wiki/user/KeshaSShah/GSoC13">Kesha Shah</a></li>
+<li><a href="/wiki/user/KeshaSShah/GSoC13/Priority2">Project Proposal</a></li>
+<li><a href="/wiki/user/KeshaSShah/GSoC13/Reports">Development Logs</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2013/keshashah/42001">Google-Melange</a></li>
+</ul>
+<h2 id="pull-routine-for-reversing-the-effects-of-push-on-geometry">Pull Routine for reversing the effects of push on Geometry</h2>
+<ul>
+<li>[Summary]:The pull routine restores the matrix transformations for
+    all nodes on a CSG tree.</li>
+<li>Student: <a href="/wiki/user/NyahCh3ck20/GSoc2013">Nyah Check</a></li>
+<li><a href="/wiki/user/NyahCh3ck20/Proposal">Project Proposal</a></li>
+<li><a href="/wiki/user/NyahCh3ck20/GSoc2013/Coding_Report">Development Logs</a></li>
+<li><a href="https://google-melange.appspot.com/gsoc/proposal/review/google/gsoc2013/ch3ck/1">Google-melange</a></li>
+</ul>
+<h2 id="new-cross-platform-3d-display-manager">New Cross-Platform 3D Display Manager</h2>
+<ul>
+<li><a href="New_Cross-Platform_3D_Display_Manager.md">Summary</a>:
+    Creating a new cross-platform 3D display manager using Qt.</li>
+<li>Student: <a href="/wiki/user/Vladbogolin">Bogolin Simion Vlad</a></li>
+<li><a href="/wiki/user/Vladbogolin/Proposal/DisplayManager">Project Proposal</a></li>
+<li><a href="/wiki/user/Vladbogolin/GSoC2013/Logs">Development Logs</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2013/vladbogolin/47001">Google-Melange</a></li>
+</ul>
+<h2 id="web-interface-of-brl-cad">Web Interface of BRL-CAD</h2>
+<ul>
+<li><a href="/wiki/user/Harman052/Proposal/WebInterface">Summary</a>:
+    To enable the user to make 3D models in BRL-CAD from browser.</li>
+<li>Student: <a href="/wiki/user/Harman052">Harmanpreet Singh</a></li>
+<li><a href="/wiki/user/Harman052/Proposal/WebInterface">Project Proposal</a></li>
+<li><a href="/wiki/user/Harman052/GSoc2013/Logs">Development Logs</a></li>
+<li><a href="http://www.google-melange.com/gsoc/proposal/review/google/gsoc2013/harman052/15001">Google-Melange</a></li>
+</ul>
+<h2 id="heart-primitive">Heart primitive</h2>
+<ul>
+<li><a href="/wiki/user/Izak.md#PROJECT_SUMMARY">Summary</a>:
+    Implementing a three-dimensional heart primitive used for CSG
+    modelling .</li>
+<li>Student: <a href="/wiki/user/Izak">Isaac Kamga</a></li>
+<li><a href="/wiki/user/Izak.md#PROJECT_DESCRIPTION">Project Proposal</a></li>
+<li><a href="/wiki/user/Izak/GSOC_2013_logs">Development logs</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2013/izak/21001">Google-Melange</a></li>
+</ul>
+<h1 id="additional-information">Additional Information</h1>
+<p>Students discussed and collaborated with BRL-CAD developers on
+formulating projects with most selecting from a detailed list of project
+suggestions from our <a href="Google_Summer_of_Code/Project_Ideas.md">Project
+Ideas</a> page. Student
+applications for <a href="Google_Summer_of_Code.md">GSoC</a> were accepted
+at <a href="http://google-melange.com">http://google-melange.com</a> from April 22nd until May 3rd.</p>
+<p><a href="Category:_Summer_of_Code.md">Category: Summer of Code</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Vladbogolin/qt-display-manager/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Project Summary - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Vladbogolin/qt-display-manager.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-summary" class="nav-link">Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="project-summary">Project Summary</h1>
+<p>The purpose of this project was to create a new cross-platform 3D
+display manager using Qt framework that supports all the features of
+existing display manager's.</p>
+<p>As BRL-CAD uses Tcl/Tk, the new display manager had to be integrated in
+Tk windows so this was one of the first features implemented. Then,
+basic drawing had to be done, more exactly line, points and text
+drawing. To obtain this a QPainter that draws on a QPixmap was used.</p>
+<p><img alt="" src="/wiki/user/img/Tkqt1.png" /><img alt="" src="/wiki/user/img/Sph.png" /><img src="img/Tor.png" title="fig:Tor.png" width="200" alt="Tor.png" /></p>
+<p>At this point the display manager could draw almost anything but there
+was no event processing involved so user input was ignored. The problem
+that occurs when talking about event processing is the communication
+between Qt and Tk, so every time a Qt event occurs the corresponding Tk
+one needs to be generated to obtain the desired behavior. This was
+simply done by using the Tcl "event generate" command and by processing
+Qt events.</p>
+<p>The events can be grouped in three categories:</p>
+<ul>
+<li>mouse events:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Tor1.png" /><img alt="" src="/wiki/user/img/Tor2.png" /></p>
+<ul>
+<li>keyboard events:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Keyboard.png" /><img alt="" src="/wiki/user/img/Keyboard2.png" /><img alt="" src="/wiki/user/img/mged-c.png" /></p>
+<ul>
+<li>mouse + keyboard events:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Rotate1.png" /><img alt="" src="/wiki/user/img/Rotate2.png" /></p>
+<p>As it comes to key bindings, I've tried to do everything in such a way
+that new key bindings can be easily added. In order to add a new key
+biding adding a function that receives as input a Qt event and returns
+the corresponding Tk one is necessary. Below you can find an example:</p>
+<p><code>char* qt_mouseButton1Press(QEvent *event) {</code>
+<code>if (event-&gt;type() ==  QEvent::MouseButtonPress) {</code>
+<code>QMouseEvent *mouseEv = (QMouseEvent *)event;</code>
+<code>if (mouseEv-&gt;button() == Qt::LeftButton) {</code>
+<code>struct bu_vls str = BU_VLS_INIT_ZERO;</code>
+<code>bu_vls_printf(&amp;str, "&lt;1&gt; -x %d -y %d", mouseEv-&gt;x(), mouseEv-&gt;y());</code>
+<code>return bu_vls_addr(&amp;str);</code>
+<code>}</code>
+<code>}</code>
+<code>return NULL;</code>
+<code>}</code></p>
+<p>As seen from the images I focused on integrating the display manager in
+classic mged first. After everything was working accordingly I moved
+towards integrating the new display manager</p>
+<ul>
+<li>in mged:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/mged.png" /></p>
+<ul>
+<li>and archer:</li>
+</ul>
+<figure>
+![](/wiki/user/img/archer.png)
+
+made some testing using some more complex objects to see that everything
+is displayed properly and working as expected.</div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

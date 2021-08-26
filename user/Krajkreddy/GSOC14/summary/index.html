@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Krajkreddy/GSOC14/summary/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>GSOC 14 Summary - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Krajkreddy/GSOC14/summary.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-14-summary" class="nav-link">GSOC 14 Summary</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#week1" class="nav-link">Week1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week2" class="nav-link">Week2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week3" class="nav-link">Week3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week4" class="nav-link">Week4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week5" class="nav-link">Week5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week6" class="nav-link">Week6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#implementation-of-brep-and-opennurbs" class="nav-link">Implementation of Brep and OpenNurbs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-14-summary">GSOC 14 Summary</h1>
+<h2 id="week1">Week1</h2>
+<p>This week I am scheduled to implement the following</p>
+<ul>
+<li>ARS</li>
+<li>SUPERELL</li>
+<li>BINUNIF</li>
+</ul>
+<p>'''''May 19th</p>
+<ul>
+<li>I implemented ARS.</li>
+<li>Also implemented Ctypes Adapter to handle 2D Array</li>
+</ul>
+<p>'''''May 20th</p>
+<ul>
+<li>Initiated witting test for ARS.</li>
+<li>Stuck in errors.</li>
+</ul>
+<p>'''''May 21th</p>
+<ul>
+<li>Tried with different approaches to handle the array but with little
+    success.</li>
+</ul>
+<p>'''''May 22th</p>
+<ul>
+<li>Took a break off from ARS and implemented HALF runs properly. (tests
+    also compile).</li>
+</ul>
+<p>'''''May 23th</p>
+<ul>
+<li>Relooked at ARS, dug the C code, found some error and the way ars
+    data should be sent.</li>
+<li>But the error still persists. although corrected my approach for
+    sending data to mk_as</li>
+</ul>
+<p>'''''May 24th</p>
+<ul>
+<li>Corrected the error after a call with Csaba, The error was related
+    to freeing the memory from brlcad-C code and also python code.
+    Hopefully this experience helps me solve future problems</li>
+</ul>
+<h2 id="week2">Week2</h2>
+<p>This week's plan is to come in sync with the time line.</p>
+<p>'''''May 26</p>
+<ul>
+<li>Implemented superell.</li>
+<li>Also made two patches in accordance with the brlcad C
+    repository(main).</li>
+</ul>
+<p>'''''May 27</p>
+<ul>
+<li>Sent a pull request for the code to be merged.</li>
+<li>Also worked on metaball. Metaball has some internal functions which
+    are to be modified. thus figuring out a way to do it.</li>
+</ul>
+<p>'''''May 28</p>
+<ul>
+<li>Looked a Pipe primitive of brlcad and its implementation in python.
+    Metaball has similar traits but there are further challenges. The
+    data in metaball doesn't have number of points. Therefore this is
+    tricky.</li>
+</ul>
+<p>'''''May 29</p>
+<ul>
+<li>Implemented Metaball.</li>
+<li>Though there was an issue with the fastf_t *verts[5], and I keep
+    getting a very funny error :: expected LP_c_double_Array_5
+    instance instead of LP_c_double_Array_5</li>
+<li>Therefore for now my implementation works with fastf_t **verts.</li>
+</ul>
+<p>'''''May 30</p>
+<ul>
+<li>Started working on EBM.</li>
+<li>Learned brlcad image-processing tools. (They are quite good :-))</li>
+<li>Also getting this strange error "test framework quit unexpectedly"</li>
+</ul>
+<p>'''''May 31</p>
+<ul>
+<li>Some strange behavior with my set-up.</li>
+<li>Re-set up everything.</li>
+<li>finally it turned out that all my executables in the brlcad C repo
+    where 0 sized.</li>
+</ul>
+<h2 id="week3">Week3</h2>
+<p>'''''June 2</p>
+<ul>
+<li>Created EBM primitve.</li>
+<li>Used Ychar image given in the example.</li>
+<li>works well</li>
+</ul>
+<p>'''''June 3</p>
+<ul>
+<li>Found a tricky error in BRLCAD C repository. The last argument in
+    mk_metaball()</li>
+<li>Submitted patches #278 on the sf site to correct that.</li>
+<li>Also corrected the metaball implementation and found a better way to
+    terminate the list argument.</li>
+</ul>
+<p>'''''June 4</p>
+<ul>
+<li>Was away most of the day.</li>
+<li>Accommodated changes suggested by Csaba.</li>
+</ul>
+<p>'''''June 5</p>
+<ul>
+<li>Implemented Grip.</li>
+<li>Explored Bot and Constraint,</li>
+<li>Constraint need not be implemented for now because its api is not
+    mature.</li>
+<li>Bot is an interesting primitive. Chalked out a way for it.</li>
+</ul>
+<p>'''''June 6</p>
+<ul>
+<li>Spent my time figuring out issue with bot.</li>
+</ul>
+<p>'''''June 7</p>
+<ul>
+<li>Added bot primitive.</li>
+<li>The current version only creates a bot with plate mode.</li>
+</ul>
+<h2 id="week4">Week4</h2>
+<p>'''''June 9</p>
+<ul>
+<li>Started working on a new primitive.</li>
+<li>Apparently found an error in submodel primitive.</li>
+<li>Reported it to the core developers team</li>
+<li>Worked on modularizing the bot primitive.</li>
+</ul>
+<p>'''''June 10</p>
+<ul>
+<li>Contd. working on BOT.</li>
+<li>Tried different approaches.</li>
+<li>Modularizing a complex primitive as BOT has turned out to be tricky.</li>
+<li>Finally created a module wherein facility of adding faces in a bot
+    is different</li>
+<li>Also each method has a different stub altogether.</li>
+</ul>
+<p>'''''June 11</p>
+<ul>
+<li>Cleaned the Bot code.</li>
+<li>Wrote few tests cases of different methods. This will also serve as
+    examples</li>
+<li>Also finished working on submodel primitive.</li>
+<li>Created a different file in the resource directory for the tests.</li>
+</ul>
+<p>'''''June 12,13,14, 15</p>
+<ul>
+<li>Traveling (informed Csaba)</li>
+</ul>
+<h2 id="week5">Week5</h2>
+<p>'''''June 17</p>
+<ul>
+<li>Corrected ARS api to make it python friendly. The changed api only
+    requires curve information.</li>
+<li>Modified ctypes array2d to make it more robust.</li>
+</ul>
+<p>'''''June 18</p>
+<ul>
+<li>Started implementing pnts.</li>
+<li>Pnts has different parts, thus implementing them using different
+    classes.</li>
+<li>Spent my time archetecting the pnts primitive.</li>
+</ul>
+<p>'''''June 19</p>
+<ul>
+<li>Bryan merged my code and indicated an error in metaball tests</li>
+<li>Halting pnts implementation and focusing on correcting metaball.</li>
+<li>Found a strategy to work such the mk_metaball is not required.</li>
+<li>Also I dont know why BU_LIST_INIT is not wrapped automatically!
+    (Thus implemented it seperately as a ctypes adaptor)</li>
+<li>Now this doesnt require usage of mk_metaball function. Tests run on
+    the current version of brlcad c-repository.</li>
+</ul>
+<p>'''''June 20</p>
+<ul>
+<li>There are 3 primitives which are left to be wrapped PNTS, BINUNIF
+    and DSP.</li>
+<li>Today I tried to understand the requirements of all three.</li>
+<li>Went through the c code in libwdb (dsp,binunif) and typein(all
+    three).</li>
+<li>I am sure by the end of next week till which the stipulated time
+    finishes I will have finished these primitives.</li>
+</ul>
+<p>'''''June 21</p>
+<ul>
+<li>Worked on DSP primitive created dsp followed dsp tutorial.</li>
+<li>Got accumulated to the process of dsp creation.</li>
+<li>Understood the v5 method of creation in typein.</li>
+</ul>
+<h2 id="week6">Week6</h2>
+<p>'''''June 23</p>
+<ul>
+<li>Implemented DSP primitive.</li>
+<li>Used a different approach, because the mk_dsp doesn't have the
+    required parameters</li>
+<li>But it creates a issue while freeing it.</li>
+<li>Tried resolving it but with no success.</li>
+</ul>
+<p>'''''June 24</p>
+<ul>
+<li>Re-looked at the issue of DSP.</li>
+<li>Used GDB to get the backtrace. Pasted it in the channel. Waiting for
+    reply.</li>
+<li>Also committed the code in a different branch in dsp_primitive.</li>
+<li>Also resolved issues notified by Csaba in the code.</li>
+</ul>
+<p>'''''June 25</p>
+<ul>
+<li>Corrected DSP.</li>
+<li>Also added calloc support to brlcad_new to initialize the allocated
+    memory to 0.</li>
+</ul>
+<p><strong>MidTerm Summary</strong></p>
+<p>Mid Term Summary is <a href="../midterm-summary/">here</a></p>
+<h2 id="implementation-of-brep-and-opennurbs">Implementation of Brep and OpenNurbs</h2>
+<h3 id="quick-summary">Quick Summary</h3>
+<ul>
+<li>python-brlcad uses ctypes. Since ctypes can only talk to C
+    functions, We need to provide declaring classes with extern "C".
+    This requires a lot of changes to main repository brlcad. making it
+    clumsy.</li>
+<li>Other options which I have explored to wrap c/c++ code in python are
+    boost library, swig and sip.</li>
+<li>Bryan (kanzure) has done an experiment with swig code for python
+    wrappers. His code is available
+    [here|<a href="http://diyhpl.us/~bryan/irc/opennurbs/brlcad-opennurbs2.zip">http://diyhpl.us/~bryan/irc/opennurbs/brlcad-opennurbs2.zip</a>].
+    This misses some brlcad and doesn't work appropriately.</li>
+<li>Boost library provides a wonderful seamless wrapping. But it
+    requires change in c++ code. It uses a special python header in the
+    c++ code with different wrapping schemes.</li>
+<li>sip is one of the better tool I found to wrap python code. details
+    can be found
+    [here|<a href="http://pyqt.sourceforge.net/Docs/sip4/index.html">http://pyqt.sourceforge.net/Docs/sip4/index.html</a>].</li>
+<li>other tool which can parse c++ automatically is clang find the
+    details
+    [here|eli.thegreenplace.net/2011/07/03/parsing-c-in-python-with-clang/]</li>
+</ul>
+<h3 id="plan">Plan</h3>
+<p>To wrap the brep/opennurbs code as a python module. And use it in
+brlcad-python project.</p>
+<p>'''''July 21</p>
+<ul>
+<li>Played with PyBindGen. This tool is promising in wrapping with C++
+    code which has inner classes.
+    <a href="http://pybindgen.readthedocs.org/en/latest/apiref/">http://pybindgen.readthedocs.org/en/latest/apiref/</a></li>
+</ul>
+<p>'''''July 22</p>
+<ul>
+<li>Since most tools which wrap c++ code doesn't have a automatic
+    parsing of c++ headers like ctype-gencore.</li>
+<li>today I found a parser for c++ headers.
+    <a href="https://pypi.python.org/pypi/CppHeaderParser/2.4.3">https://pypi.python.org/pypi/CppHeaderParser/2.4.3</a></li>
+<li>With in this week I am planning to write code which generates
+    automatic config files using the c++ headers.</li>
+</ul>
+<p>'''''July 23</p>
+<ul>
+<li>Learnt to deal with PyBindGen. A nice tool to wrap c++ code for
+    python library.</li>
+<li>Implemented small dummy c and c++ code.</li>
+<li>Couldnot run the automated script because of some issues dont know
+    why they are errupting. Apparently a symbol "config_t" is not
+    available in the module.</li>
+</ul>
+<p><code>File "</code><input><code>", line 1, in</code><module>
+<code>File "/home/raj/.local/lib/python2.7/site-packages/pybindgen/gccxmlparser.py", line 598, in parse</code>
+<code>pygen_classifier, gccxml_options)</code>
+<code>File "/home/raj/.local/lib/python2.7/site-packages/pybindgen/gccxmlparser.py", line 693, in parse_init</code>
+<code>self.gccxml_config = parser.config_t(**gccxml_options)</code></p>
+<p>AttributeError: 'module' object has no attribute 'config_t' '''''July
+24</p>
+<ul>
+<li>Relooked at PyBindGen code. It seems good. I think we can either
+    develop this tool further (if it fails to work as it is currently)</li>
+<li>Also looked at how we can solve this.</li>
+</ul>
+<p>'''''July 25</p>
+<ul>
+<li>Looked at various dependencies like gccxml and pygccxml and saw
+    there version numbers.</li>
+<li>Apparently the config_t symbol was deperecated.</li>
+<li>Changed this and in the PyBindGen. Reported the bug in thier issue
+    tracker. Personally contacted the author who is traveling and will
+    change it later.</li>
+<li>created a dummy example of the code and it works fine.
+    <a href="https://github.com/raj12lnm/TryPyBindGen">https://github.com/raj12lnm/TryPyBindGen</a></li>
+</ul>
+<p>'''''Summary : Have the ability to parse a C++ header and create a
+wrapped library for it. Next I will move to wrapping the Giant .. the
+OpenNurbsLibrary in Python. :D</p>
+<p>'''''July 26</p>
+<ul>
+<li>wrote a c++ example in the pybindgen example. Looks like this is
+    working fine.</li>
+<li>Tried parsing C++ header of OpenNurbs using pybindgen.</li>
+<li>looks like there is some issue here.</li>
+<li>The issue currently is as follows.</li>
+</ul>
+<p>There are multiple symbols in different headers and gccxml is not able
+to gather information regarding the ones which depend on each other. For
+example the paste here <a href="http://tny.cz/8008c460">http://tny.cz/8008c460</a> tells us how when
+parsing a file has given issues.</p>
+<p>'''''July 28 (Monday)</p>
+<ul>
+<li>Found that Pybindgen requires a single header.</li>
+<li>Instead of automating it, used a frugal way by concating the header
+    files in such a way that the order is topologically sorted in the
+    dependency graph.</li>
+<li>While Parsing the header using Pybindgen I get an error.</li>
+<li>There is a bug at which I am stuck <a href="http://tny.cz/be8180ca">http://tny.cz/be8180ca</a>.</li>
+<li>Since the header file is several lines(&gt;65K) long all, Thus the
+    parsing takes a long time. And the bug is somewhere at the end. All
+    my efforts went in vain today.</li>
+<li>I have added the repository here
+    <a href="https://github.com/raj12lnm/OpenNurbs-Python">https://github.com/raj12lnm/OpenNurbs-Python</a><ul>
+<li>Installing the repository<ul>
+<li>Install Pygccxml 1.0 from here
+    <a href="https://launchpad.net/ubuntu/+source/pygccxml/1.0.0-4">https://launchpad.net/ubuntu/+source/pygccxml/1.0.0-4</a> (1.0
+    is supported by PyBindGen)</li>
+<li>Install Pybindgen bzr checkout
+    <a href="https://code.launchpad.net/~gjc/pybindgen/trunk">https://code.launchpad.net/~gjc/pybindgen/trunk</a></li>
+<li>use python mymodule_gen.py &gt; mymodulegen.py</li>
+<li>mkdir build</li>
+<li>python setup build</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Currently build will be successful but not correct, some symbols
+    will be mismatched.</li>
+</ul>
+<p>'''''July 29 (Tuesday)</p>
+<ul>
+<li>Continued to work on the error using breakpoints and manual code
+    outputs. But failed to find the part of the header file which is
+    producing this error.</li>
+</ul>
+<p>'''''July 30 (Wednesday)</p>
+<ul>
+<li>Found the issue in the header file which prompts the above error.</li>
+<li>It is just the NULL default value for an integer type pointer.</li>
+<li>I have created a small example here
+    <a href="https://github.com/raj12lnm/TryPyBindGen">https://github.com/raj12lnm/TryPyBindGen</a></li>
+<li>On digging the code although I could not find the exact issue but it
+    has something to do with ctypes. Also, other pointers with 'NULL'
+    default works fine.</li>
+<li>So know I have details of all the classes, methods their parameters,
+    enums etc.</li>
+<li>Next step is to create a cpp file from this information and build
+    the library.</li>
+</ul>
+<p>'''''July 31 (Thursday)</p>
+<ul>
+<li>I get numerous build errors</li>
+<li>I have listed them here <a href="http://tny.cz/896562a1">http://tny.cz/896562a1</a></li>
+<li>Looks like there are some issues to handle private keyword in
+    pybindgen.</li>
+<li>I tried to look at the internal of the code and it turns out that
+    pybindgen ignores private and protected methods.</li>
+<li>Reported the error to pybindgen developers.</li>
+</ul>
+<p>'''''August 1 (Friday)</p>
+<ul>
+<li>Debugged the setup files and corrected the error for unitialized
+    variables.</li>
+<li>On further looking, PBG has a way to ignore private and protected
+    methods of classes, but it is somehow failing in the case of
+    OpenNurbs's case.</li>
+<li>Also, Discussed about provisisons to initiated a way to wrap
+    important classes of OpenNurbs in Python with Bryan(kanzure) on IRC.</li>
+</ul>
+<p>'''''August 2 (Saturday)</p>
+<p>I have sampled all the errors from the build <a href="http://tny.cz/802fe6f9">http://tny.cz/802fe6f9</a>.</p>
+<p>The build mainly contains following types of errors from PBG(PyBindGen).
+They are :</p>
+<ul>
+<li>‘retval’ was not declared in this scope : In some functions/methods
+    the sudo retval is not declared.</li>
+<li>Private methods are wrapped</li>
+<li>error: assignment of read-only variable :</li>
+<li>Call of overloaded functions.</li>
+<li>cannot find members in some struct which are used.</li>
+</ul>
+<p>I tried to get into PBG source code to find the reason for these. But it
+looks like I will require some more time to understand PBG. Also In the
+meanwhile I notified the developers of PBG regarding the status.</p>
+<p>'''''August 4 (Monday)</p>
+<ul>
+<li>Worked with one of the developer of PBG.</li>
+<li>Now one of the error where const double and float pointers were
+    causing errors are solved.</li>
+</ul>
+<p>'''''August 5 (Tuesday)</p>
+<ul>
+<li>Worked on two errors which PBG is causing for C++ code.<ul>
+<li>Inability to wrap overloaded functions</li>
+<li>wrapping of private methods.</li>
+</ul>
+</li>
+</ul>
+<p>All though couldnot understand how private method wrapping can be
+avoided by PBG. But there are few overloading functions. My plan is to
+manually change the overloading functions in the produced cpp file.
+(Although this might cause an issue because of large number but cannot
+find an alternative.)</p>
+<p>'''''August 6 (Wednesday)</p>
+<ul>
+<li>I spend my time today mainly working on the issue of overloaded
+    functions.</li>
+<li>As suggested by the PBG developer(by personnel email), I checked the
+    pybindgen.gccxmlparser module but could not find any issue.</li>
+<li>Later on diging the code of OpenNurbs I found that all the
+    overloaded functions which were causing the issue were private
+    constructors mainly used for singleton pattern</li>
+<li>Also Interestingly all these private constructors didnt have
+    definitions as well.</li>
+<li>Thus I removed them manually from the auto generated c++ file.</li>
+</ul>
+<p>'''''August 7 (Thursday)</p>
+<ul>
+<li>One of the error I the PBG was regarding retval which is an internal
+    parameter in many functions. This was an error in PBG. Now resolved.</li>
+<li>Errors have majorily shrinked now by taking care of the above
+    issues.</li>
+<li>Now the major errors are here <a href="http://tny.cz/2ed6eadc">http://tny.cz/2ed6eadc</a></li>
+<li>
+<p>There are main two types of error left.</p>
+</li>
+<li>
+<ol>
+<li>Accessing of symbols from union which is not supported by PBG.</li>
+<li>Also overloading functions in string class of opennurbs.</li>
+</ol>
+</li>
+</ul>
+<p>'''''August 8 (Friday)</p>
+<ul>
+<li>While Compiling I received many errors related to overloading of
+    functions.</li>
+<li>I have seen that these are in ON_String and ON_wString class.</li>
+<li>These are mainly created due to excessive overloading of methods.</li>
+<li>I have removed some redundant overloaded functions from these
+    classes and now these work.</li>
+</ul>
+<p>'''''August 9 (Saturday)</p>
+<ul>
+<li>Since Union is not supported by PBG, therefore the generated file
+    creates error issues while compiling.</li>
+<li>In OpenNurbs library there is an instance of union in a struct
+    MAP_VALUE</li>
+<li>I have contacted the developer of PBG. They have suggested on
+    mannually changing the generated c++ code.</li>
+<li>I have thus manually changed the c++ code wherever there are
+    instances of the struct.</li>
+<li>And thus now the struct errors are eliminated.</li>
+</ul>
+<p>'''''August 11 (Monday)</p>
+<ul>
+<li>Now everything compiles perfectly.</li>
+<li>But on loading the compiled library in a python shell I lot of
+    symbols are not defined.</li>
+<li>I found that BRL_CAD main repository removes the OpenGL
+    dependencies thus I also removed them</li>
+<li>The problem on diagnosis turned out that, some functions in
+    OpenNurbs have only declarations and lack definitions. This is
+    indeed a common practice by c++ developers.</li>
+<li>But Since pybindgen only scans header files thus the undefined
+    symbols creep in.</li>
+<li>I have removed such declarations. And it works well.</li>
+</ul>
+<p><strong>Suggested 'pencils down' date</strong></p>
+<p>End term summary is <a href="../end_term_summary/">here</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Rishabhsuthar32/GSoC20/Log/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Development Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Rishabhsuthar32/GSoC20/Log.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-logs" class="nav-link">Development Logs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#weekly-update" class="nav-link">Weekly update</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#major-issues-faced" class="nav-link">Major Issues Faced</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mged-commands-to-draw-primitives" class="nav-link">MGED Commands to draw primitives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-logs">Development Logs</h1>
+<h2 id="community-bonding-period">Community Bonding Period</h2>
+<ul>
+<li>Compiled working version of BRL-CAD with OpenCL on Ubuntu 18.04</li>
+<li>Got familiarised with the MGED commands and the sequence of code
+    being called from the build</li>
+<li>Checked out other primitives which have been parallelized and their
+    structure</li>
+</ul>
+<h2 id="weekly-update">Weekly update</h2>
+<ul>
+<li>Week - 1 (June 1 - June 5)<ul>
+<li>June 1: Working on getting ARBN primitive parallelized via
+    OpenCL</li>
+<li>June 6: Submitted patch for review (June 6)</li>
+</ul>
+</li>
+<li>Week - 2 (June 8 - June 12)<ul>
+<li>June 8: Working on getting PIPE primitive parallelized via
+    OpenCL</li>
+<li>June 9: Worked on discont_radius_shot() function</li>
+<li>June 10: Worked on bend_pipe_shot() function</li>
+<li>June 12: Worked on linear_pipe_shot() function</li>
+</ul>
+</li>
+<li>Week - 3 (June 15 - June 19)<ul>
+<li>June 15: Worked on pipe_start_shot() and pipe_end_shot()
+    function</li>
+<li>June 17: Assembled all in pipe_shot() function</li>
+<li>June 19: Fixed a few bugs in pipe_shot() file</li>
+</ul>
+</li>
+<li>Week - 4 (June 22 - June 26)<ul>
+<li>June 22: Submitted the PIPE patch file in sourceforge</li>
+<li>June 23: Started working on Dispalcement Map primitive</li>
+<li>June 24: Worked on dsp_in_rpp() function</li>
+<li>June 26: Worked on recurse_dsp_bb() function</li>
+</ul>
+</li>
+<li>Week - 5 (June 29 - July 03)<ul>
+<li>June 29: Got stuck in recurse_dsp_bb() function</li>
+<li>July 1: First Evaluation Feedback</li>
+</ul>
+</li>
+</ul>
+<p>// Kept DSP primitive on hold owing to it's complex structure. Once I
+get used to the simple primitives, I'll be in a better position to work
+on DSP primitive. Hence, have kept it for the last month.</p>
+<ul>
+<li>
+<ul>
+<li>July 3 : Started working on Volume primitive</li>
+</ul>
+</li>
+<li>
+<p>Week - 6 (July 6 - July 10)</p>
+<ul>
+<li>July 6: Completed rt_vol_shot() and rt_vol_norm() function</li>
+<li>July 8: Resolved few bugs</li>
+<li>July 9 - 10: Took a break for travelling to hometown owing to
+    Covid-19</li>
+</ul>
+</li>
+<li>
+<p>Week - 7 (July 13 - July 17)</p>
+<ul>
+<li>July 13: Submitted patch for Volume primitive</li>
+<li>July 14: Started working on Metaball primitive</li>
+<li>July 15: Converted secondary function:
+    rt_metaball_point_value_iso()</li>
+<li>July 16: Converted secondary function:
+    rt_metaball_find_intersection()</li>
+<li>July 17: Implemented rt_metaball_shot() in metaball_shot.cl
+    file</li>
+</ul>
+</li>
+<li>
+<p>Week - 8</p>
+<ul>
+<li><strong>July 20</strong>: Completed rt_metaball_norm() function. Read about
+    the inline functions being used here and it's possible
+    counterpart and usage in OpenCL. I think I'll merge
+    rt_metaball_norm_internal() into the norm method.</li>
+<li><strong>July 21</strong>: Seems like there were two versions of the
+    algorithm, only one of which was being used. Have removed the
+    old version code from metaball_shot.cl file to remove
+    redundancy.</li>
+<li><strong>July 22</strong>: Submitted metaball primitive here:
+    <a href="https://sourceforge.net/p/brlcad/patches/548/">https://sourceforge.net/p/brlcad/patches/548/</a> . I made a typo
+    mistake while developing a patch, I've resubmitted it. Use the
+    latest patch in comments section. Onto EBM primitive now!</li>
+<li><strong>July 23</strong>: The -z flag worked FINALLY! I though of giving it a
+    try once again today and it worked. I'd to change the
+    FindOpenCL.cmake file locally to ensure it catches the correct
+    path of OpenCL directory. This has indeed solved a big problem
+    of mine. I'll revisit the previous patches now and update them
+    accordingly. Will also include a detailed documentation of the
+    commands and resolution of the errors I faced for future
+    reference soon.</li>
+<li><strong>July 24</strong>: Submitted patch for FindOpenCL.cmake file here:
+    <a href="https://sourceforge.net/p/brlcad/patches/549/">https://sourceforge.net/p/brlcad/patches/549/</a> . Debugged the
+    ARBN primitive patch files to remove the compile-time errors and
+    typos! Moved on to VOL primitive, couldn't find relevant
+    rendering command.</li>
+</ul>
+</li>
+<li>
+<p>Week - 9</p>
+<ul>
+<li><strong>July 27</strong>: Debugging METABALL primitive. Looking into
+    plausible ways of passing extra parameters r_min and r_max
+    from metaball_shot() to its rt.cl declaration.</li>
+<li><strong>July 28</strong>: While compiling previously converted primitives
+    like ELL and ARB8, I got compilation error - "failed to set
+    OpenCL kernel arguments". On running the code, I found a bug in
+    master branch itself. There was a mismatch between uchar2 and
+    uchar3 in clt_frame() function in primitve_util.c and all it's
+    related functions. I've updated the code, will include a patch
+    for this. All primitives are rendering successfully now! Yayyyy!</li>
+<li><strong>July 29</strong>: Submitted patch for the above bug resovled here:
+    <a href="https://sourceforge.net/p/brlcad/patches/551/">https://sourceforge.net/p/brlcad/patches/551/</a> . Moving on to
+    removing errors in PIPE primitive. Most of the compile time
+    errors were related to Global-Private conversion, hence made all
+    struct inside functions global as well. It is now compiling
+    error-free but not rendering. Gotta deep dive more!</li>
+<li><strong>July 30</strong>: Looking for possible options to print inside OpenCL
+    kernel to see where it might be failing. Can't find any
+    previously converted primitive with bu_log in it. Maybe, I'll
+    import bu.h and give it a try!</li>
+<li><strong>July 31</strong>: Worked out communication issues with Sean and came
+    up with a measurable criteria going forward. Going to be
+    chatting progress a lot more going forward in Zulip! Also,
+    documented the details of issues I faced in Dev Logs for future
+    reference. With this evaluation, the second month of the GSoC
+    comes to an end. Onto the final phase now!</li>
+</ul>
+</li>
+<li>
+<p>Week 10</p>
+<ul>
+<li><strong>August 3</strong>: Took a break owing to some personal work!</li>
+<li><strong>August 4</strong>: While checking CLINE primitive patch for
+    debugging, I found it's shot function was missing. That being my
+    first patch, I might have missed out on doing "svn add" of that
+    cline_shot.cl file. Will have to redo again.</li>
+<li><strong>August 5</strong>: Completed the cline primitive conversion, looking
+    for documentation for making this in MGED window so that I can
+    render and test if it is working as expected. Couldn't find any
+    proper documentation for this!</li>
+<li><strong>August 6</strong>: Trying to see best practice to import/define
+    bn_distsq_line3_line3() in the OpenCL version of this from
+    libbn repository. Found out that for making cline primitive in
+    MGED, "in" command doesn't work. We have to use "make" command
+    for that purpose. The full command would be "make cline.s
+    cline".</li>
+<li><strong>August 7</strong>: Defined the bn_distsq_line3_line3() in rt.cl
+    and used it in cline_shot.cl . It is now compiling error-free.
+    I've updated the patch with latest code. Tried using printf
+    command, but the rendering gets stuck somehow because of it.
+    Gotta deep dive more!</li>
+</ul>
+</li>
+<li>
+<p>Week 11</p>
+<ul>
+<li><strong>August 10</strong>: There seems to be some issue in memory allocation
+    pieces of code. Since printf command was not working, I'd a
+    tough time narrowing it down. I'm trying with the simplest of
+    the primitive now - SUPERELL to find out more about why
+    previously present primitives are rendering and newly converted
+    one aren't!</li>
+<li><strong>August 11</strong>: Giving printing in OpenCL another try for
+    debugging purpose. Converted bu_log() in rt.cl to see if it
+    works. No progress! Including stdio.h header in _shot.cl gives
+    "stddef.h file not found" error.</li>
+<li><strong>August 12</strong>: The Superell patch is not rendering, though it
+    was one of the simplest one. I think I am missing out on
+    something trivial but can't figure out what. I want to re-do
+    SUPERELL primitive from scratch.</li>
+<li><strong>August 13</strong>: Turns out, I missed one variable while passing it
+    from .c file to .cl shot file - variable 'n'. It is now
+    rendering, although not exactly the same. Gotta ask Sean on
+    this!</li>
+<li><strong>August 14</strong>: Documented here in the wiki logs all MGED
+    commands to render various primitives for future purpose.</li>
+</ul>
+</li>
+<li>
+<p>Week 12</p>
+<ul>
+<li><strong>August 17</strong>: I'm unable to make superell primitive with "in"
+    command. It throws error:
+    rt_db_external5_to_internal5(superell.s): unable to import
+    non-BRL-CAD object, major=255 minor=35 . Deep diving into this
+    for possible bug. It is accepting none of the abc/ne parameter
+    values. Even with e=n=1 where it should form Sphere or ellipsoid
+    with n=2.</li>
+<li><strong>August 18</strong>: That seemed to be a random error. I cloned a
+    fresh repository and started again. The C rendering of the
+    Superell worked with normal parameters. Don't know why it didn't
+    work in previous repository. No luck with _shot.cl file though!</li>
+<li><strong>August 19</strong>: Gave HYP primitive a try as well. This is also
+    one of the simpler primitive to work on. And it worked. Both the
+    C and OpenCl renderings of the primitive match and with better
+    performance in OpenCl. Hurrray!</li>
+<li><strong>August 20</strong>: Submitted the patch for HYP primitive here:
+    <a href="https://sourceforge.net/p/brlcad/patches/553/">https://sourceforge.net/p/brlcad/patches/553/</a> . Moving back,
+    it seems I'm facing issues with memory allocation in OpenCL
+    versions of other primitives I worked on which is why they don't
+    render as expected. Looking into possible solutions!</li>
+<li><strong>August 21</strong>: Did a quick pixdiff to ensure both the renderings
+    are similar or not. Couldn't understand the usage of pixdiff in
+    BRL-CAD MGED terminal, so tried via OpenCV package in python.</li>
+</ul>
+</li>
+<li>
+<p>Week 13</p>
+<ul>
+<li><strong>August 24</strong>: It is officially the last week of GSoC. Gotta
+    devote my time in documentation and logging details for future
+    references. Also, turns out, we can hit pixdiff command in the
+    way discussed in Issue 4 below.</li>
+<li><strong>August 25</strong>: Started the documentation process. Decided to use
+    BRL-CAD wiki instead of Google Doc or GitHub page for this
+    purpose. Took screenshots of rendering logs for performance
+    measure and the images of primitives rendered.</li>
+<li><strong>August 26</strong>: Ensured all the patches submitted work smoothly
+    with the latest version of the BRL-CAD repository!</li>
+<li><strong>August 27</strong>: Working on the final report, using performance
+    and testing.</li>
+<li><strong>August 28</strong>: Completed the report, submitted to Sean for
+    reviewing!</li>
+<li><strong>September 1</strong>: Nirt command probably needs a more detailed
+    looking into. It should ideally have -z flag as well. Will look
+    into it later. And so, the GSoC season ends.. Until next time!</li>
+</ul>
+</li>
+</ul>
+<h2 id="major-issues-faced">Major Issues Faced</h2>
+<h3 id="issue-1">Issue 1</h3>
+<ul>
+<li>
+<ul>
+<li><strong>Issue</strong>: -Z flag not working. Initially, I couldn't find
+        proper documentation around -z flag and it's usage. I only found
+        with command <strong>man rt</strong> that -z is used to compile with OpenCL
+        function of that primitive. However, it always said printed
+        "Raytrace Aborted" in the logs.</li>
+<li><strong>Solution</strong>: I found that while doing the cmake compiling, it
+    couldn't find the OpenCL library and it's version correctly. It
+    detected library path as "/usr/" instead of the usual
+    "/usr/lib/x86_64-linux-gnu/libopenCL.so" . So, I changed the
+    cmake file where it detected OpenCL and submitted patch for
+    FindOpenCL.cmake file here:
+    <a href="https://sourceforge.net/p/brlcad/patches/549/">https://sourceforge.net/p/brlcad/patches/549/</a> . The commands
+    are now as follows:</li>
+</ul>
+</li>
+</ul>
+<p>While doing the cmake, add the DBRLCAD_ENABLE_OPENCL flag</p>
+<pre><code>cd brlcad-svn-trunk
+mkdir build
+cd build
+cmake .. -DBRLCAD_ENABLE_STRICT=NO -DBRLCAD_BUNDLED_LIBS=ON -DCMAKE_BUILD_TYPE=Release -DBRLCAD_ENABLE_OPENCL=ON
+</code></pre>
+<p>While compiling a primitive in mged window, use the following command:</p>
+<pre><code> rt -z 1 -o primitive_cl.png
+</code></pre>
+<p>If you pass 0 to the -z flag, it'll compile the C version of the
+primitive. So to say, passing 1 to -z flag defines the USE_OPENCL flag
+inside primitive function to 1. -o flag outputs the primitive rendering
+to an external file in the build folder.</p>
+<h3 id="issue-2">Issue 2</h3>
+<ul>
+<li>
+<ul>
+<li><strong>Issue</strong>: Primitives already present in the master branch of
+        the repository were not rendering in their OpenCL version. It
+        displayed error: "failed to set OpenCL kernel arguments".</li>
+<li><strong>Solution</strong>: I found that the error was due to a mismatch
+    between uchar2 and uchar3 data type of variable "o" in
+    clt_frame() functions in primitive_util.c file. I made the
+    variable uniform to uchar3 in all the places where this function
+    was being used and they're now rendering as usual. The patch was
+    submitted at the link here:
+    <a href="https://sourceforge.net/p/brlcad/patches/551/">https://sourceforge.net/p/brlcad/patches/551/</a> .</li>
+</ul>
+</li>
+</ul>
+<h3 id="issue-3">Issue 3</h3>
+<ul>
+<li>
+<ul>
+<li><strong>Issue</strong>: The MGED commands to render the primitives don't have
+        a proper documentation. I faced issues while making them so that
+        they can render properly because the values for some of the
+        variables are highly constrained according to their logic
+        implemented. While trying to render, it got "segmentation fault"
+        error code</li>
+<li><strong>Solution</strong>: I've started documenting the commands for most
+    primitives here in the logs for future reference. I'll keep on
+    adding more as and when I find them.</li>
+</ul>
+</li>
+</ul>
+<h3 id="issue-4">Issue 4</h3>
+<ul>
+<li>
+<ul>
+<li><strong>Issue</strong>: Once the OpenCL version renders successfully, I
+        didn't know the exact technical methods to follow to ensure both
+        the C and OpenCL version are identical.</li>
+<li><strong>Solution</strong>:</li>
+</ul>
+</li>
+</ul>
+<p>Method 1: Both the renderings of C and OpenCL version should look alike.
+Check this via rotating in different angles in MGED window. Method 2:
+Using pixdiff method.</p>
+<pre><code>cd brlcad-svn-trunk
+cd build
+bin/pixdiff file1.pix file2.pix &gt; out.pix
+bin/pix-png -o out.png out.pix &gt; out.png
+</code></pre>
+<p>The details are in these link:
+<a href="https://brlcad.org/~nouhrasofat/man1/en/pixdiff.php">https://brlcad.org/~nouhrasofat/man1/en/pixdiff.php</a> and
+<a href="https://brlcad.org/~nouhrasofat/man1/en/pix-png.php">https://brlcad.org/~nouhrasofat/man1/en/pix-png.php</a> . The images can
+be stored in pix format via the -o flag in the MGED window itself!
+Method 3: The CPU performance in the logs registered while rendering a
+primitive should improve in OpenCL version compared to C version.</p>
+<h2 id="mged-commands-to-draw-primitives">MGED Commands to draw primitives</h2>
+<h3 id="arbn">ARBN</h3>
+<pre><code>in arbn.s arbn 8 1 0 1 1 -1 0 0 1 0 1 0 1 0 -1 0 1 0 0 1 1 0 0 -1 1 0.5 0.5 0.5 1 -0.5 -0.5 -0.5 1
+</code></pre>
+<h3 id="ars">ARS</h3>
+<pre><code>in x.1 ars 4 6 0 0 3 1 1 3 1 -1 3 -1 -1 3 -1 1 3 1 1 1 1 -1 1 -1 -1 1 -1 1 1 1 0 -1 0 -1 -1 -1 0 -1 0 1 -1 1 0 -3 0 -1 -3 -1 0 -3 0 1 -3 0 0 -3
+</code></pre>
+<h3 id="cline">CLINE</h3>
+<pre><code> make cline.s cline
+</code></pre>
+<h3 id="ell">ELL</h3>
+<pre><code> in ell.s ell 0 0 0  0 -1 0  1 0 0  0 0 1
+</code></pre>
+<h3 id="hrt">HRT</h3>
+<pre><code> in hrt.s hrt 0 0 0 5 0 0 0 5 0 0 0 5 4
+</code></pre>
+<h3 id="rcc">RCC</h3>
+<pre><code> in rcc1.s rcc 0 0 0  1 1 1  0.5
+</code></pre>
+<h3 id="superell">SUPERELL</h3>
+<pre><code> in ell.s superell 0 0 0  0 -1 0  1 0 0  0 0 1 1 3
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

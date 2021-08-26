@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Bhollister/DevLogJuly2015/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>DevLogJuly2015 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Bhollister/DevLogJuly2015.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#wed-july-1-2015-week-6-of-14" class="nav-link">Wed, July 1, 2015: Week 6 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-july-2-2015" class="nav-link">Thurs, July 2, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-july-3-2015" class="nav-link">Fri, July 3, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sat-july-4-2015" class="nav-link">Sat, July 4, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-july-5-2015" class="nav-link">Sun, July 5, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-july-6-2015-start-of-week-7-of-14" class="nav-link">Mon, July 6, 2015: Start of Week 7 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-july-7-2015" class="nav-link">Tues, July 7, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-july-8-2015" class="nav-link">Wed, July 8, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-july-9-2015" class="nav-link">Thurs, July 9, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-july-10-2015" class="nav-link">Fri, July 10, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sat-july-11-2015" class="nav-link">Sat, July 11, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-july-12-2015" class="nav-link">Sun, July 12, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-july-13-2015-start-of-week-8-of-14" class="nav-link">Mon, July 13, 2015: Start of Week 8 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-july-14-2015" class="nav-link">Tues, July 14, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-july-15-2015" class="nav-link">Wed, July 15, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-july-16-2015" class="nav-link">Thurs, July 16, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-july-17-2015" class="nav-link">Fri, July 17, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sat-july-18-2015" class="nav-link">Sat, July 18, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-july-19-2015" class="nav-link">Sun, July 19, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-july-20-2015-start-of-week-9-of-14" class="nav-link">Mon, July 20, 2015: Start of Week 9 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-july-21-2015" class="nav-link">Tues, July 21, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-july-22-2015" class="nav-link">Wed, July 22, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-july-23-2015" class="nav-link">Thurs, July 23, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-july-24-2015" class="nav-link">Fri, July 24, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sat-july-25-2015" class="nav-link">Sat, July 25, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-july-26-2015" class="nav-link">Sun, July 26, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-july-27-2015-start-of-week-10-of-14" class="nav-link">Mon, July 27, 2015: Start of Week 10 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-july-28-2015" class="nav-link">Tues, July 28, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-july-29-2015" class="nav-link">Wed, July 29, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-july-30-2015" class="nav-link">Thurs, July 30, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-july-31-2015" class="nav-link">Fri, July 31, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>FORCETOC</strong></p>
+<hr />
+<h1 id="wed-july-1-2015-week-6-of-14">Wed, July 1, 2015: <strong><em>Week 6 (of 14)</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/d29dbe2491598d5b0f4a44e7c3e1cd9d82d29d80?diff=split">commit
+    #1</a>:
+    filling out vertex info with structures to avoid errors with
+    incomplete data structures</li>
+<li>getting crash in nmg_mvu on line 365: BU_LIST_APPEND(...); need
+    to investigate.</li>
+<li>use case for above: 'make modelname nmg', then 'nmg cmface modelname
+    coords'</li>
+<li>rechecked patch <a href="https://sourceforge.net/p/brlcad/patches/387/">https://sourceforge.net/p/brlcad/patches/387/</a></li>
+<li>verified by compiling with STRICT enabled. posted build.log to
+    sourceforge.</li>
+<li>problems with compilation apparently not associated with changes.
+    builds fine with STRICT disabled.</li>
+</ul>
+<h1 id="thurs-july-2-2015">Thurs, July 2, 2015</h1>
+<ul>
+<li>Appointment with retinal specialist from 9:30am to Noon PST.</li>
+<li>Not be able to work today due to pupil dilation.</li>
+</ul>
+<h1 id="fri-july-3-2015">Fri, July 3, 2015</h1>
+<ul>
+<li><a href="../MidtermSummary2015/">Midterm summary</a>
+    located at link</li>
+<li>still investigating nmg_mvu issue for ged_nmg_cmface subcommand:<ul>
+<li>likely that the vertexuse is being improperly treated for loop
+    creation.</li>
+<li>should there be a vertexuse present in the model for the new
+    loop (prior to nmg_mvu call from nmg_cmface)??</li>
+</ul>
+</li>
+</ul>
+<h1 id="sat-july-4-2015">Sat, July 4, 2015</h1>
+<ul>
+<li>n/a</li>
+</ul>
+<h1 id="sun-july-5-2015">Sun, July 5, 2015</h1>
+<ul>
+<li>n/a</li>
+</ul>
+<h1 id="mon-july-6-2015-start-of-week-7-of-14">Mon, July 6, 2015: <strong><em>Start of Week 7 (of 14)</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/b72d2551ee08b6cb05f5880c6725698ae5f51883?diff=split">commit
+    #1</a>
+    fixed issue with missing bu_list in vertex struct<ul>
+<li>while commit #1 provides a "working" call to nmg_cface with
+    three verts, the face is not visible in the render window??</li>
+<li>ged_nmg_cface appears to make the proper calls...</li>
+<li>once problem is found with rendered model, need to extend for n
+    verts (should be trivial)</li>
+</ul>
+</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/c51818d023cbe118042483eed2058439a7dda7a5?diff=split">commit
+    #2</a>
+    attempt to fix issue with ged_nmg_cmface crash in
+    nmg_info/nmg_findeu(); in loop</li>
+</ul>
+<h1 id="tues-july-7-2015">Tues, July 7, 2015</h1>
+<ul>
+<li>received good direction from brlcad in irc<ul>
+<li>reviewed
+    <a href="http://www.google-melange.com/gci/task/view/google/gci2014/5546966268248064">http://www.google-melange.com/gci/task/view/google/gci2014/5546966268248064</a></li>
+<li>reviewed <a href="/wiki/NMG">NMG</a></li>
+<li>previously unaware that nmg models could be created with
+    ged_put</li>
+</ul>
+</li>
+<li>todo: need to plan high-level subcommands after cmface working</li>
+<li>todo: check winding order in cmface, as <a href="/wiki/NMG">NMG</a>
+    mentions potential crashing with incorrect winding order</li>
+</ul>
+<p>non-brlcad time expenditures...</p>
+<ul>
+<li>spent some time applying for positions</li>
+</ul>
+<h1 id="wed-july-8-2015">Wed, July 8, 2015</h1>
+<ul>
+<li>investigated put / get database commands.<ul>
+<li>should illuminate sequence of calls needed by subcommands for
+    nmg api calls</li>
+<li>posted related questions in irc</li>
+</ul>
+</li>
+<li>todo: use info from above to fix mged calls implemented in
+    libged/ged_nmg_cmface.c</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/5fc1f3c370d706f840b4f659124936a4512a5b0b">commit
+    #1</a>:
+    null commit to synchronize to github from nonlocal repos</li>
+</ul>
+<p>non-brlcad time expenditures...</p>
+<ul>
+<li>oil changed for car; 3 hour wait!</li>
+<li>wrote essay, etc. for instructor position application</li>
+</ul>
+<h1 id="thurs-july-9-2015">Thurs, July 9, 2015</h1>
+<ul>
+<li>investigated get / put nmg object creation...<ul>
+<li>need to follow the code from this sequence of calls using 'put'
+    CLI:<ul>
+<li>ged_put()</li>
+<li>rt_nmg_make()</li>
+<li>rt_nmg_adjust()</li>
+</ul>
+</li>
+<li>above sequence of calls creates an nmg object and adds verts /
+    faces</li>
+</ul>
+</li>
+<li>todo: revamp *ged_cmface* using preceding process.</li>
+<li>note: apparently using nmgmodel.c was not the best example of
+    manifold nmg object creation!</li>
+<li>todo: once ged_cmface() properly impl and submitted as patch, can
+    move on the spec for high-level subcommand list; perhaps vert / face
+    removal subcommand CLI routines are the easy to start with??</li>
+</ul>
+<p>non-brlcad time expenditures...</p>
+<ul>
+<li>VDA 2016 template and reformat of paper for submission</li>
+<li>10 job applications submitted</li>
+</ul>
+<h1 id="fri-july-10-2015">Fri, July 10, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/74902ee6b8c2737b625e81ae26c9193ff8ebbf92?diff=split">commit
+    #1</a>
+    using method from rt_nmg_adjust. still some issues with calls to
+    nmg_cmface. soon to be resolved.</li>
+<li>appears that vert structs are not being filled out correctly and
+    thus crash in cmface; need to test with known "working" args</li>
+</ul>
+<p>non-brlcad time expenditures...</p>
+<ul>
+<li>applications</li>
+<li>car in garage again for brake pads</li>
+<li>car will be in garage again next week for air bag recall (ford
+    mustang)</li>
+</ul>
+<h1 id="sat-july-11-2015">Sat, July 11, 2015</h1>
+<p>n/a</p>
+<h1 id="sun-july-12-2015">Sun, July 12, 2015</h1>
+<p>n/a</p>
+<h1 id="mon-july-13-2015-start-of-week-8-of-14">Mon, July 13, 2015: <strong><em>Start of Week 8 (of 14)</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/6043568f31aa1d140132cdb6ee751ebf5577e419?diff=split">commit
+    #1</a>
+    cmface now working. using rt_nmg_adjust as model for impl.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/9146049d71ced81163f33eb312f87b23b552fa01?diff=split">commit
+    #2</a>
+    added variable number of verts for CLI.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/90400f946981422c6a7b8dcffc5a3053726cec83?diff=split">commit
+    #3</a>
+    check for minimum number of verts for manifold face</li>
+<li>cmface <a href="https://sourceforge.net/p/brlcad/patches/390/">patch 390</a>
+    submitted</li>
+</ul>
+<h1 id="tues-july-14-2015">Tues, July 14, 2015</h1>
+<ul>
+<li>mm (make nmg object model) subcommand <a href="https://sourceforge.net/p/brlcad/patches/391/">patch
+    391</a> submitted</li>
+<li>updated <a href="https://sourceforge.net/p/brlcad/patches/390/">patch 390</a>
+    with build fix and code cleanup</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/3457b81b9cab57c9bc07d4681c991b73b93b6926?diff=split">commit
+    #1</a>
+    cleaned up loop var. removed unused fastf_t declaration</li>
+<li>found potential build problems when BRLCAD_ENABLE_STRICT=YES.
+    noted in patch 390 reply (opennurbs lib)</li>
+<li>todo:<ul>
+<li>impl face kill routine as subcommand</li>
+<li>design remaining subcommands (will be higher-level than internal
+    nmg api)</li>
+<li>post usage instructions for simple box creation use case using
+    subcommand 'cmface'</li>
+<li>will need to determine which routines that have been submitted
+    in <a href="https://sourceforge.net/p/brlcad/patches/387/">patch 387</a>
+    that need to be removed</li>
+</ul>
+</li>
+</ul>
+<h1 id="wed-july-15-2015">Wed, July 15, 2015</h1>
+<ul>
+<li>re-tested with 'strict' build options - works!</li>
+<li>updated schedule to include new designs</li>
+<li>created <a href="/wiki/MGED_CMD_nmg">MGED_CMD_nmg</a> design
+    doc</li>
+<li>proposed new subcommands:</li>
+</ul>
+<p><strong>sface</strong></p>
+<p>Selects a face by highlighting it. Subsequent commands for manipulation
+or removal act on the selected face. By repeating this call, the
+currently selected face is advanced to the next face in the NMG object
+of the first encountered shell and region. <em>If an (optional) point is
+specified, the subcommand finds the closest face to the point and
+selects that face instead.</em></p>
+<p><strong>deselect</strong></p>
+<p>Deselects all prior selected parts of the nmg object.</p>
+<p><strong>kface</strong></p>
+<p>Removes the geometry and faceuse of the currently selected face.</p>
+<ul>
+<li>todo: need to get mentor(s) advice and okay before implementing
+    proposed new subcommands</li>
+<li>todo: submit patch to remove calls to low-level api that are not
+    needed</li>
+<li>todo: update top-level command 'nmg' to reflect help / changes</li>
+</ul>
+<h1 id="thurs-july-16-2015">Thurs, July 16, 2015</h1>
+<ul>
+<li>investigated ways to draw geometry different colors<ul>
+<li>traced ged_draw, etc.</li>
+<li>this will be needed in order to highlight selected face via
+    'sface' subcommand</li>
+</ul>
+</li>
+<li>updated 'nmg' command design page</li>
+</ul>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>applied for more positions</li>
+<li>answered questions from interviewer (email)</li>
+</ul>
+<h1 id="fri-july-17-2015">Fri, July 17, 2015</h1>
+<ul>
+<li>read / posted a response to mailing list about command design</li>
+<li>investigated design options (see my response)</li>
+<li>investigated implications of various implementations (see my
+    response)</li>
+<li>todo: polish declarative syntax for 'creation' subcommands per
+    Sean's suggestions</li>
+<li>added 'nmg' to <a href="/wiki/MGED_Commands">mged cmds</a></li>
+</ul>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>researched university locations for jobs</li>
+<li>found out that I have jury duty in early august - need to postpone
+    if possible</li>
+</ul>
+<h1 id="sat-july-18-2015">Sat, July 18, 2015</h1>
+<p>n/a</p>
+<h1 id="sun-july-19-2015">Sun, July 19, 2015</h1>
+<p>n/a</p>
+<h1 id="mon-july-20-2015-start-of-week-9-of-14">Mon, July 20, 2015: <strong><em>Start of Week 9 (of 14)</em></strong></h1>
+<ul>
+<li>updated <a href="/wiki/MGED_CMD_nmg.md#Proposed_subcommands">proposed subcommands</a><ul>
+<li>need to find way of marking model parts</li>
+<li>need to allow users to select desired model parts through model
+    labels in subcommand (see previous link for design ideas)</li>
+</ul>
+</li>
+<li>investigated color setting with mged<ul>
+<li>only found info on <a href="/wiki/MGED_CMD_comb_color">comb_color</a>
+    which doesn't appear relevant</li>
+<li>need to find simple way to set real-time geometry window colors
+    (down to an opengl state function possibly?? and trace that back
+    up to the higher-level call)</li>
+<li>libged/draw.c, _ged_drawtrees() sets the wireframe
+    color...<em>need to leverage this functionality for labelling /
+    marking geometry!</em></li>
+</ul>
+</li>
+</ul>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>interview scheduled for 10 AM PST (Skype)</li>
+</ul>
+<h1 id="tues-july-21-2015">Tues, July 21, 2015</h1>
+<ul>
+<li>since arbs have vertex labelling<ul>
+<li>may want to rethink (at least) the <em>kill V</em> subcommand</li>
+<li>vertex numbering <strong>already</strong> works with nmg, but there are some
+    scaling issues</li>
+<li>i.e. vertex labels are not located right on vertices but too far
+    from them</li>
+</ul>
+</li>
+<li>new create / kill subcommands should be:<ul>
+<li>consistent with modal behavior of mged command line</li>
+<li>i.e. only in "edit" mode do we use create / kill nmg model parts</li>
+</ul>
+</li>
+<li>todo: need to investigate further libged/edit.c</li>
+<li><em>if</em> we choose color faces / verts diff colors:<ul>
+<li>code proposal: check if in "edit" mode, then:<ul>
+<li>either add new function and call it, i.e. something like
+    'ged_draw_guts_edit_mode()'</li>
+<li>or add to already large ged_draw_guts() with conditional
+    logic</li>
+<li>there is only a single <em>struct _ged_client_data</em> used for
+    entire model</li>
+<li>potentially needs to be revamped, since we need it to change
+    per model <em>part</em></li>
+<li>warning: could be extensive and therefore may have to use
+    <em>existing</em> labelling system</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>found this at the end of /include/ged.h. should be useful.</li>
+</ul>
+<!-- -->
+
+<pre><code>/***************************************
+ * Conceptual Documentation for LIBGED *
+ ***************************************
+ *
+ * Below are developer notes for a data structure layout that this
+ * library is being migrated towards.  This is not necessarily the
+ * current status of the library, but rather a high-level concept for
+ * how the data might be organized down the road for the core data
+ * structures available for application and extension management.
+ *
+ * struct ged {
+ *   dbip
+ *   views * &gt;-----.
+ *   result()      |
+ * }               |
+ *                 |
+ * struct view { &lt;-'
+ *   geometry * &gt;------.
+ *   update()          |
+ * }                   |
+ *                     |
+ * struct geometry { &lt;-'
+ *   display lists
+ *   directory *
+ *   update()
+ * }
+ *
+ */
+</code></pre>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>had another interview 10 AM PST (Skype) - second one this week</li>
+<li>have a third for this week scheduled @ 10 AM PST tomorrow</li>
+</ul>
+<h1 id="wed-july-22-2015">Wed, July 22, 2015</h1>
+<ul>
+<li>researching how vertices are labelled in 'SOLID EDIT' mode<ul>
+<li>traced: ged_view_update(struct bview *gvp) from
+    libged/vutil.c</li>
+<li>traced: f_sed(ClientData clientData, Tcl_Interp *interp, int
+    argc, const char *argv[]) from mged/chgview.c</li>
+<li>traced: stateChange(int UNUSED(oldstate), int newstate) from
+    mged/buttons.c</li>
+<li>usage of <a href="/wiki/MGED_CMD_sed">sed</a> command and
+    <a href="/wiki/MGED_CMD_facedef">facedef</a> command (relevant to nmg
+    subcommands for updating nmg geometry)</li>
+</ul>
+</li>
+<li>found label vert functionality:<ul>
+<li>/* Usage: labelvert solid(s) */ <strong>f_labelvert</strong>(ClientData
+    UNUSED(clientData), Tcl_Interp *interp, int argc, const char
+    *argv[])</li>
+<li>from <strong>mged/overlay.c</strong></li>
+<li>further calls:<ul>
+<li>librt/vlist.c, rt_label_vlist_verts() --&gt;
+    libbn/font.c, bn_vlist_3string()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>todo: can labelling work for faces / regions / shells without
+    resorting to color change??<ul>
+<li>color change may involve substantial rework of state setting</li>
+<li>not to mention other problems for color labelling (visually
+    impaired users, ambiguity in color differences, etc.)??</li>
+</ul>
+</li>
+</ul>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>had phone interview @ 10AM PST</li>
+</ul>
+<h1 id="thurs-july-23-2015">Thurs, July 23, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/63932fe80449968587145fba79371b7bc024701f?diff=split">commit
+    #1</a>
+    removed files associated with CLI stubs for internal nmg api</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/27ece977173f135cb69bd4383c72e5ebff98a532?diff=split">commit
+    #2</a>
+    added ged_nmg_kill_v and associated src files</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/5edfea7e407163255eb74d02570d74e255541e31">commit
+    #3</a>
+    fixed parameter ordering for cmface and mm subcommand - for
+    consistency with new syntax</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/07c51b26a2f7688fdb0bdb6d3c6f0c6251bff396">commit
+    #4</a>
+    trying to get vertex labelling to work for subcommand kill V.
+    work-in-progress. currently not building during link phase.</li>
+</ul>
+<h1 id="fri-july-24-2015">Fri, July 24, 2015</h1>
+<ul>
+<li>investigated mged command 'permute' as it relates to altering
+    vertices in object</li>
+<li>investigated mged GUI 'primitive' editor under 'Edit' menu.<ul>
+<li>editor shows vertices (number labels) and allows their coords to
+    be altered by increment / decrement</li>
+<li>potentially useful for cmd line functions with proposed similar
+    functionality</li>
+<li>insight into the linkage between vertex # and vertex data
+    structure (how)</li>
+</ul>
+</li>
+</ul>
+<p>non-brlcad time expenditures...</p>
+<ul>
+<li>job application</li>
+<li>car air bag recall (in shop)</li>
+</ul>
+<h1 id="sat-july-25-2015">Sat, July 25, 2015</h1>
+<p>n/a</p>
+<h1 id="sun-july-26-2015">Sun, July 26, 2015</h1>
+<p>n/a</p>
+<h1 id="mon-july-27-2015-start-of-week-10-of-14">Mon, July 27, 2015: <strong><em>Start of Week 10 (of 14)</em></strong></h1>
+<ul>
+<li><a href="/wiki/MGED_CMD_nmg.md#Proposed_subcommands">kill V</a>
+    design updated<ul>
+<li>determined that the best way to select a vertex is to use
+    <a href="/wiki/MGED_CMD_labelvert">labelvert</a> on object
+    to select vertex by coords</li>
+<li>user then issues selected coord for <a href="/wiki/MGED_CMD_nmg.md#Proposed_subcommands">kill
+    V</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/c714dcd21a909d7fdd6dfa8116c7db9a858287e9">commit
+    #1</a>
+    revamped ged_nmg_kill_v. now requiring user to first use
+    'labelvert' mged command to label vertices in object. todo: work out
+    way to visit all vertices (i.e., or vertexuses) to find matching
+    coords issued to be killed.</li>
+</ul>
+<h1 id="tues-july-28-2015">Tues, July 28, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/3285aab44203e3c14c6e2b9ef3b49751caef3c4a">commit
+    #1</a>
+    now traversing each edgeuse to find vertexuses that reference a
+    vertex structure with location specified on cli. todo: fix problem
+    with edgeuse check failure. this could be due to invalid model and
+    not problem with routine.</li>
+<li>todo: check above commit with <em>known</em> valid nmg object</li>
+</ul>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>skype interview @ 11-12 PM Pacific time</li>
+</ul>
+<h1 id="wed-july-29-2015">Wed, July 29, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/11db05355983400727cd37f2384747a0298eeb0f">commit
+    #1</a>
+    added nmg_m_struct_count as prototypical traversal algo for
+    finding removing specified vertices @ cli.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/9679d23c0061b310151a86063120da7cb378f9d5">commit
+    #2</a>
+    cleaned up struct counting algorithm and added nmg_kvu where
+    vertices are found. appears to work, but model is not currently
+    being updated...</li>
+<li>if calling wdb_put_internal() at end of ged_nmg_kill_v(),
+    getting a NULL vertexuse ERROR.<ul>
+<li>however, this is what nmg_kvu() performs on the nmg object
+    structure</li>
+</ul>
+</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/1841e1bd0ce3f2f0c84c151dce64b2d06685f8ef">commit
+    #3</a>
+    added call to wdb_put_internal, however this produces ERROR due to
+    NULL vertexuse after calls to nmg_kvu()</li>
+</ul>
+<h1 id="thurs-july-30-2015">Thurs, July 30, 2015</h1>
+<ul>
+<li><em>kill V</em> now works! (see commit #2)</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/8b18eb753bf38aaa1c43f0ebd275a4e545dec158">commit
+    #1</a>
+    added the proper nmg_k* calls to removed faceuses, loopuses, or
+    edgeuses that results from removal of selected vertex.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/52cbebc1efcd673ec8b203df6af9caf3b25941d6">commit
+    #2</a>
+    remove_vertex() was missing some needed calls to remove lu's and
+    eu's they're added now. cleaned up error message as well. cmd leaves
+    it to the user to refresh vertex labelling in overlay.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/79c07597af1600a595e57447929542d360559b19">commit
+    #3</a>
+    removed unused vars</li>
+<li>todo: need to update usage for nmg command for new <em>kill V</em>
+    subcommand</li>
+<li>todo: tomorrow will submit two patches<ul>
+<li>#1 cleanup for nmg_* files not needed</li>
+<li>#2 <em>kill V</em> subcommad patch</li>
+</ul>
+</li>
+<li>spent time trying to make sure build works with applied patch to
+    current trunk<ul>
+<li>didn't quite work which is why two patches are scheduled for
+    tomorrow</li>
+<li>separating patches into the two above to help avoid build error:
+    <em>../../lib/libged.so.20.0.1: undefined reference to
+    `brlcad_interp'</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="fri-july-31-2015">Fri, July 31, 2015</h1>
+<ul>
+<li>submitted <a href="https://sourceforge.net/p/brlcad/patches/395/">patch 395</a><ul>
+<li>originally planned to have two separate patches, but addition of
+    new source file / removal of stubs both were reflected in
+    changes to libged/nmg.c</li>
+<li>patch contains the following:<ul>
+<li>addition of 'kill V' subcommand</li>
+<li>see
+    <a href="http://brlcad.org/wiki/MGED_CMD_nmg#Proposed_subcommands">http://brlcad.org/wiki/MGED_CMD_nmg#Proposed_subcommands</a>
+    for 'kill V' usage</li>
+<li>removed source file stubs for low-level nmg api subcommands</li>
+<li>reversed order of subcommand and nmg object name syntax (per
+    request)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/10237773391b9baf2a51125818f51027f8a7de57">commit
+    #1</a>
+    updated github branch with libged files from svn head; renamed
+    nmg_kill.c to nmg_kill_v.c; added help for kill V</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

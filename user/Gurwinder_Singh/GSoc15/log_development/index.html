@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Gurwinder_Singh/GSoc15/log_development/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Log development - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Gurwinder_Singh/GSoc15/log_development.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+            <li class="nav-item" data-level="1"><a href="#week-1-export-part" class="nav-link">Week 1( Export Part )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#part-primitive-in-pov-ray" class="nav-link">Part primitive in POV-Ray</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-2-export-ell" class="nav-link">Week 2( Export ell )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#ell-primitive-in-pov-ray" class="nav-link">Ell primitive in POV-Ray</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-3-export-arb8" class="nav-link">Week 3( Export arb8 )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#arb8-primitive-in-pov-ray" class="nav-link">Arb8 primitive in POV-Ray</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-4-export-tgc" class="nav-link">Week 4( Export tgc )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tgc-primitive-in-pov-ray" class="nav-link">Tgc primitive in POV-Ray</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pre-midterm-evaluation-summary" class="nav-link">Pre-midterm Evaluation Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mid-term-evaluation-week" class="nav-link">Mid Term Evaluation Week</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="project-details">Project Details</h3>
+<p>Name: Gurwinder Singh Bains</p>
+<p>IRC Name: Gurwinder</p>
+<p>e-mail: gswithbains@gmail.com</p>
+<h3 id="community-bonding-period-work">Community Bonding Period work</h3>
+<ul>
+<li>Working on Glade and follow some tutorial to get my hand on it.</li>
+<li>Understand some primitives and find a way to export them.</li>
+<li>Start studying about POV-Ray macros.</li>
+</ul>
+<h3 id="coding-period">Coding Period</h3>
+<h1 id="week-1-export-part">Week 1( Export <a href="http://brlcad.org/tmp/primitives/part.png">Part</a> )</h1>
+<p>25 May</p>
+<ul>
+<li>Understand particale and take reference from other converters</li>
+</ul>
+<p>I understood how the coordinates of vertices of particale are stored.
+Now I'm working on exporting the vertices and then move on to export
+into POV-Ray format.</p>
+<p>26 May</p>
+<ul>
+<li>Pushed one commit to github.</li>
+<li>Export coordinates of Particale successfully.</li>
+</ul>
+<p>My ubuntu got crashed so I have to reinstall it. I will be compiling
+BRL-CAD after that I am on track again.</p>
+<p>27 May</p>
+<ul>
+<li>Export particale but requires to fix errors.</li>
+</ul>
+<p>Today I was busy in my exam. But in evening I got time to export
+particale.</p>
+<p>28 May</p>
+<ul>
+<li>Done exporting of Particale primitive.</li>
+<li>Testing it with POV-Ray.</li>
+</ul>
+<p>I am now working on linuxcnc. Starts from backslash task for it.</p>
+<p>29 May</p>
+<ul>
+<li>Working on linuxCNC. Search related to backslash.</li>
+<li>Taking other softwares as refrence.</li>
+</ul>
+<p>30 May</p>
+<ul>
+<li>Fix some error in POV-Ray export.</li>
+<li>Working on LinuxCNC, taking help from Youtube videos. Discuss with
+    Morley</li>
+</ul>
+<p>about backslash.</p>
+<p>31 May</p>
+<ul>
+<li>Just search about other possible primitives that are not in
+    proposal.</li>
+</ul>
+<h1 id="part-primitive-in-pov-ray">Part primitive in POV-Ray</h1>
+<p><a href="http://postimg.org/image/u4w35ou03/">Here</a> is the screen shoot of how
+part looks after conversion in POV-Ray</p>
+<h1 id="week-2-export-ell">Week 2( Export <a href="http://brlcad.org/tmp/primitives/ell.png">ell</a> )</h1>
+<p>1 June</p>
+<ul>
+<li>Found where the coordinates are stored.</li>
+<li>Export those coordinates simply.</li>
+<li>Working on other possible primitives( not in proposal ).</li>
+</ul>
+<p>2 June</p>
+<ul>
+<li>Compare and test the ellipse formed by BRL-CAD and POV-Ray.</li>
+<li>Found some more primitives that I can export.</li>
+</ul>
+<p>3 June</p>
+<ul>
+<li>Export ellipse.</li>
+<li>Working on rotation of ellipse.</li>
+</ul>
+<p>4 June</p>
+<ul>
+<li>Was Busy in traveling.</li>
+<li>Just looked into some ways to rotate ellipse.</li>
+</ul>
+<p>5 June</p>
+<ul>
+<li>Export ell successfully</li>
+</ul>
+<p>6 June</p>
+<ul>
+<li>Start linuxcnc</li>
+<li>Cloning and Compiling on my new system</li>
+</ul>
+<p>7 June</p>
+<ul>
+<li>Compile Linuxcnc successfully</li>
+<li>Know how to use it.</li>
+</ul>
+<h1 id="ell-primitive-in-pov-ray">Ell primitive in POV-Ray</h1>
+<p><a href="http://postimg.org/image/ub9s8s34z/">Here</a> is the screen shoot of how
+ell looks after conversion in POV-Ray</p>
+<h1 id="week-3-export-arb8">Week 3( Export <a href="http://brlcad.org/tmp/primitives/arb8.png">arb8</a> )</h1>
+<p>8 June</p>
+<ul>
+<li>Start working with arb8</li>
+<li>Export coordinates of arb8</li>
+</ul>
+<p>9 June</p>
+<ul>
+<li>Export arb8</li>
+<li>Export tgc</li>
+<li>Working on linuxcnc</li>
+</ul>
+<p>10 June</p>
+<ul>
+<li>Working on Linuxcnc Help pages.</li>
+</ul>
+<p>11 June</p>
+<ul>
+<li>Was at busy at my college.</li>
+</ul>
+<p>12 June</p>
+<ul>
+<li>Working on linuxcnc stepconf.</li>
+</ul>
+<p>13 June</p>
+<ul>
+<li>Working on help button.</li>
+</ul>
+<p>14 June</p>
+<ul>
+<li>Clean up g-pov code</li>
+</ul>
+<h1 id="arb8-primitive-in-pov-ray">Arb8 primitive in POV-Ray</h1>
+<p><a href="http://postimg.org/image/qhkxddb6r/">Here</a> is the screen shoot of how
+arb8 looks after conversion in POV-Ray</p>
+<h1 id="week-4-export-tgc">Week 4( Export <a href="http://brlcad.org/tmp/primitives/tgc.png">tgc</a> )</h1>
+<p>15 June</p>
+<ul>
+<li>Clean up tgc code</li>
+<li>Remove error from exporting into POV-Ray</li>
+<li>Change some settings of Help button of Linuxcnc</li>
+</ul>
+<p>16 June</p>
+<ul>
+<li>Do code clean up</li>
+<li>Submit my patch</li>
+</ul>
+<p>17 June</p>
+<ul>
+<li>Rebuild BRL-CAD on my system</li>
+<li>Working on patch</li>
+</ul>
+<p>18 June</p>
+<ul>
+<li>Remove some errors</li>
+<li>Edit files to compile g-pov correctly</li>
+</ul>
+<p>19 June</p>
+<ul>
+<li>Was busy at college for some paper work</li>
+</ul>
+<p>20 June</p>
+<ul>
+<li>Prepare for Patch</li>
+</ul>
+<p>21 June</p>
+<ul>
+<li>Working on writing output into file</li>
+</ul>
+<h1 id="tgc-primitive-in-pov-ray">Tgc primitive in POV-Ray</h1>
+<p><a href="http://postimg.org/image/643fsu09v/">Here</a> is the screen shoot of how
+tgc looks after conversion in POV-Ray</p>
+<h1 id="week-5">Week 5</h1>
+<p>22 June</p>
+<ul>
+<li>Writing the code according to coding standard</li>
+</ul>
+<p>23 June</p>
+<ul>
+<li>Remove some errors and working on output file option.</li>
+</ul>
+<p>24 June</p>
+<ul>
+<li>Setting file for commit</li>
+<li>Push code on Git repository successfully</li>
+</ul>
+<p>25 June</p>
+<ul>
+<li>Do some tutorial on Glade</li>
+<li>Checking the help pages for stepconf</li>
+<li>Trying to solve segmentation error</li>
+</ul>
+<p>26 June</p>
+<ul>
+<li>Communicate with my mentor of BRLCAD.</li>
+<li>Communicate with Linuxcnc member</li>
+</ul>
+<h1 id="pre-midterm-evaluation-summary">Pre-midterm Evaluation Summary</h1>
+<p>I have started my GSOC with part primitive. Its easy for me to export
+coordinates of part. Then I export part into POV-Ray by using
+Round_Cone2 object. In next week it started exporting Ell. I found it
+difficult as I was not able to rotate ellipse but in last I export ell
+into POV-Ray by using spheroid object. In week third, I was working on
+arb8. Its harder for me to export. So I discussed it with POV-Ray
+community and finally I wrote a macro and I was able to export arb8
+successfully. In 4th week, I export tgc successfully. In last week, I
+clean up code and submit POV-Ray converter as a
+<a href="http://sourceforge.net/p/brlcad/patches/378/">patch</a>. I was also
+working on Linuxcnc in these pre-midterm days. I wrote stepconf help
+pages that will be used while user click on help button of stepconf of
+linuxcnc.</p>
+<h1 id="mid-term-evaluation-week">Mid Term Evaluation Week</h1>
+<p>27 June</p>
+<ul>
+<li>Do nothing</li>
+</ul>
+<p>28 June</p>
+<ul>
+<li>Just search about python for linuxcnc</li>
+</ul>
+<p>29 June</p>
+<ul>
+<li>Started python from youtube tutorials.</li>
+<li>Set Log of pre-mid term time period.</li>
+</ul>
+<p>30 June</p>
+<ul>
+<li>Do first chapter: Intro of Python.</li>
+<li>Start following the <a href="http://learnpythonthehardway.org/book/">book</a></li>
+</ul>
+<p>1 July</p>
+<ul>
+<li>Complete 10 Exercises of Book <a href="http://learnpythonthehardway.org/book/index.html">Learn Python by Hard
+    Way</a>.</li>
+<li>Start doing next exercise.</li>
+</ul>
+<p>2 July - 3 July</p>
+<ul>
+<li>Done upto 17 exercises of <a href="http://learnpythonthehardway.org/book/index.html">Learn Python by Hard
+    Way</a>.</li>
+</ul>
+<p>6 July</p>
+<ul>
+<li>Done 24 excercises of <a href="http://learnpythonthehardway.org/book/index.html">Learn Python by Hard
+    Way</a>.</li>
+</ul>
+<p>7 July - 8 July</p>
+<ul>
+<li>Done upto 30 excersises and do some examples.</li>
+<li>Busy in admission work.</li>
+</ul>
+<p>8 July - 9 July</p>
+<ul>
+<li>Do some excersises on python.</li>
+<li>Busy in admission paper completition.</li>
+</ul>
+<p>13 July</p>
+<ul>
+<li>Completed basics of python.</li>
+<li>Done 43 excerssises on python</li>
+</ul>
+<p>14 July</p>
+<ul>
+<li>Test Glade with python.</li>
+<li>Make my older changer in work</li>
+<li>Prepare for exam.</li>
+</ul>
+<p>15 July</p>
+<ul>
+<li>Discuss on next work with my mentor</li>
+<li>Search about rhc and rpc</li>
+</ul>
+<p>16 July</p>
+<ul>
+<li>Successfully export rhc coordinates</li>
+<li>Working on rhc to export it in POV-Ray</li>
+</ul>
+<p>17 July</p>
+<ul>
+<li>Making a macro for rhc my using equations in POV-Ray</li>
+<li>Successfully export coordinates of rpc, epa, ehy</li>
+</ul>
+<p>20 July</p>
+<ul>
+<li>Working on rhc and rpc export.</li>
+<li>Make half macro in working condition of elliptical torus.</li>
+</ul>
+<p>21 July</p>
+<ul>
+<li>Elliptical torus is working.</li>
+<li>Working on its major and minor axis of its ellipse.</li>
+</ul>
+<p>22 July - 23 July</p>
+<ul>
+<li>Busy at college, submit papers.</li>
+<li>Work on torus's minor and major axis.</li>
+<li>Working on rhc and rpc.</li>
+</ul>
+<p>25 July - 27 July</p>
+<ul>
+<li>Communitcation with my mentor.</li>
+<li>Write down primitives on BRL-CAD wiki page <a href="/wiki/Povray">Povray</a>.</li>
+</ul>
+<p>28 July</p>
+<ul>
+<li>Export coordinates of Half.</li>
+<li>Export Half successfully.</li>
+<li>Working on pipe.</li>
+</ul>
+<p>29 July - 31 July</p>
+<ul>
+<li>Working on PIPE primitive.</li>
+<li>Pipe is formed in povray but not with bend radius.</li>
+<li>Pipe is formed difference of cones.</li>
+</ul>
+<p>3 Aug - 4 Aug</p>
+<ul>
+<li>Working on ARBN.</li>
+<li>Exported it successfully</li>
+</ul>
+<p>5 Aug</p>
+<ul>
+<li>Working on EHY and EPA.</li>
+<li>Use quadratic equations of POV-Ray for it.</li>
+</ul>
+<p>6 Aug</p>
+<ul>
+<li>Exported EPA and EHY successfully.</li>
+</ul>
+<p>7 Aug - 10 Aug</p>
+<ul>
+<li>Successfully exported BOT.</li>
+<li>Working on RPC, RHC, extrud and sketch.</li>
+</ul>
+<p>9 Aug - 12 Aug</p>
+<ul>
+<li>Feeling sick.</li>
+<li>RPC is working well, going to export.</li>
+</ul>
+<p>13 Aug - 16 Aug</p>
+<ul>
+<li>Export RPC and RHC.</li>
+<li>Export data of Extrude.</li>
+<li>Test mear about half of primitives.</li>
+<li>Due to bad health not able to do much. Going to test all the
+    remaining primitives.</li>
+</ul>
+<p>17 Aug</p>
+<ul>
+<li>Soft Pencil Down</li>
+<li>Start performing test on different primitives.</li>
+</ul>
+<p>18 Aug - 21 Aug</p>
+<ul>
+<li>Modify BoT primitives.</li>
+<li>Test BoT primitive and its working well.</li>
+<li>Conversation with Mentor on Documentation.</li>
+<li>Start documentation.</li>
+</ul>
+<p>I have exported many other peimitives into POV-Ray. After mid term
+evaluation I discussed with my mentor about linuxCNC project. Due to
+lack of knowledge about linuxcnc machines and motivation we decided to
+move with POV-Ray export project. So I started exporting primitives into
+POV-Ray. I was feeling difficult to choose between primitive so I
+discussed it with my mentor. He gave me a list by which I was able to
+work in order. I have exported many primitives as listed below RHC, RPC,
+EPA, EHY, ARBN, Half, ELL1, ELLg. One of these primitive is BoT which
+required some modification. I was in difficulty in exporting it but
+after spending time on it I was able to export it successfully and now
+its working correctly. I also exported HRT primitive in POV-Ray but its
+not similar to heart. But I'm very thankful to my mentor who gave me a
+chance to increase my skills and motivation to do work with proper
+methods as I never expected that I will able to export these given
+primitives in proposal opn time but thanks to mentor and God who
+motivate me to work and I was able to export more primitives along with
+those given in proposal.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

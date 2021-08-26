@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Mariomeissner/logs/old/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Old - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Mariomeissner/logs/old.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>OLD LOGS</p>
+<p><strong>20-6</strong></p>
+<p>Build successfull on Arch Linux (Antergos) x64 Working my way through
+the Introduction_to_MGED.pdf</p>
+<p><strong>21-6</strong></p>
+<p>Successfully calculated mass of a copper sphere using rtweight.</p>
+<p><strong>11-7</strong></p>
+<p>Diving into the source code of rtweight. I will need some help
+understanding the overall structure of the repository and some details
+about rtweight.</p>
+<p><strong>12-7</strong></p>
+<p>Proposed an initial model of representation. I would use a
+three-variable function that returns the density of the material at a
+certain point in space. Integrating this function over the boundaries of
+the object yields it's mass. Example can be found here:
+<a href="https://drive.google.com/file/d/0Bz6hfFobLeoyZC1vQ1JwSU05NDg/view?usp=drivesdk">https://drive.google.com/file/d/0Bz6hfFobLeoyZC1vQ1JwSU05NDg/view?usp=drivesdk</a></p>
+<p><strong>14-7</strong></p>
+<p>Started working on the example raytrace application. I am setting
+highest priority to understanding the basic behaviour of this little
+program, as I know it is the foundation I will need in order to continue
+with the project.</p>
+<p>I will try to modify it in some ways and see if I break it.</p>
+<p>From today onwards, I will be working from 15:00 to 22:00 most days, and
+from 10:00 to 13:00 as well a few days a week. After evaluating how much
+can be done with this schedule, adjustments will be made accodingly.</p>
+<p><strong>15-7</strong></p>
+<p>Drafted an example of how to obtain a function that returns the density
+a ray sees at it crosses the object.</p>
+<p><strong>16-7</strong></p>
+<p>Reading through, understanding and compiling the example applications.</p>
+<p><strong>17-7</strong></p>
+<p>Modeling the sword and continuing yesterdays work.</p>
+<p>Starting with the candle example to get practice.</p>
+<p><strong>18-7</strong></p>
+<p>Making new, blade that actually fits the specifications; remaining time
+digging through the viewweight.c code.</p>
+<p><strong>19-7</strong></p>
+<p>Designing proper density model that allows for good implementation.</p>
+<p><strong>20-7</strong></p>
+<p>Studying source code.</p>
+<p><strong>25-7</strong></p>
+<p>Setting up eclipse development build and studying source code.</p>
+<p>Facing problem where Eclipse does not properly recognize tons of symbols
+in the code, including basic types like "FILE". One candidate solution
+is to browse to the C/C++ pre-processor settings and adding and
+configuring the CDT GCC built-in compiler. Details here:
+<a href="https://stackoverflow.com/questions/21065616/multiple-could-not-be-resolved-problems-using-eclipse-with-mingw">https://stackoverflow.com/questions/21065616/multiple-could-not-be-resolved-problems-using-eclipse-with-mingw</a></p>
+<p>However performing the steps on there crashes the indexer while it's
+updating.</p>
+<p>I'm using Arch, Eclipse Oxygen and the latest available GNU compiler
+suite. I built the project for eclipse using CMake following the guide
+over at wiki/compiling.</p>
+<p>Thinking about how the user should input the density data and how we
+should handle it inside, I found this to be relevant:
+<a href="https://en.wikipedia.org/wiki/Curve_fitting">https://en.wikipedia.org/wiki/Curve_fitting</a></p>
+<p>We could let the user set any number of points throughout the material
+with specific densities, and then we can apply a simple curve fitting
+algorithm to create a continuous density function. This function could
+be stored in some struct or array and then be used to return the density
+value at any given point with precision. These requested points could be
+used for interpolation by the calling code.</p>
+<p><strong>26-7</strong></p>
+<p>New goal: modify the example application to shoot a ray to the object
+and calculate it's density assuming it's a 0 to 1 change.</p>
+<p>Working on goal.</p>
+<p>Results: <a href="https://puu.sh/wTDzC/5c3a15af9a.png">screenshot</a></p>
+<p><strong>27-7</strong></p>
+<p>New goal: snippet code to read density points from command line into
+data structure.</p>
+<p><strong>28-7</strong></p>
+<p>Debugging yesterdays work.</p>
+<p>Managed to make it work to a point where I think the goal has been
+reached. Further expansions of this goal may be made once more is known
+about the density specification.</p>
+<p><strong>29-7</strong></p>
+<p>New goal: write simple function that returns the density value for a
+material at any point in space, for simple specifications (a few
+density_points at max).</p>
+<p>Working on goal.</p>
+<p>Todays work: <a href="https://transfer.sh/PvVCy/rtexample.c">1</a></p>
+<p><strong>30-7</strong></p>
+<p>Continuing with yesterdays work. Decided to make a new structure to
+store vectors and their factors. We can go through the list of provided
+points for a material specification and compute the vectors we care
+about, push them to a list.</p>
+<p><strong>31-7</strong></p>
+<p>Received feedback on yesterdays work. Apparently I tried to do breadth
+first, which resulted in too ambiguous code that obviously wasnt working
+yet either. Today I tried to revert that and made a simpler situation
+work. Figuring out how to properly use vmath macros and bu_lists, as
+well as debugging my mistakes, took away most of my time today but I
+feel it was an enlightening process. Emailed results.</p>
+<p><strong>1-8</strong></p>
+<p>Day off</p>
+<p><strong>2-8</strong></p>
+<p>Partial day off. Ｗoring on blade.</p>
+<p><strong>3-8</strong></p>
+<p>Finished blade curve.</p>
+<p>Working on density(), will try to make the vector list work.</p>
+<p>Facing a little design problem. If we have a vector_list, we need to be
+able to keep track of who's vector each projection is. We cannot store
+it inside the vector bc we will want to reuse it on other calls. One
+solution could be creating struct contribution and store both the value
+and a pointer to the vector it came from. After all we only need the
+factor. Calculing everything necessary (projection and contribution)
+within the loop and then throwing away the information has also been
+considered. It could work if we do average but would not work if we want
+to perform some other more complex operation on them.</p>
+<p><strong>4-8</strong></p>
+<p>Continuing yesterdays goal.</p>
+<p>Separating code into my own files, and restoring rtexample to the
+original.</p>
+<p>Figuring out how to set up new projects within the solution in
+VisualStudio.</p>
+<p><strong>5-8</strong></p>
+<p>Carrying my work over to viewweight.c . New goal is to make case 0 and 1
+points work while using my code. Will also model a box that will serve
+as initial dummy example object. Calculate results by hand and compare
+with code output.</p>
+<p><strong>6-8</strong></p>
+<p>Some more tests on current code. Started working on the new 4 point
+example.</p>
+<p><strong>7-8</strong></p>
+<p>Finishing off new example. Separating vector creation from
+query_density code, so that initial vector list is only created once.
+Performance of rtweight right now is not so good, this should help.</p>
+<p>New example works: <a href="https://transfer.sh/R8o7z/viewweight.c">code</a>,
+<a href="https://puu.sh/x3MZm/d32523b6f4.png">result</a>, <a href="https://drive.google.com/file/d/0Bz6hfFobLeoyRmI5elVlRkN2X00/view?usp=drivesdk">expected result on
+paper</a>.</p>
+<p><strong>8-8</strong></p>
+<p>Incorporating readDensityPoints() into the current code (writing data
+into the .density file) so that the whole thing is 'complete'. Instead
+of hardcoded data I will load it from the file.</p>
+<p><strong>9-8</strong></p>
+<p>Continuing yesterdays task.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

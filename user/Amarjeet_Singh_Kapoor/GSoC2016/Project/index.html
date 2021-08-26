@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Amarjeet_Singh_Kapoor/GSoC2016/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>**[User Interface for Customizing Models](https://github.com/openscad/openscad/wiki/Project%3A-Form-based-script-parameterization)** - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Amarjeet_Singh_Kapoor/GSoC2016/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#user-interface-for-customizing-models" class="nav-link">User Interface for Customizing Models</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brief-background-information" class="nav-link">Brief Background Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#time-availability" class="nav-link">Time Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-openscad" class="nav-link">Why OpenSCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="user-interface-for-customizing-models"><strong><a href="https://github.com/openscad/openscad/wiki/Project%3A-Form-based-script-parameterization">User Interface for Customizing Models</a></strong></h1>
+<h2 id="personal-information"><strong>Personal Information</strong></h2>
+<p><strong>Name:</strong>Amarjeet Singh Kapoor</p>
+<p><strong>Email Address:</strong> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#109;&#97;&#114;&#106;&#101;&#101;&#116;&#46;&#107;&#97;&#112;&#111;&#111;&#114;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#97;&#109;&#97;&#114;&#106;&#101;&#101;&#116;&#46;&#107;&#97;&#112;&#111;&#111;&#114;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p><strong>IRC Username:</strong> amarjeet</p>
+<p><strong>Phone number:</strong> +91 8568988521</p>
+<p><strong>Blog</strong>: <a href="https://amarjeetkapoor1.wordpress.com">https://amarjeetkapoor1.wordpress.com</a></p>
+<h2 id="brief-background-information"><strong>Brief Background Information</strong></h2>
+<p>I am 3rd year B.Tech student of Computer Science and Engineering at Guru
+Nanak Dev Engineering College, Ludhiana, India.</p>
+<p>A few of the numerous projects I have worked on are briefed below:</p>
+<ul>
+<li>I have worked on Image Processing using OpenCV.</li>
+<li>I have made a project "Civil Octave" for the Analysis of Dynamics of
+    Structures.</li>
+<li>Currently, I am working on completely new idea i.e SIM (Structure
+    Information Model). Idea behind the project is modeling the
+    structure based on information and storing it in database so that
+    information can be used for analysis.</li>
+</ul>
+<p>For more details, my Github account can be referred:
+<a href="https://github.com/amarjeetkapoor1"><a href="https://github.com/amarjeetkapoor1">https://github.com/amarjeetkapoor1</a></a></p>
+<p>I have knowledge of C++, Python, Shell scripting, HTML, CGI, SQL, LaTeX,
+doxygen, etc.</p>
+<h2 id="project-information"><strong>Project Information</strong></h2>
+<h3 id="an-overview"><strong>An Overview</strong></h3>
+<p>This project is based on the User interface of OpenSCAD Software. The
+main idea of this project is to provide users with features to change
+certain variables or parameters in .scad file using form like interface
+which may include slide bar, check box, text box, ranges etc. so that we
+can visualize the changes in output on the basis of input side by side
+instead of manually changing different parameters. It will help the user
+able to create the templates for given model which can further be
+changed as per user's requirements.</p>
+<h3 id="detailed-description"><strong><em>Detailed Description</em></strong></h3>
+<p>The basic implementation of the this project is almost done in form of
+prototype. There is need to modify structure of the project.We have to
+divide the task in to there parts: <img alt="" src="/wiki/user/img/image05.png" /></p>
+<dl>
+<dt>
+
+**Front end**
+
+</dt>
+<dd>
+
+It will deal with how the parameter will look to user like in form of
+range or spinbox etc. This part will include two parts:
+
+<dl>
+<dt>
+
+*Individual Parameter*
+
+</dt>
+<dd>
+
+This will define how individual parameters will look like
+
+</dd>
+<dt>
+
+*Container Widget*
+
+</dt>
+<dd>
+
+This will contain UI features common to all parameter. This widget will
+contain all parameter widget.
+
+</dd>
+</dl>
+</dd>
+<dt>
+
+**Back end**
+
+</dt>
+<dd>
+
+This will include the parser part that will create AST nodes and we can
+extract the parameters from the AST. we can use the single parser for
+whole .scad file or separate parser for extracting the parameters with
+annotations.
+
+The Back end part will also include the parameter extractor and injector
+or the injector can be included in parameter object which will serve as
+interface
+
+</dd>
+<dt>
+
+**Interface**
+
+</dt>
+<dd>
+
+This will include the parameter object which will serve as interface
+between both Back end and Front end. Parameter object will contain
+information regarding each individual parameter like parameter name,
+default value and information how these parameter will be displayed as
+widgets to user. Parameter object could also include the method to
+inject the value of individual parameter in to the AST.
+
+</dd>
+</dl>
+
+<p><img alt="" src="/wiki/user/img/main.jpg" /></p>
+<p>There is need to modify some existing features and to enhance its
+functionality so that it could be more interactive and user friendly. We
+can improve its UI for parameter window by adding the following new
+features under the scope of this project</p>
+<ol>
+<li>
+<p><strong>Option to specify input widget</strong>
+    &gt;
+    &gt; At present, input type widget in the output form is automatically
+    &gt; identified based upon the values specified by user in annotation.
+    &gt;
+    &gt; With this feature we want to provide additional functionality to
+    &gt; users that gives them additional control about the type of input
+    &gt; widget i.e they can choose between different widgets like spinbox,
+    &gt; vertical slider, horizontal slider, drop box, text box etc for
+    &gt; getting the value of parameter through parameter window from user.
+    &gt; And we can provide some more features like specify the increment
+    &gt; value in range widget and some additional features like:
+    &gt;
+    &gt; 1.  We can use syntax like
+    &gt;     <em>@parameter(["spinbox"],[1:10],[2])</em> which will make a
+    &gt;     spinbox with value range between 1:10 and will increment next
+    &gt;     value by 2 as we increase values in spinbox.
+    &gt; 2.  If user specifies <em>@parameter([1:10])</em> then it will take the
+    &gt;     default input widget like it's working in its present state.
+    &gt;
+    &gt; We will extend the code in <em>ParameterEntryWidget::setValue()</em>for
+    &gt; implementation purpose. Following will be GUI widgets that will be
+    &gt; supported in the scope of this project:
+    &gt;
+    &gt; <dl>
+    &gt; <dt>
+    &gt;
+    &gt; Proposed syntax
+    &gt;
+    &gt; </dt>
+    &gt; <dd>
+    &gt;
+    &gt; parameter([ InputType,attributes],[values])
+    &gt;
+    &gt; </dd>
+    &gt; <dt>
+    &gt;
+    &gt; Input widget options
+    &gt;
+    &gt; </dt>
+    &gt; <dd>
+    &gt;
+    &gt; 1.  Spinbox
+    &gt;     -   attributes -: min value, max value, increment size
+    &gt;     -   E.g. parameter([“spinbox”,IS],[ MinValue : MaxValue ])
+    &gt; 2.  Checkbox
+    &gt;     -   E.g. parameter([“checkbox”],[true] )
+    &gt; 3.  radio button
+    &gt;     -   options -: name of first value while be default
+    &gt;     -   E.g.
+    &gt;         parameter([“radiobutton”],[firstvalue,secondvalue,...]
+    &gt;         )
+    &gt; 4.  Vector
+    &gt;     -   Attributes -:min value ,max value, increment size
+    &gt;     -   Question -: Max number of spinbox to be supported?
+    &gt; 5.  slider (horizontal)
+    &gt;     -   attribute -: min value, max value, increment size(IS)
+    &gt;     -   E.g. parameter([“Hslider”,IS],[ MinValue : MaxValue] )
+    &gt; 6.  slider (vertical)
+    &gt;     -   attribute -: min value max value
+    &gt;     -   E.g. parameter([“Vslider”,IS],[ MinValue : MaxValue] )
+    &gt; 7.  Text-:
+    &gt;     -   attribute-: size of text
+    &gt;     -   E.g. parameter([“Text”,size of text] )
+    &gt; 8.  Default -: When no input parameter widget is specified like at
+    &gt;     present stage.
+    &gt;     -   E.g. Parameter([1 : 10])
+    &gt;
+    &gt; </dd>
+    &gt; </dl></p>
+</li>
+<li>
+<p><strong>Grouping of parameters</strong>
+    &gt;
+    &gt; At present, the parameter widget are shown as individual widget.
+    &gt; We can group the related or alike parameters. This feature will
+    &gt; help in grouping the parameters which are related and we can make
+    &gt; the group of parameter collapse or expand to provide better user
+    &gt; interface and more useful for bigger models.
+    &gt;
+    &gt; One of the two syntaxes from below can be used:
+    &gt;
+    &gt; 1.  <em>@group("name")</em> before <em>@parameter()</em> to specify which group
+    &gt;     the parameter belongs else they will be displayed as
+    &gt;     individual parameters.
+    &gt; 2.  We can use <em>@parameter( , , group="name")</em> where group is
+    &gt;     optional parameter in <em>@parameter</em> annotation.</p>
+</li>
+<li>
+<p><strong>Reflecting changes made to variable's value through form</strong>
+    &gt;
+    &gt; At present, if we make any changes to the value of parameterized
+    &gt; variable, we cannot save those changes by assigning that new value
+    &gt; to the variable automatically and for that we have to manually
+    &gt; change that variable's value.
+    &gt;
+    &gt; A save button can be provided with the help of which the values
+    &gt; given through variables can be saved i.e. changes we made to model
+    &gt; through form are temporary and don't exist after we open that
+    &gt; model file again but we can make it permanent in program.
+    &gt;
+    &gt; e.g. We can give a save button on top of parameter list which will
+    &gt; save the new values in the .scad file and we can give optional
+    &gt; save button for saving the individual parameter in parameter
+    &gt; window.</p>
+</li>
+<li>
+<p><strong>Make UI better</strong>
+    &gt;
+    &gt; We can make UI of the parameter window better by providing
+    &gt; additional features like:
+    &gt;
+    &gt; 1.  Make individual input widgets dockable so that we can adjust
+    &gt;     the position of the individual input widgets.
+    &gt; 2.  Make description hover the input widget when we hover cursor
+    &gt;     over that input widget.
+    &gt; 3.  Make the input widgets more space efficient.
+    &gt; 4.  Option to minimize the parameter and library window instead of
+    &gt;     just hide option.
+    &gt;
+    &gt; And their can be many more based upon the user's feedback.</p>
+</li>
+<li>
+<p><strong>Resolve issues found with existing code</strong> There are some issues
+    &gt; with existing code like if we change the value in @parmameter then
+    &gt; changes are reflected on parameter window but if we change the
+    &gt; value of parameterized variable then no corresponding change occur
+    &gt; on the parameter window for viewing new input widget based upon
+    &gt; the change in value of parameterized variable we have to reopen
+    &gt; the file. e.g. For an instance in following screenshot 1,
+    &gt; everything is correct. <img alt="" src="/wiki/user/img/image07.png" />
+    &gt; But if the value of G=False and resolution=[10,34,45] are
+    &gt; changed from their initial value of G=0 and resolution=10, than
+    &gt; result is screenshot 2 but instead it should be as per screenshot
+    &gt; 3 which is obtained on re-opening the document.
+    &gt; <img alt="" src="/wiki/user/img/image06.png" />
+    &gt; <img alt="" src="/wiki/user/img/image03.jpg" />
+    &gt;
+    &gt; We can do this by not only storing the parameters based on name
+    &gt; only but by both name of parameter and Type of data in parameter.</p>
+</li>
+<li>
+<p><strong>Saving scad file without annotation</strong>(optional)
+    &gt;
+    &gt; After making all the changes in model we can save those changes in
+    &gt; file without annotation code which will make scad file backward
+    &gt; compatible.</p>
+</li>
+</ol>
+<h2 id="milestones"><strong>Milestones</strong></h2>
+<p><strong>Community Bonding Period</strong></p>
+<ul>
+<li>Interaction with the community and get to know about the existing
+    code.</li>
+<li>Study existing parameter widget code and will try fixing some
+    existing bugs.</li>
+</ul>
+<p><strong>23rd May-9th June</strong></p>
+<ul>
+<li>Make Front end ( UI part) separate from rest of code. </li>
+<li>Make different object for different input option to be supported.</li>
+<li>Check each use case associated with each parameter widget. </li>
+<li>Improve UI </li>
+<li>Take community feedback for further changes </li>
+<li>Documentation </li>
+</ul>
+<p><strong>10th June-26th June</strong></p>
+<ul>
+<li>Make interface between Frontend and Backend (parameter object) </li>
+<li>Structure it to make it independent for back-end </li>
+<li>Code to inject parametric values in AST</li>
+<li>Solving issues found by other people on using this code. </li>
+<li>Documentation </li>
+</ul>
+<p><strong>Mid term</strong> <strong>27th June-24July</strong></p>
+<ul>
+<li>Start with back-end  </li>
+<li>Take community feedback on syntax to be supported  </li>
+<li>Code to Parse the .scad file to recognize parameters </li>
+<li>Code to extract the required parameter info from (AST) </li>
+<li>Write Back-end to support the user specified input widget  </li>
+<li>Work on feature of Grouping of Parameters. </li>
+</ul>
+<p><strong>25th July -14th August</strong></p>
+<ul>
+<li>Add feature to save current value of parameter as default </li>
+<li>Write example .scad file for the new features added after mid term. </li>
+<li>Add feature of Saving scad file without annotation. </li>
+<li>Add any Additional feature required. </li>
+</ul>
+<p><strong>15th August- 23August</strong></p>
+<ul>
+<li>Testing and cleaning. </li>
+<li>Time to make up for missed milestone (if any). </li>
+<li>Finalize everything </li>
+</ul>
+<p><strong>23August onwards</strong></p>
+<ul>
+<li><strong>FINAL EVALUATION</strong></li>
+</ul>
+<h2 id="time-availability"><strong>Time Availability</strong></h2>
+<p>I will be available 40 hours / week, if needed can spend more .</p>
+<h2 id="why-openscad"><strong>Why OpenSCAD?</strong></h2>
+<p>I liked the concept of OpenSCAD (CAD for programmers) during the
+different seminars that were conducted regarding the OpenScad in our
+group. When I saw your project of Form based script parameterization I
+found it really interesting that we can make a template of the model and
+then change the model based on the form based parameter.</p>
+<h2 id="why-me"><strong>Why me?</strong></h2>
+<p>I am really enthusiastic to contribute in such a project which can
+improve user experience. I believe that I am a quick learner and this
+opportunity would enhance my skills. I truly feel that I will be
+maintaining and cherishing this bond in terms of time-to-time
+contribution in future also and would be a valuable asset to the
+organization.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

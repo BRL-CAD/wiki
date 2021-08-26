@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Hitesh/option_for_docbook/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Option for docbook - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Hitesh/option_for_docbook.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><center></p>
+<h1>
+
+\#1. WORDPRESS PLUGIN (IMPORT ALL XML/CSV)
+
+</h1>
+<p></center></p>
+<p>Import All is plugin for using to import the XML/CSV content into
+wordpress as wordpress page or post. This plugin is open source and free
+to use. The pros and cons of this plugin are as follows.</p>
+<h3>
+
+Pros
+
+</h3>
+
+<ol>
+<li>Freely available but not full package if need to use cron job
+    feature then you need to buy full package.</li>
+<li>Easy to install.</li>
+<li>Works with xml files.</li>
+<li>Shows the content of xml file as wordpress page or post.</li>
+<li>Shows the content of xml file into HTML.</li>
+<li>Plugin divides the all content of file into chunks according tags.</li>
+<li>Plugin works on drag and drop method which information you need then
+    you just drag and drop into editor and save.</li>
+<li>This also uses the cron job.</li>
+</ol>
+<h3>
+
+Cons
+
+</h3>
+
+<ol>
+<li>GUI of this plugin is not good.</li>
+<li>This plugin cannot import the all content of xml file into wordpress
+    we need to drag and drop the content.</li>
+<li>This plugin does not work with Docbook tags.</li>
+<li>The representation of content is not good.</li>
+<li>No validation rules for xml content.</li>
+<li>This Plugin not markup the changes into xml file they just import
+    the content into wordpress when user does any change in content
+    those are not applied on imported file.</li>
+<li>This plugin works on more manual work for importing the content of
+    xml file.</li>
+<li>This plugin does not support the our document structure because when
+    I uploaded the content then the more of information is not imported
+    into wordpress. I only able to import small part of information .
+    only information which is contained in child tags.</li>
+<li>Cron job feature is not supported in free version.</li>
+</ol>
+<h4>
+
+Rating: 2/5
+
+</h4>
+<p><center></p>
+<h1>
+
+\#2) MediaWiki (XML2WIKI)
+
+</h1>
+<p></center></p>
+<h3>
+
+Pros
+
+</h3>
+
+<ol>
+<li>This is very simple script which are using to convert the docbook
+    tags into wiki format.</li>
+<li>This script is open source</li>
+<li>This script easily converts the xml tags into .txt file which stores
+    all code for wiki.</li>
+</ol>
+<h3>
+
+Cons
+
+</h3>
+
+<ol>
+<li>Does not fully support all docbook tags.</li>
+</ol>
+<h4>
+
+Rating: 2/5
+
+</h4>
+<p><center></p>
+<h1>
+
+\#3) WORDPRESS (IMPORT HTML)
+
+</h1>
+<p></center></p>
+<h3>
+
+Pros
+
+</h3>
+
+<ol>
+<li>Very easy to use</li>
+<li>Easy to install</li>
+<li>open source</li>
+<li>Representation is very good</li>
+<li>Managing the docs is very good</li>
+<li>Search is good</li>
+<li>Conversion all html docs into wordpress post or pages</li>
+<li>Easy to import docs into wordpress post or pages</li>
+</ol>
+<h3>
+
+Cons
+
+</h3>
+
+<ol>
+<li>Not using cron job to update regularly all docs</li>
+<li>Some time they make duplication of document.</li>
+</ol>
+<!-- -->
+
+<h4>
+
+Rating: 3.5/5
+
+</h4>
+<p><center></p>
+<h1>
+
+\#4) Mediawiki (OWN EXTENSION)
+
+</h1>
+<p></center></p>
+<h3>
+
+Pros
+
+</h3>
+
+<ol>
+<li>Representation is well according to mediawiki theme.</li>
+<li>Searching is dedicated to all docs(brlcad document) but not work
+    with mediawiki pages.</li>
+<li>Editing is also performed under the mediawiki special pages using
+    own editor.</li>
+<li>Import the document is under special page and show also under
+    special page.</li>
+<li>Cron job work for commit the changes using shell script.</li>
+<li>Editing based on docbook xml language.</li>
+<li>Provides the authentication on xml content (editing time
+    authentication like:- unclosing tags).</li>
+<li>Completes A-F options.</li>
+</ol>
+<h3>
+
+`Cons`
+
+</h3>
+
+<ol>
+<li>Search works for BRL-CAD document under special pages.</li>
+<li>URL is large including special pages url (I think this can be sorted
+    out).</li>
+</ol>
+<h4>
+
+Rating. 4.5/5
+
+</h4>
+<p><center></p>
+<h1>
+
+\#5) Wordpress (OWN PLUGIN+HTML IMPORTER)
+
+</h1>
+<p></center></p>
+<h3>
+
+Pros
+
+</h3>
+
+<ol>
+<li>Easy to import all documents.</li>
+<li>Representation is good.</li>
+<li>Editing in the docbook format</li>
+<li>Corns job for commit and updating document time to time using shell
+    script.</li>
+<li>Completes A-F in well manner</li>
+<li>Represents the document in Pages or post under wordpress</li>
+<li>User Authentication also works for user.</li>
+</ol>
+<h4>
+
+Rating: 4.5/5
+
+</h4>
+<p><center></p>
+<h1>
+
+\#6) Other Tools(PANDOC)
+
+</h1>
+<p></center></p>
+<h3>
+
+Pros
+
+</h3>
+
+<ol>
+<li>Converts the document into any format
+    like(HTML-&gt;DOCBOOK,DOCBOOK-&gt;HTML)</li>
+</ol>
+<h3>
+
+Cons
+
+</h3>
+
+<ol>
+<li>Some html tags not converted properly</li>
+<li>Internal links not properly not converted</li>
+<li>BRL-CAD structure is not properly converted</li>
+<li>Lots of documents content is changed like(tags of document HTML to
+    docbook)</li>
+<li>Book document in html converted into article not in book</li>
+<li>BRL-CAD validation system does not validate the output of converted
+    document.</li>
+<li>Need own script which provide the some rules and validation on
+    converted document.</li>
+</ol>
+<h4>
+
+Rating: 2.5/5
+
+</h4>
+<p><center></p>
+<h1>
+
+\#7) XMLLINT
+
+</h1>
+<p></center></p>
+<h3>
+
+pros
+
+</h3>
+
+<p>Using to validate the document.</p>
+<h2>
+
+Rating:-5/5
+
+</h2>
+<p><center></p>
+<h1>
+
+\#8)TINYMCE
+
+</h1>
+<p></center></p>
+<h3>
+
+pros
+
+</h3>
+
+<ol>
+<li>Open Source</li>
+<li>Compatible with html and xml</li>
+<li>Provide the GUI Mode and Source code mode</li>
+<li>If user make any mistake and xmllint gave the error then user use
+    the source code mode and edit the code and remove the error form xml
+    code</li>
+</ol>
+<p><center></p>
+<h1>
+
+FINAL RESULT ACCORDING TO ME
+
+</h1>
+<p></center></p>
+<p>Now I am considering some pros and cons of all options. So now i am
+going to evaluate the all options according to all A-F options.</p>
+<h2>
+
+How source files in repo are handled:-
+
+</h2>
+<h4>
+
+Options:-
+
+</h4>
+<p><center></p>
+<h3>
+
+\#1(wordpress import all)
+
+</h3>
+<p></center></p>
+<p>This option does not work with original repo; after importing the
+content moves to database.</p>
+<p><center></p>
+<h3>
+
+\#2(html2wiki)
+
+</h3>
+<p></center></p>
+<p>Does not work with repo.</p>
+<p><center></p>
+<h3>
+
+\#3(html import)
+
+</h3>
+<p></center></p>
+<p>Works with repo but only imports the content into wordpress and save
+into database. Any updates not applied on repo document.</p>
+<p><center></p>
+<h3>
+
+\#4(own mediawiki extension)
+
+</h3>
+<p></center></p>
+<p>Work with repo, document content show as special page in mediawiki. Show
+the all category repo name-wise.</p>
+<p><center></p>
+<h3>
+
+\#5(own wordpress plugin+html import)
+
+</h3>
+<p></center></p>
+<p>Work with repo, Import the content into wordpress using HTML 2 import
+plugin. After changes do by any user and accept by admin then content
+updated in repo as well as website using own plugin.</p>
+<p><center></p>
+<h3>
+
+\#6(pandoc)
+
+</h3>
+<p></center></p>
+<p><code>Pandoc does not work with repo.</code></p>
+<h2>
+
+How content is uploaded to the website? How content is presented to a
+website visitor?
+
+</h2>
+<h4>
+
+Options:-
+
+</h4>
+<p><center></p>
+<h3>
+
+1.  1(import all)
+    </h3>
+
+<p></center></p>
+<p>This option waits for manually uploading all the xml pages into
+wordpress.</p>
+<p><center></p>
+<h3>
+
+\#2(html2wiki)
+
+</h3>
+<p></center></p>
+<p>This option does not work with that, that only work to convert the html
+to wiki syntax.</p>
+<p><center></p>
+<h3>
+
+\#3(html import)
+
+</h3>
+<p></center></p>
+<p>This option supports this work it directly imports the all content into
+wordpress and convert into wordpress page or posts.</p>
+<p><center></p>
+<h3>
+
+\#4(own mediawiki extension)
+
+</h3>
+<p></center></p>
+<p>This option also support this. Import all document into mediawiki and
+show as mediawiki special pages.</p>
+<p><center></p>
+<h3>
+
+\#5(own wordpress plugin+html import)
+
+</h3>
+<p></center></p>
+<p>This option also supports this. directly imports the content as pages.</p>
+<p><center></p>
+<h3>
+
+\#6(pandoc)
+
+</h3>
+<p></center></p>
+<p>This not support this option.</p>
+<h2>
+
+How a website visitor edits that content?
+
+</h2>
+<h4>
+
+Options:-
+
+</h4>
+<p><center></p>
+<h3>
+
+\#1(import all)
+
+</h3>
+<p></center></p>
+<p>This supports editing in html format but does not convert into docbook.</p>
+<p><center></p>
+<h3>
+
+\#2(html2wiki)
+
+</h3>
+<p></center></p>
+<p>This provide the editing under mediawiki in html format then through
+this script convert this content into wiki content but does not follow
+the all tags of docbook.</p>
+<p><center></p>
+<h3>
+
+\#3(html import)
+
+</h3>
+<p></center></p>
+<p>This option provides the help to edit the content of uploaded content
+into html format and changes only applied on wordpress not on original
+document</p>
+<p><center></p>
+<h3>
+
+\#4(own mediawiki extension)
+
+</h3>
+<p></center></p>
+<p>This option also helping to edit the document. If user want to edit the
+document then original document is open in editing mode in docbook xml
+format. And user made the changes then commit are gone on main repo
+after reviewing the commit and accepting this commit than changes
+applied on main document as well as on website content.</p>
+<p><center></p>
+<h3>
+
+\#5(own plugin + html import)
+
+</h3>
+<p></center></p>
+<p>This option also helping to edit the document. If user want to edit the
+document then original document is open in editing mode in docbook xml
+format. And user made the changes then commit are gone on main repo
+after reviewing the commit and accepting this commit then changes
+applied on main document as well as on website content.</p>
+<p><center></p>
+<h3>
+
+\#6(pandoc)
+
+</h3>
+<p></center></p>
+<p>Convert the document into html format and make the changes then convert
+into docbook format. BRL-CAD system not support the output of pandoc
+converted document so be need to use own script with pandoc.</p>
+<h2>
+
+How edited content gets staged for review? How edited content is
+reviewed?
+
+</h2>
+<h4>
+
+Options:-
+
+</h4>
+<p><center></p>
+<h3>
+
+\#1(import all)
+
+</h3>
+<p></center></p>
+<p>Not support this function(docbook files of BRL-CAD). But you can review
+only html changes.</p>
+<p><center></p>
+<h3>
+
+\#2(html2wiki)
+
+</h3>
+<p></center></p>
+<p>Not support this function(docbook files of BRL-CAD). But you can review
+as wiki content.</p>
+<p><center></p>
+<h3>
+
+\#3(html import)
+
+</h3>
+<p></center></p>
+<p>Not support this function(docbook files of BRL-CAD). But can review only
+html changes.</p>
+<p><center></p>
+<h3>
+
+\#4(own mediawiki extension)
+
+</h3>
+<p></center></p>
+<p>Using online editor for editing the xml file content. Using commit or
+patch system. automatic check the changes using xmllint online, if error
+found then commit not gone else commit gone. creating Shell script.</p>
+<p><center></p>
+<h3>
+
+\#5(own wordpress plugin + html import)
+
+</h3>
+<p></center></p>
+<p>Using online editor for editing the xml file content. Using commit or
+patch system. automatic check the changes using xmllint online, if error
+found then commit not gone else commit gone. creating Shell script.</p>
+<p><center></p>
+<h3>
+
+\#6(pandoc)
+
+</h3>
+<p></center></p>
+<p>Need Manually review all changes.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

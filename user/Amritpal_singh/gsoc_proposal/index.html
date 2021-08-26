@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Amritpal_singh/gsoc_proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Gsoc proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Amritpal_singh/gsoc_proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#project-title-rebar-addon-for-freecad" class="nav-link">Project Title: Rebar Addon for FreeCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brief-project-summary" class="nav-link">Brief Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#detailed-project-description" class="nav-link">Detailed Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability" class="nav-link">Time Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-freecad" class="nav-link">Why FreeCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-you" class="nav-link">Why you?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>Name:</strong> Amritpal Singh</p>
+<p><strong>IRC Nick:</strong> Amritpal</p>
+<p><strong>Blog:</strong> <strong><a href="https://amritpals.com">https://amritpals.com</a></strong></p>
+<p><strong>GitHub Profile:</strong> <strong><a href="https://github.com/amrit3701">https://github.com/amrit3701</a></strong></p>
+<p><strong>Brief Background Information</strong></p>
+<p>I am B.Tech. (3rd year), Information Technology (IT) student of Guru
+Nanak Dev Engineering College, India. Proficient in writing code in
+C/C++, Python, bash scripting and recently also worked on Open-source
+Mathematical Software System (SageMath).</p>
+<p>I also worked on Structure Information Modeling (SIM) and made a parser
+to store contents of STAAD PRO files into MySQL database. User can
+provide building specifications (for example) through web browser and at
+the back-end, FreeCAD macros use these input values to draw different
+views of the building on different drawing sheets. To support 3D
+rendering on the web browser, an option is provided to convert FreeCAD
+native file format (.FCStd) to WebGL format.</p>
+<p>Link: <a href="https://github.com/amrit3701/Sim">https://github.com/amrit3701/Sim</a></p>
+<p>I also developed a Python script for AutoCAD to change the dimensions in
+a DXF file with a defined increment. Currently, I am working on code
+compliance on IFC files using parsing functionality of IfcOpenShell
+using Python.</p>
+<h1 id="project-information">Project Information</h1>
+<h1 id="project-title-rebar-addon-for-freecad">Project Title: Rebar Addon for FreeCAD</h1>
+<h1 id="brief-project-summary">Brief Project Summary</h1>
+<p>My project is to create a rebar addon for Arch Workbench of FreeCAD to
+ease up the process of creating reinforcement in structural element. The
+main purpose of this project is to enable the user to create
+reinforcement through an easy and intuitive way. For this proposal, I
+will be considering rebaring systems for rectangular footing, pedestal,
+column, beam and slab.</p>
+<h1 id="detailed-project-description">Detailed Project Description</h1>
+<p><strong>Existing system in FreeCAD</strong></p>
+<p>At present, the rebar functionality in FreeCAD is very limited and
+creating a reinforcement system is quite tedious. The current approach
+is followed by creating a sketch for the rebar profile and defining the
+required set of constraints. This becomes very time-consuming task when
+user has building model with several structural objects.</p>
+<p><strong>Proposed solution to the problem</strong></p>
+<p>To ease up the rebaring process in FreeCAD, an interactive addon will be
+developed where user will input the required data as per the design
+requirements and they will need not to draw rebars from the Sketcher
+workbench for creating reinforcement in the structural object.</p>
+<p>The basic procedure to achieve this goal will as per the following
+points:</p>
+<ol>
+<li>The first step will begin in the Arch workbench by creating a
+    structure from the “Create a Structure” tab, or alternatively the
+    user may also create a sketch of the profile from Sketcher workbench
+    and then extrude it to transform into the desired structure.</li>
+<li>Then the user will select the desired element or a number of
+    elements of a same category.</li>
+<li>After selecting the element(s), user will click on rebar dropdown
+    provided in Arch workbench. From dropdown, user will select the
+    rebar shape. Upon selection, dialog box will pop-out with input
+    fields specific to selected rebar. User can enter the input values
+    in the input fields and finally submit with button click.</li>
+</ol>
+<p>Options or input parameters for reinforcement are categorised into three
+groups that forms three different tabs on the rebar dialogue box as
+following:</p>
+<ol>
+<li>Stirrup parameters</li>
+<li>Stirrup distribution</li>
+<li>Bars</li>
+</ol>
+<p><strong>User Interface</strong></p>
+<dl>
+<dt>
+
+**Tab I**
+
+</dt>
+<dd>
+
+![](/wiki/user/img/RebaraddonUI.png)
+
+</dd>
+<dt>
+
+**Tab II**
+
+</dt>
+<dd>
+
+![](/wiki/user/img/RebaraddonUI2.png)
+
+</dd>
+<dt>
+
+**Tab III**
+
+</dt>
+<dd>
+
+![](/wiki/user/img/RebaraddonUI3.png)
+
+</dd>
+</dl>
+
+<p><strong>Features of Rebar addon</strong></p>
+<ol>
+<li>User can input the following values in the stirrup parameters tab of
+    the addon:<ul>
+<li>Dia</li>
+<li>Material</li>
+<li>Cover</li>
+<li>Stirrup Type</li>
+<li>Angle of the hooks as per the type of stirrup</li>
+</ul>
+</li>
+<li>In the stirrup distribution tab user will be asked to input the
+    following values:<ul>
+<li>Distribution pattern</li>
+<li>Value(s) of spacing(s) as per the distribution pattern</li>
+</ul>
+</li>
+<li>In the bars tab user can enter the following inputs for both the
+    lower and upper bars:<ul>
+<li>Dia</li>
+<li>Material</li>
+<li>Hooks angle</li>
+<li>Number of layers</li>
+<li>Number of bars in each layer</li>
+<li>Spacing</li>
+</ul>
+</li>
+<li>The created rebars will have their own view and data properties.</li>
+<li>User can edit the parameters of the group of rebars from the view &amp;
+    data properties itself.</li>
+<li>These rebars will be fully parametric. Hence the parameters of the
+    rebars will automatically adjust themselves if the changes are made
+    to their parent structure.</li>
+<li>The rebars will also have the functionality to cut, copy, clone,
+    move and rotate.</li>
+</ol>
+<p><strong>Implementation</strong></p>
+<ul>
+<li>Every workbench is nothing more than a folder containing an Init.py
+    and/or InitGui.py. I just need to define FreeCAD commands, that can
+    be made into menu items or toolbar buttons.</li>
+<li>The inputs provided by user from rebar dialog box will be passed to
+    our custom rebar function. This function will use the inputs to
+    define the shape of rebar and in this function the sketcher object
+    will be added to the FreeCAD active document which will hold the
+    profile of the rebar by calculating coordinates of vertices and
+    drawing the shape of rebar from user inputs.</li>
+<li>Then this sketcher object and the selected structural object will
+    pass to the prebuilt function of FreeCAD which will create the
+    rebar. Below is the detailed description of that function.<ul>
+<li><em>makeRebar([baseobj,sketch,diameter,amount,offset,name])</em>:
+    Adds a reinforcement bar object to the given structural object,
+    using the given sketch as profile.</li>
+</ul>
+</li>
+</ul>
+<p>By following the above approach I can reuse the existing implementation
+of reinforcement system in the FreeCAD and at the same time proposing
+something new and interesting which will enrich user experience.</p>
+<dd>
+
+![](/wiki/user/img/RebaraddonDFD.png)
+
+</dd>
+
+<p>I created separated workbench to understand how Python scripts run from
+FreeCAD UI. Here is the code of my workbench:
+<a href="https://github.com/amrit3701/Structural">https://github.com/amrit3701/Structural</a>. Doing this exercise helped me
+in understanding internal structure and flow of FreeCAD.</p>
+<p>Here is the reference link for Dialog creation in FreeCAD that may
+helpful during development:
+<a href="https://www.freecadweb.org/wiki/Dialog_creation">https://www.freecadweb.org/wiki/Dialog_creation</a></p>
+<h1 id="milestones">Milestones</h1>
+<p>As an overview, out of five rebars (as mentioned in brief description),
+the simplest one footing rebar, will be completed in the first phase
+itself before the first evaluation. Next two rebars i.e. column and
+pedestal are too similar, they will be completed in the second phase
+before second evaluation. The remaining two rebars beam and slab will be
+completed in the last phase after second evaluation. Following is the
+detailed breakdown:</p>
+<p><strong>Community Bonding Period</strong></p>
+<ul>
+<li>Interaction with mentors and other developers on IRC / mailing list
+    regarding the crucial aspects of the project.</li>
+<li>Learn Pyside (QT) to create to create UI components like dropdown,
+    dialog box etc.</li>
+<li>Study Chakkree’s reinforcement scripts:
+    (https://forum.freecadweb.org/viewtopic.php?f=23&amp;t=16375).</li>
+</ul>
+<p><strong>30 May - 13 June (2 weeks)</strong></p>
+<ul>
+<li>Writing scripts of reinforcement of footing to achieve following:<ul>
+<li>Parametrization</li>
+<li>Placement with respect to structure element</li>
+<li>Grouping</li>
+</ul>
+</li>
+<li>Following rebar shapes will be included in its reinforcement:<ul>
+<li>Straight rebar</li>
+<li>C-Shape rebar</li>
+</ul>
+</li>
+</ul>
+<p><strong>14 June - 20 June (1 week)</strong></p>
+<ul>
+<li>Develop initial phase of Addon UI that involves dropdown (to select
+    different rebar shapes) and dialog box with options.</li>
+</ul>
+<p><strong>21 June - 23 June (3 days)</strong></p>
+<ul>
+<li>Integration of UI with custom functions.</li>
+<li>At the end of this milestone, user will be able to see rebars in
+    dropdown. Selecting the rebar will open dialog box with its
+    associated properties.</li>
+</ul>
+<p><strong>24 June - 26 June (3 days)</strong></p>
+<ul>
+<li>Backup days, for any backlogs or any pending tasks and preparation
+    for phase I evaluation.</li>
+</ul>
+<p><strong>27 June - 30 June (4 days, Phase I evaluation)</strong></p>
+<ul>
+<li>Developer documentation using Doxygen.</li>
+<li>Submitting all the work to mentor.</li>
+</ul>
+<p><strong>1 July - 7 July (1 week)</strong></p>
+<ul>
+<li>Writing scripts for reinforcement of column.</li>
+<li>Following rebar shapes will be included in its reinforcement:<ul>
+<li>Straight Rebar</li>
+<li>L-Shape</li>
+<li>C-Shape</li>
+<li>Stirrups (2 legs, 3 legs and 4 legs)</li>
+<li>Diagonal Stirrup</li>
+</ul>
+</li>
+</ul>
+<p><strong>8 July - 12 July (5 days)</strong></p>
+<ul>
+<li>Writing scripts for reinforcement of pedestal.</li>
+<li>Following rebar shapes will be included in its reinforcement:<ul>
+<li>L-Shape rebar</li>
+<li>Stirrup (Rectangular shape)</li>
+</ul>
+</li>
+</ul>
+<p><strong>13 July - 19 July (1 week)</strong></p>
+<ul>
+<li>Adding UI fields in dialog box for reinforcement of column and
+    pedestal.</li>
+</ul>
+<p><strong>20 July - 23 July (4 days)</strong></p>
+<ul>
+<li>Integration of developed UI of column and pedestal with custom rebar
+    function.</li>
+</ul>
+<p><strong>24 July - 28 July (5 days, Phase II evaluation)</strong></p>
+<ul>
+<li>Work on backlogs or bugs if any.</li>
+<li>UI enhancements.</li>
+<li>Submitting all the work to mentor.</li>
+</ul>
+<p><strong>29 July - 4 August (1 week)</strong></p>
+<ul>
+<li>Writing scripts for reinforcement of beam.</li>
+<li>Following rebar shapes will be included in its reinforcement:<ul>
+<li>Straight Rebar</li>
+<li>L-Shape</li>
+<li>C-Shape</li>
+<li>Stirrups (2 legs, 3 legs, 4 legs )</li>
+<li>Diagonal Stirrup</li>
+</ul>
+</li>
+</ul>
+<p><strong>5 August - 9 August (5 days)</strong></p>
+<ul>
+<li>Writing scripts for reinforcement of slab.</li>
+<li>Following rebar shapes will be included in its reinforcement:<ul>
+<li>Bentup rebar</li>
+<li>Straight rebar</li>
+<li>C-Shape rebar</li>
+</ul>
+</li>
+</ul>
+<p><strong>10 August - 14 August (5 days)</strong></p>
+<ul>
+<li>Adding UI fields for reinforcement of beam and slab.</li>
+</ul>
+<p><strong>15 August - 17 August (3 days)</strong></p>
+<ul>
+<li>Integration of developed UI of beam and slab with custom rebar
+    functions.</li>
+</ul>
+<p><strong>18 August - 24 August (1 week)</strong></p>
+<ul>
+<li>Work on Addon UI to implement input validations and error handling
+    on dialog box.</li>
+<li>Work on backlogs, testing and bug fixes.</li>
+</ul>
+<p><strong>25 August - 29 August (5 days, Final Phase)</strong></p>
+<ul>
+<li>Developer documentation using Doxygen.</li>
+<li>User documentation through detailed tutorial and post with
+    screenshots on FreeCAD wiki.</li>
+<li>Submitting all the work to the mentor.</li>
+</ul>
+<p>The advent of this rebar addon in FreeCAD will reduce the effort in
+creating rebaring to a great extent and thus saving time. Structural
+engineers will find it easier to do the rebar detailing in their
+structural models and generate the rebar shop drawings in an easy but
+professional way.</p>
+<h1 id="time-availability">Time Availability</h1>
+<p>I will be available 40 hours / week, if needed can spend more. No
+restriction of time.</p>
+<h1 id="why-freecad">Why FreeCAD?</h1>
+<p>The very first reason to choose FreeCAD is that it is the first free and
+open source BIM software with the functionality of CAD in it. It is a
+powerful parametric modeler. There are several workbenches included in
+it which are integrated with one another. The community of FreeCAD is
+very well established with plenty of helpful coders and engineers of
+respective domains from different parts of the Globe.</p>
+<h1 id="why-you">Why you?</h1>
+<p>I’m a practical programmer with good proficiency in the languages like
+C/C++, Python and bash scripting. I worked with Civil engineers, solved
+their problems and also ease their work through my programming
+knowledge. All of my previous projects were on FreeCAD only which
+included Structural Information Modeling (SIM), Parametric building and
+python-scripted objects. It has been one year that I’m an active member
+on FreeCAD forum.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

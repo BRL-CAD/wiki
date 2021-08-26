@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Phoenix/GSoc2012/Proposal/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project title - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Phoenix/GSoc2012/Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-title" class="nav-link">Project title</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brief-summary" class="nav-link">Brief summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#detailed-description" class="nav-link">Detailed description</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#works-already-done-in-brl-cad" class="nav-link">Works already done in BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#proposal-ideas" class="nav-link">Proposal ideas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-schedule" class="nav-link">Development schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability" class="nav-link">Time availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#things-i-have-done-now-patches" class="nav-link">Things I have done now (Patches)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-me" class="nav-link">Why me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#my-opinions-to-gsoc" class="nav-link">My opinions to GSoC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="project-title">Project title</h1>
+<p>Implicit to NURBS conversion</p>
+<h1 id="brief-summary">Brief summary</h1>
+<p>At present, BRL-CAD has implemented lots of geometric primitives in an
+implicit form, but when it comes to interactive shaded displays and
+conversion to other formats, the disadvantages of implicit primitives
+come out. So we need a conversion to NURBS bundary representations. Lots
+of primitives have already been implemented as NURBS, but some are not
+robust and some still need to be improved. Besides, some are still
+missing. This summer, if I'm accepted, I'm going to accomplish the goal
+of converting all (if needed) implicit primitives to NURBS, including
+fixing the bugs and correcting the errors existing now, and adding new
+conversions that have not been implemented yet. Finally, I'd like to
+build a converter that can walk a CSG tree and convert the implicit
+primitives in the tree altogether to their NURBS form. The original
+implementation in BRL-CAD is a good starting point, and I will take the
+current routines of BRL-CAD.</p>
+<h1 id="detailed-description">Detailed description</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Although I have read a few books on Computer Graphics before, I'm not
+very familiar with NURBS/BREP before I started preparing for the
+application. These days I have read a lot of materials relevant and read
+the codes of BRL-CAD, so now I have a deeper understand of what I'm
+going to do in this project, and some patches (See below) related to
+this project have been made. As I'm making these patches, I get much
+more familiar with what I should do and the techniques (mathematics
+knowledge, algorithms, APIs, etc.) I should use in this project.</p>
+<p>Below is my detailed proposal for the project. In the first part I'd
+like to show what BRL-CAD has already done in the implicit to NURBS
+conversion. Then I will tell you detailed things I'm going to do in my
+summer. At last, I'd like to show you the schedule and what I have
+already done about this project.</p>
+<h2 id="works-already-done-in-brl-cad">Works already done in BRL-CAD</h2>
+<p>The conversions of implicit primitives to NURBS in BRL-CAD can be seen
+in functions rt_*_brep() in src/librt/primitives/, and the conversion
+of each primitive is done in a separate function. The executable file
+csgbrep.exe can call most of them to produce NURBS represtations of many
+primitives together for a test.</p>
+<p>This work is significantly dependent on the OpenNURBS library as its
+basic NURBS support. The data structures to describe NURBS is based on
+OpenNURBS, and OpenNURBS provides many useful algorithms for our work.
+But OpenNURBS is not perfect, with lots of useful and important
+functionality missing, so we still need lots of work to implement the
+functionality by hand.</p>
+<p>Although lots of work has been done in BRL-CAD already, some bugs still
+exist and some work is still located at the mathematical orgin. It may
+not work well if the parameters are changed in some occasions. And some
+primitives are still not included. The robustness need to be improved
+and the missing ones should be added.</p>
+<p>For example,</p>
+<ul>
+<li>The primitives 'sph', 'ell', 'hyp' and 'ehy', after converted to
+    brep, always stay centered at the origin even if the centers of the
+    implicit primitives are set to a non-origin point.</li>
+<li>When the implicit primitive 'eto' is converted to brep, its shape
+    may change.</li>
+<li>The primitive 'pipe', cannot work for a wide variety of primitive
+    dimensions.</li>
+</ul>
+<p>The document /share/brlcad/7.21.0/doc/brep.txt describes the current
+routine of brep primitives in BRL-CAD.</p>
+<h2 id="proposal-ideas">Proposal ideas</h2>
+<p>As there has been a lot of work done in BRL-CAD already in this field,
+so I should continue the work following the current routines and try my
+best to make it better.</p>
+<p>First of all, I'd like to fix the problems remained in the current
+version. Some are listed above, and more are going to be discovered and
+added to the list (like extrude, revolve, etc.). Besides, I should
+provide the conversion of primitives at locations other than the origin.
+As for this, I should deduce the transformation matrices that are needed
+to transform the BREP at the origin back to the 3-space location where
+the CSG implicit is, including scaling (most already done in BRL-CAD),
+rotating, shearing and translating. Matrix transformations are applied
+to the control points of the NURBS surfaces to make the changes. These
+days I have done some work on this (sph, ell, ehy, hyp) and the results
+seem quiet good, but I think it will be more challenging later, as the
+primitives gets more complicated. The codes in other primitives that
+already work well can be referred to when I need help. In a word, to
+determine and apply the transmation matrices for non-origin CSG
+primitives is an important part of this project. My background in linear
+algebra might offer me great help, I hope.:)</p>
+<p>During my coding, I should always keep in mind writing maintainable,
+portable and complete code. To keep a good habit of coding is really
+important. I will write clear documents in the meantime, and discuss my
+opinions with the development team. After the conversion of one
+primitive, I will improve its documents immediately, so that the work is
+complete.</p>
+<p>To test the result of conversions, I am going to replace the implicit
+primitives in the CSG tree with the NURBS representation, raytrace the
+whole model to see whether it is changed. Once I found some mistakes in
+my conversion like overflows, I should modify my code immediately.</p>
+<p>But the current routine for testing the conversion is to use
+csgbrep.exe, which is quite inconvenient. So I'd like to write a
+converter that is easy to use. It can convert arbitrary implicit
+primitives to breps, as long as the conversion function has been
+implemented. I have already add an option to the brep command in my MGED
+to do this. The command followed by an object's name (a CSG implicit
+primitive) calls the related rt_*_brep() function and writes the brep
+primitive generated to the current database, and then I can draw it onto
+the screen. In such way the test becomes an much easier and convenient
+job. This should be done early in the project, because it benefits the
+following developing a lot. My present work is still incomplete, but it
+can work already.</p>
+<p>After I finish doing something on the implemented conversions, I'd like
+to add more new conversions from implicit primitives to NURBS. For
+example, the conversions of implicit primitives like ars, half, part,
+grip, superell, metaball and so on are still missing now. Study the
+current code as examples may be of great help. Implementation of
+conversions of different primitives still have lots of things in common,
+like creating a curve and rotate or extrude it, creating surfaces, etc.
+And the comments in librt/primitives can tell me the concrete algorithms
+I should use to deal with that kind of primitives. Math books as well as
+materials online or in the library can offer me theoretical assistance.
+By the way, I should really learn more about the classes and functions
+in OpenNURBS, which provides basic support for our NURBS representation,
+with abundant APIs provided. I need to get full use of the library of
+OpenNURBS to implement my own methods, like bezier curves, surfaces,
+etc. As well as the others, the new implemented conversions should not
+be only for primitives located at the origin, and I should try my best
+to make the result as robust as possible. So as well as writing new
+code, the test is also very important, as I have mentioned above.</p>
+<p>Finally, after finish all the rt_*_brep() functions for all
+primitives that would be included in a model, I am going to write a
+conversion function which walks the CSG tree and converts the implicit
+primitives in it to NURBS. The tree structure is duplicated, but the
+implicit primitives are replaced by the brep primitives. The conversion
+function may be available in a command in MGED, using an object or the
+whole model as its parameter. As there is already a command named "brep"
+in MGED, I'd like to follow it and add new options to it. The MGED
+command can be like this:</p>
+<p><code>brep</code><em><code>obj</code></em><code>[</code><em><code>brepname</code></em><code>]</code></p>
+<p>or</p>
+<p><code>brep -t</code><em><code>root</code></em><code>[</code><em><code>suffix</code></em><code>] // -t means it deals with a tree</code></p>
+<p>The former converts an implicit primitive to brep, and the latter can
+convert primitives in a CSG tree together. brepname and suffix are
+optional. When brepname is not specified, the name of the generated brep
+would be objname_brep (or objname.brep like what csgbrep.exe does).
+When the suffix is not specified, the names of the generated breps would
+be originalname_brep (or .brep). Of course, the specific details should
+not be decided now, and lots of discussion are needed when I develop
+this feature.</p>
+<p>The deliverables and detailed schedule of my summer is as below.</p>
+<h1 id="deliverables">Deliverables</h1>
+<ul>
+<li>The remained problems with implemented conversions like ehy, hyp,
+    revolve, sph, ell, tor, extrude, pipe, etc. are fixed. Patches will
+    be updated promptly. (Some have been done now, verification needed.)</li>
+<li>Conversions of non-orgin located primitives are implemented (if they
+    have not been implemented now)</li>
+<li>The missing conversions of implicit primitives are implemented.</li>
+<li>At last a converter working for a whole CSG tree is built (The user
+    interface of my work).</li>
+</ul>
+<h1 id="development-schedule">Development schedule</h1>
+<ul>
+<li>- May 21 (\~4 weeks)<ul>
+<li>Study materials on NURBS/BREP etc</li>
+<li>Read the codes in librt/primitives</li>
+<li>Get familiar to OpenNURBS</li>
+<li>Fix some bugs and make patches</li>
+<li>Implement a method for convenient testing</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>May 21 - June 10 (\~3 weeks)<ul>
+<li>Modify implemented conversions if not finished<ul>
+<li>pipe</li>
+<li>sph, ell, tor, hyp</li>
+<li>eto, extrude, revolve, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 11 - June 18 (\~1 week)<ul>
+<li>Final examination week in our school</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 19 - July 1 (\~2 weeks)<ul>
+<li>Still work on existing conversions</li>
+<li>Work on non-origin primitives<ul>
+<li>Deduce transformation matrices</li>
+<li>Apply the transformation</li>
+<li>Test the results and write documents</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 1 - July 29 (\~4 weeks)<ul>
+<li>Add new conversions to missing primitives<ul>
+<li>Test whether it works well</li>
+<li>Write clear documents</li>
+<li>From easy ones to hard ones</li>
+</ul>
+</li>
+<li>July 1 - July 8 (1 week)<ul>
+<li>rec</li>
+<li>ars</li>
+<li>half</li>
+<li>ell1</li>
+</ul>
+</li>
+<li>July 8 - July 15 (1 week)<ul>
+<li>metaball</li>
+<li>pnts</li>
+<li>part</li>
+<li>grip</li>
+</ul>
+</li>
+<li>July 15 - July 22 (1 week)<ul>
+<li>superell</li>
+<li>cline</li>
+</ul>
+</li>
+<li>July 22 - July 29 (1 week)<ul>
+<li>hf</li>
+<li>other missing primitives</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 29 - August 13 (\~2 week)<ul>
+<li>Write a convert for whole<ul>
+<li>Write a function to walk the tree</li>
+<li>Add a command to MGED</li>
+<li>Discussions and documents</li>
+</ul>
+</li>
+<li>Test the work and fix bugs</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>August 13 - August 20 (\~1 week)<ul>
+<li>Pencil down data<ul>
+<li>Improve documentation</li>
+<li>Evaluations</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Post-GSoc<ul>
+<li>Further involvement with BRL-CAD :)</li>
+</ul>
+</li>
+</ul>
+<h1 id="time-availability">Time availability</h1>
+<p>I will have lots of free time during my summer vacation, so time is not
+a problem. I can work about 8 hours a day and 7 days a week. I'll have
+the final exams during June 11 to June 18, which takes about a week.</p>
+<h1 id="things-i-have-done-now-patches">Things I have done now (Patches)</h1>
+<p>I have made patches related to the project I'm applying. The original
+revision(48890) of functions rt_ell_brep(), rt_ehy_brep() and
+rt_hyp_brep() cannot deal with objects centered at a non-origin point.
+I add rotation, translation and shearing matrices and apply them to do
+the transformation. They work quiet well in my tests. I hope it's a good
+start point for my work. This patch can be seen on
+<a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3513288&amp;group_id=105292&amp;atid=640804">https://sourceforge.net/tracker/?func=detail&amp;aid=3513288&amp;group_id=105292&amp;atid=640804</a>
+.</p>
+<p>I also add an option to the 'brep' command in MGED which can call
+functions rt_*_brep() to convert an implicit primitive to brep. So I
+can test the conversion function in MGED, which is a much more
+convenient way then csgbrep. I also share it as a patch on
+<a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3515194&amp;group_id=105292&amp;atid=640804">https://sourceforge.net/tracker/?func=detail&amp;aid=3515194&amp;group_id=105292&amp;atid=640804</a>
+.</p>
+<h1 id="why-brl-cad">Why BRL-CAD</h1>
+<p>I'm really interested in computer graphics, and BRL-CAD is an excellent
+open-source CAD software. I think working for BRL-CAD is an interesting
+and meaningful experience, and I can learn much from it.</p>
+<h1 id="why-me">Why me</h1>
+<p>I'm good at mathematics, and this project needs lots of math knowledge.
+I'm also good at programming in C++. And I have made some patches on the
+functions I'm going to deal with in this project, which makes me
+confident that I can do a good job in this project.</p>
+<h1 id="my-opinions-to-gsoc">My opinions to GSoC</h1>
+<p>I think I will get lots of practice if I participate in this project,
+and I hope to continue work for BRL-CAD, because once I start I cannot
+stop myself. I am really interested in working for BRL-CAD, and I found
+open source is such an interesting place.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

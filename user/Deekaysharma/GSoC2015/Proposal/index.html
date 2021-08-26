@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Deekaysharma/GSoC2015/Proposal/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Online Geometry Viewer Proposal - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Deekaysharma/GSoC2015/Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#online-geometry-viewer-proposal" class="nav-link">Online Geometry Viewer Proposal</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#project-description" class="nav-link">Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="online-geometry-viewer-proposal">Online Geometry Viewer Proposal</h1>
+<p><strong>Name:</strong> Deepak Kumar Sharma</p>
+<p><strong>Email Address:</strong> deeky.sharma@gmail.com</p>
+<p><strong>IRC Username:</strong> ih8sum3r</p>
+<h3 id="background-information">Background Information</h3>
+<p>Final year B.Tech student of Information Technology at Guru Nanak Dev
+Engineering College, Ludhiana, India. Google Code-In 2014 mentor with
+BRL-CAD.</p>
+<h2 id="project-description">Project Description</h2>
+<h3 id="brief-summary">Brief Summary</h3>
+<p>With the desire of glimpsing BRL-CAD’s native file format (.g format) on
+the browser, OGV was commenced in 2013. JavaScript and Three.js are its
+other main ingredients. In the year 2014, some extensive development was
+performed when the unified project was reworked in JavaScript's full
+stack framework that is termed as “Meteor”. With its use, it is
+developed into cleaner, extra functional and also it has increased more
+opportunities for improvements. In GSoC 2013, Harmanpreet Singh gave
+kick start to this project in php and In GSoC 2014, Inderpreet Singh
+worked on it. It’s an online 3D geometry viewer that runs on WebGL using
+three.js. Older version of OGV uses vanilla PHP on server side whereas
+JQuery and Bootstrap on the front-end. This proposal is aimed at
+continuing the project by adding essential features and fixing bugs thus
+improving the overall project to achieve the ultimate goal of making OGV
+a production ready web application.</p>
+<h3 id="improvements-in-ogv">Improvements in OGV</h3>
+<p>There are lot many things on which work needs to be done in order to
+improve OGV functionality.</p>
+<ul>
+<li><strong>Multiple Error / Success Notifications</strong></li>
+</ul>
+<p>Notifications are important to your users because they let them know the
+status of their jobs. OGV has a notification module, but it’s not
+working properly. For an <example:-></p>
+<p>When the user tries to submit data with an empty input field, an error
+message is shown. If the same is repeated again, newer notification
+along with the previous ones is displayed and the notifications would
+keep on popping up whenever the user clicks on the submit button. I have
+solved this error and submitted as patch but there are other problems
+too. Whenever the image with exceeding limit is uploaded, a red bar
+without any error message is shown. One may not learn the reason of
+failure.</p>
+<p>I am proposing to re-factor the notifications module so that these
+errors can be identified and removed. Notifications.js a file that hosts
+all the code for notification, needs close inspection and refactoring.
+For example this error can be removed by passing the correct parament of
+msg to the notification.</p>
+<p>Following logic can be used:-</p>
+<p>If (notification.seen) {</p>
+<p><code>delay(5000);</code></p>
+<p><code>notification.delete();</code></p>
+<p>} else {</p>
+<p><code>notification.show();</code></p>
+<p>}</p>
+<ul>
+<li><strong>oAuth Module</strong></li>
+</ul>
+<p>Nowadays, creating new account for different application seems a
+difficult task to every user. Most of us try to use oAuth login like
+with Google, Facebook, Yahoo account as it’s easy, effective and
+efficient way to create/logging an account. So oAuth acts as one of the
+most important feature of every application, but OGV lags this crucial
+feature. Previous year, the idea to implement oAuth was taken into
+account but no steps were taken to implement it. This time I would
+consider it as one of the primary features to be implemented in OGV. For
+oAuth I’m going to use oauth1 package.</p>
+<p>Available functions listed below initiate the login process with an
+external service (eg: Facebook, Google, etc), using OAuth.</p>
+<p>Meteor.loginWithFacebook Meteor.loginWithGithub Meteor.loginWithGoogle
+Meteor.loginWithTwitter</p>
+<ul>
+<li><strong>Undertaking it to the current meteor</strong></li>
+</ul>
+<p>Instantly meteor is active in the venerable form and conceding that
+there can be a fighting chance if it is switched over to the latest
+version, it will give birth to complications or it can be discontinued.
+Nevertheless, I will lift it to the current version and take flight.
+Currently. OGV in running on meteor version-1.0.0. My target is to shift
+it to latest release of meteor and clean bugs, errors, make changes in
+code etc. which may appear during version upgrade.</p>
+<h3 id="enhancement">Enhancement</h3>
+<ul>
+<li><strong>Production Ready</strong></li>
+</ul>
+<p>Online geometry viewer is not yet production ready lot of work need to
+done on it to make it production ready web application. So production
+ready is one of the primary goal for this GSoC. One of the problems is
+that it’s not deployed on BRL-CAD servers, for that I propose meteor up
+package to bundle and deploy. After that there are things like debug
+outputs in JS console and two accounts are registered by default, whose
+passwords are written directly in the code. Such things are security
+risks and need to be removed before deploying. Currently we do it
+manually by going to specific files and removing details. I will add a
+web interface from where we can directly shift between production and
+development snapshots.</p>
+<ul>
+<li><strong>Different modes such as wireframe in model viewer</strong></li>
+</ul>
+<p>Wireframe model visualizes real-world 3D object in skeletal form. It
+represents the underlying design structure of a 3D model. If wireframe
+models are available, one may easily obtain the visualization of final
+result.</p>
+<p>Wireframe models are popular due to their efficiency. They can be used
+for preview purpose. Rendering a complex model or an animation sequence
+could become very much time consuming if all objects are to be rendered.</p>
+<p>Three.js can serve us to create a wireframe. This can be done by setting
+the wireframe property to true when instantiating a material.</p>
+<ul>
+<li><strong>Support for Other CAD Formats</strong></li>
+</ul>
+<p>Every CAD software package have their own and number of file formats
+available. OGV supports to .g and .obj formats which needs to extended
+further.</p>
+<p>Availability of the different file formats is the necessity for
+export/import module and it too defines interoperability of the
+software. The main focus would be to widen its scope by providing the
+support for the other CAD file formats that are commonly used like
+g-stl, g-dxf, g-step etc.</p>
+<p>This can be accomplished by using BRL-CAD’s inbuilt converter and
+creating Javascript converter scripts for each of the new supported file
+formats. There’s a conversion script in cfs-uplaoder.js for g-obj
+conversion. I propose to make it generic. Like it will have variables
+which can be changed depending upon type of input file.</p>
+<p>filetype = InputFile.extension ; output = g; converter = filetype-g;</p>
+<p>these variables can then be changed. when we get the .g file, to convert
+it to obj file. Conversion from g to obj already exists in our codebase.
+So nothing to worry about that.</p>
+<ul>
+<li><strong>Online Converter Module</strong></li>
+</ul>
+<p>CAD industry is filled with variety of file formats. There is STL, DXF,
+DWG, G, OBJ and what not. BRL-CAD has state of the art conversion
+support. A module, a special part can thus be made to convert one file
+format to another. BRL-CAD has lot of converters, so if we are accepting
+more cad formats, and doing conversions so it also makes sense to not
+only import from various formats but also export to various file
+formats.</p>
+<ul>
+<li><strong>Embedding Model</strong></li>
+</ul>
+<p>As listed in todo list, embed model feature is not yet implemented in
+OGV. Embed feature help our models to post on social media, blogs,
+forums or any website.</p>
+<p>Advantage of sharing model is that just like we share, videos, images on
+internet similarly in that way now we can share models too with the
+addition of this feature.</p>
+<p>For embedding models we need to generate an iframe as it’s generated
+when we share youtube videos.</p>
+<ul>
+<li><strong>Optimize obj conversion</strong></li>
+</ul>
+<p>Currently we are saving obj files twice, once when they are converted
+and once when they are transferred via collections. This leads to
+wastage of space and duplication of files. I propose to delete those
+unused obj files as new files are created. There are following ways in
+which this can be done</p>
+<p><code>* delete instantly, when new files are added to collection</code>
+<code>* delete regularly, at the end of day (or other such perioidic time)</code></p>
+<p>I will use nodejs file api for deletions. We already use some functions
+of it in our current conversion.</p>
+<ul>
+<li><strong>Loader indication</strong></li>
+</ul>
+<p>Whenever the entity loads, some kind of notification must be given. For
+successful loading, notification should be provided with the simple
+confirmation message, or if, the entity has already loaded user must be
+given indication with help of message. In case, if any exception occurs
+along with the error message user must be guided to step forward.</p>
+<p>This makes the Application itself more intuitive and user friendly. A
+notification will help user how move forward. If its uploaded
+successfully, user may continue viewing/editing otherwise if an error
+occurs he might look towards solving the error itself.</p>
+<p>For this I’ll use tympanus Creative loading effect or SVG Loader.
+Example :-</p>
+<p>$(function() {</p>
+<p><code>$("#container").progressbar({ value: 50 });</code>
+<code>$("#container").progressbar();</code></p>
+<p>});</p>
+<ul>
+<li><strong>Camera position</strong></li>
+</ul>
+<p>Presently, the position of camera is fixed and the entity size is
+sometimes too small or too big. As a consequence, user have to find it
+by zoom -in/ zoom -out in either case.</p>
+<p>The entity should always be in the focus of camera as soon as entity is
+drawn. Either there must be an option to scale or the position of the
+camera should be adjustable accordingly.</p>
+<p>The approach followed to sort out this would involve the calculation and
+comparison of bounding box and window width, as a result camera would be
+resized.</p>
+<p>if (window.width &lt; boundingbox.width ) {</p>
+<p><code>camera.reposition();</code></p>
+<p>}</p>
+<ul>
+<li><strong>Allow to change colors</strong></li>
+</ul>
+<p>Sometimes the materials used in the model are of different types, may be
+steel, iron, brass, plastic, glass or such, Differentiating these could
+be easier with support of colours moreover the models themselves might
+be made of different coloured attributes for example a jeep might have a
+yellow body, black tires, grey rims, orange indicators this could also
+be differentiated with the help of colors support.</p>
+<p>Data will be passed to JavaScript functions like vertex shader, fragment
+shader which will be turned into pixels displayed in the WebGL canvas on
+the screen.</p>
+<h3 id="milestones">Milestones</h3>
+<ul>
+<li><strong>Week 1 (25th May)</strong> : Upgrade to new meteor version. Solve issues,
+    bugs for new version.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 2 (2nd June)</strong> : Add oAuth module to login with google,
+    facebook and github.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 3 (9th June)</strong> : Loader indication while uploading models.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 4 (16th June)</strong> : Improvise obj conversion</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 5 - 6 (30th June)</strong> : Add wireframe mode in model viewer.
+    Test and document code before mid term evaluation.</li>
+</ul>
+<p>Mid-Term Evaluation</p>
+<ul>
+<li><strong>Week 7 (7th July)</strong> : Automatic Camera reposition.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 8 (14th July)</strong> : Allow to change colors.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 9 (21st July)</strong> : Support for Other CAD Formats.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 10 - 11 (4th August)</strong> : Test the working, check for bugs and
+    code cleaning.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 12 (11th Aug)</strong> : Deploy on production server.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Week 13 - 14 (18th Aug)</strong> : Start documentation (using LaTeX or
+    any other tool) including developers documentation, user’s
+    documentation.</li>
+</ul>
+<p>Final Evaluation</p>
+<h3 id="time-availability">Time Availability</h3>
+<p>I will be available 40 - 50 hours / week, if needed can spend more. No
+restriction of time.</p>
+<h3 id="why-brl-cad">Why BRL-CAD?</h3>
+<p>OGV being a lightweight geometric viewing software is very effective for
+visualizing BRL-CAD files on browser. The software has full potential to
+accumulate much more in the sphere of geometric figures and visuals.
+With some proper investment in it’s development, it could definitely
+exceed many expectations and become a Swiss knife for geometry viewers.</p>
+<h3 id="why-me">Why me?</h3>
+<p>Graphics, combined with programming, is my passion. Together, they work
+as a stimulus for my thought processes and I’m really excited to work on
+a project entirely related to graphics. What really motivates me to do
+my best is the idea about contributing to an open source project that
+people may use around the globe.</p>
+<p>I’ve been using 2D and 3D graphics softwares for quite a while and as a
+user, I have the basic idea about what people look for, when they use
+such softwares. I have also been through various sites which serve the
+same like OGV eg: Sketchfab, Grabcad and I am really positive that this
+project will definitely help me build a better outlook as a developer
+and will certainly enhance my ability to better understand the
+necessities that people may expect from Online Geometry Viewer and
+provide solutions for the same.</p>
+<p>I will definitely be a part of OGV development even after this project
+is finished because I believe that delivering the product is not the end
+stage yet, maintenance of the same is crucial after developing a
+software, for its ultimate success. So I will continue to enhance and
+extend its capabilities.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="http://docs.meteor.com/">Meteor.com</a></li>
+<li><a href="https://atmospherejs.com/">Meteor Packages</a></li>
+<li><a href="http://threejs.org/">ThreeJS</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

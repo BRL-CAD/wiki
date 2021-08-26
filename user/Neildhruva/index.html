@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Neildhruva/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Neildhruva - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Neildhruva.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#about-me" class="nav-link">About Me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#brl-cad-tentative-proposal" class="nav-link">BRL-CAD Tentative Proposal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="about-me">About Me</h2>
+<p>My name is <strong>Neil Dhruva</strong>. I am currently pursuing Bachelors in
+Computer Science from BITS-Pilani, Goa, India.</p>
+<h3 id="interests">Interests</h3>
+<ul>
+<li>Web Development</li>
+<li>App Development with Java</li>
+<li>Open Source</li>
+<li>Mobile App Development</li>
+</ul>
+<h3 id="languages-worked-with">Languages Worked With</h3>
+<ul>
+<li>PHP</li>
+<li>Javascript</li>
+<li>Java</li>
+<li>Python</li>
+<li>C</li>
+</ul>
+<h3 id="contact">Contact</h3>
+<ul>
+<li>IRC : <em>Neil</em> / <em>Neil_</em> / <em>Neil__</em> etc.</li>
+<li>E-mail:</li>
+<li>Website:</li>
+</ul>
+<h2 id="brl-cad-tentative-proposal">BRL-CAD Tentative Proposal</h2>
+<p><strong>Topic</strong> - <em>Materials Database</em>: Create a Materials Database web site
+for collecting, managing, and providing programmatic interfaces to
+material properties.</p>
+<p><strong>Brief project summary (&lt;500 words)</strong>
+The project deals with creating a Content Management Site to aid the
+functioning of the BRL-CAD software. The CMS is meant for managing a
+database of various different materials and properties of these
+materials for users to share with each other and use in their projects.
+The users can add new materials to this site, edit properties of
+existing materials, and request generation of certain file formats like
+XML that consist of different materials and corresponding properties.
+The website will thus make it easier for users to share data and results
+used in their projects.</p>
+<p><strong>Detailed project description (&gt;500 words)</strong>
+I have a few ideas regarding the Materials Database website. The website
+at present contains the following:</p>
+<ol>
+<li>index.html<ol>
+<li>It has 2 options: (1) generate an xml file of the current
+    database (2) login as admin to admin.php</li>
+</ol>
+</li>
+<li>admin.php<ol>
+<li>Page has a simple linear layout of all the materials that have
+    been logged so far along with various properties that have been
+    added to each material.</li>
+<li>Options are provided for editing the description of each element
+    which gives a text box when 'edit' is clicked.</li>
+<li>The user can create his/her own material, add traits to it and
+    edit it. The user can also make it private or public. Every
+    element is associated with a user which obviously is via the
+    relational backend.</li>
+<li>Also, when a user tries to change a trait/material that will
+    affect the rest, he/she is asked if sure whether to make the
+    change. All this is accomplished by the GET method.</li>
+</ol>
+</li>
+<li>generate.php<ol>
+<li>This generates the XML document and outputs it to the browser.</li>
+</ol>
+</li>
+</ol>
+<p>I feel a lot of other features can be added to the existing site:</p>
+<ul>
+<li>The most important one being 'Search'. The main purpose of this
+    website is sharing information and I believe Search is an integral
+    part of helping users achieve results faster.</li>
+<li>User interaction is another important feature which can be
+    incorporated in terms of better profile pages with message
+    facilities. Links can be provided and an individual can be notified
+    in such events via mail.</li>
+<li>The entire format of the site, I feel, should be changed. The front
+    end requires work to make the site more user friendly and amiable.
+    Better CSS and JavaScript to make the site more pleasant, yet
+    simple.</li>
+<li>Also, various different pages along with a navigation bar should be
+    assigned for different tasks, for eg, main page with different
+    materials, another page for editing the database, one more profile
+    page and so on. Also, every material can be assigned a page with the
+    GET method. All of this is shown in the website flow diagram[3].</li>
+<li>POST method should be used for the edit pages.</li>
+<li>Comparison of different materials based on different properties can
+    be added.</li>
+<li>I also think the backend will require work in order to relate tables
+    better for handling more data. And this can further be used to
+    publish the data in various formats like XML which has already been
+    done.</li>
+<li>Server side caching can be done to optimize the speed with which
+    pages can be viewed.</li>
+</ul>
+<p><em>Technicalities</em>:</p>
+<ul>
+<li><strong>Database</strong>: The database will mainly store two things: user
+    information and materials information. User Information mainly
+    includes name, e-mail, password, and other personal profile
+    features. It will also include paths of files uploaded by users.
+    Materials information will include the ID, name, description and the
+    properties. There will be more tables that the user and materials
+    table can each be broken down into, or just for foreign key
+    associations.
+    However, I had another idea in mind as well. One could link all the
+    user profiles back to the BRL-CAD wiki pages of the users. This will
+    make it easy for integrating the materials website with the BRL-CAD
+    official website. A link in the toolbox can then be provided to the
+    Materials Database.<ul>
+<li><strong>MySQL</strong>: For the tables, I believe MyISAM would be better than
+    InnoDB because there will be a lot more reads than writes. Also,
+    the full-text search option will then be available which will be
+    very handy for the database. This will require some work
+    regarding foreign key maintenance, but I don't think there will
+    be too many tables to worry about. Also, MySQL manages Query
+    caching, parsing and optimization pretty well.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Server Files</strong>: The files on the server will include images
+    uploaded by users like profile pictures. If user profiles are going
+    to be their BRL-CAD wiki pages, then this mechanism is already
+    provided for in [1]. Apart from this, all the PHP, JavaScript,
+    CSS, and Cache files will lie on the server. The XML and other
+    documents generated on the fly can be made available to the user in
+    two ways. Currently, XML is generated on the fly and it is output as
+    an XML document to the browser directly. However, I feel there
+    should be a directory dedicated to XML documents generated by
+    different users. There can be an upper limit on the number of XML
+    documents stored in this folder and can be replaced there after.
+    Whenever a user generates an XML, it is stored in the folder and a
+    link is provided for download. The links to the paths of these files
+    can be stored in the database corresponding to the user ID for
+    future reference.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Apache</strong>: I am reading a lot about server management and
+    performance optimization. One of the things we can incorporate is a
+    Reverse Proxy or an HTTP accelerator. I am not sure about this
+    approach because it is meant for very high traffic sites and I'm
+    still reading about it.
+    There are a lot of techniques involved in maximizing PHP processing
+    of scripts. I'll be using output buffering with ob_start() etc.; or
+    a simple output_buffering=on in .ini file to decrease errors. The
+    buffered data can then be flushed to the user. Also, since we are
+    using individual pages for user profiles and each material, I
+    suppose flat-file caching would be a good option to cache recently
+    generated HTML, especially when the materials pages are viewed
+    because there will rarely be changes in these pages. I am also
+    reading about the mod_rewrite facility of Apache that should be
+    greatly helpful in managing cache files. Managing cache files can be
+    a bit tricky, given the uncertainty about user traffic, when to
+    replace certain cache files etc. Hence, I will try to incorporate
+    this feature towards the end of the project.
+    Also, I will be relying on .htaccess and other methods for directory
+    security.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Generating XML on the fly</strong>: XML is generated whenever a user
+    wants a list of materials along with selected properties. This is
+    done by pulling the desired data from the materials database tables.
+    A script already exists that accomplishes this. It is currently
+    [2]. However, there will be a lot more materials that the user can
+    choose from once the website is in frequent use. I suggest providing
+    the user with a table of all materials to choose from. A small
+    segment at the top of the page can indicate all the materials the
+    user has already chosen to be included in the XML (JQuery can be
+    used for this). This can also be accomplished by JavaScript through
+    a pop-up window. Once the user chooses the materials, the XML is
+    then generated by pulling the required resources from the database.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Authentication</strong>: User authentication is another issue to be
+    tackled. Creation of new user and the 'forget password' option can
+    both be authenticated by sending a mail to the user. The mail can
+    either be the generation of a new password and the user can then
+    change it or it can be an authentication key. I'll use SMTP for
+    sending mails and set up a queue folder for mails not sent and deal
+    with the situation accordingly.
+    Once the user is logged in, sessions will be used, which are in turn
+    authenticated by cookies for each user. The users can then view
+    their profile, recent XMLs generated by them and various materials
+    added to the database by the individual user (user's contribution).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Error Handling</strong>: Error handling has to be accomplished in order
+    to keep track of various errors encountered by users. This can be
+    done by creating a directory for error handling and using PHP
+    functions like error_log() to tackle the errors generated. The
+    administrator can also be notified by mail if the error is serious.</li>
+</ul>
+<p>Apart from these, I have also uploaded a basic architecture diagram of
+the web server process along with a a website flowchart at [3]. I have
+also provided the basic flow of the website as I see it presently, along
+with possible database tables and files on the server at [4]. Apart
+from this, a basic mock-up of the website can be found at [5] and the
+initial SQL schema at [6].</p>
+<p>I will come up with a lot more ideas as the project moves along. I had
+developed a CMS last year for a project at an Information and Library
+Network in my hometown under their open source and software development
+wing. It was based on allowing the employees order inventory and office
+supplies via an online portal. I have uploaded a few snapshots of the
+same here [7].</p>
+<p>The project will be very useful for all the users of BRL-CAD and I hope
+I can contribute to the same.</p>
+<p>[1] - <a href="http://brlcad.org/wiki/Special:Upload">http://brlcad.org/wiki/Special:Upload</a>
+[2] - <a href="http://mater.brlcad.org/xml/generate.php">http://mater.brlcad.org/xml/generate.php</a>
+[3] - <a href="http://brlcad.org/w/images/4/4d/Arch_diagram3.pdf">http://brlcad.org/w/images/4/4d/Arch_diagram3.pdf</a>
+[4] - <a href="http://brlcad.org/w/images/8/89/Website_flow.pdf">http://brlcad.org/w/images/8/89/Website_flow.pdf</a>
+[5] - <a href="http://brlcad.org/wiki/Image:Mock_up.pdf">http://brlcad.org/wiki/Image:Mock_up.pdf</a>
+[6] - <a href="http://brlcad.org/wiki/Image:SQL_schema.pdf">http://brlcad.org/wiki/Image:SQL_schema.pdf</a>
+[7] - <a href="http://brlcad.org/wiki/Image:Cms_snapshots.pdf">http://brlcad.org/wiki/Image:Cms_snapshots.pdf</a></p>
+<p><strong>Deliverables (specific, measurable goals) / Milestones</strong></p>
+<ol>
+<li>Develop basic front end, set up a database</li>
+<li>User profile pages</li>
+<li>Materials pages</li>
+<li>Search features</li>
+<li>Generating XML and other formats from database entries</li>
+<li>Improve front end</li>
+<li>Server side caching for faster page retrieval</li>
+</ol>
+<p><strong>Describe time availability (40+ hours/week assumed)</strong>
+I have my end-semester exams from May 1 to May 15 and then the summer
+break from May 16 to August 2. Hence, I will be absolutely committed to
+GSoC throughout the span of 14 weeks.</p>
+<p><strong>Timeline</strong></p>
+<ul>
+<li>May 1 - May 15<ul>
+<li>End-semester exams at college</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>May 15 - May 31<ul>
+<li>Go through the current code, database structure and select
+    everything that can be improved upon and what all needs to be
+    created.</li>
+<li>Read more about Apache server, MySQL data handling</li>
+<li>Read more about caching, IP authentication, SMTP etc.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 1 - June 10<ul>
+<li>Prepare a basic layout of the website to work with (css)</li>
+<li>Prepare database tables (users, materials)</li>
+<li>Create user login, authentication pages and user area</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>June 11 - June 30<ul>
+<li>Finalize design of the Materials pages (layout)</li>
+<li>Code for the Materials pages, interaction with the database</li>
+<li>Implement the interaction between user and materials database,
+    user authentication to edit the database entries and so on.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 1 - July 15<ul>
+<li>Write code for converting MySQL entries to XML and other
+    required formats (can use part of existing code for this)</li>
+<li>Code for easier front end for generating such documents and
+    downloading them like check-boxes to include all the materials
+    and properties required in the document</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 16 - July 25<ul>
+<li>Implement server side caching, error logging and other features
+    not thought about in the initial stage.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>July 26 - August 13<ul>
+<li>Improve the front end, add javascript for notifications etc.,
+    improve css</li>
+<li>Write the documentation, tutorials, examples if any to make
+    working with the website easier</li>
+<li>Review code, run tests</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>August 13 - August 20<ul>
+<li>Make all the necessary changes/additions required before final
+    submission.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Currently Reading About</strong>
+* CakePHP(for better security, caching etc.)</p>
+<ul>
+<li>JSON (alternate to XML)</li>
+<li>Caching using PHP; APC (Alternative PHP Cache)</li>
+<li>Reverse Proxy</li>
+</ul>
+<p><strong>Why BRL-CAD?</strong>
+BRL-CAD is a great open source software and fun to work with and I want
+really to contribute to this project. My PHP skills are better than C++
+and hence I think I can better contribute to BRL-CAD with my web
+development skills.
+Sharing is important in every community and I believe BRL-CAD users can
+benefit a lot from the Materials Database site.</p>
+<p><strong>Why Me?</strong>
+I have been coding for the past few years now and I believe I am getting
+a good hang of things, especially website development. I want to further
+my knowledge while at the same time contribute to the open source
+community. GSoC would be the perfect opportunity for me to accomplish
+both of these.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

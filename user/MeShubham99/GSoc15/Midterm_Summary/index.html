@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/MeShubham99/GSoc15/Midterm_Summary/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>**Midterm Summary** - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/MeShubham99/GSoc15/Midterm_Summary.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#midterm-summary" class="nav-link">Midterm Summary</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#login" class="nav-link">Login</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#feedback" class="nav-link">Feedback</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#edit-info-of-model" class="nav-link">Edit info of Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#model-viewer" class="nav-link">Model Viewer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#followerfollowing-format-for-users" class="nav-link">Follower/following format for users</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="midterm-summary"><strong>Midterm Summary</strong></h1>
+<p>All the following features/implementations were merged in a single
+branch by the name
+<strong><a href="https://github.com/meShubham99/OGV-meteor/tree/backend">backend</a></strong></p>
+<p><strong>I am attaching some snapshots so that one can get an idea about what I
+am referring to.
+But the work does not confide to the mere visual of the
+implementation.
+There are many other features that are at play, but cannot be
+displayed.</strong></p>
+<h2 id="login"><strong>Login</strong></h2>
+<ul>
+<li>I made an account on gmail by the name ogv.mailer@gmail.com for
+    configuring and testing omniAuth and mailgun accounts.
+    I worked on email Verification and reset/forget password mails
+    (using mailgun).</li>
+<li>I also added omni-Auth functionality for google and github and
+    facebook. The backend code for omniAuth is ready and working,
+    but needs to be configured by brlcad accounts (after deployment).</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/LoginOmniAuth.png" /></p>
+<h2 id="feedback"><strong>Feedback</strong></h2>
+<ul>
+<li>Made a separate feedback page. Implemented mailing to the developer
+    directly using formspree.io.</li>
+<li>There are some issues in formspree validations in safari browser, so
+    maybe I'll have to change the working, remove formspree,
+    and use default forms, and mailgun back end.</li>
+<li>Also developed a frontend such that the feedback template will be
+    visible to the user at all times and the user can fill
+    in the feedback form at all times, without stopping any of his work.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/feedbackTemplate.png" /></p>
+<h2 id="edit-info-of-model"><strong>Edit info of Model</strong></h2>
+<ul>
+<li>Added a field for "category" (pre-defined categories) in the form,
+    which will be stored in the model-document as an array.
+    This array of "categories" will help in exploring/searching the
+    models of particular category.</li>
+<li>Earlier user was unable to update any information regarding the
+    model, which has been enabled.</li>
+<li>The user can now delete uploaded models as well. On deletion,
+    previous thumbnails also gets deleted. Same goes for when you update
+    a thumbnail.</li>
+<li>This particular part had many other bugs regarding file-storing
+    (thumbnails being stored repeatedly), and routing problems, which
+    have been resolved.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/editinfo.png" /> <img alt="" src="/wiki/user/img/editinfo2.png" /></p>
+<h2 id="model-viewer"><strong>Model Viewer</strong></h2>
+<ul>
+<li>Added dat.GUI library enabling the user to view his models with
+    different attributes being changed and seeing its effects in
+    real-time.
+    These attributes include shininess, transparency, opacity, ambient,
+    emissive, wireframe+model, only wireframe and wireframe line width.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/modelViewer1.png" />
+<img alt="" src="/wiki/user/img/modelViewer2.png" />
+<img alt="" src="/wiki/user/img/modelViewer3.png" />
+<img alt="" src="/wiki/user/img/modelViewer4.png" /></p>
+<h2 id="followerfollowing-format-for-users"><strong>Follower/following format for users</strong></h2>
+<ul>
+<li>I have made user profile pages, that show info about the user and
+    his uploaded models (with decent front-end).</li>
+<li>Small things like showing google+ profile picture of users if he is
+    logging in through google have been taken care of.</li>
+<li>A working FOLLOW &amp; UN-FOLLOW button that pushes/pulls user Id's
+    in/from an array inside the user document.
+    The user only sees the model-uploads made by the user he is
+    following. The user can see popular models as well.
+    Need to make an intelligent newsfeed.</li>
+<li>A basic model for a social platform has been setup.</li>
+</ul>
+<p>The first picture depicts the view of user's own profile.
+And the second one is when the same profile is being viewed by another
+user. That is when the user clicks the follow button.
+<img alt="" src="/wiki/user/img/profilePage.png" /><img alt="" src="/wiki/user/img/profilePage2.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

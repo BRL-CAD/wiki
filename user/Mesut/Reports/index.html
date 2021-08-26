@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Mesut/Reports/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Report Week 6 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Mesut/Reports.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#report-week-6" class="nav-link">Report Week 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#report-week-5" class="nav-link">Report Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#report-week-2" class="nav-link">Report Week 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#report-week-1" class="nav-link">Report Week 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="report-week-6">Report Week 6</h1>
+<p>The cmake errors has solved by adding UNKNOWN and IMPORTED files in
+cmake files.
+I have added dm-qt.c in libdm and mged, dm-qt.h in include. dm-qt.c in
+libdm contains the empty functions for the display manager. The dm-qt.c
+file in mged connects the display manager with mged. In CMakeLists.txt
+(root/libdm/mged) I have added a option for qt and included the added
+files for compiling. In dm.h, dm-generic.c and attach.c i have added
+macros for dm-qt. BRL-CAD will compile with Strict=off.</p>
+<p>Now it is possible to attach a new dm with the command:</p>
+<pre><code class="language-dos">attach qt
+</code></pre>
+<p>After attaching a qt window I have gotten a memory leak. Through
+implementing the Qm_dm_init() function the problem get solved and
+attaching will cause no error and nothing happens.</p>
+<h1 id="report-week-5">Report Week 5</h1>
+<p>I have used the functions in dm_X.c and deleted all function bodies and
+renamed them to qt_function. In dm-generic.c I have changed X_open to
+qt_open for testing. I have to implement a cmake macro for qt, add it
+to dm-generic.c and remove X_ changes.</p>
+<p>After that I have tried to built BRLCAD. Through Warnings I couldn't
+compile it. So I have changed to Un-Strict Mode in cmake and
+successfully compiled libdm.</p>
+<p>In the next step I have tried to link Qt with BRLCAD. After I added only
+find_package in CMakeLists.txt I have gotten following error:</p>
+<pre><code class="language-dos">CMake Error at CMakeLists.txt:456 (_message):
+  Attempting to ignore non-existent file UNKNOWN, in directory
+  /home/kane/Development/brlcad/src/libdm
+Call Stack (most recent call first):
+  misc/CMake/BRLCAD_CMakeFiles.cmake:128 (message)
+  CMakeLists.txt:375 (CMAKEFILES)
+  /usr/share/cmake-2.8/Modules/FindQt4.cmake:374 (ADD_LIBRARY)
+  /usr/share/cmake-2.8/Modules/FindQt4.cmake:906 (_QT4_ADJUST_LIB_VARS)
+  src/libdm/CMakeLists.txt:16 (FIND_PACKAGE)
+</code></pre>
+<p>The CMake file with definition:</p>
+<pre><code class="language-dos"># Qt library
+FIND_PACKAGE(Qt4)
+if(QT4_INSTALLED)
+  option(BRLCAD_ENABLE_QT &quot;Use QT.&quot; OFF)
+endif
+
+if(BRLCAD_ENABLE_QT)
+  CONFIG_H_APPEND(BRLCAD &quot;#define HAVE_QT 1\n&quot;)
+  # Qt library include
+  include(${QT_INCLUDES})
+  include(${QT_USE_FILE})
+  add_definitions(${QT_DEFINITIONS})
+
+  # Qt link used libraries, core and gui is linked by default
+  #target_link_libraries(core ${QT_LIBRARIES})
+  #target_link_libraries(gui ${QT_LIBRARIES})
+endif
+</code></pre>
+<p>= Report Week 4 = I have tested many approaches for the Display Manager
+and tried to change the default Qt Application structure to encapsulate
+it in the qt_open() function. So every Qt display manager will work as
+a own application.</p>
+<p>The main goal is to get a working structure of the C++ Display Manager
+Class with the dm Structure in "dm.h".</p>
+<p>= Report Week 3 = I started with the structure of the Qt Display
+Manager. I have realized, that it is not possible to use the OO approach
+directly. The function pointers in the structure "dm" can't be used for
+pointing on member functions (methods).
+So I decided to encapsulate a drawing class and instantiate it as a
+global variable in the qt_dm.cpp. The functions are used as interfaces
+to this class.</p>
+<h1 id="report-week-2">Report Week 2</h1>
+<p>I have built BRL-CAD successfully on Linux and Windows.
+I have released two Patches in this week:</p>
+<ul>
+<li>Refactor and manage libbn tolerance uses by providing an interface
+default (e.g., an init macro) and making everyone use that where it is
+hardcoded to 0.0005 presently.</li>
+</ul>
+<p>-I have added a relative float check (following to:
+<a href="http://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/">http://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/</a>)
+and fixed some FIXME section with it. I am not certain about it. If the
+algorithm is suitable for brlcad, i could change the rest of vmath.h.</p>
+<p>On both I am waiting for Feedback.</p>
+<h1 id="report-week-1">Report Week 1</h1>
+<p>I have built BRL-CAD from svn on ubuntu (12.04).
+I have installed and built all depencies on Windows, but I get following
+build errors (only a few of them, the errors repeating):</p>
+<pre><code class="language-dos">On libpoints-static:
+448&gt;points_scan.l(130): error C2065: 'PLATE': not declared
+448&gt;points_scan.l(145): error C2065: 'SYMMETRY':  not declared
+448&gt;points_scan.l(160): error C2065: 'CYLINDER':  not declared
+</code></pre>
+<p>Same on: libpoints […]</p>
+<p>scriptsort:</p>
+<pre><code class="language-dos">cl: Command line error D8021: invalid numeric argument / Wno-error.
+</code></pre>
+<p>intro-to-tcltk_presentation_html, Konfiguration; imod: no error or
+warning message
+All projects with libged depencies, even though libged-static build is
+successful:</p>
+<pre><code class="language-dos">590&gt; LINK: fatal error LNK1104: File &quot;.. \ .. \ debug \ lib \ libged.lib&quot; can not be opened.
+</code></pre>
+<p>All projects with libtclcad depencies, even though libtclcad -static
+build is successful:</p>
+<pre><code class="language-dos">614&gt; LINK: fatal error LNK1104: File &quot;.. \ .. \ debug \ lib \ libtclcad.lib&quot; can not be opened.
+</code></pre>
+<p>Mged_tclindex:</p>
+<pre><code class="language-dos">618&gt; Generating .. / ../../Debug/share/brlcad/7.21.0/tclscripts/pl-dm/pkgIndex.tcl
+618&gt; The command &quot;.. \ .. \ bin \ .. \ debug \ btclsh.exe&quot; is either misspelled or
+618&gt; could not be found.
+618&gt; C: \ Program Files (x86) \ MSBuild \ Microsoft.Cpp \ v4.0 \Microsoft.CppCommon.targets (151.5): error MSB6006: &quot;cmd.exe&quot; exited with code 9009.
+[…]
+--&gt; 851 successful and 74 errors&quot;
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

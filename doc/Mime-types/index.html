@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Mime-types/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Mime types - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Mime-types.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="category:Design_Documents.md">category:Design Documents</a> When a
+developer commits a new file to the repository, they may get an error
+about mime types not being set. This is because there is (intentionally)
+a commit hook set up that verifies that there are mime types set on all
+files being added to the repository.</p>
+<p>Subversion uses file mime-types for lots of useful things like for web
+interface browsing of the repository. You can either set up your
+subversion config to auto-set mime types or you can directly set the
+mime type on the file before you commit the file using svn propset.</p>
+<p>Sean provides a copy of his Subversion configuration that includes
+property settings for many file types. You can download and install it
+with this:</p>
+<p><strong><code>curl``</code><a href="https://brlcad.org/~sean/subversion.config"><code>https://brlcad.org/~sean/subversion.config</code></a><code>``&gt;`` ``~/.subversion/config</code></strong></p>
+<p>Once installed, run <em>svn revert</em> on your new file and then add it again.
+The properties should be set if the config file is installed properly
+and it's a recognized file type.</p>
+<p>This problem usually looks like this:</p>
+<p><code>[sean@bz (Wed May 28 13:27:55) brlcad]$ svn commit some_new_file.c</code>
+<code>Sending      some_new_file.c</code>
+<code>Transmitting file data ...svn: Commit failed (details follow):</code>
+<code>svn: MERGE request failed on '/svnroot/brlcad/brlcad/trunk'</code>
+<code>svn: 'pre-commit' hook failed with error output:</code>
+<code>/var/local/mastertree/service-svn/hook-scripts/check-mime-type.pl:</code></p>
+<p><code>brlcad/trunk/some_new_file.c :</code><a href="svn:mime-type"><code>svn:mime-type</code></a><code>is not set</code></p>
+<p><code>Every added file must have the</code><a href="svn:mime-type"><code>svn:mime-type</code></a><code>property set. In</code>
+<code>addition text files must have the</code><a href="svn:eol-style"><code>svn:eol-style</code></a><code>property set.</code>
+<code></code>
+<code>For binary files try running</code>
+<code>svn propset</code><a href="svn:mime-type"><code>svn:mime-type</code></a><code>application/octet-stream path/of/file</code>
+<code></code>
+<code>For text files try</code>
+<code>svn propset</code><a href="svn:mime-type"><code>svn:mime-type</code></a><code>text/plain path/of/file</code>
+<code>svn propset</code><a href="svn:eol-style"><code>svn:eol-style</code></a><code>native path/of/file</code>
+<code></code>
+<code>You may want to consider uncommenting the auto-props section</code>
+<code>in your ~/.subversion/config file. Read the Subversion book</code>
+<code>(http://svnbook.red-bean.com/), Chapter 7, Properties section,</code>
+<code>Automatic Property Setting subsection for more help.</code></p>
+<p><code>[sean@bz (Wed May 28 13:28:55) brlcad]$ svn revert some_new_file.c</code>
+<code>Reverted 'some_new_file.c'</code>
+<code>[sean@bz (Wed May 28 13:29:55) brlcad]$ curl</code><a href="http://brlcad.org/~sean/subversion.config"><code>http://brlcad.org/~sean/subversion.config</code></a><code>&gt; ~/.subversion/config</code>
+<code>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</code>
+<code>Dload  Upload   Total   Spent    Left  Speed</code>
+<code>100 10810  100 10810    0     0  30099      0 --:--:-- --:--:-- --:--:-- 81278</code>
+<code>[sean@bz (Wed May 28 13:30:55) brlcad]$ svn add some_new_file.c</code>
+<code>A         some_new_file.c</code>
+<code>[sean@bz (Wed May 28 13:31:55) brlcad]$ svn commit some_new_file.c</code>
+<code>... no mime type error ...</code></p>
+<p>That said, if one wanted to manually add or change a file's properties:</p>
+<p><code>[sean@bz (Wed May 29 13:50:51) brlcad]$ svn add some_file.odd</code>
+<code>A         some_file.odd</code>
+<code>[sean@bz (Wed May 29 13:51:32) brlcad]$ svn propset</code><a href="svn:mime-type"><code>svn:mime-type</code></a><code>text/plain some_file.odd</code>
+<code>[sean@bz (Wed May 29 13:52:16) brlcad]$ svn propset</code><a href="svn:eol-style"><code>svn:eol-style</code></a><code>native some_file.odd</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

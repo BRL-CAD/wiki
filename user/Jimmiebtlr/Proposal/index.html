@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Jimmiebtlr/Proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Jimmiebtlr/Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Jimmie Butler
+jimmiebtlr@gmail.com
+jimmiebtlr</p>
+<h1>
+
+About Me
+
+</h1>
+<h2>
+
+Physics Experience
+
+</h2>
+
+<p>When I first started at Colorado School of Mines I planned on majoring
+in physics, I was a teachers assistant for physics 1 at this time.
+Throughout my time until I decided I in fact wanted to major Computer
+Science, I took the following pertinant classes, Classical Mechanics,
+and Advanced lab.</p>
+<h3>
+
+Classical Mechanics
+
+</h3>
+
+<p>This class covered nearly everything this project would entail (from a
+physics perspective). This included relativistic motion, lagrangian
+dynamics, some error calculation, and basic programming.</p>
+<h3>
+
+Advanced Lab
+
+</h3>
+
+<p>This class had a very heavy emphasis on error calculation.</p>
+<h3>
+
+Thermal Physics
+
+</h3>
+
+<p>This class covered everything to do with thermodynamics from the
+microscopic to the macroscopic.</p>
+<h2>
+
+Programming Experience
+
+</h2>
+
+<p>Now that I have switched to Computer Science I have taken or am
+currently taking the following courses Software Engineering, Computer
+Organization, Operating Systems, Scientific Computing, Algorithms, Data
+Structures.</p>
+<h3>
+
+Software Engineering
+
+</h3>
+
+<p>This class is primarily focused on team development, using subversion,
+with an agile background.</p>
+<h3>
+
+Computer Organization
+
+</h3>
+
+<p>This class focused on computers at the hardware level, giving a basic
+view of how machine numbers and optimization work.</p>
+<h3>
+
+Operating Systems
+
+</h3>
+
+<p>This course focuses on memory handleing, as well as rounding off the
+subjects covered in Computer Organization.</p>
+<h3>
+
+Scientific Computing
+
+</h3>
+
+<p>Scientific computing is completly based around the concept of reducing
+or elemenating error due to machine numbers in scientific calculations.</p>
+<h3>
+
+Algorithms
+
+</h3>
+
+<p>Algorithms is a course which teaches how to implement and analize your
+own home rolled algorithms and how to analyze fellow programmers
+algorithms.</p>
+<h3>
+
+Data Structures
+
+</h3>
+
+<p>Which data structure is most effecient for which use case, and how would
+I implement my own? Problem solved.</p>
+<h1>
+
+Brief project summary (&lt;500 words)
+
+</h1>
+
+<p>Non-vacuum gravity simulator
+Simulate falling to a planet from a known starting point, knowing
+atmospheric composition and planets mass, as well as geometric shape and
+density function of the falling object.</p>
+<h1>
+
+Detailed project description (&gt;500 words)
+
+</h1>
+
+<p>The starting point will be to implement an iterative loop which takes
+into account all forces until the object reaches at or below ground
+level, at which it will interpolate to find end conditions.</p>
+<p>Air resistance would have to be calculated not only linearly but also
+rotationally, A target accuracy, or otherwise sane defaults should be
+taken into account.</p>
+<h2>
+
+Basic Features
+
+</h2>
+
+<p>Calculate the gravitational strength at a set point in time, move the
+object in the direction of its velocity.</p>
+<h2>
+
+Air Resistance
+
+</h2>
+
+<p>Air resistance would need to take into account torque on the object as
+well as the usual linear drag, i.e. an arrow would tend to fall tip down
+to the planet, yet a baseball could rotate violently. This section could
+also be used to determine interactions on material changes i.e. hitting
+water while falling. This would likely be implemented as a separate
+program.</p>
+<h2>
+
+High speed objects
+
+</h2>
+
+<p>Take into account an object falling on the order of magnitude of c.</p>
+<h2>
+
+Thermal Conversion
+
+</h2>
+
+<p>How much energy is expended to thermal energy, make estimates of end
+temperature? This would likely be similar to the air resistance section
+and implemented as a separate program.</p>
+<h2>
+
+Constraints
+
+</h2>
+
+<p>Use Lagrangian mechanics to determine motion of a falling object in
+relation to itself. This could become a large portion of the project and
+would likely be its own program, taking in forces constraints, and the
+object.</p>
+<h2>
+
+Bending Light
+
+</h2>
+
+<p>Should be able to be implemented through the implementation of the High
+speed objects section.</p>
+<h2>
+
+Optimization
+
+</h2>
+
+<p>This project would take into account what the starting parameters are in
+order to determine what algorithm to use i.e. falling 10 feet on earth
+with a moderate allowance of error could be done assuming constant
+atmospheric density and gravity. Whereas an object falling from several
+miles up would need to take into account the atmospheric density and
+changing gravitational strength.</p>
+<h2>
+
+Error
+
+</h2>
+
+<p>Any potential outputs would need their own error calculations, but
+perhaps more importantly is to keep track of error from machine number
+use. Using a double is clearly preferable in nearly all cases, but even
+that can have large amounts of error if ignored.</p>
+<h2>
+
+Using Bullet Physics engine
+
+</h2>
+
+<p>Bullet is intended primarily for realtime physics simulation, and as
+such may be applicable in cases where high amounts of error are
+acceptable (from a scientific perspective), or in the case of quick
+previews/realtime rendering.</p>
+<h2>
+
+Using Open Dynamics Library
+
+</h2>
+
+<p>Another Game engine with the same constraints against the accuracy of
+the simulation.</p>
+<h2>
+
+Interesting Features
+
+</h2>
+
+<p>After implementing calculations for the high speed objects section, the
+correct configuration should yield an answer to gravitational lensing.</p>
+<h2>
+
+Implementation
+
+</h2>
+
+<p>A new anim file, which would call the physics engine for a path that the
+objects should take, and which at that point would render it for the
+user to see.</p>
+<h1>
+
+Links to any code or algorithms you intend to use
+
+</h1>
+
+<p>For Air Resistance
+<a href="http://en.wikipedia.org/wiki/Drag_(physics)">http://en.wikipedia.org/wiki/Drag_(physics)</a>
+For fast objects
+<a href="http://en.wikipedia.org/wiki/Special_relativity">http://en.wikipedia.org/wiki/Special_relativity</a>
+For motion of complex objects.
+<a href="http://en.wikipedia.org/wiki/Lagrangian_mechanics">http://en.wikipedia.org/wiki/Lagrangian_mechanics</a></p>
+<h1>
+
+Deliverables
+
+</h1>
+
+<p>Constant gravity constant atmospheric density simulation simplistic air
+resistance
+Varying gravity constant atmospheric density simulation simplistic air
+resistance
+Varying gravity varying atmospheric density simulation simplistic air
+resistance
+Varying gravity varying atmospheric density simulation complex air
+resistance (take rotation into account)</p>
+<h1>
+
+Development schedule
+
+</h1>
+
+<p>May 15 - May 30
+-Get a better feel for BRL-CAD and interfacing with it, as well as
+implementing a dragless falling object in three dimensions.</p>
+<p>June 1 - June 15
+-Take into account air resistance and rotation.</p>
+<p>June 15 - June 30
+-Work on an error management system, and optimizations.</p>
+<p>July 1 - July 15
+-Take into account Non-Newtonian speeds.</p>
+<p>July 15 - July 30
+- Basic Thermal Calculations, extensive Refactor.</p>
+<p>August 1 - August 15
+-Non-Newtonian entrance speeds, basic fluid dynamics integration
+(falling through water or striking it)</p>
+<h1>
+
+Time availability
+
+</h1>
+
+<p>-4 week Field session ( Should be able to work \~40 hour weeks )
+-Rest of summer free.</p>
+<p>I am applying to GSOC with BRL-CAD because it pertains to several area's
+I'm interested in, namely physics and 3D graphics. More importantly
+however is that it is a needed open source alternative which will
+further both the education of future generations, and also a valueable
+asset to the Engineering world.</p>
+<p>I would like to work with BRL-CAD for GSOC because I feel I can bring my
+knowledge of physics and programming to aid the developement.</p>
+<h1>
+
+Anything Else
+
+</h1>
+
+<p>I use nearly exclusivly open source software and would like to become a
+permenant member of the open source community.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/New_Cross-Platform_3D_Display_Manager/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>New Cross Platform 3D Display Manager - BRL-CAD Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/New_Cross-Platform_3D_Display_Manager.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#requirements" class="nav-link">Requirements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#past-efforts" class="nav-link">Past Efforts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>This project involves implementing a new cross-platform display manager
+for BRL-CAD's LIBDM display manager library using an API toolkit such as
+OGRE or Qt that abstract platform-specific implementation detail.</p>
+<p>BRL-CAD's primary means to interact graphically with geometry is
+provided by <strong><em>display managers</em></strong>, which handle drawing geometric
+wireframes, text, (sometimes) shaded triangle mesh geometry, and other
+visualization elements. It's the 3D graphics window. Currently BRL-CAD
+has specific display managers for X11 Opengl (ogl), Windows OpenGL
+(wgl), and raw X11 (X), in addition to a variety of other special
+purpose and experimental display managers. Consequentially, our existing
+display managers are all platform-specific and a burden to maintain.</p>
+<p>Either OGRE or Qt could be utilized to implement a new display manager
+interface</p>
+<p>The steps for this task would be:</p>
+<ol>
+<li>Review current display manager code to identify features a new
+    display manager needs to support</li>
+<li>Get OGRE or Qt running and embedded within a Tk window (this will be
+    necessary for Archer/MGED to use the display manager). Bear in mind
+    that one of the primary goals is to use this display manager on
+    multiple platforms.</li>
+<li>Identify how to perform the basic operations needed for a display
+    manager, including<ul>
+<li>line drawing</li>
+<li>text display</li>
+<li>keyboard and mouse input integration between OGRE or Qt and Tk</li>
+<li>embedding a framebuffer window (see overlay/interlay/underlay
+    settings in the MGED raytrace control panel)</li>
+</ul>
+</li>
+<li>Writing routines to perform tasks needed (the display manager
+    functionality) and hooking it into libdm</li>
+<li>Testing (ideally cross platform) -- load a .g model and display it
+    in the display manager</li>
+</ol>
+<p>A good proposal for this task would demonstrate a good understanding of
+what approaches would be taken to embed OGRE or Qt into Tk and what
+functionality would be utilized to perform wireframe drawing, text
+drawing, etc.</p>
+<h1 id="references">References</h1>
+<ul>
+<li>src/libdm</li>
+<li>include/dm*.h</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><a href="http://www.ogre3d.org/">http://www.ogre3d.org/</a><ul>
+<li>OGRE is a cross platform, open source 3D graphics engine that
+    provides the features needed to implement a display manager for
+    BRL-CAD, while abstracting many of the low level platform
+    specific details. OGRE has the added benefit of having built-in
+    support for scene graph management allowing for accelerated 3D
+    windows.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><a href="http://qt.nokia.com/">http://qt.nokia.com/</a><ul>
+<li>Qt is a cross-platform application and UI framework of interest
+    for new GUI development work in BRL-CAD. It similarly has
+    support for creating OpenGL-based display contexts that could
+    serve as the implementation detail for a new display manager. Qt
+    has the added benefit of being able to use drawing canvases not
+    reliant upon OpenGL or hardware acceleration.</li>
+</ul>
+</li>
+</ul>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>Familiarity with C and C++</li>
+<li>(optional) Familiarity with OGRE</li>
+<li>(optional) Familiarity with Qt</li>
+</ul>
+<h1 id="past-efforts">Past Efforts</h1>
+<p><a href="/wiki/user/Mesut/Reports">GSoC12</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

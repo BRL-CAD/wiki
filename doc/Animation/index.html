@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Animation/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Animation - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Animation.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#rendering-image-frames-for-an-animation" class="nav-link">Rendering image frames for an animation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#detailed-arbitrary-path-animation" class="nav-link">Detailed arbitrary path animation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fly-around-animation" class="nav-link">Fly-around animation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#compositing-an-animation" class="nav-link">Compositing an animation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#with-imagemagick" class="nav-link">With ImageMagick</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#with-mjpeg" class="nav-link">With MJPEG</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#with-ffmpeg" class="nav-link">With ffmpeg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#with-photoshop" class="nav-link">With Photoshop</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#on-a-mac-os-x-using-iphoto" class="nav-link">On a Mac OS X using iPhoto</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#with-mencoder" class="nav-link">With Mencoder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="category:tutorials.md">category:tutorials</a>
+<a href="category:animation.md">animation</a> The question often comes up
+about how to make an animation in BRL-CAD. As BRL-CAD is primarily a
+solid modeling system for engineering and analysis purposes, there is
+(presently) only limited support for generating animations but it is
+possible with the assistance of some third-party tools. The basic method
+is to make your model, decide what keyframes and sequencing you want to
+have in your movie, render those keyframes as images, and then composite
+them into an animation. BRL-CAD can help will all but the last
+compositing step.</p>
+<p>So basically you need to render frames for your animation and then
+composite them together into a movie.</p>
+<h1 id="rendering-image-frames-for-an-animation">Rendering image frames for an animation</h1>
+<p>There are a variety of rendering and image processing tools that support
+a wide range of visualization techniques. Tools that may be of interest
+include <strong><a href="rt.md">rt</a></strong>, <strong><a href="rtedge.md">rtedge</a></strong>,
+<strong>rtxray</strong>, <strong>pixmatte</strong>, and <strong>pixblend</strong> as well as a variety of other
+rendering and image processing tools.</p>
+<p>If the animation you want is very simple like having an animation of
+something spinning, the relatively simple process is described in the
+<a href="#Fly-around_animation.md">#Fly-around animation</a> section. If,
+however, what you want to animate is considerably more complex, there
+are a variety of tools that become important for setting up animation
+paths, managing keyframes, interpolating between frames, and previewing
+the animation. There are animation tools in MGED (see the <em>'animmate</em>
+command' (yes, it's actually spelled that way) for starters, the
+AnimMate Control Panel (under Tools), as well as a variety of animation
+table processing tools outside of MGED.</p>
+<h2 id="detailed-arbitrary-path-animation">Detailed arbitrary path animation</h2>
+<p>See <a href="http://brlcad.org/OLD/reports/tr-313/index.html">Animation Techniques in
+BRL-CAD</a>.</p>
+<h2 id="fly-around-animation">Fly-around animation</h2>
+<p>It can be really easy to make a simple fly-around animation of your
+geometry. The <strong>rt</strong> command has options for azimuth and elevation that
+will let you render animation frames around a given object. The first
+step is to render your images. You can create a shell script like this:</p>
+<p><code>#!/bin/sh</code>
+<code>for i in `loop 000 359 10` ; do</code>
+<code>rt -a $i -e 35 -w 640 -n 480 -o image$i.png database.g top_level_object</code>
+<code>done</code></p>
+<p>This renders 36 images of the object top_level_object from a geometry
+database that was named <strong>database.g</strong>, creating images every 10 degrees
+(azimuth) at an elevation of 35 degrees. The images are named
+<em>image000.png</em> through <em>image350.png</em>.</p>
+<p>Walking through the shell script, the second line <strong>''(for i in `loop
+000 359 10` ; do)</strong>'' just sets up a loop to run with variable <strong>i</strong>
+set to the next number each pass through the for loop. You can see the
+expansion by running the loop command directly:</p>
+<p><code>[sean@bz (Fri Feb 13 11:23:07) ~]$ loop 000 359 10</code>
+<code>000</code>
+<code>010</code>
+<code>020</code>
+<code>...</code>
+<code>350</code></p>
+<p>The third line calls <strong>rt</strong> to render an image. The <strong>-a</strong> option sets
+the azimuth value and the <strong>-e</strong> option sets the elevation value. The
+<strong>-w</strong> and <strong>-n</strong> options set the width and height of the image
+respectively. The <strong>-o</strong> option specifies the filename for the output
+image that is generated. Finally, there is the name of the database to
+read from and the name of the object in that database that we want to
+render. The object is automatically centered in the view.Please make
+sure that the commands <strong>loop</strong> and <strong>rt</strong> are in the your search PATH
+using the linux <strong>export</strong> command.</p>
+<h1 id="compositing-an-animation">Compositing an animation</h1>
+<p>Once you run the script and have generated your image frames, you're
+done with BRL-CAD. The next step is to take those image frames that were
+rendered and provide them as input to any number of tools that will
+generate a movie for you.</p>
+<h2 id="with-imagemagick">With ImageMagick</h2>
+<p>Assuming all of your images are numbered sequentially with padded zeros,
+this should do the trick for a simple animation using
+<a href="http://www.imagemagick.org/">ImageMagick</a>:</p>
+<p><code>convert *.png movie.mpg</code></p>
+<h2 id="with-mjpeg">With MJPEG</h2>
+<p>For more control of the animation, the
+<a href="http://mjpeg.sourceforge.net">MJPEG</a> project is another toolset that
+may help. See <a href="http://www.stillhq.com/jpeg2mpeg/000001.html">this
+tutorial</a> for example
+steps.</p>
+<h2 id="with-ffmpeg">With ffmpeg</h2>
+<p>A simple way to convert an image sequence to a mpeg movie is :</p>
+<p>ffmpeg -f image2 -i image%d.png video.mpg</p>
+<p><a href="http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs">More information
+here</a></p>
+<h2 id="with-photoshop">With Photoshop</h2>
+<p>To be written.</p>
+<h2 id="on-a-mac-os-x-using-iphoto">On a Mac OS X using iPhoto</h2>
+<p>Open iPhoto and import the images (File-&gt;Import).</p>
+<p>To create the movie, select all of the images, and then choose
+File-&gt;Export. Since they are numbered sequentially with padded zeros,
+they should already be in order.</p>
+<p>Select the "QuickTime" tab. You may wish to un-check the "Add currently
+selected music to movie" button. Now click the Export button.</p>
+<p>Type a filename and click "Save".</p>
+<p>That's it. At this point you should have a quicktime movie of your
+geometry.</p>
+<h2 id="with-mencoder">With Mencoder</h2>
+<p>In the directory where the .png files are in the command line do:</p>
+<p><code>mencoder mf://*.png -mf w=800:h=600:fps=25:type=png -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell -oac copy -o movie.avi</code></p>
+<p>If you modify in the 'Fly-aroundAnimation' shell script the line:</p>
+<p><code>for i in `loop 000 359 10` ; do</code></p>
+<p>to</p>
+<p><code>for i in `loop 000 359 2` ; do</code></p>
+<p>then you get a smooth animation of your geometry.</p>
+<p>The resulting .avi file one can to import in Kino, the Video Editor. :)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Al_Da_Best/devlog/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Devlog - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Al_Da_Best/devlog.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#google-summer-of-code-2012" class="nav-link">Google Summer of Code 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="google-summer-of-code-2012">Google Summer of Code 2012</h2>
+<h3 id="current">Current</h3>
+<p>Status: Working on fluids system, starting with drag caused from falling
+object.</p>
+<p>TODO:
+Gain Commit access ASAP
+Work out how density is handled during simulation and add it to the
+mass/volume calculations in a more accurate fashion. WOrking out how to
+best calculate the coefficient of drag for objects.</p>
+<p>Coding Environments Status:
+VS2010x64 : Success, no bullet.
+Fedora 17 KDE-Spin : Success, Bullet running.</p>
+<h3 id="log">Log</h3>
+<h4 id="april-2012">April 2012</h4>
+<p>BRLCAD compiled and run with Windows Visual Studio 10 x64 Debug</p>
+<h4 id="may-2012">May 2012</h4>
+<p>8th : Updated Wiki pages</p>
+<p>9th-10th : Tried to compile BRLCAD with bullet on VS2010, consistently
+recieved 63/70+ errors for debug/release versions. Using linux as
+development environment until I have a chance to fix issues.</p>
+<p>11th-12th : Setup a Fedora 16 environment with BRLCAD compiled and
+running simulations.</p>
+<p>13th-16th : Testing various simulations, spent time looking through the
+simulation code to learn more about how it currently works and how to
+best implement new features.</p>
+<p>24-25th : Reinstalling Windows on my SSD (From HDD), computer
+unavailable for a day 26th : Everything back to normal with PC, build
+times using VS2010 decreased from 3+ hours to 9 minutes (from clean)</p>
+<p>27th-29th : Fixed issues with SA/Centroid functions for Ellipsoid
+Primitive patch</p>
+<p>29th : Patch for Surface Area for Ellipsoid Primitive accepted
+29th : Downloaded Fedora 17 and began to set it up for brlcad
+development</p>
+<p>30th : Successfully built and installed brlcad on Fedora 17, as well as
+ran some small test simulations without issue.
+30th : Working on a function to calculate the gravitational force
+between every object in the simulation, in order to be able to calculate
+the acceleration between them.</p>
+<p>31st : Continued work on aforementioned function, testing tomorrow for
+patch submission.</p>
+<h4 id="june-2012">June 2012</h4>
+<p>2nd : Submitted initial patch for implementation of gravity forces
+between rigid bodies.</p>
+<p>4th : Added to patch with a small update for calculating mass using the
+bounding box of an object, and using that to find the volume, assuming a
+density of one. Density to be integrated better soon.</p>
+<p>5th : Working on the resolving of acceleration due to gravitational
+force, mainly how to store the information since there will be n(n-1)
+number of forces which will then be condensed to n number of
+accelerations, where n is the number of rigid bodies.</p>
+<p>6th-8th : Finished work on resolving the acceleration and begun working
+on how to integrate this into the current simulation, in terms of
+running the calculations every time and altering the linear_velocity
+values of the rigid bodies.</p>
+<p>11-15th : Continue work on gravitational functions.</p>
+<p>16th-17th : Looking at how better to implement mass and center of mass.
+Trying to learn how to utilise gqa.c and also whether it would be best
+to add to the rigid_body struct with volume, mass and center of mass
+(as opposed to center of BB) for use in gravity functions to avoid
+repeatedly recalculating it.</p>
+<p>18th - 22nd : Continued work on gravitational function. Working out how
+to intergrate the changing angular and linear velocities into the bullet
+simulation, since the brlcad system would ideally recalculate this every
+step.</p>
+<p>23rd - 26th : Finalising the gravity calculations and working on the
+fluid system. Need to work out suitable intervals for these
+calculations. 60 times per second would be a massive performance hit,
+even with the calculations themselves being relatively simple.</p>
+<p>27th - 29th : Finishing off the gravity, videos coming soon (with highly
+exaggerated values to make it obvious, movement is negligible with small
+mass objects, or large distances).</p>
+<p>30th : Continue working on fluid. Namely how to best teach the system to
+use the best coefficient of drag for a shape.</p>
+<h4 id="july-2012">July 2012</h4>
+<p>1st - 2nd : Integrating into system with a similar method to gravity,
+alter the acceleration for the rigid body then use that to change the
+velocity every step.</p>
+<p>3rd - 5th : Learning about how to go about creating video footage. Will
+need to save a render of every step of the simulation, I think. Also
+worked on testing the drag functions.</p>
+<p>6th - 7th : Changed how mass is handled in the simulation, added new
+parameter to rigid_body structure to handle this. Temp using bb_vol
+assuming density is 1 to calculate mass, will be changed to something
+more precise soon. Also working on making sure the drag function gets
+the right area, and started to try and calculate any rotational forces
+around a rigid body</p>
+<p>8th : Tested basic drag and gravity functions with rest of simulation
+and values output are correct with my calculations. Made progress with
+video. Still working on how to calculate the surface area for drag
+function, as well as how to get a reasonable coefficient of drag.</p>
+<p>9th : Accidentally broke my fedora VM by running a simulation with 1
+million steps as an experiment. Files were backed up, currently setting
+up another one, trying out the KDE distribution of fedora. Issue with
+building that I will fix tomorrow (fb.h, unknown types window,
+XVisualInfo, and a couple of others on line 136) and then I will debug
+the error. VM broke due to a full harddrive of error messages as far as
+I can tell. Error was somehow related to collision, from the little I
+could make out from the mass of error messages. Situation was a simple
+sphere dropping onto a surface.</p>
+<p>10th : Wasted several hours getting a new VM working, had compile
+issues. Now working again, however. Came across an error in one of my
+functions whilst debugging, which involved NaN results. Working on
+finding the cause and will fix asap.</p>
+<p>11th : Fixed NaN results, had a 0/0 division which I changed. Also
+refined code to better handle ground plane with respect to gravity from
+it (i.e ignore it). Gravity is still counted as 10 down, with the
+gravitational attraction seperate. Should be in position to finally make
+video tomorrow morning.</p>
+<p>12th : Ran simulation and took raytraces at 50 step intervals. Looks
+like the groundplane moves, which isn't meant to happen. Will look into
+this and check it's not moving, and if it is stop it. Also changed use
+of gqa slightly, and implemented a, for now, debug usage rt, which I
+intend to make a user option later on, if they wish to automatically
+have the simulation saved as several (hundred/thousand) images.</p>
+<h3 id="development-schedule">Development Schedule</h3>
+<p>(Unless otherwise specified, 40+ hours of work to be assumed):</p>
+<p>23rd April – 5th May</p>
+<ul>
+<li>Flesh out any last details in project, have all objectives clear and
+    the schedule complete.</li>
+<li>Gain commit access before or during this point</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Before the official start of coding, create basic, general (and some
+    specific) unit tests for functions that will be implemented, such as
+    testing the variable gravity, the resolving of drag forces, the
+    moments and couples calculated, and so forth.</li>
+</ul>
+<p>5th May – 21st May</p>
+<ul>
+<li>Learn as much about any relevant libraries such as Bullet, and
+    BRL-CAD libraries such as librt and libged as I can, to enable me to
+    be able to get straight into coding with the knowledge of what is
+    already there and how to use it.</li>
+<li>Start writing function outlines, header files to make it clearer as
+    to what goes where and how to reuse code efficiently.</li>
+<li>Iron out any current bugs in the simulation files, to ensure a fully
+    working simulation environment.</li>
+</ul>
+<p>21st May – 28th May</p>
+<ul>
+<li>Coding begins. Start by working on the gravitational system as this
+    will be the easiest to implement and so will take the shortest
+    amount of time, and will make sure I am completely familiar with the
+    code.</li>
+</ul>
+<p>28th May – 4th June</p>
+<ul>
+<li>Milestone 1: Gravitational system complete and fully bug tested.</li>
+<li>Once milestone 1 is reached, begin work on the fluid system,
+    starting with functions to calculate drag on surfaces</li>
+</ul>
+<p>4th June – 11th June</p>
+<ul>
+<li>Exam period starts at University, limited time available.</li>
+<li>In available time, work on drag functions and start to implement
+    functions to resolve the forces from the drag (In x,y and z
+    directions)</li>
+</ul>
+<p>11th June – 18th June</p>
+<ul>
+<li>Exam period ends</li>
+<li>Carry on implementing functions to resolve forces and start on
+    functions to resolve moment forces to show rotation in the
+    simulation</li>
+</ul>
+<p>18th June – 25th June</p>
+<ul>
+<li>Continue working on the fluid system and begin bug testing</li>
+<li>After 22nd June assume 50+ hours working, to make up for lost time
+    during University term</li>
+</ul>
+<p>25th June – 2nd July</p>
+<ul>
+<li>Milestone 2: Fluid system complete and fully bug tested.</li>
+<li>Start work on the collision system</li>
+</ul>
+<p>2nd July – 9th July</p>
+<ul>
+<li>Preparing for mid-term evaluations, fixing all current code up to
+    this point which will be around two thirds of the whole project</li>
+<li>Continue work on the collision system</li>
+</ul>
+<p>9th July - 16th July</p>
+<ul>
+<li>Continue work on the collision system</li>
+</ul>
+<p>16th July – 23rd July</p>
+<ul>
+<li>Milestone 3: Collision system completed</li>
+<li>From this point forward, start black box testing to ensure
+    everything works</li>
+</ul>
+<p>23rd July – 30th July</p>
+<ul>
+<li>Milestone 4: Black box testing complete</li>
+<li>Start white box testing to ensure code is of a high standard</li>
+</ul>
+<p>30th July – 3rd August</p>
+<ul>
+<li>Milestone 5: White box testing complete</li>
+<li>All following time is a buffer zone. If everything complete, begin
+    work on adding more functionality to the fluid system, namely the
+    underwater physics</li>
+</ul>
+<p>3rd August – 17th August</p>
+<ul>
+<li>I will be in Germany during this period on holiday. I will however,
+    still have a laptop as well as internet access so although this is a
+    critical time with respect to final evaluations and so on, there is
+    no reason for me to not be able to work</li>
+<li>Time spent cleaning up code if needed, write documentation to enable
+    users to easily utilise any of the functionality of the simulation
+    system.</li>
+</ul>
+<p>17th August – 24th August</p>
+<ul>
+<li>Any last minute fixes are made, final evaluations sorted and project
+    finished.</li>
+<li>Milestone 6: Project finish, submit evaluations.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

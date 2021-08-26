@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/NyahCh3ck20/GSoc2013/Coding_Report/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Coding Report - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/NyahCh3ck20/GSoc2013/Coding_Report.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+            <li class="nav-item" data-level="2"><a href="#17-june-23-june" class="nav-link">17 June - 23 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#24-june-30-june" class="nav-link">24 June - 30 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#1-july-7-july" class="nav-link">1 July - 7 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#8-july-14-july" class="nav-link">8 July - 14 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#15-july-21-july" class="nav-link">15 July - 21 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#22-july-28-july" class="nav-link">22 July - 28 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#29-july-4-august" class="nav-link">29 July - 4 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#5-august-11-august" class="nav-link">5 August - 11 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#12-august-18-august" class="nav-link">12 August - 18 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#19-august-25-august" class="nav-link">19 August - 25 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#aug-26-sept-01" class="nav-link">Aug 26 - Sept 01</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#sept-02-sept-08" class="nav-link">Sept 02 - Sept 08</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#sept-09-sept-15" class="nav-link">Sept 09 - Sept 15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#sept-16-sept-22" class="nav-link">Sept 16 - Sept 22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#sept-23-sept-28" class="nav-link">Sept 23 - Sept 28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h4 id="coding-log-report-for-gsoc-2013">Coding Log Report for GSoc 2013</h4>
+<p>Daily log:</p>
+<h3 id="project-summary">PROJECT SUMMARY</h3>
+<p>This year's GSoC was my first and most exciting projects given the fact
+that I'm working on my first opensource project and contributing for my
+first time to a great software and organization like BRL-CAD.</p>
+<p>For the past three months I worked on implementing a pull routine
+which reversed the effects of a push on a CSG tree. This project
+focused on reversing the effects of the push command available in
+BRL-CAD and also pulling up and unpushed node. While following my
+implementation outline as described in my <a href="../Design_Document/">Design
+Document</a>, I kept modifying the plan as needed and
+tried updating my <a href="./">logs</a> daily especially when I
+initially had no stable Internet access.</p>
+<p>Before the Mid-term Evaluations, I studied the push and xpush routines
+seeing how the matrices were pushed down the tree in respective commands
+and started implementing and finished implementing the pull_comb()
+routine which pulls the matrix transformations in a combination node.
+Submitted patches on sourceforge for review. I tested various parts of
+the routine and made sure routine works perfectly will continue testing
+and fixing bugs if any post GSoC to make sure command is complete. Also,
+I wrote tests for the poly.c routines and submitted patches on
+sourceforge; tested the bn_mat_inverse() routine implemented for
+BRL-CAD and proposed new routine which are still awaiting review by
+mentors.</p>
+<p>Post Mid-term evaluations, I studied the various primitives trying to
+figure out how to implement the pull_leaf() routine for each primitive
+which was later disproved by Sean as a bad design choice which led to my
+implementing of the pull_leaf() using the AABB's of primitives which
+enabled me to pull translation components successfully. I also developed
+the pull interface, wrote regression tests, created the man pages and
+other documentation which will integrate command fully into BRL-CAD.</p>
+<p>During Final Days and Post-GSoC I plan to finish implementing the
+pull_leaf routine which pulls both the scale and rotation components of
+primitives for BRL-CAD completing the pull routine and any other new
+projects as needed.</p>
+<p>This was one of the most exciting summers of my life.</p>
+<p>Cheers! Nyah</p>
+<h3 id="test-results">Test Results</h3>
+<ul>
+<li>Pulling unpushed object pulls matrix transformations up the tree.</li>
+</ul>
+<p><a href="http://brlcad.org/wiki/File:Pushed_pulled_object.png">pull_unpushed_obj</a></p>
+<ul>
+<li>Pushing object after pull restores original matrix conditions.</li>
+</ul>
+<p><a href="http://brlcad.org/wiki/File:Pushed_pulled_object.png">push_pulled_obj</a></p>
+<h2 id="17-june-23-june">17 June - 23 June</h2>
+<p>Coding Begins for GsoC working on codepatch to be uploaded to brlcad
+uploaded the sourcefile for new push routine which supports the -x
+option for xpush but still needs further testing and modifications.</p>
+<p>18 june 2013 Added a new functionality to new push routine where the
+push would recognise the the xpush case even in a case where the -x
+option is ommitted or ignored.</p>
+<p>Tested the new routine and extracted patch to be uploaded to sourceforge
+replacing the previous push file I uploaded.</p>
+<p>To discuss with mentors whether there is an implementation of the
+Inverse of a 4x4 matrix in the brlcad source code.</p>
+<p>Looking at the implementations of the Inverse of the matrix in BRL-CAD</p>
+<h2 id="24-june-30-june">24 June - 30 June</h2>
+<ul>
+<li>Monday June 24</li>
+</ul>
+<p>Looked at the definitions for the inverse of a 4x4 matrix as defined in
+/src/libbn/mat.c. However, i realised orthogonal matrices were not taken
+into consideration. So added functionality to determine inverse faster
+for othogonal matrices and to upload patch to sourceforge shortly.</p>
+<p>Started creating structures for the pull routine that is ( pull_obj and
+p_solid) structures to hold objects to be pushed and solids currently
+being pushed on a CSG tree. Code to be added to sourceforge Shortly.</p>
+<p>re-read the HACKING file to make sure i conformed with the coding
+standards for BRL-CAD.</p>
+<ul>
+<li>Tuesday June 25</li>
+</ul>
+<p>Further tested the bn_mat_inverse routine(src/libbn/mat.c) and
+modified patch that was to be uploaded yesterday but failed due to poor
+network connection.</p>
+<p>Looked at the libbn library especially mat.c which would be useful for
+implementing the pull.</p>
+<p>Studied the vmath.h header and discovered the transform.c file which
+could be applied in creating the pull routine.</p>
+<p>Uploaded the pull.c first patch and bn_mat_inverse patches due to
+failure in network for them to be uploaded yesterday. <a href="https://sourceforge.net/p/brlcad/patches/202/">Inverse Matrix
+support for orthogonal
+matrices</a></p>
+<p>Will need some clarification from mentors concerning my design strategy
+for the pull routine.( The necessary functions i would need to create or
+call from the source) in order to implement a complete pull
+routine.(Asked on mailing list.) still to continue work on push and
+xpush merger.</p>
+<p>Saw the importance of magic numbers in taking note of visited nodes
+along the CSG tree. Also, thought of checking the matrix transformations
+for each node to determine if node has been visited but since magic IDs
+were used in the push then i could use both in pull when performing the
+inorder walk from the leaf(solid) nodes.</p>
+<p>Moreover, for objects in database, dp-&gt;d_uses was used but not safe
+as defined push.</p>
+<ul>
+<li>Wednesday July 26</li>
+</ul>
+<p>Earlier part of the day used for preparation for and wrote an
+Information System test before working.</p>
+<p>Added the new pull routine to the setup.c(/src/mged/setup.c) interface
+and included the new command into the CMakeLists.txt
+file(/src/libged/CMakeLists.txt) in the brlcad source</p>
+<p>These patches also included the removal of the xpush command to support
+the new push and xpush. Patches to be uploaded to sf.</p>
+<p>Added new pull routine declaration(ged_pull(struct ged *,int, char
+*[])) to the ged.h header so it can be accessed by other files.
+patches to be uploaded to sf.</p>
+<p>Added new pull to tclcad_obj.c file(/src/libtclcad/) although with
+support of more than one arguments i'll first of all try to test with
+only one argument then see how far it goes;this is so that it's
+available in the internal database interface.</p>
+<p>Added tentative ged_pull() function definition to the pull.c file to
+enable it to be accessed by files calling function.</p>
+<p>However since ged_pull() routine does not compile code can't compile
+due to unused variables so will create some dummy operations just to see
+how blank routine works and get it started.</p>
+<p>Well just realised that the orthogonal matrix consideration in the
+bn_mat_inverse routine in mat.c is causing the benchmark tests to
+fail. Gotta sit on it and fix the bug. <a href="https://sourceforge.net/p/brlcad/patches/206/">Pull
+Patch</a></p>
+<ul>
+<li>Thursday 27 June</li>
+</ul>
+<p>Travelled to Douala and spent the whole day trying to cash the prepaid
+GSoC deposit. However, tried working on a bug in the mat.c
+file(/src/libbn) where the inserted code patch for orthogonal matrix
+support is giving wrong answers during the benchmark test. Discovered a
+little error calling the bn_mat_mul2() routine and now code passes 3
+benchmark tests and fails 3.Will perfect code and upload codepatch
+tomorrow on sf.</p>
+<ul>
+<li>Friday 28 June</li>
+</ul>
+<p>Looking at the bn_mat_inv() routine and performing some tests to
+ensure all benchmark tests succeed.</p>
+<p>Checked the orthogonal matrix support and code still fails 3 regression
+tests after testing and checking need some assistance for this. Started
+a detail analysis and study of the push command from the ged_push()
+routine. This is to enable me understand perfectly the implementation
+hacks of the push in order to implement a push correctly especially when
+it comes to dealing with the points and matrix transformations at the
+node and leaf levels on the CSG tree.</p>
+<p>To check all reviews from code patches so as to start working on them
+tomorrow. <a href="https://sourceforge.net/p/brlcad/patches/190/">Modified push</a>
+<a href="https://sourceforge.net/p/brlcad/patches/202/">Modified
+bn_mat_inv</a>This patches
+passes some regression tests; but i don't understand why it still
+doesn't work perfect. Don't really see the problem here</p>
+<h2 id="1-july-7-july">1 July - 7 July</h2>
+<ul>
+<li>Monday 1 July</li>
+</ul>
+<p>Well did not code because of Preparations to attend the Google Student's
+Ambassador's Summit in Nairobi, Kenya for Africa. This summit goes on
+for the whole week. But will try to fix problems with my code patches
+while at the summit.</p>
+<ul>
+<li>Tuesday 2 July 2013</li>
+</ul>
+<p>Boarded Kenyan Airways flight from Douala Int'l to the Jomo Kenyatta
+Int'l in Nairobi which took about 5 hours; then registered with the GSA
+team.</p>
+<ul>
+<li>Wednesday 3 July 2013</li>
+</ul>
+<p>Attended the First day of Summit where we had talks with Google
+Engineers about being a good ambassador. Presentations were given by Mr.
+Obum Ekeke , Tayib Fall and others about opportunities at Google.</p>
+<ul>
+<li>Thursday 4 July 2013</li>
+</ul>
+<p>Second Day of Summit focused on Google products like Adwords, Adsense
+and other products; also, Engr. Giacomo(Googler) gave a presentation on
+Webmaster tools and Google Search in general.</p>
+<ul>
+<li>Friday 5 July 2013</li>
+</ul>
+<p>Third day of Summit where we focused on making greater impacts on our
+communities in Africa; with awards given to Star GSAs of the previous
+years. Shared ideas and experiences for the Moonshot idea competition
+organised as per country we emerged 3rd after South Africa and Kenya.
+Developed plans to execute our moonshot idea as we returned home after
+the summit</p>
+<ul>
+<li>Saturday 6 July</li>
+</ul>
+<p>Preparing for return trip to Douala Int'l and went round Nairobi for
+shopping and other stuffs.</p>
+<ul>
+<li>Sunday 7 July</li>
+</ul>
+<p>Returned from Nairobi to Douala and after meeting family travelled to
+Buea to prepare for coming week.</p>
+<h2 id="8-july-14-july">8 July - 14 July</h2>
+<ul>
+<li>8 July 2013</li>
+</ul>
+<p>Wrote a report to be submitted to the Vice Chancellor concerning my
+experiences on Google Student Ambassador's summit and preparing for a
+Numerical Analysis Exam Took further look at source code(/src/push.c) to
+see how the matrix transformations are applied to the coordinate points
+of the node so as to determine a way of extracting the original matrix
+transformation or almost exact matrix transformation for source code.</p>
+<p>Glad the Dean of the faculty of Science authorized the installation of
+Internet in the CS so we can have 24/7 Internet access</p>
+<ul>
+<li>Tuesday 9 July</li>
+</ul>
+<p>Wrote my Numerical Analysis exams and to finish with exams tomorrow so i
+can focus on GSoC full time.</p>
+<ul>
+<li>Wednesday 10 July</li>
+</ul>
+<p>Finished writing exams today and started preparing previous code
+patches(mat.c,push.c,pull.c) so that when the Internet access is
+available all files will be uploaded so as to get commit access.</p>
+<ul>
+<li>11 July 2013</li>
+</ul>
+<p>studied the brlcad primtive internals like(torus, spheroids, toruses
+(torii), spheres, ellipsoids, pyramids) so as to be able generate the
+original transformation matrix. Torus, struct rt_tor_internal
+Centerpoint, point_t v, is obviously the translation. The orientation
+and scale is defined by vect_t h, and radiuses by fast_t r_h and
+fast_t r_a. Because of symmetries, the original transformation matrix
+must have contained a translation of v, and a rotation that brings
+vect_t h to an axis</p>
+<p>Spheres and ellipsoids, struct rt_ell_internal Centerpoint is at
+point_t v, which again is obviously the translation done.There are
+three vectors, point_t a, point_t b, and point_t c, that describe the
+spheroid axes. This means that I can construct the transformation matrix
+that transforms the unit sphere to this sphere directly.</p>
+<p>for Truncated general cones, struct rt_tgc_internal Centerpoint is at
+vect_t v, with vect_t h describing the axis. The base of the cone is,
+I think, described by the vectors vect_t a and vect_t b, and the top
+of the cone by vectors vect_t c and vect_t d. This implies that aÂ·b=0
+and cÂ·d=0, but they may not be perpendicular to h, since the base and
+top of a general cone may be cut along any direction. v is the
+translation, and h should be along an axis (probably z axis). This
+yields three vectors (h, f, g), that along with the translation vector v
+define the transformation matrix just like in the ellipsoid case.</p>
+<p>Also, looked at data type for Pyramids: struct rt_arb8_internal This
+data type contains between four (tetrahedron) to eight vertices as
+point_t variables. Pyramids and tetrahedra have the apex vertex
+perpendicular and center to a face. This can be taken as the face
+vector. The second vector is one that bisects an edge (the longest
+edge?) of the face perpendicular to the apex. The third vector is their
+cross product, and is either towards a vertex (a tetrahedron) or halves
+another edge of the face perpendicular to the apex (a pyramid). These
+three vectors can be used to regenerate the initial transformation
+matrix, with e.g. the base on the XY plane, and the apex along the Z
+axis.</p>
+<p>To look at wedges, Boxes, and convex polyhedra tomorrow.</p>
+<ul>
+<li>12 July 2013</li>
+</ul>
+<p>Prepared complete patches and uploaded to sf to replace the existing
+patches for new push routine(push.c), pull routines(pull.c) and
+bn_mat_inverse routine(mat.c) with orthogonal matrix support. Since
+there is no internet connection, I could not create these patches with
+the current svn checkout.</p>
+<p>Continued study of implementation of push.c so as to see what happens to
+coordinate points of the node, to determine how some form of the
+original matrix transformation is stored so as to ease restore during
+the pull routine.</p>
+<ul>
+<li>13 July 2013</li>
+</ul>
+<p>Did no work because of a long meeting( in my capacity as Auditor of
+Computer Engineering students Association) of over 5 hours with the Dean
+of Faculty to draft modalities for new student union body and draft
+constitution and mission to govern association.</p>
+<p>Will start implementing the pull leaf function as from Monday which will
+extract the matrix transformations from the primitives(solid) or leaf
+nodes.</p>
+<h2 id="15-july-21-july">15 July - 21 July</h2>
+<p>Monday 15 July</p>
+<ul>
+<li>Implemented the pull_leaf routine which build a linked list for
+    object's tree which would be used in extracting matrix
+    transformations in leaf_mat() routine I am to start working on
+    tomorrow.</li>
+<li>continued with the implementation of the ged_pull by adding -d
+    option to command to enable a debug of command as in push -d</li>
+</ul>
+<p>Todo: To ask on mailing list how to generate a Magic ID since its needed
+for the pull.</p>
+<p>Tuesday July 16 2013</p>
+<ul>
+<li>Further worked on the pull_leaf routine to make sure list is
+    properly built and created loop to free up list if errors occured
+    during the list build like pulling unpushed nodes.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started working on a loop to move through the nodes of the linked
+    list making the necessary mat_t changes while moving upwards
+    modifying the current matrix transformation as it encounters a new
+    leaf when necessary calculating and storing the inverse matrices up
+    the tree till it reaches the root. This will then be followed by
+    writing these changes to the database.</li>
+</ul>
+<p>TODO: Ask on mailing list how my current working model solves the method
+so as to make the necesary changes in approach and continue.</p>
+<p>Wednesday July 17, 2013</p>
+<ul>
+<li>Finished writing loop that moves backwards on the newly built list
+    of nodes on the tree, performing inverses as necesary,storing the
+    changes on the node, writing to database and setting the matrix
+    transformations for primitives(leaves) to identity as necessary.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote loop that frees up built list and returns result of object
+    pull.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>started testing of pull command and to continue fixing bugs. Till
+    command is ok before adding support to pull more than one object.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Performed another benchmark test for the orthogonal matrix support
+    for bn_mat_inverse() in mat.c</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Uploaded code patches for mat.c and combined push and xpush to
+    sourceforge.</li>
+</ul>
+<p>Todo: fix all problems with with currrent and past patches and upload to
+sf for mentor review.</p>
+<p>Thursday July 18, 2013</p>
+<ul>
+<li>Started working on compile time errors of the pull.c by fixing some
+    pointer casts and others.</li>
+</ul>
+<p>Friday July 19, 2013</p>
+<ul>
+<li>Finished debugging compile errors and started testing routine.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested for improper use of command(pull 'no object'), returned
+    correct errors</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested for pulling a primitive.(returned correct error message).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested for pulling an object which has not been previously
+    pulled.(mged crashed due to segmentation fault) to start working on
+    bug next week.</li>
+</ul>
+<p>Will be taking tomorrow off since its my birthday and start working on
+bugs and patches next week.</p>
+<h2 id="22-july-28-july">22 July - 28 July</h2>
+<p>Monday July 22, 2013</p>
+<ul>
+<li>Added -x option to push.c to support new xpush command(recreated and
+    tested new push command). Spent whole day debugging and still have
+    not succeeded in removing bug causing the</li>
+</ul>
+<p>loss of options to push command.</p>
+<ul>
+<li>Created new patch for pull command and patch applies cleanly but
+    command still further development and debugging.</li>
+</ul>
+<p>Tuesday July 23, 2013</p>
+<ul>
+<li>Installed Internet in the CS Lab so as to increase efficiency for
+    BRL-CAD.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started downloading latest svn checkout for BRL-CAD source</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Set up account on bz.bzflag.bz server and Started downloading
+    tutorials on how to use ssh and GNU Screen</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Upgrading my SL 6.2 distro so as to start further work on patches
+    tomorrow.</li>
+</ul>
+<p>Wednesday July 24, 2013</p>
+<ul>
+<li>Enabling pull routine to be able to pull a non leaf node; that is
+    routine is able to pull geometric transformations from any node up
+    to the root.(as @Sean adviced me on mailing list.)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Found bug in code which returns error when pulling non-leaf node.
+    Started fixing</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Prepared patch to stub pull routine unto brlcad using svn
+    diff(Uploaded to sf
+    <a href="https://sourceforge.net/p/brlcad/patches/215/">Here</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tests of pull routine
+    shown<a href="http://brlcad.org/wiki/File:Pulling_non_leaf_objects.png">here</a></li>
+</ul>
+<p>Thursday July 25, 2013</p>
+<ul>
+<li>Tested new algorithm for bn_mat_inverse() which used only Uses 100
+    multiplications and 61 additions or substractions.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested new algorithm for bn_mat_determinant which requires only 34
+    multiplications and 20 additions or substractions, saving 6
+    multiplications</li>
+</ul>
+<p>and 3 additions or substractions compared to the previous one.
+Integrated code into brlcad and tested. new passed all benchmark tests.
+Created patch and uploaded to
+<a href="https://sourceforge.net/p/brlcad/patches/216/">sf</a></p>
+<ul>
+<li>Wrote Tests to compare runtime of old_determinant against new
+    determinant routine which returned the following results below:</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote Tests to compare Inverse of Old matrix inverse routine and
+    new_matrix Inverse routine which returned the following results:</li>
+</ul>
+<p><code>CPU: Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz</code>
+<code>Compiler used: gcc 4.4.6-3)</code>
+<code>Compiler command: gcc -W -Wall -O3 -fomit-frame-pointer</code>
+<code>Kernel: Linux localhost.localdomain 2.6.32-220.el6.i686 #1 SMP Sat Dec 10     17:47:51 EST 2011 i686 i686 i386 GNU/Linux</code></p>
+<p><code>./determinant</code>
+<code>My implementation:</code>
+<code>98 cycles minimum</code>
+<code>112 cycles median</code>
+<code>libbn implementation:</code>
+<code>84 cycles minimum</code>
+<code>84 cycles median</code>
+<code>Results (relative differences of calculated determinants):</code>
+<code>-3.836070396965505e-14 minimum</code>
+<code>0 median</code>
+<code>2.152181998793086e-13 maximum</code></p>
+<p><code>./inverse</code>
+<code>Example:</code>
+<code>My implementation:</code>
+<code>[  0.803558  0.065957  -0.31977  0.174422 ]-1   [  1.105838 -0.352959   0.306948 -0.191398 ]</code>
+<code>[  0.178270  0.764400 -0.477912  0.560214 ]     [ -0.546125  0.959763  0.471464 -0.743848 ]</code>
+<code>[  0.567903  0.641359  0.602482  0.639353 ]   = [ -0.461005 -0.688994  0.868583 -0.088937 ]</code>
+<code>[  0.000000  0.000000         0  1.000000 ]     [  0.000000  0.000000         0  1.000000 ]</code>
+<code>libbn implementation:</code>
+<code>[  0.803558  0.065957  -0.31977  0.174422 ]-1   [  1.105838 -0.352959  0.306948 -0.191398 ]</code>
+<code>[  0.178270  0.764400 -0.477912  0.560214 ]     [ -0.546125  0.959763  0.471464 -0.743848 ]</code>
+<code>[  0.567903  0.641359  0.602482  0.639353 ]   = [ -0.461005 -0.688994  0.868583 -0.088937 ]</code>
+<code>[  0.000000  0.000000         0  1.000000 ]     [  0.000000  0.000000        -0  1.000000 ]</code>
+<code>My implementation:</code>
+<code>462 cycles minimum</code>
+<code>490 cycles median</code>
+<code>libbn implementation:</code>
+<code>434 cycles minimum</code>
+<code>546 cycles median</code></p>
+<p>Friday July 26, 2013</p>
+<ul>
+<li>Added -x option to push command. But command fails to read options
+    in mged. Tried (Pd:x) and Pdx as arguments to bu_getopt() but
+    command fails to read options. Continued testing and debugging.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Changed the call of pushx(formerly ged_xpush to take as args
+    gedp,dp so as to proceed to xpushing of object. Still testing
+    routine.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Debugged push command to support -x option, made
+    <a href="https://sourceforge.net/p/brlcad/patches/217/">patch</a> and submitted
+    on sourceforge. However command can push only an object at a time so
+    further work needs to be done to added support for multiple objects.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Some tests on command
+    <a href="http://brlcad.org/wiki/File:Testing_new_push_routine.png">Here</a></li>
+</ul>
+<p>TOD0: Add support for multiple objects then clean up xpush in BRL-CAD.</p>
+<p>Saturday 27 July, 2013</p>
+<ul>
+<li>Added support to Push routine to push multiple objects. Created
+    patch and modified patch uploaded to sourceforge.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>To clean up xpush routine from source code and make all new
+    references to new push.</li>
+</ul>
+<h2 id="29-july-4-august">29 July - 4 August</h2>
+<p>Monday July 29, 2013</p>
+<ul>
+<li>Started studies on ssh, irssi, and GNU Screen, succeeded in
+    uploading some of my code patches to bz.bzflag.bz.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Downloaded code to bzflag and compiled code although there is a
+    small in bug in current code repository.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started working on tests for some of the /src/libbn/mat.c routines
+    using the modified test Sean gave me on bn_mat_inverse and
+    bn_mat_determinant.</li>
+</ul>
+<p>Tuesday July 30, 2013</p>
+<ul>
+<li>Started looking at the BRL-CAD Numerics library for tests and
+    started wrote a unit test for the bn_poly_multiply() routine.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested for very large and small values and answer was correct.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Integrated test into BRL-CAD, created patch and submited code on
+    <a href="https://sourceforge.net/p/brlcad/patches/221/">sf</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Filled the Mid-Term Evaluation form for participants.</li>
+</ul>
+<p>To continue work on poly.c routines tomorrow.</p>
+<p>Wednesday July 31, 2013</p>
+<ul>
+<li>Wrote the unit test for bn_poly_scale(), bn_poly_add(),
+    bn_poly_sub(), bn_poly_synthetic_division() routines and
+    uploaded code patches to source forge.</li>
+</ul>
+<p>Will continue writing tests for the other poly.c tomorrow and finish by
+the end of the week.</p>
+<p>Thursday Aug 1, 2013</p>
+<ul>
+<li>Wrote the unit test for bn_poly_quadratic_roots() routine and
+    uploaded patch on
+    <a href="https://sourceforge.net/p/brlcad/patches/226/">sourceforge</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Spent day debugging test and doing some further extreme test.</li>
+</ul>
+<p>Friday Aug 2, 2013</p>
+<ul>
+<li>Wrote and tested the unit tests for the bn_poly_cubic_roots and
+    bn_poly_quartic_roots() routines. Created patches and uploaded to
+    sourceforge.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>To modify patches include source of known test values( Use Octave or
+    maxima) since mathportal.org doesn't give clear math solver.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Modifying patches to match reference values from Octave.</li>
+</ul>
+<p>Saturday Aug 3, 2013</p>
+<ul>
+<li>Spent whole day debugging all unit test patches making sure tests
+    failed when expected and produced the right results and outputs.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>uploaded codes to sourceforge.</li>
+</ul>
+<h2 id="5-august-11-august">5 August - 11 August</h2>
+<p>Monday Aug 5, 2013</p>
+<ul>
+<li>Started working on the pull routine making sure non-leaf objects
+    could be pulled.</li>
+</ul>
+<p>started by building a linked list. and there is a bug lurking in there
+somewhere in. Spent whole day here; will continue work on it tomorrow
+after i finish moving the comments. starseeker talked about.</p>
+<ul>
+<li>will upload latest patch to sf which should apply cleanly</li>
+</ul>
+<p>Tuesday Aug 6, 2013</p>
+<ul>
+<li>had to continue debugging pull.c but persistent problems with
+    patches forced me to continue working on the libbn unit test patches
+    I submitted on sourceforge.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Currently fixing patches with Erik so they can apply cleanly.</li>
+</ul>
+<p>Will be travelling home tomorrow and resume on Monday next week; So i'm
+to finish with these patches and get commit access so I could work
+freely on my project.</p>
+<h2 id="12-august-18-august">12 August - 18 August</h2>
+<p>Monday Aug 12 2013</p>
+<ul>
+<li>Finished correcting indentation errors on libbn unit tests for
+    polynomial routines.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Continued test of pull routine; since tree fails to build linked
+    list and discoved that the problem actually lied in the fact that I
+    was testing on invalid input so linked list was not built. Trying
+    appropriate objects.</li>
+</ul>
+<p>Tuesday Aug 13 2013</p>
+<ul>
+<li>Continued testing of pull routine on non leaf nodes like regions and
+    combinations and this kept reporting a segmentation fault. To
+    continue debugging</li>
+</ul>
+<p>Wednesday Aug 14, 2013</p>
+<ul>
+<li>continued working on the pull or matrix transformations up one level
+    but work halted due to lights out for the rest of day.</li>
+</ul>
+<p>Thursday Aug 15, 2013</p>
+<ul>
+<li>Fixed patch on bn_poly_add() test and uploaded code to
+    sourceforge, continued debugging bn_poly_synthetic_division()
+    routine but error kept coming from bn_poly_synthetic routine
+    itself as traced by gdb. Continue working on it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Resolved an issue with test but seg fault still lurks somewhere in
+    code; been starting for over an hour and still getting nowhere. Will
+    look at that tomorrow.</li>
+</ul>
+<p>Friday Aug 16, 2013</p>
+<ul>
+<li>Fixed the bn_poly_synthetic_division() unit test and uploaded
+    code to sourceforge.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started looking at the db_preorder_traverse() routine ( although
+    its not clear what struct db_traverse is since i don't see
+    definition in source code) and how I could use it in implementing
+    pull routine.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>To ask about definition of db_traverse since i don't see in source
+    code.</li>
+</ul>
+<p>Saturday Aug 17, 2013</p>
+<ul>
+<li>Reworked the accepted patches and submitted patch on sourceforge.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Fixed the bn_poly_quadratic_roots() routine and submitted code on
+    sourceforge.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started working on plan to implement pull using the
+    db_preorder_traverse() which will need some routines to work with
+    combinations and extract matrix transoformations from primitives</li>
+</ul>
+<p>ToDo: To start working on the leaf_mat() routine which extracts matrix
+transformation from primitive.</p>
+<h2 id="19-august-25-august">19 August - 25 August</h2>
+<p>Monday August 19, 2013</p>
+<ul>
+<li>Started reworking the pull_leaf routine to use db_functree instead
+    of db_preorder_walk but may still use later to extract matrix
+    transformation from primitives and continue walking up the tree.
+    Still to ask on mailing which primitives to support first.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Wrote the comb_enter_func() which restores the matrix
+    transformations of a combination but is still dependent on
+    pull_leaf() which is to deal with various primitives. To ask sean
+    how to store changes on a combination matrix.</li>
+</ul>
+<p>ToDo: Continue implementing pull_leaf() adding support to pull matrix
+transformation from torus then, spheres, ellipsoids and in that order.
+Still wondering why commit access is not coming!</p>
+<p>Tuesday August 20, 2013</p>
+<ul>
+<li>Finished Writing the pull_comb() routine together with the
+    pull_comb_mat() routines. Discussed with Sean about test driven
+    development. Will start writing unit test for routines tomorrow</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Looked into BRL-CAD source on how to write pull_leaf() routines
+    which will support various primitives in the pull process since they
+    don't have matrix transformation as such. Still to look at
+    pull_leaf to actually see how they dealt with primitives</li>
+</ul>
+<p>Wednesday August 21, 2013</p>
+<ul>
+<li>Started looking at test provided by Sean to use of db_walk_tree so
+    as to be able to create a similar for pull_comb using
+    db_functree() but faced problems calling functions in BRL-CAD's
+    libraries. So i'll continue working on test tomorrow</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Continued adding some functionalities to pull_leaf() routine.(still
+    crude) will continue work on pull_leaf after testing pull_comb()
+    perfectly</li>
+</ul>
+<p>Thursday August 22, 2013</p>
+<ul>
+<li>Started and finished writing pull_comb() unit test. But there is
+    actually a seg fault which prevents the cur_mat() pointer from
+    being inverted. Probably NULL.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Will continue debugging and finish testing pull_comb() tomorrow
+    then move on to pull_leaf()</li>
+</ul>
+<p>Friday August 23, 2013</p>
+<ul>
+<li>Finished debugging pull_comb() and tested routine. Works perfectly.</li>
+</ul>
+<p>Any way to note changes made on combination. pulled matrix is stored on
+comb_leaf-&gt;tr_l.tl_mat.</p>
+<ul>
+<li>Created patch to stub empty pull routine into brlcad. then continue
+    working on pull_leaf() routine tomorrow.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Waiting for mentors to apply patch so i could create patch which
+    adds pull_comb() routine into BRL-CAD.</li>
+</ul>
+<h2 id="aug-26-sept-01">Aug 26 - Sept 01</h2>
+<p>Monday 26 August 2013</p>
+<ul>
+<li>Started implementing the pull_leaf routine which extracts the 4x4
+    matrix transformations for a primitive. Succeeeded in implementing
+    the pull_leaf for an ellipse, sphere, EPH, elliptical parabola,
+    elliptical torus, extrude, hyperbola, and a particle.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>started testing function and will continue debugging tomorrow before
+    continuing with the addition of the superellipse, metaball,
+    arbitrary complex polyhedra, arb8, rhc, rpc, and pipe.</li>
+</ul>
+<p>Tuesday 27 August 2013</p>
+<ul>
+<li>Finished debugging pull_leaf() but routine is incomplete since I
+    don't currently support all primitives. Will follow Sean's
+    instructions and start developing pull interface from tomorrow by
+    adding synopsis, docs, full integration and test cases.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added support for truncated cones in pull_leaf() but a bug hangs in
+    there. Will take a peek tomorrow or finish this night before going
+    to sleep.</li>
+</ul>
+<p>Wednesday August 28, 2013</p>
+<ul>
+<li>Started developing the interface by adding the stubbing the pull to
+    archer interface.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added the pull routine to the tclscripts, libtclcad, and wrote the
+    pull documentation in brlcad/doc/ directories.</li>
+</ul>
+<p>Still to finish writing the regresssion tests before moving on to adding
+support for pulling primitives on BRL-CAD.</p>
+<p>Thursday August 29, 2013</p>
+<ul>
+<li>Started and finished writing the regression tests for the pull
+    command.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested and compiled code but pull does not appear on the command
+    line when regression tests are ran. Will ask on IRC for assistance
+    here.</li>
+</ul>
+<p>Todo: When done with developing the pull interface, I'll dive into
+writing the pull_leaf routine for all primitives.</p>
+<p>Friday August 30, 2013</p>
+<ul>
+<li>Tested regression tests for pull and added manual pages and
+    documentation for pull successfully such as in man pages, appropos
+    library for pull</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>To create patch and submit on sourceforge, also tried adding pull to
+    archer but found a little problem. To discuss with mentor on how to
+    proceed.</li>
+</ul>
+<p>TodO: After approval of man pages, to continue adding support for all
+primitives into pull command. and fix bn_poly_sub() test patch.</p>
+<p>Saturday August 31, 2013</p>
+<ul>
+<li>Finished testing regression tests and uploaded code to sourceforge</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Continued looking at the primitives such as arb8, arbn so as to
+    continue working on primitives for pull.</li>
+</ul>
+<h2 id="sept-02-sept-08">Sept 02 - Sept 08</h2>
+<p>Monday Sept 02</p>
+<ul>
+<li>Started looking at the other primitives; left to complete the
+    pull_leaf() routine. Saw many complications with many primitives.
+    Will need the Assistance of Sean in extracting the matrix
+    transformations from them.</li>
+</ul>
+<p>Tuesday Sept 03</p>
+<ul>
+<li>Fixed bug in bn_poly_sub() unit test; uploaded code to
+    <a href="https://sourceforge.net/p/brlcad/patches/224/">sourceforge</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Succeeded in pulling the following primitives(TGC, REC, PARTICLE,
+    EPA, EHY, HYP, ETO, EXTRUDE). Still left with about 26 primitives to
+    be pulled in order to complete the pull_leaf() routine.</li>
+</ul>
+<p>Will need some directions on how to implement pull_leaf() since using
+switch case statements is not a good design choice.</p>
+<p>Thursday05 - Sunday 08</p>
+<ul>
+<li>Took a break so as to recover from malaria.</li>
+</ul>
+<h2 id="sept-09-sept-15">Sept 09 - Sept 15</h2>
+<p>Monday 09 October</p>
+<ul>
+<li>Started looking at AABB bbox routines in BRL-CAD. Still to develop
+    simple algorithm that automatically processes the translation from
+    bbox return vectors to determine original translation.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Read some online wiki pages on AABB bounding box of objects.</li>
+</ul>
+<p>ToDO: To start writing routine and unit test tomorrow</p>
+<p>Tuesday 10 October</p>
+<ul>
+<li>Started and finished writing tranlate routine which extracts and
+    sets the translation component from the bounding box minimum and
+    maximum points from the bounding box routine.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>To integrate general bounding box calculating function for every
+    primitive.</li>
+</ul>
+<p>Wednesday 11 October</p>
+<ul>
+<li>Started testing pull_leaf routine using the rt_functab bbox
+    routine and successfully pulled some translations assuming object's
+    centrepoint was translated from the origin(0,0,0). But still waiting
+    on Sean for some clarifications on the math.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>To look at confirmation from sean and perfect the pull_leaf
+    routine, completing the pull routine and running through valgrind.</li>
+</ul>
+<p>Thursday 12 October</p>
+<ul>
+<li>Perfected math on moving bounding box and primitive to origin before
+    extracting translation. But will start testing tomorrow.</li>
+</ul>
+<p>Friday 13 October</p>
+<ul>
+<li>Successfully wrote the pull_leaf routine which pulled the
+    translation components of the primitive.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested routine together with the pull_combination routines and
+    successfully moved the matrices right up to the root of the tree.
+    but still unclear with cases where the matrix transformations for
+    the combinations is NAN.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Submitted <a href="https://sourceforge.net/p/brlcad/patches/215/">patch</a> on
+    sf and awaiting review before moving on to porting command to archer
+    since i've not been granted commit access.</li>
+</ul>
+<h2 id="sept-16-sept-22">Sept 16 - Sept 22</h2>
+<p>Monday Sept 16,</p>
+<ul>
+<li>Started re-testing the pull routine starting from the pull_leaf
+    which pulled correctly.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discovered a bug with the pull_comb() routine which pulls matrices
+    which are not symmetric;so will fix bug tomorrow.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started stubbing pull to archer but had an error will try to fix
+    problem tomorrow or post question on mailing list and see what comes
+    up.</li>
+</ul>
+<p>Tuesday Sept 17</p>
+<ul>
+<li>Continued testing the pull_leaf and realised NAN values were being
+    pulled from the primitives which are to be set to zero in such
+    cases.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started fixing bug.</li>
+</ul>
+<p>Wednesday Sept 18</p>
+<ul>
+<li>Continued fixing pull_leaf routine but realised pull_comb()
+    routine pulled matrix transformations having NAN as values. to ask
+    mentors about this problem if it persists.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Was in a meeting with the Vice Chancellor as Google Student
+    Ambassador and explained my Vision for the University during my
+    tenure.</li>
+</ul>
+<p>Thursday Sept 19</p>
+<ul>
+<li>Started preparing for my upcoming exams next week; and had a meeting
+    with the Public relations Officer of the University concerning my
+    recent appointment as Google Student Ambassador and plans for the
+    University community.</li>
+</ul>
+<p>Friday Sept 20</p>
+<ul>
+<li>Attended the Interview at the University Media House( Chariot FM)
+    where I explained my GSoC experience and current work as Google
+    Student Ambassador.</li>
+</ul>
+<p>Saturday Sept 21</p>
+<ul>
+<li>Wrote the Project summary and continued preparing for my exams next
+    week.</li>
+</ul>
+<h2 id="sept-23-sept-28">Sept 23 - Sept 28</h2>
+<ol>
+<li>Monday Sept 23</li>
+</ol>
+<p>Started looking at the BRL-CAD documentation spreadsheet posted by
+Harmanpreet and summarising all documents on the list. Requested for the
+script from Harmanpreet that automates the summary of the documents.</p>
+<p>@Will finish summarising documents tomorrow; since I have to prepare for
+some of my exams coming up from tomorrow.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

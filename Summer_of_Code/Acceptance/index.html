@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Summer_of_Code/Acceptance/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Acceptance - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Summer_of_Code/Acceptance.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#application-recommendations" class="nav-link">Application Recommendations</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#make-a-patch" class="nav-link">Make a patch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#come-talk-to-us" class="nav-link">Come talk to us</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#maintain-a-dev-log" class="nav-link">Maintain a dev log</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#participation-requirements" class="nav-link">Participation Requirements</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#license-appropriately" class="nav-link">License appropriately</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#report-activity-daily" class="nav-link">Report activity daily</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#list-your-milestones" class="nav-link">List your milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#be-communicative" class="nav-link">Be communicative</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-requirements" class="nav-link">Coding Requirements</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#compile-and-run" class="nav-link">Compile and run</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#be-familiar-with-revision-control" class="nav-link">Be familiar with revision control</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#evaluate-performance" class="nav-link">Evaluate performance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#write-maintainable-code" class="nav-link">Write maintainable code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#write-portable-code" class="nav-link">Write portable code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#write-complete-code" class="nav-link">Write complete code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>This page is intended to lay out the basic "<strong>rules and requirements</strong>"
+that our organization requires of all Summer of Code (whether
+<a href="Google_Summer_of_Code.md">GSoC</a> or
+<a href="ESA_Summer_of_Code_in_Space.md">SOCIS</a>) participants whose
+project proposals are accepted. Unless otherwise arranged with the
+organization administrator (contact 'brlcad' via IRC on
+irc.freenode.net), it will be expected that all students will comply
+with the requirements outlined below.</p>
+<h1 id="application-recommendations">Application Recommendations</h1>
+<h2 id="make-a-patch">Make a patch</h2>
+<p>While this is <strong><em>optional</em></strong>, it greatly increase your chances of being
+selected. Basically, a patch is some change to the software (submitted
+wither as a patch file or a pull request). If working with us is your
+top priority, a patch will help us see how well you are at dealing with
+other people's code. Don't worry, though. It doesn't need to be more
+than a few lines. It can be a bug fix or implement some minor feature.
+It's more important that it applies without hassle and provides some
+improvement. This is one of several opportunities to impress, so be
+creative. Link to any patches in your application.</p>
+<h2 id="come-talk-to-us">Come talk to us</h2>
+<p>You <strong><em>really</em></strong> should be talking to developers long before you submit
+an application. Discuss your ideas via IRC and e-mail (mailing list).
+Communication is a huge part of our evaluation criteria.</p>
+<h2 id="maintain-a-dev-log">Maintain a dev log</h2>
+<p>It's strongly recommended that you maintain a public development log
+that is updated every day you work. Most students don't have a habit of
+discussing their work adequately and this intrinsically documents
+progress. Communication ftw. Dev logs are also a great way to let people
+in the community follow your project and provides a place to showcase
+cool highlights!</p>
+<h1 id="participation-requirements">Participation Requirements</h1>
+<h2 id="license-appropriately">License appropriately</h2>
+<p>Participation requires that any work performed will be provided in good
+faith and consistent with contributor requirements. Unless approved in
+advance in writing, all rights (copyright) will be <strong>assigned</strong> to the
+organization. If your country does not allow assignment of copyright,
+non-exclusive rights to use the code in perpetuity will be required. You
+will be credited for your work regardless.</p>
+<h2 id="report-activity-daily">Report activity daily</h2>
+<p>In addition to your ongoing discussions, it is required to regularly
+<em>submit a progress report</em> of <strong>daily</strong> activity. These reports usually
+won't need to be more than a sentence or two but they should provide
+clear concise information on what you did, things you discovered, tasks
+completed, difficulties encountered, milestones reached, days off, and
+other similar details. If you did nothing, that's okay! We want to know
+when you're concentrating on code, at the beach, and everything in
+between.</p>
+<h2 id="list-your-milestones">List your milestones</h2>
+<p>Everyone is required to submit a <strong>minimum</strong> of three and a maximum of
+ten project <em>milestones</em>. These are not deliverables but, rather, are
+overall tasks that should be completed throughout the duration of your
+work. These should be necessary implementation steps and not include any
+research or familiarity phases. In the end, there is code that must be
+produced and your milestones should be a (very) rough breakdown for
+estimating your progress. These milestones should be <strong>published in your
+first progress report,</strong> that is, at the beginning of coding.</p>
+<h2 id="be-communicative">Be communicative</h2>
+<p>All students will be expected to be reachable via chat (e.g., IRC or
+Zulip) and e-mail while they are working. Participants must be
+responsive, actively engaged in discussions, and available for
+questions, comments, and suggestions from other developers. See
+<a href="http://irchelp.org">here</a> if you are new to IRC and need help.</p>
+<h1 id="coding-requirements">Coding Requirements</h1>
+<h2 id="compile-and-run">Compile and run</h2>
+<p>Being able to compile and run on your own hardware is a very <em>basic
+task</em> that is considered essential. We're more than happy to help you
+get started the first time if you run into a problem, but you are
+expected to put forth duly diligent effort. Additionally, understanding
+the existing user community is <strong>very important</strong> for most developers to
+have at least a basic familiarity. In the end, your changes will
+(hopefully) be pushed out to the community and you should be cognizant
+of what that will <em>mean</em>.</p>
+<h2 id="be-familiar-with-revision-control">Be familiar with revision control</h2>
+<p>You will be expected to abide by the same coding requirements of other
+developers. You must know the basics for how to work with the project's
+revision control system including checking out/in changes, resolving
+conflicts, and creating patches. Whether you work on a branch or on the
+mainline trunk will depend on the project.</p>
+<h2 id="evaluate-performance">Evaluate performance</h2>
+<p>Performance is something we always strive to keep in mind.
+<strong>Quantitatively evaluate your performance</strong> and the impact your
+modifications will make. Don't prematurely optimize and don't
+over-architect, but also don't make guesses or assumptions either. Use a
+performance profiler, test your code, add debug timers, and/or have a
+peer review your work.</p>
+<h2 id="write-maintainable-code">Write maintainable code</h2>
+<p>This requirement cannot be stressed enough. How maintainable is your end
+result. This is not only maintainability from the stand-point of source
+code longevity, but involves other higher-level aspects. Does your
+implementation use interfaces, languages, tools, or techniques that
+introduce some new development requirement? If so, that choice needs to
+be discussed and <strong>justified</strong> or otherwise mitigated. Any new external
+dependencies need to be approved by the core developers. Is your code
+comprehensive and comprehensible? Well-documented? Organized? You are
+required to follow existing dev guidelines, code style, and established
+conventions.</p>
+<h2 id="write-portable-code">Write portable code</h2>
+<p>We appreciate code being as portable as possible with effort continually
+taken to make sure code works on a variety of environments. While each
+developer's perception of what is <em>reasonable</em> certainly fluctuates over
+the years and from developer to developer, the general intention is that
+code written should function the <strong>same</strong> on most moderately popular
+operating system environments. It is each dev's responsibility to either
+make sure their code isn't platform-specific or that equivalent
+functionality is implemented for other maintained platforms. You are
+expected to interact with other devs when portability issues are raised
+and to promptly resolve any problems. Portability of any dependencies
+being used must similarly be taken into account and relates to the
+aforementioned maintainability requirement.</p>
+<h2 id="write-complete-code">Write complete code</h2>
+<p>Perhaps treat each week like it is your last. You should be able to hand
+over functional code over just about any time during development (within
+a day or so) to another developer. Focus on completing tasks, completing
+code features, and working on keeping your code functional at <strong>all</strong>
+stages of development. That way, no matter how far you get on your
+milestones or deliverable(s), other developers will be able to review,
+test, and readily integrate your code. Plan your development approach
+accordingly. You should generally not "stub" code functionality (though
+comments are good), but instead focus on coding "deep" instead of
+"wide". It's generally preferred to have 2 features that work fully,
+than 5 features that half-work or even 20 features that are all 90%
+complete.</p>
+<p><a href="Category:_Summer_of_Code.md">Category: Summer of Code</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

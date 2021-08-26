@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Popescu.andrei1991/devlogs2012/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Devlogs2012 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Popescu.andrei1991/devlogs2012.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-info" class="nav-link">Personal Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#contact" class="nav-link">Contact</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-summary" class="nav-link">Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#gsoc-2012-progress" class="nav-link">GsoC 2012 progress</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#performance-measuring" class="nav-link">Performance measuring</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#daily-development-log" class="nav-link">Daily development log</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#weeks-1-3" class="nav-link">Weeks 1 - 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-4" class="nav-link">Week 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-6" class="nav-link">Week 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-7" class="nav-link">Week 7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-8" class="nav-link">Week 8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-9" class="nav-link">Week 9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-10" class="nav-link">Week 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-11" class="nav-link">Week 11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-12" class="nav-link">Week 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#week-13" class="nav-link">Week 13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="personal-info">Personal Info</h2>
+<p>Hello, my name is Andrei - Constantin Popescu, I usually go by Andrei. I
+am a second year undergraduate at Polytechnic University of
+Bucharest,studying at the computer science department.</p>
+<h2 id="contact">Contact</h2>
+<p>I can usually be found on IRC on #brlcad - freenode, I have various
+nicknames, depending on availablity : andrei, andrei_, andrei__. The
+quickest way to reach me on e-mail is the address:
+popescu.andrei1991@gmail.com - I read emails on this several times a
+day. My github account is : <a href="https://github.com/pandrei">https://github.com/pandrei</a></p>
+<p>I will use this page to keep track of my progress on a daily basis.</p>
+<h2 id="project-summary">Project Summary</h2>
+<p>Firstly, here can be found my official proposal.
+<a href="https://google-melange.appspot.com/gsoc/proposal/review/google/gsoc2012/popescuandrei/4002">https://google-melange.appspot.com/gsoc/proposal/review/google/gsoc2012/popescuandrei/4002</a></p>
+<p>The purpose of a package managing library ( or tool) is to pass around
+packages containing data from brlcad tools. The packages are sent via
+TCP and as a result are using TCP header. TCP --
+<a href="http://en.wikipedia.org/wiki/Transmission_Control_Protocol">http://en.wikipedia.org/wiki/Transmission_Control_Protocol</a></p>
+<p>My current knowledge is that the TCP Payload[1] has a size of 64kb, at
+least in the linux kernel. There has been a reported incident where
+libpkg fails to send 24k+ packages. [1] Payload - TCP field
+containinig effective data (user data, for example).</p>
+<p>I believe this is the reported incident :
+<a href="http://permalink.gmane.org/gmane.comp.cad.brlcad.devel/959">http://permalink.gmane.org/gmane.comp.cad.brlcad.devel/959</a>.</p>
+<p>Tpkg will be used for testing the package issue. I am currently
+researching dstat and ifstat, found via apt-cache search ifstat dstat -
+versatile resource statistics tool ifstat - InterFace STATistics
+Monitoring</p>
+<p>The curent state of brlcad libpkg is a basic client-server protocol.</p>
+<h2 id="gsoc-2012-progress">GsoC 2012 progress</h2>
+<p>So far I have managed to compile and install brl-cad on a 32-bit
+Archlinux. I am focusing on the tpkg command to see what exactly happens
+and properly submitting the global removal patch.</p>
+<p>Tests have been run 3D version on a remote machine. The graphics are
+present on here on the log. However, after more discussion it was
+decided there is too much noise in 3d mesh.</p>
+<p>Currently, tests have been performed for package size from 2048 to
+4194304 ( 2048 ^ 2 ). Tests have been performed on a 8M file. This is
+the graphic obtained by testing : <a href="http://i.imgur.com/H5Q2u.jpg">http://i.imgur.com/H5Q2u.jpg</a></p>
+<p>TODO : add some github link with files and numerical values.</p>
+<p>There is a second test, running package size from 1 to 2048 on a 8M
+test. It has not finished at the moment of writing. However, a graph was
+drawn with some partial data ( 1 - 95 package size ). It's correctness
+needs to be checked but it does seem to look like an exponential curve.</p>
+<p>TODO : add details and graphics when the script finishes.</p>
+<p>I m currently working on fixing the unit test.</p>
+<h2 id="performance-measuring">Performance measuring</h2>
+<p>The 3d graphics have finished.</p>
+<p>File size increase as powers of two series from 1 to 8MB</p>
+<p>Package size 1 - 2048</p>
+<p><a href="http://i.imgur.com/OPum5.png">http://i.imgur.com/OPum5.png</a></p>
+<p>Package size 2048 - 4194304</p>
+<p><a href="http://i.imgur.com/fH4rL.png">http://i.imgur.com/fH4rL.png</a></p>
+<p>Package size 1 - 4194304</p>
+<p><a href="http://i.imgur.com/AXUpN.png">http://i.imgur.com/AXUpN.png</a></p>
+<p>After converting data into CSV format and using GNU plot I have obtained
+the following graphics :</p>
+<p>1 - 2048 : <a href="http://i.imgur.com/tnWAa.png">http://i.imgur.com/tnWAa.png</a></p>
+<p>2048 - 4194304 : <a href="http://i.imgur.com/isNXL.png">http://i.imgur.com/isNXL.png</a></p>
+<p>Currently I m working to see if I can combine the two files. From what I
+read so far this seems rather complicated.</p>
+<h2 id="daily-development-log">Daily development log</h2>
+<h2 id="weeks-1-3">Weeks 1 - 3</h2>
+<p>21th May - 8th of June - exams period, minor work on tpkg patch and on
+the red - black tree test unit.</p>
+<p>9th June - working on obtaining commit access asap. Currently developing
+the performance shell script.</p>
+<p>10-11th June - not much work , documenting regarding bash programming.</p>
+<h2 id="week-4">Week 4</h2>
+<p>12-13th June -finishing the shell script, applying feedback given by
+Erik on the tpkg parameter patch.</p>
+<p>14th June - submitting the final version of the shell script.</p>
+<p>15-17th of June - learning K&amp;R indentation, learning about POSIX.
+Finishing the tpkg script and the tpkg.c modifications.</p>
+<p>18th of June - unsuccesful attempts to sync the server and client ( To
+start the client only after server started) using signal handling,
+docummenting about signal handling</p>
+<p>19th of June - unsuccesful attempts to achieve the above by using
+inter-process communications, understanding thread concepts,
+docummenting about the basics of fork() , pthreads_</p>
+<h2 id="week-5">Week 5</h2>
+<p>20th of June - sync the server with the client by using a loop to detect
+a key string (while "Server_ready" isn't found in the log_file the
+client does not start. Having issues with redirecting output from a
+background process</p>
+<p>21st of June - finished tpkg script for localhost ( both client and
+server are on the same machine), developing the remote one. (Using two
+different machines)</p>
+<p>22nd of June - getting some hints from #bash, reading about ssh,
+working on the ssh remote script(password-less ssh login process).
+Having issues with the ssh session not exiting properly.</p>
+<p>23rd of June - script finished, full functional started script on two
+machines setting up log files / reading a bit about sampling necessary
+for graphic( how many points are enough )</p>
+<p>24th - 25th of June - scripts running time, realized I could have done
+them a lot better and faster. No notable work done in these days. ( a
+script using small files ran twice and one using large files( up to 700
+mb ) ran once.</p>
+<p>26th of June the total dimension for the log files was 8.4Gb on server
+machine as well as on client ( minor difference) purging the files from
+irrelevant data. read about sed and awk. Compared the first two tests(
+which use identical parameters) and found no notable difference.
+Starting to read about and write the octave script. Reading about
+interpolation and how can I use it if I don t know what points am I
+missing.</p>
+<p>27th of June - asked for some mathematical hints on #octave - freenode.
+Finished graphs currently without interpolation. Looking up bu_bomb.log
+but they are empty. Re-run the script for a small number of iterations
+still found no error.</p>
+<h2 id="week-6">Week 6</h2>
+<p>28th of June - uploaded data. upated logs.</p>
+<p>29th of June - Reading about google test, planning on what testing
+framework to use for libpkg client - server.</p>
+<p>30th of June - still stuck with the OOP from google test.</p>
+<p>1st of July - learning / understanding how to use google test for this
+was taking too long, finding another way.</p>
+<p>2nd of July - initially created the unit test as a shell, after further
+digging, decided to change the plan and make it a .c unit test.</p>
+<p>3rd of July - finished unit testing. uploaded unit test on sourceforge.</p>
+<p>4th of July - minor work, mostly look up things I already did and see
+where and what I can improve.</p>
+<h2 id="week-7">Week 7</h2>
+<p>5th of July - Issue with wallclock, script was modified to counter the
+wallclock instability. Single variable tests were run.</p>
+<p>6th of July - issues with the script, for some reason ssh was not
+working. Adjusting that. Finished all the issues with the scripts /
+tpkg. Started 2d graphics ( 1 - 2048 ) and ( 2048 -&gt; 2048^2).</p>
+<p>7th of July - 2048 -&gt; 2048^2 testing finished, graph drawn. Minor
+analysis on it. Drawn a graph with the partial data from 1 - 2048 one,
+does seem incorrect. Will be reworked.</p>
+<p>8th of July - Restarted 1 - 2048 test. Discussing further tests and how
+I should proceed. Minor reading about unit tests in networking</p>
+<p>9th of July - Scripts still running, wrote unit test. Received feedback
+started applying it. Monitoring the values obtained from the tests. The
+" 3D graphic " test failed ( script execution ended ). It was an script
+error not a tpkg error. Fixed it and resumed tests.</p>
+<p>10th of July - working on the test unit, running tests.</p>
+<p>11th of July - Graphed the results of one test</p>
+<h2 id="week-8">Week 8</h2>
+<p>12th of July - discovered an error in testing. Previously calculated
+average was taken into consideration when it should have not, restarted
+scripts. Got two more machines ( installing archlinux + brlcad on them )</p>
+<p>13th of July - fixing HACKING issues on previous patches. Providing
+1-2048 Graph.</p>
+<p>14th - 15th of July - minor work, waiting for tests mainly.</p>
+<p>16th of July - finished tests, graphed results. TODO:// Complete with
+rest</p>
+<p>17th of July - obtain data in CSV format, attempt to check scripts
+correctness, minor reasearch about gnuplot</p>
+<p>18th of July - plotting data in a single file, taking a look into pkg.c
+and pkg.h to decide what unit tests to write</p>
+<h2 id="week-9">Week 9</h2>
+<p>19th of July - didn't manage to work anything at all, had
+somehardware(hdd)failure, reinstalled OS.</p>
+<p>20th of July - started working on test_pkg_permserver, some
+documentation regarding unit tests.</p>
+<p>21th of July - finished test_pkg_permserver, minor HACKING reedit,
+started working on test_pkg_getclient.</p>
+<p>22th of July - trying to solve issues with blocking calls. Document
+about potential solutions such as threading / signal handling or select
+()</p>
+<p>23th of July - abandoned test_pkg_getclient for the moment, moving to
+test_pkg_open, had some issues. Pkg_open was not exiting correctly.</p>
+<p>24th of July - finished test_pkg_open. Moved to test_pkg_stream,
+almost finished but there are some issues with the structure of the
+test. ( checking only pkg_conn header)</p>
+<p>25th of July - Clean-up on the current test units, searching for other
+potential candidates. Taking a look into pkg_send and pkg_send2.</p>
+<h2 id="week-10">Week 10</h2>
+<p>26th of July - asked for guidance on IRC, uploaded on sourceforge.</p>
+<p>27th of July - None</p>
+<p>28th of July - still searching for methods to escape a blocking call,
+none found using stdout as file descriptor. finished writing
+test_pkg_getclient</p>
+<p>29th of July - fixing indent issues and such on test_pkg_getclient,
+started working on test_pkg_stream. finished coding test_pkg_stream.</p>
+<p>30th of July - fixing minor issues with test_pkg_stream. started
+working on test_pkg_flush. Finished working on test_pkg_flush( tho
+there are some issues)</p>
+<p>31st of July - started working on pkg_block and pkg_suckin,
+investigating some issues regarding pkg_conn</p>
+<p>1st of August - finished pkg_block / pkg_suckin, checking out
+contributor quickies in order to obtain commit access</p>
+<h2 id="week-11">Week 11</h2>
+<p>2nd of August - done test_pkg_close and started working on
+test_pkg_waitfor</p>
+<p>3rd of August - finished working test_pkg_waitfor. reading
+/understanding pkg_send.</p>
+<p>4th of August - worked on test_pkg_send. Finished it. Minor work on
+pkg_2send.</p>
+<p>5th of August - finished working on pkg_2send.</p>
+<p>6th of August - taking a look into pkg_bwaitfor, no other work done.</p>
+<p>7th of August - started working on pkg_bwaitfor, finished it. however
+still some minor issues with it</p>
+<h2 id="week-12">Week 12</h2>
+<p>8th of August - None</p>
+<p>9th of August - Minor programming issues. None other</p>
+<p>10th of August - read pkg.c code, attempted to fix fail cases discovered
+in unit tests.</p>
+<p>11th of August - continued to work on fixing fail cases ( difficulty in
+finding out which ones are legit and which ones I should fix ) PKG_CK
+for example, aborts execution.</p>
+<p>12th of August - cleaning up unit tests, making them ready for upload</p>
+<p>13th of August - Converting tests into patch format and uploading them ,
+fixed some more fail cases, adjusting code.</p>
+<p>14th of August - issues with a segmentation fault in pkg.c code, working
+on fixing it.</p>
+<h2 id="week-13">Week 13</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Mandeeps708/gsoc_proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Gsoc proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Mandeeps708/gsoc_proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#project-title-the-freecad-plugin-installer" class="nav-link">Project Title: The FreeCAD Plugin Installer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brief-project-summary" class="nav-link">Brief Project Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#detailed-project-description" class="nav-link">Detailed Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#time-availability" class="nav-link">Time Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-freecad" class="nav-link">Why FreeCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#why-you" class="nav-link">Why you?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>Name:</strong> Mandeep Singh</p>
+<p><strong>IRC Nick:</strong> Mandeep_Singh</p>
+<p><strong>Blog:</strong> <strong><a href="https://mandeep7.wordpress.com">https://mandeep7.wordpress.com</a></strong></p>
+<p><strong>GitHub Profile:</strong> <strong><a href="https://github.com/mandeeps708">https://github.com/mandeeps708</a></strong></p>
+<p><strong>Brief Background Information</strong></p>
+<p>I am a final year B.Tech. student of Computer Science and Engineering at
+Guru Nanak Dev Engineering College, Ludhiana, India.</p>
+<p>I have always been passionate about programming. My work on various open
+source projects is briefed below:</p>
+<ul>
+<li>
+<p><em>PyDrain-</em> A project for automating drawing creation in DXF using
+    &gt; dxfwrite library and calculating area of enclosed entities.</p>
+</li>
+<li>
+<p><em>Civil Octave-</em> This project is used for the Analysis of Dynamics of
+    &gt; Structures.</p>
+</li>
+<li>
+<p><em>Booking System:</em> A Django based web-application for booking seminar
+    &gt; halls.</p>
+</li>
+<li>
+<p>I have experience of Image Processing using MATLAB.</p>
+</li>
+<li>
+<p>Apart from this, I also have my profound interest in Web development
+    &gt; and Shell Scripting. I did several mini projects for fun and
+    &gt; learning.</p>
+</li>
+</ul>
+<p>For more details about my work, you may refer my GitHub account:</p>
+<p><a href="https://github.com/mandeeps708"><em><a href="https://github.com/mandeeps708">https://github.com/mandeeps708</a></em></a></p>
+<p>My knowledge of various open source technologies expands over</p>
+<ul>
+<li>
+<p>Python</p>
+</li>
+<li>
+<p>Shell scripting</p>
+</li>
+<li>
+<p>Web Technologies (HTML, CSS, JS)</p>
+</li>
+<li>
+<p>Frameworks: Django, meteor.js, Bootstrap</p>
+</li>
+<li>
+<p>CGI (Common Gateway Interface)</p>
+</li>
+<li>
+<p>Databases: MySQL and MongoDB</p>
+</li>
+<li>
+<p>LaTeX, Doxygen</p>
+</li>
+<li>
+<p>Git, IRC and basic development workflow etc.</p>
+</li>
+</ul>
+<h1 id="project-information">Project Information</h1>
+<h1 id="project-title-the-freecad-plugin-installer">Project Title: The FreeCAD Plugin Installer</h1>
+<h1 id="brief-project-summary">Brief Project Summary</h1>
+<p>My main idea is to implement a plugin manager for FreeCAD that will be
+used to install/remove/update plugins and other unofficial workbenches
+or modules and macros. Besides, this project will make the life of the
+FreeCAD developers, workbench authors as well as the end-user easier.</p>
+<h1 id="detailed-project-description">Detailed Project Description</h1>
+<p><strong>Current Scenario</strong></p>
+<p>There are many plugins available for FreeCAD and developers are creating
+more. So the task for getting pull requests, managing and merging them
+becomes a tedious task. Quite similar is in the case of macros. And it
+also makes the code base of FreeCAD a bit more or like bloatware to be
+delivered to the end-user. Efforts have been done by the FreeCAD
+developers to separate the installation of plugins from the FreeCAD
+software itself.</p>
+<p>One has to do manual work for getting plugins installed on their system
+to be able to use them. So this project considers the issue and tends to
+implement an universal plugin manager that will manage the plugins and
+it will include the following:</p>
+<ol>
+<li>
+<p>List all the plugins installed</p>
+</li>
+<li>
+<p>Remove the installed plugins</p>
+</li>
+<li>
+<p>Add new plugins locally/remotely</p>
+</li>
+<li>
+<p>Plugin Compatibility Test</p>
+</li>
+<li>
+<p>Update the plugins (basically git pull)</p>
+</li>
+<li>
+<p>Enable/Disable the plugin</p>
+</li>
+<li>
+<p>Adding Git support</p>
+</li>
+<li>
+<p>Implementing Plugin details (identifier)</p>
+</li>
+<li>
+<p>Package and dependencies resolver</p>
+</li>
+</ol>
+<p>As FreeCAD is having many workbenches/macros fully coded in Python so
+they can be imported, without any necessity of compilation. As the
+plugins authors have to go through the painful (and somewhat lengthy)
+process of Pull Request on GitHub to get their code reviewed and
+accepted. This project focuses on making the same process rather easier
+to get the plugins working at the user’s end, so that user can integrate
+designs modules into their projects as a plug-in with ease. So the main
+idea is to present a simple, intuitive and interactive user interface.</p>
+<p>The problem with the existing system is that it’s currently using manual
+technique to get everything done i.e. it uses git submodules that have
+to be fetched manually every time a workbench/macro code is updated.
+Rather, it has to be automated.</p>
+<p><strong>Project Goals</strong></p>
+<ol>
+<li><strong><em>Better User Interface:</em></strong> The main objective of the project is to
+    &gt; helping the FreeCAD users to manage their plugins with simple user
+    &gt; interface to make the overall user experience better. This product
+    &gt; that will be delivered to the end user will include the UI such
+    &gt; that he could manage the plugins with a few simple clicks.</li>
+</ol>
+<blockquote>
+<p><strong>'Implementation Process</strong>'</p>
+</blockquote>
+<ol>
+<li>
+<p>A menu item or a sub-item will be added to launch the plugin
+    &gt; installer.</p>
+</li>
+<li>
+<p>Then it will proceed to a new window (tabular based) which will show
+    &gt; the plugins currently installed.</p>
+</li>
+<li>
+<p>It can have a checkbox beside each plugin to select/deselect it.</p>
+</li>
+<li>
+<p>There will be buttons like Enable/Disable, Remove (Uninstall) and
+    &gt; Update etc. for plugins. After selecting a particular set of
+    &gt; plugins, user will be able to click on a particular option
+    &gt; (button) as specified above.</p>
+</li>
+</ol>
+<p>Here is a prototype for the same:</p>
+<p><img alt="" src="/wiki/user/img/image01.png" /></p>
+<ol>
+<li>
+<p><strong><em>Getting list of installed workbenches and stored macros:</em></strong> To
+    &gt; get the list of installed workbenches and created macros, we will
+    &gt; first look for the specific plugin directory which will be
+    &gt; different for different operating systems. As FreeCAD is a
+    &gt; cross-platform application, we may use something like environment
+    &gt; variables or as suggested by the mentors. After getting listed all
+    &gt; the available plugins, the plugin installer will show the details
+    &gt; of the plugin like description, purpose of the plugin and some
+    &gt; other information.</p>
+</li>
+<li>
+<p><strong><em>Adding/Removing workbenches and macros:</em></strong> After getting the list
+    &gt; of installed plugins, the user will be able to add new plugins
+    &gt; according to his requirements. It will allow the user to provide a
+    &gt; link to the Git hosted repository and install that directly. On
+    &gt; the back-end, it will clone the repository and place it in the
+    &gt; appropriate directory. If it’s planned to use a particular
+    &gt; repository for hosting the plugins, then what we can have is to
+    &gt; scan (fetch) for that repository and list down the plugins for the
+    &gt; user to choose from and install from the installer itself. For
+    &gt; this to be implemented, we can request the repository and can get
+    &gt; the json response of the available plugins on the repository and
+    &gt; which later on can be filtered with the installed plugins.</p>
+</li>
+<li>
+<p><strong><em>Plugin Compatibility Test:</em></strong> The plugin authors can be suggested
+    &gt; to create a particular file i.e. a “plugin detail file”. This file
+    &gt; would contain a specific version of requirements e.g. Python
+    &gt; version needed, version of FreeCAD needed. Even if some dependency
+    &gt; is missed in the plugin detail file, the plugin installer will be
+    &gt; able to detect the plugin and perform some tests already laid down
+    &gt; to check compatibility. For example, this test may include a
+    &gt; module that will check for the Python version. One approach could
+    &gt; be that the tester module can try executing the plugin sub-module
+    &gt; and get to know if it’s compatible or not. If it’s found to be
+    &gt; incompatible, then it should revert the installation or in simpler
+    &gt; words delete the particular plugin directory.</p>
+</li>
+</ol>
+<p>The structure of the plugin directory may go like this. Suppose there is
+a main plugin directory i.e. <em>/usr/lib/freecad/Mod/Plugins/</em> and it
+contains two plugins “Plugin1” and “Plugin2”. Then each plugin will have
+some sub-directories (like images) or files (python modules). The tree
+structure will look like following:</p>
+<blockquote>
+<p>Plugins directory (/usr/lib/freecad/Mod/Plugins)</p>
+<p>|</p>
+<p>| - Plugin 1</p>
+<p>| | - File1</p>
+<p>| | - File2</p>
+<p>| | - File3</p>
+<p>| | - File 4</p>
+<p>| | - Plugin detail file</p>
+<p>|</p>
+<p>| - Plugin 2</p>
+<p>| | - Directory</p>
+<p>| | - File1</p>
+<p>| | - File2</p>
+<p>| | - File 3</p>
+<p>| | - Plugin detail file</p>
+</blockquote>
+<p>Then the idea is to have a “Plugin detail file” that will reside in the
+plugin directory itself and will contain the following information:</p>
+<ul>
+<li>
+<p>Author Information</p>
+</li>
+<li>
+<p>Plugin details like what the plugin is all about (description).</p>
+</li>
+<li>
+<p>Path settings (like which file to load)</p>
+</li>
+<li>
+<p>Dependencies details (like required Python and FreeCAD version) etc.</p>
+</li>
+</ul>
+<p>So this is the file that will be looked for by the plugin installer.</p>
+<ol>
+<li>
+<p><strong><em>Updates:</em></strong> The user can set his preferences for the duration to
+    &gt; check for updates for the already installed modules. As already
+    &gt; described, the plugin installer will try connecting to the remote
+    &gt; repository from where the plugins are to be fetched and check if
+    &gt; it contains some updated code. If some update (git fetch) is
+    &gt; detected, then the user may simply click on update and it will
+    &gt; simply do the git pull.</p>
+</li>
+<li>
+<p><strong><em>Adding Git support:</em></strong> As discussed above, adding and updating
+    &gt; plugins will be achieved using Git hosted repositories. So it will
+    &gt; be essential to add Git support to make all those happen. On Linux
+    &gt; and Mac, it’ll be pretty easier to set up git via some shell
+    &gt; script. And for Windows, we can set up “git for Windows”
+    &gt; (<a href="https://git-for-windows.github.io/"><em><a href="https://git-for-windows.github.io">https://git-for-windows.github.io</a></em></a>)
+    &gt; with the standalone (or portable) installer and then create a
+    &gt; batch (.bat) file for setting it up. As “git for Windows” includes
+    &gt; a program named “Git BASH” that includes bash shell and later
+    &gt; configuration can be done in it.</p>
+</li>
+<li>
+<p><strong><em>FreeCAD dependency tracking:</em></strong> It’s good to be considered that
+    &gt; some plugins depends on other plugins to be able to work
+    &gt; correctly. As already discussed above, the plugin author will have
+    &gt; a “Plugin detail file” in the plugin directory. That file will
+    &gt; include the list of dependencies that needs to be resolved first.
+    &gt; We can incorporate something like <em>pypi</em> or a plugin manager like
+    &gt; <em>bower</em> such that plugin’s dependencies can be manageable.</p>
+</li>
+</ol>
+<h1 id="milestones">Milestones</h1>
+<p><strong>Community Bonding Period</strong></p>
+<ul>
+<li>
+<p>Having interaction on Mailing list and IRC.</p>
+</li>
+<li>
+<p>Get to know the code of FreeCAD and try solving some existing issues
+    &gt; to get better understanding of the code.</p>
+</li>
+<li>
+<p>Seeing the scope where we can reuse the existing code in an
+    &gt; efficient manner</p>
+</li>
+</ul>
+<p><strong>23 May - 31 May</strong></p>
+<ul>
+<li>Understand the existing implementation of the plugin loader and
+    &gt; Macro installer and reuse whatever is possible.</li>
+</ul>
+<p><strong>1 June - 7 June</strong></p>
+<ul>
+<li>
+<p>Write prototype (Qt window with basic widgets like buttons and
+    &gt; scroll) code to list all the plugins installed.</p>
+</li>
+<li>
+<p>Discuss the implementation with Organisation and getting reviews.</p>
+</li>
+</ul>
+<p><strong>8 June - 14 June</strong></p>
+<ul>
+<li>
+<p>Integrating “Plugin detail list” with UI to implement “list all
+    &gt; plugins” feature.</p>
+<ul>
+<li>Get data from “Plugin detail list” and show in the UI window the
+    &gt; information like Author detail, plugin purpose and description
+    &gt; etc.</li>
+</ul>
+</li>
+</ul>
+<p><strong>15 June - 20 June</strong></p>
+<ul>
+<li>
+<p>Setup Git and its integration with FreeCAD.</p>
+<ul>
+<li>Making scripts for Linux and Mac (auto-detection of OS).</li>
+<li>Making batch file for downloading, installing on Windows and use
+    Git Bash to set up.</li>
+</ul>
+</li>
+<li>
+<p>Add new plugins remotely using Git remote repository link.</p>
+</li>
+<li>
+<p>Setup UI to show the fetched available plugins from GitHub (or any
+    &gt; remote Git hosted) repository.</p>
+</li>
+</ul>
+<p><strong>21 June - 28 June</strong></p>
+<ul>
+<li>
+<p>After getting the plugins listed on the UI, implementing the remove
+    &gt; (Uninstall) plugins feature.</p>
+</li>
+<li>
+<p>Testing and fixing found bugs</p>
+</li>
+<li>
+<p>Documenting the code using Doxygen or any other recommended tool</p>
+</li>
+<li>
+<p>Mid-term evaluation.</p>
+</li>
+</ul>
+<p><strong>29 June - 7 July</strong></p>
+<ul>
+<li>Implementing keyboard shortcuts for launching Plugin installer.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<p>Document the code.</p>
+</li>
+<li>
+<p>Adding Macros support</p>
+</li>
+</ul>
+<p><strong>8 July - 14 July</strong></p>
+<ul>
+<li>Plugin compatibility test</li>
+</ul>
+<p><strong>15 July - 21 July</strong></p>
+<ul>
+<li>
+<p>Working on feature Enabling/Disabling the plugin.</p>
+</li>
+<li>
+<p>Prototype code for Update the plugins (basically git pull).</p>
+</li>
+</ul>
+<p><strong>22 July - 28 July</strong></p>
+<ul>
+<li>
+<p>FreeCAD dependency tracking</p>
+<ul>
+<li>
+<p>Integrating with plugin detail file</p>
+</li>
+<li>
+<p>Adding support for plugin manager</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>29 July - 7 August</strong></p>
+<ul>
+<li>
+<p>Brush Up the UI of plugin installer.</p>
+</li>
+<li>
+<p>Discuss about the security concerns if we get some extra extra time.</p>
+</li>
+</ul>
+<p><strong>8 August-15 August</strong></p>
+<ul>
+<li>
+<p>More testing and cleaning.</p>
+</li>
+<li>
+<p>Writing user documentation for the project.</p>
+</li>
+<li>
+<p>Time to make up for missed milestone (if any).</p>
+</li>
+</ul>
+<p><strong>16 August - 24 August</strong></p>
+<ul>
+<li>
+<p>Cleaning and Testing code.</p>
+</li>
+<li>
+<p>Final Evaluation</p>
+</li>
+</ul>
+<h1 id="time-availability">Time Availability</h1>
+<p>I will be available 40 hours / week, if needed can spend more. No
+restriction of time.</p>
+<h1 id="why-freecad">Why FreeCAD?</h1>
+<p>I have always been fascinated by operating of CAD softwares. This
+project got my interest. It will provide me a great opportunity to work
+on a realistic project in collaboration with great experienced
+developers.</p>
+<h1 id="why-you">Why you?</h1>
+<p>I found myself fit for this project according to my skill set and
+interest. I am very passionate to explore and learn new things. I
+understood well the workflow of this project. I want to work for FreeCAD
+organisation to gain more experience and enhance my knowledge about CAD.
+I will also be actively contributing and maintaining the code even after
+GSoC.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

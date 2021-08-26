@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/BRL-CAD_Primitives/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>BRL CAD Primitives - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/BRL-CAD_Primitives.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#arbitrary-convex-polyhedra" class="nav-link">Arbitrary convex polyhedra</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#arb8-records" class="nav-link">ARB8 Records</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#arbn-records" class="nav-link">ARBN Records</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#ellipsoids" class="nav-link">Ellipsoids</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ell" class="nav-link">ell</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sph" class="nav-link">sph</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ellg" class="nav-link">ellg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ell1" class="nav-link">ell1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ehy" class="nav-link">ehy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#epa" class="nav-link">epa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#cones-and-cylinders" class="nav-link">Cones and Cylinders</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#tgc" class="nav-link">tgc</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rcc" class="nav-link">rcc</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rec" class="nav-link">rec</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rhc" class="nav-link">rhc</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rpc" class="nav-link">rpc</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tec" class="nav-link">tec</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#trc" class="nav-link">trc</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#derived-from-2d" class="nav-link">derived from 2d</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#extrude" class="nav-link">extrude</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#revolve" class="nav-link">revolve</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dsp" class="nav-link">dsp</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ebm" class="nav-link">ebm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hf" class="nav-link">hf</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#other-solids" class="nav-link">Other solids</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#tor" class="nav-link">tor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#eto" class="nav-link">eto</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part" class="nav-link">part</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nmg" class="nav-link">nmg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pipe" class="nav-link">pipe</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ars" class="nav-link">ars</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#metaball" class="nav-link">metaball</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brep" class="nav-link">brep</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#spline" class="nav-link">spline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#vol" class="nav-link">vol</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bot" class="nav-link">bot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#poly" class="nav-link">poly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#other" class="nav-link">Other</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#sketch" class="nav-link">Sketch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#annot" class="nav-link">annot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#grip" class="nav-link">grip</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#half" class="nav-link">half</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#binunif" class="nav-link">binunif</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#submodel" class="nav-link">submodel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="category:MGED.md">Primitives</a></p>
+<p>This article provides an overview of various types of geometric
+primitive objects that can be added to a BRL-CAD geometry file. The
+shape, size, location and orientation of each such object are defined by
+a set of parameters/properties that are specific to its type, which are
+discussed in the corresponding section below.</p>
+<p>For general discussions on using MGED to create primitive objects, view
+their properties, and modify or move them, see:</p>
+<ul>
+<li><a href="../Creating_primitive_objects/">Creating_primitive_objects</a></li>
+<li><a href="../Determining_the_properties_of_primitive_objects/">Determining_the_properties_of_primitive
+    objects</a></li>
+<li><a href="../Changing_the_properties_of_primitive_objects/">Changing_the_properties_of_primitive
+    objects</a></li>
+</ul>
+<p>also see:</p>
+<ul>
+<li><a href="../A_Survey_of_Implicit_Constraints_in_Primitives/">A Survey of Implicit Constraints in
+    Primitives</a></li>
+</ul>
+<p>;</p>
+<h1 id="arbitrary-convex-polyhedra">Arbitrary convex polyhedra</h1>
+<p>An <strong>arbitrary convex polyhedron</strong> (<strong>arb</strong>) is a geometric volume that
+is completely enclosed by a set of 3-dimensional planes. Each has a set
+of straight-edged, flat <strong>faces</strong> outlined by the intersections of those
+planes. The intersection of each pair of planes is a line whose
+intersections with other planes defines a pair of <strong>vertices</strong>. The line
+segment between those two vertices is an <strong>edge</strong> of the polyhedron that
+is shared by two faces. Each vertex is common to an equal number (at
+least three) of faces and edges.</p>
+<p>For example, a rectangular parallelepiped is enclosed by three
+orthogonal pairs of parallel planes. Their intersections define six
+faces, each with four edges and four vertices. There are a total of 12
+edges (each shared by two faces) and 8 vertices (each shared by three
+faces and three edges).</p>
+<p>The BRL-CAD geometry file format defines two types of records for such
+polyhedra:</p>
+<ul>
+<li><a href="#ARB8_Records.md"><strong>arb8</strong>s</a> are specified by a set of
+    eight vertices.</li>
+<li><a href="#ARBN_Records.md"><strong>arbn</strong>s</a> are specified by a set of
+    intersecting planes, each defined by four coefficients.</li>
+</ul>
+<p>Although any polyhedron can be defined and stored as an arbn, the arb8
+record type is more commonly employed because it is simpler to work with
+and still accommodates most constructive solid geometry applications.</p>
+<h2 id="arb8-records">ARB8 Records</h2>
+<p>An <strong>arb8</strong> record is specified by a set of eight {X, Y, Z} vertices
+designated V1 through V8, which need not all be unique. BRL-CAD uses
+such records to represent polyhedra having four, five or six faces:</p>
+<ul>
+<li><strong>arb8</strong> shapes have eight unique vertices. They represent
+    <strong>hexahedra</strong> that have six quadrilateral faces sharing eight edges.
+    In addition to simply specifying the {X, Y, Z} coordinates of those
+    vertices, MGED provides easier ways to create the following specific
+    types of hexahedra:<ul>
+<li><strong>3ptarb</strong> shapes represent <strong>right quadrilateral prisms</strong>,
+    which are extruded quadrilaterals having parallel ends connected
+    by four rectangular sides.</li>
+<li><strong>box</strong> shapes represent <strong>parallelepipeds</strong>, whose faces
+    comprise three pairs of equal parallelograms. Unlike a common
+    box, those faces need not be rectangular—if they are, the
+    enclosed volume is a rectangular parallelepiped.</li>
+<li><strong>rpp</strong> shapes represent <strong>rectangular parallelepipeds</strong> (also
+    known as <strong>cuboids</strong> and <strong>rectangular prisms</strong>), whose faces
+    comprise three pairs of equal rectangles. If one pair of faces
+    are squares, the volume is a <strong>square prism</strong>. If all of them
+    are squares, the volume is a <strong>cube</strong> (geometrically, there
+    cannot be just two pairs of square faces).</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>arb7</strong> shapes have seven unique vertices. They represent hexahedra
+    that have four quadrilateral and two triangular faces sharing eleven
+    edges. They can only be created by specifying the {X, Y, Z}
+    coordinates of those vertices.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>arb6</strong> shapes have six unique vertices. They represent
+    <strong>triangular prisms</strong> and <strong>truncated tetrahedra</strong>, which are
+    <strong>pentahedra</strong> that have two triangular ends connected by three
+    quadrilateral sides sharing nine edges. In addition to simply
+    specifying the {X, Y, Z} coordinates of their vertices, MGED
+    provides an easier way to create one specific type of hexahedron:<ul>
+<li><strong>raw</strong> (<strong>right angle wedge</strong>) shapes are <strong>triangular prisms</strong>
+    whose ends are parallel to each other. Interestingly enough,
+    they don't seem to require any right angles. If the ends are
+    perpendicular to the connecting edges, the shape is a <strong>right
+    triangular prism</strong> and has rectangular sides. Presumably two of
+    the rectangular sides of an actual right-angle wedge would also
+    be perpendicular to each other.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>arb5</strong> shapes have five unique vertices. They represent
+    <strong>quadrahedra</strong>, which are pentahedra that have a quadrilateral base
+    and four triangular sides sharing eight edges. If such a volume has
+    a rectangular base it is a <strong>rectangular pyramid</strong>, one with a
+    square base is a <strong>square pyramid</strong>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>arb4</strong> shapes have four unique vertices. They represent
+    <strong>tetrahedra</strong>, which have four triangular faces sharing six edges.
+    If all four triangles are equilateral, the shape is a <strong>regular
+    tetrahedron</strong>.</li>
+</ul>
+<h2 id="arbn-records">ARBN Records</h2>
+<p>An <strong>arbn</strong> record is specified by N sets of intersecting planes, each
+defined by four coefficients:</p>
+<ul>
+<li>the {X, Y, Z} coefficients of the plane's normal vector pointing
+    outward from the center of the arbn shape, and</li>
+<li>the perpendicular distance of that plane from the origin.</li>
+</ul>
+<p>As discussed in the <a href="../Creating_and_editing_arbn_primitives/">Creating and editing arbn
+primitives</a> article,
+BRL-CAD uses such primitives to represent polyhedra having any number of
+sides, edges and vertices.</p>
+<h1 id="ellipsoids">Ellipsoids</h1>
+<h2 id="ell">ell</h2>
+<p>Ellipsoid</p>
+<p>Handled by: make in form create
+Arguments:
+;V : vertex point, at the center
+;vectors A B C describing the radii of the ellipses; A points front, B points right, C points up.</p>
+<p>Example:</p>
+<p><code>in ell.s ell 0 0 0  0 -1 0  1 0 0  0 0 1</code></p>
+<h2 id="sph">sph</h2>
+<p>Sphere, special case of the ellipsoid, with vectors A B and C all the
+same magnitude (radius).</p>
+<p>Handled by: make in form(ell) create</p>
+<p>Arguments:</p>
+<p>V : vertex point, at the center
+radius</p>
+<h2 id="ellg">ellg</h2>
+<p>Special case of ellipsoid</p>
+<p>Handled by: in form(ell)
+Arguments: two foci points, and axis length</p>
+<h2 id="ell1">ell1</h2>
+<p>Special case of ellipsoid</p>
+<p>Handled by: in make form(ell) create
+Arguments: vertex, vector A, radius of revolution</p>
+<h2 id="ehy">ehy</h2>
+<p>Elliptical hyperboloid</p>
+<p>Handled by: make in form create
+Arguments: vertex, perpendicular vectors Height and (A,r_1) major axis, (r_2) magnitude of vector B, (c) apex to asymptotes distance</p>
+<h2 id="epa">epa</h2>
+<p>Elliptical paraboloid</p>
+<p>Handled by: in make form create</p>
+<h1 id="cones-and-cylinders">Cones and Cylinders</h1>
+<h2 id="tgc">tgc</h2>
+<p>Truncated general cone</p>
+<p>Handled by: in make form create
+Arguments: vertex, vectors H A B, magnitudes of vectors C D</p>
+<h2 id="rcc">rcc</h2>
+<p>Right circular cylinder, special case of tgc</p>
+<p>Handled by: in make form(tgc) create
+Arguments: vertex, height vector, radius</p>
+<p>Example:</p>
+<p><code>in rcc1.s rcc 0 0 0  1 1 1  0.5</code></p>
+<h2 id="rec">rec</h2>
+<p>Right elliptical cylinder, special case of tgc</p>
+<p>Handled by: in make form(tgc) create
+Arguments: vertex, height vector, radius</p>
+<h2 id="rhc">rhc</h2>
+<p>Right hyperbolic cylinder</p>
+<p>Handled by: in make form create
+Arguments: vertex, perpendicular vectors for Height and B, (r) rectangular half width, (c) apex to asymptote distance,</p>
+<h2 id="rpc">rpc</h2>
+<p>Right parabolic cylinder</p>
+<p>Handled by: in make form create
+Arguments: vertex, perpendicular vectors for Height and B, (r) rectangular half width</p>
+<h2 id="tec">tec</h2>
+<p>Truncated elliptical cone, special case of tgc</p>
+<p>Handled by: in make form(tgc) create
+Arguments: Vertex, vectors Height, A, B</p>
+<h2 id="trc">trc</h2>
+<p>Truncated right circular cone, special case of tgc</p>
+<p>Handled by: in make form(tgc) create
+Arguments: Vertex, Height vector, radius of base and top</p>
+<h1 id="derived-from-2d">derived from 2d</h1>
+<h2 id="extrude">extrude</h2>
+<p>Extrusion of a 2-d sketch</p>
+<p>Handled by: in make form(?) create
+Arguments: vertex, perpendicular vectors Height A B, sketch, K</p>
+<h2 id="revolve">revolve</h2>
+<p>Revolution of a 2-d sketch</p>
+<p>Handled by: in
+Arguments: vertex, revolution axis, vector in start plane, angle, sketch</p>
+<h2 id="dsp">dsp</h2>
+<p>Handled by: in create
+Arguments: data type (f|o), datasource, count of length and width, interpolation type, cut direction, cell size, unit elevation</p>
+<p>See also <a href="../DSP/">DSP</a> tutorial.</p>
+<h2 id="ebm">ebm</h2>
+<p>extruded bit map</p>
+<p>Handled by: in form create
+Arguments: filename, width and height in cells, extrusion distance,</p>
+<p>See also <a href="../EBM/">EBM</a> tutorial.</p>
+<p>The extruded bitmap (also referred to as EBM) is a solid based on a
+greyscale bitmap. The bitmap is an array of unsigned char values, see
+bw(5), and is extruded by some distance. The EBM solid requires the
+dimensions of the bitmap file (height and width in bytes), an extrusion
+length, and a transformation matrix to position the EBM. Each byte in
+the bitmap file is treated as the base of a cell that is extruded by the
+specified extrusion length. If the value of the byte is non­zero, then
+that cell is considered solid.</p>
+<h2 id="hf">hf</h2>
+<p>Height field</p>
+<p>Handled by: none?
+Status: depreciated, use dsp instead</p>
+<h1 id="other-solids">Other solids</h1>
+<h2 id="tor">tor</h2>
+<p>Torus</p>
+<p>Handled by: in make form create
+Arguments: vertex, normal vector, radius of revolution, tube radius</p>
+<h2 id="eto">eto</h2>
+<p>Elliptical torus</p>
+<p>Handled by: in make form create
+Arguments: vertex, normal vector, radius of revolution, vector C, (r_d) magnitude of semi-minor axis</p>
+<h2 id="part">part</h2>
+<p>Conical particle</p>
+<p>Handled by: in make create
+Arguments: vertex, height vector, radius at v, radius at h</p>
+<p>The particle solid is a lozenge-shaped object defined by a vertex, a
+height vector and radii at both ends. The body of the particle is either
+a cylinder or a truncated cone, depending on the values of the radii.
+Each end of the particle is a hemisphere of the specified radius.</p>
+<h2 id="nmg">nmg</h2>
+<p>n-Manifold geometry solid (non-manifold geometry)</p>
+<p>Handled by: make create</p>
+<h2 id="pipe">pipe</h2>
+<p>Hollow and solid pipes and wires</p>
+<p>Handled by: in make create
+Arguments: # points, for each point: location, inner and outer diameters, bend radius</p>
+<h2 id="ars">ars</h2>
+<p>Arbitrary rectangular solid</p>
+<p>Handled by: in make create</p>
+<p>Solids of type 'ars' (Arbitrary Faceted Solids) are defined using
+"waterlines". The following figure consists of a start point, some
+number of intermediate polygons, and an ending point. Each of the
+intermediate polygons have the same number of vertices and the vertices
+are numbered 1 thru N. In addition to the intermediate polygons a line
+will be created that begins at the start point, goes through each
+polygon at its vertex numbered 1, and terminates at the end point. This
+is repeated for each polygon vertex 2 thru N. The start point, polygons,
+and end point are each a "waterline".</p>
+<p><need an image here to illustrate the concept></p>
+<p>the ars shape takes the following values as input:</p>
+<ul>
+<li>The number of points per waterline (the number of vertices on each
+    intermediate polygon)</li>
+<li>The number of waterlines (the number of intermediate polygons
+    plus 2)</li>
+<li>X, Y, and Z for a starting point (the first waterline)</li>
+<li>for each interior polygon (an intermediate waterline)<ul>
+<li>for each point on the polygon<ul>
+<li>X, Y, and Z for the point on the polygon</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>X, Y, and Z for an ending point (the last waterline)</li>
+</ul>
+<p>For example, the command:</p>
+<p>in x.1 ars 4 6 0 0 3 1 1 3 1 -1 3 -1 -1 3 -1 1 3 1 1 1 1 -1 1 -1 -1 1 -1
+1 1 1 0 -1 0 -1 -1 -1 0 -1 0 1 -1 1 0 -3 0 -1 -3 -1 0 -3 0 1 -3 0 0 -3</p>
+<p>Will produce a square bar with a tapered 1/8 turn twist in the middle.
+Of course, more waterlines in the twist and more points per waterline
+would make the twist smoother.</p>
+<p><img alt="" src="/wiki/doc/img/Example_ars.png" title="fig:Example_ars.png" /></p>
+<p>The parameters to the above ars command can be dissected as:</p>
+<p>4 : number of points per waterline (i.e. intermediate polygons have 4
+vertices)
+6 : number of waterlines (four intermediate polygons plus the two
+endpoints)
+0 0 3 - the center of the top end of the bar
+1 1 3 1 -1 3 -1 -1 3 -1 1 3 : a 2x2 square in the xy plane at z offset
+3
+1 1 1 1 -1 1 -1 -1 1 -1 1 1 : a 2x2 square oriented the same as the
+first but at z offset 1
+1 0 -1 0 -1 -1 -1 0 -1 0 1 -1 : a 2x2 square at a 45 degree rotation
+from the first squares at z offset -1
+1 0 -3 0 -1 -3 -1 0 -3 0 1 -3 : a 2x2 square at a 45 degree rotation
+from the first squares at z offset -3
+0 0 -3 : the center of the bottom end of the bar</p>
+<h2 id="metaball">metaball</h2>
+<p>Handled by: in make form(*) create
+Arguments: render method, threshold, number of points, location and field strength for each point (and blobbiness/goo factor)</p>
+<h2 id="brep">brep</h2>
+<p><a href="NURBS.md">see NURBS</a></p>
+<h2 id="spline">spline</h2>
+<p>surface splines</p>
+<p>Handled by: ?</p>
+<h2 id="vol">vol</h2>
+<p>volume / voxel</p>
+<p>Handled by: in
+Arguments: filename, xyz dimensions of file (in voxels), lower and upper threasholds, xyz dimensions of a cell</p>
+<p>The vol solid is defined by a 3-dimensional array of unsigned char
+values. The solid requires a file of these values, the extent of the
+file (in bytes) in each dimension, the size of each cell, and high and
+low thresholds. Any value in the file that is between the thresholds
+(inclusive) represents a solid cell.</p>
+<h2 id="bot">bot</h2>
+<p>Bag of triangles</p>
+<p>Handled by: in make create (not edit!)
+Arguments: number of verticies, number of triangles, mode (1=surface 2=solid 3=plate), triangle orientation mode (1=unoriented 2=counter-clockwise 3=clockwise), each vertex, vertex index of each triangle
+See also: <a href="../BoT/">BoT</a></p>
+<h2 id="poly">poly</h2>
+<p>polysolid</p>
+<p>Handled by: none?
+Status: depreciated, use bot instead</p>
+<h1 id="other">Other</h1>
+<h2 id="sketch">Sketch</h2>
+<p>2d outline</p>
+<p>Handled by: make form(sketch editor) create
+See also: <a href="sketch.md">sketch</a></p>
+<h2 id="annot">annot</h2>
+<p>2D annotation primitive</p>
+<p>Handled by: in command</p>
+<p>See: <a href="annot.md">annot</a></p>
+<h2 id="grip">grip</h2>
+<p>Grip -- support for joints, non-geometric (does not show in rt)</p>
+<p>Handled by: in make form create</p>
+<p>Arguments:</p>
+<p>C : Center
+N : normal vector
+L : magnitude</p>
+<h2 id="half">half</h2>
+<p>halfspace</p>
+<p>Handled by: in make form create
+Arguments: Normal, distance from origin</p>
+<p>A half space is the portion of space on one side of a plane. It is
+represented by its boundary (the plane) and its outward-pointing normal
+vector.</p>
+<h2 id="binunif">binunif</h2>
+<p>Uniform-array binary object</p>
+<p>Handled by: in create (not edit!)
+Arguments: minor type (fdcsiLCSIL), data file, number of values</p>
+<h2 id="submodel">submodel</h2>
+<p>Instanced Submodel</p>
+<p>Handled by: in make form create</p>
+<p>Arguments:</p>
+<p>file: File holding the referenced geometry. 0-length if geometry is in the same file.
+treetop: Single name for the geometry to reference.</p>
+<p>A submodel is a reference to another geometry, possibly in a separate
+file.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/MgedFAQ/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>MgedFAQ - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/MgedFAQ.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#editing-viewing-and-correcting-objects" class="nav-link">Editing, viewing, and correcting objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#matrix-editing-objects" class="nav-link">Matrix editing objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#resetting-object-vertex-v" class="nav-link">Resetting object vertex (V)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#editing-general-cone-radii" class="nav-link">Editing general cone radii</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#editing-solid-parameters-a-and-b" class="nav-link">Editing solid parameters A and B</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#picking-combination-and-primary-objects" class="nav-link">Picking combination and primary objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#translating-objects" class="nav-link">Translating objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#copying-text-from-the-command-window-journal" class="nav-link">Copying text from the command window ('journal')</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#fitting-view-to-window" class="nav-link">Fitting view to window</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#cutting-a-solid-to-make-a-combination" class="nav-link">Cutting a solid to make a combination</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#panning-the-view" class="nav-link">Panning the view</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#translating-objects-away-from-visible-axes" class="nav-link">Translating objects away from visible axes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#interrogate-mged-for-axis-changes" class="nav-link">Interrogate mged for axis changes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#creating-a-plane-2d-object" class="nav-link">Creating a plane (2D) object</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#creating-a-non-smooth-surface" class="nav-link">Creating a non-smooth surface</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#constraining-angles-of-rotated-components" class="nav-link">Constraining angles of rotated components</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#repeating-construction-of-an-object-pattern-editing" class="nav-link">Repeating construction of an object (pattern editing)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#batching-or-scripting-mged-commands" class="nav-link">Batching or scripting mged commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#lighting-and-the-mater-command" class="nav-link">Lighting and the mater command</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#translating-and-rotating-objects" class="nav-link">Translating and rotating objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li>See this <a href="Msgid1010480.md">page</a> for the history of the
+    following data.</li>
+</ul>
+<h2 id="editing-viewing-and-correcting-objects">Editing, viewing, and correcting objects</h2>
+<p><strong>Q1:</strong></p>
+<p>I am trying to create case walls for ammo, gun tubes, etc. and the</p>
+<p>way I'm doing it is by making inner and outer walls using rcc and trc</p>
+<p>primitives, and I have figured out that I need to make a combination</p>
+<p>of the two, then hide the primitives and draw the comb, and then do <em>rt</em></p>
+<p>to see the finished product. That's fine. But if I</p>
+<p>translate or rotate the inner wall, for example, away from the point</p>
+<p>of creation, I cannot seem to figure out a way to restore it to its</p>
+<p>original point so that it perfectly lines up concentric with the outer</p>
+<p>wall. Can this be done with the mouse, or must I use the keyboard and</p>
+<p>editing commands?</p>
+<p><strong>A1:</strong></p>
+<p>There are <em>reset</em> and <em>apply</em> options on the Edit menu when you're</p>
+<p>in an edit mode on a primitive. The intent is that you incrementally</p>
+<p>apply/accept changes as you are happy with them or reject/reset them</p>
+<p>if you are not. As for your create -&gt; hide -&gt; draw steps, you can</p>
+<p>collapse those with a "B objectname" which will erase everything else</p>
+<p>and draw 'objectname' in one step.</p>
+<hr />
+<h2 id="matrix-editing-objects">Matrix editing objects</h2>
+<p><strong>Q2:</strong></p>
+<p>Once I create a combination, is the proper way to modify the</p>
+<p>combination via matrix edits, or is there some other way? I understand</p>
+<p>that matrix edits really mean applying the same change to all elements</p>
+<p>of an entity (primitives within a comb, for example), and then pushing</p>
+<p>the common change to all elements.</p>
+<p><strong>A2:</strong></p>
+<p>Presuming you mean 3D manipulations (translation, rotation,</p>
+<p>scaling, etc) instead of structural (adding new CSG elements), then</p>
+<p>yes--matrix edit (aka "object edit") is the means to modify. Matrix</p>
+<p>edit doesn't have to be on everything in a given combination, but it</p>
+<p>is a hierarchical tree so if you apply a matrix to object A that</p>
+<p>references objects B and C, the matrix applies to that entier</p>
+<p>hierarchy. Whether you push the matris is a modeling design decision,</p>
+<p>which I personally do not like performing so that editing operations</p>
+<p>retain a useful local coordinate systems. Others have different</p>
+<p>preferences for different reasons.</p>
+<hr />
+<h2 id="resetting-object-vertex-v">Resetting object vertex (V)</h2>
+<p><strong>Q3:</strong></p>
+<p>When I move an rcc or trc, I want to reset where V is, but there</p>
+<p>seems to be no command that allows me to reset V to 0 0 0. Is there</p>
+<p>one?</p>
+<p><strong>A3:</strong></p>
+<p>Select translate on the Edit menu and then type:</p>
+<p><code>mged&gt; p 0 0 0</code></p>
+<hr />
+<h2 id="editing-general-cone-radii">Editing general cone radii</h2>
+<p><strong>Q4:</strong></p>
+<p>Is there a way to modify the radius of rcc's and trc's? I can't</p>
+<p>find a 'set R' command in the prim selection menu anywhere.</p>
+<p><strong>A4:</strong></p>
+<p>rcc's and trc's are all fundamentally a generalized cone</p>
+<p>represented by two vectors at both ends of the cone. To change the</p>
+<p>radius, select either the "Set A,B" or "Set C,D" menu option, and</p>
+<p>type:</p>
+<p><code>mged&gt; p ###</code></p>
+<p>for whatever ### size you want to set it to.</p>
+<hr />
+<h2 id="editing-solid-parameters-a-and-b">Editing solid parameters A and B</h2>
+<p><strong>Q5:</strong></p>
+<p>When I try to set A and B at the same time, thinking if I make</p>
+<p>them the same, the radius will be uniform, but it tends to squash</p>
+<p>them to a single point. This leads me to believe that I am setting A</p>
+<p>and B to the same coordinates in space, not the same length (radius).</p>
+<!-- -->
+
+<p>Is this a true statement? (I tend to think of geometries in terms of</p>
+<p>their respective dimensions but it seems like with MGED, you have to</p>
+<p>know exactly where in space everything is, and that is not really</p>
+<p>desirable for me most of the time.)</p>
+<p><strong>A5:</strong></p>
+<p>Sounds like the size value you're using is way too small. It</p>
+<p>should be the absolute size using whatever units you're operating</p>
+<p>with, just a single value (e.g., "p 1000"), not multiple values for A</p>
+<p>and B. Doing "Set A,B" basically means "keep the base circular"</p>
+<p>instead of ellipsoidal.</p>
+<hr />
+<h2 id="picking-combination-and-primary-objects">Picking combination and primary objects</h2>
+<p><strong>Q6:</strong></p>
+<p>I see that you can pick which combs you want to modify under the</p>
+<p>comb editor, but the same does not apply for the prim editor. The</p>
+<p>prim editor seems to be only or generating new prims. Is that a true</p>
+<p>statement?</p>
+<p><strong>A6:</strong></p>
+<p>No, it's not true that it only generates new primitives. It's</p>
+<p>just lacking a drop-down box because there are generally <strong>way</strong> too</p>
+<p>many primitives for that to be a useful selection mechanism with any</p>
+<p>real model and its use is often discouraged for other reasons (it's</p>
+<p><strong>very</strong> susceptible to human error that in ways that are difficult to</p>
+<p>recover from--use with caution). Type the name of the primitive</p>
+<p>you wish to edit into the 'Name:' field and hit enter. The values</p>
+<p>should update to show that primitive.</p>
+<hr />
+<h2 id="translating-objects">Translating objects</h2>
+<p><strong>Q7:</strong></p>
+<p>When trying to translate a combination, where is the 'Z move'? I</p>
+<p>see only 'X move', 'Y move', 'XY move'. Answer: You may have to select</p>
+<p>the combination and use the <em>translate</em> or <em>tra</em> commands to reposition</p>
+<p>the object.</p>
+<p><strong>A7:</strong></p>
+<p>Very good question! The naming convention used on the labels</p>
+<p>should be clarified, but it's trivial "once you know". The X and Y</p>
+<p>don't refer to the 3D coordinates but rather to the 2D view.. So if</p>
+<p>you are looking at front, left, right, or rear views, then the z axis</p>
+<p>runs up and down the graphics window vertically, so selecting the "X</p>
+<p>Move" option will translate up and down the Z axis. Similarly, if</p>
+<p>you're looking from a more complex/arbitrary view, doing an X Move or</p>
+<p>Y move will perform more complex movements than just constrained to a</p>
+<p>given coordinate axis. The labels should probably say something like</p>
+<p>"Pan object horizontally" and "Pan object vertically" for X Move and Y</p>
+<p>Move respectively with the XY Move meaning something like just "Pan</p>
+<p>object".</p>
+<hr />
+<h2 id="copying-text-from-the-command-window-journal">Copying text from the command window ('journal')</h2>
+<p><strong>Q8:</strong></p>
+<p>Is there a way to block-copy text from the command window, or save</p>
+<p>it as a buffer/text file, in case you want to record the steps it</p>
+<p>took you to do something?</p>
+<p>I tried using the journal command and even tried to view the file</p>
+<p>while a session was open but it was a zero-length file with none of</p>
+<p>my session saved.</p>
+<p><strong>A8:</strong></p>
+<p>The journal command only begins recording from the moment you type</p>
+<p>journal, and presently doesn't write out the journal entries until</p>
+<p>you close your session. It's a limitation of the implementation.</p>
+<p>You should also be able to copy/paste any text in the command window</p>
+<p>using usual copy/paste methods (select region and click middle mouse</p>
+<p>button in a text buffer in another xterm window, for example).</p>
+<hr />
+<h2 id="fitting-view-to-window">Fitting view to window</h2>
+<p><strong>Q9:</strong></p>
+<p>Is there a 'fit to window' zoom feature?</p>
+<p><strong>A9:</strong></p>
+<p>The autoview command automatically resizes geometry when it is</p>
+<p>loaded and it's intentionally 50% the bounding of your display size</p>
+<p>so that it's guaranteed to be fully displayed at any orientation.</p>
+<p>You can 'zoom 2' to make it fit more tightly, and can similarly wrap</p>
+<p>those two commands into a proc of your own. autoview can be run on-</p>
+<p>demand and is automatically run whenever you 'e' or 'draw' something</p>
+<p>among a variety of other commands.</p>
+<hr />
+<h2 id="cutting-a-solid-to-make-a-combination">Cutting a solid to make a combination</h2>
+<p><strong>Q10:</strong></p>
+<p>How do you use a plane to slice part of a solid to make a</p>
+<p>combination (e.g., a plane cutting a box at an angle and just using</p>
+<p>the resulting portion of the box)?</p>
+<p><strong>A10:</strong></p>
+<p>The recommended approach is to create an arb8 or similar <em>box</em></p>
+<p>shape that is positioned exactly how you want it and subtract or</p>
+<p>intersect as desired. You can also use a "half" primitive, which</p>
+<p>stands for halfspace (which is an infinite plane where half the space</p>
+<p>is solid the other half is empty) though the performance is</p>
+<p>non-optimal for real models.</p>
+<hr />
+<h2 id="panning-the-view">Panning the view</h2>
+<p><strong>Q11:</strong></p>
+<p>Can you pan the view before you raytrace so that you can see more</p>
+<p>of the geometry in the rt window (fb) but without having to physically</p>
+<p>move the geometry around?</p>
+<p><strong>A11:</strong></p>
+<p>Not sure I understand this question fully, but it sounds like the</p>
+<p>answer is "yes". You can raytrace from any azimuth/elevation as well</p>
+<p>as from any arbitrary view whether <em>panned</em> or not. By default in</p>
+<p>mged, when you run ''rt', it will invoke the raytracer with a view that</p>
+<p>matches the geometry window's view so if you're not in an edit mode,</p>
+<p>you can change the view to whatever you want without editing or</p>
+<p>modifying geometry.</p>
+<hr />
+<h2 id="translating-objects-away-from-visible-axes">Translating objects away from visible axes</h2>
+<p><strong>Q12:</strong></p>
+<p>When you change (translate) the body away from the blue xyz axes,</p>
+<p>does that actually change the coordinates as well, or is that only a</p>
+<p>visual change (i.e. now your coordinates referenced to the origin are</p>
+<p>totally different than from when you started)?</p>
+<p><strong>A12:</strong></p>
+<p>Depends whether you're in an edit mode. The blue axes you're</p>
+<p>referring to, I presume, are the "View" axes which only refer to the</p>
+<p>orientation of the view and which is always at the center. The green</p>
+<p>axes are the model axes, which indicate where an object is at, and</p>
+<p>when coupled with the white edit axes, show you how edits are being</p>
+<p>performed.</p>
+<hr />
+<h2 id="interrogate-mged-for-axis-changes">Interrogate <em>mged</em> for axis changes</h2>
+<p><strong>Q13:</strong></p>
+<p>Is there any way to interrogate MGED and find out where your new</p>
+<p>(translated) xyz axes are relative to the original origin if you</p>
+<p>moved the object geometry around (i.e. new 0,0,0 =3D old x,y,z +</p>
+<p>translation matrix)?</p>
+<p><strong>A13:</strong></p>
+<p>Yes, turn on the Faceplate option on the Misc menu.. that option</p>
+<p>really should be set by default. Be sure to run File-&gt;Create/</p>
+<p>Update .mgedrc so that it keeps your settings between runs of mged.</p>
+<hr />
+<h2 id="creating-a-plane-2d-object">Creating a plane (2D) object</h2>
+<p><strong>Q14:</strong></p>
+<p>How can you create just a plane, triangle, etc. if you need one?</p>
+<p>Do you just make a 3D primitive with zero thickness?</p>
+<p><strong>A14:</strong></p>
+<p>This one is somewhat philosophical. BRL-CAD is predominantly a</p>
+<p>3D solid modeler so creating 2D or 1D objects is not only highly</p>
+<p>discouraged but generally rather complicated. That said, halfspaces</p>
+<p>work well instead of planes, arb5's instead of triangles, and spheres</p>
+<p>instead of points. Alternatively, in the 2D realm, you can use the</p>
+<p>sketch primitive and the sketcher to make purely 2D objects, though</p>
+<p>the use of those are generally limited to extrusions. There is a way</p>
+<p>to manually create triangles and meshes, but it's non-trivial and</p>
+<p>similarly limited in use until you form a closed 3D shape.</p>
+<hr />
+<h2 id="creating-a-non-smooth-surface">Creating a non-smooth surface</h2>
+<p><strong>Q15:</strong></p>
+<p>How do you make a non-smooth surface such as a corrugated circular</p>
+<p>surface surrounding a cylinder?</p>
+<p><strong>A15:</strong></p>
+<p>There are two methods to achieve that, both with their tradeoffs.</p>
+<p>The CSG approach would have you create a cylindrical pattern that</p>
+<p>matches your corrugation pattern. For example, you can make something</p>
+<p>like corrugated duct tubes by subtracting a linearly translated</p>
+<p>pattern of torii from a cylinder--create a similar smaller version</p>
+<p>to hollow out the middle. Alternatively, you could use a 2D extrusion</p>
+<p>approach for something as simple as a cylinder where you model the</p>
+<p>shape in 2D using a <em>sketch</em> primitive and combine that with an</p>
+<p><em>extrude</em> operation, and you'd have it. You can see an example of the</p>
+<p>CSG approach using the pattern tool at <a href="http://ftp.brlcad.org/tmp/gear/">http://ftp.brlcad.org/tmp/gear/</a></p>
+<p>where I create a simple 6-tooth gear using a relatively simple tooth</p>
+<p>shape.</p>
+<hr />
+<h2 id="constraining-angles-of-rotated-components">Constraining angles of rotated components</h2>
+<p><strong>Q16:</strong></p>
+<p>How do you set the angle that an articulated rotating component</p>
+<p>may sit at (e.g., a hinged part or arm)? Is such a thing possible?</p>
+<p><strong>A16:</strong></p>
+<p>It is possible, but frankly not a strong point of the package.</p>
+<p>You'd use a joint/constraint system and have it solve for various</p>
+<p>angles. It's quite difficult to use frankly, and generally easier to</p>
+<p>perform the rotation using one of several rotation commands (see the</p>
+<p>MGED Quick Reference cheat sheet)--at least one of those is dedicated</p>
+<p>to rotation via angles. You cannot set the angle as an automatically</p>
+<p>resolved constraint at the moment.</p>
+<hr />
+<h2 id="repeating-construction-of-an-object-pattern-editing">Repeating construction of an object (pattern editing)</h2>
+<p><strong>Q17:</strong></p>
+<p>If you wanted to distribute a common structure on the inside of a</p>
+<p>cylinder at a fixed spacing, how would you go about doing something</p>
+<p>like that (e.g., a structural stiffener)?</p>
+<p><strong>A17:</strong></p>
+<p>If I understand the question correctly, the pattern tool should</p>
+<p>do the trick (on the Tools menu). Probably a cylindrical pattern</p>
+<p>with some periodic/fixed spacing. Basically the same as the gear I</p>
+<p>mentioned above, but with a different base object being duplicated.</p>
+<hr />
+<h2 id="batching-or-scripting-mged-commands">Batching or scripting <em>mged</em> commands</h2>
+<p><strong>Q18:</strong></p>
+<p>Can you take a series of MGED commands to build a geometry and</p>
+<p>batch-file it and just have MGED run the batch file in order to</p>
+<p>autocreate geometries?</p>
+<p><strong>A18:</strong></p>
+<p>Yes! Create your text file and run mged using the -c option for</p>
+<p>command/classic mode. You can do something like</p>
+<p><code>$ mged -c file.g &lt; my_transcript.txt</code></p>
+<p>or here now documents like:</p>
+<p><code>$ mged -c file.g &lt;</code><EOF ><code>my_log.txt 2&gt;&amp;1</code>
+<code>`cat my_transcript.txt`</code>
+<code>EOF</code></p>
+<p>and more. You can also use the -c option to run any individual mged</p>
+<p>command without it bringing up the entire mged environment, e.g.,</p>
+<p><code>$ mged -c myfile.g tops</code></p>
+<hr />
+<h2 id="lighting-and-the-mater-command">Lighting and the <em>mater</em> command</h2>
+<p><strong>Q19:</strong></p>
+<p>I have used the mater command to make a combination white but it</p>
+<p>shows up gray in rt. How do I fix that? Is that a lighting property?</p>
+<p>What about the fact that the wireframe in the regular MGED graphics</p>
+<p>window is always red?</p>
+<p><strong>A19:</strong></p>
+<p>That is a lighting property and is dependent upon the lights in</p>
+<p>the scene. If you define no lighting sources, rt creates default</p>
+<p>lights for you. First, make sure you really are looking at what you</p>
+<p>think you're seeing by setting the object's color to green or blue</p>
+<p>instead of white. If you don't, then you're doing something else</p>
+<p>wrong. The mater command is supposed to be used on regions, which</p>
+<p>gets into a whole hierarchy discussion that is far beyond this forum</p>
+<p>and better explained over the span of the tutorial series. The fact</p>
+<p>that you set a color on a non-region is probably why the wireframe is</p>
+<p>still red.</p>
+<hr />
+<h2 id="translating-and-rotating-objects">Translating and rotating objects</h2>
+<p><strong>Q20:</strong></p>
+<p>When I shift and rotate geometry around so that it fits into the</p>
+<p>viewing area (a) does that actually reposition the geometry to a new</p>
+<p>place, or is that just visual; (b) is there a 'reset' or 'undo'</p>
+<p>command to reset the geometry to its original position; and (c) is there
+a way</p>
+<p>to precisely re-zero the geometry?</p>
+<p><strong>A20:</strong> This sounds a lot like question 13 and the answer depends on
+whether you're in an edit mode or not. If the edit menu lists a bunch of
+editing options, along with options to Accept/Apply/Reset/Reject, then
+you are in an edit mode and changes to the geometry window may be actual
+edits (it depends what buttons you press--see the cheat sheet on the
+main website documents section). If you don't see
+Accept/Apply/Reset/Reject options then nothing you do in the graphics
+window will edit geometry, you're only affecting the view orientation.
+If you do see then, then those aforementioned Edit menu options of Reset
+and Reject are there to help. To precisely select a view, either use the
+View menu or type one of the key-bindings in the graphics window (e.g.,
+'f' for front, 't' for top, '3' for 35/25, '0' to stop it from spinning
+if you hit xyzXYZ).</p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

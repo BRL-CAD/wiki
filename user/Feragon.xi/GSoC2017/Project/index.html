@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Feragon.xi/GSoC2017/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Feragon.xi/GSoC2017/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#librecad-3-lua-plugin-system" class="nav-link">LibreCAD 3 Lua plugin system</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="librecad-3-lua-plugin-system">LibreCAD 3 Lua plugin system</h2>
+<h3 id="brief-project-summary">Brief project summary</h3>
+<p>During the GSoC 2016, I began a simple implementation of Lua plugins.
+They offer a GUI version with preview of what could be done before with
+the LibreCAD command line. The plugins can only add primitive entities
+to a document, others operations are difficult to program, and won’t be
+intuitive for the user.</p>
+<p>This project aims at improving this plugin system. The plugins could
+create new entities types, and define custom interactions.</p>
+<p>For example, the rectangle plugin is only adding 4 lines in the
+document. After that, individual lines can be modified, and it doesn’t
+look like a rectangle anymore. Here the script should handle the
+modification of the entity so it will always remain a rectangle.</p>
+<p>The plugins could also make operations on files, which would allow
+scripts to import or export different formats.</p>
+<p>The same Lua code could be run in LibreCAD, or in command line or in a
+quick script, and have the same result.</p>
+<p>This proposal is also including drawing optimizations for LibreCAD, and
+a unit test system for entities rendering.</p>
+<h3 id="detailed-project-description">Detailed project description</h3>
+<h4 id="implementation-of-new-plugins">Implementation of new plugins:</h4>
+<p>First, the Lua script system needs to be improved. For the moment each
+file is included by the Lua UI.</p>
+<p>The current implementation has some limits for security reasons. Some
+functions were modified or removed. It is currently impossible to read
+or write a file, and some plugins can make LibreCAD crash.</p>
+<p>The solution here is to run each plugin on its own instance. Some
+function currently defined in Lua would be moved to a C++ API accessible
+from the scripts. This includes the function to get the selected layer
+and metadata. New managers will be required in C++ because actually
+these information are only available in the Lua UI.</p>
+<p>The API needs to be integrated in the command line and in the quick
+script dialog. Currently, they only have an access to the bindings of
+the kernel entities.</p>
+<p>A plugin manager would be required in the lcadluascript library,
+currently everything is done in the Qt UI library, which makes it
+inaccessible from the command line.</p>
+<p>It would implement methods to start or stop a script, add the bindings,
+etc... Some needs to be implemented in the UI, for example the method to
+write a file, which will open a dialog in the GUI, and read console
+input in the command interface.</p>
+<p>The files operations needs to be secure, when a script needs to open or
+save a file, it will ask the user where is the file, which prevent
+opening sensitive files.</p>
+<p>For the automation scripts, it could operate on the files in a specific
+folder, like PHP does with open_basedir.</p>
+<p>The plugins will all inherit of a Lua class, with a separation between
+UI functions and rendering functions, so the same plugin could easily be
+used in the GUI and in the command line.</p>
+<h3 id="implementation-of-custom-entities">Implementation of custom entities:</h3>
+<p>This project will also add custom entities, which could be defined by
+scripts, with custom interactions. They would be associated to a block
+for the drawing, and allthe data would be included in the INSERT entity.</p>
+<p>I think this is the best representation, because LibreCAD will treat the
+custom entities like the other CAD programs, which will make the
+entities always look the same on two different programs, only the
+interactions won’t be available. If a block is modified outside
+LibreCAD, it will be visible in LibreCAD too, and they could be
+regenerated by the user.</p>
+<p>This representation is also required because otherwise it would add Lua
+as a dependency.</p>
+<p>The interactions with the custom entities includes:</p>
+<p>• New elements in the right click menu</p>
+<p>• Apparition of new buttons in the toolbar</p>
+<p>• Modification of the entity with their drag points</p>
+<p>• New snap points</p>
+<p>The kernel require the implementation of Blocks and INSERT entities. The
+data will be stored in the INSERT entity in the application defined
+group (code 102). The plugins can define their own code, only one will
+be reserved for LibreCAD with the plugin name.</p>
+<h4 id="drawing-order-and-optimizations">Drawing order and optimizations:</h4>
+<p>A drawing order needs to be added as, actually, it is random. It wasn’t
+an issue before because we were using only basic entities, but now with
+the implementation of images, this is also needed.</p>
+<p>LibreCAD 3 is redrawing everything each time the cursor is moved, some
+objects don’t need to be refreshed every time (like the grid). This
+could be improved by redrawing only what’s needed. For example, moving
+the cursor should only refresh the temp entities and the cursor.</p>
+<p>The last optimization is the transfer between Cairo and Qt. Currently,
+there are multiple Cairo painters, which are each transferred to a
+QImage, and a QPainter is drawing each QImage on LCADViewer widget.</p>
+<p>The addition of the layers could be done in Cairo and drawn directly in
+the widget with a custom painter.</p>
+<h4 id="rendering-unit-tests">Rendering unit tests:</h4>
+<p>The idea here is to use LibreCAD command line to generate images of
+rendered entities, and compare them to existing images (what we expect).</p>
+<p>We can use a program to compare the differences between the images, but
+I’m not sure it will be portable. If that’s not possible, we can compare
+them using subtraction. Removing image2 from image1 should result in a
+totally black image. The result can be expressed in percentage: 100% –
+percentage of white pixels which stayed.</p>
+<h3 id="deliverables">Deliverables</h3>
+<p>• Support of INSERT and BLOCK and custom entities in the kernel and the
+drawer</p>
+<p>• Load and save BLOCK/INSERT/custom entities</p>
+<p>• Lua API</p>
+<p>• Interactions of the user with the custom entities</p>
+<p>• Lua script dialog using the new API</p>
+<p>• LibreCAD command line with the new API</p>
+<p>• Unit tests</p>
+<p>• Documentation of the code and on how to create a script</p>
+<p>• Rendering unit tests</p>
+<p>• Rendering optimizations</p>
+<h3 id="development-schedule">Development schedule</h3>
+<p>• May 30th – June 4th: I have my finals this week</p>
+<p>• June 5th – June 11th : - Add BLOCK and INSERT support in kernel and
+drawer - Load and save them in DXF files</p>
+<p>• June 12th – June 25th : - Move functions from Lua to a C++ class -
+Create bindings for this class - Create a sandbox for the plugins in C++
+- Create a GUI to manage plugins</p>
+<p>• June 26th – July 2nd : - Creation of the custom entity in the kernel -
+Load and save them in DXF files</p>
+<p>• July 3rd – July 9th: - Interactions of the user with the custom
+entities</p>
+<p>• July 10th – July 16th: - Add the Lua API to the Lua script dialog and
+to the command line</p>
+<p>• July 17th – July 23rd : - Update of the current scripts to add new
+features - Make the current scripts compatible as a LibreCAD plugin, as
+a quick Lua script, and as a command line plugin</p>
+<p>• July 24th – July 31st: - Documentation on how to create a script</p>
+<p>• August 1st – August 6th : - Create unit tests to compare rendered
+entities with images of expectation</p>
+<p>• August 7th – August 13th : - Optimizations of LibreCAD drawing -
+Create drawing order</p>
+<p>• August 14th – August 21st: - Code verification - Code optimization -
+Writing of missing unit tests - Writing of missing documentation</p>
+<h3 id="milestones">Milestones</h3>
+<p>• BLOCK and INSERT support in LibreCAD • Lua API • Custom entity support
+in LibreCAD • Update of plugins to add new features • Documentation on
+script creation • Rendering modifications and unit tests</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

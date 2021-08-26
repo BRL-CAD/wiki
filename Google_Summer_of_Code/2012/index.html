@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2012/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Getting started - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2012.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#getting-started" class="nav-link">Getting started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accepted-projects" class="nav-link">Accepted Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#voxelize-command" class="nav-link">Voxelize Command</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#visualizing-constructive-solid-geometry-csg" class="nav-link">Visualizing Constructive Solid Geometry (CSG)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#code-refactoring-for-reduced-maintenance-cost" class="nav-link">Code Refactoring for Reduced Maintenance Cost</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#trimmed-nurbs-tesselation" class="nav-link">Trimmed NURBS Tesselation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#benchmark-performance-database" class="nav-link">Benchmark Performance Database</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#implicit-to-nurbs-conversion" class="nav-link">Implicit to NURBS Conversion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#package-library-extensions" class="nav-link">Package Library Extensions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#volume-and-centroid-functions-for-primitives" class="nav-link">Volume and Centroid Functions for Primitives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#non-vacuum-gravity-simulator" class="nav-link">Non-Vacuum Gravity Simulator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cross-platform-3d-display-manager" class="nav-link">Cross-platform 3D Display Manager</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#consolidate-image-processing" class="nav-link">Consolidate image processing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#additional-information" class="nav-link">Additional Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started">Getting started</h1>
+<p><strong>BRL-CAD was accepted as a <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/brlcad">mentoring
+organization</a>
+for the 2012 Google Summer of Code!</strong></p>
+<p>Below is a summary of our <strong><em>11</em></strong> GSoC students accepted to work on
+projects for BRL-CAD. For anyone interested in obtaining more
+information about a specific project, see the links to their personal
+profile, development logs, and project page.</p>
+<h1 id="accepted-projects">Accepted Projects</h1>
+<h2 id="voxelize-command">Voxelize Command</h2>
+<ul>
+<li>Summary: Create a command that converts solid geometry into a
+    volumetric representation format.</li>
+<li>Student: <a href="/wiki/user/Anuragmurty">Anurag Murty</a></li>
+<li>Dev Log: <a href="/wiki/user/Anuragmurty.md#Development_Log">Development_Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/anuragmurty/22001">http://www.google-melange.com/gsoc/project/google/gsoc2012/anuragmurty/22001</a></li>
+</ul>
+<h2 id="visualizing-constructive-solid-geometry-csg">Visualizing Constructive Solid Geometry (CSG)</h2>
+<ul>
+<li>Summary: Create an interactive GUI showing the structure of
+    geometry, visualizing its directed acyclic graph.</li>
+<li>Student: <a href="/wiki/user/Cprecup">Cristina Precup</a></li>
+<li>Dev Log: <a href="/wiki/user/Cprecup/GSoC2012_progress">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/cp/42002">http://www.google-melange.com/gsoc/project/google/gsoc2012/cp/42002</a></li>
+</ul>
+<h2 id="code-refactoring-for-reduced-maintenance-cost">Code Refactoring for Reduced Maintenance Cost</h2>
+<ul>
+<li>Summary: Reduce, reuse, recycle. Leaner and meaner code.</li>
+<li>Student: <a href="/wiki/user/Ksuzee">Ksenija Slivko</a></li>
+<li>Dev Log: <a href="/wiki/user/Ksuzee/Reports">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/ksuzee/17001">http://www.google-melange.com/gsoc/project/google/gsoc2012/ksuzee/17001</a></li>
+</ul>
+<h2 id="trimmed-nurbs-tesselation">Trimmed NURBS Tesselation</h2>
+<ul>
+<li>Summary: Convert NURBS surface geometry into polygonal meshes for
+    fast visualization.</li>
+<li>Student: <a href="/wiki/user/Plussai">Laijiren</a></li>
+<li>Dev Log: <a href="/wiki/user/Plussai/GSoC_2012_log">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/plussai/17001">http://www.google-melange.com/gsoc/project/google/gsoc2012/plussai/17001</a></li>
+</ul>
+<h2 id="benchmark-performance-database">Benchmark Performance Database</h2>
+<ul>
+<li>Summary: Create a website around the BRL-CAD Benchmark Suite</li>
+<li>Student: <a href="/wiki/user/Stattrav">Suryajith Chillara</a></li>
+<li>Dev Log: <a href="/wiki/user/Stattrav/GSoC2012_log">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/suryajith/34002">http://www.google-melange.com/gsoc/project/google/gsoc2012/suryajith/34002</a></li>
+</ul>
+<h2 id="implicit-to-nurbs-conversion">Implicit to NURBS Conversion</h2>
+<ul>
+<li>Summary: Helping BRL-CAD become more of a hybrid modeling system
+    with better visualization.</li>
+<li>Student: <a href="/wiki/user/Phoenix">Wu Jianbang</a></li>
+<li>Dev Log: <a href="/wiki/user/Phoenix/GSoc2012/Reports">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/phoenixyjll/22001">http://www.google-melange.com/gsoc/project/google/gsoc2012/phoenixyjll/22001</a></li>
+</ul>
+<h2 id="package-library-extensions">Package Library Extensions</h2>
+<ul>
+<li>Summary: Improving BRL-CAD's networking library, one of the oldest
+    and most robust around.</li>
+<li>Student: <a href="/wiki/user/Popescu.andrei1991">Andrei Popescu</a></li>
+<li>Dev Log: <a href="/wiki/user/Popescu.andrei1991.md#GsoC_2012_progress">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/popescuandrei/32001">http://www.google-melange.com/gsoc/project/google/gsoc2012/popescuandrei/32001</a></li>
+</ul>
+<h2 id="volume-and-centroid-functions-for-primitives">Volume and Centroid Functions for Primitives</h2>
+<ul>
+<li>Summary: Directly and exactly calculate basic mathematical
+    properties for our 3D primitives.</li>
+<li>Student: <a href="/wiki/user/Crdueck">Chris Dueck</a></li>
+<li>Dev Log: <a href="/wiki/user/Crdueck/log">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/crdueck/18001">http://www.google-melange.com/gsoc/project/google/gsoc2012/crdueck/18001</a></li>
+</ul>
+<h2 id="non-vacuum-gravity-simulator">Non-Vacuum Gravity Simulator</h2>
+<ul>
+<li>Summary: Enhancing current simulation system to improve accuracy and
+    expand capabilities.</li>
+<li>Student: <a href="/wiki/user/Al_Da_Best">Alex Taylor</a></li>
+<li>Dev Log: <a href="/wiki/user/Al_Da_Best/devlog">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/al_da_best/28001">http://www.google-melange.com/gsoc/project/google/gsoc2012/al_da_best/28001</a></li>
+</ul>
+<h2 id="cross-platform-3d-display-manager">Cross-platform 3D Display Manager</h2>
+<ul>
+<li>Summary: Developing a cross platform 3D Display Manager for BRL-CAD</li>
+<li>Student: <a href="/wiki/user/Mesut">Mesut Oezdogan</a></li>
+<li>Dev Log: <a href="/wiki/user/Mesut/Reports">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/kane/39001">http://www.google-melange.com/gsoc/project/google/gsoc2012/kane/39001</a></li>
+</ul>
+<h2 id="consolidate-image-processing">Consolidate image processing</h2>
+<ul>
+<li>Summary: Convert all existing image conversion tools to a new
+    programming library.</li>
+<li>Student: <a href="/wiki/user/Anoop">Anoop Malav</a></li>
+<li>Dev Log: <a href="/wiki/user/Anoop/Logs">Log</a></li>
+<li><a href="http://www.google-melange.com/gsoc/project/google/gsoc2012/crazyphoton/18002">http://www.google-melange.com/gsoc/project/google/gsoc2012/crazyphoton/18002</a></li>
+</ul>
+<h1 id="additional-information">Additional Information</h1>
+<p>Students discussed and collaborated with BRL-CAD developers on
+formulating projects with most selecting from a detailed list of project
+suggestions from our <a href="Google_Summer_of_Code/Project_Ideas.md">Project
+Ideas</a> page. Student
+applications for <a href="Google_Summer_of_Code.md">GSoC</a> were accepted
+at <a href="http://socghop.appspot.com">http://socghop.appspot.com</a> from March 26th until April 6th.</p>
+<p><a href="Category:_Summer_of_Code.md">Category: Summer of Code</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

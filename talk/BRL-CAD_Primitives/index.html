@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/talk/BRL-CAD_Primitives/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>BRL CAD Primitives - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/talk/BRL-CAD_Primitives.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#revision-of-introduction-52713" class="nav-link">Revision of Introduction (5/27/13)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#completion-of-arbs-section" class="nav-link">Completion of ARBs section</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Other sources for information:</p>
+<ul>
+<li><a href="http://brlcad.org/wiki/A_Survey_of_Implicit_Constraints_in_Primitives">http://brlcad.org/wiki/A_Survey_of_Implicit_Constraints_in_Primitives</a>
+    which also could use some filling out</li>
+<li><a href="http://bzflag.bz/~starseeker/geometric_primitives.txt">http://bzflag.bz/~starseeker/geometric_primitives.txt</a></li>
+<li>scattered through all brl-cad manuals</li>
+<li>source (last resort I hope!)</li>
+</ul>
+<p>I've partially filled in the info for each primitive as I found it and
+as I've had time. Feel free to improve this page! Many of the primitives
+listed here are not fully implemented (present in <em>in</em> or <em>create</em> but
+absent from <em>make</em> or without a form when it should have one, etc.), it
+might be useful to add version numbers to indicate when the object was
+introduced or when it was completed, especially if there are older
+compiled binaries on the website that don't yet support them.</p>
+<p>??Whoever wrote this should have signed it??</p>
+<h2 id="revision-of-introduction-52713">Revision of Introduction (5/27/13)</h2>
+<p>As a tech writer who is new to BRL-CAD, I'm finding that my study of it
+is being hampered by the current state of its documentation--so I
+decided to work on improving it. My first step was going to be revising
+the introductory section of this article to more completely describe the
+MGED commands for not only creating but also viewing and editing the
+properties of geometric primitives. But I decided all such information
+more properly belonged elsewhere, so I:</p>
+<ul>
+<li>moved the information on creation methods to a new article,</li>
+<li>retitled the old articles on determining and changing the properties
+    of primitives to be consistent (leaving redirects in their old
+    locations),</li>
+<li>added links to those three articles to the introduction to this one,
+    and</li>
+<li>began reworking those three articles.</li>
+</ul>
+<p>Of course, I also anticipate improving the rest of this article as time
+permits.</p>
+<p><a href="/wiki/user/JoelDBenson">JoelDBenson</a>
+(<a href="/wiki/user/talk/JoelDBenson">talk</a>) 20:22, 27 May 2013 (UTC)</p>
+<p>Joel, impressive how you were able to gather all of our myriad
+documentation and developer notes that are scattered about. Your cleanup
+and improvement efforts are very much appreciated, thank you in spades.</p>
+<p>One of our long-term goals has been the cleanup and restructuring of the
+documentation like you've started, with our online documentation fully
+synchronized with our developer resources. From a developer-centric
+perspective, this means bridging a technical gap between the software
+and the ease of use of wiki-style online editing. This is because the
+code is constantly changing and we need some way to keep our
+documentation as up-to-date as possible, ideally as fast as the code is
+changing and ideally as easy to edit as possible (obviously).</p>
+<p>Towards the technical end, most of our most current documentation is now
+in the XML Docbook format (html-style markup) in our repository. The
+intent (which is not yet actualized) of getting that content
+synchronized onto the website.</p>
+<p>My goal for many years now is to get bidirectional round-trip editing
+set up whereby our XML documents are published to the web and as
+developers change the docs, the website is updated. Similarly, any user
+can go to one of the website pages (like you've been doing on the wiki)
+and those changes actually get staged for commit into our repository.
+How this will eventually happen is obviously a major technical
+challenge.</p>
+<p>Again, that setup is not yet in place but you will find remnants and
+information about it strewn about just like everything else. I mention
+it only so you are aware of the long-term plan, not to derail your
+current (excellent) goals of cleaning up what we do have.</p>
+<p>One piece of information you may not yet have come across is a <a href="/wiki/TOC">table of
+contents</a> that I recently pulled together. That includes
+a massive Documentation section that I would greatly appreciate feedback
+on from your tech writer perspective. I'd like to build up a consistent
+vision for where the website as a whole is going with an emphasis on
+organizing and cleaning up our absurdly extensive and poorly organized
+documentation. You wouldn't know it but we actually have several
+*thousand* pages (million+ words) of documentation when you add it all
+up!</p>
+<p><a href="/wiki/user/Sean">Sean</a> (<a href="/wiki/user/talk/Sean">talk</a>) 11:31,
+31 May 2013 (UTC)</p>
+<p>Sean—</p>
+<p>Thanks for the encouragement! I'll provide some feedback (especially on
+your TOC) via your Talk page, when I get time (that's always the rub,
+isn't it!</p>
+<p>By the way, I've noticed some technical problems with this Wiki.
+Specifically:</p>
+<ul>
+<li>The libMagick.so.9 component is reported to be missing, so it's not
+    possible to have the Wiki resize images on the fly—check the
+    downloaded images page for evidence of this.</li>
+<li>Also, attempting to access the authoring help pages fails because
+    "the Class 'XMLReader' is missing". Fortunately, much of what I've
+    learned via other Wikis does seem to work here. Still, it would be
+    nice if this site's authoring help worked.</li>
+</ul>
+<p><a href="/wiki/user/JoelDBenson">JoelDBenson</a>
+(<a href="/wiki/user/talk/JoelDBenson">talk</a>) 04:40, 10 June 2013 (UTC)</p>
+<h2 id="completion-of-arbs-section">Completion of ARBs section</h2>
+<p>I have concluded that keeping this article to a reasonable length will
+require moving the kinds of details I had included for rpps and boxes to
+companion <em>Creating and editing ... primitives</em> articles. I created two
+such articles, one for arb8s and one for arbns and moved info that had
+been here into them. If the arbn article proves sufficiently short, I
+might combine them into a single <em>Creating and editing arb primitives</em>
+article—time will tell.</p>
+<p>Having done that, I was able to complete the text of the Arbs section of
+this article as a true overview. I do plan on adding some illustrations
+as soon as I have time.</p>
+<p><a href="/wiki/user/JoelDBenson">JoelDBenson</a>
+(<a href="/wiki/user/talk/JoelDBenson">talk</a>) 04:40, 10 June 2013 (UTC)</p>
+<p>On further reflection, I think I've gone overboard in reducing the
+extent of this section. I need to include details on how the vertices of
+arb8s, arb7s, etc. have to be defined so that they are recognized as
+such. Plus the illustrations, of course.</p>
+<p><a href="/wiki/user/JoelDBenson">JoelDBenson</a>
+(<a href="/wiki/user/talk/JoelDBenson">talk</a>) 15:03, 10 June 2013 (UTC)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

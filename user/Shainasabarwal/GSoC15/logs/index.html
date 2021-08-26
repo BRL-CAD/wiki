@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Shainasabarwal/GSoC15/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Community Bonding Period - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Shainasabarwal/GSoC15/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-period" class="nav-link">Coding Period</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#25-may" class="nav-link">25 May</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#26-may" class="nav-link">26 May</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#27-may" class="nav-link">27 May</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#28-may" class="nav-link">28 May</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#29-may" class="nav-link">29 May</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#30-may" class="nav-link">30 May</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1-june" class="nav-link">1 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-june" class="nav-link">2 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-june" class="nav-link">3 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4-june" class="nav-link">4 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#5-june" class="nav-link">5 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#6-june" class="nav-link">6 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#8-june" class="nav-link">8 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#9-june" class="nav-link">9 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#10-june" class="nav-link">10 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#11-june" class="nav-link">11 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#12-june" class="nav-link">12 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#15-june" class="nav-link">15 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#16-june" class="nav-link">16 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#17-june" class="nav-link">17 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#18-june" class="nav-link">18 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#19-june" class="nav-link">19 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#20-june" class="nav-link">20 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#22-june" class="nav-link">22 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#23-june" class="nav-link">23 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#24-june" class="nav-link">24 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#25-june" class="nav-link">25 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#27-june" class="nav-link">27 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#28-june" class="nav-link">28 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#29-june" class="nav-link">29 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#30-june" class="nav-link">30 June</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1-july" class="nav-link">1 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-july" class="nav-link">2 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-july" class="nav-link">3 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4-july" class="nav-link">4 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#6-july" class="nav-link">6 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#7-july" class="nav-link">7 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#8-july" class="nav-link">8 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#9-july" class="nav-link">9 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#10-july" class="nav-link">10 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#11-july" class="nav-link">11 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#13-july" class="nav-link">13 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#14-july" class="nav-link">14 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#15-july" class="nav-link">15 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#16-july" class="nav-link">16 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#17-july" class="nav-link">17 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#18-july" class="nav-link">18 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#19-july" class="nav-link">19 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#20-july" class="nav-link">20 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#21-july" class="nav-link">21 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#22-july" class="nav-link">22 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#23-july" class="nav-link">23 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#24-july" class="nav-link">24 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#25-july" class="nav-link">25 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#27-july" class="nav-link">27 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#28-july" class="nav-link">28 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#29-july" class="nav-link">29 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#30-july" class="nav-link">30 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#31-july" class="nav-link">31 July</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-august" class="nav-link">2 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-august" class="nav-link">3 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4-august" class="nav-link">4 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#5-august" class="nav-link">5 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#6-august" class="nav-link">6 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#7-august" class="nav-link">7 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#8-august" class="nav-link">8 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#10-august" class="nav-link">10 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#11-august" class="nav-link">11 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#12-august" class="nav-link">12 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#13-august" class="nav-link">13 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#14-august" class="nav-link">14 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#17-august" class="nav-link">17 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#18-august" class="nav-link">18 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#19-august" class="nav-link">19 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#20-august" class="nav-link">20 August</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="community-bonding-period">Community Bonding Period</h1>
+<ul>
+<li>Wrote code for new scadlexer in scadlexer.h and scadlexer.cpp files.</li>
+<li>Fetch the colors in scintillaeditor.cpp file for new scadlexer and
+    it is successfully working</li>
+<li>Wrote functions on highlighting keywords and highlighting comments.</li>
+<li>Tested with Qt4 as well as Qt5</li>
+<li>Wrote function for highlight multiline comments</li>
+<li>Wrote function to highlight numbers</li>
+<li>Trying to search any better way for lexing approach using
+    QSciLexerCustom class.</li>
+</ul>
+<h1 id="coding-period">Coding Period</h1>
+<h2 id="25-may">25 May</h2>
+<ul>
+<li>Discussed and researched about different tools that can be used in
+    scad lexer.</li>
+</ul>
+<h2 id="26-may">26 May</h2>
+<ul>
+<li>Chosen lexertl to be used for scad lexer.</li>
+<li>Started reading lexertl documentation</li>
+</ul>
+<h2 id="27-may">27 May</h2>
+<ul>
+<li>Lexertl in boost is not the latest version, so as per its latest
+    documentation it doesn't work, trying to read code of lexertl
+    included in boost</li>
+</ul>
+<h2 id="28-may">28 May</h2>
+<ul>
+<li>Contacted Ben Hanson, the person who wrote lexertl and its
+    documentation and he suggested to use the latest version of lexertl
+    and not that included in the boost, because the latest version has
+    some bug fixes and it also supports unicode. Also it is header file
+    library so, we won't be needing to make any change in installation
+    script</li>
+<li>Discussed about this with my mentors</li>
+<li>Added lexertl header files in openscad new branch lexertl</li>
+</ul>
+<h2 id="29-may">29 May</h2>
+<ul>
+<li>Read lexertl documentation and examples at
+    <a href="https://github.com/BenHanson/lexertl/tree/master/examples">https://github.com/BenHanson/lexertl/tree/master/examples</a> and
+    tried to add something into scadlexer files to test its working.</li>
+</ul>
+<h2 id="30-may">30 May</h2>
+<ul>
+<li>Added rules for numbers, operators etc and divide code into tokens.</li>
+<li>Wrote the code for lookup table.</li>
+</ul>
+<h2 id="1-june">1 June</h2>
+<ul>
+<li>Successfully started highlighting keywords using lexertl tool in
+    scadlexer.</li>
+</ul>
+<h2 id="2-june">2 June</h2>
+<ul>
+<li>Added rules for single line and multi line comments.</li>
+<li>Multi line comments are not working as expected.</li>
+</ul>
+<h2 id="3-june">3 June</h2>
+<ul>
+<li>Read more about regular expression to have an efficient rule for
+    single line and multi line comments.</li>
+</ul>
+<h2 id="4-june">4 June</h2>
+<ul>
+<li>Editor became slow. Trying to figure out what's the problem with it.
+    May be the styleText function is being called again and again and so
+    with it all rules of lexer are being called again and again on
+    making any change in the editor by the user.</li>
+</ul>
+<h2 id="5-june">5 June</h2>
+<ul>
+<li>Discussed with mentors and defined all the rules in constructor
+    instead of styleText function and this way, editor got its normal
+    speed.</li>
+</ul>
+<h2 id="6-june">6 June</h2>
+<ul>
+<li>Discussed with mentors about problems in comments and keyword
+    highlighting and started writing tests.</li>
+</ul>
+<h2 id="8-june">8 June</h2>
+<ul>
+<li>Wrote a C++ program using lexertl library with simple rules as
+    testing.</li>
+</ul>
+<h2 id="9-june">9 June</h2>
+<ul>
+<li>Get the tests written checked by mentors and made more improvements.</li>
+</ul>
+<h2 id="10-june">10 June</h2>
+<ul>
+<li>Preparation for viva-voce in college, generating report and
+    presentation</li>
+</ul>
+<h2 id="11-june">11 June</h2>
+<ul>
+<li>All day spent in college for waiting and delivering presentation to
+    teachers and students</li>
+</ul>
+<h2 id="12-june">12 June</h2>
+<ul>
+<li>Read more in lexertl documentation to write comments as another
+    state machine.</li>
+</ul>
+<h2 id="15-june">15 June</h2>
+<ul>
+<li>Discussed with mentors about writing tests, ie, reading scad script
+    from an input file, mark the keywords, numbers etc and then put the
+    output in another file.</li>
+</ul>
+<h2 id="16-june">16 June</h2>
+<ul>
+<li>Wrote test in C++ using lexertl library, defining various rules,
+    which puts in the output in output file and get it checked by the
+    mentors.</li>
+</ul>
+<h2 id="17-june">17 June</h2>
+<ul>
+<li>Compiled test suite of openscad and read its documentation.</li>
+<li>Wrote lexertest in openscad test suite.</li>
+</ul>
+<h2 id="18-june">18 June</h2>
+<ul>
+<li>Made a new class Lex that can be used commonly by the tests as well
+    as the scadlexer.</li>
+<li>Added lexer rules in the class but it is not resulting any kind of
+    highlighting.</li>
+</ul>
+<h2 id="19-june">19 June</h2>
+<ul>
+<li>The new syntax of stl vector class used to push all elements in one
+    line could only be compiled using C++11 reference, so it didn't work
+    while making openscad tests. The default syntax of pushing elements
+    will increase a lot of line of code as a lot many elements need to
+    be inserted.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>To solve above problem simple C style array are used to store all
+    elements.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Keyword lists in scadlexer were removed as now it will be using the
+    arrays defined in lex class.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Still not resulting highlighting.</li>
+</ul>
+<h2 id="20-june">20 June</h2>
+<ul>
+<li>lex file object is added in lexertest of openscad.</li>
+<li>lex.cc file reference is added in CMakeList and solved reference
+    error.</li>
+<li>Removed the vectors defined in tests, as it will also be using the
+    arrays defined in lex class.</li>
+</ul>
+<h2 id="22-june">22 June</h2>
+<ul>
+<li>Number of elements in each array is calculated by sizeof function
+    and put in defineRules function of lex class as an argument.</li>
+<li>Added more rules in lex class</li>
+<li>Solved more errors and highlighting of different tokens start
+    working using lex class.</li>
+</ul>
+<h2 id="23-june">23 June</h2>
+<ul>
+<li>Put the while loop which is reponsible for highlighting tokens
+    according to the defined rules into the Lex class so that it can
+    also be used commonly by lexertest test and scadlexer class.</li>
+</ul>
+<h2 id="24-june">24 June</h2>
+<ul>
+<li>Made LexInterface as abstract class to call the highligting()
+    function of different classes(scadlexer and lexer in lexertest file)
+    in Lex class.</li>
+<li>Removed errors in lexertest file and compiled the tests</li>
+<li>Discussed with mentors about writing the test cases</li>
+</ul>
+<h2 id="25-june">25 June</h2>
+<ul>
+<li>Wrote 2 test cases and write the file path in CMakeFile.txt file to
+    pass them to add_cmdline() function so that respective python
+    script that take those files and input, run the lexertest and
+    generate respective output.</li>
+<li>Pass both tests</li>
+</ul>
+<h2 id="27-june">27 June</h2>
+<ul>
+<li>Multiline comments were causing problem in main lexing, as the value
+    of start becomes the start of the line when some changes are made in
+    particular line.</li>
+<li>Trying to figure out more such problem in lexing.</li>
+</ul>
+<h2 id="28-june">28 June</h2>
+<ul>
+<li>To test this multiline commenting thing in lexertest, the value of
+    the start is made changed but currently, it is not affecting the
+    output of the test.</li>
+</ul>
+<p>Trying to figure out the problem.</p>
+<h2 id="29-june">29 June</h2>
+<ul>
+<li>In highlighting function, the start was supposed to be used to
+    change the pointer from where the file start to be changed. But
+    recently, the variable start was not used in the function at all, so
+    it was not causing any change.</li>
+<li>Trying to figure out, how will it be used in the function</li>
+</ul>
+<h2 id="30-june">30 June</h2>
+<ul>
+<li>Trying to use the seekp function to put the start pointer at
+    different location, but as the highlighting function is being called
+    again and again at every token whereas the start is remained fixed.
+    It is not giving the expected result.</li>
+<li>Trying with more functions to generate the expected output.</li>
+</ul>
+<h2 id="1-july">1 July</h2>
+<ul>
+<li>Use tellp to check the current location of pointer, it is more than
+    start, then highlight it otherwise, right the script as it is.</li>
+<li>But it didn't behave same as openscad qscintilla editor. Discussed
+    with mentors about the problem that, whole source string need to be
+    divided into substring starting from start.</li>
+</ul>
+<h2 id="2-july">2 July</h2>
+<ul>
+<li>Divide the source string into substring started from start, but
+    still the index of token in lexertest is different than in openscad
+    editor because of tabs as openscad editor take tab as number of
+    space tokens whereas lexertest takes tab as single token.</li>
+<li>Change tab to spaces in lexerinput file, now editor and tests are
+    behaving same, having same token index.</li>
+</ul>
+<h2 id="3-july">3 July</h2>
+<ul>
+<li>Scad Lexer is facing the problem of multiline comments, as the start
+    variable in scadlexer is the start of current line, instead of start
+    of document. So some changes are made within multiline comments, it
+    gets highlighted again according to other rules instead of being the
+    part of comment.</li>
+<li>The behavior of the keywords are also not so good. Discussed with
+    mentors about these problems and tried to find out the solution.</li>
+</ul>
+<h2 id="4-july">4 July</h2>
+<ul>
+<li>The problem of unusual behavior of highlighting of keywords with
+    context to other text has been solved by calling highlighting
+    function for variables with lexer rule id 9.</li>
+<li>Wrote a new test named syntaxtest to check the style of all possible
+    tokens in the openscad script.</li>
+</ul>
+<h2 id="6-july">6 July</h2>
+<ul>
+<li>A lexer rule for special variables in openscad starting with $ has
+    been defined and highlighting function has been called for it.</li>
+<li>Also read about modifiers and tried to highlight them, but talked to
+    mentor about its highlighting style as it should be highlighted just
+    as a single character or as multiline comments.</li>
+</ul>
+<h2 id="7-july">7 July</h2>
+<ul>
+<li>It is decided to highlight modifiers just as single character until
+    the multiline comment problem is solved.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Trying to read the documentation of scintilla
+    <a href="http://scintilla.org/ScintillaDoc.html">http://scintilla.org/ScintillaDoc.html</a> to find something useful
+    for multiline comment highlighting successfully.</li>
+</ul>
+<h2 id="8-july">8 July</h2>
+<ul>
+<li>Read Qscintilla existing lexer such as LexMSSQL to get the idea of
+    how these lexers are handling multiline comments.</li>
+<li>Also get the concept of multi state for handling multi line
+    comments.</li>
+</ul>
+<h2 id="9-july">9 July</h2>
+<ul>
+<li>SCI_GETSTYLEAT function has been found to get the style at a
+    particular position.</li>
+<li>SCI_GETCURRENTPOS function will be using to get the location of
+    cursor.</li>
+<li>Wrote code in the scadlexer to get the style at cursor position
+    whenever user make any change in the script.</li>
+</ul>
+<h2 id="10-july">10 July</h2>
+<ul>
+<li>Used debugger to solve the problem of highlighting function being
+    called again and again for some tokens. The problems was missing
+    break statement in switch statement in some cases.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Crashing of the application solved by removing additional setStyling
+    statement in highlighting function and put that in if condition.</li>
+</ul>
+<h2 id="11-july">11 July</h2>
+<ul>
+<li>Used multi state feature of lexertl and changed the state of
+    statement having existing style as comment or style at starting
+    location as comment to comment with statement "results.start = 1",
+    means like telling the lexer to highlight a statement inside /* and
+    */ as comment and not as regular text and keywords.</li>
+<li>With this the problem of multiline comments has been solved.</li>
+<li>Moving forward to apply same feature for highlighting modifiers.</li>
+</ul>
+<h2 id="13-july">13 July</h2>
+<ul>
+<li>Reading about different modifiers, so that they can be styled,
+    obvious to the regular user.</li>
+<li>Defining state for different modifiers *, %, !, # in lexer.</li>
+</ul>
+<h2 id="14-july">14 July</h2>
+<ul>
+<li>Wrote lexer rules for all modifiers but it is not being highlighted
+    as expected.</li>
+</ul>
+<h2 id="15-july">15 July</h2>
+<ul>
+<li>Made the modifier rules working in the lexer.</li>
+<li>Defined different rules for single line modifiers and block of
+    modifiers.</li>
+</ul>
+<h2 id="16-july">16 July</h2>
+<ul>
+<li>Added new values in enum of scadlexer.h for modifiers</li>
+<li>Also called different style for modifiers in scintillaeditor.cc</li>
+</ul>
+<h2 id="17-july">17 July</h2>
+<ul>
+<li>Defined highlighting colors for modifiers in all color scheme of
+    editor which are written in json format in colorschemes/editor
+    directory.</li>
+</ul>
+<h2 id="18-july">18 July</h2>
+<ul>
+<li>Started reading about adding options to change the toolbar icons by
+    user.</li>
+<li>User may also be able to add his own iconset.</li>
+</ul>
+<h2 id="19-july">19 July</h2>
+<ul>
+<li>Reading the existing code of listing the 3D View and Editor options
+    in Preferences windows to get the idea of how can the iconset be
+    listed.</li>
+</ul>
+<h2 id="20-july">20 July</h2>
+<ul>
+<li>Reading about the boost different libraries used in OpenSCAD such as
+    filesystem, shared_ptr, property::tree that can be used to list the
+    iconset and change the icon as selected.</li>
+</ul>
+<h2 id="21-july">21 July</h2>
+<ul>
+<li>Added new option for Icons</li>
+<li>Also added new page for listing icon sets through QListWidget in
+    Preferences window.</li>
+</ul>
+<h2 id="22-july">22 July</h2>
+<ul>
+<li>Added code to list the name of iconsets in Preferences's Icons page
+    through boost::property tree, but it is listing the path of iconset
+    folders instead of just names. Need to extract the name of iconset
+    from the path.</li>
+</ul>
+<h2 id="23-july">23 July</h2>
+<ul>
+<li>Changed the way to get the path of iconsets from property::tree to
+    DIR using dirent.h</li>
+<li>Also the name of iconsets has been shown in the list instead of
+    paths.</li>
+</ul>
+<h2 id="24-july">24 July</h2>
+<ul>
+<li>Wrote code to use the name of iconset in mainwin.cc to use the
+    iconsets in the toolbar.</li>
+<li>Added slot in preferences to change the icon when the iconset has
+    been changed by the user in Preferences Window.</li>
+</ul>
+<h2 id="25-july">25 July</h2>
+<ul>
+<li>Added function in mainwin.cc to get the name of iconset from the
+    path mentioned and change the icon in the toolbar.</li>
+<li>Also changed Icons's icon in Preferences Window</li>
+<li>Make Icons option checkable to solve the problem of not being shown
+    as selected when clicked.</li>
+</ul>
+<h2 id="27-july">27 July</h2>
+<ul>
+<li>Changed the icon of Icons option to a free image. Last one was not
+    free.</li>
+<li>Changed the path of images of toolbar icon in openscad qrc file and
+    mainwin.cc</li>
+<li>Added list of flaticons to be changed on selecting from the list of
+    iconsets.</li>
+</ul>
+<h2 id="28-july">28 July</h2>
+<ul>
+<li>Divide the iconset into dark and light folders for different
+    background colors at different platforms.</li>
+<li>Make the flaticons as default icon set and provided option to add
+    new icon set by user just by adding a new folder inside images
+    folder.</li>
+</ul>
+<h2 id="29-july">29 July</h2>
+<ul>
+<li>Working on highlighting modifiers but it is having very strange
+    behavior that is affecting the color of text below the current
+    modifier when some change is made in it.</li>
+<li>Trying to figure out the problem by writing tests.</li>
+</ul>
+<h2 id="30-july">30 July</h2>
+<ul>
+<li>Cleaned some code of lexertl rules.</li>
+<li>Debug the code and lexer states in a file to understand the behavior
+    of modifiers, but everything seems fine other than behavior of
+    modifiers styling.</li>
+</ul>
+<h2 id="31-july">31 July</h2>
+<ul>
+<li>Discussed with mentors about modifiers problems and try to
+    understand the theory of states and lexer rules.</li>
+<li>Found that lexer state goes to 0 at every lookup call, so rule that
+    is moving from current state to initial state is not being called.</li>
+<li>Trying to figure out the solution for it.</li>
+</ul>
+<h2 id="2-august">2 August</h2>
+<ul>
+<li>Made changes in lexertl rules to solve the problem of modifiers.</li>
+<li>Call the user id at each rule to get lexer feedback more often about
+    style of the text. This solve the problem a bit, but still it is
+    affecting the next modifier styling.</li>
+</ul>
+<h2 id="3-august">3 August</h2>
+<ul>
+<li>Use the logic of multiline comments for modifiers, change state by
+    checking the state of pos, one less than start position, and it
+    worked well.</li>
+<li>As the modifier * is also a mutliplier and modifier % is also the
+    sign of MOD, so the later also get styled as former in both cases.</li>
+<li>Discussed this problem with mentors and got that this problem can be
+    solved by parsers.</li>
+</ul>
+<h2 id="4-august">4 August</h2>
+<ul>
+<li>Compiled autocomplete branch to start working on autocomplete
+    scintilla feature, but it having some errors. Trying to figure out
+    the reason of these errors.</li>
+</ul>
+<h2 id="5-august">5 August</h2>
+<ul>
+<li>Discussed about other features that are missing with latest lexer
+    and were present in CPP lexer that are auto indentation and folding.</li>
+<li>Trying to find out how these features can be added in our current
+    lexer.</li>
+</ul>
+<h2 id="6-august">6 August</h2>
+<ul>
+<li>Read scintilla documentation to know how to implement folding and
+    auto-indentation for braces.</li>
+<li>Tried different methods but it didn't work as required.</li>
+</ul>
+<h2 id="7-august">7 August</h2>
+<ul>
+<li>Tried different methods and finally folding start working
+    successfully for braces.</li>
+<li>Tried different methods for auto-indentation but it didn't work
+    well, causing infinite indentation on setting indentation of next
+    line of opening brace.</li>
+</ul>
+<h2 id="8-august">8 August</h2>
+<ul>
+<li>Implemented folding for square brackets as well as multiline
+    comments.</li>
+<li>Used blockStart and blockEnd functions of Qscintilla for
+    auto-indentation.</li>
+<li>BlockEnd function takes only single character to unindent, so
+    auto-unindent for } braces worked well but not able to implement
+    auto-indent for square brackets.</li>
+</ul>
+<h2 id="10-august">10 August</h2>
+<ul>
+<li>Tried adding auto-indentation for square brackets by using the logic
+    of folding for code block started and ended with square brackets but
+    it did't work as expected.</li>
+</ul>
+<h2 id="11-august">11 August</h2>
+<ul>
+<li>The window is made to be auto-scrolled in case of any compilation
+    error using scitilla function SCI_LINESCROLL fed with the error
+    line.</li>
+</ul>
+<h2 id="12-august">12 August</h2>
+<ul>
+<li>As the window gets scrolled skipping the number of lines at every
+    F5, so the logic is changed to set the cursor to error position and
+    scroll the window to show the cursor position in case of any
+    compilation error. In this way, the cursor remains that the error
+    position in case of repeatedly running the same script.</li>
+</ul>
+<h2 id="13-august">13 August</h2>
+<ul>
+<li>Wrote the summary of project in github wiki page
+    <a href="https://github.com/openscad/openscad/wiki/GSOC-2015-Project---ScadLexer">https://github.com/openscad/openscad/wiki/GSOC-2015-Project---ScadLexer</a></li>
+</ul>
+<h2 id="14-august">14 August</h2>
+<ul>
+<li>Made some changes, added images in the project summarization.</li>
+<li>Also wrote the documentation for the features of scintilla editor
+    <a href="https://github.com/openscad/openscad/wiki/Scintilla-Editor-Features">https://github.com/openscad/openscad/wiki/Scintilla-Editor-Features</a></li>
+</ul>
+<h2 id="17-august">17 August</h2>
+<ul>
+<li>Started testing various added features in scadlexer for quality
+    purpose.</li>
+</ul>
+<h2 id="18-august">18 August</h2>
+<ul>
+<li>Started writing tests for different start value, mentioning the
+    value of start in the input file only.</li>
+</ul>
+<h2 id="19-august">19 August</h2>
+<ul>
+<li>Shift reading file from highlighting function to main function of
+    lexertest as to pass the required pass parameter to lex_result
+    function.</li>
+</ul>
+<h2 id="20-august">20 August</h2>
+<ul>
+<li>Use examples shipped with openscad to write tests to test their
+    behavior and performance.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

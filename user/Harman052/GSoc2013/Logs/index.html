@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Harman052/GSoc2013/Logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Logs - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Harman052/GSoc2013/Logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#daily-progress" class="nav-link">Daily Progress</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Proposal Link: <a href="http://brlcad.org/wiki/user/Harman052">http://brlcad.org/wiki/user/Harman052</a></p>
+<h1 id="daily-progress">Daily Progress</h1>
+<h3 id="june-17-2013">June 17 2013</h3>
+<p>I go through the project flow, checked milestones and time period to do
+specific tasks. I mentioned various JavaScript libraries in the proposal
+so was trying to sort out which I should start with. I compared them
+with each other but later on with some Internet searches, it was found
+that webGL is not fully supported on all devices and browsers. I already
+compared webGL and HTML5 during proposal submission but now it is
+confirmed that I will go with HTML5 canvas for this project. Also
+learned about its various capabilities and features.</p>
+<h3 id="june-18-2013">June 18 2013</h3>
+<p>Tried tutorials of HTML5 to build base for the project implementation.</p>
+<h3 id="june-19-2013">June 19 2013</h3>
+<p>I decided to submit a patch and selected a feature request of directing
+the mged output to journal file. Currently, only user inputs can be
+written in it. I tried by searching for files that I need to edit but
+failed. I was searching for bu_log_add_hook() that doesn't pointed me
+to files that I could start with. Later I got useful and detailed hints
+from IRC to look into src/mged. I will look into it.</p>
+<p>Also discussed about project scope with Sean.</p>
+<h3 id="june-20-2013">June 20 2013</h3>
+<p>Conclusion of discussion was that many aspects of project are still
+unclear to developers. Although it was very painful to know that
+developers have doubts about my proposal but anyway I started with
+visualization. Different steps can be visualized as 2D HTML5 entities.
+The results of intersection can be visualized as not displaying the
+non-overlapping part as soon as user clicks on 'Intersect' button using
+javascript's "onclick" event handler. But mathematical visualization
+will not there.</p>
+<h3 id="june-21-2013">June 21 2013</h3>
+<p>Searched for solutions for unclear aspects of project. Searched about
+wireframes, why wireframes are used? It is just because they are fast to
+calculate but didn't find any anything useful specific to BRL-CAD for
+reply.</p>
+<h3 id="june-22-2013">June 22 2013</h3>
+<p>I searched and collected lot of information that can be very useful for
+BRL-CAD. I am compiling it now, and as it completed, will share with
+developers.</p>
+<h3 id="june-23-2013">June 23 2013</h3>
+<p>Found more useful information. Will share on mailing list, once
+summarized. Took break.</p>
+<h3 id="june-24-2013">June 24 2013</h3>
+<p>Worked on patch. Studied the f_journal function, its various
+components. Some doubts are still not cleared. Will try to finish by
+tomorrow.</p>
+<h3 id="june-25-2013">June 25 2013</h3>
+<ul>
+<li>Prepared a detailed email and sent to mailing list about what I
+    found for Sean's questions. Expecting new directions.</li>
+<li>Designed basic layout of interface.</li>
+</ul>
+<h3 id="june-26-2013">June 26 2013</h3>
+<ul>
+<li>As told by mentor, I studied WebGL and tried WebGL demos. I would
+    use mixture of HTML5 and WebGL.</li>
+</ul>
+<h3 id="june-27-2013">June 27 2013</h3>
+<ul>
+<li>As suggested by Charlie Stirk, I reviewed <a href="http://shapesmith.net/">http://shapesmith.net/</a>.
+    I tried it by downloading and installing locally. 3D objects can be
+    easily created and edited. Moreover, it can produce josm files than
+    can be easily parsed and used to make script of MGED commands. It
+    will be wonderful if we use its interface.</li>
+<li>Got reply from Sean, suggesting to shift from making geometry editor
+    to geometry viewer.</li>
+</ul>
+<h3 id="june-28-2013">June 28 2013</h3>
+<p>I was suggested to focus on making online geometry viewer. I just posted
+on dev-mailing list whatever I did in this context.</p>
+<h3 id="june-29-2013">June 29 2013</h3>
+<ul>
+<li>Used facetize command to convert implicit primitives into bot
+    format. However it failed to run on brep objects.</li>
+<li>Searched for web technology that could support NURBS geometry
+    directly.</li>
+<li>Posted details about today's progress on mailing list.</li>
+</ul>
+<h3 id="june-30-2013">June 30 2013</h3>
+<ul>
+<li>Explored source files to fix the facetize command. I found code for
+    facetize command in two files, one in src/libged/facetize.c and
+    other in src/libged/wdb_obj.c. Currently facetize.c is working.</li>
+</ul>
+<h3 id="july-01-2013">July 01 2013</h3>
+<p>Wasn't able to do much work due to some un-expected urgent work.</p>
+<h3 id="july-02-2013">July 02 2013</h3>
+<p>Looking into wdb_obj.c as it controls BRL-CAD database, it may be
+helpful in reading file from browser.</p>
+<h3 id="july-03-2013">July 03 2013</h3>
+<ul>
+<li>Completed the task of summarizing the things discussed on mailing
+    list into an wiki article.</li>
+<li>Working on layout.</li>
+</ul>
+<h3 id="july-04-2013">July 04 2013</h3>
+<p>Explored src/libged/facetize.c and src/libged/wdb_obj.c files. From man
+page, found "t" option of facetize command and for corresponding to this
+option, found nmg_use_tnurbs flag in src/libged/facetize.c and
+src/libged/wdb_obj.c files. But I didn't found any relevant code that
+can be hooked to make the command working in desired way.</p>
+<h3 id="july-05-2013">July 05 2013</h3>
+<ul>
+<li>Trying to figure out solution. Ask for solution on IRC.</li>
+</ul>
+<h3 id="july-06-2013">July 06 2013</h3>
+<ul>
+<li>Post problem on mailing list.</li>
+<li>In the mean time, I worked on patch. Tried to add "-r" option (for
+    response) under f_journal function in history file. Now just need
+    to figure out where to add hook in this file.</li>
+</ul>
+<h3 id="july-07-2013">July 07 2013</h3>
+<ul>
+<li>Waiting for reply.</li>
+<li>Found function history_journalize that actually writes data in
+    journal file and where the log hook is required to be added. With
+    the help of grep, I found details about bu_log_add_hook() in
+    bu.h. Need to figure out how to implement.</li>
+</ul>
+<h3 id="july-08-2013">July 08 2013</h3>
+<p>Was looking at similar implementation of bu_log_add_hook() in
+src/libged/log.c and util/pl-dm.c to figure out to redirect data to
+file. Both these files have same bu_hook_t function. I tried to
+implement in similar way, but it didn't worked.</p>
+<h3 id="july-09-2013">July 09 2013</h3>
+<ul>
+<li>Looked at the source of
+    <a href="http://www.ibiblio.org/e-notes/Splines/models/parrot.html">http://www.ibiblio.org/e-notes/Splines/models/parrot.html</a> since it
+    is much similar to our requirement. They are using CanvasMatrix.js
+    library (http://www.ibiblio.org/e-notes/webgl/CanvasMatrix.src.js)
+    for matrix calculations as webGL does not have this support.
+    However, CanvasMatrix.js is provided by Apple Inc. and its terms of
+    use seems favorable to me but some expert person must check.</li>
+<li>Model is taking input just like an ordinary webGL application i.e.
+    in the form of vertices and faces, so we can easily provide that
+    with OBJ file.</li>
+</ul>
+<h3 id="july-10-2013">July 10 2013</h3>
+<ul>
+<li>I read about WebGLU. Even they didn't specify the support for
+    visualizing trimmed NURBS.</li>
+<li>However they have partial .obj parser implemented to load objects.
+    But they said, they support object hierarchies. If I got it
+    correctly then it mean we can show sub components of regions and
+    combinations.</li>
+<li>Found 'glMatrix', another Javascript Matrix and Vector library.</li>
+</ul>
+<h3 id="july-11-2013">July 11 2013</h3>
+<ul>
+<li>Found a performance benchmark for different matrix libraries:
+    <a href="http://stepheneb.github.io/webgl-matrix-benchmarks/matrix_benchmark.html">http://stepheneb.github.io/webgl-matrix-benchmarks/matrix_benchmark.html</a>.</li>
+<li>Still not clear which library is suitable.</li>
+<li>Talked to Sean on IRC about the code that's to be hooked in
+    facetize.c. Have to move quickly.</li>
+</ul>
+<h3 id="july-12-2013">July 12 2013</h3>
+<ul>
+<li>Did some experiments with B-rep objects. My motive was to see how
+    B-rep objects are represented in database file. First I made an
+    implicit object and convert .g file to .asc then from .asc back to
+    .g and it was successful. Then in new database file, made another
+    object and made its brep object and converted file to .asc. In asc
+    file I got message, "a Tcl output routine for this type of object
+    has not yet been implemented" which means brep object was not
+    described in .asc file. When this file converted back to g, all
+    entities (one Implicit and one brep) were lost.</li>
+<li>Not much work done.</li>
+</ul>
+<h3 id="july-13-2013">July 13 2013</h3>
+<ul>
+<li>Reviewed glMatrix and WebGLU matrix library to see if they can
+    satisfy our requirements.</li>
+</ul>
+<h3 id="july-14-2013">July 14 2013</h3>
+<ul>
+<li>Asked questions on webGL IRC about various matrix libraries.</li>
+<li>Prepared summary as told my Sean of his last email.</li>
+<li>After seeing reply, many things got cleared which I took other way
+    earlier.</li>
+</ul>
+<h3 id="july-15-2013">July 15 2013</h3>
+<p>Understanding the basics of various geometry representation forms to
+know more how they are used in graphics.</p>
+<h3 id="july-16-2013">July 16 2013</h3>
+<p>Learned concepts behind Bezier curve and other basic things like control
+points, degree, basis function.</p>
+<h3 id="july-17-2013">July 17 2013</h3>
+<p>Explored about NURBS and maths part behind its working. How control
+points and their weights played their part in making curve, purpose of
+knot vector. However, it need sufficient time to grasp all that
+completely. But now I have basic understanding to NURBS geometry.</p>
+<h3 id="july-18-2013">July 18 2013</h3>
+<ul>
+<li>Tried a basic NURBS specific example in OpenGL to see what basic
+    functions are required to be ported to JavaSctipt(WebGLU).</li>
+<li>Tried example in SWIG to convert C code int Python but later came to
+    know it does not support JavaScript. :-(</li>
+<li>Looking into GLU's source code and looking for some other converter.</li>
+</ul>
+<h3 id="july-19-2013">July 19 2013</h3>
+<ul>
+<li>Found Emscripten: <a href="https://github.com/kripken/emscripten">https://github.com/kripken/emscripten</a>. From its
+    description and demos, it looks promising and suitable for my work.</li>
+<li>Working on it.</li>
+</ul>
+<h3 id="july-20-2013">July 20 2013</h3>
+<ul>
+<li>Received mail from my mentor on mailing list having instructions
+    about how to proceed further in project. So finally I will visualize
+    polygonal OBJ files on browser, no need to use Emscripten.</li>
+<li>Started reading about how to read data from g file.</li>
+</ul>
+<h3 id="july-21-2013">July 21 2013</h3>
+<p>Took break.</p>
+<h3 id="july-22-2013">July 22 2013</h3>
+<ul>
+<li>Successfully retrieve name of database file, title, version, units
+    from g file using pointer to db_i struct.</li>
+<li>Working out to retrieve names of entities from g file.</li>
+</ul>
+<h3 id="july-23-2013">July 23 2013</h3>
+<ul>
+<li>Made wire frame of layout.</li>
+<li>Prepared flow and implementation summary of project.</li>
+<li>Nothing found. Still working on same task of retrieving names of
+    objects.</li>
+</ul>
+<h3 id="july-24-2013">July 24 2013</h3>
+<ul>
+<li>Making a small prototype of web models. Searched the Internet and
+    found good examples of displaying OBJ files using ThreeJS.</li>
+<li>Basic scene is setup but getting problem with loading OBJ file.</li>
+<li>Tried to get solutions from IRC and Stack OverFlow, but not
+    succeeded.</li>
+</ul>
+<h3 id="july-25-2013">July 25 2013</h3>
+<ul>
+<li>Made prototype of how BRL-CAD models will be interactively displayed
+    on browser.</li>
+<li><a href="http://devplace.in/~harman/geometry_viewer/cylinder.html">http://devplace.in/~harman/geometry_viewer/cylinder.html</a></li>
+<li><a href="http://devplace.in/~harman/geometry_viewer/mug.html">http://devplace.in/~harman/geometry_viewer/mug.html</a></li>
+</ul>
+<h3 id="july-26-2013">July 26 2013</h3>
+<ul>
+<li>After little struggle, applied materials to models.</li>
+<li>But models are not rendering on Sean's browser in the same way as on
+    mine. He is getting problem in viewing models after I assigned
+    materials. Following are screenshots from my system:</li>
+</ul>
+<p><a href="http://screencloud.net/v/4lpO">http://screencloud.net/v/4lpO</a></p>
+<p><a href="http://screencloud.net/v/2sOA">http://screencloud.net/v/2sOA</a></p>
+<h3 id="july-27-2013">July 27 2013</h3>
+<ul>
+<li>I checked models on different browsers and systems. They are viewed
+    differently on different machines but the browser version is same.
+    Some are getting lines (tessellation lines) and some not.</li>
+<li>In the mean time, I successfully retrieve names of objects from
+    database file.</li>
+</ul>
+<h3 id="july-28-2013">July 28 2013</h3>
+<ul>
+<li>I started moving towards making web interface. I found a ready made
+    editor in ThreeJS source code.</li>
+<li>Reviewed the editor, used it to see what tasks similar to what I
+    purposed in mock ups it can perform. It seems promising.</li>
+<li>Send email to BRL-CAD dev mailing list, expressing my interest in
+    using this editor as base for project.</li>
+</ul>
+<h3 id="july-29-2013">July 29 2013</h3>
+<p>No work done, due to some college related work.</p>
+<h3 id="july-30-2013">July 30 2013</h3>
+<ul>
+<li>Looked for different method of file uploading. I wanted to start
+    with Drag n Drop support, but later I choose simpler method of
+    browsing the files just to complete the overall flow. Made file
+    upload feature. Drag n Drop support will be added at the time of
+    actual interface implementation.</li>
+<li>Made and share future plans and ask for suggestions on mailing list.</li>
+</ul>
+<h3 id="july-31-2013">July 31 2013</h3>
+<ul>
+<li>Started with adding file upload option. I was planning to make this
+    feature as drag n drop, but later I decided to first go with simple
+    solutions.</li>
+<li>Added entity list display on browser.</li>
+</ul>
+<h3 id="august-01-2013">August 01 2013</h3>
+<ul>
+<li>Following mentor Rai's suggestions, added feature of generating OBJ
+    files of first five entities as the file uploads.</li>
+<li>Now I need to pass value from PHP to JavaScript so as to finally
+    display OBJ file on browser. I suspect Ajax can be the solution.</li>
+</ul>
+<h3 id="august-02-2013">August 02 2013</h3>
+<ul>
+<li>I used PHP redirection to redirect to model display page.</li>
+<li>Now as the file upload finishes, model displayed on browser
+    (although only first entity at the moment). So, at least the flow
+    has been completed.</li>
+<li>Tested with all models that shipped with BRL-CAD source code. It
+    worked perfectly with all files except those who have modeling
+    errors. However, it look lot of time for files that have large
+    number of entities (2000+) such as havoc.g but once OBJ files
+    created model displayed successfully. I will recheck and discuss in
+    detail on mailing list once I finished with setting up demo.</li>
+</ul>
+<h3 id="august-03-2013">August 03 2013</h3>
+<ul>
+<li>Added CSS to first page.</li>
+<li>Adjusted camera position and added additional directional light to
+    light up the scene.</li>
+</ul>
+<h3 id="august-04-2013">August 04 2013</h3>
+<ul>
+<li>Changed the code so that in case if file already exists, it will
+    directly display the models rather than uploading the same file and
+    making OBJ files again.</li>
+<li>Removed unnecessary files and created repository on GitHub and
+    pushed all the code.</li>
+</ul>
+<h3 id="august-05-2013">August 05 2013</h3>
+<ul>
+<li>Fixed problem of test.g file in the demo. Tested on different
+    systems.</li>
+<li>Took break.</li>
+</ul>
+<h3 id="august-06-2013">August 06 2013</h3>
+<ul>
+<li>Took break.</li>
+</ul>
+<h3 id="august-07-2013">August 07 2013</h3>
+<ul>
+<li>Went to college for documents related work. Some documents are still
+    left. Need to visit tomorrow. Too tired. :-(</li>
+</ul>
+<h3 id="august-08-2013">August 08 2013</h3>
+<ul>
+<li>Submitted the documents to college. Work finished.</li>
+<li>Looked into patch #183. Tried to reduce code of those two functions
+    into one. But I suspect about the functionality and purpose of those
+    two functions. Looks like a wrong step taken. Need to concentrate on
+    other patch.</li>
+</ul>
+<h3 id="august-09-2013">August 09 2013</h3>
+<ul>
+<li>Searched for various similar implementations in brlcad src to see
+    how to use hooks for bu_log output. Found in mged/cmd.c,
+    util/plot-dm.c</li>
+<li>Studying how they are working.</li>
+</ul>
+<h3 id="august-10-2013">August 10 2013</h3>
+<ul>
+<li>With the help of example given in bu.h, I implemented error logging
+    feature in journal command. It successfully logs output of bu_log
+    to text file.</li>
+<li>Testing changes. With option that I added, on running journal
+    command in MGED in classic mode (using -c option) it displays
+    nothing. On quitting MGED it quits successfully. Looking into the
+    problem.</li>
+</ul>
+<h3 id="august-11-2013">August 11 2013</h3>
+<ul>
+<li>On testing, found other problems that are introduced due to my
+    changes. Although most of them are small and serious problem is only
+    when BRL-CAD crashes on running "ls -A" command after reopening
+    journal file in same MGED instance.</li>
+</ul>
+<h3 id="august-12-2013">August 12 2013</h3>
+<ul>
+<li>Called in the college. There was misunderstanding in the documents.
+    Fixed it.</li>
+<li>I noticed that the problem of patch in classic mode is the same case
+    when we redirect output / error to a text file using "&gt;" and
+    "2&gt;". It redirects all output, and at that time nothing shows on
+    screen.</li>
+</ul>
+<h3 id="august-13-2013">August 13 2013</h3>
+<ul>
+<li>Posted summary of efforts of this week to mentors.</li>
+<li>Decided and planned what to do and how to do next in the project.</li>
+<li>Took break.</li>
+</ul>
+<h3 id="august-14-2013">August 14 2013</h3>
+<ul>
+<li>As per my plan, I have to start with on-demand rendering option.
+    Firstly, I sort out different aspects of this option on paper so
+    that I could see the complete flow and what intermediate things I
+    have to add to achieve this functionality.</li>
+</ul>
+<h3 id="august-15-2013">August 15 2013</h3>
+<ul>
+<li>Improved existing code as per HACKING file. However, need to inspect
+    carefully before committing.</li>
+<li>Started working on on-demand rendering option as it makes an
+    important part of project.</li>
+<li>Set layout according to mockups. Added divs.</li>
+</ul>
+<h3 id="august-16-2013">August 16 2013</h3>
+<ul>
+<li>Getting problem with onclick event handler. On clicking the link,
+    function is not being called. Getting error that function not
+    defined, but it is actually defined. Looking into it.</li>
+</ul>
+<h3 id="august-17-2013">August 17 2013</h3>
+<ul>
+<li>Still stuck at same problem.</li>
+<li>Took short break.</li>
+</ul>
+<h3 id="august-18-2013">August 18 2013</h3>
+<ul>
+<li>Finally, "onclick" problem solved. It was a scope problem.</li>
+<li>Added "View" and "Hide" links corresponding to each entity name.
+    Working on implementing their corresponding backend functions.</li>
+</ul>
+<h3 id="august-19-2013">August 19 2013</h3>
+<ul>
+<li>Working on "on demand renderer". It has two parts: "On demand
+    drawing" and "on demand deleting". Getting problem with entity
+    display.</li>
+</ul>
+<h3 id="august-20-2013">August 20 2013</h3>
+<ul>
+<li>"On demand draw" part done. Actually, earlier I was taking it other
+    way. But looking at some problem on Stack Overflow an idea came that
+    I implemented and it worked. If I did what I planned earlier, no
+    doubt it worked but it would consume more resources and might be
+    less efficient.</li>
+<li>Now working on "on demand delete" part.</li>
+</ul>
+<h3 id="august-21-2013">August 21 2013</h3>
+<ul>
+<li>Still stuck at "on demand delete" problem. As such it is very small
+    problem but till now unable to find any solution. Explored over the
+    Internet and found one solution but that's not much efficient. Now I
+    asked on Stack Overflow. Here is the link:</li>
+</ul>
+<p><a href="http://stackoverflow.com/questions/18357529/threejs-remove-object-from-scene">http://stackoverflow.com/questions/18357529/threejs-remove-object-from-scene</a></p>
+<h3 id="august-22-2013">August 22 2013</h3>
+<ul>
+<li>No useful response on Stack Overflow.</li>
+<li>Found one solution of my own but that's not much efficient. Actually
+    in this solution, user can delete entities in reverse order as they
+    are drawn. Before actually implementing it, looking for more
+    efficient one.</li>
+</ul>
+<h3 id="august-23-2013">August 23 2013</h3>
+<ul>
+<li>Expanding that "inefficient" solution into useful one finally, "on
+    demand delete" option done in a small standalone application. Now
+    user can delete entities in random order. Next step is to implement
+    it into actual application after testing. :)</li>
+<li>Solved few small issues that I got while testing. However, needs
+    more intensive testing. Will share on mailing list once implemented
+    into actual application.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Not feeling well.</li>
+</ul>
+<h3 id="august-24-2013">August 24 2013</h3>
+<ul>
+<li>Solved various small issues that came up during implementation of
+    "on demand delete option" into application. Now need to use AJAX to
+    call "createOBJ" function (PHP) at a "onclick" event of "view"
+    button.</li>
+<li>Fixed issues related to coding standards.</li>
+<li>Again not feeling well.</li>
+</ul>
+<h3 id="august-25-2013">August 25 2013</h3>
+<ul>
+<li>Working on AJAX request problem. Looking into the documentation.
+    After this has been done, work of demand rendering facility will be
+    finished.</li>
+</ul>
+<h3 id="august-26-2013">August 26 2013</h3>
+<ul>
+<li>Took break.</li>
+</ul>
+<h3 id="august-27-2013">August 27 2013</h3>
+<ul>
+<li>On demand entity draw / hide facility implemented.</li>
+<li>Now Next plans are to add sign-up / sign-in feature so that every
+    user have his / her account and could access and manage uploaded
+    files. Further I'll be adding attractive GUI for easy user
+    experience. But before that, I would test whatever I did till now.</li>
+<li>I was successfully able to draw Goliath.c of goliath.g but found few
+    issues.</li>
+</ul>
+<h3 id="august-28-2013">August 28 2013</h3>
+<ul>
+<li>While testing with BRL-CAD's default .g files, I noticed various
+    points that needed to be considered to give user a better
+    experience. I'll share them on mailing list.</li>
+<li>Now working on sign-up / sign-in feature.</li>
+</ul>
+<h3 id="august-29-2013">August 29 2013</h3>
+<ul>
+<li>Searched for sign-up modules on the Internet so that I could change
+    / merge them into one that would be useful for this project.</li>
+<li>Found many, but need to combine them and reduce unnecessary features
+    and code.</li>
+<li>Sign up feature is implemented, entry is being saved in database.</li>
+<li>Working on email verification.</li>
+</ul>
+<h3 id="august-30-2013">August 30 2013</h3>
+<ul>
+<li>Email verification is done.</li>
+<li>Created login page, landing page, and implemented sessions
+    variables.</li>
+<li>Sign-up module is ready. Need testing.</li>
+</ul>
+<h3 id="august-31-2013">August 31 2013</h3>
+<ul>
+<li>Now the user is able to create account, login and logout
+    successfully.</li>
+<li>Module tested successfully.</li>
+</ul>
+<h3 id="september-01-2013">September 01 2013</h3>
+<ul>
+<li>To make actual use of user accounts, I changed the code so that as
+    soon as the user clicks on confirmation link (to activate account),
+    the user directory (same as that of username filled while signing
+    up) is created and a subdirectory "obj" (to store obj files) is also
+    created.</li>
+</ul>
+<h3 id="september-02-2013">September 02 2013</h3>
+<ul>
+<li>Getting problem when user uploads a file. After upload, all entities
+    of .g file erased. This was due to path problem. Actually the
+    uploaded file was not being moved to desired directory and instead
+    new empty .g file created in user directory having the same name as
+    that of uploaded file. Anyway, this has been solved. Now the
+    uploaded file is successfully saved in user's directory and with
+    this sign-Up / sign-In work completed.</li>
+<li>Testing.</li>
+</ul>
+<h3 id="september-03-2013">September 03 2013</h3>
+<ul>
+<li>Testing the application after integrating with signup module.
+    Identified possibilities where improvements can be done; will be
+    added to TODO list.</li>
+<li>Added bootstrap CSS and custom CSS to improve look and feel.</li>
+</ul>
+<h3 id="september-04-2013">September 04 2013</h3>
+<ul>
+<li>Visited various sites similar to this application to get idea of
+    perfect GUI. My main focus is to first work on the page where user
+    see models and then change other pages accordingly as that page is
+    main focus of this project. I think I need to add few more features
+    to help user to view models in convenient way and since I noticed a
+    lot of scope of this project so I need to discuss with developers
+    about what to be added and what not within the GSoC period.</li>
+</ul>
+<h3 id="september-05-2013">September 05 2013</h3>
+<ul>
+<li>Took break.</li>
+</ul>
+<h3 id="september-06-2013">September 06 2013</h3>
+<ul>
+<li>Working on feature to enable the user to manage / access uploaded
+    files, load old files from his dashboard.</li>
+</ul>
+<h3 id="september-07-2013">September 07 2013</h3>
+<ul>
+<li>Updated todo list on GitHub repository.</li>
+<li>Just finished with two new features: Now as the entity added to
+    scene, it gets a random color. Now models look more colorful. At
+    this moment colors being assigned to entities are random, in future
+    this will be brought under control of user.</li>
+<li><a href="http://screencloud.net/v/d2zN">http://screencloud.net/v/d2zN</a></li>
+<li><a href="http://screencloud.net/v/va61">http://screencloud.net/v/va61</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Secondly, now models are drawn horizontally. Earlier, models drawn
+    tilted (one side raised), were difficult to examine so fixing this
+    just improved usability.</li>
+<li><a href="http://screencloud.net/v/yUpN">http://screencloud.net/v/yUpN</a></li>
+</ul>
+<h3 id="september-08-2013">September 08 2013</h3>
+<ul>
+<li>Worked on patch to calculate and compare volumes of implicit objects
+    and their brep versions.</li>
+</ul>
+<h3 id="september-09-2013">September 09 2013</h3>
+<ul>
+<li>Still working on patch (the shell script), testing, improving it.</li>
+</ul>
+<h3 id="september-10-2013">September 10 2013</h3>
+<ul>
+<li>Submitted patch.</li>
+<li>Implemented grid in geometry viewer as suggested by Sean.</li>
+</ul>
+<h3 id="september-11-2013">September 11 2013</h3>
+<ul>
+<li>After reading Sean's reply, got many ideas about how the requested
+    features can be implemented. Before actually start coding, I want to
+    plan about how the options of such features will be provided to
+    user. Like, if we implement wireframe feature, how user will use it,
+    i.e. whether it should be like each entity should clickable to draw
+    wireframe. Even if the entity is clickable, which button it should
+    be clicked with, right or left. If it is right button, should it
+    have some context menu with many other options?</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Other case may be to have single checkbox option which when clicked,
+    all entities in the scene will get their wireframes.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Also these wireframes can be drawn from left side panel (list of
+    entities) when user hovers an entity.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Similar possibilities are also there for transparency option. Need
+    to discuss.</li>
+</ul>
+<h3 id="september-12-2013">September 12 2013</h3>
+<ul>
+<li>Assuming that we would have a combination as whole of what I devised
+    yesterday I started working on making entities clickable to get
+    wireframes.</li>
+<li>Able to get wireframes on built-in geometry on a user click in a
+    simple standalone application.</li>
+</ul>
+<h3 id="september-13-2013">September 13 2013</h3>
+<ul>
+<li>Wireframes implemented on OBJ objects but currently they are very
+    inefficient. The major problem is that sometimes, user clicks at one
+    place, and action is performed somewhere else. That's annoying.</li>
+<li>Other problem is, in case if the object is a combination of simpler
+    entities, wireframe cannot be drawn on the whole object with single
+    click; one has to click each component entity to draw its wireframe.</li>
+<li>Here is the example: <a href="http://screencloud.net/v/ozjo">http://screencloud.net/v/ozjo</a></li>
+<li>Earlier lighting was not proper. One side of model always remained
+    in dark. I attached light to movement of camera, so now models are
+    more enlightened.</li>
+<li>Added key bindings to see: top(T), bottom(B), left(L), right(R) of
+    model; giving out more touch of BRL-CAD.</li>
+</ul>
+<h3 id="september-14-2013">September 14 2013</h3>
+<ul>
+<li>Took break.</li>
+</ul>
+<h3 id="september-15-2013">September 15 2013</h3>
+<ul>
+<li>Implemented wireframe option. Now black wireframe appear by default.
+    On pressing "S", model will be shaded with random colour and on
+    pressing "W" wireframe will appear again on whole model.</li>
+<li><a href="http://screencloud.net/v/lSaK">http://screencloud.net/v/lSaK</a></li>
+<li><a href="http://screencloud.net/v/1wDg">http://screencloud.net/v/1wDg</a></li>
+<li>Earlier I reported a problem about slow performance of big / heavy
+    models. Actually, this is not a problem of ThreeJS. Earlier on my
+    Chrome browser canvas renderer was enabled that was not fully able
+    to handle such models. I enabled webGL in settings and tried that
+    heavy model (Goliath.g) once again, and now it is working perfectly
+    just like tiny models.</li>
+</ul>
+<h3 id="september-16-2013">September 16 2013</h3>
+<ul>
+<li>Urgent work out of station.</li>
+</ul>
+<h3 id="september-17-2013">September 17 2013</h3>
+<ul>
+<li>Urgent work out of station.</li>
+</ul>
+<h3 id="september-18-2013">September 18 2013</h3>
+<ul>
+<li>Urgent work out of station.</li>
+</ul>
+<h3 id="september-19-2013">September 19 2013</h3>
+<ul>
+<li>Improved GUI of model_display.php.</li>
+</ul>
+<h3 id="september-20-2013">September 20 2013</h3>
+<ul>
+<li>Improved CSS of sign-in / sign-up pages and landing page.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

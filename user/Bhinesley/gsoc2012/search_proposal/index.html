@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Bhinesley/gsoc2012/search_proposal/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Search proposal - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Bhinesley/gsoc2012/search_proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#proposal-draft-for-adding-exec-option-to-search-command-wip" class="nav-link">Proposal draft for adding exec option to search command (WIP)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="proposal-draft-for-adding-exec-option-to-search-command-wip">Proposal draft for adding exec option to search command (WIP)</h2>
+<h4 id="personal-information"><a href="/wiki/user/Bhinesley">Personal information</a></h4>
+<h5 id="contact-info"><a href="/wiki/user/Bhinesley.md#Contact">Contact info</a></h5>
+<h5 id="alternate-contact-info">Alternate contact info</h5>
+<h5 id="who-i-am"><a href="/wiki/user/Bhinesley.md#Who_I_am">Who I am</a></h5>
+<h5 id="experience"><a href="/wiki/user/Bhinesley.md#Experience">Experience</a></h5>
+<h5 id="interest-in-brl-cad">Interest in BRL-CAD</h5>
+<h5 id="benefit-to-brl-cad">Benefit to BRL-CAD</h5>
+<p>=== Project Information ===</p>
+<h4 id="summary">Summary</h4>
+<p>This project focuses on the addition of an exec option to the libged
+<em>search</em> command. The idea is similar to the exec option of the <em>find</em>
+command in Unix. Like <em>find</em>, <em>search</em> is a powerful tool for generating
+a list of matches of given a search pattern. However, while the search
+pattern may be specified using diverse criteria, there is currently no
+option for performing operations on the results.</p>
+<p>Suppose major changes had recently been made to a model. <em>search</em> could
+be use to find all empty combinations (analog to directories in Unix):</p>
+<p><code>search -nnodes 0</code></p>
+<p>In order to remove all of the combinations returned, a user would have
+to either <em>kill</em> each one manually, or write a Tcl script to iterate
+over them. The former method is not feasible for a large number of
+results. The latter involves multiple time consuming steps. Performing
+operations on search results is a common enough problem that having
+integrated support is well worth the implementation effort:</p>
+<p><code>search -nnodes 0 -exec kill {};</code></p>
+<p>Command names supplied via the exec argument must map to libged
+functions, so that <em>search</em> can call them. Currently, these mappings are
+done outside of libged. A major milestone in this project will be
+creating these mappings inside libged, by having each command add itself
+to a registry.</p>
+<p>While MGED and Archer themselves will eventually rely upon the libged
+command registry for mapping command names to functions, it is not yet
+clear if this migration is within the scope of the project
+(<font color=red><strong>TBD</strong></font>).</p>
+<h4 id="description">Description</h4>
+<ul>
+<li>code references/samples/etc.</li>
+<li>measurable goals</li>
+</ul>
+<h4 id="milestones">Milestones</h4>
+<h4 id="timeline">Timeline</h4>
+<h4 id="prior-commitments">Prior commitments</h4>
+<p>The program starts three weeks before the end of my quarter, not
+including finals week. Most, if not all, of my classes are project-based
+this year. This will work to my advantage. I will be able to get the
+bulk of the work done ahead of schedule, minimizing the impact on the
+project. If there is any lost time, I will make it up in the following
+weeks, at a rate of +5 hours per week.</p>
+<h4 id="contingencies">Contingencies</h4></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

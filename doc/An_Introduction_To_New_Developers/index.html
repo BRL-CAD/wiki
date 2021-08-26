@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/An_Introduction_To_New_Developers/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>An Introduction To New Developers - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/An_Introduction_To_New_Developers.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>If you are new to BRL-CAD community and planning to contribute with your
+valuable efforts, you are highly encouraged to go through brief
+technical background history of BRL-CAD that will help you to get
+familiar with various fundamental and major aspects of BRL-CAD. If
+you're really new to software development in general, check out these
+two videos: <a href="https://www.youtube.com/watch?v=WCuUWGmatpU">#1</a> and
+<a href="http://www.youtube.com/watch?v=kqFcF_jRrx0&amp;list=PLhyKYa0YJ_5Dl0a5h20NBoYQqAb7nO4yF">#2</a></p>
+<p>BRl-CAD always appreciate and encourage new developers to contribute to
+community and for the sake of their convenience to get quickly started,
+we summed up following a brief technical summary.</p>
+<h3 id="user-interface-of-brl-cad">User Interface of BRL-CAD</h3>
+<p>BRL-CAD is exceptionally capable yet lacking in usability. Flexibility
+is one of our greatest assets and detriments. Interface is our biggest
+problem. Addressing our fundamental usability issues are heavily tied to
+our mathematical geometry representation format and is something we're
+in the middle of fixing (Wu's GSoC project is actually a critical piece
+to that puzzle).</p>
+<p>Qt (a cross-platform complete development framework for creation of
+amazing user interfaces) has been in our development roadmap for many
+years. We expect we'll probably have initial useful user capability in
+late 2014. Vlad's GSoC project involves implementing a Qt display
+manager, which is also a critical piece of that puzzle.</p>
+<p>Moreover, Archer (the new GUI; under development) is a step in a complex
+refactoring process. It's predominantly a mechanism for abstracting the
+useful logic from within MGED (present GUI) into reusable library form.
+Specifically, this gave us the GED library, which is letting us reuse
+tremendous amounts of useful code that was previously held within MGED.
+That library supports the development of a new Qt-based interface.</p>
+<h3 id="why-do-brl-cad-display-wireframes-and-not-the-shaded-geometry-like-games-or-blender-or-any-other-3d">Why do BRL-CAD display wireframes, and not the shaded geometry like games or blender or any other 3D?</h3>
+<p>Only certain types of geometry can be represented in one of the explicit
+forms that OpenGL supports (points, lines, polygons). OpenGL does not
+have inherent support for many types of geometry representation formats,
+particularly any of the implicit forms, volumetric forms, level sets,
+NURBS boundary representation, and more. There are some conversion
+libraries that help describe such data in a form that OpenGL can
+display, but it is not "inherent" capability.</p>
+<p>We've been working on NURBS infrastructure to make wireframes not be the
+default but there is no plan to remove wireframes as some users prefer
+them, some models cannot be visualized in full without them. When most
+people say shaded display, they usually think of OpenGL, Direct3D,
+games, other modeling systems, etc. Those systems are driven by polygons
+(triangles). To have that style of shaded display, you have to have
+polygons. We do not have a robust method for getting polygons. NURBS
+gives us a robust method.</p>
+<p>When we can 1) convert any geometry to NURBS, 2) evaluate any booleans,
+and 3) tessellate NURBS robustly, it will be possible to have robust
+shaded displays for all geometry. #1 was finished last year primarily
+thanks to Cliff and Wu. #3 was finished just this year primarily due to
+Keith. Work on #2 is underway and is scheduled to be finished in 2013.</p>
+<p>We all are here to help make BRL-CAD better. How to go about making
+those improvements is key. Having background understanding helps to do
+that effectively without completely wasting time. It would be best to
+understand what the current roadmap already looks like to know about
+what is or is not already happening.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Amalia/Development_logs/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Introductions - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Amalia/Development_logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#introductions" class="nav-link">Introductions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding-period" class="nav-link">COMMUNITY BONDING PERIOD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-week-1" class="nav-link">Community Bonding Week 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-week-2" class="nav-link">Community Bonding Week 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-week-3" class="nav-link">Community Bonding Week 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-week-4" class="nav-link">Community Bonding Week 4</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#coding-period" class="nav-link">CODING PERIOD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-one" class="nav-link">Week One</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-may-25th" class="nav-link">Monday May 25th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-two" class="nav-link">Week Two</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-4th" class="nav-link">Thursday June 4th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-5th" class="nav-link">Friday June 5th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-6th" class="nav-link">Saturday June 6th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-3" class="nav-link">Week 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-8th" class="nav-link">Monday June 8th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-9th" class="nav-link">Tuesday June 9th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wednesday-june-10th" class="nav-link">Wednesday June 10th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-11th" class="nav-link">Thursday June 11th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-12th" class="nav-link">Friday June 12th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-13th" class="nav-link">Saturday June 13th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-4" class="nav-link">Week 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-15th" class="nav-link">Monday June 15th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-16th" class="nav-link">Tuesday June 16th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-18th" class="nav-link">Thursday June 18th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-19th" class="nav-link">Friday June 19th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-20th" class="nav-link">Saturday June 20th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sunday-june-21st" class="nav-link">Sunday June 21st</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-22nd" class="nav-link">Monday June 22nd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-23rd" class="nav-link">Tuesday June 23rd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wednesday-june-24th" class="nav-link">Wednesday June 24th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-25th" class="nav-link">Thursday June 25th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-26th" class="nav-link">Friday June 26th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-27th" class="nav-link">Saturday June 27th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mid-term-evaluation-weekweek-6" class="nav-link">Mid-term Evaluation Week(Week 6 )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-29th" class="nav-link">Monday June 29th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-30th" class="nav-link">Tuesday June 30th</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wednesday-july-1st" class="nav-link">Wednesday July 1st</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pre-midterm-evaluation-summary" class="nav-link">PRE MIDTERM EVALUATION SUMMARY</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-july-2nd" class="nav-link">Thursday July 2nd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-july-3rd" class="nav-link">Friday July 3rd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="introductions">Introductions</h1>
+<p>This page is a diary dedicated to the work I have been honored to do
+with LibreCAD this Google Summer of Code 2015 period.</p>
+<h2 id="community-bonding-period">COMMUNITY BONDING PERIOD</h2>
+<h1 id="community-bonding-week-1">Community Bonding Week 1</h1>
+<ul>
+<li>Celebrated my acceptance into Google Summer of Code 2015 with my
+    friends at the Limbe Semme beach</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Getting to know other students in Buea selected for GSoC.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Updated my repository on
+    <a href="https://github.com/Ngassa/LibreCAD">github</a>.</li>
+</ul>
+<h1 id="community-bonding-week-2">Community Bonding Week 2</h1>
+<ul>
+<li>Filled Student Foreign Certification Tax Form</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discussed with my mentors the possibility of a wire transfer for
+    work during the bonding period. No channels were open apart from
+    Paypal.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Updated my repository on
+    <a href="https://github.com/Ngassa/LibreCAD">github</a></li>
+</ul>
+<h1 id="community-bonding-week-3">Community Bonding Week 3</h1>
+<ul>
+<li>Looked at the lc_splinepoints code in
+    librecad/src/lib/engine/lc_splinepoints.*</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Worked feverishly and biased my efforts on my final year Management
+    project ( meetings with supervisor, Writing Theoretical and
+    Literature review, conceiving and administering questionnaires, etc
+    ) which ate up the next fortnight.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The intention was to go furthest as possible with Final year School
+    Project so that when GSoC coding begins, I can concentrate more on
+    my LibreCAD project.</li>
+</ul>
+<h1 id="community-bonding-week-4">Community Bonding Week 4</h1>
+<ul>
+<li>Discovered a Paypal account at the end of the Community bonding
+    period.</li>
+</ul>
+<h2 id="coding-period">CODING PERIOD</h2>
+<h1 id="week-one">Week One</h1>
+<h1 id="monday-may-25th">Monday May 25th</h1>
+<ul>
+<li>Had a meeting with Women Techmakers Arm of GDG Buea organizing
+    upcoming <a href="https://plus.google.com/u/0/events/cdl24bk07spiac2o2fduaan9d24">Google I/0 Extended
+    2015</a>
+    at my University.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Reading Documentation on <a href="https://drive.google.com/file/d/0B-pwKjF4CzPzc3UzZlFnNEtiWDQ/view?usp=sharing">Conics Sections in
+    LibreCAD</a>
+    given to me by my mentor Dongxu Li.</li>
+</ul>
+<h1 id="week-two">Week Two</h1>
+<h1 id="thursday-june-4th">Thursday June 4th</h1>
+<ul>
+<li>Hurray! My Google Summer of Code finally package arrived my
+    University today and I was called to come and collect it.</li>
+</ul>
+<h1 id="friday-june-5th">Friday June 5th</h1>
+<ul>
+<li>Had a meeting with the Mentor for Google Developer Groups in
+    Cameroon. He cautioned me on the importance of communication and
+    daily coding on my project.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Almost done with my Final year Research Project.Was working on
+    corrections given by my supervisor the whole day.</li>
+</ul>
+<h1 id="saturday-june-6th">Saturday June 6th</h1>
+<ul>
+<li>Updated my github repository today.</li>
+</ul>
+<h1 id="week-3">Week 3</h1>
+<h1 id="monday-june-8th">Monday June 8th</h1>
+<ul>
+<li>Synced my github <a href="https://github.com/Ngassa/LibreCAD">repository</a>
+    with LibreCAD's.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Installed and ran LibreCAD from source.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Studying RS_Ellipse::getTangentPoint() and
+    LC_SplinePoints::getTangentPoint() to help create
+    RS_Hyperbola::getTangentPoint().</li>
+</ul>
+<h1 id="tuesday-june-9th">Tuesday June 9th</h1>
+<ul>
+<li>Hyperbolas are unbounded and disconnected too. Investigating how
+    finding the tangential points of splines can help the case of
+    hyperbolas.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Read articles by www.qcad.org on
+    <a href="http://www.qcad.org/doc/qcad/3.1.0/reference/en/scripts/Draw/Spline/SplineControlPoints/doc/SplineControlPoints_en.html">splines</a>.
+    Each branch or arm of a hyperbola can be seen as an open quadratic
+    spline.</li>
+</ul>
+<h1 id="wednesday-june-10th">Wednesday June 10th</h1>
+<ul>
+<li>Discussed with my mentor in IRC today and he gave me <a href="http://wiki.librecad.org/index.php/LibreCAD_users_Manual">wiki
+    link</a> for
+    LibreCAD.</li>
+</ul>
+<h1 id="thursday-june-11th">Thursday June 11th</h1>
+<ul>
+<li>Re-established contact with my co-mentor Ries.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discussed with mentor dli_ on #librecad.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Understood what class RS_VectorSolutions is.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on <a href="https://paste.kde.org/pir5jd87w">math algorithm</a> for
+    finding tangential points from a given point outside a hyperbola.</li>
+</ul>
+<h1 id="friday-june-12th">Friday June 12th</h1>
+<ul>
+<li>Awaiting mentors' response to my question on IRC channel on <a href="https://paste.kde.org/pir5jd87w">math
+    algorithm</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Using calculus to solve the above math problem. It's quite
+    cumbersome and I'm having a hard time.</li>
+</ul>
+<h1 id="saturday-june-13th">Saturday June 13th</h1>
+<ul>
+<li>Continued work on cumbersome algebra and calculus on tangential
+    points to the hyperbola. I'm excited that my thinking was the same
+    as
+    <a href="http://math.stackexchange.com/questions/214977/general-equation-of-a-tangent-line-to-a-hyperbola?rq=1">this</a>
+    except that my hyperbola is centered at (xo,yo) rather than (0,0).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Succeeded to have a general formula to obtain the intersection point
+    (h,k) of the tangent line and the hyperbola. That was quite tedious.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>My mentor asks for Proof of concept code on a daily basis.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Next task is implementing the math algorithm which I developed.</li>
+</ul>
+<h1 id="week-4">Week 4</h1>
+<h1 id="monday-june-15th">Monday June 15th</h1>
+<ul>
+<li>Discussed my math algorithm with my mentor dli on #librecad.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started doing some <a href="http://pastebin.com/TmWXQhEh">minor changes</a> to
+    my LibreCAD <a href="http://pastebin.com/x3tBUBw6">repository</a> today.</li>
+</ul>
+<h1 id="tuesday-june-16th">Tuesday June 16th</h1>
+<ul>
+<li>Today I had my final year project defense in school.Thus, I couldn't
+    do any work on GSoC LibreCAD project today.</li>
+</ul>
+<h1 id="thursday-june-18th">Thursday June 18th</h1>
+<ul>
+<li>Studying lc_splinepoints code to finish writing the getTangentPoint
+    of a hyperbola</li>
+</ul>
+<h1 id="friday-june-19th">Friday June 19th</h1>
+<ul>
+<li>Developed a heuristic to solve the getTangentPoint() of a hyperbola.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Emailed the <a href="https://paste.kde.org/p9sw0q6lb">paste</a> to my mentors
+    for review.</li>
+</ul>
+<h1 id="saturday-june-20th">Saturday June 20th</h1>
+<ul>
+<li>Awaiting my mentors review of the heuristic before proceeding.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Attended the Silicon Mountain Conference today.</li>
+</ul>
+<h1 id="week-5">Week 5</h1>
+<h1 id="sunday-june-21st">Sunday June 21st</h1>
+<ul>
+<li>Adjusting the getTangentialPoints() algorithm for a unit hyperbola
+    based on my mentor's corrections.</li>
+</ul>
+<h1 id="monday-june-22nd">Monday June 22nd</h1>
+<ul>
+<li>Sent <a href="https://paste.kde.org/px1krxfhc">adjustments</a> to
+    getTangentpoint() member function algorithm over to my mentor for
+    review.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Been having discussions with my mentor on code snippets like
+    <a href="https://paste.kde.org/pa1axlysg">this</a>. Hustling towards a working
+    prototype.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Showed my mentor some <a href="https://paste.kde.org/pzvmlq1yc">code
+    snippets</a> that compile today.</li>
+</ul>
+<h1 id="tuesday-june-23rd">Tuesday June 23rd</h1>
+<ul>
+<li>My mentor gave feedback and corrections to the code snippet I
+    tunrned in yesterday.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Have done some <a href="https://paste.kde.org/pxz2wpd9o">corrections</a> to the
+    code snippet.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>My mentor proposed a much more concise and <a href="http://www.texpaste.com/n/u6dkvzc0">maintainable
+    algorithm</a> which I'm
+    incorporating into the Hyperbola code.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>LibreCAD Build is <a href="https://paste.kde.org/pnpgabtyj">broken</a>.
+    Downloading Qt5 to run LibreCAD with while Lead developers fix this
+    issue.</li>
+</ul>
+<h1 id="wednesday-june-24th">Wednesday June 24th</h1>
+<ul>
+<li>Upgraded to qmake-qt5, updated my LibreCAD repository and build it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Awaiting review from my mentor for the
+    <a href="https://paste.kde.org/pq37vefit">improved</a> the code snippet.</li>
+</ul>
+<h1 id="thursday-june-25th">Thursday June 25th</h1>
+<ul>
+<li>Did not do any work today due to housekeeping.</li>
+</ul>
+<h1 id="friday-june-26th">Friday June 26th</h1>
+<ul>
+<li>More critique on code from my mentor.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Improved <a href="https://paste.kde.org/pq4vt14lx">code</a> based on
+    corrections discussed on IRC.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Chatted a little with brlcad on #brlcad and ries on #librecad
+    today.</li>
+</ul>
+<h1 id="saturday-june-27th">Saturday June 27th</h1>
+<ul>
+<li>Today was a lazy day for me. Did not code.</li>
+</ul>
+<h1 id="mid-term-evaluation-weekweek-6">Mid-term Evaluation Week(Week 6 )</h1>
+<h1 id="monday-june-29th">Monday June 29th</h1>
+<ul>
+<li>After a deeper look at my logic of getTangentPoint(), I overhauled
+    my code to have <a href="https://paste.kde.org/pkt2o2ifh">this</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>My mentor has confirmed that my logic is a step int the right
+    direction and has suggested that I use github and email more
+    including IM/IRC.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Starting to design unit tests for this getTangentPoint() function.</li>
+</ul>
+<h1 id="tuesday-june-30th">Tuesday June 30th</h1>
+<ul>
+<li>Filled Student evaluation form today.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on unit test for getTangentPoint() member function.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Some work in progress available
+    <a href="https://paste.kde.org/pvnynjgvt">here</a></li>
+</ul>
+<h1 id="wednesday-july-1st">Wednesday July 1st</h1>
+<ul>
+<li>Sick day:I have not been able to do any work because of the symptoms
+    of malaria I've been experiencing since morning.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I've developed the unit tests for the getTangentPoint() in
+    librecad/src/main.cpp and LibreCAD builds well.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Next step is running the code to see the results from the function.</li>
+</ul>
+<h1 id="pre-midterm-evaluation-summary">PRE MIDTERM EVALUATION SUMMARY</h1>
+<p>I was rather off to a slow start for GSoC 2015 coding due to my final
+year management project. However, I've written the getTangentPoint()
+member function for the LC_Hyperbola and I am currently designing
+appropriate test cases to ascertain the effectiveness of
+getTangentPoint() function. When I've perfected these test cases, anyone
+will be able to run these tests after compiling LibreCAD by ./lc on the
+command line in the unix/ directory.</p>
+<h1 id="thursday-july-2nd">Thursday July 2nd</h1>
+<ul>
+<li>Sick day: Have not done any work today. Currently on medications.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Managed to post my pre midterm evaluation summary to my development
+    logs, BRL-CAD mailing list and cc'ing my mentors in LibreCAD and
+    BRL-CAD.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Updated my LibreCAD
+    <a href="https://github.com/Ngassa/LibreCAD">repositories</a> too.</li>
+</ul>
+<h1 id="friday-july-3rd">Friday July 3rd</h1>
+<ul>
+<li>Sick day: Haven't been able to do any work due to illness.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

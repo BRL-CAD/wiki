@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Nmz787-brlcad/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Nmz787 brlcad - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Nmz787-brlcad.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#primitive-examples" class="nav-link">Primitive Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="installation">Installation</h2>
+<h3 id="from-svn">From SVN</h3>
+<p><code> svn checkout <svn://svn.code.sf.net/p/brlcad/code/brlcad/trunk>
+brlcad-svn-trunk</p>
+<p>cd brlcad-svn-trunk</p>
+<p>cmake ../ -DCMAKE_BUILD_TYPE=Debug -DBRLCAD_BUNDLED_LIBS=Bundled
+</code></p>
+<h3 id="ubuntu">Ubuntu</h3>
+<p><code>sudo apt-get install brlcad</code></p>
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+<li>Start mged from the command prompt, and create a new file for
+    storing CAD design data (BRL-CAD calls these files <strong>geometry
+    databases</strong> and uses the .g file extension by default)<ul>
+<li><code>mged your_desired_filename_here.g</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="radio-example">Radio example</h3>
+<ul>
+<li>The following lines of code will produce something that looks like a
+    walkie-talkie style radio.</li>
+<li>It uses BRL-CAD's <em>Solid Primitive Shapes</em></li>
+<li>At the mged interactive command interpreter window, type the
+    following:<ul>
+<li><code>in body.s rpp 0 16 0 32 0 48</code></li>
+<li><code>in btn.s rec 8 30 36 0 3 0 4 0 0 0 0 2</code></li>
+<li><code>in btn2.s ell1 8 33 36 4 0 0 2</code></li>
+<li><code>in spkr.s tor 16 16 16 1 0 0 12 1</code></li>
+<li><code>in ant.s rcc 2 2 46 0 0 48 1</code></li>
+<li><code>in knob.s rcc 4 4 40 8 0 0 5</code></li>
+</ul>
+</li>
+<li>Pasting or typing those lines should look like this:</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Mged_radio_view1.png" /></p>
+<ul>
+<li>Press enter if you haven't already</li>
+<li>If you don't see a window with an image open up, click mged's
+    <strong>Tools</strong> menu, then <strong>Graphics Window</strong></li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Mged_radio_graphic_view1.png" /></p>
+<ul>
+<li>Pressing the keyboard <strong>CTRL</strong> button along with the <strong>left
+    mouse-button</strong> will pan around the displayed image</li>
+<li>Pressing the keyboard <strong>SHIFT</strong> button along with the <strong>left
+    mouse-button</strong> will move the view away from or toward the center
+    (where the cartesian plane X,Y,Z are 0,0,0)</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/mged_radio_graphic_window.gif" /></p>
+<h2 id="primitive-examples">Primitive Examples</h2>
+<h3 id="tgc">tgc</h3>
+<p>Truncated general cone</p>
+<p>Handled by</p>
+<ul>
+<li>in make form create</li>
+</ul>
+<p>Arguments</p>
+<ul>
+<li>vertex, vectors H A B, magnitudes of vectors C D</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/TGC_mged_brlcad.png" /></p>
+<h4 id="rcc-example-via-tgc">RCC example via TGC</h4>
+<ul>
+<li>An rcc primitive is a special form of a tgc, you can reproduce a
+    right-circular-cylinder at vertex 0,0,0 with height 10, and a base
+    and top of radius 1 (both in the XY plane):<ul>
+<li><code>in aaa.s tgc 0 0 0 0 0 10 1 0 0 0 1 0 1 1</code></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>increasing the radius of the base and top to 5:<ul>
+<li><code>in aaa.s tgc 0 0 0 0 0 10 5 0 0 0 5 0 5 5</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="breaking-down-the-command">breaking down the command</h4>
+<ul>
+<li><code>in</code><name of primitive><code>tgc (base X, Y, Z) (height vector X,Y,Z) (ellipse base radius part A vector X,Y,Z) (ellipse base radius part B vector X,Y,Z) (top radius scalar C, restricted to same plane active in base part A) (top radius scalar D, restricted to same plane active in base part B)</code></li>
+</ul>
+<h4 id="elliptic-cones-in-either-x-or-y-directions">elliptic cones in either X or Y directions</h4>
+<ul>
+<li>5 in the X direction, 10 in the Y (same at the top)<ul>
+<li><code>in aaa.s tgc 0 0 0 0 0 10 5 0 0 0 10 0 5 10</code></li>
+</ul>
+</li>
+<li>10 in the X direction, 5 in the Y (same at the top)<ul>
+<li><code>in aaaa.s tgc 0 0 0 0 0 10 10 0 0 0 5 0 10 5</code></li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

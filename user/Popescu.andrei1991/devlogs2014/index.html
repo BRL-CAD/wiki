@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Popescu.andrei1991/devlogs2014/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>GSoC 2014 development logs for Object-oriented C++ Geometry API project - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Popescu.andrei1991/devlogs2014.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2014-development-logs-for-object-oriented-c-geometry-api-project" class="nav-link">GSoC 2014 development logs for Object-oriented C++ Geometry API project</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#week-1" class="nav-link">Week 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-2" class="nav-link">Week 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-3" class="nav-link">Week 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-4" class="nav-link">Week 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-6" class="nav-link">Week 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-7" class="nav-link">Week 7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-8" class="nav-link">Week 8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-9" class="nav-link">Week 9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-10" class="nav-link">Week 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-11" class="nav-link">Week 11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-12" class="nav-link">Week 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-13" class="nav-link">Week 13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2014-development-logs-for-object-oriented-c-geometry-api-project">GSoC 2014 development logs for Object-oriented C++ Geometry API project</h1>
+<h2 id="week-1">Week 1</h2>
+<p>Nothing</p>
+<h2 id="week-2">Week 2</h2>
+<p>Nothing</p>
+<h2 id="week-3">Week 3</h2>
+<p>2nd June - Nothing</p>
+<p>3rd June - brush up on sph implementation, research eqn
+meaning/behaviour, complete sph patch</p>
+<p>4th June - finished sphere implementation</p>
+<p>5th June - fixed identation, copyright, added extra constructor,
+integrated with DB</p>
+<p>6th June - fixed comparison issues for isValid, polished patch to final
+form. Began talks for next primitive</p>
+<p>7th June - further sketch primive interface talks, rough interface
+implementation</p>
+<p>8th June - break day.</p>
+<h2 id="week-4">Week 4</h2>
+<p>Milestone week 4: finish sketch implementation, have a good start with
+extrude</p>
+<p>9th June - wrote Sketch interface for all subelements, untested.</p>
+<p>10th June - wrote Sketch interface (itself) implementation. reread
+previous patch.</p>
+<p>11th June - reworked Sketch class, investigated about what role
+rt_curve plays in sketch.c</p>
+<p>12th June - break day</p>
+<p>13th June - working on Sketch subelements implementantion, ConstSegment
+and Segment</p>
+<p>14th June - continued working on the same subclasses, not much progress.</p>
+<p>15th June - break/minimal work</p>
+<h2 id="week-5">Week 5</h2>
+<p>16th June - waited for Sketch review, discussed with Daniel, started
+working on Sketch based on new header</p>
+<p>17th June - completed Sketch interface, researched sketch.c
+implementation, worked on Line class in Sketch.cpp</p>
+<p>18th June - feedback from Daniel improved my understanding of Sketch,
+research how rt_geom.h should connect to coreinterface. Modified header
+file, implemented Line, Arc and Nurb.</p>
+<p>19th June - implemented Bezier, asked for feedback on previous work,
+meanwhile reasearching/implementing Sketch class itself</p>
+<p>20th June - read through feedback, worked on Sketch subelements
+according to it</p>
+<p>21st June - break.</p>
+<p>22nd June - fixed compilation errors, implemented Arc and Bezier.</p>
+<h2 id="week-6">Week 6</h2>
+<p>23nd June - finished Nurb, wrote Get methods for Sketch, researched on
+how to implement Insert/Append Segments</p>
+<p>24th June - wrote Google midterm, wrote several simple Sketch
+methods(such as NumberOfSections), planned the rest of sketch
+implementation</p>
+<p>25th June - wrote midterm post</p>
+<p>26th June - wrote Sketch class</p>
+<p>27th June - researched BoT; nothing;</p>
+<p>28th June - nothing</p>
+<p>29th June - researched &amp; wrote BoT interface</p>
+<h2 id="week-7">Week 7</h2>
+<p>30th June - nothing</p>
+<p>1st July - rewrote interface</p>
+<p>2nd July - nothing; issues regarding thesis; discussed on IRC/Mail</p>
+<p>3rd July - rewrote interface according to feedback, researched
+implementation details</p>
+<p>4th July - reviewed feedback, started working on implementation</p>
+<p>5th July - worked on BoT implementantion, investigated bot.c code.
+discussed on IRC bot.c/rt_bot_internal questions, feedback provided.
+should be able to implement a large part of bot now.</p>
+<p>6th July - implemented vertex handling (Add, remove, swap) functions,
+researched face index aspect.</p>
+<h2 id="week-8">Week 8</h2>
+<p>7th July - Implemented Face, continued working on bot methods.</p>
+<p>8th July - finished working on both face and bot, however, having
+multiple issues that need discussion.</p>
+<p>9th July - reviewed bot, discussed issues on IRC, rewrote several
+aspects according to Sketch feedback. moved back to Sketch.</p>
+<p>10th July - nothing; medical condition - fever; I ll do my best to
+recover(the work) the following days. I am starting to feel better</p>
+<p>11th July -worked on new Sketch implementation(provided by Daniel as
+review), multiple issues with making code compile succesfully, sent mail
+to ask for help.</p>
+<p>12th July - investigated sketch compiling and implementation issues.</p>
+<p>13th July - worked on sketch implementation;</p>
+<h2 id="week-9">Week 9</h2>
+<p>14th July - finished Sketch, several issues to be adressed. Will move to
+BoT</p>
+<p>15th July - worked on bot, by looking at new sketch.</p>
+<p>16th July - discussed latest sketch version; nothing;</p>
+<p>17th July - nothing;</p>
+<p>18th July - worked on bot.</p>
+<p>19th July - nothing;</p>
+<p>20th July - modified Sketch, fixed some sketch typo's/bugs; modified
+BoT; finished bot bar constructors and Face object getter.</p>
+<h2 id="week-10">Week 10</h2>
+<p>21st July - rereviewed Bot;</p>
+<p>22nd July - worked on BoT. finished AppendFace and Get; issue about
+InsertFace;</p>
+<p>23rd July - discussed bot issues; worked on InsertFace, constructors;
+looked into Pipe</p>
+<p>24th July - nothing;</p>
+<p>25th July - wrote Sketch DeleteSegment, finished InsertFace, fixed
+AppendFace, wrote deleteFace, wrote constructors. researched how to
+write bot_copy</p>
+<p>26th July - wrote copy functions; thought and worked on face normals
+functions</p>
+<p>27th July - waited</p>
+<h2 id="week-11">Week 11</h2>
+<p>28th July - discussed bot, sketch, implemented sketch;</p>
+<p>29th July - rewrote Normal, SetNormal for bot, finised bot, wrote pipe
+interface</p>
+<p>30th July - worked on pipe interface, researched pipe code</p>
+<p>31th July - nothing</p>
+<p>1st August - worked on pipe, researched;</p>
+<p>2nd August - worked on pipe, but mostly a "nothing" day</p>
+<p>3rd August - nothing;</p>
+<h2 id="week-12">Week 12</h2>
+<p>4th - break/ intermitently worked on Pipe</p>
+<p>5th - break/ intermitently worked on Pipe</p>
+<p>6th - break/ intermitently worked on Pipe</p>
+<p>7th - break/ intermitently worked on Pipe</p>
+<p>8th - break/ intermitently worked on Pipe</p>
+<p>9th - break;</p>
+<p>10th - worked on pipe, finished some compilation errors, will be
+finished on 11th</p>
+<h2 id="week-13">Week 13</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

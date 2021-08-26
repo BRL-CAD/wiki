@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2009/Project_Ideas/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Project Ideas - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2009/Project_Ideas.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-ideas" class="nav-link">Project Ideas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#opengl-gui-framework" class="nav-link">OpenGL GUI Framework</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#object-oriented-geometry-engine-api" class="nav-link">Object-oriented geometry engine API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mged-user-interface-improvements" class="nav-link">MGED User Interface Improvements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#csg-evaluation-of-boundary-representations" class="nav-link">CSG evaluation of Boundary Representations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#csg-ray-trace-optimizations" class="nav-link">CSG ray-trace optimizations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#constraints-and-parametrics" class="nav-link">Constraints and Parametrics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#merge-mged-and-archer" class="nav-link">Merge MGED and Archer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#aqua-mged-on-mac-os-x" class="nav-link">Aqua MGED on Mac OS X</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bug-fix-buffet" class="nav-link">Bug Fix Buffet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#iges-importerexporter-enhancements" class="nav-link">IGES importer/exporter enhancements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#universal-geometry-converter-api" class="nav-link">Universal geometry converter API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-converter" class="nav-link">STEP converter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-geometry-converter" class="nav-link">New geometry converter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#implicit-to-explicit-boundary-representation-support" class="nav-link">Implicit to Explicit boundary representation support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-primitive" class="nav-link">New primitive</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#annotations" class="nav-link">Annotations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#web-based-solid-geometry-model-repository" class="nav-link">Web-based solid geometry model repository</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#global-illumination-renderer" class="nav-link">Global illumination renderer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#geometry-database-ie-g-file-format-enhancements" class="nav-link">Geometry database (i.e. ".g" file format) enhancements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fixed-precision-compile-time-interface" class="nav-link">Fixed-precision compile-time interface</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#g_qa-gui" class="nav-link">g_qa GUI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brl-cad-benchmark-database-website" class="nav-link">BRL-CAD Benchmark database website</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mentors" class="nav-link">Mentors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong><code>!!!!!!!!!!!!!!</code></strong>
+<strong><code>!!!`` ``NOTICE`` ``!!!</code></strong>
+<strong><code>!!!!!!!!!!!!!!</code></strong></p>
+<p><strong><code>This`` ``page`` ``is`` ``provided`` ``as`` ``a`` ``historic`` ``reference`` ``only.</code></strong></p>
+<p>The list of possible projects below should serve as a good starting
+point for new developers that would like to get involved in working on
+BRL-CAD. The ideas below range from the very hard and math intense to
+the very easy, feel free to scale the scope of the project up or down as
+needed. The suggested project ideas below are merely starting points. In
+addition to those below, you may also want to consider some of <strong><a href="http://brlcad.org/~sean/ideas.html">these
+ideas</a></strong>.</p>
+<p>A detailed articulate (i.e. excellent) proposal that has been discussed
+with us beforehand will generally trump any listed priority. Please do
+contact us (IRC or brlcad-devel mailing list) if you have any questions,
+corrections, comments, or ideas of your own that you'd like to suggest.</p>
+<p>Be sure to read up on our <a href="Google_Summer_of_Code.md">application
+process</a> for getting started with your
+proposal submission if you have not done so already.</p>
+<h1 id="project-ideas">Project Ideas</h1>
+<h2 id="_1"><AN IDEA OF YOUR OWN></h2>
+<p>Do you have an idea of your own? Let us know and maybe we'll like it
+too. We're very open to new ideas, areas of academic research, industry
+applications, and any other ways that may help get you hooked on BRL-CAD
+development. Just remember that BRL-CAD is a solid modeling CAD suite so
+keep that in mind when scoping your project. The idea needs to fit in
+with our project goals, it needs to be specific, and it needs to be
+detailed.</p>
+<p>Requirements:</p>
+<ul>
+<li>Passion for the task being suggested</li>
+<li>Buy-in from one of the existing developers</li>
+</ul>
+<p>Difficulty: variable</p>
+<h2 id="opengl-gui-framework">OpenGL GUI Framework</h2>
+<p>This was a GSoC 2008 project. Talk to the developers before proposing
+this task to obtain project status.</p>
+<p>BRL-CAD includes a graphical solid modeler named MGED as well as an
+experimental refactoring named Archer, both written in Tcl/Tk. While
+MGED is extensively powerful in its modeling capabilities and is in
+production use, new users and developers usually expect something rather
+different. They expect and want an interface that doesn't require
+extensive training and expert knowledge before they can use it. A
+redesign of the modeling interface is under way and this project idea
+focuses on one piece of that effort, the front-end display.</p>
+<p>This project is necessarily a <strong>continuation and extension</strong> of the
+graphical application framework started in GSoC 2008 (not something
+completely new). Rather than reimplementing existing functionality, the
+framework needs to be an extendible plug-in-based client-server system
+that will utilize existing binaries and editing functionality available
+in BRL-CAD. More to the point, this task entails creating solidifying
+the GUI interactions and command framework. <em>This is a high-priority
+topic.</em></p>
+<p>See <a href="http://brlcad.org/design/gui/ioe_proto_final.mov">http://brlcad.org/design/gui/ioe_proto_final.mov</a> for some
+background on an <em>interaction</em> prototype that was developed in relation
+to the new GUI.</p>
+<p>Requirements:</p>
+<ul>
+<li>Strong knowledge of C++</li>
+<li>Strong knowledge of object oriented design</li>
+</ul>
+<p>Difficulty: high</p>
+<h2 id="object-oriented-geometry-engine-api">Object-oriented geometry engine API</h2>
+<p>BRL-CAD includes four libraries that provide the basis for our core
+geometry engine: libbu, libbn, librt, and libwdb. These libraries
+provide a C API to various geometry processing and ray-tracing
+capabilities. The focus of this idea is to provide an object-oriented
+API in either C++ or Java (or both, SWIG?) for those capabilities. The
+library should be designed such that it provides features similar to
+those found in other commercial geometry engines such as the ACIS or
+Granite engines, but designed with BRL-CAD's existing capabilities in
+mind. The API design should leverage as much of our C libraries as
+possible for the implementation approach. See our 'jbrlcad' module for
+an example (initial) structuring. <em>This is a high-priority topic.</em></p>
+<p>Requirements:</p>
+<ul>
+<li>Strong familiarity with C</li>
+<li>Strong familiarity with C++ or Java (or both)</li>
+<li>Strong familiarity with object oriented API design</li>
+<li>(optional) Familiarity with SWIG</li>
+</ul>
+<p>Difficulty: high</p>
+<h2 id="mged-user-interface-improvements">MGED User Interface Improvements</h2>
+<p>Most users discovering BRL-CAD for the first time are usually introduced
+to MGED first. MGED, however, has always been considered an "expert
+interface" that requires substantial investment of time and effort to
+learn and use effectively. There are many enhancements to the interface
+that would improve usability and discoverability.</p>
+<p>The idea behind this task would be propose improvements to MGED's
+existing Tcl/Tk user interface implementation. Proposals could include
+usability improvements, improving discoverability of features,
+refactoring the existing implementation, and more. The approach can be
+minimal, drastic, or incremental, but should be appropriately scoped and
+include detail. <em>This is a high-priority topic.</em></p>
+<p>Requirements:</p>
+<ul>
+<li>Strong knowledge of Tcl/Tk</li>
+<li>Usability and interface design experience</li>
+<li>(optional) Familiarity with C</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="csg-evaluation-of-boundary-representations">CSG evaluation of Boundary Representations</h2>
+<p>One of the current primary BRL-CAD development efforts is the complete
+integration of hybrid model support. BRL-CAD leverages the Rhino
+openNURBS library to provide fundamental BREP support but there is still
+much work to be done to evaluate BREPs.</p>
+<p>These guys implemented something very similar although their
+implementation was not robust:
+<a href="http://www.cs.unc.edu/~geom/CSG/boole.html">http://www.cs.unc.edu/~geom/CSG/boole.html</a> These guys followed that
+work and implemented a robust solution, but killed performance:
+<a href="http://www.cs.unc.edu/~geom/ESOLID/">http://www.cs.unc.edu/~geom/ESOLID/</a> You will need to be very careful
+about tolerances and tolerance tracking without resorting to
+fixed-precision arithmetic.</p>
+<p>This task basically involves implementing BREP-on-BREP CSG evaluation
+routines (resulting in a new evaluated BREP object). If you get done
+fast enough, you could also work on implementing the routines that
+generate a BREP for all of our implicit primitives which would bring us
+one step closer towards providing complete dual-representation support.
+<em>This is a high-priority topic.</em></p>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C/C++</li>
+<li>Strong math skills</li>
+<li>Familiarity with CSG operations</li>
+<li>Familiarity with BREP/n-Manifold spline surface geometry</li>
+<li>(optional) Strong familiarity with implicit geometric
+    representations</li>
+</ul>
+<p>Difficulty: high</p>
+<h2 id="csg-ray-trace-optimizations">CSG ray-trace optimizations</h2>
+<p>BRL-CAD has one of the best high-performance CSG boolean evaluation
+engines anywhere, but we're always looking for ways to improve
+performance and accuracy. This task could consist of refactoring the
+LIBRT ray-trace library to fix a bug related to negative object segment
+detection (high-priority). This task could consist of implementing a
+high-performance generic CSG tree processing library providing
+transformations, tree contraction, null object detection, various
+traversals, cycle detection, etc and hooking that into LIBRT. Yet
+another approach could be to apply the same real-time ray-trace
+optimizations of exploiting cache coherency, branch minimization, data
+vectorization, accelerated spacial partitioning, and other optimization
+techniques. <em>This is a high-priority topic.</em></p>
+<p>Requirements:</p>
+<ul>
+<li>Strong familiarity with C</li>
+<li>Strong familiarity with CSG</li>
+</ul>
+<p>Difficulty: high</p>
+<h2 id="constraints-and-parametrics">Constraints and Parametrics</h2>
+<p>This was a GSoC 2008 project. For more information about
+libpc(parametrics and constraints library) please check <a href="libpg_:_A_parametrics/constraint_library.md">libpc Developer
+Doc</a> as well as the
+<a href="http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/src/libpc/">libpc
+source</a>.
+The work is effectively long-term considering the amount of work
+required. Talk to the developers before proposing this task to obtain
+project status.</p>
+<p>BRL-CAD does not presently provide the means to specify values that are
+undetermined or otherwise dependent calculations. That is to say that
+there is no support for constraints and parametrics such that a modeler
+can define a sphere such that the sphere's radius necessarily maintains
+tangency with a given planar surface. This task would focus on
+implementing basic support for this feature in the BRL-CAD geometry
+format. Parametric representation of Geometry (and constraints) provides
+a good foundation for various aspects of Design computation, Geometry
+Generative Algorithms, and A more logically connected model not to
+mention significant reduction in Modeling time (since the process of
+modeling during an actual design cycle is inherently iterative).</p>
+<p>Primary work would be in terms of constructing Constraint Solvers.
+Geometrical constraints in our context can be broadly classified into</p>
+<ul>
+<li>Implicit : Constraints implicit in the definition of a primitive :
+    Tangency or perpendicularity of Vectors, Equality of scalars etc.</li>
+<li>Explicit : Constraints explicitly expressed between two or more
+    primitives.</li>
+</ul>
+<p>One of the intricate parts of the work is the actual integration of
+libpc with librt. Associated work going on with libpc involves the
+creation of a Math Virtual Machine for parsing and evaluating (math)
+expressions which would be used for stating the constraints, along with
+the grammar. As of now <a href="http://www.boost.org/">Boost</a> libraries are
+being used for various functionalities.</p>
+<p>Requirements:</p>
+<ul>
+<li>Strong familiarity with C</li>
+<li>Strong familiarity with C++ (check pcMath* source code)</li>
+<li>Ability to implement within an existing framework</li>
+</ul>
+<p>Difficulty: high</p>
+<h2 id="merge-mged-and-archer">Merge MGED and Archer</h2>
+<p>BRL-CAD contains two GUI modeling interfaces called MGED and Archer.
+MGED is BRL-CAD's comprehensive solid modeling editor that has been
+around for more than two decades. It's predominantly written in a mix of
+C and Tcl/Tk. Archer is a new interface that has been developed as a
+much cleaner re-implementation of MGED. Archer is predominantly Incr
+Tcl/Tk while calling the same C library as MGED. We would like to merge
+those two efforts into one, retaining the extensive feature set of MGED
+while leveraging Archer's much more modular plugin-based design and more
+appealing GUI.</p>
+<p>This project would involve adding major functionality missing from
+Archer that MGED provides and putting the finishing touches on Archer.
+There will need to be some minor bridge work to clean up the shared
+LIBGED interface that both codes utilize. There will need to be a lot of
+production quality release testing to make sure features aren't broken
+or lost during the merge.</p>
+<p>Requirements:</p>
+<ul>
+<li>Strong familiarity with Tcl/Tk or the ability to get up to speed
+    with it very quickly</li>
+<li>Good familiarity with C</li>
+<li>Ability to read and comprehend other developer's code</li>
+</ul>
+<p>Difficulty: medium</p>
+<h2 id="aqua-mged-on-mac-os-x">Aqua MGED on Mac OS X</h2>
+<p>BRL-CAD primary editor, MGED, is a hybrid application with the main
+logic predominantly written in C and the GUI written in Tcl/Tk. Given
+MGED's heritage, though, and for porting ease, it still requires X11 on
+Mac OS X. Ever since <a href="http://tcltkaqua.sourceforge.net/">AquaTk</a> was
+unveiled several years ago, we've wanted to leverage it to run MGED
+natively on Mac OS X without a major porting/coding effort. Alas, much
+testing of AquaTk indicated that it was not quite ready for prime time
+(this was several years ago).</p>
+<p><a href="http://tcltkaqua.sourceforge.net/">http://tcltkaqua.sourceforge.net/</a></p>
+<p>This project entails getting the latest AquaTk release build working
+with MGED, then with our bundled Tcl/Tk distribution, and working to
+make it so that everything "just works". MGED without an X11 dependency.
+This may or may not require fixing minor issues in Tk, this will likely
+require subtle tweaks to MGED's Tcl/Tk code to make things look
+reasonable. Either way, your task would be to figure it all out, have a
+plan, and make it work.</p>
+<p>Requirements:</p>
+<ul>
+<li>Basic familiarity with Tcl/Tk</li>
+<li>Familiarity with Autotools-based build systems and resolving
+    compilation/linkage issues</li>
+<li>Good diagnostic/porting abilities</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="bug-fix-buffet">Bug Fix Buffet</h2>
+<p>BRL-CAD is a massive code base with more than a million lines of code.
+When you have that many lines, bugs are pretty much guaranteed. That
+said, code quality is of paramount importance for the long-term
+longevity of a code.</p>
+<p><a href="https://sourceforge.net/tracker2/?group_id=105292&amp;atid=640802">https://sourceforge.net/tracker2/?group_id=105292&amp;atid=640802</a>
+<a href="http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/BUGS">http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/BUGS</a></p>
+<p>This project is obviously pretty easy to explain. Propose a set of bugs
+that you would like to work on fixing. They can be hard or easy, many or
+few. Given the general nature of this task, be sure to be as specific as
+possible in your proposal.</p>
+<p>Requirements:</p>
+<ul>
+<li>Methodical approach, deductive reasoning, and strong problem solving
+    skills</li>
+<li>Able to read and debug large amounts of other people's code</li>
+<li>(optional) Familiarity with a debugger (if you don't know how to use
+    a debugger, you will by the time you finish this)</li>
+</ul>
+<p>Difficulty: variable</p>
+<h2 id="iges-importerexporter-enhancements">IGES importer/exporter enhancements</h2>
+<p>IGES is one of the most prevalent CAD geometry file formats used to
+exchange geometry data between CAD systems. BRL-CAD inludes extensive
+support for IGES, but only up to version 5.0 whereas the current/final
+version of IGES was 5.3 and there are non-final versions beyond that.
+This task would make the changes necessary to the existing IGES importer
+and exporter to fully support the latest IGES standard, possibly
+modifying the converter to simultaneously support multiple formats.</p>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C</li>
+<li>Strong ability to review and improve existing code</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="universal-geometry-converter-api">Universal geometry converter API</h2>
+<p>With more than 30 geometry importers and exporters, including several
+that are of paramount importance to CAD communities such as IGES and
+DXF, BRL-CAD contains a multitude of converters that can be chained
+together to go to and from various formats. This task would involve
+refactoring the existing converters into a clean "universal" geometry
+converter and API that could read and write from any of the supported
+formats as run-time plugins. If you have more time, you can always start
+work on a new converter too.</p>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C or C++</li>
+<li>Ability to understand and refactor existing code</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="step-converter">STEP converter</h2>
+<p>Several BRL-CAD developers are working on implementing a full STEP
+converter. This task is a big effort given the complexity of the STEP
+standard (ISO 10303). This task focuses on helping with that effort by
+working on one of the fundamental components to the STEP converter,
+getting an EXPRESS parser working. This would most likely entail
+updating and integrating the NIST STEP AP 21 parser or developing/using
+a similar EXPRESS parser. The NIST sources as well as copies of the STEP
+standard can be provided. If that is ends up being too easy, the next
+step is jumping in on AP 203 and AP 214 hooks. <em>This is a high-priority
+topic.</em></p>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C and/or C++</li>
+<li>Ability to integrate with and update an existing code library</li>
+<li>Familiarity with writing a robust parser</li>
+<li>Ability to tolerate bloated ISO standards</li>
+</ul>
+<p>Difficulty: medium</p>
+<h2 id="new-geometry-converter">New geometry converter</h2>
+<p>Though we have more than 30 geometry importers and exporters, there are
+plenty that we don't have support for and existing converters that could
+use improvements. Some examples of converters we would like to see
+implemented include (in rough priority/interest order):</p>
+<ul>
+<li>Collada (.dae)</li>
+<li>X3D [importer] (.x3d)</li>
+<li>Alias Wavefront [importer] (.obj)</li>
+<li>Rhino (.3dm)</li>
+<li>AutoCAD drawings (.dwg)</li>
+<li>G-Code (.nc)</li>
+<li>Solidworks (.sat, .sldprt, .sldasm)</li>
+<li>Parasolid/UGS (.x_b, .x_t)</li>
+<li>POV-RAY (.pov)</li>
+<li>Blender (.blend)</li>
+<li>Universal 3D (.u3d)</li>
+<li>Polygon [exporter] (.ply)</li>
+<li>Sketchup (.skp, .skb)</li>
+<li>VRML [importer] (.vrml)</li>
+<li>3D Studio Max (.3ds)</li>
+</ul>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C or C++</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="implicit-to-explicit-boundary-representation-support">Implicit to Explicit boundary representation support</h2>
+<p>Throughout BRL-CAD's numerous supported primitive geometry types (see
+<a href="http://brlcad.org/gallery/s/diagrams/primitives.png.html">http://brlcad.org/gallery/s/diagrams/primitives.png.html</a> for
+examples), they are implemented using an implicit geometric
+representation. This means, for example, that for a sphere with a given
+radius, we store and manipulate it <em>as a sphere with a given radius</em> and
+not as collection of triangles/polygons, not as some sort of spline
+surface, not as a voxelized data set, etc.</p>
+<p>Look in src/librt/primitives for the code to all of the primitives. The
+*_brep.cpp files in ell, nmg, sph, and tor include the work performed
+to date.</p>
+<p>This project requires implementing a routine for many/most/all of our
+primitives that generates a NURBS/BREP spline surface representation of
+that primitive shape. There are a few primitives that are already
+complete due to previous developments, but there are still many
+primitives that have yet to have the routine implemented.</p>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C/C++</li>
+<li>Solid mathematical foundations are required</li>
+</ul>
+<p>Difficulty: medium</p>
+<h2 id="new-primitive">New primitive</h2>
+<p>BRL-CAD provides more than 30 different primitives but there are a few
+we don't have that would be highly desirable to have implemented. The
+goal of this task is to fully implement support for one of them:</p>
+<ul>
+<li>Sweep</li>
+<li>Revolution</li>
+<li>Birail/Skin</li>
+<li>Annotation</li>
+<li>Blend/Fillet/Chamfer</li>
+<li>Dynamic Scripted</li>
+<li>Compound Procedural</li>
+</ul>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C</li>
+<li>Solid mathematical basis for the primitive being suggested</li>
+</ul>
+<p>Difficulty: high</p>
+<h2 id="annotations">Annotations</h2>
+<p>This task is pretty simple on the surface: implement annotations. This
+effectively amounts to implementing a new primitive in BRL-CAD that can
+be associated with other objects for providing annotation information.
+Annotations would allow the modeler to leave notes and draw simple
+diagrams around geometry during the modeling process where the
+annotations are either fixed with respect to the view or align with the
+object(s) they refer to (if any). There are design considerations as to
+whether you can ray-trace an annotation as well as how to most
+effectively display them. It would be awesome if users could
+interactively edit their annotations through the GUI.</p>
+<p>Requirements:</p>
+<ul>
+<li>Strong familiarity with C</li>
+<li>Ability to implement within an existing framework</li>
+</ul>
+<p>Dificulty: medium</p>
+<h2 id="web-based-solid-geometry-model-repository">Web-based solid geometry model repository</h2>
+<p>This task focuses on creating a web interface to a geometry repository
+where the community can store and exchange geometric models in any of
+the supported BRL-CAD formats. The website could be written such that it
+integrates with an existing content management system (e.g. Drupal
+extension), wiki (e.g. Mediawiki extension), or could be custom with the
+appropriate design plan. The site would need to provide a relatively
+easy means for users to upload models and have those models be indexed,
+categorized, searched, converted, and downloaded through the website
+interface.</p>
+<p>This tends to be a very popular submission. Make sure you relate your
+idea specifically to BRL-CAD, our tools and services, and how you are
+not ignoring what we already do. It needs to be a well-integrated
+service if you're going to propose it.</p>
+<p>Requirements:</p>
+<ul>
+<li>Strong web development skills</li>
+<li>(optional)Familiarity with Drupal or Mediawiki customization and/or
+    module development</li>
+<li>Must integrate well with BRL-CAD's format, tools, and services</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="global-illumination-renderer">Global illumination renderer</h2>
+<p>This was a GSoC 2008 project. Talk to the developers before proposing
+this task to obtain project status.</p>
+<p>Our LIBRT library provides advanced solid modeling ray-trace facilities.
+This idea is to use the LIBRT library and implement a global
+illumination renderer such as a bidirectional path tracer (e.g.
+metropolis light transport) or radiosity renderer.</p>
+<p>Requirements:</p>
+<ul>
+<li>Strong familiarity with C</li>
+<li>Familiarity with global illumination rendering</li>
+<li>Solid math background</li>
+<li>Ability to learn and utilize existing C API</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="geometry-database-ie-g-file-format-enhancements">Geometry database (i.e. ".g" file format) enhancements</h2>
+<p>Our ".g" file format is a binary geometry file format that provides a
+robust, efficient, and flexible object storage framework. There are,
+however, many features that would be really useful to have in the
+database layer that are not presently implemented.</p>
+<p>See <a href="http://brlcad.org/OLD/newdb/newdb.html">http://brlcad.org/OLD/newdb/newdb.html</a> to get started on some the
+low-level details about our .g file format. See the source code for the
+definitive status.</p>
+<p>The idea behind this task would be to propose a set of enhancements,
+whether they be backwards-compatible with our current "v5" geometry file
+format or whether it be the development of a new "v6" file format. The
+sorts of enhancements needed include time-stamping of geometry database
+objects, support for constraints and parametric equations as intrinsic
+object properties, objects with versioning and construction histories,
+intrinsic support for surrogation, dynamic geometry, automatic space
+compression, deleted object recovery, performance enhancements, and
+more. There's plenty of room for new features and improvements, so be
+specific in your scope and goals.</p>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C</li>
+<li>Ability to learn and extend an existing API</li>
+</ul>
+<p>Difficulty: high</p>
+<h2 id="fixed-precision-compile-time-interface">Fixed-precision compile-time interface</h2>
+<p>BRL-CAD uses floating point computation pervasively with extensive
+efforts taken to account for various floating point types and floating
+point instability. For the purposes of regression testing and the
+validation and verification of routines, it is highly desirable to have
+the ability to guarantee calculations to a given precision.</p>
+<p>Basically, this task entails implementing a GMP C++ interface as our
+fastf_t type as a compile-time option. The task will require
+refactoring a cleaning up a lot of the code throughout BRL-CAD so that
+fastf_t's are pervasive to a given ray trace evaluation. It will also
+require developing C++ operators to override behavior for [], +, -,
+*, and various others. BRL-CAD already includes a regression testing
+suite that can be used to</p>
+<p>See the "benchmark" tool in a BRL-CAD install to get started as well as
+include/*.h and src/libbn and src/librt for libraries you'll have to
+work with. The main 'rt' raytrace binary is in src/rt/.</p>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C/C++</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="g_qa-gui">g_qa GUI</h2>
+<p>The g_qa tool provides a handful of ways to analyze a geometry file.
+Providing an intuitive GUI with check boxes to select modes as well as
+parsing the results for easier interpretation would be handy. See
+<a href="http://sourceforge.net/tracker/?func=detail&amp;aid=2717388&amp;group_id=105292&amp;atid=640805">http://sourceforge.net/tracker/?func=detail&amp;aid=2717388&amp;group_id=105292&amp;atid=640805</a>
+for more details.</p>
+<p>Requirements:</p>
+<ul>
+<li>Basic familiarity with Tcl/Tk</li>
+</ul>
+<p>Difficulty: low</p>
+<h2 id="brl-cad-benchmark-database-website">BRL-CAD Benchmark database website</h2>
+<p>The <em>BRL-CAD Benchmark</em> tests the performance of a system by iteratively
+evaluating a system's overall computational performance capacity by
+using a highly CPU-intensive application metric. The Benchmark renders a
+series of scenes into 512x512 images and compares the results against a
+reference baseline. The local machine's performance is compared to the
+base system (called VGR) and a numeric "VGR" multiplier of performance
+is computed. This number is a cumulative metric from which one may
+qualitatively and directly compare cpu performance, cache performance,
+differing versions of BRL-CAD, and different compilers.</p>
+<p>This task entails wrapping up a web interface around the BRL-CAD
+Benchmark suite so that results may be received from users, stored in a
+database, and be summarized through a searchable web interface. The
+project would be specific to the summary metric computed by the BRL-CAD
+benchmark and various system and compilation characteristics for a given
+result. Users should be able to visit the site, submit their results,
+and see a comparison of their performance to other systems already in
+the database.</p>
+<p>Requirements:</p>
+<ul>
+<li>Strong web development skills</li>
+<li>(optional)Familiarity with Drupal or Mediawiki customization and/or
+    module development</li>
+<li>Must integrate well with the BRL-CAD Benchmark</li>
+</ul>
+<p>Difficulty: low</p>
+<h1 id="mentors">Mentors</h1>
+<p>BRL-CAD operates via <em>group mentoring</em> meaning that you may call upon
+multiple individuals for assistance. Our mentors available to assist
+are:</p>
+<ul>
+<li>Sean Morrison (brlcad)</li>
+<li>Erik Greenwald (``Erik)</li>
+<li>Daniel Rossberg</li>
+<li>Brad Harder (yukonbob)</li>
+<li>Cliff Yapp (starseeker)</li>
+<li>David Loman (d-lo)</li>
+<li>Keith Bowman (indianlarry)</li>
+</ul>
+<p><a href="category:_Summer_of_Code.md">category: Summer of Code</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

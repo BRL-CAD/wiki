@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Sharan.nyn/GSoC18/Report/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Report - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Sharan.nyn/GSoC18/Report.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-report-check-command-and-overlaps-tool" class="nav-link">Project Report : Check Command and Overlaps Tool</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="project-report-check-command-and-overlaps-tool"><strong>Project Report : Check Command and Overlaps Tool</strong></h2>
+<ul>
+<li>The work done for the project can be split into the following parts:</li>
+</ul>
+<h3 id="libanalyze-function-analyze_overlaps-and-libged-command-check_overlaps">libanalyze function -- analyze_overlaps and libged command -- check_overlaps</h3>
+<p><code>NOTE: This was later replaced with better code, check it out</code><a href="Report#new_libanalyze_API_and_check_command_that_uses_this_API"><code>here</code></a></p>
+<ul>
+<li>The main goal behind adding a check_overlaps command was that
+    libged's rtcheck command acted as a wrapper for the rtcheck program,
+    and ran the rtcheck program with execvp command -- this was not
+    desired as the execution was done in a different process.</li>
+<li>I added the check_overlaps command which had the same options as
+    rtcheck command and the logic behind shooting of rays was done in
+    libanalyze.</li>
+<li>The overlaps were processed on libged side with callback functions.</li>
+<li>The submitted patches were committed by Daniel --<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/70995/">r70995</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71008/">r71008</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71042/">r71402</a></li>
+<li><a href="https://sourceforge.net/p/brlcad/code/71050/">r71050</a> -- this
+    was later reverted by me
+    (<a href="https://sourceforge.net/p/brlcad/code/71059/">r71059</a>)</li>
+</ul>
+</li>
+<li>I was given commit access to the repo :) and I did the following
+    commits:<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71063/">r71063</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71065/">r71065</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71066/">r71066</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71067/">r71067</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71103/">r71103</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71108/">r71108</a></li>
+</ul>
+</li>
+<li>Documentation work related to check_overlaps --
+    <a href="https://sourceforge.net/p/brlcad/patches/497/">#497</a></li>
+</ul>
+<h3 id="rtcheck-based-on-libanalyzes-analyze_overlaps-function">rtcheck based on libanalyze's analyze_overlaps function</h3>
+<p><code>NOTE: This was later replaced with better code, check it out</code><a href="Report#new_libanalyze_API_and_check_command_that_uses_this_API"><code>here</code></a></p>
+<ul>
+<li>Since the logic for shooting the rays was in libanalyze function
+    analyze_overlaps.</li>
+<li>My next task was to refactor rtcheck program to use
+    analyze_overlaps.</li>
+<li><a href="https://sourceforge.net/p/brlcad/patches/495/">#495</a> was
+    submitted.</li>
+</ul>
+<h3 id="libanalyze-function-for-grid-generation">libanalyze function for grid generation</h3>
+<ul>
+<li>Function that sets the ray starting point and ray directions in a
+    grid form was added.</li>
+<li>This helped reduce the parameters passed to analyze_overlaps -- all
+    grid related functions and data was passed in two variables.</li>
+<li>The following commits were done -<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71117/">r71117</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71118/">r71118</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71160/">r71160</a></li>
+</ul>
+</li>
+<li>Later triple grid support and refining was added -<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71200/">r71200</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71201/">r71201</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71204/">r71204</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="overlaps-tool-based-on-checksh">overlaps tool based on check.sh</h3>
+<ul>
+<li>One of the main goals of the project was to remove the need of the
+    check.sh because it was a bash script it meant it didn’t work for
+    windows system.</li>
+<li>The same functionality was added with help of a .tcl file.</li>
+<li>The following commits were done -<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71106/">r71106</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71107/">r71107</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71149/">r71149</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71150/">r71150</a></li>
+</ul>
+</li>
+<li>How it looked:
+    <a href="https://brlcad.org/wiki/File:Overlaps_tool1.gif">overlaps_tool.gif</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I started to work on better object selection to make it like the
+    prototype image I created during the application period
+    (<a href="http://brlcad.org/wiki/File:CheckGUI.png">image</a>)</li>
+<li>The following commits were done -<ul>
+<li><a href="https://sourceforge.net/p/brlcad/code/71151/">r71151</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71152/">r71152</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71153/">r71153</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71154/">r71154</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71155/">r71155</a></li>
+</ul>
+</li>
+<li>Better object selection:
+    <a href="https://brlcad.org/wiki/File:Overlaps_tool2.gif">better_object_sel.gif</a></li>
+<li>Final image:</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><img alt="" src="/wiki/user/img/Overlaps_tool_final.png" /></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Documentation was done --
+    <a href="https://sourceforge.net/p/brlcad/code/71498/">r71498</a></li>
+</ul>
+<h3 id="new-libanalyze-api-and-check-command-that-uses-this-api">new libanalyze API and check command that uses this API</h3>
+<ul>
+<li>The goal behind this task was to combine the geometry analysis tools
+    -- rtcheck, gqa and glint into one command.</li>
+<li>A libanalyze API was discussed that contained the backend logic of
+    these commands in one place.</li>
+<li>The check command has sub-commands for - overlaps, mass, volume,
+    surface area, gaps, adjacent air, exposed air and unconfined air.</li>
+<li>This task involved many commits. For list of commits please refer to
+    <em>week 10 - week 12</em> in my daily log available here
+    -<a href="../Log/#Week_10">Log</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Since I added a better command for checking overlaps (<em>check
+    overlaps [options]</em>). I removed the old check_overlaps and
+    analyze_overlaps function.</li>
+<li>And adapted the code for the new check overlaps command. For commits
+    refer to week 13's log -
+    <a href="../Log/#Week_13">Week-13</a></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I also wrote some bash scripts to compare the outputs of check vs
+    rtcheck/gqa --
+    <a href="https://sourceforge.net/p/brlcad/code/71355/">r71355</a></li>
+<li>Documentation and man page for check command was added -
+    <a href="https://sourceforge.net/p/brlcad/code/71374/">r71374</a>
+    <a href="https://sourceforge.net/p/brlcad/code/71393/">r71393</a></li>
+</ul>
+<h3 id="rtcheck-and-gqa-based-on-the-libanalyze-api">rtcheck and gqa based on the libanalyze API</h3>
+<ul>
+<li>Since the backend logic of gqa and rtcheck lives in
+    libanalyze/api.c. The duplicated code in gqa and rtcheck can be
+    removed.</li>
+<li>rtcheck and gqa were changed to use the libanalyze functions.</li>
+<li>work related to rtcheck and gqa can be found in the public Google
+    Drive Folder linked below</li>
+</ul>
+<h3 id="files">Files</h3>
+<p>This public Google Drive folder contains all the files which I worked on
+almost exclusively during the coding period -</p>
+<ul>
+<li><a href="https://drive.google.com/drive/folders/1WueiX-Cg21SpQ4lYmkhO6Qo40fwZSaaH?usp=sharing">saran_narayan-gsoc18-brlcad</a></li>
+</ul>
+<h3 id="logs">Logs</h3>
+<ul>
+<li><a href="../Log/">Daily Logs</a></li>
+<li>The log also contains links to all my commits and patches.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Building_from_SVN/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Building from SVN - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Building_from_SVN.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#obtain-the-sources-via-subversion" class="nav-link">Obtain the sources via Subversion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#configure-the-build-system-with-cmake" class="nav-link">Configure the build system with CMake</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#compile-and-test-your-build" class="nav-link">Compile and test your build</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#doxygen-optional" class="nav-link">Doxygen (OPTIONAL)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#install-optional" class="nav-link">Install (OPTIONAL)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#setup-environment-optional" class="nav-link">Setup environment (OPTIONAL)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#test-your-build" class="nav-link">Test your Build</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li>
+<ul>
+<li>BRL-CAD Recently moved from SVN to Github. Building from SVN
+        works as of 3 Jul 2021, but you may need to build from Github in
+        the future. ***</li>
+</ul>
+</li>
+</ul>
+<h2 id="obtain-the-sources-via-subversion">Obtain the sources via Subversion</h2>
+<p>For Windows:</p>
+<p>Install a Subversion client for Windows, such as TortoiseSVN:
+<a href="https://sourceforge.net/projects/tortoisesvn/">https://sourceforge.net/projects/tortoisesvn/</a></p>
+<p>To get a checkout after installing TortoiseSVN, right-click in a folder
+where you want to download the sources, select SVN Checkout and specify
+<a href="https://svn.code.sf.net/p/brlcad/code/brlcad/trunk">https://svn.code.sf.net/p/brlcad/code/brlcad/trunk</a> for the repository
+URL.</p>
+<p>For Linux/Mac/BSD:</p>
+<pre><code>svn checkout https://svn.code.sf.net/p/brlcad/code/brlcad/trunk brlcad
+</code></pre>
+<p>Note: If you do not yet have an SVN client installed, go to
+<a href="http://subversion.tigris.org">http://subversion.tigris.org</a> for information on obtaining an
+appropriate SVN client for your platform. Most modern Linux/BSD/UNIX
+distributions will also have SVN available in their package
+repositories.</p>
+<h2 id="configure-the-build-system-with-cmake">Configure the build system with CMake</h2>
+<p>BRL-CAD also requires the build tool CMake. Most Linux/BSD/UNIX systems
+provide a package for CMake. For platforms that do not, CMake is
+available from <a href="http://www.cmake.org">http://www.cmake.org</a></p>
+<p>Once installed, create a directory where you will compile BRL-CAD and
+run CMake.</p>
+<p>For Windows, you can use the CMake GUI where you specify build and
+source
+directories:<img alt="" src="/wiki/doc/img/Running_cmake_on_windows.png" /></p>
+<p>For Linux/Mac/BSD, this looks like:</p>
+<p><code>cd brlcad</code>
+<code>mkdir build</code>
+<code>cd build</code>
+<code>cmake .. (for a default build)</code>
+<code>cmake .. -DBRLCAD_BUNDLED_LIBS=ON -DCMAKE_BUILD_TYPE=Release (for a release build)</code></p>
+<h2 id="compile-and-test-your-build">Compile and test your build</h2>
+<p>On Windows, simply open the "BRLCAD" solution and Compile.</p>
+<p>On Linux/Mac/BSD, run this in your build directory:</p>
+<p><code>make</code></p>
+<p>If there are no compilation errors, you can test via:</p>
+<p><code>make test</code></p>
+<p>You can also run a performance test:</p>
+<p><code>make benchmark</code></p>
+<p>Both the test and benchmark should report successfully if everything is
+working correctly. Report any failures to the BRL-CAD <a href="http://sourceforge.net/tracker/?group_id=105292&amp;atid=640802">bug
+tracker</a>.</p>
+<h2 id="doxygen-optional">Doxygen (OPTIONAL)</h2>
+<p>If you have doxygen installed somewhere CMake can find it, then you can
+build a browsable HTML documentation of the source code. This is useful
+if you want to use BRL-CAD's libraries directly, or if you just want a
+better overview of how things are structured.</p>
+<p>To build the HTML files on a Linux/Mac/BSD system, run (from your build
+directory):</p>
+<p><code>make dox</code></p>
+<p>and then open doc/doxygen_output/html/index.xhtml with your web browser
+of choice.</p>
+<h2 id="install-optional">Install (OPTIONAL)</h2>
+<p>On all systems, you can simply run directly from the build directory
+without installing.</p>
+<p>That said, by default BRL-CAD installs into /usr/brlcad or /opt/brlcad
+on Linux/Mac/BSD and into the standard program directory on Windows. To
+check your build or install of BRL-CAD, browse to the "bin" directory
+from the GUI or from cmd.exe and run "mged".</p>
+<h2 id="setup-environment-optional">Setup environment (OPTIONAL)</h2>
+<p>At this point, all that remains is setting your system PATH environment
+variable so BRL-CAD utilities can be found. Installation does not set
+PATH for you automatically.</p>
+<p>For Windows, setting PATH can be helpful but isn't necessary. Simply
+navigate to where you installed BRL-CAD and run from there.</p>
+<p>For Linux/Mac/BSD, you'll either need to specify full paths to
+applications (e.g., /usr/brlcad/bin/rt) or set your PATH. If the default
+installation prefix (/usr/brlcad or /opt/brlcad) was used, you should
+only need to add /usr/brlcad/bin to your PATH in order to find
+applications (optionally setting MANPATH as well):</p>
+<p>For bash:</p>
+<p><code>export PATH="/usr/brlcad/bin:$PATH"</code>
+<code>export MANPATH="/usr/brlcad/man:$MANPATH"</code></p>
+<p>For csh/tcsh:</p>
+<p><code>set path=( /usr/brlcad/bin $path )</code>
+<code>setenv MANPATH "/usr/brlcd/man:$MANPATH"</code>
+<code>rehash</code></p>
+<p>To find BRL-CAD manual pages without setting your MANPATH, use the
+provided "brlman" binary instead of "man" (e.g., /usr/brlcad/bin/brlman
+rt).</p>
+<h2 id="test-your-build">Test your Build</h2>
+<p>If compilation went well, there should now be more than 400 command-line
+applications at your disposal for processing images and geometry. You
+should be able to run the main modeling application:</p>
+<p><code>mged</code></p>
+<p>If you didn't install, you may need to specify the path to the tool
+(e.g., "bin/mged") from the build directory.</p>
+<p><a href="Category:Documentation.md">Category:Documentation</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/DSP/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>DSP - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/DSP.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#displacement-dsp-map-primitive" class="nav-link">Displacement (DSP) map primitive</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#creating-a-dsp-object-from-miscellaneous-images" class="nav-link">Creating a DSP object from miscellaneous images</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#creating-a-dsp-object-from-manual-or-programmatic-generation-of-data" class="nav-link">Creating a DSP object from manual or programmatic generation of data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="category:tutorials.md">category:tutorials</a></p>
+<h1 id="displacement-dsp-map-primitive">Displacement (DSP) map primitive</h1>
+<h2 id="creating-a-dsp-object-from-miscellaneous-images">Creating a DSP object from miscellaneous images</h2>
+<p>We will use two examples to illustrate the next few sections.</p>
+<p>1. A black and white (gray scale) image (png format):</p>
+<p><img alt="" src="/wiki/doc/img/Ex1.png" /></p>
+<p>with properties:</p>
+<p><code>$ file Ex1.png</code>
+<code>Ex1.png: PNG image, 142 x 150, 8-bit gray+alpha, non-interlaced</code></p>
+<p>2. A color png file:</p>
+<p><img alt="" src="/wiki/doc/img/Ex2.png" /></p>
+<p>with properties:</p>
+<p><code>$ file Ex2.png</code>
+<code>Ex2.png: PNG image, 152 x 150, 8-bit/color RGBA, non-interlaced</code></p>
+<h3 id="preparing-your-height-field-data">Preparing your height field data</h3>
+<p>The DSP takes unsigned short (16-bit) integer data. Our various
+command-line data converters can help bring data in from pretty much any
+existing format, including image data, via various processing commands.
+If the data were in png image format, for example (which is basically
+3-channel 8-bit integer data), the data could be prepared with a
+combination of 'png-pix', 'pix-bw', and 'cv'.</p>
+<p>If you type the 'in' command, it will prompt you for each parameter
+individually and that should help some. For the DSP, the main parameters
+are: the source of the height data, the width (number of points in the X
+direction) and length (number of points in the Y direction) of the input
+data, width/length/height scaling factors, and whether to smoothly
+interpolate between cells (0 = do not interpolate, 1 = interpolate).</p>
+<p>See the 'dsp_add' tool for combining two existing DSP data files into
+one.</p>
+<p>A DSP primitive is an array of cells initially defined by points in the
+X-Y plane as positive heights from Z = 0. The DSP can then be
+transformed to other orientations and positions. The number of cells is
+(numX * numY).</p>
+<p>The data format for the DSP primitive is network-ordered unsigned short
+integers (nu16). BRL-CAD has a couple of dozen tools that you can use
+for converting existing data into that raw format, such as the 'cv'
+command or the 'bw-d' and 'd-u' commands among other similar tool
+chains. If you use the cv command, the output format is "nus" for
+network unsigned shorts.</p>
+<p>Using the two examples to convert the data to dsp format.</p>
+<p>Example 1.</p>
+<p>Convert it to a bw file (one pixel is one unsigned char):</p>
+<p><code>$ png-bw Ex1.png &gt; Ex1.bw</code></p>
+<p>View the result:</p>
+<p><code>$ bw-fb -w142 -n150 Ex1.bw</code></p>
+<p>Convert it to the format required for a dsp file (nu16):</p>
+<p><code>$ cv huc nu16 Ex1.bw Ex1.dsp</code></p>
+<p>Example 2.</p>
+<p>Convert it to a pix file (one pixel is defined by three unsigned chars):</p>
+<p><code>$ png-pix Ex2.png &gt; Ex2.pix</code></p>
+<p>View the result:</p>
+<p><code>$ pix-fb -w152 -n150 Ex2.pix</code></p>
+<p>Convert it to a bw file (one pixel is one unsigned char):</p>
+<p><code>$ pix-bw Ex2.pix &gt; Ex2.bw</code></p>
+<p>View the result:</p>
+<p><code>$ bw-fb -w152 -n150 Ex2.bw</code></p>
+<p>Convert it to the format required for a dsp file:</p>
+<p><code>$ cv huc nu16 Ex2.bw Ex2.dsp</code></p>
+<h3 id="importing-dsp-data-into-a-g-file">Importing DSP data into a .g file</h3>
+<p>Example 1.</p>
+<p>In <a href="mged.md">mged</a> create a dsp object of width 142, length 150,
+no interpolation, cut direction 'ad', cell size 1 (in current units),
+and unit elevation 0.005 (in current units):</p>
+<p><code>mged&gt; in dsp1.s dsp f Ex1.dsp 142 150 0 ad 1 0.005</code>
+<code>mged&gt; r dsp1.r u dsp1.s</code></p>
+<p>Example 2.</p>
+<p>In mged create a dsp object:</p>
+<p><code>mged&gt; in dsp2.s dsp f Ex2.dsp 152 150 0 ad 1 0.005</code>
+<code>mged&gt; r dsp2.r u dsp2.s</code></p>
+<h3 id="rendering-your-dsp">Rendering your DSP</h3>
+<p>Example 1.</p>
+<p><code>mged&gt; B dsp1.r</code>
+<code>mged&gt; ae 270 90</code>
+<code>mged&gt; rt</code></p>
+<p>You should see something like this:</p>
+<p><img alt="" src="/wiki/doc/img/Ex1rt.png" /></p>
+<p>You can play around with the scaling factors (the end pair: 1 - cell
+width, 0.005 - cell height) to improve the looks of the image.</p>
+<p>But now let's invert the file so we get its negative:</p>
+<p><code>$ bwmod -m-1 -a255 &lt; Ex1.bw &gt; Ex1n.bw</code></p>
+<p>And make another dsp in the same manner as before:</p>
+<p><code>$ cv huc nu16 Ex1n.bw Ex1n.dsp</code>
+<code>$ ...</code></p>
+<p>And see the results:</p>
+<p><img alt="" src="/wiki/doc/img/Ex1nrt.png" /></p>
+<p>Example 2.</p>
+<p><code>mged&gt; B dsp2.r</code>
+<code>mged&gt; ae 270 90</code>
+<code>mged&gt; rt</code></p>
+<p>You should see something like this:</p>
+<p><img alt="" src="/wiki/doc/img/Ex2rt.png" /></p>
+<p>Again, you could play with various parameters to get the desired look.
+You could also create the negative as we did with example 1 and see the
+results:</p>
+<p><img alt="" src="/wiki/doc/img/Ex2nrt.png" /></p>
+<h2 id="creating-a-dsp-object-from-manual-or-programmatic-generation-of-data">Creating a DSP object from manual or programmatic generation of data</h2>
+<p>A DSP object can be created manually or programmatically by creating an
+ASCII data file as input using the BRL-CAD utility asc2dsp to convert it
+directly to the DSP binary format. An easy way to create the input file
+for asc2dsp is to first create it row by row in natural form with the
+top row being the desired top row and so on in desired viewing order.
+Then take the finished file and filter it through the Unix utility tac
+which will reverse the order of the rows (lines).</p>
+<h3 id="a-simple-example">A simple example</h3>
+<p>For example, let's create the letter "T" for viewing in the X-Y plane.</p>
+<p><code>$ cat t-normal.asc</code>
+<code>1 1 1 1 1</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code></p>
+<p>Now reverse the file:</p>
+<p><code>$ tac t-normal.asc &gt; t-reversed.asc</code></p>
+<p>and see the result in perfect form for asc2dsp:</p>
+<p><code>$ cat t-reversed.asc</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code>
+<code>0 0 1 0 0</code>
+<code>1 1 1 1 1</code></p>
+<p>Finally, create the dsp file:</p>
+<p><code>$ asc2dsp t-reversed.asc t.dsp</code></p>
+<p>(The TGM creation is left as an exercise for the reader.)</p>
+<h3 id="a-practical-example">A practical example</h3>
+<p>Now let's consider a more practical example and a real test of BRL-CAD.
+We can import topological (topo) data and produce a realistic ground
+surface. There are many free sources of such data, but these, for US
+topo data, seem to be the most likely:</p>
+<p><a href="http://nationalmap.gov/viewer.html/"><code>http://nationalmap.gov/viewer.html/</code></a>
+<a href="http://earthexplorer.usgs.gov/"><code>http://earthexplorer.usgs.gov/</code></a></p>
+<p>Trying to find suitable topo data, in a desired format for a specific
+area, is not so easy there, so we located another source of topological
+data (digital elevation models [DEM]) in
+<a href="http://mcmcweb.er.usgs.gov/sdts/">SDTS</a> format:</p>
+<p><a href="http://data.geocomm.com/dem/demdownload.html"><code>http://data.geocomm.com/dem/demdownload.html</code></a></p>
+<p>We selected
+<a href="http://data.geocomm.com/catalog/US/61076/sublist.html">Colorado</a>, <a href="http://data.geocomm.com/catalog/US/61076/1231/index.html">El
+Paso County</a>,
+and <a href="http://data.geocomm.com/catalog/US/61076/1231/group4-3.html">Digital Elevation
+Models</a>.</p>
+<p>On that page we downloaded all six 10-meter data archive files for
+complete coverage of the county. We also downloaded the six *TXT files
+which contain metadata about each archive. [Note that you are required
+to have a Geo Community account for any downloads (membership is
+free).]</p>
+<p>The six archive files are:</p>
+<p><code>3818122.DEM.SDTS.TAR.GZ</code>
+<code>4055020.DEM.SDTS.TAR.GZ</code>
+<code>4055026.DEM.SDTS.TAR.GZ</code>
+<code>4055028.DEM.SDTS.TAR.GZ</code>
+<code>4055034.DEM.SDTS.TAR.GZ</code>
+<code>4057865.DEM.SDTS.TAR.GZ</code></p>
+<p>Taking the first archive as an example:</p>
+<p><code>$ tar -tvzf 3818122.DEM.SDTS.TAR.GZ</code></p>
+<p>we see that the archive files are not in a directory (but they are a set
+with possibly redundant file names found in other sets), so we create a
+directory for each:</p>
+<p><code>$ mkdir 3818122.dem</code>
+<code>...</code></p>
+<p>Now move each archive into its own directory and unpack it:</p>
+<p><code>$ mv 3818122.DEM.SDTS.TAR.GZ 3818122.dem</code>
+<code>$ cd 3818122.dem</code>
+<code>$ tar -xvzf 3818122.DEM.SDTS.TAR.GZ</code>
+<code>3814CATD.DDF</code>
+<code>3814CATS.DDF</code>
+<code>3814CEL0.DDF</code>
+<code>3814DDDF.DDF</code>
+<code>3814DDOM.DDF</code>
+<code>3814DDSH.DDF</code>
+<code>3814DQAA.DDF</code>
+<code>3814DQCG.DDF</code>
+<code>3814DQHL.DDF</code>
+<code>3814DQLC.DDF</code>
+<code>3814DQPA.DDF</code>
+<code>3814IDEN.DDF</code>
+<code>3814IREF.DDF</code>
+<code>3814LDEF.DDF</code>
+<code>3814RSDF.DDF</code>
+<code>3814SPDM.DDF</code>
+<code>3814STAT.DDF</code>
+<code>3814XREF.DDF</code>
+<code>README</code></p>
+<p>We can view the SDTS data files with a free viewer (for Windows only)
+available here:</p>
+<p><a href="http://www.visualizationsoftware.com/3dem"><code>http://www.visualizationsoftware.com/3dem</code></a></p>
+<p>In order to manipulate the data in SDTS files we used the <a href="http://gdal.org/">GDAL
+library</a> and then created a C++ program called
+'sdtsdem2asc' which can be found here:</p>
+<p><a href="https://github.com/tbrowder/brlcad-usgs-topo-tools"><code>https://github.com/tbrowder/brlcad-usgs-topo-tools</code></a></p>
+<p>After building and installing that program, we can change directory to
+the desired data set and create the dsp. We enter the desired base name
+of the image (we choose the unique data set base name) and use the
+'--chop' option to minimize the dsp's vertical height to the default one
+meter below the lowest height in the data set. Note the program will do
+all the work for us with the options shown:</p>
+<p><code>$ cd /path/to/3818122.dem</code>
+<code>$ sdtsdem2asc 3814CATD.DDF --base=3818122 --chop</code></p>
+<p>The resulting default png file (but cropped) is shown below.</p>
+<p><img alt="" src="/wiki/doc/img/381822-az35-el25.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Gauravjeet/OGV_Proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Online Geometry Viewer Project Proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Gauravjeet/OGV_Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#online-geometry-viewer-project-proposal" class="nav-link">Online Geometry Viewer Project Proposal</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#detailed-project-description" class="nav-link">Detailed Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="online-geometry-viewer-project-proposal">Online Geometry Viewer Project Proposal</h1>
+<h2 id="personal-information">Personal Information</h2>
+<p><strong>Name:</strong> Gauravjeet Singh</p>
+<p><strong>Email Address:</strong> gaurav.ishwerdas@gmail.com</p>
+<p><strong>IRC Username:</strong> gjeet</p>
+<h3 id="brief-background-info">Brief Background Info</h3>
+<p>I study in 3rd year B.Tech (Computer Science and Engineering) at Guru
+Nanak Dev Engineering College, Ludhiana (India). I was welcomed in this
+community in late 2012 via Google Code In (GCI). I was a GCI 2012
+student and then acted as a GCI mentor of BRL-CAD for next two
+consecutive years (2013 &amp; 2014).</p>
+<p>I have been interested in 3D graphics from a long time. In early 2013,
+after finishing up with GCI as a student, I started looking for
+opportunities to work with BRL-CAD. And I ended up taking a very small
+part of BRL-CAD functionality on the web, using a simple shell script
+and CGI. Here's the Github repo of that app:
+<a href="https://github.com/GreatDevelopers/wBRLCAD/tree/master/general/tableModel">https://github.com/GreatDevelopers/wBRLCAD/tree/master/general/tableModel</a></p>
+<p>Later that same year(2013), I came to know about a GSoC project called
+Online Geometry Viewer. I have been an active listener about OGV
+discussions since then.</p>
+<p>Also, I have been contributing to various Meteor projects in the past
+few months. These include</p>
+<ul>
+<li>Lord Byron: A real-time text editor that checks for grammar using
+    Natural Language Processing.</li>
+<li>Blocks: Application for making presentations and static websites</li>
+</ul>
+<p>My experience in meteor and interest in 3D graphics makes OGV a perfect
+project for me.</p>
+<h2 id="project-information">Project Information</h2>
+<h3 id="brief-summary">Brief Summary</h3>
+<p>OGV has the ambition to become something of an Instagram for 3D models.
+It includes features like profiles, likes, comments, followers. But the
+code is a lot buggy and unstable.</p>
+<p><strong>What has been done</strong> As previously stated Online Geometry Viewer
+started as a GSoC project in 2013 by a student named Harmanpreet Singh
+to show BRL-CAD modeling capabilities on the web. It was initially a
+vanilla PHP + three-js project. This project was continued by Inderpreet
+Singh in 2014 and was converted to Meteor from vanilla PHP in order to
+get a robust backend. Next year in 2015 two Students Deepak Sharma and
+Shubham Chauhan continued the meteor project.</p>
+<p><strong>What I will do</strong> One of the major motives of my GSoC would be to
+improve the existing code. To complete the things that are almost
+complete. Also, the new features I am adding aren't completely new, they
+are an extension of some existing feature of OGV. By the end of GSoC, I
+want OGV to be <strong>production ready</strong> and available to use for a wider
+majority of people.</p>
+<p>I am mostly concentrating on the <strong>efficiency</strong> and <strong>control over the
+model viewer</strong>. For now, we can only view the complete model. We have no
+control over what parts of a model to show/hide. This includes giving
+different color/material separately to different parts of a model
+instead of the complete model. There are much more such things that I
+would accomplish during my GSoC tenure. Things I will do in GSoC are
+listed as following:</p>
+<p>Things that I'll improve:</p>
+<ul>
+<li>Search (for models, users and even parts inside model)</li>
+<li>Database schema (Adding schema to the collections)</li>
+<li>Increasing speed and efficiency in handling Obj files (merging
+    multiple Obj files and removing duplicates)</li>
+<li>Overall User Experience and User Interface</li>
+<li>Removing redundancy and unused code</li>
+</ul>
+<p>Things that I'll add:</p>
+<ul>
+<li>Show/hide parts of model (also color them separately)</li>
+<li>Adding push notifications for like, comment, share</li>
+<li>Easy Deployment procedure</li>
+<li>Adding view restrictions on uploaded models</li>
+<li>Enabling users to create Groups/lists of followers</li>
+</ul>
+<h2 id="detailed-project-description">Detailed Project Description</h2>
+<h3 id="code-cleanup">Code Cleanup</h3>
+<ul>
+<li><strong>Github branches and PR's</strong>: There are a lot of branches and PR's
+    pending, my task would be to merge all the code and get the desired
+    stable code in the master branch.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Current Code</strong>: Changes in the code includes adapting to more
+    appropriate variable names, removing redundant code.</li>
+</ul>
+<p>For example, there exists redundant code in file
+<em>OGV/client/views/model_viewer.js</em> at line no 220. The package
+<em>ishwerdas:ogv-threejs</em> is not updated since it is created by Inderpreet
+Singh in 2014. There are many such instances in the code that needs to
+be fixed.</p>
+<h3 id="robust-and-secure-database-by-using-schema">Robust and secure database by using Schema</h3>
+<p>We are using MongoDB in OGV. It is a schema-less database. But however,
+it is generally a good practice to define a schema that validates the
+content of the collection. If we don't use schema, there comes a high
+chance of adding wrong values in the database. That's the reason meteor
+officially supports and recommends using schema.
+<a href="http://guide.meteor.com/collections.html#schemas">http://guide.meteor.com/collections.html#schemas</a> To add schema to
+meteor collections, we may use package</p>
+<p><code>aldeed:simple-schema</code></p>
+<p>For instance, we have a collection in OGV called "Ogvsettings".</p>
+<p><code>settings.schema = new simpleSchema({</code>
+<code>gobjPath: {type: string} });</code></p>
+<p>If we apply the above schema to collection Ogvsettings, it will make
+sure we get a string value in the "gobjPath" field of the collection.
+Thus, <strong>making our application more robust and secure.</strong></p>
+<h3 id="efficiency-in-handling-obj-files">Efficiency in handling Obj files</h3>
+<p>OGV is a bit slow for now. It can't handle big models, one of the main
+reasons is the number of HTTP requests for each obj file. Thus, OGV can
+be boosted by doing following things:</p>
+<ul>
+<li><strong>Removing duplicates</strong>: When a .g file is converted into obj, each
+    converted obj is copied to another location. Thus, there exists a
+    duplicate file for each obj file. Thus occupying unnecessary storage
+    to the server. Obj files are created at
+    <em>OGV/.meteor/local/cfs/files/modelFiles</em> during conversion, which
+    aren't required while viewing the model. Thus, they occupy extra
+    space. I will write the code that removes these files after a
+    certain amount of time automatically so that there is no wastage of
+    server space.</li>
+<li><strong>Merging all OBJ files into one</strong>: On model rendering page,
+    multiple requests are made(\~300 for complex objects) thus slowing
+    down OGV. Therefore merging obj files will reduce HTTP requests by a
+    big number.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/_details.png" /></p>
+<ul>
+<li><strong>Group/Ungroup merged Obj file</strong>: User should get an option to
+    group/ungroup the merged obj file. As I will load only one obj file
+    for the sake of speed but I don't want the user to lose control over
+    the model. Therefore, the user will ungroup to load each part of
+    model separately. More on this is explained in below section Control
+    over the model.</li>
+</ul>
+<h3 id="control-over-the-model">Control over the model</h3>
+<ul>
+<li><strong>Show/hide parts of model</strong>: While working on a 3D model, the user
+    always finds a need to look into a specific part of a model instead
+    of the complete model. Because of this, I am adding an option to
+    show/hide parts of a model. Once the model is ungrouped, we can
+    show/hide any part of a model. <strong>Also we can change the names of the
+    objects, by double clicking on the obj name in list.</strong> Instead of
+    obj file names we can define our own names for each part of object.
+    These names will then be seen when hovered with mouse over the part
+    of model</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/_show_hide.png" /></p>
+<ul>
+<li><strong>Coloring parts of model</strong>: Once the model is ungrouped, we get a
+    set of different parts that can be colored in a separate color or a
+    material texture.</li>
+</ul>
+<figure>
+![](/wiki/user/img/_colored_parts.png)
+
+
+-   **Searching parts of Model**: Complex models have a large number of
+    parts, so it isn't feasible to go through the list manually to find
+    a specific part in order to perform an operation on it. Thus there
+    comes the need of searching the part of the model.
+
+<!-- -->
+
+-   **Searching users and models**: OGV already has this search. But it
+    isn't much functional. We can't go to the desired model from the
+    search results. Also, the existing search uses simple string
+    comparison instead of any search algorithm. I would like to use
+    phonetic search and auto-complete search algorithm for an enhanced
+    search experience. Following meteor package can help us achieve
+    autocorrect, phonetic search experience.
+
+`  art1sec8:fuse`
+
+<figure>
+![](/wiki/user/img/_empty_search.png)
+</figure>
+
+
+![](/wiki/user/img/_search_ga.png)
+</figure>
+
+<ul>
+<li><strong>Advanced Search</strong>: With this we can search for models using
+    certain filters. Filters include filter by the owner of the model,</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/_advanced_search.png" />
+</figure></p>
+<h3 id="notifications">Notifications</h3>
+<ul>
+<li><strong>Better notification UI</strong>: The current notification style cover the
+    entire top bar, and hides the menu, thus the user can not go
+    mixture of meteor sAlert notifications and simple javascript Alert.
+    all the alerts to meteor sAlert. Sometimes when we follow another
+    user, we get two sAlerts. This inconsistent behaviour of
+    notifications needs to be fixed.</li>
+<li><strong>Adding notification panel</strong>: A separate panel that will record all
+    the notifications and can show the history whenever a user needs.</li>
+<li><strong>Push notifications</strong>: Every time a user likes/comments/shares your
+    uploaded model, you will get a push notification in the notification
+    panel and also in the mail. Notification in the mail is
+    configurable. You can switch it off if you don't want it.</li>
+</ul>
+<figure>
+![](/wiki/user/img/_notifications.png)
+</figure>
+
+<h3 id="customized-access-to-models">Customized Access to models</h3>
+<ul>
+<li>Private models: Only user itself can see the privately uploaded
+    models. These doesn't appear in the news feed.</li>
+<li>Groups/lists: Allowing the user to classify the followers into
+    groups or lists. And then share the model only with the chosen</li>
+<li>Only followers: Only users who follow can see the uploaded model</li>
+</ul>
+<h3 id="uiux-improvements-in-model">UI/UX improvements in model</h3>
+<ul>
+<li><strong>Progress bar for uploading</strong>: When user uploads a model, the
+    progress bar will come as shown in figure below. CollectionFS comes
+    with a template for progress bar</li>
+</ul>
+<p><code>{{&gt; FS.UploadProgressBar}}</code></p>
+<figure>
+![](/wiki/user/img/_uploading.png)
+</figure>
+
+<ul>
+<li><strong>Progress bar for conversion</strong>: In current OGV code, the conversion
+    percentage is already being calculated in file
+    <em>OGV/server/cfs_uploader.js (variable name: ConvertPercentage).</em> I
+    am going to use that percentage variable with a javascript function,
+    that animates the button.</li>
+</ul>
+<figure>
+![](/wiki/user/img/_conversion.png)
+
+    image file to be used as a thumbnail of the model. Automatic
+    thumbnail generation will snapshot the rendered view of a model, and
+    use that image as a thumbnail.
+
+The suggested technology for this is phantomJs. But I was successful in
+creating a screenshot with simple javascript from the console. Also
+doing it this way seems a right approach to me.
+
+`   window.open( renderer.domElement.toDataURL( 'image/png' ), 'screenshot' );`
+
+
+-   **Improvements in social elements**: Social elements like love and
+    comment needs some UI refreshment. Also, another social element of
+    sharing someone else's model on your profile is going to be a part
+    of this task.
+
+<!-- -->
+
+-   **Improved embedded view**: Right now the embedded view is
+    cluttered, I have already fixed this with PR:
+    <https://github.com/BRL-CAD/OGV-meteor/pull/34> But now it only
+    shows the model, and social elements like count of total love and
+    comment are hidden. The improved view will show the social elements
+    on mouse hover in embedded view.
+
+### Admin Panel
+
+-   **Getting rid of hard coded superuser**: Now when we install OGV, a
+    super user *admin@example.com* is already in a database. The
+    username and password of this user are written into the code itself.
+    *(in file OGV/server/accounts.js)* Instead of this hard coded user,
+    a more righteous approach would be to enable the admin to create a
+    super user when a fresh install of OGV is done. The way we do during
+    a Wordpress installation.
+
+<!-- -->
+
+-   **Improved Admin panel**: Currently in OGV, the admin panel contain
+    settings like SMTP URL, mged path, g-obj path. There aren't any
+    settings related to other users and OGV. A super user should have
+    settings to
+    -   Enable/Disable private model uploads
+    -   Enable/Disable user registrations
+    -   View statistics of total model uploads by each user
+
+<!-- -->
+
+-   Enabling guest users to upload the model without signing up.
+
+### Deployment
+
+-   Deploying on a freeBSD system
+-   Establishing a mechanism that automatically updates the code on
+    server when a new commit is pushed in master branch (gruntjs)
+-   During the course of GSoC, every friday would be a deployment
+    Friday(not of the master branch, but of the gsoc branch, so that it
+    can be regularly tested by other members of the community).
+
+## Milestones
+
+-   Community Bonding Period
+    -   Discuss on blaze to react conversions
+    -   Making Repository ready for deployment
+
+<!-- -->
+
+-   **WEEK 1 (23rd May)**
+
+Code Cleanup (Removing redundant/unused code) (23rd - 29th May)
+
+-   **WEEK 2 (30th May)**
+
+Deployment (Deploying master branch on freeBSD and also making scripts
+for automatic deployment)
+
+-   **WEEK 3 (6th June)**
+
+Robust database using aldeed:schema
+
+-   **WEEK 4 (13th June)**
+    -   Improving notifications
+    -   Push notifications
+    -   notifications panel
+    -   adding share functionality
+
+<!-- -->
+
+-   **WEEK 5 (20th June)**
+    -   Improving user and model search using art1sec8:fuse
+    -   Improving UI for social elements
+
+<!-- -->
+
+-   **WEEK 6 (27th June)**
+    -   Thumbnail Generation
+    -   Code cleanup for mid term evaluation
+
+MID-TERM EVALUATION
+
+-   **WEEK 7 (4th July)**
+    -   Merging Obj files using threejs geometry and objExporter
+    -   Removing duplicate obj files.
+
+<!-- -->
+
+-   **WEEK 8 (11th July)**
+    -   Search inside models
+    -   show/hide parts
+
+<!-- -->
+
+-   **WEEK 9 (18th July)**
+    -   Giving different color/material(image) to different parts
+    -   Progress bars (upload and conversion)
+
+<!-- -->
+
+-   **WEEK 10 (25th July)**
+    -   Creating groups/lists of followers
+    -   Restricting access to model viewing (public/private models)
+
+<!-- -->
+
+-   **WEEK 11 (1st August)**
+    -   admin panel
+
+<!-- -->
+
+-   **WEEK 12 (8th Aug)**
+    -   Minor UI/UX improvements
+
+<!-- -->
+
+-   **WEEK 13 (15th Aug)**
+    -   Code Cleanup
+    -   Testing
+    -   Final Deployment
+
+FINAL EVALUATION
+
+## My Preparation
+
+-   I have been studying about the meteor, specifically for OGV.
+-   I have also gained some experience mged commands and using BRL-CAD.
+-   I have read and understand how g to obj converts.
+-   I have already sent a PRs regarding embedded view of models and
+    other things in OGV.
+-   I have spent great deal of time in reading the roadmaps and inner
+    workings of meteor, so that we code with future in our mind.
+
+## Why BRL-CAD?
+
+-   I have been a part of this community for about 4 years now.
+-   I feel like home at this community
+-   When it came to GSoC I really didn't have to choose, I knew I would
+    go with BRL-CAD.
+
+## Why Me?
+
+-   I have a rich community experience with BRL-CAD.
+-   I have sufficient meteor experience. I have been contributing to a
+    number of meteor projects.
+-   I am following OGV, from its first iteration in 2013 till now.
+-   I have been a participant of GCI 2012 and mentor in GCI 2013, 2014.
+    And I tried to be helpful where I can like in BRL-CAD website.
+-   I have interested in bringing BRL-CAD to web since 2013. Link to
+    repository:
+    <https://github.com/GreatDevelopers/wBRLCAD/tree/master/general/tableModel>
+
+## References
+
+-   <http://guide.meteor.com/collections.html#schemas>
+-   <https://www.discovermeteor.com/blog/blaze-react-meteor/>
+-   Fuse js: <http://kiro.me/projects/fuse.html>
+-   Grunt js: <http://gruntjs.com/></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

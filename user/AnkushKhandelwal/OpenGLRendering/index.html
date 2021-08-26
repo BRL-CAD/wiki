@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/AnkushKhandelwal/OpenGLRendering/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>OpenGLRendering - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/AnkushKhandelwal/OpenGLRendering.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#background-information" class="nav-link">Background Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">TIMELINE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#communication" class="nav-link">Communication</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-openscad" class="nav-link">Why OpenSCAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-opengl-rendering-project" class="nav-link">Why OpenGL Rendering Project?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#risk-assessment" class="nav-link">RISK-ASSESSMENT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#futher-scope" class="nav-link">Futher Scope</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>Improve OpenGL Rendering</strong></p>
+<p><strong>GSOC Proposal 2015</strong></p>
+<p>Brief Description: The Objective of the project is to Re-factor and
+re-write the existing code of OpenSCAD preferably by implementing or
+using an existing rendering/scenegraph framework for cleaner rendering
+code. This newly developed infrastucture can be imported to softwares
+like GLES2 which opens up more possibilities like WebGL and native
+support for ARM Linux platforms that usually only provide GLES2
+implementation.</p>
+<h2 id="personal-information">Personal Information</h2>
+<ul>
+<li><strong>Name</strong>: Ankush Khandelwal</li>
+<li><strong>Email-address</strong>: ankush.rawat95@gmail.com</li>
+<li><strong>IRC username</strong>: ank_95</li>
+<li><strong>Contact Number</strong>: +918886330979</li>
+<li><strong>Skype Username</strong>:ankush1995</li>
+<li><strong>Backup Contact Number</strong>: +919785425538</li>
+</ul>
+<h2 id="background-information">Background Information</h2>
+<ul>
+<li>Pursuing Computer Science from IIIT Hyderabad, Andhra Pradesh,
+    India. Currently in 2nd year.</li>
+<li>Skills - c/c++, OpenGL1/2/3, PHP, Mysql, Python, Web2py, Javascript,
+    Jquery, HTML, CSS, Bash programming, Git.</li>
+<li>Worked in c, c++ and OpenGL 1/2/3.</li>
+<li>My previous works in c++ and OpenGL :
+    <a href="https://github.com/ankush1995/OpenGL">https://github.com/ankush1995/OpenGL</a></li>
+<li>Interested in Graphics and front-end development.</li>
+<li>I am a Linux user and want to step in the Open Source World.</li>
+<li>I am familiar with git.</li>
+<li>Commit my work on git using github account(github.com/ankush1995).</li>
+<li>Here is the link to my CV :
+    <a href="http://brlcad.org/w/images/1/1f/CV.pdf">http://brlcad.org/w/images/1/1f/CV.pdf</a>.</li>
+</ul>
+<h2 id="project-information">Project Information</h2>
+<h3 id="title-improve-opengl-rendering">Title: Improve OpenGL Rendering</h3>
+<h3 id="brief-summary">Brief Summary</h3>
+<ul>
+<li>The Main Objective of the project is to get a cleaner rendering code
+    and also better support and better responsiveness for bigger models.
+    The current rendering infrastructure of OpenSCAD is scattered around
+    with various bits partially belonging to external packages (CGAL,
+    OpenCSG)and the usage of OpenGL in many places degrade rendering
+    performance of large models. Hence It is required to re-factor and
+    re-write the existing infrastructure.</li>
+</ul>
+<h3 id="detailed-description">Detailed Description</h3>
+<ul>
+<li>For the above described project following features and task needs to
+    be done.</li>
+</ul>
+<p><strong>Identify Goals and Requirements</strong></p>
+<p>First and foremost task needs to be done is collecting info about
+existing OpenGL frameworks which have many advantages as well as
+disadvantages compared to OpenScad. By understanding them, we are able
+to identify what are the goals that needs to be achieved and also what
+problems can arise in meeting those goals. Here is a wiki page
+displaying some information about the same :
+<a href="https://github.com/openscad/openscad/wiki/Information-About-Other-Frameworks">https://github.com/openscad/openscad/wiki/Information-About-Other-Frameworks</a>.</p>
+<p><strong>Spliting the OpenGL code in Different classes - CODE EXTRACTION</strong></p>
+<p>We need to split out the openGL code from the polyset classes and all
+other classes and make a different class or data structure and it is
+used directly. In All it should be a seperate component which takes
+objects (for example , polyset) and renders it, in an effort to isolate
+the rendering from the rest of the software. The code of OpenSCAD is in
+openGL 2 and 1.1 + extentions and also we have users on openGL 2 and
+openGL 1.1 + extentions , so abstracting away OpenGL extensions and
+version differences is important.</p>
+<p><img alt="" src="/wiki/user/img/Diagram.png" /></p>
+<p>If we know exactly how much GL code is in a file , the next step would
+be to turn it into a separate component, i.e. a class or set of
+functions that take a polyset as parameter and renders it. This will
+help in making the main files of openSCAD, free from rendering, there
+will be a separate component for rendering. This class would then be
+responsible for converting polyset data into something more suitable for
+OpenGL.For example it does not make sense to render one single object in
+OpenGL ,it is not even supported in mordern OpenGL without enabling
+legacy compatibility. To enhance our understanding on code extraction we
+take an example. Below we have a function from file polyset.cc which is
+used in rendering edges, now we want to separate it from the polyset.cc
+file such that the moved code is not allowed to use any private methods
+or any member variables of polyset.</p>
+<p><img alt="" src="/wiki/user/img/polyset.png" /></p>
+<p>To do that we take this function to another file and we create a
+renderer class and add API to polyset to enable that rendering class to
+extract the data. The renderer can now compile a VBO from that data and
+render that (plus cache the VBO so it can be reused if the polyset
+doesn’t change). See below patch for practicle application. Then, in the
+future, when we use a real OpenGL framework, the renderer will most
+likely build a VBO using classes internal to that specific rendering
+framework all the VBO stuff would then be built without having to make
+any changes to the PolySet class. If we can compile for example polyset
+without actually having OpenGL (e.g. on GLES2 box like Chromebook) in it
+then it will be a measure of success of code extraction.</p>
+<p>A patch has been submitted in which the OpenGL code is in one file and
+other renderin code is in another :
+<a href="https://github.com/openscad/openscad/pull/1249">https://github.com/openscad/openscad/pull/1249</a></p>
+<p><strong>Selecting Scenegraph/Rendering Library</strong></p>
+<p>Selecting the most suitable Library which can be integrated with the
+newly developed code will require some research about the existing
+libraries. In openSCAD OpenGL ES2 is not yet supported, till now
+immediate-mode opengl is used. The Goal of this scene-graph library
+would be to provide rendering data structure to abstract buffer objects
+and also to manage Qt event mappings to camera. By the help of this
+library the internal segments of openSCAD will be entirely independent
+of rendering. This Library will help to refactor internal OpenSCAD code
+instead of the current rendering used in OpenSCAD. The Rendering using
+the Library will be more simple and clean, it will be helpful for
+calling CGAL objects, Polyset objects and helper objects like axis
+display. With this library many features can be implemented like the
+speeding up of OpenGL 3d mesh drawing etc.</p>
+<p><strong>Off-Screen Rendering</strong></p>
+<p>This is another feature which is very important. There should be
+GUI-less off-screen rendering which means without the window we can do
+rendering and it should work on desktop as well as on headless VMs. The
+only requirement is that it works on all desktop OS’es and headless
+Linux, but better headless support is a priority.</p>
+<p><strong>View-model</strong></p>
+<p>The next step could be to create a “view model” for storing
+OpenGL-centric data structures for efficient rendering. The main purpose
+of making view model is for rendering views, so we can use this to store
+all the OpenGL related component so that we have better rendering.
+Another important task would be to convert the polyset into a better
+data structure for rendering, and use that data structure from the
+OpenGL code so that the opengl code isn’t referencing PolySet at all
+that would make it easier to create a separation between the Model and
+the View.</p>
+<h2 id="timeline">TIMELINE</h2>
+<p>This timeline is tentative, depends upon the status of the work done:</p>
+<p><strong>Get to Know the Community</strong></p>
+<ul>
+<li>Talk to the community members.</li>
+<li>Getting comfortable with the code.</li>
+</ul>
+<p><strong>Week 1(May 25)</strong></p>
+<ul>
+<li>Identify Goals and Requirements related to the project.</li>
+<li>Understanding the code in more detail.</li>
+</ul>
+<p><strong>Week 2-3(June 1)</strong></p>
+<ul>
+<li>Looking through the files from which OpenGL code is to be extracted
+    and understanding it.</li>
+<li>Deep understanding of code, where the functions are called and where
+    the objects are made.</li>
+<li>Starting separating openGL code from the various files.</li>
+<li>Going on with two implementations - old and new. Old one will be
+    intact.</li>
+</ul>
+<p><strong>Week 4(June 15)</strong></p>
+<ul>
+<li>Only the rendering part is separated, nothing else, excellent
+    knowledge of c++ will be required.</li>
+<li>The extracted OpenGL code is then written in a seperate component
+    either a class or data structures.</li>
+<li>Linking the rendering code to the main infrastructure begins.</li>
+<li>Making a renderer class.</li>
+<li>adding API to polyset to enable that rendering class to extract the
+    data from the main files.</li>
+</ul>
+<p><strong>Week 5(June 22)</strong></p>
+<ul>
+<li>Making a seperate segment ( either a renderer class or a data
+    structure ).</li>
+<li>These classes will be public, so that we can inherit the same in
+    multiple files.</li>
+<li>Extracting the OpenGL code from the various classes like polyset
+    etc.</li>
+<li>Now the original files does not contain OpenGL code, all the OpenGL
+    code is written in separate files.</li>
+<li>Making renderer class for whole code of openscad.</li>
+<li>This process will continue for 2-3 weeks.</li>
+</ul>
+<p><strong>Week 6(June 29)</strong></p>
+<ul>
+<li>Continuing creating an abstract supertype of the class containg GL
+    code and calling the objects in appropriate places.</li>
+<li>This will help in decreasing code redundancy. Now the code will be
+    more compact, distributed in various components.</li>
+<li>using same class or data structure for same objects which currently
+    are written many times in different files.</li>
+<li>Then we just have to make the same class in the files and extract
+    the data from the two files..</li>
+</ul>
+<p><strong>MID-term Evaluations</strong></p>
+<p><strong>Week 7(July 6)</strong></p>
+<ul>
+<li>brushing up the code.</li>
+<li>Taking feedback about the new implementation.</li>
+<li>Old one is also there which is the current implementation (before
+    the starting of the project).</li>
+</ul>
+<p><strong>Week 8-9(July 13)</strong></p>
+<ul>
+<li>Solving issues on github, #292, #675, #418 etc.</li>
+<li>Research about using existing library.</li>
+<li>There are lots of existing library so using the best suitable
+    library.</li>
+<li>Discussing with community members about the library.</li>
+<li>This library will be a seperate GL rendering library which will make
+    the internals of openSCAD independent of rendering.</li>
+</ul>
+<p><strong>Week 10-11(July 27)</strong></p>
+<ul>
+<li>Integration phase begins.</li>
+<li>Integrating the library in the new implementation.</li>
+<li>Starting the development of view-modal system.</li>
+</ul>
+<p><strong>Week 12 (August 10)</strong></p>
+<ul>
+<li>Listing out various Rendering Engines on which experiment can be
+    done of the newly developed code.</li>
+<li>Experimenting with other frameworks.</li>
+<li>trying to implement Off-screne Rendering feature with the help of
+    new OpenSCAD which supports OpenGL ES2, but this is optional.</li>
+</ul>
+<p><strong>Week 13(August 17)</strong></p>
+<ul>
+<li>Cleaning up the code.</li>
+<li>Time to make up for missed milestone (if any).</li>
+</ul>
+<p><strong>Week 14</strong></p>
+<ul>
+<li>more testing and cleaning.</li>
+<li>providing the users with new implementation of OpenSCAD.</li>
+</ul>
+<p><strong>Final Evaluation</strong></p>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Cleaner rendering code.</li>
+<li>All the way new implementation of OpenSCAD.</li>
+<li>Better support and better responsiveness for bigger models</li>
+<li>view-modal of the OpenGL code</li>
+<li>Better rendered model</li>
+</ul>
+<h2 id="communication">Communication</h2>
+<h3 id="time-availability">Time Availability</h3>
+<p>I will be available 40 to 48 hours / week and I am not having any prior
+engagements, also I can spend more time according to the work
+requirement.</p>
+<h3 id="emailmailing-list">Email/Mailing List</h3>
+<p>My email address is ankush.rawat95@gmail.com, I have subscribed to both
+brlcad and openscad mailing lists. I have been in contact through these
+mailing lists and irc channel with other community members.</p>
+<h3 id="real-time-contact">Real-Time Contact</h3>
+<p>I am interacting with the mentors through OpenSCAD's IRC
+channel(#openscad) on freenode. My nick name on IRC is ank_95 . I am
+comfortable with talking to my mentor via telephone if needed. <strong>Contact
+Number</strong>: +918886330979</p>
+<h2 id="why-openscad">Why OpenSCAD?</h2>
+<p>OpenSCAD is an open source CAD software application used to make 3D
+solid models. It has various applications in mechanical, civil,
+electronics and designing hardware tools for research and education
+purposes. The software has potential to be used by the large number of
+professionals and hardware developers. I like ths community beacause it
+is related to graphics, geometry and this it the first time I am
+contributing in opensource world and participating in GSOC. And I think
+IRC is the best way of communication with the mentors, I feel very
+comfortable asking questions to them on IRC(#openscad) and also discuss
+about new ideas.</p>
+<h2 id="why-opengl-rendering-project">Why OpenGL Rendering Project?</h2>
+<p>After I decided to work under this community, I explored various
+projects and this projects fascinated me and I thought that I am able to
+this project as I like C++ a lot and understands it better. I am pretty
+sure that I will able to do this project and if I do not know something
+I will learn it and apply in the project. I have looked through the
+code, various classes and libraries and understood it. After the
+completion, we can import the code and use it in other software like
+WebGL etc.</p>
+<h2 id="why-me">Why Me?</h2>
+<p>I am very interested in programming and very enthusiastic about
+contributing in open source community.I like c++ a lot and working with
+it in past 2-3 yrs.Graphics is the another field that interests me a
+lot, I have a passion toward graphics and if I am given with the
+opportunity , even after the submission of project I would love to
+contribute in more projects for the community. I have already started
+working on this project and also in touch with project mentors. Also I
+can come up with new ideas and love to solve some real world problems. I
+will apply my full potential in doing the project, submitting every
+patch before deadline.I like OpenGL and like to use software for
+rendering 2d and 3d model designing so I know what are the things that
+user wants while using them.</p>
+<h2 id="risk-assessment">RISK-ASSESSMENT</h2>
+<p>One particular challenge that comes in my mind is about developing
+scenegraph rendering library. We have to take two implementations with
+us, one with using the library and another without using the library.
+This Library will change the current openSCAD to an another level but if
+the project fails then we have to go on with the old implementation of
+immediate mode OpenGL. The challenges I see in the project are when it
+comes to import the code in softwares like GLES2 . Another challenge
+will come when it comes to chose/create a library to provide rendering
+data structures to the buffer objects. One challenge will also arise as
+the users are used to the old implementation of rendering objects, they
+are not used to the new implementation.</p>
+<h2 id="futher-scope">Futher Scope</h2>
+<p>Here are some functionality that could be enabled if the project is
+successful:</p>
+<ul>
+<li>GUI object inspection (e.g. highlight bbox, size of imported STLs).</li>
+<li>Pick object in 3D window and highlighting in the code.</li>
+<li>Pick object in the code and highlight in the 3D window.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

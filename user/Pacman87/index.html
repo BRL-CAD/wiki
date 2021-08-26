@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Pacman87/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Pacman87 - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Pacman87.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#2009-gsoc-log" class="nav-link">2009 GSoC Log</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#2009-gsoc-proposal" class="nav-link">2009 GSoC Proposal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#2008-gsoc" class="nav-link">2008 GSoC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="2009-gsoc-log">2009 GSoC Log</h2>
+<h3 id="2009-05-28">2009-05-28</h3>
+<p>Looked at tor.c's implementation, since revolving a carc segment will
+result in a toroid. Started doing the math for a simple case, still need
+to generalize it.</p>
+<h3 id="2009-05-27">2009-05-27</h3>
+<p>Had a bit of trouble getting the trunk svn checkout to compile. Started
+reading through the revolve.c code to pick up where I left off last
+year.</p>
+<h3 id="2009-05-26">2009-05-26</h3>
+<p>Today was spent fighting the fglrx driver, trying to get dual-head
+working. Finally found a patch to get it to compile, and dual-head is
+working with xrandr, but I can't get it to ignore the EDID and let me
+run custom modelines. It's "good enough" for now to start coding
+tomorrow.</p>
+<h2 id="2009-gsoc-proposal">2009 GSoC Proposal</h2>
+<p>I am proposing to complete the implementation of the revolve primitive
+that I started last year, and to create a sweep primitive.</p>
+<h3 id="revolve">Revolve</h3>
+<h4 id="rt_revolve_shot">rt_revolve_shot()</h4>
+<p>Solve the hit intersection between the ray and a circular arc, bezier
+curve, or NURBS. Use an analytical solution when possible, but switch to
+a numeric solution so that higher-order splines will still work (with a
+performance penalty).</p>
+<h4 id="rt_revolve_curve">rt_revolve_curve()</h4>
+<p>Calculate the surface curvature from the curvature of the sketch segment
+and the distance between the hit point and the revolve axis.</p>
+<h4 id="rt_revolve_uv">rt_revolve_uv()</h4>
+<p>Add UV mapping for surfaces formed by a circular arc, bezier curve, or
+NURBS sketch segment. The surface created by each segment will have its
+own UV coordinate space.</p>
+<h4 id="rt_revolve_tess">rt_revolve_tess()</h4>
+<p>Starting from scratch on this one. Should be able to use an algorithm
+similar to the one for tor, except replacing the circular outline with
+the sketch outline. This will probably be the most challanging part of
+finishing the revolve primitive.</p>
+<h3 id="sweep">Sweep</h3>
+<p>A sweep consists of several components:</p>
+<ul>
+<li>Sketch: an outline, must be closed for the result to be a solid
+    object.</li>
+<li>Path: a curve in 3D space, along which the sketch is swept.</li>
+<li>Orientation: describes the direction of the sketch's xy axes during
+    the sweep.</li>
+</ul>
+<p>The sketch plane and the path will always be perpendicular, and the
+orientation fully constrains the primitive.</p>
+<p>More complex sweeps are much more useful, so I'm planning on starting
+with a generalized numerical approach.</p>
+<p>One way to determine the orientation would be to use the vector pointing
+toward the center of curvature of the sweep path. The orientation of the
+sketch should be continuous, so if the curvature of the path changes
+discontinuously, then the curvature vector will be remapped to a
+different vector in the sketch's coordinate system. To me, this seems
+like a good default setting, but I'm open to suggestions.</p>
+<p>Also, I will have to check for a self-intersecting sweep (if the sketch
+bounds are larger than the local radius of curvature of the path).</p>
+<h3 id="timeline">Timeline</h3>
+<h4 id="revolve_1">Revolve</h4>
+<p>2-3 weeks to finish, with most of that time spent on tess().</p>
+<h4 id="sweep_1">Sweep</h4>
+<ul>
+<li>data representation, code modifications external to
+    /src/librt/primitives/sweep, and stub outline of sweep.c (&lt; 1
+    week).</li>
+<li>import/export/describe/print (&lt; 1 week).</li>
+<li>plot - wireframe (1-2 weeks)</li>
+<li>prep/shot (2-3 weeks)</li>
+<li>uv/curve/norm (&lt; 1 week, done at the same time as prep/shot)</li>
+<li>tess (2-3 weeks)</li>
+</ul>
+<h3 id="about-me">About me</h3>
+<p>I just graduated with an ME degree from The University of Texas at
+Austin, and I'm going back for grad school. I first got involved in Open
+Source through the game BZFlag, where I wrote several server plugins and
+ran a few game servers. Last summer, I started working on BRL-CAD for
+GSoC, where I implemented the hyperboloid of one sheet, and started the
+revolve primitive. Programming and computers have always been fun for
+me. I started programming QBasic in middle school, then moved on to
+writing simple games for my TI graphing calculator. I took two years of
+AP computer science in high school (with a perfect score on both AP
+tests). I've taken several more programming courses at college, covering
+Java, C, and C++.</p>
+<h2 id="2008-gsoc">2008 GSoC</h2>
+<h3 id="2008-06-17">2008-06-17</h3>
+<p>Moved as much code as possible into prep, and performed general code
+cleanup - removing bn_log() statements that had been commented, etc. I
+tested my changes using three trials each before and after my changes
+using the same image, and calculated a 6% improvement.</p>
+<h3 id="2008-06-16">2008-06-16</h3>
+<p>Finished curve(), so hyp.c is functionally complete. Starting to figure
+out what can be moved from shot/norm/curve/etc to prep, and developing a
+way to test the effectiveness of my optimizations.</p>
+<h3 id="2008-06-09-to-2008-06-13">2008-06-09 to 2008-06-13</h3>
+<p>I changed the 'in' creation to be more closely aligned with BRL-CAD
+standards:</p>
+<ul>
+<li>Vertex is the center of the base ellipse (was the center of the
+    primitive)</li>
+<li>Height vector points from the base to the top (was from center to
+    top)</li>
+<li>Major and minor axis lengths control the base/top ellipse sizes
+    (formerly controlled the center "neck" ellipse size)</li>
+<li>Scale factor 'c' now controls the neck size as a fraction of the
+    base dimensions (formerly controlled the slope of the asymptotic
+    cone)</li>
+</ul>
+<p>UV mapping was also updated to match with ehy's UV mapping, so the
+checker pattern would match. UV now ranges from (0,1) on each face,
+instead of being unique on the entire surface. The largest part of this
+week was spent working on tess(). Currently, all elliptical cross
+sections use the same number of points (calculated from the base), but
+the smaller ellipses at the neck could be made with fewer points and
+remain within the tolerances, hopefully increasing performance.</p>
+<h3 id="2008-06-05">2008-06-05</h3>
+<p>Fixed one more raytrace bug due to faulty conditional logic. Also, I
+upgraded the uv mapping to be more uniform. Longitude lines are spaced
+more evenly about an elliptical cross section, and latitude lines are
+now ellipses instead of circles to match the cross section on the top
+and bottom caps.</p>
+<ul>
+<li><a href="https://webspace.utexas.edu/trv82/www/hyp_rt14.png">sample uv
+    mapping</a></li>
+</ul>
+<p>I found out why raytrace from within mged wasn't working: I was running
+mged from its build location (src/mged/mged) to save time by skipping
+the "make install" step. Running mged from the installed location
+(/usr/brlcad/bin/mged) allows the raytrace to work perfectly.</p>
+<h3 id="2008-06-04">2008-06-04</h3>
+<p>Yesterday was mainly spent trying to figure out why the raytrace wasn't
+working. Today, I rewrote most of shot(), ignoring what prep() was
+doing, and updated norm() to use the new private vector stored in the
+hitpoint. "rt" seems to work perfectly, but trying to raytrace from
+inside mged still fails.</p>
+<p><img alt="" src="/wiki/user/img/Rt_hyp.png" /></p>
+<h3 id="2008-06-02">2008-06-02</h3>
+<p>Implemented import5(), export5(), and describe(). Wireframe drawing
+works perfectly, but raytrace fails; still trying to track down the
+problem.</p>
+<h3 id="2008-05-30">2008-05-30</h3>
+<p>More work on plot(). Changed the wireframe drawing routine to a loop
+from the previously hard-coded statements. I added another slice to the
+wireframe, so ellipses are drawn at +-100%, +-50%, +-25%, and 0% of the
+height vector, and upgraded the ellipses from 8 to 16 points.</p>
+<figure>
+![](/wiki/user/img/Wireframe_hyp.png)
+
+
+Refined the plot() function, and corrected some errors regarding
+elliptical cross sections and primitives not centered at the origin.
+
+### 2008-05-28
+
+Started a simple plot() function, based primarily on the superell's
+plot(). It currently ignores tolerances, but gives an idea of where the
+hyperboloid is.
+
+-   [sample 1](https://webspace.utexas.edu/trv82/www/hyp.png)
+-   [sample 2](https://webspace.utexas.edu/trv82/www/hyp1.png)
+-   [sample 3](https://webspace.utexas.edu/trv82/www/hyp2.png)
+
+### 2008-05-27
+
+Added mged support to create a hyp, still doesn't work completely due to
+stubbed methods (specifically draw, import5, and export5). Started
+researching tess() and plot().
+
+### 2008-05-20
+
+Made my first commit today to submit the code I've been working on for
+the single-sheet hyperboloid. I also realized that I needed to check for
+divide by zero cases in my algorithms, and I fixed my norm() function to
+handle the div by zero case.
+
+### 2008-05-04
+
+I'm planning on using this page as a development log for my GSoC work on
+implementing the revolve and sweep primitive. I have started working on
+a hyperboloid of one sheet, and posted
+[patches](http://sourceforge.net/tracker/index.php?func=detail&aid=1939611&group_id=105292&atid=640804)
+to sourceforge. I have finished the prep, print, shot, norm, uv, and
+free functions in src/librt/g_hyp.c, and made changes to
+src/librt/Makefile.am, include/raytrace.h, include/rtgeom.h, and
+src/librt/table.c to support the new primitive.
+
+-   Design document for [Revolve](/wiki/doc/Revolve)</div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

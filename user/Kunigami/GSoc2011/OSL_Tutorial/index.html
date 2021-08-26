@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Kunigami/GSoc2011/OSL_Tutorial/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>OSL Tutorial - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Kunigami/GSoc2011/OSL_Tutorial.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#installing" class="nav-link">Installing</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#installing-osl-dependencies" class="nav-link">Installing OSL Dependencies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#installing-brl-cad-with-osl-mode-on" class="nav-link">Installing BRL-CAD with OSL mode on</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#running-an-example" class="nav-link">Running an example</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#compiling-some-shaders" class="nav-link">Compiling some shaders</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Here I provide a small tutorial do make OSL running while it is not
+included in BRL-CAD source code.</p>
+<h1 id="installing">Installing</h1>
+<h2 id="installing-osl-dependencies">Installing OSL Dependencies</h2>
+<h3 id="oiio">OIIO</h3>
+<h4 id="get-the-latest-oiio-source-code">Get the latest OIIO source code</h4>
+<p><code>cd /home/dude/dev</code></p>
+<p><code>mkdir oiio</code></p>
+<p><code>cd oiio</code></p>
+<p><code>git clone https://github.com/OpenImageIO/oiio.git .</code></p>
+<p>Note: Change <code>/home/dude/dev/</code> by the desired install place.</p>
+<h4 id="install-locally">Install (locally)</h4>
+<p><code>make</code></p>
+<p>Note1: Some dependecies are required such as Ilmbase, OpenEXR, libpng
+(please, edit this entry with any additional package you had to install)</p>
+<p>Note2: Make sure your libpng version is 1.4 (for BRL-CAD compatibility)</p>
+<h3 id="osl">OSL</h3>
+<h4 id="get-the-latest-osl-source-code">Get the latest OSL source code</h4>
+<p><code>cd /home/dude/dev</code></p>
+<p><code>mkdir osl</code></p>
+<p><code>cd osl</code></p>
+<p><code>git clone https://github.com/imageworks/OpenShadingLanguage.git .</code></p>
+<h4 id="set-oiio-path">Set OIIO path</h4>
+<p><code>export OPENIMAGEIOHOME=/home/dude/dev/oiio/dist/macosx/</code></p>
+<p>Note1: Depending on your OS, macosx may be linux, linux64, etc.</p>
+<h4 id="remove-werror-compilation-flags">Remove -Werror compilation flags</h4>
+<p>Open the osl/src/CMakeLists.txt file and change lines</p>
+<p><code>set ( CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")</code>
+<code>set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror" )</code></p>
+<p>by</p>
+<p><code>set ( CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -Wall")</code>
+<code>set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )</code></p>
+<h4 id="edit-llvm-search-path">Edit llvm search path</h4>
+<p>Cmake was not able to find llvm installed on my system. I had to make
+the following edit. Open the osl/src/cmake/externalpackages.cmake</p>
+<p>Change:</p>
+<p><code>find_library ( LLVM_LIBRARY</code>
+<code>NAMES LLVM-2.7 LLVM-2.8svn LLVM-2.8 LLVM-2.9svn</code>
+<code>PATHS /usr/local/lib /opt/local/lib )</code>
+<code>find_path ( LLVM_INCLUDES llvm/LLVMContext.h</code>
+<code>PATHS /usr/local/include /opt/local/include</code></p>
+<p>by</p>
+<p><code>find_library ( LLVM_LIBRARY</code>
+<code>NAMES LLVM-2.7 LLVM-2.8svn LLVM-2.8 LLVM-2.9svn</code>
+<code>PATHS /usr/local/lib /opt/local/lib /usr/lib/llvm/lib )</code>
+<code>find_path ( LLVM_INCLUDES llvm/LLVMContext.h</code>
+<code>PATHS /usr/local/include /opt/local/include /usr/include</code></p>
+<h4 id="install-locally_1">Install locally</h4>
+<p><code>make</code></p>
+<h2 id="installing-brl-cad-with-osl-mode-on">Installing BRL-CAD with OSL mode on</h2>
+<h4 id="get-brl-cad">Get BRL-CAD</h4>
+<p><code>cd /home/dude/dev</code></p>
+<p><code>mkdir brlcad</code></p>
+<p><code>cd brlcad</code></p>
+<p><code>svn co https://brlcad.svn.sourceforge.net/svnroot/brlcad/brlcad/trunk/ brlcad</code></p>
+<h4 id="set-osl-path">Set OSL path</h4>
+<p><code>export OSLHOME=/home/dude/dev/osl/dist/macosx/</code></p>
+<p>Note1: Depending on your OS, macosx may be linux, linux64, etc.</p>
+<h4 id="install-locally_2">Install locally</h4>
+<p>I use the following to set up to install BRL-CAD:</p>
+<p><code>cd /home/dude/dev</code></p>
+<p><code>mkdir brlcad-build</code></p>
+<p><code>mkdir brlcad-bin</code></p>
+<p><code>cd brlcad-build</code></p>
+<p><code>cmake ../brlcad -DBRLCAD-ENABLE_COMPILER_WARNINGS=OFF -DBRLCAD-ENABLE_ALL_LOCAL_LIBS=ON -DBRLCAD-ENABLE_OSL=ON -DCMAKE_INSTALL_PREFIX=/home/dude/dev/brlcad-bin/ -DBRLCAD-ENABLE_STRICT=OFF</code></p>
+<p>I hope it's enough to have the code compiling. Please, edit this entry
+with any additional step you needed to perform in order to get it
+working</p>
+<h1 id="running-an-example">Running an example</h1>
+<h2 id="compiling-some-shaders">Compiling some shaders</h2>
+<p>Use the OSL compiler, oslc, to convert .osl shaders to .oso. Compile all
+shaders in brlcad/src/other/osl/shaders. For example</p>
+<p><code>cd /home/dude/dev/osl/dist/macosx/bin</code></p>
+<p><code>./oslc glass.osl</code></p>
+<p>It will generate a <code>glass.oso</code>. Copy it to the directory of binaries of
+BRL-CAD</p>
+<p><code>cp glass.oso /home/dude/dev/brlcad-bin/bin</code></p>
+<p>Also, copy the scene I've been using to perform tests</p>
+<p><code>cp /home/dude/dev/brlcad/db/cornell-kunigami.g /home/dude/dev/brlcad-bin/bin</code></p>
+<p>Run with the following script:</p>
+<p><code>#!/bin/sh</code>
+<code>./rt -M -p55 -P1 -R -H 1000 -J3 -o output.png \</code>
+<code>$*\</code>
+<code>cornell-kunigami.g\</code>
+<code>'all.g' \</code>
+<code>&lt;&lt;EOF</code>
+<code>viewsize 6.000000000000000e+03;</code>
+<code>orientation 0.000000000000000e+00 9.961946980917455e-01 8.715574274765824e-02  0.000000000000000e+00;</code>
+<code>eye_pt 2.780000000000000e+02 3.709445330007912e+02 -4.544232590366239e+02;</code>
+<code>start 0; clean;</code>
+<code>end;</code>
+<code>EOF</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Bhollister/DevLogJune2015/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>DevLogJune2015 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Bhollister/DevLogJune2015.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-1-2015-start-of-week-2-of-14" class="nav-link">Monday, June 1, 2015: Start of Week 2 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-2-2015" class="nav-link">Tuesday, June 2, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wednesday-june-3-2015" class="nav-link">Wednesday, June 3, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-4-2015" class="nav-link">Thursday, June 4, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-5-2015" class="nav-link">Friday, June 5, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-6-2015" class="nav-link">Saturday, June 6, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sunday-june-7-2015" class="nav-link">Sunday, June 7, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-8-2015-start-of-week-3-of-14" class="nav-link">Monday, June 8, 2015: Start of Week 3 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-9-2015" class="nav-link">Tuesday, June 9, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wednesday-june-10-2015" class="nav-link">Wednesday, June 10, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-11-2015" class="nav-link">Thursday, June 11, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-12-2015" class="nav-link">Friday, June 12, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-13-2015" class="nav-link">Saturday, June 13, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sunday-june-14-2015" class="nav-link">Sunday, June 14, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#end-of-spring-term-ucsc-now-gsoc-full-time" class="nav-link">End of Spring Term @ UCSC; Now GSoC Full-time!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-15-2015-start-of-week-4-of-14" class="nav-link">Monday, June 15, 2015: Start of Week 4 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-16-2015" class="nav-link">Tuesday, June 16, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wednesday-june-17-2015" class="nav-link">Wednesday, June 17, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-18-2015" class="nav-link">Thursday, June 18, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-19-2015" class="nav-link">Friday, June 19, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-20-2015" class="nav-link">Saturday, June 20, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sunday-june-21-2015" class="nav-link">Sunday, June 21, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-22-2015-start-of-week-5-of-14" class="nav-link">Monday, June 22, 2015: Start of Week 5 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-23-2015" class="nav-link">Tuesday, June 23, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wednesday-june-24-2015" class="nav-link">Wednesday, June 24, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thursday-june-25-2015" class="nav-link">Thursday, June 25, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#friday-june-26-2015" class="nav-link">Friday, June 26, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#saturday-june-27-2015" class="nav-link">Saturday, June 27, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sunday-june-28-2015" class="nav-link">Sunday, June 28, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monday-june-29-2015-start-of-week-6-of-14" class="nav-link">Monday, June 29, 2015: Start of Week 6 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tuesday-june-30-2015" class="nav-link">Tuesday, June 30, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>FORCETOC</strong></p>
+<hr />
+<h1 id="monday-june-1-2015-start-of-week-2-of-14">Monday, June 1, 2015: <strong><em>Start of Week 2 (of 14)</em></strong></h1>
+<ul>
+<li>dissertation work</li>
+</ul>
+<h1 id="tuesday-june-2-2015">Tuesday, June 2, 2015</h1>
+<ul>
+<li>dissertation work</li>
+</ul>
+<h1 id="wednesday-june-3-2015">Wednesday, June 3, 2015</h1>
+<ul>
+<li>dissertation defense @ 12:45-2pm PDT</li>
+</ul>
+<h1 id="thursday-june-4-2015">Thursday, June 4, 2015</h1>
+<ul>
+<li>added callable nmg_mrsv stub, see:
+    <a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/ff812753027d4119a590d9d0096f9dbb279163b0">https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/ff812753027d4119a590d9d0096f9dbb279163b0</a></li>
+<li>successfully defended PhD dissertation yesterday</li>
+<li>minor additions / editing / proof-reading of dissertation before
+    ProQuest submittal deadline of June 11th</li>
+<li>todo: add remaining CONSTRUCTION routine stubs</li>
+<li>todo: determine how to pass nmg model verts, etc. from command line
+    (mged) to function stubs</li>
+</ul>
+<h1 id="friday-june-5-2015">Friday, June 5, 2015</h1>
+<ul>
+<li>received a few pointers on NMG, and a document link in weekly mtg</li>
+<li>dissertation editing</li>
+</ul>
+<h1 id="saturday-june-6-2015">Saturday, June 6, 2015</h1>
+<ul>
+<li>dissertation editing</li>
+</ul>
+<h1 id="sunday-june-7-2015">Sunday, June 7, 2015</h1>
+<ul>
+<li>dissertation editing</li>
+</ul>
+<h1 id="monday-june-8-2015-start-of-week-3-of-14">Monday, June 8, 2015: <strong><em>Start of Week 3 (of 14)</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/a6679978dd1f3864f280e938e92c5e7bcfeb2283">commit #1 for
+    today</a>:
+    added remaining NMG construction command stubs</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/433bf2330d4455b2c6cb12eb42fb14a27b26a542">commit #2 for
+    today</a>:
+    nmg_mrsv command now accepts a model file name and checks the
+    database; removed nmg_mm since make cmd covers that functionality</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/027fdbc55d93e1f46a04ea627ea9c3906ae7e1f6">commit #3 for
+    today</a>:
+    fixed format spacing for nmg_mrsv.c</li>
+</ul>
+<h1 id="tuesday-june-9-2015">Tuesday, June 9, 2015</h1>
+<ul>
+<li>final dissertation edits</li>
+<li>submitted final dissertation to ProQuest</li>
+<li>delivered signatures, etc. for degree</li>
+<li>took online surveys for degree</li>
+<li>note #1: (todo) need to talk to mentors about cmd line interface;
+    some <strong>construction</strong> routines in "Combinatorial Solid Geometry,
+    Boundary Representations, and Non-Manifold Geometry," are likely too
+    low-level. for instance, does it make sense to specify 'vertexuse' /
+    'edgeuse' at the cmd line?? possibly only routines that require user
+    specified *new* vertices and edges will be implemented... also, we
+    may not want to implement some of the api functions that only create
+    empty shells / regions for new models. models can already be created
+    using the cmd <em>make</em>.</li>
+<li>note #2: <strong>construction</strong> routines don't require passing particular
+    instances of existing geometry. this makes their impl likely easier
+    than <strong>destruction</strong> routines in terms of specifying geometry at
+    the CLI.</li>
+</ul>
+<h1 id="wednesday-june-10-2015">Wednesday, June 10, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/7afdc98ac418922dbcd3cbd800a7974a46a39e97?diff=split">commit #1 for
+    today</a>:
+    added call to internal api for "Make Region, Shell, Vertex"</li>
+<li>tried various testing with creating nmg geometry, but was not fully
+    able to create nmg test cases with primitives. need to retry using
+    "facetize" command again or another route</li>
+<li>need to determine if we need a higher-level CLI than internal NMG
+    access API functions; some of this is already implemented in
+    nmg_simplify, nmg_fix_normals, make, etc.</li>
+</ul>
+<h1 id="thursday-june-11-2015">Thursday, June 11, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/98885604a90091a2eb9d230f7af57feab4384e60">commit #1 for
+    today</a>:
+    added impl for nmg_mm; small fix for return code from nmg_mrsv CLI
+    libged function</li>
+<li>friday todo: implement nmg_mmr()</li>
+<li>friday todo: implment nmg_msv() - figure out how to specify region
+    and pass that to CLI from MGED display (or archer)</li>
+</ul>
+<h1 id="friday-june-12-2015">Friday, June 12, 2015</h1>
+<ul>
+<li>need to attend graduation ceremonies practice for a few hours
+    (starts @ 1 PM PDT, but need to pick up gown, etc.)</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/0a00c24701c90e292154bc53e06e107ae8f462e4">commit #1 for
+    today</a>:
+    added impl for nmg_mmr for CLI. almost identical to ged_nmg_mm,
+    but region is created for the new model.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/5961a0e291b4927291a8bfe939ddb99309715613">commit #2 for
+    today</a>:
+    added preliminary nmg_msv CLI command. command accepts model name
+    and adds shell / vertex to the first region encountered via
+    BU_LIST_FIRST. the command also performs NMG_CK_REGION. if a
+    model doesn't have a region, then this check causes MGED to log a
+    bad pointer error and crash. TODO: may need to find a way to specify
+    region to CLI and handle error w/o crash.</li>
+</ul>
+<h1 id="saturday-june-13-2015">Saturday, June 13, 2015</h1>
+<ul>
+<li>relatives visiting thru Thursday</li>
+</ul>
+<h1 id="sunday-june-14-2015">Sunday, June 14, 2015</h1>
+<ul>
+<li>graduation ceremonies attendance (most of the day)</li>
+</ul>
+<hr />
+<h1 id="end-of-spring-term-ucsc-now-gsoc-full-time"><strong><em>End of Spring Term @ UCSC; Now GSoC Full-time!</em></strong></h1>
+<hr />
+<h1 id="monday-june-15-2015-start-of-week-4-of-14">Monday, June 15, 2015: <strong><em>Start of Week 4 (of 14)</em></strong></h1>
+<ul>
+<li>added nmg_me imp for CLI. not committed to github yet due to merge
+    conflicts?? todo: fix this tomorrow!</li>
+<li>read thru
+    <a href="http://t3550.cad-brlcad-development.cadtalk.us/some-thoughts-about-the-nmg-primitive-t3550.html">some-thoughts-about-nmg-primitve</a></li>
+<li>concerning
+    <a href="http://t3550.cad-brlcad-development.cadtalk.us/some-thoughts-about-the-nmg-primitive-t3550.html">some-thoughts-about-nmg-primitve</a>,
+    not sure if shells or regions will be specified or used on CLI.</li>
+<li>todo: need to find problem with nmg_msv CLI. appears that it is not
+    adding new shell to nmg data structure</li>
+<li>todo: fix nmg_me CLI to allow for setting vertex coords (current
+    impl only adds vertexuses via nmg_mvvu)</li>
+</ul>
+<h1 id="tuesday-june-16-2015">Tuesday, June 16, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/3f6102f573a09058c2c1e5c47ceed6227057082f">commit #1
+    yesterday</a>:
+    added nmg_me to CLI. can't currently set vertex coord but the
+    vertexuses are added properly.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/afeb00de7c1d5038d5eb33d59e47df5fdd0b8143">commit #1 for
+    today</a>:
+    adding CLI version of nmg_me. command takes two vertex coords and
+    the name of the model. the first region / shell are used. also,
+    updating comment in ged_nmg_msv.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/f0a04b7981a1d7ce85524c921a781a7a38678145">commit #2 for
+    today</a>:
+    added ged_nmg_mvvu. routine takes first region / shell as parent
+    structure in model to add vertex / vertexuse. note that a NULL
+    pointer is added to the vertexuse struct. although possibly not
+    clear, ged_nmg_mvu can be used to set a specific vertex instance
+    for the vertexuse, i.e. a *new* vertexuse.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/e82d939a47b4b888ce80cdec3452c8739e43fdff">commit #3 for
+    today</a>:
+    ged_nmg_mvu impl prelim. need to find vertex with coordinates
+    given on CLI. Use the parent struct of the found vertex as upptr.
+    Here, this is a shell. TODO: the point of this routine is to
+    re-assign a vertexuse to an *existing* vertex. Right now, this
+    routine finds a shell with the specified vertex and replaces the
+    vertexuse in that shell. we need to find a vertexuse *not* in a
+    shell, such as an edge, and reassign it a *new* vertexuse. CLI
+    doesn't use vertex id, so coord may be non-unique to multiple
+    vertices in nmg model. IMPORTANTLY: crashing on curr_vg =
+    curr_s-&gt;vu_p-&gt;v_p-&gt;vg_p; Need to fix.</li>
+<li>todo: need to fix nasty white spacing issues in submitted code
+    revisions!</li>
+</ul>
+<h1 id="wednesday-june-17-2015">Wednesday, June 17, 2015</h1>
+<ul>
+<li>last day of relatives' visit. taking day off. will work some
+    saturday as makeup.</li>
+</ul>
+<h1 id="thursday-june-18-2015">Thursday, June 18, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/bd3738b720ae18df38440a178e7c41efd0744fd0?diff=split">commit #1 for
+    today</a>:
+    added ged_nmg_ml. calls nmg_ml directly with the first
+    encountered region / shell in model. if shell doesn't have the
+    required edgeuses / edges, then program throws and error.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/3e1b8791315bd1d20d82192c956af609510b140f?diff=split">commit #2 for
+    today</a>:
+    added ged_nmg_meonvu. user can specify a vertex coord on CLI.
+    routine searches for the first encountered vertexuse that uses a
+    vertex instance (coord). note: this is not what the internal api
+    function is meant to do. it uses a *vertexuse*. todo: pass a
+    *vertexuse* if possible from the CLI, or find another way to
+    define similar construction routine that is more suitable for
+    the CLI. once the vertexuse / vertex / geom is found, an "empty"
+    edge with the same topological vertex(use?) is inserted into the
+    model.</li>
+<li>found how to properly traverse model with BU_LIST_PNEXT macro.
+    todo: need to update ged_nmg_mvu to reflect this correction.</li>
+</ul>
+<h1 id="friday-june-19-2015">Friday, June 19, 2015</h1>
+<ul>
+<li>received direction by mentors to add single top-level nmg CLI
+    command</li>
+<li>todo: move all other nmg commands as private subcommands callable
+    only via single top-level CLI command</li>
+<li>todo: extend nmg *construction* routines dev time into week 5.
+    week 5 / 6 of schedule was originally allocated for *destruction*
+    routines, but these are fewer and simpler than the *construction*
+    subcommands for nmg; todo: update project schedule</li>
+<li>todo: provide a straight-forward method to create a simple
+    primitive, such as a cube using the *new* nmg CLI</li>
+</ul>
+<h1 id="saturday-june-20-2015">Saturday, June 20, 2015</h1>
+<ul>
+<li>n/a</li>
+</ul>
+<h1 id="sunday-june-21-2015">Sunday, June 21, 2015</h1>
+<ul>
+<li>n/a</li>
+</ul>
+<h1 id="monday-june-22-2015-start-of-week-5-of-14">Monday, June 22, 2015: <strong><em>Start of Week 5 (of 14)</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/c36b98e4097a44262926d55b634fbc821065e9fc?diff=split">commit #1 for
+    today</a>:
+    added top-level nmg command stub (only usage info reported).</li>
+<li>todo: will pass on CLI paramaters to appropriate subcommand</li>
+<li>todo: need to add remaining destruction and manipulation subcommands
+    to current stub</li>
+</ul>
+<h1 id="tuesday-june-23-2015">Tuesday, June 23, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/fce10d06fa65aa5c44ddb90634ecdaec62a4bd73?diff=split">commit #1 for
+    today</a>:
+    added subcommand handling for construction routines</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/b4d9a32189720b14e298988373de91ed12333efd?diff=split">commit #2 for
+    today</a>:
+    added convenience construction and destruction stubs</li>
+<li>should be able to submit patch for nmg command stub...after adding
+    manipulation routines tomorrow</li>
+</ul>
+<h1 id="wednesday-june-24-2015">Wednesday, June 24, 2015</h1>
+<ul>
+<li>investigated uses of internal nmg api. found /src/proc-db/nmgmodel.c</li>
+<li>todo: need to find proper uses of internal api in order to provide
+    best interface to nmg via CLI (checking with mentors)</li>
+<li>suggested scaling back proposal to nmg work only (in line with
+    original brlcad gsoc suggestions from wiki)</li>
+</ul>
+<p>non-brlcad time expenditures...</p>
+<ul>
+<li>birthday today, so only half-day work. will work the weekend if
+    possible.</li>
+<li>spent some time updating resume + applying for positions</li>
+</ul>
+<h1 id="thursday-june-25-2015">Thursday, June 25, 2015</h1>
+<ul>
+<li>updated project schedule to reflect NMG *only* work. approval by
+    mentor in IRC.</li>
+<li>nmgmodel.c compiles to src/proc-db/nmgmodel in the build directory</li>
+<li>todo: need to further investigate /src/proc-db/nmgmodel.c as model
+    for new CLI</li>
+</ul>
+<p>non-brlcad time expenditures...</p>
+<ul>
+<li>spent some time updating resume + applying for positions</li>
+</ul>
+<h1 id="friday-june-26-2015">Friday, June 26, 2015</h1>
+<ul>
+<li>added patch <a href="https://sourceforge.net/p/brlcad/patches/387/">https://sourceforge.net/p/brlcad/patches/387/</a></li>
+<li>todo: for weekend, add subcommands to add faces with variable number
+    of verts on commandline</li>
+</ul>
+<h1 id="saturday-june-27-2015">Saturday, June 27, 2015</h1>
+<ul>
+<li>n/a</li>
+</ul>
+<h1 id="sunday-june-28-2015">Sunday, June 28, 2015</h1>
+<ul>
+<li>n/a</li>
+</ul>
+<h1 id="monday-june-29-2015-start-of-week-6-of-14">Monday, June 29, 2015: <strong><em>Start of Week 6 (of 14)</em></strong></h1>
+<ul>
+<li>updated patch 387: <a href="https://sourceforge.net/p/brlcad/patches/387/">https://sourceforge.net/p/brlcad/patches/387/</a></li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/35b56cfd9b07c04b9fddf2f542b8bd0d2f1200fe?diff=split">commit #1 for
+    today</a>:
+    added extern function prototypes to fix build on some configurations</li>
+<li>traced thru src/proc-db/nmgmodel.c; todo: will use that approach to
+    add high-level command to add manifold quad faces to nmg model this
+    week.</li>
+</ul>
+<h1 id="tuesday-june-30-2015">Tuesday, June 30, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/20a5379fb8282a4731ddac283c5976d18fa0dc08?diff=split">commit #1 for
+    today</a>:
+    added ged_nmg_cmface impl. some issues with null model when
+    filling out vertices.</li>
+<li>updated patch <a href="https://sourceforge.net/p/brlcad/patches/387/">https://sourceforge.net/p/brlcad/patches/387/</a> with
+    UNUSED macro</li>
+<li>todo: need to check patch with -DBRLCAD_ENABLE_STRICT=YES and
+    resubmit fix if needed</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Mihaineacsu/proposal2014/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Proposal2014 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Mihaineacsu/proposal2014.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#student-information" class="nav-link">Student Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#university-information" class="nav-link">University Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#abstract" class="nav-link">Abstract</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#detailed-description" class="nav-link">Detailed description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#bio" class="nav-link">Bio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-did-i-choose-to-apply-for-brl-cad" class="nav-link">Why did I choose to apply for BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="student-information">Student Information</h2>
+<p><code>Name: Mihai Neacșu</code>
+<code>Email: mihai.mneacsu@gmail.com</code>
+<code>Telephone: +40 755 283 297</code>
+<code>Time zone: UTC+02:00</code>
+<code>IRC:  mihaineacsu</code>
+<code>Source control username on github: mihaineacsu</code>
+<code>Source control username on sourceforge: mihaineacsu</code></p>
+<h2 id="university-information">University Information</h2>
+<p>University: Politehnica University of Bucharest
+Major: Computer Science
+Current Year and Expected Graduation date: 4th year, 2014
+Degree: BSc</p>
+<h2 id="abstract">Abstract</h2>
+<p>BRL-CADs material database will help users list, share, download and
+load material information and have that information be seamlessly
+integrated with BRL-CADs modelling (Archer) and analysis (gqa) tools.
+Part of this project will consist of creating a centralised repository
+where users can perform the above mentioned actions. It will provide
+users the means for searching, sorting/filtering, specifying, storing,
+importing, exporting, and reusing material properties. The second part
+of the project will consist of creating a command-line tool that uses
+the online material database/repository in order to get/put material
+data, create .density files (and other formats), or add material data to
+a .g geometry file. Further on, emphasis will be put on integrating it
+with BRL-CAD such as making it a part of the Geometry Editing Library
+(libged).</p>
+<h2 id="detailed-description">Detailed description</h2>
+<p>Server-side</p>
+<p>Will provide a REST(Representational state transfer) API. Why REST?
+Because REST is a simple way to organize interactions between
+independent systems. It allows us to interact with minimal overhead with
+clients.</p>
+<p>How does it work? We operate on URLs and each URL identifies a resource.
+These are exactly the URLs which are assigned to web pages.</p>
+<p>So for e.g.. performing a GET request on mater.brl-cad.org/list will
+provide us a with a JSON that the client will interpret and show to the
+user in an organised way. The client can either be a running BRL-CAD
+instance or the browser.</p>
+<p>{</p>
+<p><code>"type": “BRL-CAD Materials List",</code>
+<code>"format-version": "1.0.0",</code>
+<code>"materials": [</code>
+<code>{</code><material-details><code>},</code>
+<code>{</code><material-details><code>}</code>
+<code>]</code></p>
+<p>}</p>
+<p>where material-details JSON is: {</p>
+<p><code>"name": “Iron",</code>
+<code>“id”: 3432,</code>
+<code>“traits”: [</code>
+<code>“Density”: “7.87 g/cm^3”,</code>
+<code>“Specific Heat”: {“value”: “0.12 cal/g C”, “temperature”: 100 C”}</code>
+<code>]</code>
+<code>"short": “Short description",</code>
+<code>"screenshot-url": "</code><a href="http://foo.com/screenshot.jpg"><code>http://foo.com/screenshot.jpg</code></a><code>",</code>
+<code>"version": "1.0",</code>
+<code>"authors": [</code>
+<code>{</code><author-details><code>},</code>
+<code>{</code><author-details><code>}</code>
+<code>]</code></p>
+<p>}</p>
+<p>where author-details JSON is: {</p>
+<p><code>"author-name": "Weiss Richard",</code>
+<code>"author-contact": "some free text, probably email",</code>
+<code>"author-url": "</code><a href="http://a.nice.site/with/a/homepage.html"><code>http://a.nice.site/with/a/homepage.html</code></a><code>"</code></p>
+<p>}</p>
+<p>This is quite bloated but a simple version listing just the materials
+and their properties might be more suitable when accessing the REST API
+from BRL-CAD.</p>
+<p>Proposed REST API:</p>
+<p>GET mater.brlcad.org/list - list all available materials
+GET mater.brlcad.org/list?id=MATERIAL_ID&amp;name=MATERIAL_NAME - search
+and list by MATERIAL_ID or MATERIAL_NAME
+POST mater.brlcad.org/remove?id=MATERIAL_ID - remove MATERIAL_ID, only
+available to some privileged authenticated users
+POST mater.brlcad.org/update?id=MATERIAL_ID - add or update
+MATERIAL_ID, only available to some privileged authenticated users
+The last 2 resources require POST actions because they need credential
+checks in the process. The ability to update/remove a certain material
+would only be available to some groups of users such as admins or the
+author.</p>
+<p>We’ll need to setup an an admin interface in order for some privileged
+users to easily review, add, update, remove materials.</p>
+<p>I’ve noticed existing work on material database is using XML format to
+display available materials, I would suggest using JSON as it is a bit
+lighter, human-readable, but that’s more of a personal preference and
+just an implementation detail. Exporting the data can be done in either
+format, but we might want to consider the lightest option for BRL-CAD
+parsing (there are number of XML/CSV/JSON parser for C++ out there but I
+haven’t tested any of them performance wise yes - I don’t really know if
+it could a be strain of performance if there is a large number of
+materials and we reach a point where the user can browse available
+options in BRL-CAD).</p>
+<p>Client-side</p>
+<p>Clients will initially request a list of materials from the Server. They
+will interpret the JSON and display to include informations such as
+Author, Description, and most importantly their traits.</p>
+<p>The materials list will be accessible from browser - a dinamically
+generated page will list all the materials and offer options for
+authenticate in order to add new materials. BRL-CAD - initially just a
+command line tool that talks to the website to get/put material data,
+create .density files (and other formats), or add material data to a .g
+geometry file</p>
+<p>HTTP requests on BRL-CAD can be made using either libcurl to retrive
+data and jsoncpp to parse the JSONs if we to decide to opt for a JSON
+format. I would look into what’s fastest/most stable out there.</p>
+<h2 id="timeline">Timeline</h2>
+<p>June
+Week 1: Decide details on server implementation and start working on
+providing a REST API
+Week 2: Have a fully working API implemented and create a test suite for
+it
+Week 3: Create an admin area for managing the available resources
+Week 4: Set up website that lists and enable users to perform actions
+such as searching, viewing, adding materials
+  July Week 1: Start working on BRL-CAD command-line command
+Week 2: create .density files (and other formats),
+Week 3: add material data to a .g geometry file
+Week 4: other API routines and integrate in libged
+August
+Week 1: Continue working on previous point
+Week 2: Have a fully working interface with a passing test suite
+Week 3: Refactoring &amp; documentation
+Week 4: Refactoring</p>
+<p>This provides a rough guideline of how the project will be done. As you
+will see, I plan to start working right after the accepted proposals
+list is published. Because of that, according to my timeline, I will
+have ﬁnished the project earlier. I don't know if this will be the case,
+but in all events, I will have time to cover any unexpected issue that
+may come up.</p>
+<h2 id="bio">Bio</h2>
+<p>I’m Mihai, a CS undergraduate at Politehnica Univ. of Bucharest,
+currently in the 4th and final year of study.</p>
+<p>I believe each of us needs to leave his mark in some way, for me it has
+been about making software that is used by as much as many other people.
+I didn't have any real opportunity to do so, until I found out about the
+Open-Source Development Course, taking place in our university. I
+applied and after a series of interviews I was accepted. It's a course
+that helps students make their first contributions within an open-source
+project and get a feeling of what real world software development means.
+I got to learn about working in an open-source community, using
+version-control systems like git, unit-testing, asking for help on
+mailing lists and other things like that.</p>
+<p>One of the open source projects I got to contribute to was Jeopy, a
+local-network multiplayer quiz game written in Python with PyQt (Python
+binding for Qt) that features trivia in computer science and was used in
+some of the first year's classes for the undergraduate students at my
+university in order to help them recap course material. Four years
+later, I'm still participating in the Open-Source Development Course but
+as a mentor.</p>
+<p>I’m actively involved in university life, I am an undergraduate teaching
+assistant for a few classes and I try to participates in technical paper
+presentations as often as I can.</p>
+<p>I am the first one to sign up for hackathons as I strongly believe them
+to be a unique chance to get together with people who also share my
+passion in building something new and want to learn from each other in
+the process.</p>
+<p>Last summer I was an an intern at the romanian start-up uberVU. I
+continued to work there for another 7 months after the internship was
+completed. uberVU is a social media analytics applications and my work
+was mainly focused on backend services (mostly Python), where I had to
+implement a few systems and ensure they’re scalable and robust.</p>
+<p>I volunteer a few hours week at Hospice of Hope, a palliative care
+center. I also volunteer for activities organised by the Romanian Open
+Source Education group which I’m also a part of.</p>
+<p>I’m a disciplined individual and I try to organise myself as best as I
+can though that doesn’t always happen as I always get involved in a big
+number of projects. That would not be the case this summer as I’m
+finishing university and considering tackling just a couple of
+open-source project, BRL-CAD being one of them.</p>
+<h2 id="why-did-i-choose-to-apply-for-brl-cad">Why did I choose to apply for BRL-CAD?</h2>
+<p>To be honest, I’m not an avid user of CAD software. I haven’t used one
+since high-school, at some time back then I did get into 3D modelling
+and photo editing and many many other activities because I was pretty
+much clueless of what I wanted to do so I experimented with every kind
+of piece of software I could get my hands on. I got to work with AutoCAD
+and Cinema 4D and it was quite insightful stuff on how 3D modelling is
+done. I’m particularly fond of this project because it involves working
+on the web platform and on BRL-CAD and I’d love to work on tying them
+together. I feel that getting involved in a project of this magnitude
+will help me bring my skills to a higher standard. The community was
+open, friendly and helpful and that’s also a big plus. In a nutshell,
+this project is, to me, the perfect opportunity to learn new things, to
+continue my development as a programmer and to do what I've always
+wanted: contribute with a piece of software that would actually help the
+community.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

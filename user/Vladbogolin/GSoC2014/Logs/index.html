@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Vladbogolin/GSoC2014/Logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Daily Progress - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Vladbogolin/GSoC2014/Logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#daily-progress" class="nav-link">Daily Progress</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#project-info" class="nav-link">Project Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#progress-reports" class="nav-link">Progress reports</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#logs" class="nav-link">Logs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#community-bonding" class="nav-link">Community Bonding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-1" class="nav-link">Week 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-2" class="nav-link">Week 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-3" class="nav-link">Week 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-4" class="nav-link">Week 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-5" class="nav-link">Week 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-6" class="nav-link">Week 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-7" class="nav-link">Week 7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-8" class="nav-link">Week 8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-9" class="nav-link">Week 9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-10" class="nav-link">Week 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-11" class="nav-link">Week 11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-12" class="nav-link">Week 12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#week-13" class="nav-link">Week 13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="daily-progress">Daily Progress</h1>
+<h1 id="project-info">Project Info</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Project Name</strong></td>
+<td>Embedding a framebuffer window</td>
+</tr>
+<tr>
+<td><strong>Student Name</strong></td>
+<td>Bogolin Simion Vlad</td>
+</tr>
+<tr>
+<td><strong>IRC nick</strong></td>
+<td>vladbogo</td>
+</tr>
+<tr>
+<td><strong>Link to proposal</strong></td>
+<td><a href="../../Proposal/EmbeddingFrameBuffer/">Proposal</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="milestones">Milestones</h1>
+<ul>
+<li>Implementing a new Qt framebuffer</li>
+<li>Raytracing</li>
+<li>Embedding a framebuffer window</li>
+</ul>
+<h1 id="progress-reports">Progress reports</h1>
+<ul>
+<li>Midterm evaluation report can be found <a href="../Midterm/">here</a></li>
+<li>Project summary can be found <a href="../summary/">here</a></li>
+</ul>
+<h1 id="logs">Logs</h1>
+<h2 id="community-bonding">Community Bonding</h2>
+<ul>
+<li>Studied the existing framebuffer implementation</li>
+<li>Researched to see exactly what framebuffer functions are called when
+    using the rt command</li>
+</ul>
+<h2 id="week-1">Week 1</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Start working at the "open" function.</li>
+</ul>
+</li>
+<li>19 May:<ul>
+<li>Started creating a new Qt framebuffer: I started by creating a
+    txt framebuffer that just logs function calls.</li>
+</ul>
+</li>
+<li>20 May:<ul>
+<li>Mostly a break day</li>
+</ul>
+</li>
+<li>21 May - 25 May:<ul>
+<li>In this interval I had my final exams</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-2">Week 2</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Make up for the lost time due to exams</li>
+<li>Implement the open/close functions</li>
+</ul>
+</li>
+<li>26 May:<ul>
+<li>I had my last exam so from now on I will focus on the project.</li>
+<li>Worked a little bit more on the txt framebuffer</li>
+</ul>
+</li>
+<li>27 May:<ul>
+<li>Worked at attaching the txt framebuffer to the display manager -
+    the txt framebuffer is almost done.</li>
+<li>Studied the existing "open" functions.</li>
+</ul>
+</li>
+<li>28 May:<ul>
+<li>Attached the qt framebuffer to the display manager.</li>
+<li>Started working at the "open" function.</li>
+</ul>
+</li>
+<li>29 May:<ul>
+<li>Continued working at the "open" function - it should be done
+    shortly</li>
+</ul>
+</li>
+<li>30 May:<ul>
+<li>Researched how the raytracer uses the framebuffer and attached
+    the new framebuffer to it.</li>
+</ul>
+</li>
+<li>31 May:<ul>
+<li>Mostly a break day.</li>
+</ul>
+</li>
+<li>1 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-3">Week 3</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Finish implementing open/close and start working at the write
+    function.</li>
+</ul>
+</li>
+<li>2 June:<ul>
+<li>Continued working at the open function: created an empty
+    window - the function should be done tomorrow.</li>
+</ul>
+</li>
+<li>3 June:<ul>
+<li>Basically finished the open function - some changes might be
+    needed during the implementation of the other functions.</li>
+</ul>
+</li>
+<li>4 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>5 June:<ul>
+<li>Researched the write function and the existing framebuffer
+    implementation.</li>
+</ul>
+</li>
+<li>6 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>7 June:<ul>
+<li>Continued researching the write function and how the content is
+    displayed.</li>
+</ul>
+</li>
+<li>8 June:<ul>
+<li>More research, but mostly a break day.</li>
+</ul>
+</li>
+<li>Conclusion:<ul>
+<li>Finished implementing the open function and studied existing
+    implementation of the write function</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-4">Week 4</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Have content displayed in the window</li>
+</ul>
+</li>
+<li>9 June:<ul>
+<li>Solved a issue regarding the cmake build - I forgot to add
+    Qt_INCLUDE_DIRS.</li>
+<li>Created a custom window so that it can be easily added content
+    to it.</li>
+</ul>
+</li>
+<li>10 June:<ul>
+<li>Released memory so that the qt_close function is done.</li>
+<li>Started working at content displaying. Since this is the main
+    aspect I want to do as much research as possible on how to
+    represent the backing store and how to display its content.</li>
+</ul>
+</li>
+<li>11 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>12 June:<ul>
+<li>Created and allocated the backing store for the framebuffer.</li>
+<li>Started working at the write function.</li>
+<li>Managed to get some content displayed - even though it's far
+    from done, it is a good start</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://i.imgur.com/kEKv6e9.png">http://i.imgur.com/kEKv6e9.png</a></p>
+<ul>
+<li>13 June:<ul>
+<li>Continued working at the write function.</li>
+</ul>
+</li>
+<li>14 June:<ul>
+<li>Managed to fix the content display:</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://i.imgur.com/kFaMQk9.png">http://i.imgur.com/kFaMQk9.png</a></p>
+<ul>
+<li>15 June:<ul>
+<li>Mostly a break day.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-5">Week 5</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Finish the write function.</li>
+</ul>
+</li>
+<li>16 June:<ul>
+<li>Finished a first version of the write function. Also, tested if
+    more complex models are displayed correctly.</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://i.imgur.com/BqYS7Mr.png">http://i.imgur.com/BqYS7Mr.png</a></p>
+<ul>
+<li>17 June:<ul>
+<li>Started working at the open_existing function.</li>
+</ul>
+</li>
+<li>18 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>19 June:<ul>
+<li>Searched for the best way on how to create the open_existing
+    function. Since until now, the functions were declared in fb.h
+    and all framebuffers use the same header, after adding the Qt
+    includes a lot of conflicts appear so a new method of dealing
+    with the open_existing functions is necessary.</li>
+</ul>
+</li>
+<li>20 June:<ul>
+<li>Continued studying how to integrate the open_existing function.</li>
+</ul>
+</li>
+<li>21 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>22 June:<ul>
+<li>Worked at the open_existing function.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-6">Week 6</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Finish the open_existing function</li>
+</ul>
+</li>
+<li>23 June:<ul>
+<li>Worked on raytracing from the display manager.</li>
+</ul>
+</li>
+<li>24 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>25 June:<ul>
+<li>Created the midterm report that can be found <a href="../Midterm/">here</a></li>
+</ul>
+</li>
+<li>26 June:<ul>
+<li>Processed events so that the output is displayed line by line</li>
+<li>Fixed the upside down drawing problem:</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://imgur.com/hOIryrt.png">http://imgur.com/hOIryrt.png</a> <a href="http://imgur.com/h3TLREb.png">http://imgur.com/h3TLREb.png</a></p>
+<ul>
+<li>27 June:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>28 June:<ul>
+<li>Started modifying the fbio interface in order to add a generic
+    open_existing entry.</li>
+</ul>
+</li>
+<li>29 June:<ul>
+<li>Mostly a break day.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-7">Week 7</h2>
+<ul>
+<li>Time spent preparing my final project</li>
+</ul>
+<h2 id="week-8">Week 8</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Finish modifying the interface in order to use the
+    open_existing function</li>
+</ul>
+</li>
+<li>7-8 July:<ul>
+<li>Had my final paper presentation. Now I can focus only on GSoC
+    for the rest of the summer.</li>
+</ul>
+</li>
+<li>9 July:<ul>
+<li>Added a new entry in struct dm so that the framebuffer can be
+    opened from libdm. This is necessary in order to avoid using qt
+    code in mged/dm-qt and also can be used for refactoring dm
+    related code from mged folder.</li>
+<li>Added the _qt_open_existing function in fb.h. This is a
+    temporary solution until a final form of the function is
+    implemented. In the end a new entry will be added in the fbio
+    interface.</li>
+<li>Opened the framebuffer from the display manager, but at the
+    moment there are two different windows.</li>
+</ul>
+</li>
+<li>10 July:<ul>
+<li>Continued working at the open_existing function. Hopefully it
+    will be done by the end of the week.</li>
+</ul>
+</li>
+<li>11 July:<ul>
+<li>Struggled more with the embedding of a framebuffer window.</li>
+</ul>
+</li>
+<li>12 July:<ul>
+<li>More struggle regarding the display of raytraced objects from
+    the display manager.</li>
+</ul>
+</li>
+<li>13 July:<ul>
+<li>Mostly a break day.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-9">Week 9</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Finish the embedding of a framebuffer window</li>
+</ul>
+</li>
+<li>14 July:<ul>
+<li>Worked at the actual embedding of a framebuffer window - still
+    couldn't find a working solution</li>
+</ul>
+</li>
+<li>15 July:<ul>
+<li>Did a deeper research on how the existing implementation is
+    done. Still couldn't find a way do display content in the
+    embedded window.</li>
+</ul>
+</li>
+<li>16 July:<ul>
+<li>Break day</li>
+</ul>
+</li>
+<li>17 July:<ul>
+<li>After a lot of struggle, I have finally found a solution that
+    seems to solve all the problems. Hopefully tomorrow there would
+    be content displayed in the embedded framebuffer window.</li>
+</ul>
+</li>
+<li>18 July:<ul>
+<li>After using a QPainter to draw the raytraced content in the
+    existing window, content can be displayed so I am on the right
+    track with the embedding. There still are some fixes that need
+    to be done: when the raytracing is done the drawn content
+    disappears and also a few fixes regarding the position of the
+    drawn image are necessary.</li>
+</ul>
+</li>
+<li>19 July:<ul>
+<li>Tried to solve the problems regarding the embedding so I did a
+    little more research on why the content disappears but with no
+    luck yet.</li>
+</ul>
+</li>
+<li>20 July:<ul>
+<li>Tried to solve the problem regarding the position of the drawn
+    image.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-10">Week 10</h2>
+<ul>
+<li>Weekly milestone:<ul>
+<li>Have a working framebuffer.</li>
+</ul>
+</li>
+<li>21 July:<ul>
+<li>Implemented the configureWindow function.</li>
+<li>Continued trying to solve the problem regarding the position of
+    the drawn image - still no luck.</li>
+<li>Redesigned the write function in order to solve the display
+    problem - there still are some fixes that need to be made.</li>
+</ul>
+</li>
+<li>22 July:<ul>
+<li>Continued working at the new write function.</li>
+</ul>
+</li>
+<li>23 July:<ul>
+<li>Solved the display problem - now correct drawings can be made in
+    the embedded framebuffer window:</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Mged_fb.png" />
+<img alt="" src="/wiki/user/img/Mged_fb2.png" /></p>
+<ul>
+<li>24 July:<ul>
+<li>Tried to find out why the image disappears after is drawn in the
+    embedded framebuffer window - more research needs to be done
+    since I haven't found the problem.</li>
+</ul>
+</li>
+<li>25 July:<ul>
+<li>Break day</li>
+</ul>
+</li>
+<li>26 July:<ul>
+<li>Break day</li>
+</ul>
+</li>
+<li>27 July:<ul>
+<li>More research regarding the disappearing of the drawings - found
+    the problem (after the raytracing the dm redraws the entire
+    window and the raytraced content erases in this way) and tried
+    to come up with a solution.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-11">Week 11</h2>
+<ul>
+<li>28 July:<ul>
+<li>Continued trying to solve the disappearing problem.</li>
+</ul>
+</li>
+<li>29 July:<ul>
+<li>Solved the disappearing problem. The framebuffer is almost
+    done - there still are some fixes and tests that need to be
+    made.</li>
+</ul>
+</li>
+<li>30 July:<ul>
+<li>Break day.</li>
+</ul>
+</li>
+<li>31 July:<ul>
+<li>Mostly a break day.</li>
+</ul>
+</li>
+<li>1 August:<ul>
+<li>Made some fixes regarding the embedding of a framebuffer window.</li>
+<li>Tested the embedding with different models - found some problems
+    that need some further investigation (at some point the display
+    manager crashes)</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Mged_fb3.png" />
+<img alt="" src="/wiki/user/img/Mged_fb4.png" /></p>
+<ul>
+<li>2 August:<ul>
+<li>Investigated to see why the display manager sometimes crashes
+    using valgrind.</li>
+<li>Started working at solving the invalid memory access.</li>
+</ul>
+</li>
+<li>3 August:<ul>
+<li>Mostly a break day.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-12">Week 12</h2>
+<ul>
+<li>4 August:<ul>
+<li>Continued working at the invalid memory access problems - now
+    everything works as expected.</li>
+</ul>
+</li>
+<li>5 August:<ul>
+<li>Implemented the qt_clear function.</li>
+<li>Made the display manager show only non-empty images (after the
+    raytraced content is added to the image)</li>
+</ul>
+</li>
+<li>6 August:<ul>
+<li>Integrated the fb in archer:</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Archer_fb.png" />
+<img alt="" src="/wiki/user/img/Archer_fb2.png" /></p>
+<ul>
+<li>7 August:<ul>
+<li>Did some testing to see that everything works as expected
+    including the underlay, interlay and overlay modes</li>
+</ul>
+</li>
+<li>8 August:<ul>
+<li>Implemented the qt_read, qt_readrect and qt_writerect
+    functions.</li>
+<li>Integrated mouse events.</li>
+</ul>
+</li>
+<li>9 August:<ul>
+<li>Mostly a break day</li>
+</ul>
+</li>
+<li>10 August:<ul>
+<li>Documented about colormaps.</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-13">Week 13</h2>
+<ul>
+<li>11 August:<ul>
+<li>Started working at qt_wmap and qt_rmap.</li>
+</ul>
+</li>
+<li>12 August:<ul>
+<li>Implemented the qt_rmap and qt_wmap functions.</li>
+</ul>
+</li>
+<li>13 August:<ul>
+<li>Mostly a break day.</li>
+</ul>
+</li>
+<li>14 August:<ul>
+<li>Just some small fixes.</li>
+</ul>
+</li>
+<li>15 August:<ul>
+<li>Added a simple keyboard event</li>
+<li>Written a project summary which can be found <a href="../summary/">here</a></li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

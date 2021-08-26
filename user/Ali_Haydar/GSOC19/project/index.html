@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Ali_Haydar/GSOC19/project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Ali_Haydar/GSOC19/project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#annotations-implement-more-annotation-support-labels-notes-and-dimensions" class="nav-link">Annotations: Implement more annotation support: labels, notes, and dimensions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#drawing-the-new-types-in-the-wire-frame-view" class="nav-link">drawing the new types in the wire frame view</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#time-table" class="nav-link">Time Table</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="annotations-implement-more-annotation-support-labels-notes-and-dimensions"><strong>Annotations: Implement more annotation support: labels, notes, and dimensions</strong></h2>
+<p>The project is divided into three concepts:</p>
+<ul>
+<li>extending the MGED and Archer commands to inculde the new annotation
+    types:</li>
+<li>calculating each type templet dimensions if nedded like the fields
+    in the annotation box</li>
+<li>drawing the new types in the wire frame view</li>
+</ul>
+<h3 id="extending-the-mged-and-archer-commands-to-inculde-the-new-annotations-types"><strong>extending the MGED and Archer commands to inculde the new Annotations types</strong></h3>
+<ul>
+<li>New types of annotaions :<ul>
+<li>dimention line</li>
+<li>multible lables in multible fields box</li>
+<li>label in a box</li>
+<li>single or multible line note in a box</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<p>the extending in mged will be like:</p>
+<p>mged&gt; in
+Enter name of solid: annot_1
+Enter solid type: annot
+Enter annotation type : dimension_line
+"sudo "
+Enter starting point of the dimention line
+Enter end point of the dimention line
+Enter dimension ( or the dimention can be calculated (this choice can be taken if the user wants to override the actual dimention )</p>
+</li>
+<li>
+<p>all the annotions types should be entered in the same annotaion
+    primative so this will require modifications on the current
+    primative</p>
+</li>
+<li>We can consider the same approach of manual annotions as an example
+    in the multible field annotion the usuer will provide the number of
+    fields and the lables or we can consider half manual abrouch a
+    spcific characteer like (@) when encounterd the program considers it
+    the end of the field and the label existed in it and the end of this
+    label vlist( this will help with the calculation of the the field (
+    cell ) dimentions so the user enters all the lables in the same
+    line.( this can be discused withe the socity)</li>
+</ul>
+<p>Example : Enter the text label: sudo1@sudo2 this annotation will be
+constructed from two vlist and calculte the dimentions accordingly.</p>
+<ul>
+<li>The leader lines will be constructed in correspondance with each
+    type.</li>
+<li>rendering each primative type in wire frame.</li>
+</ul>
+<h3 id="calculating-each-type-dimentions-if-nedded-like-the-fields-in-the-annotation-box"><strong>calculating each type dimentions if nedded like the fields in the annotation box</strong></h3>
+<ul>
+<li>in the case of the single line note in a box once the annotation
+    became a vlist the containing box dimentions will be calculated
+    doing simple mathematical operation on the vlist points coordinates</li>
+</ul>
+<p>wedth=[(max X+const)-(min X+ const)] the same for the hight, since the
+box will be drawn with respect to the refrance point of the annotation
+just like the lable.</p>
+<ul>
+<li>in the case of multible cells annotation if we considerd the half
+    manual approch each label will be a separat vlist and the cell
+    dimentions can be calcuated as above.</li>
+</ul>
+<h2 id="drawing-the-new-types-in-the-wire-frame-view"><strong>drawing the new types in the wire frame view</strong></h2>
+<ul>
+<li>all the new types of annotaions will be converted to a vlist either
+    inside the lable vlist or separate one and can be drawn in the same
+    way as the lable .</li>
+<li>For the rendering part, we will try to have annotation on a rendered
+    image.</li>
+</ul>
+<h3 id="attatch-the-annotation-to-apoint-from-a-solid"><strong>attatch the annotation to apoint from a solid</strong></h3>
+<p>in this case the annotated opjects name hase to be selected and pass the
+point to be calculated as annotated point like the center of a circl and
+we have to make some call back function to recalculate the point at each
+change if the solid moves the annotaion will move with it .</p>
+<h3 id="milestones"><strong>Milestones</strong></h3>
+<ul>
+<li>Fixing the wrong depiction with OpenGl in windows.</li>
+<li>Extending the MGED and Archer commands to inculde the new
+    Annotations types.</li>
+<li>Calculating the needed dimentions for the new annotaions and
+    implimenting the necessary leader lines.</li>
+<li>Drawing the new types in wire frame view.</li>
+<li>Documentation Support</li>
+</ul>
+<h3 id="fixing-the-wrong-depiction-with-opengl-in-windows"><strong>fixing the wrong depiction with OpenGl in windows</strong></h3>
+<p>currently the annotation representation is correct in Xwindow display
+manager where the annotation doesn't undergo rotations or zoon when the
+primative does but this is not the case in OpenGl this has to be fixed
+by identifing the cause of this problem which I expect will be because
+of the display matrix we have to assure that the annotations isn't
+defined in the primitive coordinate system.</p>
+<h3 id="extending-the-mged-and-archer-commands-to-inculde-the-new-annotations-types_1"><strong>Extending the MGED and Archer commands to inculde the new Annotations types.</strong></h3>
+<p>in this case we are going to make a genrial input method for all types
+of line segments line_seg carc_seg nurb_seg bezier_seg.</p>
+<h3 id="calculating-the-needed-dimentions-for-the-new-annotaions-and-implimenting-the-necessary-leader-lines"><strong>Calculating the needed dimentions for the new annotaions and implimenting the necessary leader lines.</strong></h3>
+<p>in the case of the box around the lable the calculation must be done
+after the lable Vlist is constructed and put the box points coordinates
+in the same Vlist or a separet one</p>
+<h3 id="drawing-the-new-types-in-wire-frame-view"><strong>Drawing the new types in wire frame view.</strong></h3>
+<p>the represintation of the annotaions in the wire frame will be the same
+in the current annotation primative just adding the nessesary Vlists and
+functions nessesary to draw them.</p>
+<h3 id="documentation-support"><strong>Documentation Support</strong></h3>
+<p>we are going to make a wiki pages to demonstrate the use of the
+modifications we created to make it easy to the user to use the
+annotaion primatve.</p>
+<h2 id="time-table"><strong>Time Table</strong></h2>
+<h3 id="timeline"><strong>Timeline</strong></h3>
+<p>IN the bonding period I am trying to understand the code perfectly and
+make use of some experemnts and sociaty openions The time table of the
+coding period is not clear because the time needed for each task isn't
+known exactly</p>
+<p><strong>Deliverables</strong> :</p>
+<p>Community bonding period</p>
+<p>[ May 5 - May 20 ]:Review the pipeline Take inputs from the community
+Gain insight into the on screen rendering of the primitive</p>
+<p>Coding period ( I aim to start coding from May 27 onwards)</p>
+<ul>
+<li>[May 27 - June 7]:understanding the pipe line and trying to fix
+    the wrong depiction in OpenGl</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[June 7 - June 20]: writing functions to calculate and draw the
+    box around the labels and modifing the mged commands</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[June 20 - June 26]:Tests for the written functions</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>three days for university exams not known exactly because of the
+    nature of the master degree combined with other branches in civil
+    engineering.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[July 1 - July 20]:Implement support for all the line segments
+    suggested by the socity</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[July 20 - July 24]:Write the tests and solve any issue if arises</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[July 28 - Aug 5]:Support for rendering the annotations</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[Aug 5 - Aug 15]:ray trace simple annotation and adding the fiture
+    to all types</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[Aug 15 - Aug 20]:Write tests and clear any issue if arises</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>[Aug 20 - Aug 25]:Documentation support.</li>
+</ul>
+<h3 id="personal-details"><strong>Personal Details</strong></h3>
+<ul>
+<li><strong>Name</strong> : Ali Haydar</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Country</strong> : Province of Brescia (GMT+2)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Contact Details</strong><ul>
+<li>Email : lgoogl696@gmail.com</li>
+<li>University Email : a.haydar@studenti.unibs.it</li>
+<li>IRC Nick : lois_googl</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Education</strong><ul>
+<li>Bachelor degree in civil engineering Al-Baath univeristy Syria</li>
+<li>Master in civil and environmental engineering Brescia university
+    Italy</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>Github</strong>:AliHaider93</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2017/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>GSoC 2017 With BRL-CAD - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2017.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2017-with-brl-cad" class="nav-link">GSoC 2017 With BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accepted-projects" class="nav-link">Accepted Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#gpu-boolean-evaluation-for-csg-ray-tracing" class="nav-link">GPU Boolean Evaluation for CSG Ray-Tracing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#librecad-3-plugin-system" class="nav-link">LibreCAD 3 plugin system</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#topological-naming-in-freecad" class="nav-link">Topological Naming in FreeCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rebar-addon-for-freecad" class="nav-link">Rebar Addon for FreeCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#online-geometry-viewer-update" class="nav-link">Online Geometry Viewer Update</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#annotations-for-the-wireframe-view" class="nav-link">Annotations for the wireframe view</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#freecad-part-design-workbench-refinement" class="nav-link">FreeCAD Part Design Workbench Refinement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#wireframe-printing-algorithm-in-slic3r" class="nav-link">Wireframe Printing Algorithm in Slic3r</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3mf-file-format-support-in-slic3r" class="nav-link">3MF File Format Support in Slic3r</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2017-with-brl-cad">GSoC 2017 With BRL-CAD</h1>
+<p><strong>BRL-CAD was accepted as an <a href="https://summerofcode.withgoogle.com">umbrella mentoring
+organization</a> for the Google Summer
+of Code!</strong></p>
+<p>Our umbrella accepted <strong>10</strong> students that prepared quality proposals
+and demonstrated commitment, with details below for those students that
+were successful. Students were selected for LibreCAD, Slic3r, BRL-CAD,
+and FreeCAD.</p>
+<h1 id="accepted-projects">Accepted Projects</h1>
+<h2 id="gpu-boolean-evaluation-for-csg-ray-tracing">GPU Boolean Evaluation for CSG Ray-Tracing</h2>
+<ul>
+<li>Implementing Boolean Evaluation for CSG ray-tracing in OpenCL</li>
+<li>Student: <a href="/wiki/user/Marco-domingues">Marco Domingues</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#4523183467134976">Abstract</a></li>
+<li><a href="/wiki/user/Marco-domingues/GSoC17/Project">Project Plan</a></li>
+<li><a href="/wiki/user/Marco-domingues/GSoC17/Log">Dev Log</a></li>
+</ul>
+<h2 id="librecad-3-plugin-system">LibreCAD 3 plugin system</h2>
+<ul>
+<li>Creation of a Lua plugin system that could create new entities with
+    custom interaction, and add new import/export formats</li>
+<li>Student: <a href="/wiki/user/Feragon.xi">Florian Roméo</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6730569560883200">Abstract</a></li>
+<li><a href="/wiki/user/Feragon.xi/GSoC2017/Project">Project plan</a></li>
+<li><a href="https://gsoc17.feragon.net">Dev log</a></li>
+</ul>
+<h2 id="topological-naming-in-freecad">Topological Naming in FreeCAD</h2>
+<ul>
+<li>Attempt at developing a robust naming framework for topological
+    features such as vertices, edges and faces in FreeCAD</li>
+<li>Student: <a href="https://www.github.com/AjinkyaDahale">Ajinkya Dahale</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6748039212433408">Abstract</a></li>
+<li>Project Plan:
+    <a href="/wiki/user/ajinkyadahale/GSoC2017/Project">user/ajinkyadahale/GSoC2017/Project</a></li>
+<li>Dev Log: <a href="https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=22373">In the FreeCAD
+    Forums</a></li>
+</ul>
+<h2 id="rebar-addon-for-freecad">Rebar Addon for FreeCAD</h2>
+<ul>
+<li>The main purpose of this project is to create a rebar addon for Arch
+    Workbench of FreeCAD to ease up the process of creating
+    reinforcement in structural element.</li>
+<li>Student: <a href="/wiki/user/amritpal_singh">Amritpal Singh</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6238786819194880">Abstract</a></li>
+<li><a href="/wiki/user/Amritpal_singh/gsoc_proposal">Project Plan</a></li>
+<li><a href="/wiki/user/Amritpal_singh/GSoC17/logs">Dev Log</a></li>
+</ul>
+<h2 id="online-geometry-viewer-update">Online Geometry Viewer Update</h2>
+<ul>
+<li>This project aims to improve Online Geometry Viewer in different
+    ways: UI update, code quality and improved model importing.</li>
+<li>Student: <a href="/wiki/user/Oleksandr_dubenko">Oleksandr Dubenko</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#4526810365689856">Abstract</a></li>
+<li><a href="/wiki/user/Oleksandr_dubenko/GSoC2017/Project">Project Plan</a></li>
+<li><a href="https://blog.esde.name">Dev Log</a></li>
+</ul>
+<h2 id="annotations-for-the-wireframe-view">Annotations for the wireframe view</h2>
+<ul>
+<li>The aim of the project is to enhance the representation of the wire
+    frame views by adding annotations to the sketch.</li>
+<li>Student: <a href="/wiki/user/Gabbar1947/ShubhamRathore">Shubham
+    Rathore</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6403367952711680">Abstract</a></li>
+<li><a href="/wiki/user/Gabbar1947/GSOC17/Project">Project Plan</a></li>
+<li><a href="https://rathoresaab.wordpress.com/gsoclogs">Dev Log</a></li>
+</ul>
+<h2 id="freecad-part-design-workbench-refinement">FreeCAD Part Design Workbench Refinement</h2>
+<ul>
+<li>Adding test coverage for all Part Design tools, fixing bugs and
+    improving functionality for some.</li>
+<li>Student: <a href="https://kkremitzki.github.io">Kurt Kremitzki</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#5752969237626880">Abstract</a></li>
+<li><a href="/wiki/user/kkremitzki/GSOC17/Project">Project Plan</a></li>
+<li>Dev Log:
+    <a href="https://kkremitzki.github.io/blog">kkremitzki.github.io/blog</a></li>
+</ul>
+<h2 id="wireframe-printing-algorithm-in-slic3r">Wireframe Printing Algorithm in Slic3r</h2>
+<ul>
+<li>Speed up prototyping and create new art forms with a wireframe
+    printing algorithm</li>
+<li>Student: <a href="http://clongnecker.com">Caroline Longnecker</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#5662414690320384">Abstract</a></li>
+<li><a href="http://clongnecker.com/projects/wireframe">Project Plan</a></li>
+<li><a href="http://clongnecker.com/blog">Dev Log:</a></li>
+</ul>
+<h2 id="3mf-file-format-support-in-slic3r">3MF File Format Support in Slic3r</h2>
+<ul>
+<li>Brief description: Implement Fully Functioning Read/Write interface
+    for 3MF format and allow format conversion(STL, OBJ, AMF) .</li>
+<li>Student: <a href="/wiki/user/Ahmedsamir">Ahmed Samir</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6343944127381504">Abstract</a></li>
+<li><a href="https://github.com/Samir55/Slic3r/wiki/Project-Plan">Project Plan</a></li>
+<li>Dev Log: <a href="https://github.com/alexrj/Slic3r/issues/3934">In Slic3r Issue
+    tracker</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

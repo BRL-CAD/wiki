@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Gala/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Gala - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Gala.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="galas-sandbox-page">Gala's Sandbox Page</h3>
+<h4 id="handy-links">Handy Links</h4>
+<p><a href="/wiki/Community_Publication_Portal">Community_Publication_Portal</a></p>
+<h4 id="introduction-to-new-deb-and-rpm-builds">Introduction to new .deb and .rpm builds</h4>
+<p>Brief article overviewing the efforts by jordisayol for Debian, Ubuntu,
+Fedora, and openSUSE. Included are new icons, menu items, mime type
+associations, and more.</p>
+<h4 id="gala-new-brl-cad-linux-release-packaging-process-automation">Gala: New BRL-CAD Linux Release Packaging Process Automation</h4>
+<p>By: Gala Taylor</p>
+<p>BRL-CAD supports Debian, Ubuntu, Fedora, and openSUSE, and other Linux
+distributions. Jordi Sayol recently finished automating the BRL-CAD
+Linux release packaging process, and he took some time out to chat with
+Gala Taylor about it - and also answer some question about what it's
+like to work on the BRL-CAD project.</p>
+<p><strong>Gala Taylor (GT)</strong>: How long have you been working on the BRL-CAD
+project?</p>
+<p><strong>Jordi Sayol (JS)</strong>: I've been involved with the BRL-CAD project since
+January 2011.</p>
+<p><strong>GT</strong>: How much education and experience were required to prepare you
+to contribute to the BRL-CAD project?</p>
+<p><strong>JS</strong>: My experience is just as an advanced Linux user.</p>
+<p><strong>GT</strong>: Do you need to physically meet with the other team members in
+order to contribute to the BRL-CAD project, or is it sufficient to work
+on-line?</p>
+<p><strong>JS</strong>: All of my collaboration is done on-line.</p>
+<p><strong>GT</strong>: The BRL-CAD project is a collection of over four hundred tools,
+utilities and applications, with over a million lines of source code.
+With such a massive and complex system, how do you decide what to work
+on? Is it necessary to understand all that code in order to contribute
+to the project?</p>
+<p><strong>JS</strong>: My responsibility is focused on building binary packages of
+BRL-CAD for Linux systems.</p>
+<p><strong>GT</strong>: Besides the release processing work which is described in the
+HACKING file, can you walk me through the process of actually
+transforming a developer’s checked-in source code into an .rpm or .deb
+that is ready to be downloaded and installed?</p>
+<p><strong>JS</strong>: It's quite simple. I have created two bash scripts that automate
+this process. The "sh/make_deb.sh" script creates a deb package
+installable on Debian-like systems. This currently includes Debian,
+Ubuntu, Linux Mint, and other distributions. The "sh/make_rpm.sh"
+script creates an rpm package for Fedora-like systems. This includes
+Fedora, Centos, Redhat, and some other distributions, or OpenSUSE,
+depending on the system where it is built. There are separate rpm
+packages for Fedora and OpenSUSE because they do not share the same
+nomenclature on their packages. Note also that both scripts create
+deb/rpm packages for the host architecture where they are executed, and
+that the results are currently only tested on x86_32 and x86_64 hosts.</p>
+<p>With these scripts, anyone can easily create their own deb/rpm packages
+as needed. This is especially useful if the user wants to install
+BRL-CAD on a very old system, maybe requiring special compilation for
+specific graphic cards drivers, etc.</p>
+<p><strong>GT</strong>: Thank your for your time today and your contributions to
+BRL-CAD, Mr. Sayol!</p>
+<p><strong>JS</strong>: It was a pleasure.</p>
+<p>Please visit the BRL-CAD project website for more information:
+<a href="http://brlcad.org">http://brlcad.org</a></p>
+<p><strong>Jordi Sayol</strong> is the maintainer of the BRL-CAD Linux release packaging
+process.</p>
+<p><strong>Gala Taylor</strong> is a 2012 Google Code-In participant. Although she has
+used various Free and Open Source Software (FOSS) products over the
+years, and has contributed example files and tutorials to several
+projects, this is the first time she has actively participated in the
+development of FOSS code. Gala is currently in 9th grade, and her
+favorite computer language is Java.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

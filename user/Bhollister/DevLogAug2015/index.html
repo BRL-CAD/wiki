@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Bhollister/DevLogAug2015/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>DevLogAug2015 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Bhollister/DevLogAug2015.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#sat-august-1-2015" class="nav-link">Sat, August 1, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-august-2-2015" class="nav-link">Sun, August 2, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-august-3-2015-week-11-of-14" class="nav-link">Mon, August 3, 2015 Week 11 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-august-4-2015" class="nav-link">Tues, August 4, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-august-5-2015" class="nav-link">Wed, August 5, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-august-6-2015" class="nav-link">Thurs, August 6, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-august-7-2015" class="nav-link">Fri, August 7, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sat-august-8-2015" class="nav-link">Sat, August 8, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-august-9-2015" class="nav-link">Sun, August 9, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-august-10-2015-week-12-of-14" class="nav-link">Mon, August 10, 2015 Week 12 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-august-11-2015" class="nav-link">Tues, August 11, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-august-12-2015" class="nav-link">Wed, August 12, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-august-13-2015" class="nav-link">Thurs, August 13, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-august-14-2015" class="nav-link">Fri, August 14, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sat-august-15-2015" class="nav-link">Sat, August 15, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-august-16-2015" class="nav-link">Sun, August 16, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-august-17-2015-week-13-of-14" class="nav-link">Mon, August 17, 2015 Week 13 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-august-18-2015" class="nav-link">Tues, August 18, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-august-19-2015" class="nav-link">Wed, August 19, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-august-20-2015" class="nav-link">Thurs, August 20, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-august-21-2015-firm-pencils-down" class="nav-link">Fri, August 21, 2015 FIRM PENCILS DOWN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sat-august-22-2015" class="nav-link">Sat, August 22, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sun-august-23-2015" class="nav-link">Sun, August 23, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mon-august-24-2015-week-14-of-14" class="nav-link">Mon, August 24, 2015 Week 14 (of 14)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tues-august-25-2015" class="nav-link">Tues, August 25, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wed-august-26-2015" class="nav-link">Wed, August 26, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thurs-august-27-2015" class="nav-link">Thurs, August 27, 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fri-august-28-2015-final-evals-due" class="nav-link">Fri, August 28, 2015 FINAL EVALS DUE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>FORCETOC</strong></p>
+<hr />
+<h1 id="sat-august-1-2015">Sat, August 1, 2015</h1>
+<p>n/a</p>
+<h1 id="sun-august-2-2015">Sun, August 2, 2015</h1>
+<p>n/a</p>
+<h1 id="mon-august-3-2015-week-11-of-14">Mon, August 3, 2015 <strong><em>Week 11 (of 14)</em></strong></h1>
+<ul>
+<li>Summoned for jury service: Spent entire day at court house in Santa
+    Cruz.</li>
+<li>Dismissed from jury duty but was called to jury box.</li>
+</ul>
+<h1 id="tues-august-4-2015">Tues, August 4, 2015</h1>
+<ul>
+<li>investigating ways of labelling faces for CLI specification<ul>
+<li>looked at:<ul>
+<li>[E] (MGED_CMD_E_upper)</li>
+<li>[e] (MGED_CMD_e_lower)</li>
+<li>[ev] (MGED_CMD_ev)</li>
+<li>[B] (MGED_CMD_B)</li>
+</ul>
+</li>
+<li>none label objects with symbols (only color change, etc. and NOT
+    faces)</li>
+<li><em>ev</em> provides some direction</li>
+</ul>
+</li>
+<li>todo: may have to implement something like <em>f_labelvert</em> (in
+    mged/overlay.c) but for face index labelling<ul>
+<li>OR have users specify verts for face selection (probably not
+    preferable)</li>
+</ul>
+</li>
+<li>updated design docs reflecting recent integrated patches</li>
+</ul>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>spent time in phone conversation negotiating / considering a job
+    offer</li>
+</ul>
+<h1 id="wed-august-5-2015">Wed, August 5, 2015</h1>
+<ul>
+<li>implementing new mged cmd called <em>labelface</em> need for kill F</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/cdbe653c24e26fea050289d6f6d9fa220931927f">commit
+    #1</a>
+    added placeholder for lableface mged cmd</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/db9a7aa52d7d3fc8c8448b99aba2ab9fc7b3aa83">commit
+    #2</a>
+    traversing model to collect a list of faces to label. work in
+    progress...</li>
+</ul>
+<h1 id="thurs-august-6-2015">Thurs, August 6, 2015</h1>
+<ul>
+<li><em>labelface</em> impl<ul>
+<li>working to get list of faceuses from nmg model</li>
+<li>working to get center coord of face polygons<ul>
+<li>this will allow labels to be displayed at center of faces</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>non-brlcad expenditures...</p>
+<ul>
+<li>spend much of the day deciding between two employment offers</li>
+<li>chose post-doctoral research over lecturer position</li>
+</ul>
+<h1 id="fri-august-7-2015">Fri, August 7, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/35e5931d443219253c223f60e1bcf15a51192723">commit
+    #1</a>
+    verified that faceuses are properly gathered in get_face_list.
+    todo: use bu_list instead of array placeholder for faceuse list.</li>
+<li>todo: need to find how to calculate barycenter for face verts (there
+    must be a utility function in brlcad)</li>
+<li>instead: <em>very easy as a simple average of coords of face verts</em><ul>
+<li>where face labels will be placed using <em>bn_vlist_3string()</em> in
+    <em>rt_label_vlist_faces()</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="sat-august-8-2015">Sat, August 8, 2015</h1>
+<p>n/a</p>
+<h1 id="sun-august-9-2015">Sun, August 9, 2015</h1>
+<p>n/a</p>
+<h1 id="mon-august-10-2015-week-12-of-14">Mon, August 10, 2015 <strong><em>Week 12 (of 14)</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/b230dec94cb5358f0337d8c7f5a2f5b588bc3180">commit
+    #1</a>
+    able to label faceuses at min pt of their bounding box. faceuse
+    index used for label. todo: need to plot label at center of face.
+    also need to find way to show both front / back facing faceuses.
+    right now they are overdrawn. placeholder array causes seg fault
+    when dereferencing empty faceuses in array.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/9efa36cfadd3e3cc8522f0489c6b4bfcbd3f6224">commit
+    #2</a>
+    using struct face as replacement to struct faceuse</li>
+<li>todo: use center of face for face index placement</li>
+<li>since there are two facesuses per face, best to use index of face
+    for label</li>
+<li>see:</li>
+</ul>
+<!-- -->
+
+<pre><code>/**
+ * Note: there will always be exactly two faceuse's using a face.  To
+ * find them, go up fu_p for one, then across fumate_p to other.
+ */
+struct face {
+    struct bu_list l;       /**&lt; @brief faces in face_g's f_hd list */
+    struct faceuse *fu_p;   /**&lt; @brief Ptr up to one use of this face */
+    union {
+    uint32_t *magic_p;
+    struct face_g_plane *plane_p;
+    struct face_g_snurb *snurb_p;
+    } g;            /**&lt; @brief geometry */
+    int flip;           /**&lt; @brief !0 ==&gt; flip normal of fg */
+    /* These might be better stored in a face_a (not faceuse_a!) */
+    /* These are not stored on disk */
+    point_t min_pt;     /**&lt; @brief minimums of bounding box */
+    point_t max_pt;     /**&lt; @brief maximums of bounding box */
+    long index;         /**&lt; @brief struct # in this model */
+};
+</code></pre>
+<h1 id="tues-august-11-2015">Tues, August 11, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/49f6daaddfd8b6630832c48c7de0f730aa136175">commit
+    #1</a>
+    now taking avg of min and max bounding extents. works great for
+    label placement.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/aa0082b0e10a15d256b59ad944bf9313154a7947">commit
+    #2</a>
+    rt_label_vlist_faces caught in infinite loop. face list element
+    had forw / back points to itself. todo: fix.</li>
+</ul>
+<h1 id="wed-august-12-2015">Wed, August 12, 2015</h1>
+<ul>
+<li>added <a href="/wiki/MGED_CMD_labelface">labelface</a>
+    documentation</li>
+<li>added patch <a href="https://sourceforge.net/p/brlcad/patches/403/">403</a> for
+    <em>labelface</em> cmd</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/2a9d3a7077547a6fe72b138ffe3d70467ddcae31">commit
+    #1</a>
+    fixed problem with adding same face struct to bu_list - which
+    caused self-referential node (forw/back pointers pointing to node
+    itself) in list</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/2f2d1ce261a5798390937ac8d334d5bf00b84fd8">commit
+    #2</a>
+    added help lookup for 'lableface'</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/5d69a16a456b2fbd607a9e9193b86aca4c8ffb15">commit
+    #3</a>
+    removed accidental redundant error checking</li>
+<li><strong>todo: implement 'kill F' next, using the indices provided in
+    display by <a href="/wiki/MGED_CMD_labelface">labelface</a></strong></li>
+</ul>
+<h1 id="thurs-august-13-2015">Thurs, August 13, 2015</h1>
+<ul>
+<li>submitted patch <a href="https://sourceforge.net/p/brlcad/patches/404/">404</a>
+    for 'kill F'</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/144539694228226172afa30c573a08688e4a369c">commit
+    #1</a>
+    added boiler-plate for ged_nmg_kill_f cmd</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/1dc5b185b818bdaa88015a53c6001852aa0cd38f">commit
+    #2</a>
+    using nmg_kfu(). loops / edges still present after faceuse / face
+    removal. todo: either verify that face is removed by testing with
+    solid face rendering, or remove loops / edges along with face...</li>
+<li>Documentation updated:
+    <a href="http://brlcad.org/wiki/MGED_CMD_nmg#Subcommands">http://brlcad.org/wiki/MGED_CMD_nmg#Subcommands</a></li>
+<li>todo: impl 'make V' as proposed</li>
+</ul>
+<h1 id="fri-august-14-2015">Fri, August 14, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/bf83734208abbc9f4d25a748580d1d908428b32f">commit
+    #1</a>
+    boiler-plate for move V mged cmd</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/777e9e006d454f851bd7f770c35807a093f32679">commit
+    #2</a>
+    move V cmd implementation. More or less a variation on kill V.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/7476b5b7f4e95c6c2ef73c1dc3c0567f5565391e">commit
+    #3</a>
+    added check for cmd argument length. should not exceed two coords.</li>
+<li>submitted patch <a href="https://sourceforge.net/p/brlcad/patches/405/">405</a>
+    for move V nmg subcommand</li>
+<li>updated docs<ul>
+<li><a href="/wiki/MGED_CMD_nmg">nmg</a></li>
+<li><a href="/wiki/MGED_CMD_labelvert">labelvert</a> for proposed -i
+    (index) option<ul>
+<li>this will allow for CLI specification with make F</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>updated <a href="../Proposal/#Project_Schedule.md">project
+    schedule</a> to
+    reflect remaining work for next week, i.e. make F, make V, labelvert
+    -i</li>
+</ul>
+<h1 id="sat-august-15-2015">Sat, August 15, 2015</h1>
+<p>n/a</p>
+<h1 id="sun-august-16-2015">Sun, August 16, 2015</h1>
+<p>n/a</p>
+<h1 id="mon-august-17-2015-week-13-of-14">Mon, August 17, 2015 <strong><em>Week 13 (of 14)</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/0e1b539601a3167dcce14d98601612815502ae66">commit
+    #1</a>
+    beginning of vertex index labelvert -i option.</li>
+<li>crashing in bn_vlist_3string with MAT_DELTAS_VEC(
+    xlate_to_origin, origin );</li>
+<li>todo: fix above issue</li>
+</ul>
+<h1 id="tues-august-18-2015">Tues, August 18, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/b7d06366f26525d4d28cbc674cf1579dd90b1c25">commit
+    #1</a>
+    labelvert -i option working. however, code uses new struct vtxlabel
+    to avoid potential lists already used by nmg datastructure (struct
+    vertex). also, there is no freeing of label list. todo: either use
+    struct vertex instead if there is no list in nmg structure using
+    struct vertex, or free list appropriately after usage.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/05790259d2ecd8347c287494dba8895fb335755e">commit
+    #2</a>
+    struct vertex does not have a l bu_list. do not want to alter nmg
+    types. thus, now freeing struct vtxlabel list after use.</li>
+<li>todo: will cleanup above commits (if needed) and submit as patch
+    tomorrow</li>
+</ul>
+<h1 id="wed-august-19-2015">Wed, August 19, 2015</h1>
+<ul>
+<li>posted patch: <a href="https://sourceforge.net/p/brlcad/patches/412/">412</a></li>
+<li>posted patch: <a href="https://sourceforge.net/p/brlcad/patches/409/">409</a></li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/c54ea02a09eb78003e5d1dc43b0e4aadb3fafcf7">commit
+    #1</a>
+    now freeing heap memory for vertex label list</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/2f9576729eb60133ba1ebcfddacc3dba6e0fb7a4">commit
+    #3</a>
+    using bu_malloc and bu_free now.</li>
+<li>make V subcommand:<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/931eb783599ff956b69ca594d2912e72376e373b">commit
+    #2</a>
+    boiler-plate for make V cmd</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/59760062ff10d5cca5df14af2693ac6a49a7502f">commit
+    #4</a>
+    getting casting error with return variable from nmg_mvvu()</li>
+</ul>
+</li>
+</ul>
+<h1 id="thurs-august-20-2015">Thurs, August 20, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/ed9acc12b1ee48f486ab1eb2d8261ede791e87ae">commit
+    #1</a>
+    apparently we don't want to create a new loopuse for each new
+    isolated vertex. can only add one vertex per shell. so, todo: use
+    nmg_msv, for each new vertex + shell.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/a424344f653a9ef0ca4f50f36d7db6137d4f3ffa">commit
+    #2</a>
+    working and cleaned up ged_nmg_kill_v. now adding a new shell
+    when needed for a new vertex coord.</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/248c05b10d46c007cb208d2517afe79745f2e871">commit
+    #3</a>
+    added info about move V subcommand.</li>
+<li>patch hasn't build properly with merge of latest changes
+    (nmg_make_v.c) to trunk...working on it. todo: submit patch
+    tomorrow??<ul>
+<li>build dies @ 97 percent for linking ../../../../bin/step-g?</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/801d4143aa4cf6935163ef8b22a178aa46b4f9dc">commit
+    #4</a>
+    simplified code to not add into existing shell. this was causing
+    an undef linking error due to header issues with nmg_mvvu().</li>
+</ul>
+</li>
+<li>'make V' nmg subcommand patch submitted, see...<ul>
+<li>patch <a href="https://sourceforge.net/p/brlcad/patches/414/">414</a> Adds
+    new vertices specified by their coords. Each vertex is added to
+    a new shell in the NMG object.</li>
+</ul>
+</li>
+<li>todo: will see if I can get 'make F' working and submitted by COB
+    tomorrow...</li>
+<li>todo: minor updates to mged nmg docs as well.</li>
+<li>todo: fix up -i option patch</li>
+</ul>
+<h1 id="fri-august-21-2015-firm-pencils-down">Fri, August 21, 2015 <strong><em>FIRM PENCILS DOWN</em></strong></h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/688c64e1d20b8bbd0d24ee727fcd241a47b8a151">commit
+    #1</a>
+    moved vtxlabel struct def to rt/vlist.h</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/d058369dc0ec7815364df314bb7d2e2d17b099be">commit
+    #2</a>
+    boiler-plate for ged_nmg_make_F subcommand</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/ff9ea3190265b3aafdf6c16b57ae10a03ad67be3">commit
+    #3</a>
+    added find verts function stub with nmg traversal</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/4a6bea01bef8d6b84d58111d2547a6c85935f10e">commit
+    #4</a>
+    make F working for three vertices specified by labelvert -i index
+    labels</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/fdd8abb11d46c31d3294a7aaff02a72bfeadf3ec">commit
+    #5</a>
+    first take on variabel command line with F</li>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/12bb0c06cfa8b8dc28aa25fcfbee6e4329b552db">commit
+    #6</a>
+    appears to work for multiple F</li>
+<li>todo: will submit patch for move F over weekend after more
+    testing...</li>
+</ul>
+<h1 id="sat-august-22-2015">Sat, August 22, 2015</h1>
+<ul>
+<li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/c2e49d80e0776ea6da4358a345a04f56e0088b90">commit
+    #1</a>
+    processing mulitple faces on command line for 'make F' subcommand</li>
+<li>submitted patch <a href="https://sourceforge.net/p/brlcad/patches/415/">415</a>
+    for 'make F' subcommand</li>
+<li>finished final evaluation on google-melange</li>
+<li>updated <a href="/wiki/MGED_CMD_nmg">mged nmg subcommands</a>
+    documentation</li>
+</ul>
+<h1 id="sun-august-23-2015">Sun, August 23, 2015</h1>
+<p>n/a</p>
+<h1 id="mon-august-24-2015-week-14-of-14">Mon, August 24, 2015 <strong><em>Week 14 (of 14)</em></strong></h1>
+<p>n/a</p>
+<h1 id="tues-august-25-2015">Tues, August 25, 2015</h1>
+<p>n/a</p>
+<h1 id="wed-august-26-2015">Wed, August 26, 2015</h1>
+<p>n/a</p>
+<h1 id="thurs-august-27-2015">Thurs, August 27, 2015</h1>
+<p>n/a</p>
+<h1 id="fri-august-28-2015-final-evals-due">Fri, August 28, 2015 <strong><em>FINAL EVALS DUE</em></strong></h1>
+<p>n/a</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Parth_Partani/GSoC18/Project/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Project - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Parth_Partani/GSoC18/Project.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#librecad-3-opengl-rendering" class="nav-link">LibreCAD 3 OpenGL rendering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="librecad-3-opengl-rendering"><strong>LibreCAD 3 OpenGL rendering</strong></h2>
+<h3 id="abstract"><strong>Abstract</strong></h3>
+<p>Librecad ( 2D cad application) can be used for drawing all types for
+basic shapes on a specified grid area with a very good precision in the
+position and can be used to draw 2D figures using lines, circles ,
+rectangles, arc’s, etc. Also there are other tools of layers, snap,
+measure of two points and a command line interface to figure out all the
+shapes using commands.</p>
+<h3 id="brief-summary"><strong>Brief Summary</strong></h3>
+<p>Currently rendering of the complete librecad is done using cairo engine.
+It’s backend does involves some part of opengl but I would like to
+change the rendering engine and create a complete implementation of
+OpenGl for the rendering. It would reduce some dependencies of cairo,
+GTK, etc and another advantages of using OpenGl is it has lower CPU
+overhead for draw calls which will make the working of Librecad faster.</p>
+<p>Right now rendering is done completely using cairo, so my goals will be
+writing code for the rendering engine in OpenGl ( c/c++ ).</p>
+<p>Under the time period of GSoC I would be working on changing the
+rendering engine which mainly involves the Working Area which contains
+painter and this will include everything that needs to draw on screen.
+Also this task will involve with the changes in the part of Command Line
+Interface tool that creates the image of the result depending on the
+command entered and for the testing of the engine task will include some
+unit tests.</p>
+<h3 id="detailed-project-description"><strong>Detailed Project Description</strong></h3>
+<ul>
+<li>Creating the drawing area with the background and adding grid using
+    horizontal and vertical lines that renders when the program begins
+    and display of the image until any changes are made.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Implementation of scroll bar (both horizontal and vertical) and set
+    the camera coordinates to fix initial fixed coordinates as the grid
+    is very large to fit in a single screen.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Adding the feature of zoom in and zoom out to the working area. On
+    zoom, the engine scales the grid and everything on the drawing area
+    with a particular factor and output the scaled image keeping the
+    center according to mouse pointer where zoom is done.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Creating the mouse pointer with the shape as in the earlier code and
+    display of current coordinates of the mouse pointer. On movement of
+    mouse, continuous rendering occurs and renders the image with
+    pointer at new position and also the display of the coordinates of
+    that position.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working of draw tools such as lines, circles, arcs, etc. On select
+    of any of the tool for UI command line interface displays the
+    arguments for the tool. The shape gets created over the grid which
+    displays and highlights the vertices with small squares and
+    highlights the shape when mouse pointer passes through the shape.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Creating of the select feature. On selecting any point on the
+    working area and dragging the mouse pointer a rectangle gets created
+    of different color and the engine keeps on displaying the rectangle
+    of different area as the mouse moves. If any object happens to lie
+    completely inside the selected area. The particular object gets
+    highlighted along with its reference points. After the release of
+    the mouse, the image of the rectangle dissolves.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Currently cairo consists of subdirectory cmake which check for the
+    dependencies i.e. cairo, pango, GDK, etc. For the new engine it will
+    check for all dependencies of OpenGl. Also adding part for compiling
+    using opengl in CMakeFiles.txt and further it would give a choice of
+    compiling Librecad using any of the engine according to user.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Working on unit tests for the testing of rendering by OpenGl. There
+    will be changes in unit tests for rendering and comparing ( with
+    some tolerance ) examples from the resources. Along with this there
+    will be some changes in CMakeFiles.txt because these tests need to
+    be compiled with OpenGl.</li>
+</ul>
+<h3 id="timeline">Timeline</h3>
+<p>Tentative timeline of the project over the summer of 2018.</p>
+<ul>
+<li>Community Bonding Period :<ul>
+<li>I will try to complete the research of the previous
+    implementation of the proposed task and also do with the
+    documentation and description of opengl required in my task) and
+    try to get familiar with the working before this period and move
+    on to creation of basic classes in the code.</li>
+<li>I will look at the other implementations of my proposed task and
+    learn about their implementation and get started with it.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 1 (May 14 - May 20) :<ul>
+<li>Build a layout for the painter i.e. basic grid and setting
+    camera coordinates at some initial fixed position.</li>
+<li>Also adding scrollbar for horizontal and vertical scrolling up
+    to some extent.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 2 (May 21 - May 27) :<ul>
+<li>Creating a mouse pointer of particular shape and making it's
+    movement in sync with the movement of the mouse.</li>
+<li>Dynamic saving and printing of the current coordinates of the
+    mouse.</li>
+<li>Working of the scrollbars and printing of the grid according to
+    the scroll amount.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 3 (May 28 - June 3) :<ul>
+<li>Working of the zoom feature and testing of the proper scaling
+    according to the zoom.</li>
+<li>Getting started with the drawing of the cad tools.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 4 (June 4 - June 10) :<ul>
+<li>Test my activity and refine it.</li>
+<li>Take more reviews for my work from the mentors.</li>
+<li>Make required changes on the basis of reviews.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 5 (June 11 - June 17) :<ul>
+<li>Completing the working of all the basic draw tools.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 6 (June 18 - June 24) :<ul>
+<li>Working on the other tools i.e. the dimension tools and also the
+    working of the modify tools.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 7 (June 25 - July 1) :<ul>
+<li>Continued working on the implementation of cad tools.</li>
+<li>Testing of the working of draw shapes using command line
+    interface.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 8 (July 2 - July 8) :<ul>
+<li>Working of the select feature by click and drag on the area and
+    working on rendering rectangle and related objects.</li>
+<li>Dissolving of the rectangle for selection area on release and
+    highlight of the shape select.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 9 (July 9 - July 15) :<ul>
+<li>Continuing the unfinished work of the rectangle and highlight of
+    objects due to it.</li>
+<li>Working of the building of unit tests for the rendering and the
+    comparing the rendered image with the image in the resources.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 10 (July 16 - July 22) :<ul>
+<li>Checking tests for different tolerance values and check on the
+    proper working of the tests.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 11 (July 23 - July 29) :<ul>
+<li>Working on the choice feature of the CMakeFiles.txt to compile
+    the render according to the user input.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Week 12 (July 30 - Aug 5) :<ul>
+<li>Testing the working on both engines and working of choice
+    feature and **resolving bugs.</li>
+</ul>
+</li>
+</ul>
+<p>Get the changes reviewed from mentors and make the changes accordingly.</p>
+<h3 id="why-me">Why Me</h3>
+<p>I am a second year undergraduate engineering student from International
+Institute of Information Technology, Hyderabad (IIIT-H), pursuing B.Tech
+in Electronics and Communication Engineering. I have been contributing
+to open source projects from the last few months. I love developing
+games and I have created a few games on Qt and OpenGl.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

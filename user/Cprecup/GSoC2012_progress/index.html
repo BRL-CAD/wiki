@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Cprecup/GSoC2012_progress/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Coding period - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Cprecup/GSoC2012_progress.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#coding-period" class="nav-link">Coding period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-period" class="nav-link">Community bonding period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="coding-period">Coding period</h1>
+<h3 id="week-14"><em>Week 14</em></h3>
+<h4 id="firm-pencils-down-day-20082012">Firm pencils down day: 20/08/2012</h4>
+<ul>
+<li>Adjusted the <em>doc/docbook/system/mann/en/graph.xml</em> according to the
+    changes made on the subcommands and added a brief documentation for
+    the <strong>igraph</strong> command.</li>
+</ul>
+<h3 id="week-13"><em>Week 13</em></h3>
+<h4 id="19082012">19/08/2012</h4>
+<ul>
+<li>Added two subcommands for the <strong>graph</strong> command: <strong>show</strong> and
+    <strong>positions</strong>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Removed the previous <em>graph_objects_positions</em> and
+    <em>graph_structure</em> commands.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Renamed the previously named Tcl <em>graph</em> procedure into <strong>igraph</strong> -
+    this command launches the interactive graph; along with this
+    procedure, the <em>src/tclscripts/graph</em> was renamed into
+    <em>src/tclscripts/</em><em>igraph</em><strong>, and the file
+    <em>src/tclscripts/graph/graph.tcl<em> was renamed into
+    </em>src/tclscripts/**igraph/igraph.tcl</em></strong>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The <strong>igraph</strong> command works in MGED; when launched in Archer, an
+    error message in outputted saying that the command is not available
+    yet.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Took care of some command error cases (C and Tcl).</li>
+</ul>
+<h4 id="18082012">18/08/2012</h4>
+<ul>
+<li>Again tried to integrate the previously mentioned command in
+    Archer - Didn't find an example that would suit me. I found commands
+    that would have procedures that use C wrapped commands but they were
+    either working strictly for Archer or for MGED, not for both.</li>
+</ul>
+<h4 id="17082012">17/08/2012</h4>
+<ul>
+<li>Introduced a <strong>graph</strong> command and its <strong>show</strong> subcommand.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tried to get rid of an <em>"invalid command name "graph" while
+    executing "graph show""</em> error but didn't find a solution - this
+    appears when I run my procedure in Archer. When running this
+    procedure in MGED, no such error appears and the graph is generated
+    correctly.</li>
+</ul>
+<h4 id="16082012">16/08/2012</h4>
+<ul>
+<li>Enabled error message in MGED for the <strong>graph</strong> command in case the
+    Adaptagrams library isn't available.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started reorganizing the <strong>graph</strong> command in subcommands.</li>
+</ul>
+<h4 id="15082012">15/08/2012</h4>
+<ul>
+<li>Added a basic brlman documentation for the <strong>graph</strong> command.</li>
+</ul>
+<h4 id="14082012">14/08/2012</h4>
+<ul>
+<li>Grouped top-level commands under a single <strong>graph</strong> command. Came up
+    with an approach on how to tackle the following problem: there would
+    exist a C implemented "graph" command and also a Tcl procedure named
+    "graph" and when ran in MGED the C one is ran instead of the Tcl
+    one. Waiting for a response before committing the changes.</li>
+</ul>
+<h4 id="13082012">13/08/2012</h4>
+<ul>
+<li>Fixed a bug that appeared when launching Archer due to the
+    <strong>graph_objects_positions</strong> command.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Started work on integrating the <strong>graph</strong> command in Archer.
+    Encountered some problems due to the fact that there isn't a
+    corresponding <em>ged_graph</em> C routine that can be used. The procedure
+    is simply defined in Tcl.</li>
+</ul>
+<h3 id="week-12"><em>Week 12</em></h3>
+<h4 id="12082012">12/08/2012</h4>
+<ul>
+<li>Cleaned up the layout source code that was about to be committed.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Replaced the connection lines that existed between two nodes with
+    polylines and added arrows at the end of each connection line.</li>
+</ul>
+<h4 id="11082012">11/08/2012</h4>
+<ul>
+<li>Finished creating the routines that provide a decent layout for the
+    graph.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added vertices between the nodes.</li>
+</ul>
+<p>Here is how the graph for the <em>share/db/axis.g</em> database looks like now:</p>
+<p><img alt="" src="/wiki/user/img/Graph_editor_v2.png" /></p>
+<!-- -->
+
+<p>Commit will be made as soon as the source code is cleaned up.</p>
+<h4 id="10082012">10/08/2012</h4>
+<ul>
+<li>Continued working on the layout part.</li>
+</ul>
+<h4 id="09082012">09/08/2012</h4>
+<ul>
+<li>Started research and work for solving the layout issue of a graph.</li>
+</ul>
+<h4 id="08082012">08/08/2012</h4>
+<ul>
+<li>Added the <strong>decorate_object(struct _ged_dag_data *, char *,
+    int)</strong> routine in <em>src/libged/dag.cpp</em>. This creates a new entry
+    into a hash table for each newly detected object and sets the
+    entry's value depending on the type of object: <em>primitive</em>,
+    <em>combination</em>, or <em>something else</em>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Used these types to differently colour the rectangles in the graph
+    editor.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Introduced a text widget with the name of the object within each
+    rectangle.</li>
+</ul>
+<p>Here is the window that the <strong>graph</strong> command launches for the
+<em>share/db/axis.g</em> database:</p>
+<!-- -->
+
+<p><img alt="" src="/wiki/user/img/Graph_editor_v1.png" /></p>
+<h4 id="06082012">06/08/2012</h4>
+<ul>
+<li>Looked for a method to store object's colour and name related
+    information within an Adaptagrams graph structure.</li>
+</ul>
+<p>This is needed for implementing the decorative routines for each type of
+object. Couldn't find a method. Worked on an alternative method to store
+this information.</p>
+<h3 id="week-11"><em>Week 11</em></h3>
+<h4 id="05082012">05/08/2012</h4>
+<ul>
+<li>Updated the <strong>ged_graph_objects_positions</strong> routine; it now
+    passes the objects and positions within the graph to the Tcl field.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Used this command in the <em>src/tclscripts/graph/GraphEditor.tcl</em>. The
+    objects are now drawn at the specified positions using a Tk Canvas
+    widget inside a window.</li>
+</ul>
+<h4 id="04082012">04/08/2012</h4>
+<ul>
+<li>The <strong>ged_graph_objects_positions</strong> can now be used as a command
+    within the Tcl field to retrieve objects' positions within the
+    graph.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Made sure that the commands <strong>graph_structure</strong>, and
+    <strong>graph_objects_positions</strong> always exist so that the user is
+    informed that he/she invoked a valid command, although the
+    Adaptagrams library is not available.</li>
+</ul>
+<h4 id="01082012">01/08/2012</h4>
+<ul>
+<li>Again tried to figure out the logic between the data processed in
+    the <em>C</em> implementation of a command and the data received in the
+    <em>tcl</em> file when running this command.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Finally got the idea after having a talk with <strong>starseeker</strong>.</li>
+</ul>
+<h4 id="30072012">30/07/2012</h4>
+<ul>
+<li>Looked for a pattern to follow in the implementation of <em>C</em> commands
+    that are to be used in the Tcl land. Found the files that need to be
+    modified according to the existence of a new command.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>It's not clear to me how the data used in a <em>tcl</em> file where a
+    command is ran is passed on to this <em>tcl</em> file.</li>
+</ul>
+<h3 id="week-10"><em>Week 10</em></h3>
+<h4 id="29072012">29/07/2012</h4>
+<p>Developed a first version of a routine
+(<em>ged_graph_objects_positions</em>) that returns the positions for each
+object from the database. This is supposed to be used by a GUI component
+that draws the objects using Tk Canvas inside a window.</p>
+<h4 id="28072012">28/07/2012</h4>
+<ul>
+<li>Had trouble with a <em>make distcheck</em> error.</li>
+<li>Ran tests for the two commands that were implemented:
+    "graph_structure" and "graph".</li>
+</ul>
+<p>The name of "graph_structure" might be adjusted. Subcommands need to be
+added. So far, there is a view command but what it actually does is
+traverse the database and define its corresponding graph. The steps for
+this need to be split in smaller routines that would eventually be
+called as subcommands.</p>
+<h4 id="27072012">27/07/2012</h4>
+<ul>
+<li>Managed to pop up the window in MGED by simply running the "graph"
+    command.</li>
+</ul>
+<h4 id="24072012">24/07/2012</h4>
+<ul>
+<li>Worked on popping up a new window when running the <em>graph</em> command.
+    With starseeker's help I found out that one of my script wasn't
+    "loaded". Eventually I tackled this. However, the window still
+    doesn't pop up when running the command; it shows up only when
+    running <em><tcl_script_name> .window1</em>.</li>
+</ul>
+<h3 id="week-9"><em>Week 9</em></h3>
+<h4 id="22072012">22/07/2012</h4>
+<ul>
+<li>Created the command "<strong>graph</strong>". For now, it can be ran in MGED like
+    this: "<strong>graph view</strong>" and it calls a routine in src/libged/dag.cpp:
+    <em>ged_graph()</em>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Worked on creating a new window when running this command.</li>
+</ul>
+<p>There is no commit because the code might need some restructuring.</p>
+<h4 id="19072012">19/07/2012</h4>
+<ul>
+<li>Implemented the <strong>put_me_in_a_bucket</strong> routine that figures out
+    the type of an object, adds its name to a vector and defines a
+    corresponding shape in the graph.</li>
+</ul>
+<h4 id="18072012">18/07/2012</h4>
+<ul>
+<li>Replaced the 3 hash tables (solids, regions, and groups) with 3
+    vectors of names (primitives, combimations, and non_geometries).</li>
+</ul>
+<h4 id="16-17072012">16-17/07/2012</h4>
+<ul>
+<li>Discussed about modifications for the current src/libged/dag.cpp
+    file: use a single hash table that stores the names and IDs of all
+    the objects and lists of names for each type of an object:
+    primitive, combination, non-geometry.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Worked on the above modification. So far:<ul>
+<li>created a new master hash table called "objects" with the names
+    and IDs of all the objects;</li>
+<li>worked on switching from the hash tables to simple lists of
+    names for each type of an object.</li>
+</ul>
+</li>
+</ul>
+<h3 id="week-8"><em>Week 8</em></h3>
+<h4 id="13072012">13/07/2012</h4>
+<ul>
+<li>Summarized the progress made so far</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Updated the future milestones for this project</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Currently figuring out a plan for a user-visible feature in
+    Archer/MGED, i.e., a command that would open a window displaying the
+    graph corresponding to the displayed geometry.</li>
+</ul>
+<h4 id="11072012">11/07/2012</h4>
+<ul>
+<li>Allocated space for each <em>value</em> of an entry of a hash table outside
+    the hash table. In the <em>value</em> field of an entry I've just copied
+    the pointer to this memory space.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Implemented a method that frees the space allocated for these
+    values.</li>
+</ul>
+<h4 id="10072012">10/07/2012</h4>
+<ul>
+<li>Removed entries from the <em>solids</em> hash table whenever an object is
+    discovered to be a <em>region</em> or a <em>group</em>. Switched to working with
+    pointers for <em>bu_hash_tbl</em> structures. Freed memory for each
+    allocation.</li>
+</ul>
+<h4 id="09072012">09/07/2012</h4>
+<ul>
+<li>Made some small modifications on the <em>src/libged/dag.cpp</em> related to
+    memory allocation.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tried to deallocate memory for a certain entry in a hash table but
+    didn't find a proper solution to this. In the <em>hash.c</em> I've only
+    found the function <strong>bu_hash_tbl_free(struct bu_hash_tbl
+    *hsh_tbl)</strong> which is not what I need because I don't want to
+    deallocate the memory for the whole table but, instead, just for one
+    entry. Need to find out how it's supposed to be done.</li>
+</ul>
+<h3 id="week-7"><em>Week 7</em></h3>
+<h4 id="07072012">07/07/2012</h4>
+<ul>
+<li>Introduced id's for each object in the database and finished
+    memorizing the data.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Taking into account what hash table it belongs to, each object has
+    now a corresponding shape and (if needed) links to the nodes of its
+    'subtree' in the graph.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Duplication is now avoided because each shape of the router has a
+    corresponding id.</li>
+</ul>
+<p>Here's the graphical output for the <em>share/brlcad/7.22.1/db/axis.g</em>
+(that was put in a .svg file, for now):
+<img alt="" src="/wiki/user/img/Graph_link_nodes_no_duplications.png" /></p>
+<!-- -->
+
+<p>Compared to the one mentioned on <em>01/07/2012</em>, one can observe that the
+number of nodes has been reduced to a single one in case of
+duplications. The links between the nodes are overlapping for now. This
+needs to be taken care of.</p>
+<h4 id="06072012">06/07/2012</h4>
+<ul>
+<li>Continued working on the code that is meant to memorize data related
+    to each object in a database into the three below mentioned hash
+    tables.</li>
+</ul>
+<h4 id="05072012">05/07/2012</h4>
+<ul>
+<li>Replaced the <strong>bu_ptbl</strong> structures with <strong>bu_hash_tbl</strong> for the
+    three kinds of tables: <em>regions</em>, <em>groups</em> and <em>solids</em>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Implemented code for adding <strong>bu_hash_entry</strong>s into the hash
+    tables. Encountered some problems on this part as well as where I
+    have to establish the size of each <em>lists</em> field in a hash table.</li>
+</ul>
+<h4 id="03072012">03/07/2012</h4>
+<ul>
+<li>Found a way to eliminate node duplications depending on their
+    names - use the <strong>struct bu_hash_tbl</strong>.</li>
+</ul>
+<h4 id="02072012">02/07/2012</h4>
+<ul>
+<li>Fixed the representation of solid objects: instead of dashed line
+    they are represented by rectangles now.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Introduced a temporary method for positioning the nodes into the
+    graph.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Cleaned up the code and committed the changes.</li>
+</ul>
+<h3 id="week-6"><em>Week 6</em></h3>
+<h4 id="01072012">01/07/2012</h4>
+<ul>
+<li>Managed to link each COMB node with the nodes of its subtree.</li>
+</ul>
+<p>Here's the graphical output (that was put in a .svg file, for now):
+<img alt="" src="/wiki/user/img/Graph_link_nodes.png" /></p>
+<!-- -->
+
+<p>One can observe that for some nodes there are branches that link to
+other nodes. As a helper, <a href="http://pastebin.mozilla.org/1687225">here</a> is
+the listed output of what the algorithm is doing in the background.</p>
+<!-- -->
+
+<p>The order in which they were outputted is the one in which the directory
+was traversed. The alignment is due to a linear function that I used for
+the coordinates of the rectangles that represent each node. This needs
+to be modified as well as the duplicated nodes and the representation of
+solids (here, they appear as a single dash line instead of a rectangle).</p>
+<h4 id="30062012">30/06/2012</h4>
+<ul>
+<li>Looked for an example that would give me hints on how to find and
+    traverse a subtree of a combination in order to create actual links
+    between the nodes. Decided that <em>src/conv/g-dot.c</em> is a good
+    starting point.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Worked on the implementation of a method called <em>dag_comb</em> that is
+    meant to create links between the COMB node and the ones from its
+    subtree. Didn't commit anything because it's not finished and the
+    code needs to be cleaned up eventually.</li>
+</ul>
+<h4 id="29062012">29/06/2012</h4>
+<ul>
+<li>Looked in the <em>src/tclscripts/geometree</em> folder with the purpose of
+    understanding how the MVC (model, view, controller) pattern is
+    applied there.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Been suggested that it would be a good idea to create a graph image
+    instead (for now). Therefore, I started working on the connections
+    between different nodes in the graph.</li>
+</ul>
+<h4 id="25062012">25/06/2012</h4>
+<ul>
+<li>Committed my latest changes:</li>
+</ul>
+<p>:#Added special cases for when the Adaptagrams library is found or not
+found. Don't add dag.cpp to ged_ignore_files if the library is not
+found; i.e., always compile it. -- <em>src/libged/CMakeLists.txt</em></p>
+<p>:#Use the #define HAVE_ADAPTAGRAMS in the src/libged/dag.cpp file in
+order to be compiled regardless of the fact that libavoid exists or no.
+Fixed indentation. -- <em>src/libged/dag.cpp</em></p>
+<p>:#Added a compile-time preprocessor #define HAVE_ADAPTAGRAMGS --
+<em>CMakeLists.txt</em></p>
+<ul>
+<li>Started looking for .tcl files that I could use as examples and from
+    which I could get methods for implementing a view. My attemp is to
+    print out the hierachy structure build with the <em>dag.cpp</em>'s methods
+    in a user's window.</li>
+</ul>
+<h3 id="week-5"><em>Week 5</em></h3>
+<h4 id="23062012">23/06/2012</h4>
+<ul>
+<li>After accessing the <em>distcheck-enableall_release.log</em> file I found
+    out that the error wasn't generated because of my changes. There are
+    usages of <strong>strcmp</strong> in the <em>src/conv/g-voxel.c</em> file that have to
+    be replaced by <strong>bu_strcmp</strong>. After making this change, running the
+    command</li>
+</ul>
+<p><code>make distcheck</code></p>
+<p>ended well.</p>
+<ul>
+<li>There was a problem caused by the duplicated existence of a variable
+    named PARALLEL. It was included by both <em>libavoid.h</em> and <em>common.h</em>
+    so I had to figure out a way in which my program would compile and
+    none of these two values would be lost/modified during the
+    execution.</li>
+</ul>
+<h4 id="22062012">22/06/2012</h4>
+<ul>
+<li>Introduced a <strong>HAVE_ADAPTAGRAMS</strong> #define and wrapped most of the
+    code in <em>src/libged/dag.cpp</em> in a <strong>#ifdef</strong> - <strong>#endif</strong>. Still
+    need to add the <strong>#else</strong> case that would provide a useful note
+    stating that the library is unavailable.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Altered the <em>src/libged/CMakeLists.txt</em> file correspondingly.</li>
+</ul>
+<p>Compilation is ok but the command</p>
+<p><code>make distcheck</code></p>
+<p>generates an error. I haven't yet figured out what the problem is.</p>
+<h4 id="20062012">20/06/2012</h4>
+<ul>
+<li>Found a potential solution that could solve the below issue: I've
+    compiled Adaptagrams with the flag <strong>-fPIC</strong>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Discussed it with one of the mentors (brlcad). I was recommended to
+    rather add a compile-time preprocessor define like <strong>HAVE_AVOID</strong>
+    and enable linkage against the LIBAVOID_LIBRARY in the
+    <em>src/libged/CMakeLists.txt</em> file than add the file to
+    <strong>ged_ignore_files</strong>.</li>
+</ul>
+<h4 id="19062012">19/06/2012</h4>
+<ul>
+<li>Currently, BRL-CAD doesn't build because my <em>src/libged/dag.cpp</em>
+    can't access elements from the avoid library. BRL-CAD built in the
+    previous attempts because I added a <strong>main</strong> function inside
+    <em>dag.cpp</em> for which I would add the line</li>
+</ul>
+<p><code>BRLCAD_ADDEXEC(dag dag.cpp avoid)</code></p>
+<p>inside the <em>CMakeLists.txt</em> file.</p>
+<p>The main function was added just for testing purpose so I didn't commit
+it. Without the <strong>main</strong> function, and adding <strong>${AVOID_LIBRARY}</strong> with
+the <strong>BRLCAD_ADDLIB</strong> command generates
+<a href="http://pastebin.mozilla.org/1668038">this</a> error.</p>
+<p>So far, after doing a little research I came to the conclusion that this
+is because the libavoid library is static.</p>
+<h4 id="18062012">18/06/2012</h4>
+<ul>
+<li>Fixed src/libged/CMakeLists.txt because make distcheck wouldn't
+    work.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added reference to the dag.cpp file for the OLD build system.</li>
+</ul>
+<h3 id="week-4"><em>Week 4</em></h3>
+<h4 id="17062012">17/06/2012</h4>
+<ul>
+<li>Implemented methods that are used for adding a rectangle to the
+    construction of the graph for each object in the database (please
+    see <em>src/libged/dag.cpp</em> file).</li>
+</ul>
+<p>For this, I have modified my previous implementation, more exactly,
+simplified it.</p>
+<ul>
+<li>Eliminated search for the libavoid library from
+    <em>src/conv/CMakeLists.txt</em> and added it into the folder
+    <em>src/libged/CMakeLists.txt</em>.</li>
+</ul>
+<h4 id="16062012">16/06/2012</h4>
+<p>Started implementing the model for a directed acyclic graph in the
+<em>src/libged</em> folder. So far, it contains a structure and a method that
+initializes elements of such a structure.</p>
+<h4 id="15062012">15/06/2012</h4>
+<p>Looked through the <em>src/libged</em>, <em>src/gtools</em> and <em>src/tclscripts</em>
+folders for MVC pattern implementation. Still have doubts about how to
+structure the pattern in BRL-CAD.</p>
+<h4 id="13062012">13/06/2012</h4>
+<p>Corrected the implementation mentioned below. Had a discussion about the
+proper locations for MVC implementation files.</p>
+<h3 id="week-3"><em>Week 3</em></h3>
+<h4 id="10062012">10/06/2012</h4>
+<p>Worked on the C++ implementation of a class that contains methods
+similar to the ones in <em>src/conv/g-dot.c</em>. This approach remains to be
+debated.</p>
+<h4 id="08062012">08/06/2012</h4>
+<p>By using the <em>src/conv/g-dot.c</em> I generated a .svg file that contains
+information about the graph's nodes, i.e., for each node that appears in
+a <strong>.dot</strong> file I generated a corresponding one by using libavoid.</p>
+<p>The .svg file was generated and opened in a visual mode for checkup
+purposes: one rectangle per object in the hierarchy can be observed.</p>
+<h4 id="07062012">07/06/2012</h4>
+<p>Managed to run a C++ Adaptagrams example(that uses libavoid) inside
+BRL-CAD.</p>
+<h4 id="05062012">05/06/2012</h4>
+<ul>
+<li>Added helper script <em>misc/CMake/FindADAPTAGRAMS.cmake</em> to check for
+    libavoid's existence as a system-installed library and mark as
+    advanced the set variables.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Modified the cmake check for libavoid in <em>src/conv/CMakeLists.txt</em>
+    accordingly.</li>
+</ul>
+<h4 id="04062012">04/06/2012</h4>
+<p>Added a cmake check in <em>src/conv/CMakeLists.txt</em> in order to find the
+system-installed version of libavoid. If it doesn't find it, it prints a
+status message saying it couldn't find it - no error occurs in either
+cases (found or not found).</p>
+<h3 id="week-2"><em>Week 2</em></h3>
+<h4 id="03062012">03/06/2012</h4>
+<p>Compilation of BRL-CAD failed because of some 'set but unused variable'
+warnings treated as errors. Commited a fix for one of them.</p>
+<p>Started work on checking the existence of the libavoid library as a
+system-installed dependecy.</p>
+<h4 id="02062012">02/06/2012</h4>
+<p>Started working on a file that would take each element of the tree and
+process it with libavoid's methods. As a support example I found the
+<em>src/conv/g-dot.c</em> file.</p>
+<p>Failed attempt to integrate libavoid into BRL-CAD. After further
+discussions (03/06/2012) it was established that it's best to do this
+after I have the functionality going, somewhere in late July.</p>
+<h4 id="01062012">01/06/2012</h4>
+<p>Tried to recompile an <em>example.cpp</em> file where the Adaptagrams' library
+is used outside its main folder. Previous attempt to do this was
+unsuccessful. I Managed to compile it after all.</p>
+<p>Looked for a location where I could implement functions that would
+traverse a tree and construct a DAG with Adaptagrams' library.</p>
+<p>I'm still trying to understand how <em>librt/db_tree.c</em> and <em>db_walk.c</em>
+work in the background.</p>
+<h4 id="30052012">30/05/2012</h4>
+<p>Adaptagrams will be used as the library of tools.</p>
+<p>I've made a plan that sketches what will happend on each side of the MVC
+pattern for this project.</p>
+<p>The process behind the, let's call it for now, <strong>'igl</strong>' (Interactive
+Graph Layout) command that lauches the GUI is the following:</p>
+<ul>
+<li>access the geometry's hierarchy by using the <strong>'tree</strong>' command with
+    an additional option <strong>'g</strong>' that returns the corresponding DAG.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>traverse this graph and construct it with the help of Adaptagram's
+    library <em>libavoid</em>. Libavoid provides polyline connector routing in
+    order to avoid obstacle objects. The result is passed on to the
+    Tcl/Tk implementation where it will be outputted (View).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>on user action (for example: <strong>'move</strong>' or <strong>'delete</strong>' command is
+    called), announce the Controller, apply modifications onto the graph
+    by using libavoid.</li>
+</ul>
+<p>Remark: other uses of Adaptagram's libraries should/may be added.</p>
+<h4 id="28052012">28/05/2012</h4>
+<p>Used Adaptagrams' static libraries as external ones by creating a source
+code file that calls methods from these libraries.</p>
+<h3 id="week-1"><em>Week 1</em></h3>
+<h4 id="27052012">27/05/2012</h4>
+<p>Studied Adaptagrams' documentation. Listed strong and weak points of
+both graph libraries, GOBLIN and Adaptagrams.</p>
+<h4 id="26052012">26/05/2012</h4>
+<p>Compiled Adaptagrams; studied and ran examples provided for libcola and
+libavoid.</p>
+<h4 id="25052012">25/05/2012</h4>
+<ol>
+<li>Worked on compiling GOBLIN. However, I get a lot of errors. You can
+    find them <a href="http://pastebin.mozilla.org/1650086">here</a>. I am assuming
+    it's because of the c++ standard and their latest update which was
+    made in 2010. Submitted a bug on their sourceforge bug tracker and
+    am waiting for a reply.</li>
+<li>Meanwhile, I'm having a look at the Adaptagrams' source code.</li>
+</ol>
+<h4 id="24052012">24/05/2012</h4>
+<p>Made comparisons between Adaptagrams and GOBLIN.</p>
+<h4 id="22052012">22/05/2012</h4>
+<p>Discussed with one of the mentors how to approach the implementation
+behind the command that would launch the GUI.</p>
+<p>Talked about the possible locations where command-line functionality can
+be developed.</p>
+<p>As a first step, looked for proper already existent functions in BRL-CAD
+that would allow me to ge the directed acyclic graph structure of a
+tree.</p>
+<h4 id="21052012">21/05/2012</h4>
+<p>Read about <a href="http://adaptagrams.sourceforge.net/">Adaptagrams</a> library.</p>
+<h1 id="community-bonding-period">Community bonding period</h1>
+<h3 id="general-progress">General progress</h3>
+<h4 id="19052012">19/05/2012</h4>
+<p>Studied some aspects of the <a href="http://goblin2.sourceforge.net/">GOBLIN</a>
+graph library.</p>
+<h4 id="17052012">17/05/2012</h4>
+<p>Commit access was gained. My first commit was for the
+src/libbu/test_booleanize.c file; it included style and formatting
+corrections.</p>
+<h4 id="16052012">16/05/2012</h4>
+<p>Patch for the file src/libbu/booleanize.c was accepted and applied in
+the revision r50566.</p>
+<h4 id="15052012">15/05/2012</h4>
+<p>I have modified my first patch, the one meant to create a
+test_booleanize.c with unit tests for the file src/libbu/booleanize.c.
+At the same time, I found a small bug in the booleanize.c code. The
+patch can be found
+<a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3519874&amp;group_id=105292&amp;atid=640804">here</a>.</p>
+<h4 id="14052012">14/05/2012</h4>
+<p>I have created an alternative patch for the one that is meant to
+separate out LIBNMG from LIBRT. This one 'moves' the files from the
+src/primitives/nmg location to src/libnmg without being needed an extra
+help from someone with commit access.</p>
+<p>Here is a <a href="http://dl.dropbox.com/u/3425790/separate_nmg.patch.bz2">link</a>
+to a temporary location for the patch since it exceeds the size limit
+provided by Sourceforge.</p>
+<h4 id="12052012">12/05/2012</h4>
+<p>I have finished a patch meant to separate out LIBNMG from LIBRT. You can
+find the patch
+<a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3526143&amp;group_id=105292&amp;atid=640804">here</a>.
+Build system modifications have been made in the following files:</p>
+<ul>
+<li><em>src/librt/CMakeLists.txt</em></li>
+<li><em>src/librt/Makefile.am</em></li>
+</ul>
+<p>and the following 2 files have been correspondingly added for libnmg:</p>
+<ul>
+<li><em>src/libnmg/CMakeLists.txt</em></li>
+<li><em>src/librt/Makefile.am</em></li>
+</ul>
+<p>One thing needs to be made by a person with commit access: move the
+<em>src/librt/primitives/nmg</em> source code into <em>src/libnmg</em> and apply the
+provided patch.</p>
+<p>Reminder: there's also
+<a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3519874&amp;group_id=105292&amp;atid=640804">this</a>
+patch that I've made and needs to be reviewed. It contains unit tests
+for the <em>src/libbu/booleanize.c</em> file and it fixes a small bug that
+wouldn't have passed one of the tests.</p>
+<h4 id="10052012">10/05/2012</h4>
+<p>I've studied the <em>src/mged</em>, <em>src/librt</em> and <em>src/conv</em> folders, looking
+for methods that can be used to access the elements of a CSG tree.</p>
+<p>Methods that got my attention:</p>
+<ul>
+<li>in the <em>src/librt/db_tree.c</em> file:</li>
+</ul>
+<p><code>int db_tree_list(struct bu_vls *vls, const union tree *tp)</code></p>
+<p>which fills a bu_vls with a representation of a given tree appropriate
+for processing by Tcl scripts. Could be useful in constructing the
+interactive graph.</p>
+<p><code>union tree *db_tree_parse(struct bu_vls *vls, const char *str, struct resource *resp)</code></p>
+<p>which takes a TCL-style string description of a binary tree, as produced
+* by db_tree_list(), and reconstruct the in-memory form of that tree.
+Could be useful after the structure of the graph is modified and the CSG
+needs to be updated.</p>
+<h3 id="2-get-commit-access">2. Get commit access</h3>
+<h4 id="08052012">08/05/2012</h4>
+<p>Worked on the patch for the NMG migration task (create a separate
+library LIBNMG outside LIBRT). This time, because BRL-CAD previously
+built without errors, things go smoother.</p>
+<h3 id="1-compile-install-brl-cad">1. Compile &amp; install BRL-CAD</h3>
+<h4 id="28042012">28/04/2012</h4>
+<p>After discussing my problem with one of the mentors and finding the
+cause for these errors, BRL-CAD completely built.</p>
+<h4 id="27042012">27/04/2012</h4>
+<p>I created my first patch for BRL-CAD by using the virtual machine disk
+image so now I want to compile and install BRL-CAD from source (from a
+svn checkout).</p>
+<p>I've followed the instructions with respect to the dependencies (the
+ones from here <a href="../../Compiling.md">Compiling</a> and from the
+<strong>doc/README.Linux</strong>). I've used the command</p>
+<p><em>cmake -DCMAKE_BUILD_TYPE=Debug -DBRLCAD_BUNDLED_LIBS=Bundled .</em></p>
+<p>but after using</p>
+<p><em>make</em></p>
+<p>, I kept getting these errors <a href="http://pastebin.mozilla.org/1602696">http://pastebin.mozilla.org/1602696</a>.</p>
+<p>Afterwards, I decided to try the command</p>
+<p><em>cmake -DCMAKE_BUILD_TYPE=Debug .</em></p>
+<p>but then I encountered another error while running it:
+<a href="http://pastebin.mozilla.org/1602697">http://pastebin.mozilla.org/1602697</a>. I managed to solve the problem by
+installing itk3 and itk3-dev. However, while running the make command I
+bumped into the previously mentioned <em>make</em> errors and this one:
+<a href="http://pastebin.mozilla.org/1602700">http://pastebin.mozilla.org/1602700</a>. The first ones refer to
+fontconfig symbols.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

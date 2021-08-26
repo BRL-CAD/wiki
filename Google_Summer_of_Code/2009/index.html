@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2009/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>2009 - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2009.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#getting-started" class="nav-link">Getting started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#additional-information" class="nav-link">Additional Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accepted-proposals" class="nav-link">Accepted Proposals</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#implementation-of-revolve-and-sweep-primitives" class="nav-link">Implementation of Revolve and Sweep Primitives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#libpc-integration-with-libged-test-of-the-entire-framework" class="nav-link">libpc: Integration with libged &amp; Test of the entire Framework</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#further-opengl-geometry-editor-gui-development" class="nav-link">Further OpenGL Geometry Editor GUI development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#morebrlcadorg-2" class="nav-link">MoRe.brlcad.org 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hybrid-representation-through-brep-on-brep-csg" class="nav-link">Hybrid Representation through BREP on BREP CSG</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><img alt="" src="/wiki/img/brlcad_gsoc2009_flyer.png" /></p>
+<h1 id="getting-started">Getting started</h1>
+<p><strong>BRL-CAD participated as a mentoring organization in the 2009 Google
+Summer of Code</strong>. Students that participated with BRL-CAD in GSoC 2009
+had a <strong><a href="Google_Summer_of_Code/Checklist.md">CHECKLIST</a></strong> of
+actions that they performed to help them get started.</p>
+<h1 id="additional-information">Additional Information</h1>
+<p>You can go to our <a href="Google_Summer_of_Code/2009/Project_Ideas.md">Project
+Ideas</a> page for a
+list of project suggestions that were of particular interest. There were
+also several <a href="http://brlcad.org/~sean/ideas.html">other areas</a> of
+development that were of high-interest. Students were welcome to submit
+their own ideas as well but, more importantly, they were encouraged to
+collaborate with the developers on formulating projects. Student
+applications for GSoC were accepted at <a href="http://socghop.appspot.com">http://socghop.appspot.com</a>
+between March 23 and April 3.</p>
+<h1 id="accepted-proposals">Accepted Proposals</h1>
+<h2 id="implementation-of-revolve-and-sweep-primitives">Implementation of Revolve and Sweep Primitives</h2>
+<p>Student: Timothy Van Ruitenbeek (IRC: pacman87)
+Proposal: <a href="/wiki/user/Pacman87">user/Pacman87</a>
+Mentor: Daniel Roßberg (IRC: d_rossberg)</p>
+<h2 id="libpc-integration-with-libged-test-of-the-entire-framework">libpc: Integration with libged &amp; Test of the entire Framework</h2>
+<p>Student: Dawn Thomas (IRC: madant)
+Proposal: <a href="/wiki/user/Homovulgaris">libpc Proposal</a>
+Mentor: Christopher Sean Morrison (IRC: brlcad)</p>
+<h2 id="further-opengl-geometry-editor-gui-development">Further OpenGL Geometry Editor GUI development</h2>
+<p>Student: Benjamin Saunders (IRC: Ralith)
+<a href="/wiki/user/Ralith">Proposal</a>
+Mentor: David Loman (IRC: d-lo)</p>
+<h2 id="morebrlcadorg-2">MoRe.brlcad.org 2</h2>
+<p>Student: Elena Băutu (IRC: elena)
+Proposal: <a href="/wiki/user/EBautu">more.brlcad.org</a>
+Mentor: Clifford Yapp (IRC: starseeker)</p>
+<h2 id="hybrid-representation-through-brep-on-brep-csg">Hybrid Representation through BREP on BREP CSG</h2>
+<p>Student: Joe Doliner (IRC: jdoliner)
+Proposal: <a href="/wiki/user/Jdoliner">user/Jdoliner</a>
+Mentor: Keith Bowman (ML: indianlarry)</p>
+<p><a href="Category:_Summer_of_Code.md">Category: Summer of Code</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

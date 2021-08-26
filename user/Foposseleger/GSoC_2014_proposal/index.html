@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Foposseleger/GSoC_2014_proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Convert Bot to Pipe GSoC Project Proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Foposseleger/GSoC_2014_proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#convert-bot-to-pipe-gsoc-project-proposal" class="nav-link">Convert Bot to Pipe GSoC Project Proposal</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#background-information" class="nav-link">Background Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brief-background-information" class="nav-link">Brief Background Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programming-background" class="nav-link">Programming Background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brief-summary" class="nav-link">Brief Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#detailed-description" class="nav-link">Detailed Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#unravelling-meshes" class="nav-link">Unravelling Meshes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#deliverables" class="nav-link">Deliverables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-schedule" class="nav-link">Development Schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#time-availability" class="nav-link">Time Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD ?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me ?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#anything-else" class="nav-link">Anything Else?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="convert-bot-to-pipe-gsoc-project-proposal">Convert Bot to Pipe GSoC Project Proposal</h1>
+<h2 id="personal-information">Personal Information</h2>
+<h2 id="background-information">Background Information</h2>
+<p>Name: Leger Foposse Nyah</p>
+<p>IRC: leger</p>
+<p>email: foposseleger@gmail.com</p>
+<h2 id="brief-background-information">Brief Background Information</h2>
+<p>I am a first year Post graduate student in Computer Science at the
+University of Yaounde I, Yaounde Cameroon. From my background in
+Computer Science at the undergraduate level. I worked on various Java
+SE/Java EE Projects, implemented a simulation program for an elevator in
+C/C++ which was used for diagnostic purposes. Also, I wrote a 2D game in
+C++ as part of my pet projects. I am excited to work this year with
+BRL-CAD since my cousin worked on this great software last year. I am
+willing to put in 40+ hours weekly to implement the converter for Bot to
+Pipe; together with my experience in Maths and Algorithms during my
+undergraduate years.</p>
+<h2 id="programming-background">Programming Background</h2>
+<p>C/C++(Very Good):</p>
+<ul>
+<li>Implemented an Elevator simulation program for diagnostic purposes.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Implemented a 2D Game(Pet project)</li>
+</ul>
+<p>Java(Excellent) J2EE,SE :</p>
+<ul>
+<li>Restaurant management system developed for our University(5000+
+    Lines)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Implemented a Binary Search Trees together with associated
+    optimizations and graphical interface to simulate the nodes.( 4000+
+    lines)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Implemented a Dental simulation program used for Dentists in our
+    local hospitals. ( J2EE, 10000+ lines)</li>
+</ul>
+<h2 id="project-information">Project Information</h2>
+<p>Convert BOT to PIPE Project</p>
+<p>This project seeks to convert the BOT surface primitive to pipe to
+facilitate the the conversion of the "Bag of triangles" solid to native
+BRL-CAD geometry.</p>
+<h2 id="brief-summary">Brief Summary</h2>
+<p>BRL-CAD uses the “Bag o’ Triangles” (BoT) primitive object for
+representing triangle mesh objects. BoT primitives are used for
+importing component positions from other CAD softwares like Pro-E and
+Cadio. This designs imported during vulnerability analysis use
+intermediate formats like STL. This is imported to BRL-CAD through the
+pipe primitve. This project seeks to implement an accurate Bot to pipe
+converter which eliminates lags in models for line routing.</p>
+<h2 id="introduction">Introduction</h2>
+<p>In aircraft design, component positions are constantly in flux leading
+to laggin in models of line routine. However, during vulnerability
+analysis component positions may miss the correct positions. So during
+import to BRL-CAD, overlapping issues have to be resolved guaranteeing
+precision and accuracy. This is done by using intermediate formats like
+STL.</p>
+<p>Due to limitations in the STL format, BRL-CAD employs BoT primitive
+objects in the importation of design from other high end CAD softwares
+maintaining precision and correctness. With the BoT primitive, many
+object could be analysed per file for many files which is an option
+already supported by BRL-CAD. Also, BoT supports over 3 Bot mesh modes
+which is highly advantageous over single mode supported by STL.</p>
+<p>Furthermore, with the numerous advantages of BoT over STL, like single
+and double precision, BoT solids have a fundamental problem of
+inefficient editing. This project seeks to implement the import of
+designs into BRL-CAD using the pipe primitive most likely from the
+intermediate STL format.</p>
+<h2 id="detailed-description">Detailed Description</h2>
+<p>I believe the computational geometry problem of approximating triangular
+meshes describing pipes and pipe T- and Y-joints, using solid geometry
+pipe structures instead.</p>
+<p><code>The original programs obviously model the lines and flows using data structures similar to pipes, not as triangular meshes. [Fluid analysis often requires some sort of finite element cell meshing, but I bet they are formed as needed, from the original pipe structures, instead of always describing the pipes as meshes.</code></p>
+<p>BRL-CAD has a pipe primitive, which takes a list of vertices the pipe
+axis passes through, with inner radius, outer radius, and bend radius
+for each vertex also specified. Note that there have been reports
+(crashes) when the primitive is used, so I'm not certain how reliable or
+well-tested the primitive is.</p>
+<p>This problem shares certain interesting properties with another of my
+favourites, angular momentum cancellation for nanocluster simulation.</p>
+<p>The Bot to Pipe converter problem has a symmetry "axis", with a point
+cloud surrounding that axis -- except that the "axis" itself is a vague
+concept, and may even branch (T and Y joints) in this case. In many
+ways, the pipe case is easier, since the mesh provides the vertex
+connectivity graph.</p>
+<h1 id="unravelling-meshes">Unravelling Meshes</h1>
+<p>I'd start by unraveling the meshes.</p>
+<p>Look at the triangular mesh connectivity graph. Given a specific vertex,
+the circuit with the shortest 3D circumference (sum of Cartesian edge
+lengths) containing that vertex, such that you cannot
+short-circuit/bypass any of the vertices in the circuit, is a cross
+section of the cylinder the mesh approximates at that point. (The
+circuit obviously has to have more vertices than the maximum number of
+sides in the vertex mesh polygons; otherwise you're just looking at a
+single polygon.)</p>
+<p>Such polygons are the shortest ones containing that vertex, that circle
+the cylinder/pipe axis (the vertex mesh approximates) at that point.
+Also a relatively straightforward way to analyse the mesh to obtain the
+roughly-cross-sectional polygons would be:</p>
+<ul>
+<li>determine the order of those polygons from the connectivity graph.</li>
+</ul>
+<p>The above will give a stack of not-exactly-flat-but-close,
+almost-circular polygons, forming the approximate cross sections of the
+pipe. (The inner mesh will correspond to the pipe inner surface, and
+outer mesh to outer surface. Because the 'pipe' primitive can only
+describe pipes with symmetric walls, I'll assume the cross sections are
+coaxial/concentric.)</p>
+<p>Also, If the mesh is very coarse, it will not model a pipe, but a
+twisted polygonal rod. If such data is prevalent in practice, I'd also
+consider a completely different approach:</p>
+<ul>
+<li>sweeping the meshes with spheres [or cylinders, in practice]. It
+    will be a lot slower approach, although there are lots of
+    mathematical tricks which can be employed to make it faster. Here,
+    the sphere centers and radiuses form a set of intermediate data, to
+    which the pipe parameters are fitted to.)</li>
+</ul>
+<p>At joints, the mesh gets silly so I'll model everywhere else first, and
+then extrapolate the joint properties last, using the mesh vertices as
+helpful point cloud data only. (For example, for a T or Y joint, all
+three legs of the joint tend to be straight. The point closest to all
+three axis vectors is most likely the joint point.</p>
+<ul>
+<li>Using Leg Information</li>
+</ul>
+<p>Another option is to use the leg information to construct a prototype
+joint, and compare the joint prototype to the mesh data, adjusting the
+parameters to obtain the best fit.)</p>
+<p>Any small-scale features at joints like the nooks used in old sewers
+near tight bends, causing turbulence in the flow, keeping the bend clean
+from debris -- are always lost, but that should not matter here anyway:
+the 'pipe' primitive cannot model them anyway.</p>
+<p>Overall, I think it's quite achievable to implement the triangular mesh
+to pipe conversion -- either as a BRL-CAD command, or as an external
+utility. A lot of work, but good results are certainly achievable.</p>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Implement a vertex reduction Algorithm based on user defined
+    tolerances.</li>
+<li>Implement options for allowing automatic generation of fluid
+    components and option for automatic boolean operation in line and
+    fluid regions.</li>
+<li>Methods for calculate inner and outer diameters for BoT solid
+    primitives.</li>
+<li>Implement methods for determine pipe start and end points, solid
+    bend radius.</li>
+<li>Computing pipe solids for line model intersections.</li>
+</ul>
+<h2 id="development-schedule">Development Schedule</h2>
+<p>Community Bonding period (April 21st to May 19th)( 3 weeks )</p>
+<ul>
+<li>Acquaint myself with necessary version control svn for BRL-CAD.</li>
+<li>Read appropriate documentation and programming regulations of
+    BRL-CAD project.</li>
+<li>Research additional information on BoT solid and pipe primitives and
+    sharpen m y programming skills.</li>
+<li>Work on BRL-CAD's tickets and bugs and earn commit privileges.</li>
+</ul>
+<p>Pre mid-term work period (May 19th to June 20th) (2 weeks)</p>
+<ul>
+<li>Determine BoT inner and outer diameters</li>
+<li>Determine BoT inner and outer diameters</li>
+</ul>
+<p>Week 3 - 4(2 weeks)</p>
+<ul>
+<li>negotiate line models that have T or Y shaped intersections creating
+    pipe solids for each leg</li>
+</ul>
+<p>Week 5 - 6(2 weeks)</p>
+<ul>
+<li>Implement the vertex reduction algorithm based on user defined
+    tolerances (angular tolerance to define a straight segment)</li>
+</ul>
+<p>Mid-term evaluation week (June 23rd to June 27th) (1 week)</p>
+<ul>
+<li>Report work done within the pre mid-term work period.</li>
+<li>Fill and submit mid-term evaluation form.</li>
+</ul>
+<p>Post mid-term work period (June 30th to August 11th) (2 weeks)</p>
+<ul>
+<li>Accurately utilize the pipe solid bend radius attribute to limit the
+    number of vertices necessary to create a bend</li>
+</ul>
+<p>Week 10 - 11(2 weeks)</p>
+<ul>
+<li>Implement options allowing the automatic generation of a fluid
+    component (fuel or hydraulic fluid within the line)</li>
+</ul>
+<p>Week 12 - 14 (2 weeks)</p>
+<ul>
+<li>Implement options that allow for automatic Boolean operations into
+    both line and fluid Regions</li>
+</ul>
+<p>Pencils down week (Aug 11th to Fri 15th) (1 week)</p>
+<ul>
+<li>Final testing, debugging and removing memory leaks within code.</li>
+<li>Documenting the BoT to Type Conveter for BRL-CAD.</li>
+</ul>
+<p>Final evaluation week (Aug 18th to Aug 22nd ) (1 week)</p>
+<ul>
+<li>Report work done within the post mid-term work period.</li>
+<li>Fill and submit Final evaluation form.</li>
+<li>Final submission of project code to Google.</li>
+</ul>
+<p>Google Summer Of Code Aftermath period</p>
+<ul>
+<li>Continue speeding-up several aspects of BoT to pipe converter.</li>
+</ul>
+<h2 id="time-availability">Time Availability</h2>
+<p>I'll be available to offer at least 40 hours a week for this project.
+During periods of examinations, I will code less during weekdays and
+make sure to catch up during the weekends. When I have events to
+organise within GDG Bandjoun, I'll take a few hours of during the day to
+do so and cover up for these lapses by pushing code at night. I'll also
+regularly communicate the progress with my mentors by chatting on IRC,
+writing on the mailing list and updating my diary.</p>
+<h2 id="why-brl-cad">Why BRL-CAD ?</h2>
+<p>First of all, I really believe that software can change the world by
+providing new technologies and that software should be free. I choose
+BRL-CAD because it is a not-for-profit technology organization which
+offers me the opportunity to assist the BRL-CAD organization with tools
+for computer Aided design and computer graphics. Working with BRL-CAD
+also helps me contribute over the long-term and gain status within the
+hacker community based on my mathematical/Computing background and
+academic interests. Although I have not contributed before to open
+source ,I see implementing the BoT to Pipe Converter as a long-awaited
+opportunity to make the world a better place and a jump-start to my
+continued contribution to open source software through BRL-CAD.</p>
+<h2 id="why-me">Why Me ?</h2>
+<p>I am passionate about working with BRL-CAD because I have always enjoyed
+computing and Mathematical problems. Since my project has to do with BoT
+to Pipe Converter, I am enthused to work on an efficient and precise
+solution to this problem. My capacity to excellently communicate in
+English and French will enable me easily interact with mentors on a
+regular basis on the mailing list and IRC. With a deep knowledge of
+mathematics from my post graduate and undergraduate experiences, a
+deeply ingrained fact-finding habit and professional experience
+developing software in C/C++, Java,although I have not contributed to
+open source before, I believe I have the relevant experience to
+implement the Bot to Pipe converter despite my new experience to CAD.</p>
+<h2 id="anything-else">Anything Else?</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

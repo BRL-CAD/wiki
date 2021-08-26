@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Inderpreet/OGV_Proposal/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Online Geometry Viewer Project Proposal - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Inderpreet/OGV_Proposal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#online-geometry-viewer-project-proposal" class="nav-link">Online Geometry Viewer Project Proposal</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-information" class="nav-link">Project Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#detailed-project-description" class="nav-link">Detailed Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#my-preparation" class="nav-link">My Preparation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="online-geometry-viewer-project-proposal">Online Geometry Viewer Project Proposal</h1>
+<h2 id="personal-information">Personal Information</h2>
+<p><strong>Name:</strong> Inderpreet Singh</p>
+<p><strong>Email Address:</strong> indrplus@gmail.com , singhs.ishwer@gmail.com</p>
+<p><strong>IRC Username:</strong> Ishwerdas</p>
+<h3 id="background-information">Background Information</h3>
+<p>I study in 4th year B.Tech (Computer Science and Engineering) at Guru
+Nanak Dev Engineering College, Ludhiana (India). I was introduced to
+this community about a year ago and have tried to help with whatever I
+could. I can write in C++, PHP, Python, Javascript.</p>
+<h2 id="project-information">Project Information</h2>
+<h3 id="project-vision">Project Vision</h3>
+<p>When we built our initial HTML web pages in 90s we din't have an <img>
+tag. Just a few years back Video was a foreign element added via third
+party plugins. Today images,videos and audio all have become first class
+citizens of the web. HTML 5 has introduced many new members to the
+family. Canvas, WebGL and SVG being few of them. These technologies
+allow us to manipulate and access 2d and 3d graphics right in the
+browser. Today we have incredible power in our hands when it comes to
+handling graphics on web. Even with technologies like WebGL, 3D graphics
+have not yet become a part of our daily web experience. I believe in OGV
+as one of those platforms that will make sharing 3D models on the web as
+normal as sharing videos on youtube or images on flickr.</p>
+<h3 id="brief-summary">Brief Summary</h3>
+<p>Online Geometry Viewer started as a GSoC 2013 project by Harmanpreet
+Singh. It's an online 3D geometry viewer that works on WebGL using
+three.js. It uses vanilla PHP on server side whereas jQuery and
+Bootstrap on the front-end. To give it a robust foundation, the
+community discussed about changing it's backend to something more
+powerful. I took an active part in that discussion and the community
+ended up with choosing node.js as a replacement for the current PHP
+based backend. After looking at various frameworks I decided to go for
+<a href="https://www.meteor.com/">meteor</a>. Reason for this choice is that meteor
+has a comparatively larger community which means more support, bugs are
+removed quickly and more code to learn from. So first step would be
+porting the current app to node js after that we can improve on previous
+features and add new features. I have prepared a list of improvements
+and features that I will add to OGV this summer.</p>
+<p><strong>Things that I will Improve on: -</strong></p>
+<ul>
+<li>The way data is handled about models. (Currently GET method is used)</li>
+<li>The way errors are given. (Many of the errors are not given at all)</li>
+<li>The way Authentication is done (Will be handled by meteor now)</li>
+<li>Installation and Configuration</li>
+<li>User Experience and User Interface</li>
+</ul>
+<p><strong>The features that I will add: -</strong></p>
+<ul>
+<li>Dashboard (admin and non-admin)</li>
+<li>Sharing &amp; Embedding Feature</li>
+<li>Image alternatives for 3D Models (Requested by Mediawiki)</li>
+<li>More Geometry conversions.</li>
+</ul>
+<h2 id="detailed-project-description">Detailed Project Description</h2>
+<p>As it's clear from the previous section the project is divided into
+three parts</p>
+<ul>
+<li>Porting OGV to nodejs (meteor)</li>
+<li>Improving the old and removing the bugs</li>
+<li>Adding New features</li>
+</ul>
+<h3 id="porting-ogv-to-nodejs">Porting OGV to node.js</h3>
+<p>We have made a choice to move to node.js. Then there's a choice to be
+made among various kinds of frameworks, and then various frameworks in
+each kind. We decided to go with Full Stack frameworks like derby or
+meteor. I decided to choose meteor over others because it has a larger
+community i.e used and tested by more people as compared to others like
+derbyjs.</p>
+<p>So My first task would be to replace each module of OGV to meteor. I
+have written about the details for each module in the sections below.
+Third party libraries in meteor can be added by writing packages for
+them. So one of the important tasks will be to either write a package or
+use existing package of three.js</p>
+<h3 id="improvements-in-ogv">Improvements in OGV</h3>
+<p>After we have a sound foundation with node.js, now we can concentrate on
+improving the existing OGV features.</p>
+<h4 id="models-data-handling">Models Data Handling</h4>
+<p>Currently in upload_file.php, a list of names of obj files is sent to
+model_display.php using GET method. We can send a very limited amount
+of data through Get method. Larger models fail to get loaded because of
+this limit. It's just an array of file names so I will use HTML5 local
+storage to store this array locally on the client and fetch it again
+from there.</p>
+<p>This will remove the bug and also add all the speed and benefits that
+come by storing data locally. Few older browsers do not support local
+storage so for them we can use a polyfill such as <a href="http://amplifyjs.com/api/store/">amplify
+amplify.js</a>. Fortunately meteor has a
+package called <a href="http://docs.meteor.com/#amplify">amplify</a>, that does
+exactly the same thing.</p>
+<h4 id="errors">Errors</h4>
+<p>No matter how much we hate errors, they are very important to the user.
+They tell something is wrong and they contain information about solving
+itself. Can they be any nicer?</p>
+<p>Currently at some places errors are not given to user at all and at
+other places errors are not that explanatory. For example there is no
+error given if the user account folder is deleted, neither a remedy is
+taken to create the user folder again. Just the models are not displayed
+in model_display.php without any error or any indication of something
+that has gone very wrong behind the walls.</p>
+<p>Then there's a case with configuration errors, if say mged path is wrong
+then there's a small error in the sidebar of the model_display.php.
+Which is not clear and also gives no cue to user about how to solve that
+error.</p>
+<p>For other errors like mysql credentials, I believe bootstrap's alert
+class needs to be used, so that it looks like an error. It's half of a
+UX problem and half of the functionality problem. For configuration
+errors, I have submitted a patch to the official github repository.</p>
+<h4 id="auth-module">Auth Module</h4>
+<p>As also stated in To do list of OGV, current Auth system is not that
+secure and lacks robustness. Meteor has it's own robust authentication
+system. Secondly, current auth system does not have user roles but we
+need at-least two kinds of users, admin and non-admin. Admin user must
+be able to edit configuration files, add remove accounts etc, whereas
+non-admin can not do such tasks. Following features of meteor are going
+to help me with this</p>
+<ul>
+<li><a href="http://docs.meteor.com/#allow">connection.allow</a> for providing user
+    roles.</li>
+<li><a href="http://docs.meteor.com/#accounts_api">Accounts API</a> for handling
+    accounts.</li>
+<li><a href="http://en.wikipedia.org/wiki/Secure_Remote_Password_protocol">Secure Remote Password
+    Control</a>
+    Support.</li>
+<li><a href="http://docs.meteor.com/#meteor_loginwithexternalservice">oAuth</a> for
+    <strong>logging in with various services such as facebook, twitter etc</strong>.</li>
+<li>The Accounts UI provided by meteor for user interface</li>
+</ul>
+<p>And this all comes as one package with meteor.</p>
+<h4 id="installation-and-configuration">Installation and Configuration</h4>
+<p>There's a scope of improvement in current OGV Installation, and also as
+we grow we need in place some standard Installation mechanism so that
+any user without any prior knowledge to any programming can Install it
+easily. I am inspired from Wordpress' 5 minute installation or Anchor
+CMS's 2 minute install to bring in OGV it's own easy install. I have
+worked on the configuration part and submitted a patch regarding it.</p>
+<h4 id="user-experience-and-user-interface">User Experience and User Interface</h4>
+<p>I am passionate about creating good interfaces. More than eye-candiness
+I care for the experience that user gets. To make things easy for the
+user. Then the second part of User Interface design is about prompting
+users to take actions. To make sign up buttons that no one can ignore
+but click. I will use bootstrap as underlying framework which I will
+edit to customize it specifically for OGV.</p>
+<ul>
+<li>I tend to make a very clean and minimal Interface, where the whole
+    focus is on the content. I have chosen flat icons, and a
+    <strong>mobile-first</strong> interface.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ogv_viewer.png" /></p>
+<ul>
+<li>The front page will provide users an option to Sign In/ Sign Up and
+    also showcase the ability of OGV. The text abive Form is an embedded
+    model from OGV. We can use any 3D model here. It showcase what OGV
+    can do, not just by writing but doing it. It gives user a chance to
+    play with a model, even before he signs up. I believe that will lead
+    to more people signing up.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/OGV_Sign_in.png" /></p>
+<ul>
+<li>When we hover on the above model, it will highlight the various
+    options that user can perform without even logging in. Comments
+    cannot be added but read without signing in.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ogv_sign_in_hovered.png" /></p>
+<ul>
+<li>Sign up page is same as that of sign in page.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ogv_sign_up_hovered.png" /></p>
+<ul>
+<li>This is how upload page may look, using dropzonejs a drag and drop
+    interface for uploading files can be created.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ogv_uploader.png" /></p>
+<ul>
+<li>I will use <a href="http://lab.hakim.se/ladda/">Hakim.se's</a> in-button
+    progress bar for uploading. The button itself turns into a progress
+    bar showing percentage of file uploaded.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ogv_uploading_btn.png" /></p>
+<ul>
+<li>File manager shows all the files that the user has uploaded at one
+    place. Clicking on these files take the user to full screen viewer.</li>
+</ul>
+<p><img alt="" src="/wiki/user/img/Ogv_file_manager.png" /></p>
+<p>These are just the early rough mockups and not the exact design so it's
+not pixel perfect. I try to make pixel perfect designs using grids and
+various design prinicples. I have also not made a mock-up for each and
+every page as that would require more thought to be put into and more
+feedback from community. I have a good knowledge about</p>
+<ul>
+<li>Color Theory</li>
+<li>Typography</li>
+<li>Emotions in Design</li>
+<li>Transitional Design</li>
+<li>Responsive Design</li>
+</ul>
+<p>OGV's design will follow all these principles + look great.</p>
+<h3 id="new-features-to-be-added">New Features to be added</h3>
+<h4 id="dashboard">Dashboard</h4>
+<p>Currently we just have a upload button on the name of dashboard. I
+propose to add a full fledged dashboard where we can see all the models
+that we have previously uploaded. These dashboards will have options
+depending upon what kind of user you are. Admin user will have more
+options like Editing configuration files, adding/removing accounts etc.
+The rough list of what a dashboard will contain is as follows.</p>
+<ul>
+<li>A File manager, showing all your uploaded models.</li>
+<li>A button to upload your models.</li>
+<li>Option to edit your profile.</li>
+<li>View your profile (will contain feed of models you shared)</li>
+<li>Edit Configuration file / app settings. (Admin Only)</li>
+<li>Edit, Add or Remove Accounts (Admin Only)</li>
+</ul>
+<h4 id="file-manager">File Manager</h4>
+<p>File uploading is a little tricky part with meteor. Firstly, meteor does
+not have any ready-made built-in solution as such for file management
+(way it has for authentication). I have looked across some packages for
+meteor js that can be tried, tested and customized to feed our needs.</p>
+<ul>
+<li><a href="https://atmosphere.meteor.com/package/Dropzonejs">Dropzonejs</a></li>
+<li><a href="https://github.com/CollectionFS/Meteor-CollectionFS">CollectionFS</a></li>
+</ul>
+<h4 id="sharing-and-embedding">Sharing and Embedding</h4>
+<p>Social element in OGV is I guess the most exciting part of OGV. The
+ability to like other's models and share them among users. To share them
+on social network websites and have an embed code that can be used on
+any website. I would like to add following Social Features in OGV:-</p>
+<ul>
+<li>Like</li>
+<li>Share<ul>
+<li>Share on Profile</li>
+<li>Share with unique URL</li>
+</ul>
+</li>
+<li>Embed code</li>
+</ul>
+<p>Likes and shares can be stored in database for each model. A unique URL
+is already being generated for each model, we just need to provide a way
+to share it. Embed code can be generated from this unique URL.</p>
+<h4 id="image-alternative">Image Alternative</h4>
+<p>When I talked about Online Geometry Viewer on mediawiki mailing list
+they were kind enough to share their views and the features they would
+like for the extension. One of those features was to have an image
+alternative for each model. We can use earlier described File Manager
+packages to either make user upload an image or another approach can be,
+if once loaded on any client we can use .toDataURL() method of canvas to
+get image from canvas or a combination of both.</p>
+<h2 id="milestones">Milestones</h2>
+<ul>
+<li>Community Bonding Period<ul>
+<li>Get more user requirements</li>
+<li>Start initial movement from PHP to meteor.</li>
+<li>Lots of healthy discussions about choices to be made.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>WEEK 1 (19th May)</strong></li>
+</ul>
+<p>Work on Authentication Module with Nodejs (meteor)</p>
+<ul>
+<li><strong>WEEK 2 (26th May)</strong></li>
+</ul>
+<p>Port File Uploading to Nodejs (meteor)</p>
+<ul>
+<li><strong>WEEK 3 (2nd June)</strong></li>
+</ul>
+<p>Write a File manager so that users can see old files and view them.</p>
+<ul>
+<li><strong>WEEK 4 (9th June)</strong></li>
+</ul>
+<p>Start working on model display part with three.js aka work on using
+three.js along with meteor.</p>
+<ul>
+<li><strong>WEEK 5 (16th June)</strong></li>
+</ul>
+<p>Continue working on display part, Handling models data, Saving data for
+later view.</p>
+<ul>
+<li><strong>WEEK 6 (23rd June)</strong></li>
+</ul>
+<p>Make Viewer ready by making app call mged commands and geometry
+conversion commands on the server.</p>
+<p>MID TERM EVALUATION</p>
+<ul>
+<li><strong>WEEK 7 (30 June)</strong></li>
+</ul>
+<p>Make Dashboard for users and admins</p>
+<ul>
+<li><strong>WEEK 8 (7th July)</strong></li>
+</ul>
+<p>Allow users to embed models in their websites.</p>
+<ul>
+<li><strong>WEEK 9 (14th July)</strong></li>
+</ul>
+<p>Allow share and like on models</p>
+<ul>
+<li><strong>WEEK 10 (21st July)</strong></li>
+</ul>
+<p>Revisit Dashboard to show user's Shares and Likes</p>
+<ul>
+<li><strong>WEEK 11 (28th July)</strong></li>
+</ul>
+<p>Automate Installation and Configuration of the app.</p>
+<ul>
+<li><strong>WEEK 12 (4th Aug)</strong></li>
+</ul>
+<p>Test the working , check bugs, Clean the code.</p>
+<ul>
+<li><strong>WEEK 13 (11th Aug)</strong></li>
+</ul>
+<p>More testing, Check errors in Documentation.</p>
+<ul>
+<li><strong>WEEK 14 (18 Aug)</strong></li>
+</ul>
+<p>FINAL EVALUATION</p>
+<h2 id="my-preparation">My Preparation</h2>
+<ul>
+<li>I have been collecting user requirements for long. I also approached
+    mediawiki community to ask their views.</li>
+<li>I have read and understood the code of current OGV. I have also
+    pointed out some bugs and limitations. (In this proposal itself)</li>
+<li>I have submitted few small patches to the repository and will submit
+    more to show that I have read and understood the code.</li>
+<li>I have explored the framework of my choice, figured out what modules
+    of meteor I'll need and use. (shared them above)</li>
+<li>I also try to communicate as much as possible in the community on
+    mailing lists and IRC.</li>
+</ul>
+<h2 id="why-brl-cad">Why BRL-CAD?</h2>
+<p>I have been in this community for a year. I have always been encouraged
+here to share Ideas without hesitation and other community members have
+helped me even If I ask or do something stupid. I love the openness one
+gets in this community and I have lots of friends here.</p>
+<h2 id="why-me">Why Me?</h2>
+<ul>
+<li>I am open to Ideas, I don't stick with tools but tasks.</li>
+<li>I have read and understood the OGV code and given patches and
+    bringing more of them.</li>
+<li>I have tried communicating as much as I can in mailing lists and
+    IRC.</li>
+<li>I have and will try to help others as much as I could.</li>
+<li>I have planned to work on OGV even after GSoC.</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://nodeframework.com/">nodejs frameworks</a></li>
+<li><a href="http://docs.meteor.com/">meteor.com</a></li>
+<li><a href="https://www.meteor.com/blog/2013/11/21/meteor-devshop-9-tech-talks-production-ready-meteor-apps-understanding-the-event-loop-async-and-fibers">Production Ready Meteor
+    Apps</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

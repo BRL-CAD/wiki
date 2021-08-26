@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Tutorial/Mug/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Mug - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/doc/Tutorial/Mug.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><font size="10"> <b>Process</b> </font></p>
+<p><b>1. Outside of the cup</b></p>
+<p>Use "eto" for the cup so that it will have more rounder edges and
+middle. Name it <i>cup.s</i>. Then after that, adjust the shape's width
+and set the "D" if you want to make the edges and middle more rounder.
+Click "Apply" then to put some color on it, make it into a region first
+and named it <i>cup.r</i> then go to the Combination Editor and input
+"53 20 0" (dark brown color) on the Color GUI.</p>
+<figure>
+![](/wiki/doc/img/Outside_cup.PNG)
+</figure>
+
+<p><b>2. Handle</b></p>
+<p>Create <i>handle.s</i> and use "pipe" for the handle so you can bend it
+to a more unique shape than the torus by clicking the "Append Point"
+then select the parts of the handle you wanted to add new points with.
+Adjust the new points to the desired shape and position by clicking
+"Move Point" and click the place where you want the points to be moved.
+The problem on this is that the adjusted points leave creases on the
+shape which gives it a rougher appearance and needs a lot of adjustments
+to lessen the creases. Do the same way on how put color on <i>cup.r</i>
+only name the new region <i>handle.r.</i></p>
+<figure>
+![](/wiki/doc/img/Handle.PNG)
+</figure>
+
+<p><b>3. Inside of the cup</b></p>
+<p>To give it a white inside part, copy the shape of the outside cup (cp
+cup.s inside.s) and name it inside.s. Adjust its "r", and "Rotate C"
+until it is smaller and thinner than the outside cup. The space inside
+of the cup might now looked too small for a cup and also that
+<i>cup.r</i> would hide parts of <i>inside.s</i> so make a region of
+<i>cup.r</i> and <i>inside.s</i> as follows:</p>
+<p><code>r inside.r u inside.s - cup.r</code></p>
+<figure>
+![](/wiki/doc/img/Inside_cup.PNG)
+</figure>
+
+<p><b>4. Rim</b></p>
+<p>Place a torus for a rim so that the white color would overlap the brown
+cup rim and give it a nicer appearance. Adjust "Radius 1" to fit it to
+the cup's circumference, and "Radius 2" to fit it to the cup's width.
+After that make it into a region named <i>rim.r</i>.</p>
+<figure>
+![](/wiki/doc/img/Rim.PNG)
+</figure>
+
+<p><b>5. Base</b></p>
+<p>Use "sph" for the base then set its "C" to make it flatter. Make it into
+a region named <i>base.r</i> then type "53 20 0" on the Color GUI in
+Combination Editor.</p>
+<figure>
+![](/wiki/doc/img/Base.PNG)
+</figure>
+
+<p><b>6. Coffee (optional)</b></p>
+<p>If you want to put coffee in your mug, use "rcc" then adjust its "H"
+"A,B" and "C,D" to fit in the cup. Name it <i>coffee.s</i>. Make it into
+a region and name it <i>coffee.r</i> then input "143 93 1" (light brown
+color) on the Combination Editor and set the Shader to "glass". Set the
+Mirror Reflectance to 0.05 to give it a liquid appearance and, to give
+it a more coffee-like appearance, set the Transparency to 0.1. The
+problem on setting the transparency to 0.1 rather than 0 is that the
+Command Window would "complain" on overlapping.</p>
+<figure>
+![](/wiki/doc/img/Coffee.PNG)
+</figure>
+
+<p><b>7. Combining all regions</b></p>
+<p>Combine all the regions and name it <i>coffeemug.c</i> using this
+command:</p>
+<p><code>comb coffemug.c u cup.r u inside.r u handle.r u rim.r u base.r u coffee.r</code></p>
+<p>or without <i>coffee.r</i>:</p>
+<p><code>comb coffemug.c u cup.r u inside.r u handle.r u rim.r u base.r</code></p>
+<p><b>8. Raytracing the design</b></p>
+<p>Now, Blast your design first before raytracing:</p>
+<p><code>B coffeemug.c</code></p>
+<p>Then raytrace your design using the Raytrace GUI in the File Menu and,
+for best results, set the Background Color to white, the view in
+"az35,el25", and also the Framebuffer option to "Overlay".</p>
+<figure>
+![](/wiki/doc/img/Raytrace1.PNG)
+</figure>
+
+<p>with coffee</p>
+<p><img alt="" src="/wiki/doc/img/Raytrace2.PNG" /></p>
+<p>without coffee</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

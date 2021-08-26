@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/ESA_Summer_of_Code_in_Space/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>ESA Summer of Code in Space - BRL-CAD Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/ESA_Summer_of_Code_in_Space.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#getting-selected" class="nav-link">Getting Selected</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brl-cad-participation-in-the-esa-summer-of-code-in-space" class="nav-link">BRL-CAD participation in the ESA Summer of Code in Space</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#2017" class="nav-link">2017</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2016" class="nav-link">2016</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#geometry-viewer-application-for-brl-cad" class="nav-link">Geometry Viewer Application for BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2014" class="nav-link">2014</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2011" class="nav-link">2011</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>BRL-CAD was accepted to participate in the 2017 European Space
+Agency's Summer of Code in Space!</strong></p>
+<h1 id="overview">Overview</h1>
+<p>Starting in 2011, the European Space Agency has run an open source
+software development program specifically for <em>students</em> called the ESA
+Summer of Code in Space (SOCIS). Under this program, ESA funds students
+to write <em>space-related</em> code for open source projects during the
+northern hemisphere's summer timeframe:</p>
+<ul>
+<li>The student writes a space-related project proposal for BRL-CAD.<ul>
+<li>Sometimes their project idea caters to something that the open
+    source organization suggests and sometimes it's an idea entirely
+    of the student's conception.</li>
+</ul>
+</li>
+<li>Proposals are reviewed, evaluated, and ranked by the open source
+    organization's mentors.</li>
+<li>ESA allocates a certain number of slots to each participating
+    organization<ul>
+<li>That, in turn, determines how many student developers work with
+    that organization.</li>
+</ul>
+</li>
+</ul>
+<p>Students interested in participating with BRL-CAD in SOCIS should review
+our <strong><a href="../Summer_of_Code/Checklist/">CHECKLIST</a></strong> to get started.
+Start with our <a href="Project_Ideas/">Project
+Ideas</a> page for a
+list of project suggestions that are of particular interest. Students
+are welcome to submit their own ideas as well but, more importantly, are
+encouraged to collaborate with the developers on formulating projects.</p>
+<h1 id="getting-selected">Getting Selected</h1>
+<p>SOCIS is about getting people involved in space-related software
+development. As such, we heavily weight our application selection
+process towards students that are interested in remaining involved in
+BRL-CAD and space-related open source software development long after
+SOCIS has ended.</p>
+<p><strong><em>SOCIS is not a job.</em></strong> If you think this is just a summer job, then
+SOCIS is probably not for you. It's only like a job in terms of planning
+your time commitment over the summer.</p>
+<p>Additionally, submissions are graded based on perception of the
+submitter's abilities to complete the task within the program timeframe,
+general consensus on the technical approach being proposed, and overall
+interest in having such modifications made to BRL-CAD. Particular notice
+is made of students that are responsive to questions and readily
+interactive in the IRC channel or on the mailing list. Communication is
+a great thing.</p>
+<p>Whether or not you are accepted, contributing to open source outside of
+SOCIS is the best way to be noticed and get your proposal accepted. Keep
+that in mind. Thanks for your interest and we look forward to working
+with new BRL-CAD developers!</p>
+<h1 id="brl-cad-participation-in-the-esa-summer-of-code-in-space">BRL-CAD participation in the ESA Summer of Code in Space</h1>
+<h2 id="2017">2017</h2>
+<p>TBD!</p>
+<h2 id="2016">2016</h2>
+<h2 id="geometry-viewer-application-for-brl-cad">Geometry Viewer Application for BRL-CAD</h2>
+<ul>
+<li><strong>Student:</strong> <a href="/wiki/user/Asadmorgoth">Syed Asadullah Hussain <strong>(Asad)</strong></a></li>
+<li><strong>Mentor:</strong> Christopher Sean Morrison</li>
+<li><a href="https://github.com/asadpiz/brlcad-viewer/commits/master"><strong>Development
+    Log</strong></a></li>
+<li><a href="../Geometry_Viewer_Application_for_BRL-CAD/"><strong>Project Design</strong></a></li>
+<li><a href="https://github.com/asadpiz/brlcad-viewer"><strong>Project Repository</strong></a></li>
+</ul>
+<h2 id="2014">2014</h2>
+<h3 id="mihai-neacsu">Mihai Neacșu</h3>
+<ul>
+<li><a href="/wiki/user/Mihaineacsu/proposal2014">Proposal</a></li>
+<li><a href="/wiki/user/Mihaineacsu/SoCIS2014/Logs">Development Logs</a></li>
+</ul>
+<h2 id="2011">2011</h2>
+<h3 id="abhijit-nandy">Abhijit Nandy</h3>
+<p>For the 2011 ESA Summer of Code, we selected <a href="/wiki/user/Abhijit">Abhijit
+Nandy</a> to work in implementing a non-vacuum
+gravity simulator for BRL-CAD. See his user page at
+<a href="/wiki/user/Abhijit">user/Abhijit</a> for details on the progress he
+made on that project.</p>
+<p><a href="Category:_Summer_of_Code">Category: Summer of Code</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

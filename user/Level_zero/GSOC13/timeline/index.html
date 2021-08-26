@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Level_zero/GSOC13/timeline/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Working Schedule - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Level_zero/GSOC13/timeline.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#working-schedule" class="nav-link">Working Schedule</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#upto-june-17-analysis-and-design-period" class="nav-link">upto June 17 (Analysis and Design Period)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#june-17-sep-2-development-phase" class="nav-link">June 17 - Sep 2 (Development Phase)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sep-2-sep-27-final-wrap-up-and-cleaning" class="nav-link">Sep 2 - Sep 27 (Final Wrap UP and Cleaning)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="working-schedule">Working Schedule</h1>
+<h2 id="upto-june-17-analysis-and-design-period">upto June 17 (Analysis and Design Period)</h2>
+<ul>
+<li>Exploring the code.</li>
+<li>Make a short rough bio about each tool - <em>the way they work</em>.</li>
+<li>Find the Image Processing functionalities used in them. Look at
+    duplication in the functionalities.</li>
+</ul>
+<p>(5-10 tools/day depending on varied length.</p>
+<ul>
+<li>Preparation of rough ideas of each functionalities and the way they
+    will be implemented with additional improvements in usability.</li>
+<li>Discuss with mentor and other developers about the final plan for
+    the design of the library. This includes :<ul>
+<li>the possible formats to be supported (In addition to the already
+    started in include/icv.h)</li>
+<li>Addition of Different functionalities and there usability
+    improvements.</li>
+<li>Discussion about common groups identified for different
+    functionalities.</li>
+</ul>
+</li>
+<li>Learning usage from BRLCAD libraries like common.h libbu libbio</li>
+</ul>
+<p>At the end of this period : <strong>A finalized plan to proceed for the
+development of the library</strong>.</p>
+<h2 id="june-17-sep-2-development-phase">June 17 - Sep 2 (Development Phase)</h2>
+<h3 id="june-17-july-1-2-week">June 17 - July 1 [\~2 Week]</h3>
+<ul>
+<li>Implementation of various Structures of the new library</li>
+<li>Deciding about the functions to be included in different files based
+    on categories.</li>
+<li>Deciding the input parameters and return type of each function.</li>
+<li>Identify error handling in each Function.</li>
+<li>Witting Documentation of all the structures included. PDF+Wiki</li>
+<li>Creating Patches all together.</li>
+</ul>
+<h3 id="july-1-aug-12-6-week">July 1 - Aug 12 [\~6 Week]</h3>
+<ul>
+<li>Implementation of image processing functionalities focusing on
+    categories identified during project analysis period.</li>
+<li>Enough Time is allotted to this to follow up the implementation as
+    decided during analysis step.</li>
+<li>Implementation of 3-4 functions a week which includes unit-level
+    testing and code coverage.</li>
+<li>Documentation of the functions including input output
+    arguments/methods etc.</li>
+</ul>
+<p>To implement the image processing functionalities common groups have
+been identified details of which are given at
+<a href="../ImplemnetationDetails-1/">ImplemnetationDetails-1</a> .Further these
+groups have varied implementation load, Thus to balance the load for a
+particular following weekly plan has been chalked in.</p>
+<h4 id="sub-division">Sub Division</h4>
+<ul>
+<li>WEEK-1<ul>
+<li>Crop or Rect (GROUP#1)</li>
+<li>Differences and other arithmetic operations (GROUP#2)</li>
+</ul>
+</li>
+<li>WEEK-2<ul>
+<li>Filters, (GROUP#3)</li>
+</ul>
+</li>
+<li>WEEK-3<ul>
+<li>Histograms and Equalizations (GROUP#4)</li>
+<li>Stats (GROUP#6)</li>
+</ul>
+</li>
+<li>WEEK-4<ul>
+<li>Scale or Shrink (GROUP#5)</li>
+<li>Interpolate/Decimate (GROUP#8)</li>
+</ul>
+</li>
+<li>WEEK-5<ul>
+<li>Thresh (GROUP#7)</li>
+<li>Background and Border (GROUP#9)</li>
+</ul>
+</li>
+<li>WEEK-6<ul>
+<li>Reserved Week</li>
+</ul>
+</li>
+</ul>
+<h3 id="aug-12-sept-2-3-week">Aug 12 - Sept 2 [\~3 Week]</h3>
+<p>=</p>
+<ul>
+<li>Implimentation of Import/Export Modules.</li>
+<li>Testing these Modules.</li>
+<li>Documentation of these modules</li>
+</ul>
+<h2 id="sep-2-sep-27-final-wrap-up-and-cleaning">Sep 2 - Sep 27 (Final Wrap UP and Cleaning)</h2>
+<h3 id="sep-2-sep-9-1-week">Sep 2 - Sep 9 [\~1 Week]</h3>
+<ul>
+<li>Code Cleaning</li>
+<li>System Level testing for the library.</li>
+<li>Giving final structure to the documentation.</li>
+</ul>
+<h3 id="sep9-sep16-1-week">Sep9 - Sep16 [\~1 Week]</h3>
+<ul>
+<li>Creating Demos For each functionality and Final cleaning</li>
+</ul>
+<h3 id="sep-16-sep-27-1-week">Sep 16 - Sep 27 [\~1 Week]</h3>
+<ul>
+<li>Performance Analysis using gprof for different data.</li>
+<li>Final code submission with Google.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

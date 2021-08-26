@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Clouddrift/GSoC2014/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>GSoC2014 - BRL-CAD Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Clouddrift/GSoC2014.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#personal-information" class="nav-link">Personal Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#project-title" class="nav-link">Project Title</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#synopsis" class="nav-link">Synopsis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#concepts" class="nav-link">Concepts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#detailed-description" class="nav-link">Detailed description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#schedule" class="nav-link">Schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#brief-background" class="nav-link">Brief background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="personal-information">Personal Information</h2>
+<p><strong>Name:</strong> Zhao Anqing</p>
+<p><strong>E-mail:</strong> zaqcloud@hotmail.com</p>
+<p><strong>IRC Username:</strong> Zhao_Anqing</p>
+<h2 id="project-title">Project Title</h2>
+<p>Mesh Library Cleanup</p>
+<h2 id="synopsis">Synopsis</h2>
+<p>BRL-CAD has an extensive n-manifold (NMG) polygonal mesh library
+presently embedded within LIBRT. N-manifold can provide an arbitrary
+boundary representation structure. This part in BRL-CAD runs good but
+not perfect, for it is far from, as is expected, stable, rubost and
+easy-read. Sometimes it causes some awkward performance problem and some
+algorithm based on current NMG is inefficient. The purpose of this
+project is to clean, validate and verify relevant source code about NMG,
+and then add the missing Euler Operation to it.</p>
+<h2 id="concepts">Concepts</h2>
+<p>Some important concepts should be clarified before starting this
+project.</p>
+<h3 id="manifold">Manifold</h3>
+<p>Manifold representation is commonly used in many commercial boundary
+based solid modeling systems. Kinds of data structures are useful to
+describe manifold solid. In early years, wing-edge data structure is
+widely accepted by researchers and companies. With the development of
+related theories, the half-edge data structure appeared. Splitting an
+edge into two half-edge makes it more flexible than wing-edge,
+especially when iterating elements.</p>
+<!-- -->
+
+<p>As a general solid representation, half-edge data structure is enough.
+The lower operations named Euler Operation can make sure the
+completeness and validity of the solid, and the higher operations such
+as sweeping, fillet and others enhance the usability. But in a CAD
+system, we will give a proper representation for other situation which
+can appear as the result of the standard and the regularized Bool
+Operation. For instance, several volumes or faces are only connected by
+a single vertex.</p>
+<h3 id="non-manifold">Non-manifold</h3>
+<p>To support the structure mentioned above, the core concept of this
+project, non-manifold is put forward. Unlike manifold, Non-manifold is a
+geometric modeling term referring to topological situations which are
+not restricted to be two-manifold. It can define not only volume but
+also surface, curve and point in a single uniform representation.</p>
+<!-- -->
+
+<p>Compared with half-edge data structure, Weiler (the author of the
+paper[1]) proposes a new representation method, Radial Edge data
+structure, which extends half element from only edge to vertex, loop and
+face. Such change is worthy, though it makes the data structure more
+complex. The boundary elements may range from a surface(2D), an
+edge(1D), and a vertex(0D).</p>
+<h2 id="detailed-description">Detailed description</h2>
+<h3 id="the-current-status-of-nmg">The current status of NMG</h3>
+<p>Now, this part of NMG is mainly located in raytrace.h and nmg.h where it
+is mixed with other irrelevant structs, macros and functions. It seems
+that these codes are moved to here and stacked together temporarily. The
+organization is not ideal for other developers to read, use and
+maintain.</p>
+<h4 id="codes-in-nmgh">Codes in nmg.h</h4>
+<p>Core NMG structure and relevant macros are defined in this file.
+Including:</p>
+<ul>
+<li><strong>NMG elements (7):</strong> The basic parts of Radial Edge Data Structure,
+    containing model, region, shell, face, loop, edge and vertex.</li>
+<li><strong>NMG using elements (4):</strong> The using parts of Radial Edge Data
+    Structure, containing faceuse, loopuse, edgeuse and vertexuse.</li>
+<li><strong>Geometry structure:</strong> Bounding box information and kinds of
+    geometric description for locating and shaping NMG elements.</li>
+<li><strong>Allocation and Release macros:</strong> Memory management for NMG
+    elements.</li>
+<li><strong>Some test cases</strong>.</li>
+</ul>
+<h4 id="codes-in-raytraceh">Codes in raytrace.h</h4>
+<p>The routines about NMG here are mainly operations or functions acting on
+basic NMG structure. Including:</p>
+<ul>
+<li><strong>Creation:</strong> Create a new NMG element without geometry information.</li>
+<li><strong>Removal:</strong> Remove specific element from an existing NMG element.</li>
+<li><strong>Assignment:</strong> Assign geometry information to the specific
+    topology.</li>
+<li><strong>Modification:</strong> Modify the specific topology.</li>
+<li><strong>Print:</strong> Give some information about the specific NMG element in
+    form of string.</li>
+<li><strong>Classification:</strong> Compute the relationship between two NMG
+    elements, such as point and face, point and solid, and so on.</li>
+<li><strong>Intersection:</strong> Compute the intersection result between two NMG
+    elements, such as getting a point from two edges or a line from two
+    faces.</li>
+<li><strong>Count:</strong> Count the specific element in a NMG element.</li>
+<li><strong>Other Functions</strong>.</li>
+</ul>
+<h3 id="remove-redundant-code">Remove redundant code</h3>
+<p>For some reason, the NMG primitive is originally designed and
+implemented for a stand-alone NMG CAD. But the situation changed. Some
+levels of current NMG become redundant, since they are able to be
+replaced by some parts in database structure now. Including:</p>
+<p>:* <strong>model</strong>: represents the whole geometry, which is similar to the
+content of BRL-CAD *.g file.</p>
+<p>:* <strong>nmgregion</strong>: sub-level structure beneath <em>model</em>, which is similar
+to the BRL-CAD region struct.</p>
+<p>:* <strong>Maybe others</strong>.</p>
+<p>I will remove them as well as relevant macros and functions to simplify
+the problem. In the process, I should make sure there is no side-effect
+or new trouble introduced.</p>
+<h3 id="extract-nmg-to-be-a-stand-alone-library">Extract NMG to be a stand-alone library</h3>
+<p>The concept of manifold is critical to many parts of geometry and
+mathematical physics because it allows more complicated structures to be
+described and understood in a more understandable way. So it can and
+should be combined into a function-independent library. I will check
+each line of the code in LIBRT, then move the NMG parts into a new
+stand-alone library named LIBNMG.</p>
+<!-- -->
+
+<p>Besides, just like what has been done in LIBBU, it will be more
+reasonable to divide the whole content into several header and code
+files, because accurate division can make code organization more clear.</p>
+<h3 id="add-comments">Add comments</h3>
+<p>Complement some proper comments for each header file in the new-built
+LIBNMG library. I will obey following rules when writing comments.</p>
+<ul>
+<li><strong>Header file:</strong> Entirely functional description.</li>
+<li><strong>Struct:</strong> Complete description for whole struct and each member.</li>
+<li><strong>Macro:</strong> Complete description for its function and purpose.</li>
+<li><strong>Function:</strong> Complete description for input parameters, output
+    parameters and main algorithm theories.</li>
+</ul>
+<h3 id="unit-test">Unit test</h3>
+<p>According to the experience from other developers in community, it is
+absolute that lots of bugs are hidden in LIBNMG. So it is necessary to
+write a systematic set of test case. With more bugs discovered and
+fixed, the new-built library will be more readable and stable.</p>
+<!-- -->
+
+<p>There is some similar work done in src/libbu/tests. Finishing the test
+cases by consulting these samples will help me avoid many unnecessary
+mistakes. And what's more important, it must be assured that they can
+operate normally in CMake which BRL-CAD use to build system.</p>
+<h3 id="add-euler-operation">Add Euler Operation</h3>
+<p>Euler operators are useful to manipulate manifold boundary graph based
+topology representations. It provides a flexible base for higher level
+operators while insulating them from the details and complexities of the
+data structures utilized. Euler operation is useful but is missed in
+current BRL-CAD. After the successful migration and reorganization of
+LIBNMG, adding Euler operation for BRL-CAD is necessary.</p>
+<!-- -->
+
+<p>I will reliably add Euler Operation to the system and test them. I have
+experience in writing Euler Operation for an implement of manifold data
+structure before, so it will not baffle me. All types of Euler Operation
+will be included.</p>
+<h4 id="construction-operators">Construction Operators</h4>
+<p>:*<strong>MVSF( v, f ):</strong> Create a new topology structure for manifold.</p>
+<p>:*<strong>MEV( v1, v2, e ):</strong> Create a new vertex <strong>v2</strong> and connect it with
+an existing one <strong>v1</strong> by edge <strong>e</strong>.</p>
+<p>:*<strong>MEF( v1, v2, f1, f2, e ):</strong> Connect two exist vertices, <strong>v1</strong> and
+<strong>v2</strong>, on face <strong>f1</strong>, then create a new face <strong>f2</strong> and a new edge
+<strong>e</strong>.</p>
+<p>:*<strong>MEKR( v1, v2, e ):</strong> Create a new edge <strong>e</strong> to connect two
+existing vertices, <strong>v1</strong> and <strong>v2</strong>, then remove an inner loop from the
+face.</p>
+<p>:*<strong>MFKRH( f1, f2 ):</strong> Remove an inner loop on face <strong>f1</strong>, then create
+a new face <strong>f2</strong> as well as remove a hole from model.</p>
+<h4 id="destruction-operators">Destruction Operators</h4>
+<p>:*<strong>KVSF():</strong> Remove an existing topology structure which contains only
+one vertex.</p>
+<p>:*<strong>KEV( e, v ):</strong> Remove an existing edge <strong>e</strong> and an endpoint <strong>v</strong>
+of it.</p>
+<p>:*<strong>KEF( e ) :</strong> Remove an existing edge <strong>e</strong> and its adjacent face.</p>
+<p>:*<strong>KEMR( e ):</strong> Remove an existing edge <strong>e</strong>, then create a inner
+loop of its adjacent face.</p>
+<p>:*<strong>KFMRH( f1, f2 ):</strong> Remove an existing face <strong>f2</strong> which is adjacent
+to face <strong>f1</strong>, then create an inner loop.</p>
+<h4 id="auxiliary-operators">Auxiliary Operators</h4>
+<p>:*<strong>SEMV( e1, v, e2 ):</strong> Split edge <strong>e1</strong> into two segments to create
+a new vertex <strong>v1</strong> and a new edge <strong>e2</strong>.</p>
+<p>:*<strong>JEKV( e1, e2 ):</strong> merge two adjacent edges, <strong>e1</strong> and <strong>e2</strong>, then
+remove the common vertex.</p>
+<h3 id="documentation">Documentation</h3>
+<p>I referred to lots of date during my writing of this proposal. In the
+last part, for others who might be interested, I will explain how I
+approached this project and give some useful linked as well as a change
+list.</p>
+<h2 id="schedule">Schedule</h2>
+<p>:*Preparation Step 1 (1 April - 18 April): Deeply understanding current
+logic relationship and program architecture concerning NMG.</p>
+<p>:*Preparation Step 2 (19 April - 18 May): Discuss with
+mentors/developers about the solution for removing redundant structs,
+moving into a stand-alone library, and so on. Try as much as possible to
+test and verify all possibilities.</p>
+<p>:*Week 1 (19 May - 25 May): Estimate completely the influence of
+removing abundant structs. Make sure nothing misses attention.</p>
+<p>:*Week 2 (26 May - 1 June): Remove the abundant structs and test
+briefly.</p>
+<p>:*Week 3 (2 June - 8 June): Move the NMG parts from LIBRT into a
+new-built library, LIBNMG.</p>
+<p>:*Week 4 - 5 (9 June - 22 June): Write test case, and make sure
+everything goes well just like before and to fix bugs found.</p>
+<p>:*Week 6 (23 June - 29 June): Prepare for the mid-evaluation.</p>
+<p>:*Week 7 - 9 (30 June - 20 July): Add Euler Operation.</p>
+<p>:*Week 10 (21 July - 27 July): Complement the comments for the new
+library.</p>
+<p>:*Week 11 (28 July - 3 August): Writing relevant documents.</p>
+<p>:*Week 12 - 13 (4 August - 17 August): Prepare for final-evaluation.</p>
+<h2 id="brief-background">Brief background</h2>
+<p>I am a graduate student in State Key Lab of CAD &amp; CG, School of Computer
+Science, Zhejiang University, China. I have 3 years' work experience in
+programming a CAD module for an Optical Critical Dimension system in a
+conductor measurement company using Open Cascade. Now, my main research
+direction is something about hexahedral mesh.</p>
+<h2 id="why-brl-cad">Why BRL-CAD</h2>
+<p>There is no doubt that an amount of commercial CAD software is
+outstanding and amazing, but their high price of each copy decides that
+not everyone could get such a CAD tool to try and improve their
+unconstrained idea. We need open source software to make people free,
+free, and free more. I like this open source CAD system and community. I
+believe it is worthy to contribute efforts for BRL-CAD. At the meantime,
+I can learn rich and irreplaceable experience in connection with CAD
+from this project and other developers.</p>
+<h2 id="why-me">Why me</h2>
+<p>I'm a graduate student of Zhejiang University, which is famous for its
+reputation in the field of CAD&amp;CG research. I have good background in
+CAD theories and programming skills. Moreover, this project is mainly
+about NMG mesh which is to a large extent related to my research and
+work experience. I have written a CAD module for an optical measurement
+system, whose user-friendly interface promoted the company's sales. I am
+sure it is no problem for me to finish it with high quality in time.</p>
+<!-- -->
+
+<p>And, I make sure I can dedicate at least 40 hours per week in this
+summer holiday. I understand clearly the importance of adequate
+communication with other experienced developers and theory experts,
+whose valuable suggestions can enormously save twists and turns.</p>
+<h2 id="references">References</h2>
+<p>[1] <a href="http://www.scorec.rpi.edu/REPORTS/1986-1.pdf">http://www.scorec.rpi.edu/REPORTS/1986-1.pdf</a></p>
+<p>[2] <a href="http://sourceforge.net/p/brlcad/mailman/message/28536100">http://sourceforge.net/p/brlcad/mailman/message/28536100</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

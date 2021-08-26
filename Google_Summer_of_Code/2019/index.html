@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/2019/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>GSoC 2019 With BRL-CAD - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/Google_Summer_of_Code/2019.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gsoc-2019-with-brl-cad" class="nav-link">GSoC 2019 With BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accepted-projects" class="nav-link">Accepted Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#porting-svgnest-to-c" class="nav-link">Porting SVGNest to C++</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#automate-reinforcement-process-in-freecad" class="nav-link">Automate Reinforcement Process in FreeCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#extending-brl-cads-online-3d-geometry-viewer-visualization-utility-and-features" class="nav-link">Extending BRL-CAD's Online 3D Geometry Viewer Visualization Utility and Features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#improvement-of-openscad-text-editor-features" class="nav-link">Improvement of OpenSCAD Text-Editor Features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#improve-dxf-importexport-in-openscad" class="nav-link">Improve DXF import/export in OpenSCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#freecad-configuration-management" class="nav-link">FreeCAD Configuration Management</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-gui-application-for-brl-cad" class="nav-link">New GUI Application for BRL-CAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fem-workbench-testing" class="nav-link">FEM Workbench Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bcf-support-in-bim-wb-freecad" class="nav-link">BCF Support in BIM WB - FreeCAD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#implement-more-annotation-support-labels-notes-and-dimensions" class="nav-link">Implement more annotation support: labels, notes, and dimensions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#librecad-opengl-rendering" class="nav-link">LibreCAD OpenGL Rendering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gsoc-2019-with-brl-cad">GSoC 2019 With BRL-CAD</h1>
+<p><strong>BRL-CAD was accepted as an <a href="https://summerofcode.withgoogle.com">umbrella mentoring
+organization</a> for the Google Summer
+of Code!</strong></p>
+<h1 id="accepted-projects">Accepted Projects</h1>
+<h2 id="porting-svgnest-to-c">Porting SVGNest to C++</h2>
+<ul>
+<li>Implementing auto-arrange feature in Slic3r to help print as much
+    objects as we can on the print bed to speed up total printing time.
+    SVGNest is a JS library which implements a nesting algorithm which
+    is what we need.</li>
+<li>Org: Slic3r</li>
+<li>Student: <a href="/wiki/user/3bhady">Mohamed Abdelhady</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6145102097940480">Abstract</a></li>
+<li><a href="https://docs.google.com/document/d/1jPKPcwzsgZp71-dwcqjF-2dhkbSJFzd1UJiHqWadBFs/edit#heading=h.ify3uxas0bf5">Project Plan</a></li>
+<li><a href="https://github.com/slic3r/Slic3r/issues/4812">Github Issue</a></li>
+<li><a href="/wiki/user/3bhady">Dev Log</a></li>
+</ul>
+<h2 id="automate-reinforcement-process-in-freecad">Automate Reinforcement Process in FreeCAD</h2>
+<ul>
+<li>This project is to automate Reinforcement process by using Rebar
+    Addon in FreeCAD. The idea is to create UI on top of the current
+    implementation to combine different types of Rebars in a single
+    Dialog Box as per the user requirements. For example, combine
+    Stirrups and Rebars (different types of rebars) in case of Beam
+    Reinforcement.</li>
+<li>Org: FreeCAD</li>
+<li>Student: <a href="/wiki/user/Suraj_Dadral">Suraj</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#4615685316018176">Abstract</a></li>
+<li><a href="/wiki/user/Suraj_Dadral/gsoc_proposal">Project Plan</a></li>
+<li><a href="/wiki/user/Suraj_Dadral/GSoC19/logs">Dev Log</a></li>
+</ul>
+<h2 id="extending-brl-cads-online-3d-geometry-viewer-visualization-utility-and-features">Extending BRL-CAD's Online 3D Geometry Viewer Visualization Utility and Features</h2>
+<ul>
+<li>This project aims to enable CAD designers to quickly share and view
+    designs easily on web and mobile web platforms. Through fully
+    extending the UI to be responsive and enhancing the visualization
+    features, users will now be able to share and customize their CAD
+    designs quickly through the web through on their mobile devices.
+    Enabling the sharing of CAD Designs online may be beneficial to
+    sharing information with the community.</li>
+<li>Org: BRL-CAD</li>
+<li>Student: <a href="/wiki/user/Quentinpaden">Quentin Paden</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#5674766134935552">Abstract</a></li>
+<li><a href="https://docs.google.com/document/d/18QCocedykMBAmplJxQpnUb8JdkBhUPllH1Timf14HgM/edit?usp=sharing">Project Plan</a></li>
+<li><a href="/wiki/user/Quentinpaden">Dev Log</a></li>
+</ul>
+<h2 id="improvement-of-openscad-text-editor-features">Improvement of OpenSCAD Text-Editor Features</h2>
+<ul>
+<li>The goal of this project will be to add different IDE-like features
+    to the integrated text editor thus advancing its usage. This will
+    make the editor more user-friendly and easier to handle large codes.
+    I will work on implementing multi-file editing support to the editor
+    and autocompletion of OpenSCAD keywords.</li>
+<li>Org: OpenSCAD</li>
+<li>Student: <a href="/wiki/user/RomitKumar">Romit Kumar</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#5042363104231424">Abstract</a></li>
+<li><a href="/wiki/user/RomitKumar/GSoC19/proposal">Project Plan</a></li>
+<li><a href="/wiki/user/RomitKumar/GSoC19/logs">Dev Log</a></li>
+</ul>
+<h2 id="improve-dxf-importexport-in-openscad">Improve DXF import/export in OpenSCAD</h2>
+<ul>
+<li>This project is to use an exsiting external DXF import/export
+    library to imporve the current import/export process in OpenSCAD.</li>
+<li>Org: OpenSCAD</li>
+<li>Student: <a href="/wiki/user/Xuwei">Xuwei Tan</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#4926901498413056">Abstract</a></li>
+<li><a href="https://docs.google.com/document/d/1KB3SsfoMhVHPlaxnZtil7UFjPDcD35gnrvps_QIhkT0/edit?usp=sharing">Project Plan</a></li>
+<li><a href="/wiki/user/Xuwei/DevLog2019">Dev Log</a></li>
+</ul>
+<h2 id="freecad-configuration-management">FreeCAD Configuration Management</h2>
+<ul>
+<li>This project aims to encourage new developers to adopt FreeCAD
+    development by improving their experience with the development
+    environment.</li>
+<li>Org: FreeCAD</li>
+<li>Student: <a href="/wiki/user/Zachg">Zachary Gummow</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#6101797721079808">Abstract</a></li>
+<li><a href="https://docs.google.com/document/d/1LJRcp55qL6f-4NpFzfQXhgJIJag0GUEXL8QYIz-hdyU/edit?usp=sharing">Project Plan</a></li>
+<li><a href="https://zachgummow.github.io/">Dev Log</a></li>
+</ul>
+<h2 id="new-gui-application-for-brl-cad">New GUI Application for BRL-CAD</h2>
+<ul>
+<li>The project is to create a new application encapsulating the
+    functionalities of BRL-CAD libraries in an easy to use UI.</li>
+<li>Org: BRL-CAD</li>
+<li>Student: <a href="/wiki/user/Sadeep">Sadeep Weerasinghe</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#5575865184813056">Abstract</a></li>
+<li><a href="https://drive.google.com/open?id=1neRDaiPuKw48aq7KYNAAthhBSw3vMiR8zY1RibsmQdw">Project Plan</a></li>
+<li><a href="/wiki/user/Sadeep/DevLog-NewGui">Dev Logs</a></li>
+</ul>
+<h2 id="fem-workbench-testing">FEM Workbench Testing</h2>
+<ul>
+<li>Improve the quality and reliability of the FEM Workbench of FreeCAD
+    by introducing a extensive and consistent testing approach and
+    developing a test suite covering the whole FEM module.</li>
+<li>Org: FreeCAD</li>
+<li>Student: <a href="https://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=3911">Markus Hovorka</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#4616265304375296">Abstract</a></li>
+<li><a href="https://docs.google.com/document/d/1riddGK1_k2DLCleUdNQ_qVk7uMqyyDj_cIL4ugN-AC4/edit?usp=sharing">Project Plan</a></li>
+<li><a href="https://ceeli.github.io/gsoc">Dev Log</a></li>
+</ul>
+<h2 id="bcf-support-in-bim-wb-freecad">BCF Support in BIM WB - FreeCAD</h2>
+<ul>
+<li>Integrate BCF (BIM Collaboration Format) into the BIM Workbench of
+    FreeCAD in form of a standalone Qt5 Plugin.</li>
+<li>Org: FreeCAD</li>
+<li>Student: <a href="https://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=23873">Patrick Podest</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#5663586133737472">Abstract</a></li>
+<li><a href="https://docs.google.com/document/d/1LDYokb6sjMmrGs7Od2VZ3u1jlZ6bomerW_mpQK87e-A/edit?usp=sharing">Project Plan</a></li>
+<li>Discussion: <a href="https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=35465">Forum</a></li>
+<li>Dev Log: <a href="https://podestplatz.github.io/FreeCAD-blog">Blog</a></li>
+</ul>
+<h2 id="implement-more-annotation-support-labels-notes-and-dimensions">Implement more annotation support: labels, notes, and dimensions</h2>
+<ul>
+<li>The project will aim to enhance the existing annotation capability
+    and add another type of annotations like dimensions , labels and
+    single or multiple lines notes</li>
+<li>Org: BRL-CAD</li>
+<li>Student: <a href="Ali_Haydar_presonal_page.md">Ali Haydar</a></li>
+<li><a href="https://summerofcode.withgoogle.com/organizations/5998740693843968/#4874682312949760">Abstract</a></li>
+<li><a href="/wiki/user/Ali_Haydar/GSOC19/project">Project Plan</a></li>
+<li><a href="Ali_Haydar_Dev_log.md">Dev Log</a></li>
+</ul>
+<h2 id="librecad-opengl-rendering">LibreCAD OpenGL Rendering</h2>
+<ul>
+<li>To make a complete well abstracted OpenGL painter implementation
+    with C++ for the rendering in LibreCAD 3.</li>
+<li>Org: LibreCAD</li>
+<li>Student: <a href="https://wiki.librecad.org/index.php?title=user/Kartik_Kumar">Kartik Kumar</a></li>
+<li><a href="https://summerofcode.withgoogle.com/projects/#5508189452238848">Abstract</a></li>
+<li><a href="https://wiki.librecad.org/images/7/73/LibreCAD_OpenGL_Kartik_proposal.pdf">Project Plan</a></li>
+<li><a href="https://wiki.librecad.org/index.php?title=GSoC_2019_Dev_Log">Dev Log</a></li>
+<li><a href="https://blog.librecad.org/category/development/gsoc2019/">Blog</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Kkremitzki/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Kkremitzki - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../DocPages/" class="nav-link">DocPages</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../UserPages/" class="nav-link">UserPages</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/docs/user/Kkremitzki.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="gsoc-2018-project-plan">GSoC 2018 Project Plan</h3>
+<h4 id="overall-goals">Overall Goals</h4>
+<ul>
+<li>Work on Debian packaging situation for FreeCAD so improvements
+    filter down to Ubuntu, Linux Mint, etc.<ul>
+<li>Package FreeCAD 0.17<ul>
+<li>w/ OCCT 7.2</li>
+<li>w/ Qt5 support via PySide2</li>
+<li>w/ external SMESH</li>
+<li>w/ Netgen</li>
+<li>w/ Python 3</li>
+</ul>
+</li>
+<li>Package PySide 2 suite<ul>
+<li>pyside2</li>
+<li>shiboken2</li>
+<li>pyside2-tools</li>
+</ul>
+</li>
+<li>Package Netgen 6.2.18xx w/ OCCT 7.2</li>
+<li>Update Gmsh to use OCCT 7.2</li>
+<li>Package SMESH w/ OCCT 7.2</li>
+</ul>
+</li>
+<li>Work on packaging &amp; distribution situation on Windows using Conda<ul>
+<li>Translate packaging improvements in Debian-&gt;Conda</li>
+<li>Enable debugging &amp; development support</li>
+</ul>
+</li>
+<li>Work on CI &amp; CD solution using Buildbot<ul>
+<li>Deliverable: Ansible playbook to deploy Buildbot workers on<ul>
+<li>Debian/Ubuntu</li>
+<li>Windows 7/10</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Come up with dependency graph using Graphviz &amp; release documentation
+    to streamline release process and ease management of dependencies</li>
+</ul>
+<h4 id="phase-1">Phase 1</h4>
+<ul>
+<li>Primary goal: Finish PySide 2 packaging</li>
+<li>Secondary goal: Begin Netgen &amp; SMESH packaging</li>
+</ul>
+<h4 id="phase-2">Phase 2</h4>
+<ul>
+<li>Primary goal: Finish Netgen, SMESH, and Gmsh packaging</li>
+<li>Secondary goal: Begin Buildbot &amp; Conda work on Windows</li>
+</ul>
+<h4 id="phase-3">Phase 3</h4>
+<ul>
+<li>Primary goal: Finish Buildbot automation for Linux &amp; Windows</li>
+<li>Secondary goal: Finalize package improvements in Debian &amp;
+    Windows/Conda</li>
+</ul>
+<h3 id="gsoc-2018-final-report">GSoC 2018 Final Report</h3>
+<p>My final work product summary is available at
+<a href="https://kkremitzki.github.io/blog/google-summer-of-code-2018-with-freecad/">https://kkremitzki.github.io/blog/google-summer-of-code-2018-with-freecad/</a>.</p>
+<p>In short, large deviation from the original plan occurred since I found
+out PySide 2 packaging was being done by another person who was a
+sponsored and well-accomplished Debian developer. Because of this, the
+main thrust of the project instead became improving the overall FreeCAD
+packaging ecosystem health, starting at the source of the Debian family
+tree, Debian itself, so that improvements will make their way to
+downstream distributions like Ubuntu and Linux Mint.</p>
+<p>In this goal, the project was a huge success!</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
