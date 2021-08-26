@@ -22,12 +22,12 @@ So be **bold** and *improve our documentation*!
 
 ## Getting started
 
--   [BRL-CAD FAQ](FAQ.md)
--   [MGED FAQ](MgedFAQ.md)
--   [Documentation](Documentation.md)
--   [MGED Commands](MGED_Commands.md)
--   [BRL-CAD Commands](BRL-CAD_Commands.md)
--   [BRL-CAD Primitives](BRL-CAD_Primitives.md)
+-   [BRL-CAD FAQ](doc/FAQ.md)
+-   [MGED FAQ](doc/MgedFAQ.md)
+-   [Documentation](doc/Documentation.md)
+-   [MGED Commands]
+-   [BRL-CAD Commands](doc/BRL-CAD_Commands.md)
+-   [BRL-CAD Primitives](doc/BRL-CAD_Primitives.md)
 -   [Image Gallery](http://brlcad.org/gallery)
 -   [Forums](Forums.md)
 
@@ -36,52 +36,49 @@ So be **bold** and *improve our documentation*!
 -   [2-hour Tasks](Deuces.md)
 -   [BRL-CAD Priorities](http://brlcad.org/BRL-CAD_Priorities.png)
 -   [Additional Development Ideas](http://brlcad.org/~sean/ideas.html)
--   [Code Cleanup](Code_Cleanup.md)
+-   [Code Cleanup](doc/Code_Cleanup.md)
 -   [Continuous Integration](Continuous_Integration.md)
--   [Developer Documents](Developer_Documents.md)
+-   [Developer Documents](doc/Developer_Documents.md)
 -   Compiling BRL-CAD...
-    -   [...from a Subversion checkout](Building_from_SVN.md)
-    -   [...from a Source tarball](Compiling.md)
-    -   [...with Eclipse](Compiling/Eclipse.md)
-    -   [...with Xcode](Compiling/XCode.md)
+    -   [...from a Subversion checkout](doc/Building_from_SVN.md)
+    -   [...from a Source tarball](doc/Compiling.md)
+    -   [...with Eclipse](doc/Compiling/Eclipse.md)
+    -   [...with Xcode](doc/Compiling/XCode.md)
 
 ## Tutorials
 
--   [for Newbies](Tutorial/Newbie.md)
+-   [for Newbies](doc/Tutorial/Newbie.md)
 -   Scripting
-    -   [SGI_Cube](SGI_Cube.md): via shell scripting
-    -   [Spiral](Spiral.md): via Perl
+    -   [SGI_Cube](doc/SGI_Cube.md): via shell scripting
+    -   [Spiral](doc/Spiral.md): via Perl
     -   [Cutting and Pasting PIX
-        files](Cutting_and_Pasting_PIX_files.md)
+        files](doc/Cutting_and_Pasting_PIX_files.md)
 -   Rendering Images
-    -   [Animation](Animation.md)
-    -   [Lighting](Lighting.md)
-    -   [Shaders](Tutorial/Shaders.md)
-    -   [Distributed Rendering](Distributed_Rendering.md)
+    -   [Animation](doc/Animation.md)
+    -   [Lighting](doc/Lighting.md)
+    -   [Shaders](doc/Tutorial/Shaders.md)
+    -   [Distributed Rendering](doc/Distributed_Rendering.md)
 -   Importing Geometry
-    -   [STEP2G](STEP2G.md) (step-g)
-    -   [Importing from Blender](Tutorial/Blender_to_CAD.md)
+    -   [STEP2G](doc/STEP2G.md) (step-g)
+    -   [Importing from Blender](doc/Tutorial/Blender_to_CAD.md)
 -   Primitive Tutorials
-    -   [Annot](Annot.md): Annotations
-    -   [Sketch](Sketch.md): 2D Sketches
-    -   [Extrude](Extrude.md): 3D Extrusions (of 2D Sketches)
-    -   [Revolve](Revolve.md): 3D Revolutions (of 2D Sketches)
-    -   [EBM](EBM.md): Extruded bitmaps
-    -   [DSP](DSP.md): Displacement maps (heightfields)
-    -   [NMG](NMG.md): N-manifold geometry (polygonal meshes)
-    -   [VOL](VOL.md): Volumetric data
+    -   [Annot](doc/Annot.md): Annotations
+    -   [Sketch](doc/Sketch.md): 2D Sketches
+    -   [Extrude](doc/Extrude.md): 3D Extrusions (of 2D Sketches)
+    -   [Revolve](doc/Revolve.md): 3D Revolutions (of 2D Sketches)
+    -   [EBM](doc/EBM.md): Extruded bitmaps
+    -   [DSP](doc/DSP.md): Displacement maps (heightfields)
+    -   [NMG](doc/NMG.md): N-manifold geometry (polygonal meshes)
+    -   [VOL](doc/VOL.md): Volumetric data
 
 ## Third-party Projects
 
--   [Hex](Hex.md) - Create threaded metric bolts, nuts, and
+-   [Hex](doc/Hex.md) - Create threaded metric bolts, nuts, and
     washers
--   [Projecto VeRDE](Projecto_VeRDE.md) - Designing a vehicle
+-   [Projecto VeRDE](doc/Projecto_VeRDE.md) - Designing a vehicle
     for collecting space debris
 
 ------------------------------------------------------------------------
-
-If you are unsure on how to edit or add new pages, see our
-[Help](Help:Contents.md).
 
 Unless otherwise noted, all contributions to the BRL-CAD wiki are made
 available under the terms of the [BSD Documentation

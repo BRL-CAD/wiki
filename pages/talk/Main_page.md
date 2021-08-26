@@ -71,7 +71,7 @@ gateway thing sounds interesting but dangerous.
 
 I got annoyed that I couldn't find a comprehensive list of primitives,
 so I started filling out [BRL-CAD
-Primitives](BRL-CAD_Primitives.md). I'm sure I missed a few, and
+Primitives](/wiki/doc/BRL-CAD_Primitives.md). I'm sure I missed a few, and
 the few that are there don't all have complete information. It would be
 nice to add a description/title, and a link to relevant documentation
 (and page) for those that need it.

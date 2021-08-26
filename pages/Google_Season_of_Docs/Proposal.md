@@ -22,8 +22,8 @@ across hundreds of manual pages, dozens of tutorials, hundreds of wiki
 pages, dozens of technical papers, and other resources. There are
 literally thousands of features created over decades of development.
 BRL-CAD's set of current manuals, guides, tutorials, and other
-documentation [are listed](Documentation.md) on our [website
-wiki](Main_page.md) and included in our
+documentation [are listed](/wiki/doc/Documentation.md) on our [website
+wiki](/wiki/doc/Main_page.md) and included in our
 [repository](https://github.com/BRL-CAD/brlcad/)\].
 
 ## About Our Doc Infrastructure
@@ -96,8 +96,8 @@ includes:
 ## What is not in scope?
 
 There are extensive docs not in Docbook XML format in our repository, on
-the [website wiki](Main_page.md), [in other
-formats](Documentation.md), and in other files that are
+the [website wiki](/wiki/doc/Main_page.md), [in other
+formats](/wiki/doc/Documentation.md), and in other files that are
 desirable and may also be migrated (e.g., for testing purposes), but
 they are secondary priority and need not be considered in scope.
 

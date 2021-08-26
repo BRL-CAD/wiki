@@ -1,7 +1,7 @@
 # Why I created this article
 
 I initially set out to revise the introductory section of the [BRL-CAD
-Primitives](BRL-CAD_Primitives.md) article, which used to
+Primitives](/wiki/doc/BRL-CAD_Primitives.md) article, which used to
 briefly discuss the various ways MGED provides for creating such
 objects. I was thinking I would flesh out that discussion and also talk
 about how the properties of such objects can be viewed and edited. But I
@@ -35,7 +35,7 @@ here:
 Instead of putting examples in this article, I'm planning to add them to
 the descriptions of the various types of primitives and add appropriate
 links here. That will probably make [that
-article](BRL-CAD_Primitives.md) too long, so I suspect I'll
+article](/wiki/doc/BRL-CAD_Primitives.md) too long, so I suspect I'll
 split it up at some point (assuming no one objects too strenuously).
 
 [JoelDBenson](/wiki/user/JoelDBenson.md)
