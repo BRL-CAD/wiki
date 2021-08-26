@@ -38,7 +38,7 @@ links here. That will probably make [that
 article](BRL-CAD_Primitives.md) too long, so I suspect I'll
 split it up at some point (assuming no one objects too strenuously).
 
-[JoelDBenson](user/JoelDBenson.md)
+[JoelDBenson](/wiki/user/JoelDBenson.md)
 ([talk](User_talk:JoelDBenson.md)) 21:09, 27 May 2013 (UTC)
 
 I certainly don't object. Make it better. :)
@@ -57,5 +57,5 @@ Much of that will eventually find its way onto our wiki (or already
 has), into our XML documentation sources, and integrated with our other
 content.
 
-[Sean](user/Sean.md) ([talk](User_talk:Sean.md)) 11:37,
+[Sean](/wiki/user/Sean.md) ([talk](User_talk:Sean.md)) 11:37,
 31 May 2013 (UTC)

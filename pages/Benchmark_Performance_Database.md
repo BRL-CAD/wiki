@@ -38,5 +38,5 @@ Muie Cornoiu!!!
 
 # Past Efforts
 
--   [GSoC14](user/Ankeshanand/GSoC14/logs)
--   [GSoC12](user/Stattrav/GSoC2012_log)
+-   [GSoC14](/wiki/user/Ankeshanand/GSoC14/logs)
+-   [GSoC12](/wiki/user/Stattrav/GSoC2012_log)

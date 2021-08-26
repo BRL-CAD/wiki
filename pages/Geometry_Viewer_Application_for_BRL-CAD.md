@@ -2,7 +2,7 @@
 
 Mentor: **Christopher Sean Morrison**
 
-Student: [Asad](user/Asadmorgoth.md)
+Student: [Asad](/wiki/user/Asadmorgoth.md)
 
 This document lists down the design for the project. This includes the
 major milestones and deadlines. [Prettier

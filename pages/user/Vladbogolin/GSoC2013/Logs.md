@@ -7,7 +7,7 @@
 | **Project Name**     | New Cross-Platform 3D Display Manager                             |
 | **Student Name**     | Bogolin Simion Vlad                                               |
 | **IRC nick**         | vladbogo                                                          |
-| **Link to proposal** | [proposal](../../Proposal/DisplayManager.md)     |
+| **Link to proposal** | [proposal](../Proposal/DisplayManager.md)     |
 
 # Milestones
 
