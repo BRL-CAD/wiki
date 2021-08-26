@@ -18,5 +18,5 @@ site_dir: html
 #      prebuild_index: true
 
 nav:
-    - 'index.md'
-    - 'User Pages': 'user-pages.md'
+  - 'index.md'
+  - 'User Pages': 'UserPages.md'
