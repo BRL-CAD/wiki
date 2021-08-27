@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Online_Geometry/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Aim of Project - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/doc/Online_Geometry.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#aim-of-project" class="nav-link">Aim of Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#current-implementation" class="nav-link">Current Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#status-of-development" class="nav-link">Status of Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#history" class="nav-link">History</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="aim-of-project">Aim of Project</h1>
+<p>The aim of this project is to provide an online service to users of
+BRL-CAD to view and share their geometric files (BRL-CAD's native .g
+file) on browser. Currently in initial development stage, project aimed
+to have more advanced features in near future with ultimate goal to
+provide geometry editing features by leveraging BRL-CAD's existing code
+to maximum extent.</p>
+<h1 id="current-implementation">Current Implementation</h1>
+<h3 id="brief-workflow">Brief workflow</h3>
+<p>JavaScript 3D library, ThreeJS is used for drawing 3D models in browser.
+But ThreeJS doesn't support .g format. However, it can read obj files.
+obj is plain text format that can represent 3D geometry. It stores
+position of vertices, vertex normals and faces etc. You can read more
+about obj at: <a href="http://en.wikipedia.org/wiki/Wavefront_.obj_file">http://en.wikipedia.org/wiki/Wavefront_.obj_file</a></p>
+<p>BRL-CAD has converter called g-obj that simply converts specified
+object(s) from BRL-CAD database .g file to obj file(s). So, right now
+g-obj plays fundamental role in the working of this project but there
+are lot of possibilities to replace this with some robust method.</p>
+<p>In the end, obj file is given to ThreeJS and it draws entity on browser.</p>
+<h3 id="detailed-workflow">Detailed workflow</h3>
+<p>Here is the flow diagram of OGV: <a href="Media:_Flow_diagram_of_online_geometry_viewer.jpeg.md">Media:
+Flow_diagram_of_online_geometry_viewer.jpeg</a>.
+We can divide the whole process in following four operations:</p>
+<ul>
+<li>Upload .g file</li>
+<li>Extracting data</li>
+<li>Conversion</li>
+<li>Display</li>
+</ul>
+<p>Above four operations are performed by following four files:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>upload.php:</strong></td>
+<td>It provides a web interface for user to upload .g file.</td>
+</tr>
+<tr>
+<td><strong>upload_file.php:</strong></td>
+<td>It extracts data that includes name of .g file and that of its entities and pass it to model_display.php.</td>
+</tr>
+<tr>
+<td><strong>model_display.php:</strong></td>
+<td>It provides list of entities for user to choose from. When user clicks the "view" button corresponding to any entity, request is sent to create_obj.php for creating obj file.</td>
+</tr>
+<tr>
+<td><strong>create_obj.php:</strong></td>
+<td>As name suggests, when request received from model_display.php, it run g-obj converter that creates obj and respond with appropriate status. If success, entity is displayed on browser.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="extracting-name-of-g-file-and-that-of-its-entities">Extracting name of .g file and that of its entities:</h4>
+<p>Name of file is extracted using PHP's $_FILES variable and list of
+entities of .g file are copied to PHP variable using BRL-CAD's "ls"
+command.</p>
+<h4 id="conversion">Conversion</h4>
+<p>When .g file is uploaded, user is redirected to model_display.php. When
+user clicks on "view", add_entitiy() method is called that sends an
+AJAX request to create_obj.php. In create_obj.php, create_obj()
+method runs g.obj converter that creates obj file.</p>
+<h4 id="languages-used">Languages used</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PHP</strong></td>
+<td>74.3%</td>
+</tr>
+<tr>
+<td><strong>CSS</strong></td>
+<td>13.6%</td>
+</tr>
+<tr>
+<td><strong>JavaScript</strong></td>
+<td>12.1%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="third-party-libraries">Third party libraries</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ThreeJS:</strong></td>
+<td>3D JavaScript webGL library</td>
+</tr>
+<tr>
+<td><strong>BootStrap:</strong></td>
+<td>Front-end framework used for CSS work</td>
+</tr>
+<tr>
+<td><strong>pace.js:</strong></td>
+<td>Automatic page load progress bar</td>
+</tr>
+<tr>
+<td><strong>jquery:</strong></td>
+<td>For AJAX work</td>
+</tr>
+<tr>
+<td><strong>Swift Mailer:</strong></td>
+<td>For sending emails</td>
+</tr>
+</tbody>
+</table>
+<h4 id="top-level-directories">Top level directories</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>accounts:</strong></td>
+<td>Sign-in signup module, swift mailer</td>
+</tr>
+<tr>
+<td><strong>css:</strong></td>
+<td>images, pace.js</td>
+</tr>
+<tr>
+<td><strong>doc:</strong></td>
+<td>html, latex</td>
+</tr>
+<tr>
+<td><strong>images</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>js:</strong></td>
+<td>ThreeJS</td>
+</tr>
+<tr>
+<td><strong>user_accounts:</strong></td>
+<td>Parent directory for user directories.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="other-files">Other files</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>config.php:</strong></td>
+<td>A global configuration file.</td>
+</tr>
+<tr>
+<td><strong>doxyfile:</strong></td>
+<td>Doxygen file.</td>
+</tr>
+<tr>
+<td><strong>functions.php:</strong></td>
+<td>PHP functions</td>
+</tr>
+<tr>
+<td><strong>geo_viewer.sql:</strong></td>
+<td>Database schema file (.sql)</td>
+</tr>
+<tr>
+<td><strong>header.php:</strong></td>
+<td>Common file for header of webpage. (TODO: There are two header.php files, one in root directory and other in accounts/include. One of these duplicate files need to be removed)</td>
+</tr>
+<tr>
+<td><strong>README.md</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>variables.php:</strong></td>
+<td>Contain variables.</td>
+</tr>
+</tbody>
+</table>
+<p>Further, detailed comments are written in the source code itself. If you
+still have doubts, questions etc., please contact at
+brlcad-devel@lists.sourceforge.net or at IRC at #brlcad channel on
+freenode network.</p>
+<h1 id="status-of-development">Status of Development</h1>
+<p>See the <a href="TODO/">TODO</a> page to get involved or
+check on the status of development.</p>
+<h1 id="history">History</h1>
+<p>This effort was initiated in 2013 by Harmanpreet Singh as a Google
+Summer of Code project.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

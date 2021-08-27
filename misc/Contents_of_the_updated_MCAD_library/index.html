@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/misc/Contents_of_the_updated_MCAD_library/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Structure of the MCAD library - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/misc/Contents_of_the_updated_MCAD_library.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#structure-of-the-mcad-library" class="nav-link">Structure of the MCAD library</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="structure-of-the-mcad-library">Structure of the MCAD library</h1>
+<ul>
+<li>As of March 26, 2015</li>
+</ul>
+<p>.</p>
+<p>├── array</p>
+<p>├── demos</p>
+<p>├── electronics</p>
+<p>├── extrusions</p>
+<p>│   ├── 8020</p>
+<p>│   └── MISUMI</p>
+<p>├── fasteners</p>
+<p>├── gears</p>
+<p>├── general</p>
+<p>├── hardware</p>
+<p>├── materials</p>
+<p>├── motors</p>
+<p>├── shapes</p>
+<p>├── SolidPython</p>
+<p>│   ├── examples</p>
+<p>│   │   ├── mazebox</p>
+<p>│   │   └── playground</p>
+<p>│   └── scratch</p>
+<p>├── text</p>
+<p>├── ThingDoc</p>
+<p>│   ├── data</p>
+<p>│   │   └── facebox</p>
+<p>│   └── html</p>
+<p>│   └── facebox</p>
+<p>└── units</p>
+<p>25 directories</p>
+<p>../MCAD</p>
+<p>../MCAD/array</p>
+<p>../MCAD/curves.scad</p>
+<p>../MCAD/demos</p>
+<p>../MCAD/electronics</p>
+<p>../MCAD/extrusions</p>
+<p>../MCAD/fasteners</p>
+<p>../MCAD/gears</p>
+<p>../MCAD/general</p>
+<p>../MCAD/get_submodules.py</p>
+<p>../MCAD/gridbeam.scad</p>
+<p>../MCAD/hardware</p>
+<p>../MCAD/<strong>init</strong>.py</p>
+<p>../MCAD/lego_compatibility.scad</p>
+<p>../MCAD/lgpl-2.1.txt</p>
+<p>../MCAD/materials</p>
+<p>../MCAD/motors</p>
+<p>../MCAD/openscad_testing.py</p>
+<p>../MCAD/openscad_utils.py</p>
+<p>../MCAD/oshw.scad</p>
+<p>../MCAD/README.md</p>
+<p>../MCAD/screw.scad</p>
+<p>../MCAD/shapes</p>
+<p>../MCAD/SolidPython</p>
+<p>../MCAD/SOURCES.md</p>
+<p>../MCAD/test_docs.py</p>
+<p>../MCAD/test_mcad.py</p>
+<p>../MCAD/text</p>
+<p>../MCAD/ThingDoc</p>
+<p>../MCAD/TODO</p>
+<p>../MCAD/tree.txt</p>
+<p>../MCAD/units</p>
+<p>../MCAD/array/along_curve_on_surface.scad</p>
+<p>../MCAD/array/along_curve.scad</p>
+<p>../MCAD/array/along_surface.scad</p>
+<p>../MCAD/array/linear.scad</p>
+<p>../MCAD/array/polar.scad</p>
+<p>../MCAD/array/rectangular.scad</p>
+<p>../MCAD/demos/array_along_curve_demo.scad</p>
+<p>../MCAD/demos/array_linear_demo.scad</p>
+<p>../MCAD/demos/array_polar_demo.scad</p>
+<p>../MCAD/demos/array_rectangular_demo.scad</p>
+<p>../MCAD/demos/bearing_demo.scad</p>
+<p>../MCAD/demos/constants_demo.scad</p>
+<p>../MCAD/demos/hardware_demo.scad</p>
+<p>../MCAD/demos/linear_bearing_demo.scad</p>
+<p>../MCAD/demos/materials_demo.scad</p>
+<p>../MCAD/demos/metric_demo.scad</p>
+<p>../MCAD/demos/polyhole_demo.scad</p>
+<p>../MCAD/demos/rack_and_pinion_demo.scad</p>
+<p>../MCAD/demos/stepper_demo.scad</p>
+<p>../MCAD/demos/string_demo.scad</p>
+<p>../MCAD/demos/teardrop_demo.scad</p>
+<p>../MCAD/demos/visibonecolors_demo.scad</p>
+<p>../MCAD/electronics/ATXpowerSupply.scad</p>
+<p>../MCAD/extrusions/8020</p>
+<p>../MCAD/extrusions/8020.scad</p>
+<p>../MCAD/extrusions/extrusions.scad</p>
+<p>../MCAD/extrusions/MakerBeam_Cross_Section.DXF</p>
+<p>../MCAD/extrusions/MakerBeam_Cross_Section_Metric.dxf</p>
+<p>../MCAD/extrusions/makerbeam.scad</p>
+<p>../MCAD/extrusions/MISUMI</p>
+<p>../MCAD/extrusions/misumi_nfs5.scad</p>
+<p>../MCAD/extrusions/openbeam.scad</p>
+<p>../MCAD/extrusions/TL-400-0101-001CLR_-_OpenBeam_1515_Extrusion_Clear_Anodized.STL</p>
+<p>../MCAD/extrusions/TL-400-0101-001.DXF</p>
+<p>../MCAD/extrusions/TL-400-0101-002.DXF</p>
+<p>../MCAD/extrusions/8020/8020-1001.dxf</p>
+<p>../MCAD/extrusions/8020/8020-1002.dxf</p>
+<p>../MCAD/extrusions/8020/8020-1003.dxf</p>
+<p>../MCAD/extrusions/8020/8020-1004.dxf</p>
+<p>../MCAD/extrusions/MISUMI/nfs5-2525.dxf</p>
+<p>../MCAD/extrusions/MISUMI/nfs5-2550.dxf</p>
+<p>../MCAD/extrusions/MISUMI/nfs5-4060.dxf</p>
+<p>../MCAD/extrusions/MISUMI/nfs5-4080.dxf</p>
+<p>../MCAD/extrusions/MISUMI/nfst5-2020.dxf</p>
+<p>../MCAD/fasteners/iso4017.scad</p>
+<p>../MCAD/fasteners/metric_fastners.scad</p>
+<p>../MCAD/fasteners/nuts_and_bolts.scad</p>
+<p>../MCAD/fasteners/threads.scad</p>
+<p>../MCAD/gears/gears.scad</p>
+<p>../MCAD/gears/involute_gears.scad</p>
+<p>../MCAD/gears/rack_and_pinion.scad</p>
+<p>../MCAD/general/constants.scad</p>
+<p>../MCAD/general/math.scad</p>
+<p>../MCAD/general/utilities.scad</p>
+<p>../MCAD/hardware/bearing.scad</p>
+<p>../MCAD/hardware/hardware.scad</p>
+<p>../MCAD/hardware/linear_bearing.scad</p>
+<p>../MCAD/materials/materials.scad</p>
+<p>../MCAD/materials/visibonecolors.scad</p>
+<p>../MCAD/motors/motors.scad</p>
+<p>../MCAD/motors/servos.scad</p>
+<p>../MCAD/motors/stepper_mount.scad</p>
+<p>../MCAD/motors/stepper.scad</p>
+<p>../MCAD/shapes/2Dshapes.scad</p>
+<p>../MCAD/shapes/3d_triangle.scad</p>
+<p>../MCAD/shapes/boxes.scad</p>
+<p>../MCAD/shapes/lib.scad</p>
+<p>../MCAD/shapes/libtriangles.scad</p>
+<p>../MCAD/shapes/polyhole.scad</p>
+<p>../MCAD/shapes/regular_shapes.scad</p>
+<p>../MCAD/shapes/rounder.scad</p>
+<p>../MCAD/shapes/shapes.scad</p>
+<p>../MCAD/shapes/standard_shapes.scad</p>
+<p>../MCAD/shapes/teardrop.scad</p>
+<p>../MCAD/shapes/triangles.scad</p>
+<p>../MCAD/shapes/trochoids.scad</p>
+<p>../MCAD/SolidPython/arc_scad.py</p>
+<p>../MCAD/SolidPython/examples</p>
+<p>../MCAD/SolidPython/PyOpenSCAD_docs.txt</p>
+<p>../MCAD/SolidPython/pyopenscad.py</p>
+<p>../MCAD/SolidPython/scratch</p>
+<p>../MCAD/SolidPython/TODO_PyOpenScad.txt</p>
+<p>../MCAD/SolidPython/examples/basic_scad_include.py</p>
+<p>../MCAD/SolidPython/examples/mazebox</p>
+<p>../MCAD/SolidPython/examples/playground</p>
+<p>../MCAD/SolidPython/examples/sierpinski.py</p>
+<p>../MCAD/SolidPython/examples/mazebox/inset.py</p>
+<p>../MCAD/SolidPython/examples/mazebox/mazebox_clean2_stable.py</p>
+<p>../MCAD/SolidPython/examples/mazebox/testpng.py</p>
+<p>../MCAD/SolidPython/examples/mazebox/trianglemath.py</p>
+<p>../MCAD/SolidPython/examples/playground/maze7.png</p>
+<p>../MCAD/SolidPython/scratch/test_include.scad</p>
+<p>../MCAD/SolidPython/scratch/test_pos.py</p>
+<p>../MCAD/SolidPython/scratch/test_scad_include.py</p>
+<p>../MCAD/SolidPython/scratch/test_scad_parse.py</p>
+<p>../MCAD/text/alphabet_block.scad</p>
+<p>../MCAD/text/bitmap.scad</p>
+<p>../MCAD/text/fonts.scad</p>
+<p>../MCAD/text/height_map.scad</p>
+<p>../MCAD/text/letter_necklace.scad</p>
+<p>../MCAD/text/name_tag.scad</p>
+<p>../MCAD/text/string.scad</p>
+<p>../MCAD/text/test_name_tag.scad</p>
+<p>../MCAD/ThingDoc/AUTHORS</p>
+<p>../MCAD/ThingDoc/COPYING</p>
+<p>../MCAD/ThingDoc/data</p>
+<p>../MCAD/ThingDoc/html</p>
+<p>../MCAD/ThingDoc/README</p>
+<p>../MCAD/ThingDoc/thingdoc</p>
+<p>../MCAD/ThingDoc/data/facebox</p>
+<p>../MCAD/ThingDoc/data/facebox.css</p>
+<p>../MCAD/ThingDoc/data/facebox.js</p>
+<p>../MCAD/ThingDoc/data/iphone.css</p>
+<p>../MCAD/ThingDoc/data/jquery.cookie.js</p>
+<p>../MCAD/ThingDoc/data/jquery.js</p>
+<p>../MCAD/ThingDoc/data/logo120.png</p>
+<p>../MCAD/ThingDoc/data/logo.png</p>
+<p>../MCAD/ThingDoc/data/template.bom</p>
+<p>../MCAD/ThingDoc/data/template.html</p>
+<p>../MCAD/ThingDoc/data/template.tex</p>
+<p>../MCAD/ThingDoc/data/template.wiki</p>
+<p>../MCAD/ThingDoc/data/thingdoc.css</p>
+<p>../MCAD/ThingDoc/data/thingdoc.js</p>
+<p>../MCAD/ThingDoc/data/facebox/closelabel.png</p>
+<p>../MCAD/ThingDoc/data/facebox/loading.gif</p>
+<p>../MCAD/ThingDoc/html/facebox</p>
+<p>../MCAD/ThingDoc/html/facebox.css</p>
+<p>../MCAD/ThingDoc/html/facebox.js</p>
+<p>../MCAD/ThingDoc/html/jquery.cookie.js</p>
+<p>../MCAD/ThingDoc/html/thingdoc-end.js</p>
+<p>../MCAD/ThingDoc/html/facebox/closelabel.png</p>
+<p>../MCAD/ThingDoc/html/facebox/loading.gif</p>
+<p>../MCAD/units/default.scad</p>
+<p>../MCAD/units/metric.scad</p>
+<p>../MCAD/units/us.scad</p>
+<ul>
+<li>FYI, the above was generated with the following command in the MCAD
+    directory:</li>
+</ul>
+<p>ls -R .. | awk ' /:$/&amp;&amp;f{s=$0;f=0} /:$/&amp;&amp;!f{sub(/:$/,"");s=$0;f=1;next}
+NF&amp;&amp;f{ print s"/"$0 }'&gt;&gt;tree.txt</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

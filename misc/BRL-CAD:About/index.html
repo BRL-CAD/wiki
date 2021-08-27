@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/misc/BRL-CAD%3AAbout/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>BRL CAD:About - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/misc/BRL-CAD:About.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>BRL-CAD is a powerful cross-platform Open Source combinatorial
+Constructive Solid Geometry (CSG) solid modeling system that includes
+interactive 3D solid geometry editing, high-performance ray-tracing
+support for rendering and geometric analysis, network-distributed
+framebuffer support, image and signal-processing tools, path-tracing and
+photon mapping support for realistic image synthesis, a system
+performance analysis benchmark suite, an embedded scripting interface,
+and libraries for robust high-performance geometric representation and
+analysis.</p>
+<p>For more than 20 years, BRL-CAD has been the primary tri-service solid
+modeling CAD system used by the U.S. military to model weapons systems
+for vulnerability and lethality analyses. The solid modeling system is
+frequently used in a wide range of military, academic, and industrial
+applications including in the design and analysis of vehicles,
+mechanical parts, and architecture. The package has also been used in
+radiation dose planning, medical visualization, computer graphics
+education, CSG concepts and modeling education, and system performance
+benchmark testing among other purposes.</p>
+<p>BRL-CAD supports a great variety of geometric representations including
+an extensive set of traditional CSG primitive implicit solids such as
+boxes, ellipsoids, cones, and tori, as well as explicit solids made from
+closed collections of Uniform B-Spline Surfaces, Non-Uniform Rational
+B-Spline (NURBS) surfaces, n-Manifold Geometry (NMG), and purely faceted
+mesh geometry. All geometric objects may be combined using boolean
+set-theoretic CSG operations including union, intersection, and
+difference.</p>
+<p>BRL-CAD has been under active development with a portability heritage
+that includes systems such as a DEC VAX-11/780 running 4.3 BSD;
+DECStations running ULTRIX; Silicon Graphics 3030, 4D "IRIS", O2, Onyx,
+and Origin systems running various versions of IRIX; Sun Microsystems
+Sun-3 and Sun-4 Sparcs running SunOS; the Cray 1, Cray X-MP, Cray Y-MP,
+and Cray 2 running UNICOS; DEC Alpha AXP running OSF/1; Apple Macintosh
+II running A/UX; iPSC/860 Hypercube running NX/2; the Alliant FX/8,
+FX/80, and FX/2800; Gould/Encore SEL PowerNode6000/9000 and NP1; NeXT
+workstations; IBM RS/6000; HPPA 9000/700 running HPUX; Ardent/Stardent;
+Encore Multi-Max; and much more.</p>
+<p>BRL-CAD is a collection of more than 400 tools, utilities, and
+applications comprising more than a million lines of source code. The
+package is intentionally designed to be extensively cross-platform and
+is actively developed on and maintained for many common operating system
+environments including for BSD, Linux, Solaris, Mac OS X, and Windows
+among others. BRL-CAD is distributed in binary and source code form as
+free open source software (FOSS), provided under Open Source Initiative
+(OSI) approved license terms.</p>
+<p>Mike Muuss began the initial architecture and design of BRL-CAD back in
+1979. Development as a unified package began in 1983. The first public
+release was made in 1984. BRL-CAD became an open source project on 21
+December 2004.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Metropolis_Light_Transport/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Metropolis Light Transport - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/doc/Metropolis_Light_Transport.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#about-mlt" class="nav-link">About MLT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timeline" class="nav-link">Timeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>The Metropolis Light Transport algorithm consists of a bidirectional
+path tracer and uses Monte Carlo method for randomly mutating the paths.
+Each mutation is accepted or rejected based on carefully chosen
+probability, which prevent a path that passes through an object to be
+accepted. Then an estimation is made by sampling many paths, and
+recording their locations on the image plane.</p>
+<hr />
+<h2 id="about-mlt">About MLT</h2>
+<p>The MLT algorithm is an unbiased solution to the rendering equation - it
+computes the correct lighting in the average. For this algorithm, any
+error in the final result is due to random variations among the samples
+(image noise) and it can me estimated by simply adjusting the sample
+variance.</p>
+<p>The algorithm consists of tracing paths from the light source to the
+camera lens and then mutating those paths, by randomly adding, excluding
+or replacing a vertex. Not all mutations are automatically accepted -
+each one has a chance to be rejected, depending on the relative
+contribution of the new and the old paths. This assures that invalid
+paths are not accepted.</p>
+<p>After each successful mutation, the final image (two dimensional array
+of pixels) is updated by finding the pixel (u, v) associated to each
+visible path node (x, y, z). Each sample is weighted equally - the light
+and dark areas of the final image are a result of the amount of sample
+recording in each area.</p>
+<hr />
+<h2 id="implementation">Implementation</h2>
+<p>The algorithm will be written in C, so there would be no need for
+additional classes defining points and vectors and no compatibility
+issues. The structures already present, that define the basic types,
+such as points, vectors and data structures, will be used. Code will be
+written in src/rt.</p>
+<h3 id="bidirectional-path-tracer">Bidirectional Path Tracer</h3>
+<p>The path tracer will use rt_shootray() function to create paths. The
+paths will reflect and mutate based on a reflection model and the
+already implemented Phong Model and shaders can be used to handle that.</p>
+<p>The BPT is a two pass algorithm, with two rays being shot - one from the
+camera and the other from the light source). Since creating and
+reflecting the paths will work basically the same way, there shouldn't
+be any problems to use the same functions to do both.</p>
+<h3 id="path-mutation">Path Mutation</h3>
+<p>This is the heart of the MLT algorithm - the random mutations on the
+paths. The mutations can be accepted or rejected based on probability
+and/or reflection models.</p>
+<h3 id="useful-libraries">Useful Libraries</h3>
+<p>There are libraries already existent that will help immensely in the
+project. These libraries are librt, libbn, libbu and liboptical.</p>
+<h4 id="librt">librt</h4>
+<p>This library will be extremely important to the development as it
+contains the raytracer that will be used to shoot and treat paths. The
+path concept is similar to the rays, so probably there will be no need
+for further enhancement or extension.</p>
+<p>The paths will be started by rt_shootray() and a new function will be
+written to treat hits and misses, similar to ray_hit() and ray_miss().</p>
+<h4 id="liboptical">liboptical</h4>
+<p>Liboptical contains shaders and the phong model, that can be used to
+handle reflection and to verify valid paths.</p>
+<p>The interaction with the upper layers of the code would happen through
+the get_args() function, in src/liboptical/opt.c. The lighting model
+option would have to be selected and then a unique number, to represent
+the MLT algorithm, would have to be given too. Then, some arguments,
+specific to MLT, could be provided by the user, like amount of rays to
+be shot, a random seed for the mutation algorithm, and others.</p>
+<h4 id="libbn">libbn</h4>
+<p>Libbn contains mathematical definitions that will be relevant to the
+algorithm.</p>
+<h4 id="libbu">libbu</h4>
+<p>Libbu will be useful because of the utility functions and macros, such
+as bu_list() and bu_malloc().</p>
+<hr />
+<h2 id="milestones">Milestones</h2>
+<ol>
+<li>Implementation of a bidirectional path tracer - including correct
+    determination of obstacles in the path (by using librt functions).<ol>
+<li>Initial design, rt_shootray() function will be used to shoot
+    rays and detect collision.</li>
+<li>Implement, using step 1.1, the path tracing function, that will
+    record the points where the rays hit (structure hit).</li>
+<li>Use the reflection model and implement it in the path tracing
+    function.</li>
+<li>Implement a way for the algorithm to detect how to connect the
+    paths.</li>
+</ol>
+</li>
+<li>Implement the path mutation algorithm.<ol>
+<li>Implement existing nodes mutation.</li>
+<li>Implement new nodes mutation.</li>
+</ol>
+</li>
+<li>Implement an algorithm to sample each pixel - including correctly
+    detecting the coordinates in the 2D image of the path vertexes.</li>
+<li>Assemble those milestones together in the implementation of the
+    final algorithm.</li>
+</ol>
+<hr />
+<h2 id="timeline">Timeline</h2>
+<p>(log available at <a href="http://andrecastelo.wordpress.com/">http://andrecastelo.wordpress.com/</a>)</p>
+<ul>
+<li>Until May 26th: studying the source code, getting familiar with the
+    mentors and studying the MLT and the Bidirectional Path Tracer
+    algorithm.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>From May 26th to June 20th: implementation of an efficient
+    bidirectional path tracer:</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>From June 20th to July 1st: implementation of the path mutation
+    algorithm. It will use pseudo random numbers in order to mutate the
+    nodes.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>From July 1st to July 15th: implementation of the algorithm to
+    sample each pixel. The paths will start from the screen and from the
+    light source. If path nodes could hold information about the
+    starting pixel, this would be easier.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>From July 15th to August 1st: assembly of the parts and
+    implementation of the final MLT algorithm.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>From August 1st to August 18th: this period will be used to fix the
+    remaining bugs, write documentation and/or implement any missing
+    features.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

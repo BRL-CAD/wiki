@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/task/Convert_MGED_from_Tk_to_Qt/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Convert MGED from Tk to Qt - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/task/Convert_MGED_from_Tk_to_Qt.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>BRL-CAD's graphical applications (MGED and Archer in particular) make
+use of the Tcl/Tk toolkit to describe their interfaces. Tk has some
+limitations when it comes to complex cross-platform application
+development, and we are looking to migrate our graphical interface codes
+from Tk to the Qt toolkit.</p>
+<p>There are two major "directions" that can be attempted:</p>
+<ul>
+<li>Re-create MGED as a Qt application. MGED is our current "production"
+    geometry editing and viewing interface.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Re-create (some of) Archer as a Qt application. Archer is our
+    "next-generation" MGED application.</li>
+</ul>
+<p>Most likely recreating one of these interfaces in its entirity is well
+beyond the scope of GSoC (although we certainly won't complain if you
+manage it!) A better strategy is to identify and tackle one aspect of
+the problem with an eye towards creating a Qt widget that can be reused
+in subsequent applications. If you complete that task, you can build
+from there.</p>
+<p>Easily the most important "missing" component at this point is the 3D
+interactive viewing widget - the centeral widget in Archer's interface
+and the "3D display" window in MGED. A good starting point would be to
+create a "Qt viewer widget" that can load and display a libdm 3D
+context. You will need to handle Qt's OpenGL widget and its interactions
+with libdm/libfb, set up key bindings using our existing Tk bindings as
+a guide, and ensure that multile views can work successfully (the quad
+view mode).</p>
+<p>Another major and important piece of the interface is the tree widget
+(Archer's is the example to study, and a read-only version has been
+implemented in the experimental qged code - the challenge will be to
+first get it updating in response to geometry changes in the database.
+After that there are any number of additional features needed...)</p>
+<p>We're also constructing a custom CAD terminal widget, tailored to the
+needs of our CAD system. We have a basic implementation in our
+experimental qged GUI, but it needs work - text selection doesn't span
+command outputs, we need a way to auto-hide long outputs that aren't the
+current output in the history and allow them to expand/contract via some
+user mouse interaction, we need an "in-process" graphic for commands
+that have launched but haven't yet completed, ideally with a way to
+abort them as well (this will require some delving into QThreads and
+launching libged commands in separate threads, as well as a limited
+control-the-view terminal mode while some potentially database altering
+command is running.)</p>
+<p>Anyone wanting to tackle this project should have a good familiarity
+with things like the Qt event and signals/slots systems as well as the
+generic widget systems (most of the pre-packaged Qt widgets aren't going
+to be quite what we need, which usually means creating custom widets
+with the more general parent classes.) See the qged sources below for an
+idea of the approach.</p>
+<p>Proposals here should be detailed and demonstrate a firm grasp of the
+issues. Qt 5.6 or higher should be used (that is the assumption made in
+the existing code, and if you require a newer Qt for some feature or
+issue that should be fine - supporting older Qt releases is not
+something we're going to spend effort on at this early stage.</p>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="http://sourceforge.net/p/brlcad/code/HEAD/tree/brlcad/branches/qtged/src/qged/">http://sourceforge.net/p/brlcad/code/HEAD/tree/brlcad/branches/qtged/src/qged/</a></li>
+<li><a href="http://qt-project.org/">http://qt-project.org/</a></li>
+</ul>
+<p>Requirements:</p>
+<ul>
+<li>Familiarity with C/C++/Qt</li>
+<li>Sufficient familiarity with Tcl/Tk to be able to read and understand
+    the intent of the code (key bindings, for example.)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/task/NURBS_TODO/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Profile BREP/NURBS ray tracing - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/task/NURBS_TODO.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#profile-brepnurbs-ray-tracing" class="nav-link">Profile BREP/NURBS ray tracing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#optimize-brepnurbs-prep" class="nav-link">Optimize BREP/NURBS prep</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#convert-existing-entities-to-nurbs" class="nav-link">Convert existing entities to NURBS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brepnurbs-to-nmg" class="nav-link">BREP/NURBS-to-NMG</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#old-bsplinenurbs-review" class="nav-link">Old BSPLINE/NURBS review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#bsplinenurbs-reuse" class="nav-link">BSPLINE/NURBS reuse</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brepnurbs-csg-evaluation" class="nav-link">BREP/NURBS CSG evaluation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#implicit-csg-to-brepnurbs-csg-test-scripts" class="nav-link">Implicit CSG to BREP/NURBS CSG test scripts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brepnurbs-documentation" class="nav-link">BREP/NURBS documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brepnurbs-wireframe" class="nav-link">BREP/NURBS wireframe</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brepnurbs-source-code-cleanup" class="nav-link">BREP/NURBS source code cleanup</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brepnurbs-healing" class="nav-link">BREP/NURBS healing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="profile-brepnurbs-ray-tracing">Profile BREP/NURBS ray tracing</h1>
+<ul>
+<li>Benefit: better ray tracing runtime understanding, supports test
+    case development</li>
+<li>Time Estimate: 2 days</li>
+<li>References:<ul>
+<li>src/libbrep</li>
+<li>src/librt/primitives/brep</li>
+<li>src/librt/opennurbs_ext.*</li>
+</ul>
+</li>
+</ul>
+<h1 id="optimize-brepnurbs-prep">Optimize BREP/NURBS prep</h1>
+<p>Perform limited tree splitting during prep, split dynamically during ray
+trace, store lock-free.</p>
+<ul>
+<li>Benefit: faster ray tracing throughput, user requested, user visible</li>
+<li>Time Estimate: 1 week</li>
+<li>References:<ul>
+<li>src/libbrep</li>
+<li>src/librt/primitives/brep/brep.cpp:rt_brep_prep()</li>
+<li>src/librt/opennurbs_ext.*</li>
+</ul>
+</li>
+</ul>
+<h1 id="convert-existing-entities-to-nurbs">Convert existing entities to NURBS</h1>
+<p>Implement hooks to describe entities in BREP/NURBS form. Partially
+complete for most, but some complex entities remain unimplemented.</p>
+<ul>
+<li>Benefit: partial requirement for interactive visualization of
+    implicit CSG geometry in OpenGL</li>
+<li>Time Estimate: 2 days per entity</li>
+<li>References:<ul>
+<li>src/librt/primitives/${PRIM}/${PRIM}_brep.cpp</li>
+</ul>
+</li>
+</ul>
+<h1 id="brepnurbs-to-nmg">BREP/NURBS-to-NMG</h1>
+<p>Implement conversion of BREP/NURBS to NMG.</p>
+<ul>
+<li>Benefit: requirement for polygonal export, partial requirement for
+    OpenGL visualization, user visible</li>
+<li>Time Estimate: 2 days</li>
+<li>References:<ul>
+<li>src/librt/primitives/brep/brep.cpp:rt_brep_tess()</li>
+</ul>
+</li>
+</ul>
+<h1 id="old-bsplinenurbs-review">Old BSPLINE/NURBS review</h1>
+<p>Identify useful concepts implemented in the old BSPLINE/NURBS code that
+are not present in openNURBS.</p>
+<ul>
+<li>Benefit: code reuse, potentially very useful functionality.</li>
+<li>Time Estimate: 1 day</li>
+<li>References:<ul>
+<li>src/librt/primitives/bspline/*</li>
+</ul>
+</li>
+</ul>
+<h1 id="bsplinenurbs-reuse">BSPLINE/NURBS reuse</h1>
+<p>Port any useful BSPLINE/NURBS code to openNURBS data structures and
+routines.</p>
+<ul>
+<li>Benefit: code reduction, allows the old BSPLINE/NURBS code to be
+    removed after functionality is migrated.</li>
+<li>Time Estimate: 2 days</li>
+<li>References:<ul>
+<li>src/librt/primitives/bspline/*</li>
+<li>src/librt/primitives/brep/*</li>
+</ul>
+</li>
+</ul>
+<h1 id="brepnurbs-csg-evaluation">BREP/NURBS CSG evaluation</h1>
+<p>Implement boolean evaluation of BREP/NURBS surfaces.</p>
+<ul>
+<li>Benefit: partial requirement for interactive visualization of
+    BREP/NURBS in OpenGL.</li>
+<li>Time Estimate: 2 years (for 100% robustness)</li>
+<li>References:<ul>
+<li>ESOLID: <a href="http://research.cs.tamu.edu/keyser/geom/esolid/">http://research.cs.tamu.edu/keyser/geom/esolid/</a></li>
+<li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.119.4341&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.119.4341&amp;rep=rep1&amp;type=pdf</a></li>
+<li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.117.8700&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.117.8700&amp;rep=rep1&amp;type=pdf</a></li>
+<li><a href="http://www.springerlink.com/content/x3665206243u20x8/">http://www.springerlink.com/content/x3665206243u20x8/</a></li>
+<li><a href="http://193.170.37.128/projects/basic/cgal/workdone/nurbs-97-30.ps.gz">http://193.170.37.128/projects/basic/cgal/workdone/nurbs-97-30.ps.gz</a></li>
+<li><a href="http://mae.ucdavis.edu/~farouki/foils.pdf">http://mae.ucdavis.edu/~farouki/foils.pdf</a></li>
+<li><a href="http://portal.acm.org/citation.cfm?id=36714">http://portal.acm.org/citation.cfm?id=36714</a></li>
+<li><a href="ftp://ftp.cs.unc.edu/pub/users/manocha/PAPERS/INTERSECT/IJCGA.pdf">ftp://ftp.cs.unc.edu/pub/users/manocha/PAPERS/INTERSECT/IJCGA.pdf</a></li>
+<li><a href="http://portal.acm.org/citation.cfm?id=237751">http://portal.acm.org/citation.cfm?id=237751</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="implicit-csg-to-brepnurbs-csg-test-scripts">Implicit CSG to BREP/NURBS CSG test scripts</h1>
+<p>Develop test scripts for comparing conversion of implicit CSG to
+BREP/NURBS CSG</p>
+<ul>
+<li>Benefit: provides validation and verification via ray tracing.</li>
+<li>Time Estimate: &lt; 1 day</li>
+<li>References:<ul>
+<li>regress/*.sh</li>
+<li>sh/*.sh</li>
+</ul>
+</li>
+</ul>
+<h1 id="brepnurbs-documentation">BREP/NURBS documentation</h1>
+<p>Document the new BREP/NURBS primitive (user overviewdocumentation: how
+to import, use, export, limitations).</p>
+<ul>
+<li>Benefit: provides user documentation explaining capabilities,
+    limitations, and benefits; user visible</li>
+<li>Time Estimate: 3 days</li>
+<li>References:<ul>
+<li>doc/docbook/articles</li>
+</ul>
+</li>
+</ul>
+<h1 id="brepnurbs-wireframe">BREP/NURBS wireframe</h1>
+<p>Improve BREP/NURBS wireframe. Investigate using knots on subcurves.</p>
+<ul>
+<li>Benefit: faster wireframe; LOD wireframes: more detailed close-up
+    wireframes, less detailed far-away wireframes (LOD); user visible</li>
+<li>Time Estimate: 2 days</li>
+<li>References:<ul>
+<li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.142.3042&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.142.3042&amp;rep=rep1&amp;type=pdf</a></li>
+<li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.70.6138&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.70.6138&amp;rep=rep1&amp;type=pdf</a></li>
+<li><a href="http://www.springerlink.com/content/k7543860533338nu/">http://www.springerlink.com/content/k7543860533338nu/</a></li>
+<li><a href="http://wscg.zcu.cz/wscg2003/Papers_2003/H19.pdf">http://wscg.zcu.cz/wscg2003/Papers_2003/H19.pdf</a></li>
+<li><a href="http://cg.cs.uni-bonn.de/aigaion2root/attachments/kahlesz-2002-multiresolution.pdf">http://cg.cs.uni-bonn.de/aigaion2root/attachments/kahlesz-2002-multiresolution.pdf</a></li>
+<li><a href="http://www.cs.cityu.edu.hk/~rynson/papers/vrst03.pdf">http://www.cs.cityu.edu.hk/~rynson/papers/vrst03.pdf</a></li>
+<li><a href="http://www.flipcode.com/archives/NURBS_Curves_Surfaces.shtml">http://www.flipcode.com/archives/NURBS_Curves_Surfaces.shtml</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="brepnurbs-source-code-cleanup">BREP/NURBS source code cleanup</h1>
+<p>Consolidate Owens and Reeves approaches to ray intersection.</p>
+<ul>
+<li>Benefit: improved code maintainability, complexity reduction</li>
+<li>Time Estimate: 2 days</li>
+<li>References:<ul>
+<li><a href="http://www.cs.utah.edu/~shirley/papers/raynurbs.pdf">http://www.cs.utah.edu/~shirley/papers/raynurbs.pdf</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="brepnurbs-healing">BREP/NURBS healing</h1>
+<p>Implement an rt_heal(rt_db_internal *dbi); routine. The routine
+tightens up trimming curves and edge/vertex pairings so that they align
+perfectly while still preserving the topological structure.</p>
+<ul>
+<li>Benefit: more robust evaluation for improved (more stable &amp;
+    consistent) raytracing, import, export; routine interface later
+    applicable to NMG/BoT too</li>
+<li>Time Estimate: 3 days</li>
+<li>References:<ul>
+<li>src/librt/primitives/brep</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

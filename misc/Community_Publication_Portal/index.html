@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/misc/Community_Publication_Portal/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Community Publication Portal - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/misc/Community_Publication_Portal.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#ready-for-publication" class="nav-link">Ready for Publication</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#final-review" class="nav-link">Final Review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#initial-drafts" class="nav-link">Initial Drafts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#idea-hopper" class="nav-link">Idea Hopper</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Welcome to the BRL-CAD community publication portal. This page is
+dedicated to the preparation and editing of BRL-CAD announcements.
+Proposed and upcoming topics are listed. Anyone is <strong>welcome and
+encouraged</strong> to share news about any activity related to BRL-CAD.
+Community editing and review are encouraged.</p>
+<p><strong>TOC</strong></p>
+<p><strong>Formatting &amp; Editing Standards:</strong></p>
+<ul>
+<li>Quotations are italicized and placed between double quotes (<em>"Like
+    This"</em>).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>AA (All Acronyms) need to be defined upon first use, don't abbrev.
+    words.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Section headings uppercase the major words and are in bold (<strong>Like
+    This</strong>)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Use the serial comma: one, two, and three; not one, two and three.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Cite references, include hyperlinks.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Keep it brief.</li>
+</ul>
+<p><strong>Distribution Channels:</strong></p>
+<p>For release publications, follow
+<a href="http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/HACKING">HACKING</a>.
+For everything else, distribute to the following:</p>
+<ul>
+<li>brlcad-news@lists.sourceforge.net</li>
+<li><a href="http://brlcad.org/d/node/add/story">http://brlcad.org/d/node/add/story</a></li>
+<li><a href="https://sourceforge.net/news/?group_id=105292">https://sourceforge.net/news/?group_id=105292</a></li>
+<li>(optional) <a href="https://brlcad.org/wiki/">https://brlcad.org/wiki/</a></li>
+<li>(optional) <a href="http://www.tenlinks.com/NEWS/tl_daily/submit_news.htm">http://www.tenlinks.com/NEWS/tl_daily/submit_news.htm</a></li>
+<li>(optional) <a href="http://upfrontezine.com">http://upfrontezine.com</a></li>
+</ul>
+<hr />
+<hr />
+<h2 id="ready-for-publication">Ready for Publication</h2>
+<p>These articles are ready for publication. Release notes should be posted
+after tarballs, ideally the last or first week of a month. Other
+publications should be scheduled one or two weeks later, ideally on the
+second or third week of the month.</p>
+<p>Note: if you see a comment indicating that a section is FROZEN, any
+changes you make in that section may go unnoticed as the article is
+being prepared for distribution. If you find errors in a FROZEN article,
+go ahead and correct the article but contact Sean (brlcad on freenode
+<a href="../IRC/">IRC</a>) who may be able to incorporate changes during
+final publication.</p>
+<p><strong><em>Move from Final Review to Here When Ready</em></strong></p>
+<hr />
+<h2 id="final-review">Final Review</h2>
+<h4 id="google-code-in-2014">Google Code In 2014</h4>
+<p>Out of only 12 selected, we're very proud to announce that BRL-CAD is
+participating in the 2014 Google Code-In (GCI) program! Complementary to
+the highly successful Google Summer of Code program for university
+students, GCI is a contest to encourage pre-university students (age
+13-17) to get involved with open source.This is the third consecutive
+year, BRLCAD is accepted as a mentoring organization.</p>
+<p>Read more shall be redirected to -&gt; <a href="http://brlcad.org/wiki/GCI2014">http://brlcad.org/wiki/GCI2014</a></p>
+<h4 id="geometry-viewer">Geometry Viewer</h4>
+<p>Geometry Viewer-</p>
+<p><b>What is a geometry viewer?</b></p>
+<p>It’s a service which allows users to manage all there geometry files. It
+can upload and view BRL-CAD geometry files in a different format so that
+others can edit it. But it’s currently under construction.</p>
+<p><b>It’s the equivalent to?</b></p>
+<p>It’s like a Facebook for files where you can share other files with the
+public and then they can edit, change or fix the application to make it
+smother.</p>
+<p><b>Why is it used?</b></p>
+<p>It’s used to allow the user to become more organised and make the user
+interface easier to follow and understand.</p>
+<p><b>What is needed to access this service?</b></p>
+<p>All you need on your computer with a Web GL supported browser, BRL-CAD,
+three.js and a Linux Apache MySQL PHP (LAMP).</p>
+<p><b>How it works?</b></p>
+<p>Using BRL-CAD it changes the format to OBJ and loads it through the
+three.js all in all it converts then loads.</p>
+<p><b>Advantages</b></p>
+<p>•Easier for the user to manage</p>
+<p>•Allows all user to see the file as it converts the format</p>
+<p>•Makes sharing easier and safer due to the fact you still have overall
+control</p>
+<p>•It allows the skills of strangers to improve your application safely</p>
+<p>•Its currently under construction so more features will be add</p>
+<p>By Mohamed Hammeda</p>
+<h4 id="alexander-lotsu-wanted-software-maintainer-for-windows-binary-platform">Alexander Lotsu: Wanted - Software Maintainer for Windows Binary Platform</h4>
+<p>Do you enjoy correcting faults?</p>
+<p>Would you like to make improvements to software that vast numbers of
+users will benefit from?</p>
+<p>Would you like to enhance your resume and gain wider experience? Do you
+have some spare time?</p>
+<p>We need a software maintainer/release maintainer. Maintainers are needed
+for free and open source software to perform a variety of tasks. As
+BRL-CAD is a cross-platform system it has maintainers allocated to many
+binary platforms but does not currently have one for Windows. We are
+looking for someone to fill this voluntary role which is critical when
+releasing software.</p>
+<p>A maintainer is someone who is basically willing to support creating the
+release for a particular platform (In this case Windows). Typical
+responsibilities include building source code into a binary package,
+patching and investigating platform issues, naming and announcing a
+release.</p>
+<p>To find out more or to indicate your interest, announce your interest
+either through:</p>
+<p>BRL-CAD devel Mailing List -
+<a href="http://sourceforge.net/p/brlcad/mailman/brlcad-devel/">http://sourceforge.net/p/brlcad/mailman/brlcad-devel/</a></p>
+<p>BRL-CAD IRC Channel - <a href="http://brlcad.org/wiki/IRC">http://brlcad.org/wiki/IRC</a></p>
+<p>Further Information</p>
+<p> If you wish for more detail about releases on BRL-CAD, visit this
+link: <a href="http://svn.code.sf.net/p/brlcad/code/brlcad/trunk/HACKING">http://svn.code.sf.net/p/brlcad/code/brlcad/trunk/HACKING</a> (Go to
+the section on releases near the bottom of the page)</p>
+<p> For a definition of a Software/Release maintainer, visit this link:
+<a href="http://en.wikipedia.org/wiki/Software_maintainer">http://en.wikipedia.org/wiki/Software_maintainer</a></p>
+<p>Article written by Alexander Lotsu</p>
+<h4 id="google-code-in-2013-updates">Google Code In 2013 Updates</h4>
+<p>The Google Code-in is a contest to introduce pre-university students
+(ages 13-17) to the many kinds of contributions that make open source
+software development possible. This is the second consecutive year when
+the esteemed open source solid modeling tool, BRL-CAD is accepted to
+participate in Google Code-In, out of the total of 10 organizations
+chosen.</p>
+<p>Many of you would be wondering about the participation of BRL-CAD in GCI
+so far and hence, I came up with this post. The contest runs from
+November 18, 2013 to January 6, 2014. Its December,15 today, where we
+are exactly half-way on the journey. This year BRL-CAD has received an
+over-whelming response from young smart talented kids from all around
+the world, where they are contributing to small itty-bitty tasks of not
+more than 72 hours based in various domains related to software
+development and maintenance like Coding, Documentation and Training,
+Quality Assurance, User Interface and Outreach and Research.</p>
+<p>After many task claims, reclaims, rejection, improvements, exchange of
+ideas and views between students and mentors via comments, IRC and
+mailing list and then acceptance of each task, till date, 87 tasks with
+minutely observed perfection have been closed successfully. 3 tasks are
+with status 'Needs Work', which means one of the mentors has sent back
+those tasks for more work. 4 tasks are on the to-be-reviewed list of
+mentors, 7 tasks currently claimed and 21 tasks are reopened and 85
+tasks open with a total of 207 tasks.</p>
+<p>I hope the young brains are enjoying while they work on the kinds of
+tasks they are comfortable. It is not just about working on tasks, it
+means much more than that. I bet, being a part of an awesome, cool and
+one of the most friendly open source organizations and working in
+collaboration with fantastic perks all across the planet Earth at such a
+small age will be an astronomical experience for participants.</p>
+<p>A huge thanks to all participants for making it a huge and happening
+contest. Thanks to all mentors for adding tasks time-to-time to meet the
+demand and supply curve of fresh new tasks. Special thanks to Sean, the
+man without whom BRL-CAD's participation in GCI is hard to imagine. All
+the best kids for rest of the contest. A ticket to Google’s Mountain
+View, California, USA Headquarters is awaiting for two grand-prize
+winners. Good Luck ! :)</p>
+<h4 id="gci-2013-quick-update-highlights-2">GCI 2013 Quick Update/ Highlights (2)</h4>
+<p>With 12 days, 2 hours remaining for the task to end, i.e. 33% of the
+contest still remaining, we have got pretty amazing statistics until
+now.</p>
+<p>After many task claims, reclaims, rejection, improvements, exchange of
+ideas and views between students and mentors via comments, IRC and
+mailing list and then acceptance of each task, till date, 162 tasks with
+minutely observed perfection have been closed successfully. 7 tasks are
+with status 'Needs Work', which means one of the mentors has sent back
+those tasks for more work. 2 tasks are on the to-be-reviewed list of
+mentors, 4 tasks currently claimed and 73 tasks open with a total of 247
+tasks.</p>
+<p>We have already crossed 25% more than that of the last year's record.
+Let wait and watch how far can we go and break our own records.</p>
+<p>Good luck Kids !</p>
+<p>Keep Contributing to FOSS !</p>
+<h4 id="brl-cad-accomplishments-gci-2012">BRL-CAD Accomplishments : GCI 2012</h4>
+<p><a href="http://www.google-melange.com/gci/org/google/gci2012/brlcad">Google Code -In
+2012</a>
+brought 69 budding new shoots and branches to the mighty BRL-CAD tree,
+and the canopy of warmth and love offered by the community helped them
+blossom and bloom in the 7 weeks of the program . With a few snips, a
+little trimming and pruning, they have learned, innovated, created and
+contributed to one of the largest free and open source communities in
+the world, and have contributed to a software that will touch many
+people around the world. They now have their roots planted in the
+BRL-CAD community with the successful completion of their tasks and are
+ready to shelter budding shoots to come!</p>
+<p>We had 66 students from 36 countries complete 178 tasks in the 7 week
+contest. Students worked with BRL-CAD on coding, documentation,
+training, user interface, research, outreach tasks, and quality
+assurance tasks.</p>
+<p>Akshay Kashyap and Cezar El-Nazli were among the 20 lucky and
+hardworking <a href="http://google-opensource.blogspot.in/2013/06/google-code-in-grand-prize-winners.html">grand prize winners of
+GCI-2012</a>
+who received a trip to Google’s Mountain View, California, USA
+Headquarters for themselves and a parent or legal guardian for an award
+ceremony, an opportunity to meet with Google engineers, explore the
+Google campus and have a fun day in the San Francisco, California sun.</p>
+<p><a href="http://www.google-melange.com/gci/homepage/google/gci2013">Google Code In
+2013</a> has
+been already announced. If you are of the age 13-17 years, a
+pre-university student, this is the best opportunity for you to grab and
+get your hands on and step into the whole new world of software
+development and maintenance. Are You Ready ?</p>
+<p>More information on what is Google Code-In, how you can participate,
+what are the exciting prizes for you, etc. is available
+<a href="Google_Code_In.md">here</a>.</p>
+<p>For further queries mail us on our <a href="Mailing_Lists.md">mailing list</a> or
+contact us via <a href="../IRC/">IRC</a></p>
+<hr />
+<h4 id="improving-brl-cads-networking-libraryandrei-constantin-popescu">"Improving BRL-CAD's networking library":Andrei - Constantin Popescu</h4>
+<p>by: Plamen Nikiforov</p>
+<p>Andrei - Constantin Popescu is a second year undergraduate at
+Polytechnic University of Bucharest, studying at the computer science
+department. Here is an interview about Andreis Google Summer of Code
+project. Plamen(Pl): How did you found out about BRL-CAD and why did you
+chose to them?</p>
+<p>Andrei(An): I heard about BRL-CAD when I was searching for a Google
+Summer of Code project to do. After doing some research on their website
+regarding Google Summer of Code ideas, several interested me
+particularly. The language I am currently strongest in is C and I am
+also interested in computer graphics, this motivated me towards applying
+for BRL-CAD. Another key aspect was that the BRL-CAD mentoring community
+was very friendly and helpful towards me.</p>
+<p>Pl: Why did you choose "Improving BRL-CAD's networking library" to be
+your project?</p>
+<p>An: The first project idea I proposed was " Code reduction". First, I
+looked at this project at Sean's suggestion. There were several reasons
+why I chose this project idea : I was taking a networking course and it
+would help me consolidate my knowledge and the performance testing
+seemed a more interesting problem to investigate.</p>
+<p>Pl: What were your aims of the project?</p>
+<p>An: My initial aims were to investigate and fix any performance
+bottleneck regarding transfer speed for various file sizes and package
+sizes, test the code integrity of networking library and eliminating as
+many unhandled exceptions as well as eliminating global variables from
+the networking library.</p>
+<p>“Here are some of Andreis performance measurements for different package
+sizes: Package size 1 – 2048 - <a href="http://i.imgur.com/OPum5.png">http://i.imgur.com/OPum5.png</a> Package
+size 2048 – 4194304 - <a href="http://i.imgur.com/fH4rL.png">http://i.imgur.com/fH4rL.png</a> Package size 1 –
+4194304 - <a href="http://i.imgur.com/AXUpN.png">http://i.imgur.com/AXUpN.png</a> ”</p>
+<p>Pl: Has this project helped your skills improve?</p>
+<p>An: Definetly! The most important aspect is that I greatly improved my
+communication skills. Aside of that, I also improved my capacity to work
+in a team, developed the ability to work with a large code base and of
+course improved my implementation skills.</p>
+<p>Pl: Would you continue to contribute to BRL-CAD? An: Of course ! I
+continued to contribute even after Google Summer of Code. Even if my
+contributions aren't as numerous as I would like because of my crowded
+academic schedule, I am trying t</p>
+<h2 id="initial-drafts">Initial Drafts</h2>
+<p>These are incomplete articles being worked on. Short 250 to 500-word
+articles (not counting tables, images, etc) are usually perfect.</p>
+<p><img alt="" src="/wiki/img/BRL-CAD_Primitives_Chart.png" /></p>
+<h4 id="mitchell-roberts-chart-of-all-primitives">Mitchell Roberts: Chart of all Primitives</h4>
+<p>BRL-CAD supports 37 geometric primitive solids. A database containing
+one example of each created and arranged into a chart. Each colored
+rectangle in the background corresponds to a different type of primitive
+(ex: the red group contains cones and cylinders). Primitives that fall
+under multiple categories, like the pipe (made of cylinders and toroids)
+are contained by multiple background rectangles. The ars and bot
+examples did not raytrace correctly, but are continuing to be worked on.</p>
+<p>The database can be used not only for a demonstration of BRL-CAD's
+primitives and their unique uses, but also for regression testing.
+Outputs from raytracing functions like rtWeight and rtArea can be
+compared to established normals to ensure changes to the source code do
+not cause unwanted changes to the way any primitives are raytraced. In
+the future, a tool to create the database automatically will hopefully
+be created and added to BRL-CAD's regression testing suite.</p>
+<h4 id="physics-simulation-system">Physics Simulation System</h4>
+<p>BRL-CAD includes a Bullet-based rigid-body physics simulation system.
+The system takes advantage of BRL-CAD's ray tracing API to detect
+collisions between arbitrarily-shaped geometry, which are then passed to
+Bullet for physics calculations. The current system consists of a
+working demo allowing one object to be subjected to gravity and then
+collide with a fixed "ground" object.</p>
+<p>Recently, the physics system has received some attention as BRL-CAD
+works towards support for geometric constraints and joint systems. The
+goal is to expand the demo into a useful physics system capable of
+real-time simulation displayable in the Archer interface. In addition to
+various bug fixes and performance improvements, changes that will be
+merged soon include a flexible way for users to define simulation scenes
+using BRL-CAD's attribute system along with a simple combination-based
+scene description.</p>
+<p>A video of the improved simulation system can be viewed at
+<a href="https://www.youtube.com/watch?v=xzaKWzntnmc">https://www.youtube.com/watch?v=xzaKWzntnmc</a></p>
+<h4 id="documentation-redux">Documentation Redux</h4>
+<p>BRL-CAD was selected to participate in the 2013 Google Summer of Code
+<strong><a href="http://www.flossmanuals.org/news/2013-doc-camp-call-proposals">Doc
+Camp</a></strong>.
+A team of contributors got together in California, brainstormed, and
+wrote an entire book for BRL-CAD in just a few days. They created a
+guide for contributing to BRL-CAD.</p>
+<p><img alt="" src="/wiki/img/DocCamp_WorkingHard.jpg" /></p>
+<p>Contrary to and perhaps because of longstanding efforts, people
+interested in improving BRL-CAD sometimes find themselves lost in a sea
+of information. In all, BRL-CAD has more than a million words of
+documentation across hundreds of manual pages, dozens of tutorials and
+examples, hundreds of wiki pages, dozens of technical papers, and other
+resources. It's a lot, created over decades of development.</p>
+<p>Over the course of a week in October, members from our community
+participated in something fresh. Something different.</p>
+<p><img alt="" src="/wiki/img/DocCamp_TopicWall.jpg" /></p>
+<p>A team of individuals traveled to the Google headquarters in Mountain
+View, California, to participate in a 2-part event: an unconference and
+a book sprint. Teams for GNOME, OpenMRS, and BRL-CAD arrived on the
+Google campus and talked about techniques, tools, formats, documenters,
+and more. By the end of the week, seven individuals from four different
+countries, three continents, and one oceanic island produced a book for
+BRL-CAD more than 100 pages in length.</p>
+<p>As free open source software, one of BRL-CAD's greatest strengths is
+that anyone can get involved and directly contribute. You can make it
+better. This new book focuses on that aspect and introduces people to
+the project while providing detailed information for developers,
+writers, artists, and other potential contributors.</p>
+<p><img alt="" src="/wiki/img/DocCamp_Relaxing.jpg" /></p>
+<p>This new effort kick-starts a campaign to dramatically improve BRL-CAD's
+documentation, starting with this new contributor's guide.</p>
+<p>Attending the camp provided an exciting opportunity to get a grasp on
+new techniques for documenting and sharing information about our
+software, hopefully in ways that help us grow our community. BRL-CAD's
+team included Sean Morrison, Eric Edwards, Cliff Yapp, Harmanpreet
+Singh, Check Nyah, Isaac Kamga, and Scott Nesbitt. Thank you to Google
+for their sponsorship, <a href="http://aspirationtech.org/">Aspiration</a> for
+magnificently framing the event, and <a href="http://www.flossmanuals.org/">FLOSS
+Manuals</a> for directing the production.</p>
+<p><img alt="" src="/wiki/img/DocCamp_Team.png" /></p>
+<h4 id="anurag-murty-voxelizing-geometry">Anurag Murty: Voxelizing Geometry</h4>
+<p>Given a set of primitives as input, the voxelize command uses the data
+obtained from BRL-CAD's raytracer to represent the input in the form of
+voxels(Volumetric Picture Elements). A uniform grid of rays is uniformly
+shot on the given input and an approximation of the volume filled in
+each voxel region is made from the raytracing data. Depending on the
+approximate volume of the voxel filled, a voxel is classified as IN or
+OUT of the voxelized output. The voxels are represented as RPPs. Such
+voxelized outputs have applications in Volumetric rendering and finite
+element analysis.</p>
+<p>SYNTAX : voxelize [-s "dx dy dz"] [-d n] [-t f] new_obj old_obj
+[old_obj2 old_obj3 ...]</p>
+<p>ARGUMENTS-</p>
+<p>-d - Specifies the level of detail(precision in approximation of volume)
+required. An input of n means that n * n rays will be shot through each
+row, and an approximation of volume filled is reached averaging these n
+* n values</p>
+<p>-s - Specifies the voxel size in each direction.</p>
+<p>-t - Specifies the threshold volume to decide if voxel is to be included
+in the voxelized output.</p>
+<p>new_obj - Name for resultant primitive that is a region containing the
+resulting voxels.</p>
+<p>old_obj - Name of source primitive or collection.</p>
+<p>NOTES-</p>
+<p>1. A greater level of detail usually implies a much better
+approximation of fill volumes at the cost of more computations.</p>
+<p>2. Lesser voxel sizes give a more precise representation of the input
+at the cost of more memory requirements.</p>
+<p>3. Threshold value (the argument of -t) should be a value between 0 and
+1, and not a percentage.</p>
+<h4 id="cristina-precup-visualizing-directed-acyclic-graphs">Cristina Precup: Visualizing Directed Acyclic Graphs</h4>
+<p><strong>Visualizing Constructive Solid Geometry</strong> is a project meant to
+illustrate in an intuitive and interactive manner the hierarchical
+structure of .g geometry databases.</p>
+<p>For the representation of the hierarchies, the <strong>Adaptagrams</strong> graph
+library has been used. This made possible organizing the objects
+contained within the database into directed acyclic graphs.</p>
+<p>Following, are the steps that have been taken in developing the graph
+layout API:</p>
+<ul>
+<li>Integrate the Adaptagrams library into BRL-CAD.</li>
+<li>Traverse the geometry database and distinguish different types of
+    objects (<em>primitive</em>, <em>combination</em>, <em>non-geometry</em>) within it, as
+    well as, establish the operations between them (<em>union</em>,
+    <em>difference</em>, ...). Add all this data to the graph structure
+    constructed with Adaptagrams.</li>
+<li>Display the objects using a Tk Canvas widget inside a window.</li>
+<li>Develop a <em>decorative routine</em> that sets different colors for
+    different types of objects, correspondingly.</li>
+<li>Create a name label for each represented object.</li>
+<li>Develop a layout algorithm that aligns the nodes of the graph in a
+    hierarchical way.</li>
+<li>Introduce the <strong>graph</strong> command in both <strong>MGED</strong> and <strong>Archer</strong>. It
+    has two subcommands:<ul>
+<li><strong>show</strong> which displays a list with the name and type of the
+    objects along with the nodes' and edges' positions;</li>
+<li><strong>positions</strong> that lists the names, types and positions of the
+    corresponding nodes within the graph;</li>
+</ul>
+</li>
+<li>Introduce the <strong>igraph</strong> command in both MGED and Archer. This
+    command pops up a graph based visualization window of the currently
+    opened .g database. Its documentation can be found in <em>brlman</em>.</li>
+</ul>
+<p>As an example, here is how the graph for the <em>share/db/axis.g</em> database
+looks like now:</p>
+<p><img alt="" src="/wiki/img/Graph_editor_v2.png" /></p>
+<p>Further work that can extend the <em>interactive</em> trait of the graph layout
+API includes adding user actions upon the graph such as <em>move</em> (dragging
+a node) or <em>delete</em> functionalities.</p>
+<h4 id="ksenija-slivko-reducing-code">Ksenija Slivko: Reducing Code</h4>
+<h5 id="abstract">Abstract</h5>
+<p>The main aim of this project was to decrease the number of lines of code
+in the project. Since the project is being developing for quite a long
+time there were many "copy-pastes". They were redacted.</p>
+<h5 id="the-process-of-developing">The process of developing</h5>
+<p>Coding period can be divided into three parts:</p>
+<ul>
+<li>reduction in the single files</li>
+<li>reduction in different files in the single program or library</li>
+<li>reduction in different libraries</li>
+</ul>
+<h5 id="improving">Improving</h5>
+<p>Since the project is quite large the redaction can be continued</p>
+<h4 id="laijiren-nurbs-tessellation-what-why-how">Laijiren: NURBS Tessellation: What, Why, How?</h4>
+<h5 id="abstract_1">Abstract</h5>
+<p>Non-Uniform Rational B-Spline surfaces are widely used in CAD system.
+But they are not suitable for direct visualization on modern GPU
+systems. Today’s graphics hardware supports the high-speed display of
+polygonal objects consisting of triangles. This means that analytical
+surfaces (like NURBS) need to be triangulated so they can be displayed
+by 3D graphics cards.</p>
+<h5 id="main-work">Main work</h5>
+<h5 id="for-debugging-tool">For debugging tool</h5>
+<ul>
+<li>add 'info TB' 'info SB' to display information of piecewise bezier
+    trim curve</li>
+<li>add 'info T' 'info E' to display information of trim curve in
+    parameter region and edge in 3d region</li>
+<li>add 'plot SCV' to display control point net and 'plot TESS' to
+    display the result of tessellation</li>
+</ul>
+<h5 id="for-surface-tree">For surface tree</h5>
+<ul>
+<li>subdivide a Nurbs surface in a adaptive method and a new recursion
+    termination condition for surface subdivision.</li>
+</ul>
+<p>reference:NURBS rendering in OpenSG Plus</p>
+<ul>
+<li>implement the doTrimming function in Surface tree.</li>
+</ul>
+<p>1)compute the intersection between trim curve and rect's edge of
+sub-surface in parameter region</p>
+<p>2)implement a trimLoop class to get the valid loop and the trimmed loop</p>
+<p>3)triangulate the valid loop in form of polygon</p>
+<h4 id="suryajith-chillara-benchmark-performance-database">Suryajith Chillara: Benchmark Performance Database</h4>
+<h5 id="abstract_2">Abstract</h5>
+<p>The main idea is to store the data both in the database and the log
+files stored in the archive. The storage in the database enables the
+content to be searched via the parameters such as machine descriptions,
+versions, results and could be compared. The storage as a file in the
+archive is to maintain a back up of the file and whenever a developer
+needs a specific bunch of benchmark logs, he could get them from the
+archive with or without the help of the database.</p>
+<h5 id="main-components">Main Components</h5>
+<ul>
+<li><strong>Log Parser :</strong> The data of the log file needs to be parsed and the
+    relevant and important information has to be logged in the database
+    so as to make the data access for the graphic display through the
+    frontend could be made possible.</li>
+<li><strong>Web API :</strong> Implemented via the bottle framework so as to submit
+    the logs from the brlcad installation via scripts.</li>
+<li><strong>Web backend :</strong> A backend has been implemented as a MVC framework
+    from scratch using the python bottle framework.</li>
+<li><strong>Frontend :</strong> The website that can offer multiple mechanisms for
+    adding new performance run data into the database and provide
+    multiple graphical and non-graphical visualizations of aggregate
+    performance data (i.e., graphs, charts, tables, etc). Graphs, tables
+    and charts are generated with the help of Google Charts via wrapper
+    which generates the javascript code to interact with the Google
+    Charts service.</li>
+</ul>
+<p><img alt="" src="/wiki/img/Absavgperfvsimagescomb.png" /></p>
+<p>Plumbing between these components is via the python scripts.</p>
+<h5 id="tool-service-dependancies">Tool &amp; Service dependancies</h5>
+<ul>
+<li>Python 2.7 and libraries</li>
+<li>Bottle web framework</li>
+<li>MySQL</li>
+<li>Google Charts</li>
+</ul>
+<h4 id="wu-jianbang-nurbs-surface-surface-intersections">Wu Jianbang: NURBS surface-surface intersections</h4>
+<p>I focused on the "NURBS surface-surface intersections" project after the
+mid-term evaluation of this year's GSoC, before which I worked on
+converting implicit primitives to NURBS B-rep forms.</p>
+<p>The function calculating NURBS surface-surface intersection curves is
+surface_surface_intersection() which is declared in include/nurbs.h
+and implemented in src/libnurbs/opennurbs_ext.cpp. It outputs
+intersection curves in 3d space and in both surfaces' UV parameter
+spaces.</p>
+<p>The approach of the algorithm originates from:</p>
+<p>Adarsh Krishnamurthy, Rahul Khardekar, Sara McMains, Kirk Haller, and
+Gershon Elber. 2008. Performing efficient NURBS modeling operations on
+the GPU. In Proceedings of the 2008 ACM symposium on Solid and physical
+modeling (SPM '08). ACM, New York, NY, USA, 257-268.
+DOI=10.1145/1364901.1364937 <a href="http://doi.acm.org/10.1145/1364901.1364937">http://doi.acm.org/10.1145/1364901.1364937</a></p>
+<p>It can be divided into several steps:</p>
+<ul>
+<li>Generate the bounding box of the two surfaces.</li>
+<li>If their bounding boxes intersect:<ul>
+<li>Split the two surfaces, both into four parts, and calculate the
+    sub-surfaces' bounding boxes</li>
+<li>Calculate the intersection of sub-surfaces' bboxes, if they do
+    intersect, go deeper with splitting surfaces and smaller bboxes,
+    otherwise trace back.</li>
+</ul>
+</li>
+<li>After getting the intersecting bboxes, approximate the surface
+    inside the bbox with two triangles, and calculate the intersection
+    points of the triangles (both in 3d space and two surfaces' UV
+    space)</li>
+<li>Fit the intersection points into polyline curves, and then to NURBS
+    curves. Points with distance less than max_dis are considered in
+    one curve.</li>
+</ul>
+<p>It needs to be mentioned here that the value max_dis can be provided by
+the user or generated automatically.</p>
+<p>Besides, after calculating the intersection curves, the next steps
+towords evaluated NURBS are splitting the surfaces into sub-surfaces
+with the intersection curves as their boundaries, and some
+inside-outside tests to decide which sub-surfaces should be included in
+the final object. Some work on splitting has been done, generating some
+b-rep faces that can pass IsValid(), but still further work is needed.</p>
+<h4 id="andrei-popescu-network-performance-testing">Andrei Popescu: Network Performance Testing</h4>
+<p>The project that I have been working on during the summer, as part of
+the Google Summer of Code program,
+can be broken down into three independent parts and it consisted in
+running various tests for the BRL-CAD
+networking library(Libpkg) .</p>
+<ul>
+<li>Speed testing and investigations to uncover any potential
+    performance bottleneck.</li>
+<li>Unit tests and code review to find and cover any untreated
+    exceptions(crashes) in the Libpkg library.</li>
+<li>Eliminate the assumption of globals in the API.</li>
+</ul>
+<p>For the first part, I have run two types of tests :
+Local ones, both the "sender" and the "receiver" were located on
+localhost. The script gathered data
+regarding the transmission speed for each set of package sizes (Here,
+package refers to the package
+created by networking library, not networking packages) respectively
+file sizes.</p>
+<p>Remote ones, where the "sender" and the "receiver" were on separate
+machines, connected using SSH.
+The script ran and the data gathered was done in the same way as the
+localhost one.Using the data
+obtained from the tests, two 3D graphs were drawn.However, the tests
+were inconclusive, I could not find
+an "ideal" package size to use regardless of file size.</p>
+<p>After Mid-term I focused mostly on second part. I used test units from
+libbu(Utility library) as an example
+for the unit test type and design. When the mentioned tests were run,
+several exceptions that caused
+crashes were discovered. Lastly, I have written fixes for the discovered
+crashes.</p>
+<p>The third part of the project has not been covered yet, so more work is
+needed.Although, I am doing my
+best to finish it in the following weeks.</p>
+<h4 id="chris-dueck-calculating-2d-sketch-surface-area">Chris Dueck: Calculating 2D Sketch Surface Area</h4>
+<p>Calculating the surface area of a 2D Sketch primitive is not a trivial
+task. Sketches are created interactively by the user, and can contain
+straight line segments, circular arc segments (and full circles), as
+well as Bezier and NURBS curves.</p>
+<p>The method used to approximately compute the area of a 2D sketch is as
+follows:</p>
+<ul>
+<li>1.) Approximate the sketch by a polygon</li>
+<li>2.) Compute the area of the polygon exactly using Green's Theorem</li>
+<li>3.) Add the areas of any circular arc segments that were created
+    during (1)</li>
+</ul>
+<p>To approximate the sketch by a polygon, each possible curve type of a
+sketch must be considered.</p>
+<ul>
+<li>If the curve is a straight line, it need not be approximated.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>If the curve is a circular arc, it must be determined if it is a
+    full circle (in which case its area can be computed easily) or if it
+    is a circular arc segment. If it is a circular arc segment, the line
+    segment from the beginning of the arc to the endpoint is added to
+    the polygon, and the excess area of the circular arc segment itself
+    can be calculated easily
+    (https://en.wikipedia.org/wiki/Circular_segment)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>If the curve is a Bezier curve, it can be approximated by a series
+    of circular arcs. The algorithm used can be found here
+    (http://itc.ktu.lt/itc354/Riskus354.pdf). The algorithm recursively
+    subdivides the Bezier until it is approximated to tolerance by a
+    biarc and uses the curvature value of the Bezier at a point to
+    determine the depth of subdivision. Then each circular arc in the
+    approximation of the Bezier curve is treated as above.</li>
+</ul>
+<p>Finally, the area of the polygon can be efficiently calculated using
+Green's Theorem
+(http://www.softsurfer.com/Archive/algorithm_0101/algorithm_0101.htm#3D%20Standard%20Formula)
+using cross products.</p>
+<h4 id="cliff-yapp-nurbs-ray-tracing-in-brl-cad">Cliff Yapp: NURBS Ray Tracing in BRL-CAD</h4>
+<p>Over the past year, an intense development effort by BRL-CAD's
+development team has successfully implemented raytracing of Non-Uniform
+Rational BSpline (NURBS) geometry within the BRL-CAD Computer-Aided
+Design (CAD) package. NURBS surfaces are very general, very complex
+mathematical shapes used by virtually all modern commercial CAD software
+packages. Because BRL-CAD did not originally support this type of
+geometry, commercial models could only be imported into BRL-CAD after a
+labor-intensive and difficult conversion process from NURBS form to
+triangle-base geometry (referred to in BRL-CAD as Bags-of-Triangles or
+BoTs). The new NURBS raytracing capability builds on work by many
+developers over a period of years, who in turn built on the open source
+library OpenNURBS. Support for this primitive type means BRL-CAD can now
+store and raytrace data from commercial models without requiring
+preliminary conversion to another type of geometry.</p>
+<p>The last major feature needed to make import of commercial models in
+BRL-CAD straightforward is conversion support for ISO’s "Standard for
+the Exchange of Product model data" or STEP file format. STEP uses NURBS
+geometry in its definition, making support for NURBS geometry a
+necessary prelude to support for STEP import. Most commercial CAD
+modelers support this file format as an output option, hence STEP
+support in BRL-CAD would allow a direct path for moving geometric
+descriptions from a variety of commercial modelers to BRL-CAD.
+Considerable progress has already been made on STEP import support, but
+more work is need to bring the code and feature set to "production
+quality". If anyone would like to join the BRL-CAD open source
+development effort and has a little familiarity with C++, the step-g
+converter and its supporting libraries have some simple-yet-useful tasks
+that would be an excellent and very useful way to explore the project -
+join BRL-CAD's IRC channel or development email list if you are
+interested!</p>
+<h4 id="erik-greenwald-bolting-adrts-libtie-under-the-hood">Erik Greenwald: Bolting ADRT's libtie under the hood</h4>
+<p><img alt="" src="/wiki/img/BoTvsTie.png" /></p>
+<p>Initial progress on the integration of ADRT's libtie "triangle
+intersection engine" with LIBRT.</p>
+<h4 id="tan-yugin-brl-cads-code-hardening-efforts">Tan YuGin: BRL-CAD's Code Hardening Efforts</h4>
+<p>A/N: Written as a Google Code-in 2013 task.</p>
+<p>BRL-CAD is a large-scale software based on decades of development and
+contains over a million lines of code. Its contributors are numerous and
+come from countries all over the world. Any project of such magnitude is
+bound to face problems with ensuring consistency and high standards
+across its various aspects.</p>
+<p>The core team behind BRL-CAD, however, has sought to alleviate such
+issues as far as possible. In a ‘HACKING’ document included with the
+rest of the software, the team has provided universal guidelines and
+good practices for all BRL-CAD code, in areas such as code formatting,
+organization, and conventions. BRL-CAD also encourages the use of
+various tools to make it easier for them to check for problems or errors
+in their work. These tools include the Simian similarity analyzer, a
+program that detects duplicated code and allows developers to refactor
+it into space-saving functions, and the built-in CPPCHECK-CLEANUP tool,
+which checks for issues such as stylistic errors or unused functions.</p>
+<p><img alt="" src="/wiki/img/Simian_analysis_sample_output.PNG" /></p>
+<p><em>Sample output of Simian similarity analyzer. Screenshot courtesy of
+BRL-CAD wiki.</em></p>
+<p><img alt="" src="/wiki/img/CPPCHECK-CLEANUP_sample_output.PNG" /></p>
+<p><em>Sample output of CPPCHECK-CLEANUP tool. Screenshot courtesy of BRL-CAD
+wiki.</em></p>
+<p>BRL-CAD enforces the practice of strict compilation, treating all of the
+compiler’s warnings as matters that have to be resolved before
+development can proceed. Any detected issues that are in actual fact
+errors can thus be fixed. Even incorrectly detected errors are often due
+to weaknesses in the code and can also be dealt with.</p>
+<p>Finally, BRL-CAD has since 2006 participated in the Coverity Scan
+Initiative, where a thorough source code analysis is performed and a
+list of detected problems generated. In 2012, a team of core developers
+met up in person and fixed over fifteen hundred of the issues reported
+in the latest scan. This reduced BRL-CAD’s defect density to just 0.22
+defects per thousand lines of code- less than a quarter of the industry
+average.</p>
+<p><img alt="" src="/wiki/img/CoverityExample2.png" /></p>
+<p><em>Coverity analysis showing secure coding suggestions. Image courtesy of
+BRL-CAD wiki.</em></p>
+<p>Through a range of comprehensive guidelines and tools that help
+contributors to ensure that their code abides by these rules, BRL-CAD
+can thus be developed and contributed to by numerous programmers from
+across the globe while simultaneously maintaining a high standard and
+consistency of code, ultimately resulting in a feature-packed yet
+well-refined software for the larger community.</p>
+<h4 id="anita-leung-choose-brl-cad">Anita Leung: Choose BRL-CAD</h4>
+<p><a href="https://vimeo.com/83215836">https://vimeo.com/83215836</a></p>
+<p>BRL-CAD is a powerful modeling system consisting of more than a million
+lines of C/C++ code. If you are an ambitious developer, dedicate your
+passion toward this robust open source project. Practice your abilities
+and build your assets. BRL-CAD is downloaded and used thousands of times
+each month by people all around the globe; let your contributions be
+shared among others. Collaborate with a community of same interests. and
+join the team today.</p>
+<hr />
+<p>========Marie Gita Ribeiro : DISCOVER BRL-CAD===========
+<a href="http://www.youtube.com/watch?v=whnRqAS-UZs&amp;feature=youtu.be">http://www.youtube.com/watch?v=whnRqAS-UZs&amp;feature=youtu.be</a></p>
+<p>This free open source modelling system is perfect for anyone interested
+in and passionate about design. Utilize the endless tools at your
+disposal as you design with real materials and work with volume and
+content not just the surface. BRL-CAD is one of the oldest CAD in the
+world but just keeps getting better thanks to a community of
+contributors from all over the world. If you still haven't; discover
+BRL-CAD for yourself and unleash your creativity.</p>
+<h2 id="idea-hopper">Idea Hopper</h2>
+<p>These are ideas for interesting or useful publications. We need someone
+to at least write a draft.</p>
+<h4 id="brl-cads-evolutionary-api">BRL-CAD's Evolutionary API</h4>
+<p>Talk about BRL-CAD deprecation process.</p>
+<h4 id="introduction-to-new-deb-and-rpm-builds">Introduction to new .deb and .rpm builds</h4>
+<p>Brief article overviewing the efforts by jordisayol for Debian, Ubuntu,
+Fedora, and openSUSE. Included are new icons, menu items, mime type
+associations, and more.</p>
+<h4 id="2010-end-of-year-review">2010 End Of Year Review</h4>
+<p>Article giving an overview of the past year's highlight developments
+with hints at what 2011 may bring. Alternatively, may be the annual
+statistics review if we switch from fiscal to calendar year reporting.</p>
+<h4 id="erik-greenwald-adrtisst-visualization">Erik Greenwald: ADRT/ISST Visualization</h4>
+<p>Article introducing ADRT/ISST core capability.</p>
+<h4 id="bob-parker-alpha-archer-working-towards-next-generation-mged">Bob Parker: Alpha Archer: Working Towards Next Generation MGED</h4>
+<p>Article introducing Archer's core new features that will be "coming" to
+MGED. Undo, interactive editing, tree view, and info panels come to
+mind.</p>
+<h4 id="finding-the-hot-spots">Finding the Hot Spots</h4>
+<p>Article on the rt lighting model Stephen Kennedy developed that
+visualizes the time spent per-pixel.</p>
+<h4 id="point-clouds">Point Clouds</h4>
+<p>Article introducing the new point cloud primitive.</p>
+<h4 id="bn_mat_inv-singular-matrix">bn_mat_inv: singular matrix</h4>
+<p>Article on the v4 format and binary compatibility.</p>
+<h4 id="model-showcase-goliath">Model Showcase: Goliath</h4>
+<p>Article talking about the making of the Goliath model.</p>
+<h4 id="model-showcase-chumaciera">Model Showcase: Chumaciera</h4>
+<p>Article on Pedro Baptista's bearing model.</p>
+<h4 id="model-showcase-proyecto-catapulta">Model Showcase: Proyecto Catapulta</h4>
+<p>Article on a model developed by André Santos, António Almeida, and Pedro
+Ferreira.</p>
+<h4 id="model-showcase-union-coupling-tool">Model Showcase: Union Coupling Tool</h4>
+<p>Article on a model developed by Inês de Matos under teacher Luís
+Ferreira. The project focuses on a tool, union coupling, based on the
+book, <a href="http://purl.pt/14352">http://purl.pt/14352</a> , page 122 of the original book and page
+128 of the file, figures 108 and 109.</p>
+<h4 id="geometry-service-faq">Geometry Service FAQ</h4>
+<p>FAQ summarization of the GS as it pertains to the wider open source
+community.</p>
+<h4 id="brl-cads-3rd-generation-build-system">BRL-CAD's 3rd Generation Build System</h4>
+<p>Article on the new CMake build system.</p>
+<h4 id="brl-cads-open-source-vision">BRL-CAD's Open Source Vision</h4>
+<p>Article introducing the Project Priorities diagram and overall project
+vision.</p>
+<h4 id="brl-cad-primitives-showcase">BRL-CAD Primitives Showcase</h4>
+<p>Article summarizing all of BRL-CAD's primitives and their current
+status.</p>
+<h4 id="brl-cad-geometry-converter-showcase">BRL-CAD Geometry Converter Showcase</h4>
+<p>Article summarizing all of BRL-CAD's geometry converters.</p>
+<h4 id="release-schedule">Release Schedule</h4>
+<p>Explain our release schedule and versioning system.</p>
+<h4 id="rtgl">RTGL</h4>
+<p>Article on Nick's point-based visualization mode.</p>
+<h4 id="brl-cad-quick-reference-card">BRL-CAD Quick Reference Card</h4>
+<p>Article on a BRL-CAD QRC similar to the existing MGED QRC.</p>
+<h4 id="brl-cad-bibliography">BRL-CAD Bibliography</h4>
+<p>After the .bib gets published to the website, an article announcing it
+and soliciting additions.</p>
+<h4 id="revolve-primitive">Revolve Primitive</h4>
+<p>Article on Timothy Van Ruitenbeek's work implementing 'revolve'.</p>
+<h4 id="parametrics-and-constraints">Parametrics and Constraints</h4>
+<p>Article on Dawn Thomas' work to integrate parametric equation and
+constraint evaluation support.</p>
+<h4 id="converting-implicit-to-explicit-csg-to-brep-nurbs">Converting Implicit to Explicit: CSG to BREP NURBS</h4>
+<p>Article on the work by Cliff Yapp, Joe Doliner, and Ben Poole converting
+primitives with an implicit representation into an explicit NURBS
+representation.</p>
+<h4 id="online-model-repository">Online Model Repository</h4>
+<p>Article on Elena Băutu's work developing the model repository website.</p>
+<h4 id="project-statistics-for-2010">Project Statistics for 2010</h4>
+<p>Article on our current stats similar to previous years.</p>
+<h4 id="next-generation-brl-cad">Next Generation BRL-CAD</h4>
+<p>Article on our super secret awesome new GUI.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
