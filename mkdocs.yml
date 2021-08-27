@@ -19,5 +19,10 @@ site_dir: html
 
 nav:
   - 'index.md'
-  - 'DocPages': 'DocPages.md'
-  - 'UserPages': 'UserPages.md'
+  - 'Code': 'code.md'
+  - 'Tasks': 'tasks.md'
+  - 'Users': 'users.md'
+  - 'Docs': 'docs.md'
+  - 'PDFs': 'pdf.md'
+  - 'Misc': 'misc.md'
+  - 'Talks': 'talks.md'
