@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/Project_Ideas/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Project Ideas - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/Google_Summer_of_Code/Project_Ideas.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#brl-cad-projects" class="nav-link">BRL-CAD Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#high-priority-topics" class="nav-link">High Priority Topics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#web-development" class="nav-link">Web Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#geometry" class="nav-link">Geometry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#performance-quality" class="nav-link">Performance &amp; Quality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#infrastructure" class="nav-link">Infrastructure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rendering-scientific-analysis" class="nav-link">Rendering &amp; Scientific Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#openscad-projects" class="nav-link">OpenSCAD Projects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#librecad-projects" class="nav-link">LibreCAD Projects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#stepcode-projects" class="nav-link">STEPcode Projects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#slic3r-projects" class="nav-link">Slic3r Projects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#freecad-projects" class="nav-link">FreeCAD Projects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mentors" class="nav-link">Mentors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>If you want to work on <strong>computer-aided design (CAD), geometry, or
+graphics</strong>, you've come to the right place! Help us improve open source
+CAD.</p>
+<p>Well prepared proposals from capable students have an <em>outstanding</em>
+chance of getting selected. We consider proposals for all skill levels
+ranging from simple to crazy hard and everything in between. <a href="https://lists.sourceforge.net/lists/listinfo/brlcad-devel">Introduce
+yourself</a>,
+and we'll help you plan one right for you.</p>
+<p>Remember that project descriptions are just <em>initial ideas</em>. You must
+expand with <a href="Summer_of_Code/Application_Guidelines" title="wikilink">considerably more
+detail</a>. Change the
+goals to fit your experience and interests. See our
+<strong><a href="Summer_of_Code/Checklist" title="wikilink">checklist</a></strong> to get started.</p>
+<p>This year, BRL-CAD is coordinating with five other communities that will
+get 1-2 students each to help bridge our work and encourage
+collaboration. Projects that help exchange data or share code are
+desired!</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://brlcad.org/w/index.php?title=Google_Summer_of_Code/Project_Ideas#OpenSCAD_Projects"><a href="http://www.openscad.org/assets/img/logo.png">http://www.openscad.org/assets/img/logo.png</a></a></td>
+<td><a href="http://brlcad.org/w/index.php?title=Google_Summer_of_Code/Project_Ideas#Slic3r_Projects"><a href="https://raw.githubusercontent.com/alexrj/Slic3r/master/var/Slic3r_128px.png">https://raw.githubusercontent.com/alexrj/Slic3r/master/var/Slic3r_128px.png</a></a></td>
+<td><a href="http://brlcad.org/w/index.php?title=Google_Summer_of_Code/Project_Ideas#LibreCAD_Projects"><a href="https://librecad.org/img/logo.png">https://librecad.org/img/logo.png</a></a></td>
+</tr>
+<tr>
+<td><strong>OpenSCAD</strong>: rich syntax, programmable geometry. Lots of possibilities to make it interoperate with BRL-CAD and LibreCAD.</td>
+<td><strong>Slic3r</strong>: toolpath/G-code generator for 3D printers.</td>
+<td><strong>LibreCAD</strong>: specializes in 2D CAD modeling, drafting, drawings. Help build a bridge to BRL-CAD or add STEP support.</td>
+</tr>
+<tr>
+<td><a href="http://brlcad.org/w/index.php?title=Google_Summer_of_Code/Project_Ideas#BRL-CAD_Projects"><a href="http://brlcad.org/images/logo/BRL-CAD_gear3d_logo_164.png">http://brlcad.org/images/logo/BRL-CAD_gear3d_logo_164.png</a></a></td>
+<td><a href="http://brlcad.org/w/index.php?title=Google_Summer_of_Code/Project_Ideas#FreeCAD_Projects"><a href="http://www.freecadweb.org/images/logo.png">http://www.freecadweb.org/images/logo.png</a></a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>BRL-CAD</strong>: 3D solid modeling, geometry processing, and robust high-performance ray tracing. Help us make a better CAD system.</td>
+<td><strong>FreeCAD</strong>: parametric 3D modelling with strong Python interface and general engineering functionality like FEM and CAM</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Project titles link to a page with more details.</strong></p>
+<h1 id="brl-cad-projects">BRL-CAD Projects</h1>
+<h2 id="high-priority-topics">High Priority Topics</h2>
+<p>This year, we are most interested in topics that will immediately
+benefit BRL-CAD users. Please align your proposal with one of the
+following three focus areas. Talk with us at
+<a href="http://brlcad.zulipchat.com">http://brlcad.zulipchat.com</a></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Performance</strong></td>
+<td>Faster geometry. In order, ideas like<strong><a href="Coherent_Raytracing" title="wikilink">Coherent Raytracing</a></strong>, anything involving OpenCL, parallelizing serial code, and eliminating LIBBU pointer aliasing.</td>
+</tr>
+<tr>
+<td align="center"><strong>User Interface</strong></td>
+<td>Build on Google Code-In progress (OpenSCAD-style GUI), <a href="Convert_MGED_from_Tk_to_Qt" title="wikilink">Convert MGED from Tk to Qt</a>, revamp our <a href="Overlap_tool" title="wikilink">Overlap tool</a> GUI, etc. Qt and ray tracing are fair game.</td>
+</tr>
+<tr>
+<td align="center"><strong>Core Infrastructure</strong></td>
+<td>Integrate appleseed rendering, extend and deploy Online Geometry Viewer (OGV), expand our geometry conversion (GCV) library.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="web-development">Web Development</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Synchronize_Wiki_with_Docbook" title="wikilink">Synchronize Wiki with Docbook</a>:</strong> We use Docbook for most of our user documentation but find editing a wiki page much easier to use. Set up a system so the two are always in sync.</td>
+<td align="center">Depends (likely PHP or Python)</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp</a></td>
+</tr>
+<tr>
+<td><strong><a href="Online_Geometry_Viewer_Back-end" title="wikilink">Online Geometry Viewer Back-end</a>:</strong> Continuation of existing work, improve our interface for viewing geometry online. Focus on the back-end infrastructure.</td>
+<td align="center">C++, Javascript, Meteor.js, Three.js</td>
+<td align="center">Medium</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a>,<a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Pooh</a>, <a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Panda</a></td>
+</tr>
+<tr>
+<td><strong><a href="Mediawiki_3D_Geometry_Extension" title="wikilink">Mediawiki 3D Geometry Extension</a>:</strong> Write an extension for Mediawiki that will visualize our .g files. Maybe leverage LLVM C-&gt;Javascript translation.</td>
+<td align="center">Depends (likely PHP or Python)</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="geometry">Geometry</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Plate_Mode_NURBS_raytracing" title="wikilink">Plate Mode NURBS raytracing</a>:</strong> Imported NURBS geometry often does NOT enclose space (i.e., not solid), so add support for specifying an implicit thickness.</td>
+<td align="center">C/C++</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Overlap_tool" title="wikilink">Overlap tool</a>:</strong> Resolving geometric interferences (aka overlaps) is a common geometry editing activity. Design an awesome GUI for resolving conflicts.</td>
+<td align="center">Tcl</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp, Morrison, Greenwald</a></td>
+</tr>
+<tr>
+<td><strong><a href="NURBS_Editing_Support" title="wikilink">NURBS Editing Support</a>:</strong> BRL-CAD doesn't currently have good support for editing NURBS primitives. Fix that.</td>
+<td align="center">C/Tcl</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp</a></td>
+</tr>
+<tr>
+<td><strong><a href="Vector_Drawings_from_NURBS" title="wikilink">Vector Drawings from NURBS</a>:</strong> Huge impact here if you can update one or more of our raytracers to provide vector output instead of raster. Perhaps render directly to PDF or SVG.</td>
+<td align="center">C and/or C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Rossberg</a></td>
+</tr>
+<tr>
+<td><strong><a href="NMG_Editing" title="wikilink">NMG Editing</a>:</strong> Our structured polygonal mesh geometry (N-Manifold Geometry = NMG) is a common export format, but our NMG edit support is non-existent. We need something.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison, Rossberg</a></td>
+</tr>
+<tr>
+<td><strong><a href="Geometry_Conversion_Library" title="wikilink">Geometry Conversion Library</a>:</strong> Probably our biggest open source asset is our extensive collection of importers and exporters. Turn them all into a universal conversion library.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Greenwald, Morrison, Rossberg</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_importer_improvements" title="wikilink">STEP importer improvements</a>:</strong> We have an importer, but it's preliminary. Add support for importing hierarchy information, polygonal geometry, and implicit geometry.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_exporter" title="wikilink">STEP exporter</a>:</strong> We have an importer, we need a comprehensive exporter with support for implicit CSG, NURBS, or polygonal mesh geometry.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp, Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Convert_BoT_to_Pipe" title="wikilink">Convert BoT to Pipe</a>:</strong> Command line interface to convert facetted fluid/electrical line geometry into BRL-CAD native pipe solids.</td>
+<td align="center">C/C++/Tcl</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="OpenSCAD_Importer" title="wikilink">OpenSCAD Importer</a>:</strong> Create an importer for OpenSCAD's format.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="OpenSCAD_Exporter" title="wikilink">OpenSCAD Exporter</a>:</strong> Create an exporter for OpenSCAD's format.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Python_Geometry" title="wikilink">Python Geometry</a>:</strong> Wrap BRL-CAD's primitives in Python (or Lua), make it easier to script geometry creation.</td>
+<td align="center">Python/Lua</td>
+<td align="center">Easy</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance-quality">Performance &amp; Quality</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Coherent_Raytracing" title="wikilink">Coherent Raytracing</a>:</strong> Our current raytrace pipeline dispatches and processes one ray at a time. Send bundles and convert the pipeline into phases.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison, Rossberg</a></td>
+</tr>
+<tr>
+<td><strong><a href="OpenCL_GPGPU_Raytracing" title="wikilink">OpenCL GPGPU Raytracing</a>:</strong> We have about a dozen simple primitives that need to have a ray-object intersection function converted from C to OpenCL.</td>
+<td align="center">C/OpenCL</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="OpenCL_GPGPU_Complex_Raytracing" title="wikilink">OpenCL GPGPU Complex Raytracing</a>:</strong> We have about half a dozen complex primitives that need to have a ray-object intersection function converted from C to OpenCL.</td>
+<td align="center">C/OpenCL</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="OpenCL_GPGPU_Spatial_Partitioning_Raytracing" title="wikilink">OpenCL GPGPU Spatial Partitioning Raytracing</a>:</strong> We use a Bounding Volume Hierarchy (BVH) to reduce the amount of intersections we need to compute to render an image. We need to replace this with a Kd-tree in order to be able to early terminate a render in models with high depth complexity. This should speed up render speed significantly for those models (e.g. Goliath).</td>
+<td align="center">C/OpenCL</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="OpenCL_GPGPU_Brep_Raytracing" title="wikilink">OpenCL GPGPU Brep Raytracing</a>:</strong> We need to support Brep NURBS raytracing over the GPU. There is example CPU only code. Execution on the GPU should significantly enhance rendering performance of these primitives.</td>
+<td align="center">C/OpenCL</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="NURBS_Booleans" title="wikilink">NURBS Booleans</a>:</strong> We have NURBS surface-surface intersections working. Now we're using them to create evaluated forms of our CSG geometry. Make it more robust and faster.</td>
+<td align="center">C/C++</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp, Rossberg</a></td>
+</tr>
+<tr>
+<td><strong><a href="NURBS_Optimization_and_Cleanup" title="wikilink">NURBS Optimization and Cleanup</a>:</strong> We have a fantastic implementation of NURBS evaluation but haven't gone back to clean up or speed it up. Make it pretty and fast.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp, Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Space_Partitioning_for_Tessellation" title="wikilink">Space Partitioning for Tessellation</a>:</strong> Technically an optimization task, make our geometry converters run an order of magnitude faster by using spatial partitioning during tessellation.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Greenwald, Yapp, Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Faster_Overlap_Detection" title="wikilink">Faster Overlap Detection</a>:</strong> BRL-CAD has a 'gqa' tool that detects overlaps. Implement a replacement using a better approach.</td>
+<td align="center">C</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Greenwald, Morrison</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="infrastructure">Infrastructure</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="New_Cross-Platform_3D_Display_Manager" title="wikilink">New Cross-Platform 3D Display Manager</a>:</strong> BRL-CAD uses <strong><em>display managers</em></strong> for visualizing 3D geometry in a window. We want one that uses a cross-platform toolkit such as Qt + OGRE.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="New_Cross-Platform_2D_Framebuffer" title="wikilink">New Cross-Platform 2D Framebuffer</a>:</strong> BRL-CAD uses <strong><em>framebuffers</em></strong> to display 2D imagery. The merits of having a single interface for most platforms is self-evident.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison, Yapp</a></td>
+</tr>
+<tr>
+<td><strong><a href="General_Tree_Walker" title="wikilink">General Tree Walker</a>:</strong> We have a half dozen or more functions that will traverse a geometry hierarchy in different ways. There only needs to be one.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Greenwald, Yapp, Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="GED_Transactions" title="wikilink">GED Transactions</a>:</strong> Migrating functionality from our MGED geometry editor into our LIBGED library provided excellent code reuse, but now we need transactions so that actions can be undone.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison, Daga</a></td>
+</tr>
+<tr>
+<td><strong><a href="Add_exec_option_to_search" title="wikilink">Add exec option to search</a>:</strong> Our LIBGED library provides a <em>search</em> command very similar to the UNIX <em>find</em> command for scanning through geometry. Implement the -exec option.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp, Daga</a></td>
+</tr>
+<tr>
+<td><strong><a href="Astronomical_units" title="wikilink">Astronomical units</a>:</strong> We already go "big", but accurately modeling at a galactic scale redefines that notion...</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison, Greenwald, Daga</a></td>
+</tr>
+<tr>
+<td><strong><a href="Object-oriented_interfaces" title="wikilink">Object-oriented C++ Geometry API</a>:</strong> Extend our C++ library which provides a simple interface to BRL-CAD's core functionality. Kickstart start a new geometry kernel.</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Rossberg, Kamga</a></td>
+</tr>
+<tr>
+<td><strong><a href="Point_Clouds" title="wikilink">Point Clouds</a>:</strong> BRL-CAD has a basic point cloud primitive. Beef it up, make it faster, maybe integrate with the Point Cloud Library (PCL) for evaluation.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Browder, Kamga</a></td>
+</tr>
+<tr>
+<td><strong><a href="Annotations" title="wikilink">Annotations</a>:</strong> Implement support for 2D annotations, labels that can be added to geometry.</td>
+<td align="center">Perl</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Browder</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="rendering-scientific-analysis">Rendering &amp; Scientific Analysis</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="Appleseed_renderer_integration" title="wikilink">Appleseed renderer integration</a>:</strong> Appleseed is rendering infrastructure used by the film industry to make pretty pictures. Make it shoot rays at our native geometry with our ray trace library.</td>
+<td align="center">C</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Material_and_Shader_Objects" title="wikilink">Material and Shader Objects</a>:</strong> This one is a biggie but easy. Implement new object entities for describing shaders and material properties, use them during ray tracing.</td>
+<td align="center">C</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Generalized_abstracted_spacial_partitioning_capability" title="wikilink">Generalized abstracted spacial partitioning capability</a>:</strong> Need more be said? If you're familiar with BSPs, KD trees, and grid structures, then this one is for you.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Greenwald, Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="High_Dynamic_Range_Support" title="wikilink">High Dynamic Range Support</a>:</strong> We don't have displays supporting this yet, but that's never stopped us before. Implement support for images with more than 8-bits per channel.</td>
+<td align="center">C and/or C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Greenwald, Yapp</a></td>
+</tr>
+<tr>
+<td><strong><a href="Analysis_Library" title="wikilink">Analysis Library</a>:</strong> There are various tools in BRL-CAD for calculating weights, moments of inertia, and more. They're stand-alone applications. Turn them into a library.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Yapp, Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Celestial_mechanics_particle_system" title="wikilink">Celestial mechanics particle system</a>:</strong> Simulate solar systems and galaxies.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Greenwald</a></td>
+</tr>
+<tr>
+<td><strong><a href="Density_functions" title="wikilink">Density functions</a>:</strong> Accurately represent everything from atmosphere to bone. Implement support for parametric density functions for homogenous materials.</td>
+<td align="center">C</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Rossberg, Morrison</a></td>
+</tr>
+<tr>
+<td><strong><a href="Bending_light" title="wikilink">Bending light</a>:</strong> Think gravity wells and satellite cameras.</td>
+<td align="center">C</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Morrison</a></td>
+</tr>
+</tbody>
+</table>
+<p>Open Channel For Goods Using Optics +robotics concept: We can Create A
+Tunnel Like way Where we can transport goods like We Transport data
+through seas Using Optics. Only Need Is To make it automated with
+perfect coding for destination. We can Do this with the help of
+Software+Mechanical Engineers. Where coding and assembly plays important
+role.. Coding can Be Done In General By C/c++ language which is Simpler</p>
+<h1 id="openscad-projects">OpenSCAD Projects</h1>
+<p><a href="http://openscad.org">OpenSCAD</a> is a parametric solid 3D modeling tool
+which uses a Domain Specific Language to specify designs as plain text.
+It is specifically designed with 3D printing in mind.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages/Tools</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Project%3A-Improve-DXF-import-and-export">Improve DXF Import and Export</a>:</strong> Look into using an external library for DXF import (and export?).</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Ideas-for-Development-Tasks#openscad-standard-library">OpenSCAD Standard Library</a>:</strong> Create a standard user-space OpenSCAD library.</td>
+<td align="center">OpenSCAD</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Project%3A-Improve-OpenGL-rendering">OpenGL framework</a>:</strong> Rewrite the OpenGL rendering code to use a rendering framework. Focus on compatibility with OpenGL ES2 and rendering performance.</td>
+<td align="center">C++ OpenGL</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Project%3A-Improve-Text-Editor">Improve Text Editor</a>:</strong> Add more IDE style features to the text editor integrated in OpenSCAD.</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Ideas-for-Development-Tasks#persistant-caching">Persistent Caching</a>:</strong> Implement a disk-based version of the internal memory caches</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Project%3A-Multi-threaded-geometry-rendering">Multi-threaded Geometry Evaluation</a>:</strong> Implement multi-threaded evaluation of geometry.</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Project%3A-Survey-of-CSG-algorithms">Survey of CSG algorithms</a>:</strong> Review existing research, evaluate and prototype algorithms.</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM-HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Project%3A-Add-support-for-exporting-models-in-STEP-format">Add support for exporting models in STEP format</a>:</strong> Enable better integration with other CAD tools by adding STEP export.</td>
+<td align="center">C++</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Ideas-for-Development-Tasks#issue-handling">Issue Handling</a>:</strong> Day-to day issue and community management, fix incoming and existing issues. Good place to get started.</td>
+<td align="center">C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Ideas-for-Development-Tasks#test-framework-improvements">Test Framework Improvements</a>:</strong> Improve tests and test framework. Good place to get started.</td>
+<td align="center">Python, C++</td>
+<td align="center">EASY-MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Ideas-for-Development-Tasks#svg-import">SVG Import</a>:</strong> Improve/finalize SVG import.</td>
+<td align="center">C++, SVG</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/openscad/openscad/wiki/Ideas-for-Development-Tasks#larger-tasks-for-particularly-experienced-people">Larger tasks for particularly experienced people</a>:</strong> Various harder tasks which are not fully specified and requires significant effort to design and implement.</td>
+<td align="center">C++</td>
+<td align="center">HARD</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Marius/Torsten</a></td>
+</tr>
+</tbody>
+</table>
+<p>The OpenSCAD team is also open to new ideas. Please <a href="http://www.openscad.org/community.html">get in
+touch</a> to discuss your ideas and
+convince a mentor to back it.</p>
+<h1 id="librecad-projects">LibreCAD Projects</h1>
+<p>LibreCAD is a free Open Source CAD application for Windows, Apple and
+Linux. Support and documentation is free from our large, dedicated
+community of users, contributors and developers. Please refer to
+<a href="http://wiki.librecad.org/index.php/GSoC_2018#LibreCAD_Project_Ideas">LibreCAD GSoC 2018
+ideas</a>
+for more detailed description.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><strong><a href="http://wiki.librecad.org/index.php/GSoC_2018#LibreCAD_Project_Ideas">LibreCAD 3 UI</a>:</strong> Add missing features, e.g. snapping, to the very basic GUI.</td>
+<td align="center">C++,Math</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Armin</a>, <a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Florian</a></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><strong><a href="http://wiki.librecad.org/index.php/GSoC_2018#LibreCAD_Project_Ideas">LibreCAD 3 DXF Entities</a></strong> Implement missing DXF entities, e.g. blocks, use LibreCAD 2 for reference.</td>
+<td align="center">C++,Math</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Armin</a>, <a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Florian</a></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><strong><a href="http://wiki.librecad.org/index.php/GSoC_2018#LibreCAD_Project_Ideas">LibreCAD 3 OpenGL rendering</a>:</strong> Replace our current rendering engine <em>Cairo</em> with pure OpenGL rendering.</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM/HIGH</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Armin</a>, <a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Florian</a></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><strong><a href="http://wiki.librecad.org/index.php/GSoC_2018#LibreCAD_Project_Ideas">LibreCAD 3 Plugin Interface</a></strong> Right now we have some LUA based scripting support for LibreCAD 3. But we want to be much more extensible, e.g. with a XML/JSON interface.</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM/HIGH</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Armin</a>, <a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Florian</a></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><strong><a href="http://wiki.librecad.org/index.php/GSoC_2018#LibreCAD_Project_Ideas">LibreCAD 3 trimming support</a></strong> LibreCAD 3 trim operation doesn't support all entities and is entirely written in Lua. We need a better system which would support all entities and divide operation.</td>
+<td align="center">C++,Math</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Armin</a>, <a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Florian</a></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="stepcode-projects">STEPcode Projects</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="STEP_Coverage_Test" title="wikilink">STEP Coverage Test</a>:</strong> Write a program that links against STEPcode and generates a STEP output instantiating every entity for a given schema. Goal is a comprehensive program and data file for testing STEP import/export.</td>
+<td align="center">ANY (C/C++, Python, Java, Perl, ...)</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_Incremental_Loading" title="wikilink">STEP Incremental Loading</a>:</strong> Basically take a work-in-progress to the next level. Modify the STEP parser to only read what it needs when it needs it, test, clean up, profile, and optimize.</td>
+<td align="center">C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_Minimal_Examples" title="wikilink">STEP Minimal Examples</a>:</strong> Create minimal examples for various schemas - such as AP214 or AP242 - in the style of <a href="http://github.com/stepcode/stepcode/blob/master/example/ap203min/ap203min.cpp">ap203min</a></td>
+<td align="center">C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_Multiple_Protocol_Parsing" title="wikilink">STEP Multiple Protocol Parsing</a>:</strong> Currently creates a parser that works with a specific application protocol (e.g., AP203, AP214). Make it work with multiple simultaneously.</td>
+<td align="center">C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_Source_Code_Documentation" title="wikilink">STEP Source Code Documentation</a>:</strong> We already use doxygen, but could do much better. Improve code documentation and utilize additional doxygen features such as topic pages. Add a 'make doxygen' target to invoke doxygen.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_EXPRESS_Documentation" title="wikilink">STEP EXPRESS Documentation</a>:</strong> Write 'exp2html', similar to exp2py or exp2cxx (python and C++ generators) but outputs graphs and hyperlinked documentation with JavaScript search. Output will include EXPRESS comments (this requires modifying the parser).</td>
+<td align="center">C/C++, JavaScript</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_Viewer" title="wikilink">STEP Viewer</a>:</strong> STEP is a common CAD file format supported by just about every major CAD system. Given we have an importer and an interface for displaying geometry, a stand-alone STEP file viewer has some great potential.</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_Code_Refactoring" title="wikilink">STEP Code Refactoring</a>:</strong> Split large files and functions, add unit tests, move contents of LISTdo loops into separate functions.</td>
+<td align="center">C/C++</td>
+<td align="center">EASY</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+<tr>
+<td><strong><a href="STEP_Thread_Safety_and_Performance" title="wikilink">STEP Thread Safety and Performance</a>:</strong> Modify the libraries to improve thread safety, increase performance using hotspot analysis</td>
+<td align="center">C/C++</td>
+<td align="center">MEDIUM</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Mark, Charlie</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="slic3r-projects">Slic3r Projects</h1>
+<p><a href="http://slic3r.org">Slic3r</a> is CAM desktop application for
+toolpath/G-code generation for 3D printers.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Languages</th>
+<th align="center">Difficulty</th>
+<th align="center">Contacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Port the GUI to C++:</strong> The GUI is currently coded in Perl using wxWidgets and our goal is to have it ported to C++. The wxWidgets API is almost identical between Perl and C++, so it's an easy task. There are a couple things where we use the dynamic features of Perl which are trickier and interesting to port.</td>
+<td align="center">C++/wxWidgets</td>
+<td align="center">Easy</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Port the SVGNest library to C++:</strong> The SVGNest library provides an algorithm for polygon nesting. It's written in JavaScript and a C++ port of it would improve Slic3r's auto-arrange feature. <a href="https://github.com/alexrj/Slic3r/issues/3237">#3237</a></td>
+<td align="center">C++</td>
+<td align="center">Easy</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Fix bugs of the Boost.Voronoi library:</strong> The good but unmaintained Boost.Voronoi library has a couple minor issues affecting Slic3r's results. Interesting task for learning the Voronoi algorithm and how to troubleshoot a computational geometry issue. <a href="https://github.com/alexrj/Slic3r/issues/2948">#2948</a></td>
+<td align="center">C++</td>
+<td align="center">Medium</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Wireframe printing:</strong> Implement the wireframe printing algorithm. <a href="https://github.com/alexrj/Slic3r/issues/2274">#2274</a></td>
+<td align="center">C++</td>
+<td align="center">Medium</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Automatic part rotation:</strong> Automatically rotate a part to make some face of the part the bottom. <a href="https://github.com/alexrj/Slic3r/issues/3047">#3047</a></td>
+<td align="center">C++</td>
+<td align="center">Medium</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Manual support creation:</strong> Allow users to place and move support pillars by clicking in the 3D GUI. <a href="https://github.com/alexrj/Slic3r/issues/3062">#3062</a></td>
+<td align="center">C++/Perl/OpenGL</td>
+<td align="center">Medium/Hard</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Refactor the TriangleMesh class and support non-solid walls:</strong> Replace the internal mesh representation (currently based on admesh) using an existing 3D mesh library or implementing a half-edge structure; only use admesh for fixing models. Keep non-solid walls and slice them as single paths. Bonus: import SVG paths and position them freely using the GUI for printing as single extrusions. <a href="https://github.com/alexrj/Slic3r/issues/3560">#3560</a> <a href="https://github.com/alexrj/Slic3r/issues/3523">#3523</a></td>
+<td align="center">C++</td>
+<td align="center">Medium/Hard</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Non-planar printing:</strong> Implement techniques for non-planar printing. <a href="https://github.com/alexrj/Slic3r/issues/3442">#3442</a></td>
+<td align="center">C++</td>
+<td align="center">Medium</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Support surface colors and mixing extruders:</strong> Read surface colors from AMF or OBJ and keep them throughout the slicing process in order to generate G-code for mixing extruders. <a href="https://github.com/alexrj/Slic3r/issues/3546">#3546</a></td>
+<td align="center">C++/Perl</td>
+<td align="center">Hard</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Clean the libslic3r API and write bindings for it:</strong> Expose the internal algorithms of Slic3r as a library and write bindings for Python, Perl etc.</td>
+<td align="center">C++/any</td>
+<td align="center">Easy</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+<tr>
+<td><strong>Write a Slic3r plugin for Grasshopper:</strong> Expose Slic3r functionality as many separate components that can be plugged in larger GH definitions (for example: slice a NURBS model in GH and feed the slices to the toolpath generation process in order to skip mesh generation, or provide flow calculation for people driving 5-axis robots with custom motion). This requires a fair amount of design work.</td>
+<td align="center">C++</td>
+<td align="center">Medium/Hard</td>
+<td align="center"><a href="Google_Summer_of_Code/Project_Ideas#Mentors" title="wikilink">Alessandro/Joseph</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="freecad-projects">FreeCAD Projects</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Language</th>
+<th>Difficulty</th>
+<th>Contact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="http://www.freecadweb.org/wiki/Advanced_FreeCAD_test_system">Advanced FreeCAD test system</a></strong>: Create a framework for result file based comparisons and workbench specific comparators. Also creation of test cases should be simplified by a GUI or wizard.</td>
+<td>Python/C++</td>
+<td>Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=686">Ickby</a></td>
+</tr>
+<tr>
+<td><strong><a href="http://www.freecadweb.org/wiki/Topological_Naming_Project">Topological Naming Project</a></strong>: Implementation of subshape identifiers based on creation history and update of topology class to work with those identifiers.</td>
+<td>C++</td>
+<td>Hard</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=686">Ickby</a></td>
+</tr>
+<tr>
+<td><strong><a href="http://www.freecadweb.org/wiki/Direct_modeling_tools">Direct modeling tools</a></strong>: Create a new layer of tools and objects, that work on top of existing Part-based 3D objects, that allow a user to graphically modify their geometry.</td>
+<td>Python/C++</td>
+<td>Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=68">Yorik</a></td>
+</tr>
+<tr>
+<td><strong><a href="http://www.freecadweb.org/wiki/FEM_Post_Processing_based_on_VTK">FEM Post Processing based on VTK</a></strong>: Base the existing FEM VTK post processing on the updated SMESH data structure and design a python interface for it. Also improve integration into the workbench.</td>
+<td>C++</td>
+<td>Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=686">Ickby</a></td>
+</tr>
+<tr>
+<td><strong><a href="http://www.freecadweb.org/wiki/IPython_notebook_integration">IPython notebook integration</a></strong>: Create a way to export the open inventor scenegraph as a JavaScript file and add functions for seamless interaction with the IPython display system</td>
+<td>C++, JavaScript, Python</td>
+<td>Easy</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=686">Ickby</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://www.freecadweb.org/wiki/Integrate_Cycles_renderer">Integrate Cycles renderer</a></strong>: Add Blender's new Cycles renderer as a new render engine to the Raytracing Workbench</td>
+<td>C++</td>
+<td>Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=68">Yorik</a></td>
+</tr>
+<tr>
+<td>Stepwise integration of ElmerFem into FreeCAD should be done in three phases: Phase 1 - <strong><a href="https://www.freecadweb.org/wiki/New_solver_object_for_handling_ElmerFEM_execution_in_FEM-workbench">New solver object for handling ElmerFEM execution in FEM-workbench</a></strong>. Phase 2 - <strong><a href="https://www.freecadweb.org/wiki/Mapping_of_main_ElmerSolver_setting_for_mechanical_simulations">Mapping of main ElmerSolver setting for mechanical simulations</a></strong>. Phase 3 - <strong><a href="https://www.freecadweb.org/wiki/Give_graphical_access_to_a_wide_range_of_available_ElmerSolver_setting_from_within_FreeCAD">Give graphical access to a wide range of available ElmerSolver setting from within FreeCAD</a></strong></td>
+<td>Python/C++</td>
+<td>Medium-Hard</td>
+<td><a href="https://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=2069">Bernd</a>, <a href="https://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=6222">HoWil</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://www.freecadweb.org/wiki/PartDesign_Updates">PartDesign Updates</a></strong>: Finish PartDesign port to new Body object, simplify the workflows and extend tools while making them more robust.</td>
+<td>C++, Python</td>
+<td>Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=686">Ickby</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://www.freecadweb.org/wiki/GSoC_FEM_Solver_Z88">GSoC FEM Solver Z88</a></strong>: Extend the capabilities of FEM solver Z88OS in FreeCAD FEM workbench.</td>
+<td>Python</td>
+<td>Easy-Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=686">Bernd</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://www.freecadweb.org/wiki/GSoC_FEM_Unit_Tests">GSoC FEM Unit Tests</a></strong>: Extend the unit tests of FreeCAD FEM workbench.</td>
+<td>Python</td>
+<td>Easy-Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=686">Bernd</a></td>
+</tr>
+<tr>
+<td><strong><a href="https://www.freecadweb.org/wiki/GSoC_Path/Robot_Integration">GSoC Path/Robot Integration</a></strong>: Path is the CNC/CAM workbench. It currently lacks any simulation capability. Robot workbench is a tool for simulating industrial robots. Extend Path and Robot workbenches to support simulation of CNC operations in the Robot workbench.</td>
+<td>C++, Python</td>
+<td>Easy-Medium</td>
+<td><a href="http://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=68">Yorik</a>, <a href="https://forum.freecadweb.org/memberlist.php?mode=viewprofile&amp;u=708">sliptonic</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="mentors">Mentors</h1>
+<p>BRL-CAD operates under group mentorship. That means you can contact
+anyone, not just the person assigned to you, for assistance. The mailing
+list and IRC channel are the preferred communication methods.</p>
+<ul>
+<li>Christopher Sean Morrison<ul>
+<li>brlcad on irc.freenode.net</li>
+<li>Org admin, BRL-CAD open source project lead</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Erik Greenwald<ul>
+<li>``Erik on irc.freenode.net</li>
+<li>Org admin, BRL-CAD core dev</li>
+<li>mainly FDM/FFF, geometry conversion, CAE/prototyping</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Cliff Yapp<ul>
+<li>starseeker on irc.freenode.net</li>
+<li>BRL-CAD Mentor, core dev</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Daniel Rossberg<ul>
+<li>d_rossberg on irc.freenode.net</li>
+<li>BRL-CAD Mentor, core dev, math expert</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>H.S. Rai<ul>
+<li>hsrai on irc.freenode.net</li>
+<li>BRL-CAD Mentor, math expert</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tom Browder<ul>
+<li>BRL-CAD Mentor, analysis expert</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Bryan Bishop<ul>
+<li>BRL-CAD Mentor, python guru</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Isaac Kamga<ul>
+<li>Izakey on irc.freenode.net</li>
+<li>BRL-CAD Mentor, C/C++ Programmer</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Mohit Daga<ul>
+<li>zero_level irc.freenode.net</li>
+<li>BRL-CAD Mentor, Computer Science Engineer</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Inderpreet Singh (Pooh)<ul>
+<li>Pooh on <a href="https://brlcad.zulipchat.com">https://brlcad.zulipchat.com</a></li>
+<li>OGV mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Gauravjeet Singh (Panda)<ul>
+<li>Panda on <a href="https://brlcad.zulipchat.com">https://brlcad.zulipchat.com</a></li>
+<li>OGV mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Mark Pictor<ul>
+<li>mpictor on irc.freenode.net</li>
+<li>STEPcode Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Charlie Stirk<ul>
+<li>cstirk</li>
+<li>STEPcode Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Marius Kintel<ul>
+<li>kintel on irc.freenode.net</li>
+<li>OpenSCAD Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Torsten Paul<ul>
+<li>teepee on irc.freenode.net</li>
+<li>OpenSCAD Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Armin Stebich<ul>
+<li>LordOfBikes on irc.freenode.net</li>
+<li>LibreCAD Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Florian Roméo<ul>
+<li>Feragon on irc.freenode.net</li>
+<li>LibreCAD Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Alessandro Ranellucci<ul>
+<li>Sound on irc.freenode.net</li>
+<li>Slic3r Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Joseph Lenox<ul>
+<li>LoH on irc.freenode.net</li>
+<li>Slic3r Mentor</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Shubham Rathore (:gabbar1947)<ul>
+<li>gabbar1947 on irc.freenode.net</li>
+<li>BRL-CAD Mentor</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

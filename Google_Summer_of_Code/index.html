@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/Google_Summer_of_Code/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Overview - BRL-CAD Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/Google_Summer_of_Code.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#getting-started-checklist" class="nav-link">Getting Started Checklist</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-selection-process" class="nav-link">The Selection Process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#brl-cad-participation-in-gsoc" class="nav-link">BRL-CAD participation in GSoC</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#gsoc-2020" class="nav-link">GSoC 2020</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2019" class="nav-link">GSoC 2019</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2018" class="nav-link">GSoC 2018</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2017" class="nav-link">GSoC 2017</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2016" class="nav-link">GSoC 2016</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2015" class="nav-link">GSoC 2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2014" class="nav-link">GSoC 2014</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2013" class="nav-link">GSoC 2013</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2012" class="nav-link">GSoC 2012</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2011" class="nav-link">GSoC 2011</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2010" class="nav-link">GSoC 2010</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2009" class="nav-link">GSoC 2009</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gsoc-2008" class="nav-link">GSoC 2008</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="overview">Overview</h1>
+<p><strong>BRL-CAD is accepted as a mentoring organization in the <a href="2020/">2020 Google
+Summer of Code</a>!</strong></p>
+<p>Since 2005, Google has run an awesome open source software development
+program specifically for <em>students</em> called the <a href="http://code.google.com/soc/">Google Summer of
+Code</a> (GSoC). Under this program, Google
+funds students to write code for open source projects during the
+northern hemisphere's summer timeframe:</p>
+<ul>
+<li>The student writes a project proposal for BRL-CAD.<ul>
+<li>Sometimes their project idea caters to something that the open
+    source organization suggests and sometimes it's an idea entirely
+    of the student's conception.</li>
+</ul>
+</li>
+<li>Proposals are reviewed, evaluated, and ranked by the open source
+    organization's mentors.</li>
+<li>Google allocates a certain number of slots to each participating
+    organization<ul>
+<li>That, in turn, determines how many student developers work with
+    that organization.</li>
+</ul>
+</li>
+</ul>
+<h1 id="getting-started-checklist">Getting Started <a href="../Summer_of_Code/Checklist/">Checklist</a></h1>
+<p>Whether you're applying or accepted, we've itemized everything you need
+to do into a simple
+<strong><a href="../Summer_of_Code/Checklist/">CHECKLIST</a></strong>. We're here to help
+you become new open source developers, so don't be shy if you have any
+questions.</p>
+<h2 id="the-selection-process">The Selection Process</h2>
+<p>GSoC is about getting people involved and contributing to open source
+over the long-term. As such, we heavily weight our application selection
+process towards students that are interested in remaining involved in
+BRL-CAD and open source software development long after GSoC has ended.</p>
+<p><strong><em>GSoC is not a job.</em></strong> If you think this is just a summer job, then
+GSoC is probably not for you. It's only like a job in terms of planning
+your time commitment over the summer.</p>
+<p>Additionally, submissions are graded based on perception of the
+submitter's abilities to complete the task within the program timeframe,
+general consensus on the technical approach being proposed, and overall
+interest in having such modifications made to BRL-CAD. Particular notice
+is made of students that are responsive to questions and readily
+interactive in the IRC channel or on the mailing list. Communication is
+a great thing.</p>
+<p>Just about every GSoC organization receives considerably more project
+proposals than can be accepted. Every application gets read multiple
+times and reviewed in detail. Of those applications, only a small subset
+are selected so keep in mind that the selection process is rather
+competitive and difficult.</p>
+<p>Whether or not you are accepted, contributing to open source outside of
+GSoC is one of the main goals of the program and is the best way to be
+noticed and get your proposal accepted. Keep that in mind. Thanks for
+your interest and we look forward to working with new BRL-CAD
+developers!</p>
+<h1 id="brl-cad-participation-in-gsoc">BRL-CAD participation in GSoC</h1>
+<p>You can check out promotional flyers that have been prepared in the past
+on our <a href="Flyers/">GSoC flyers</a> page.</p>
+<h2 id="gsoc-2020"><a href="2020/">GSoC 2020</a></h2>
+<h2 id="gsoc-2019"><a href="2019/">GSoC 2019</a></h2>
+<h2 id="gsoc-2018"><a href="2018/">GSoC 2018</a></h2>
+<p>Our umbrella selected 9 students that prepared quality proposals for
+BRL-CAD, FreeCAD, LibreCAD, or/and Slic3r. By the end of GSoC, all but 1
+passed successfully.</p>
+<h2 id="gsoc-2017"><a href="2017/">GSoC 2017</a></h2>
+<p>Our umbrella accepted 10 students that prepared quality proposals and
+demonstrated commitment. Students were selected for LibreCAD, Slic3r,
+BRL-CAD, and FreeCAD.</p>
+<h2 id="gsoc-2016"><a href="2016/">GSoC 2016</a></h2>
+<p>This year we tamed it back to 9 students working on projects for
+BRL-CAD, OpenSCAD, LibreCAD, and FreeCAD (new partner). We were not
+going to apply at all, but we also didn't want to lose momentum with our
+umbrella partners or leave them to fend for themselves.</p>
+<h2 id="gsoc-2015"><a href="2015/">GSoC 2015</a></h2>
+<p>This year we had a whopping 12 students accepted to work on projects. As
+an umbrella organization, we expanded our cooperation to include
+LinuxCNC.</p>
+<h2 id="gsoc-2014"><a href="2014/">GSoC 2014</a></h2>
+<p>Hoping to foster collaboration and communication, we actively reached
+out to a number of related and active open source CAD communities. We
+expanded our umbrella to include cooperation with STEPcode, LibreCAD,
+and OpenSCAD.</p>
+<h2 id="gsoc-2013"><a href="2013/">GSoC 2013</a></h2>
+<p>Middle ground, not too many, not too few. It was just right. We accepted
+seven students that all participated successfully. This was also our
+first year participating as an umbrella organization, coordinating one
+of those slots with the STEPcode community.</p>
+<h2 id="gsoc-2012"><a href="2012/">GSoC 2012</a></h2>
+<p>This year, we aimed big. Lots of mentors, lots of students. Compared to
+some of the larger notable orgs, students had a really great chance of
+acceptance if they were actively communicative and highly passionate
+about their project idea and BRL-CAD. Overall, we accepted eleven
+students.</p>
+<h2 id="gsoc-2011"><a href="2011/">GSoC 2011</a></h2>
+<p><img alt="" src="/wiki/img/BRL-CAD_GSoC2011_flyer.png" /></p>
+<p>After a year off focusing on a major development initiative, BRL-CAD
+once again was accepted to participate in the Google Summer of Code. We
+structured our participation minimally, however, intending to only
+accept a couple students. In the end, we only accepted two students,
+both of whom did outstanding work.</p>
+<h2 id="gsoc-2010">GSoC 2010</h2>
+<p>We <a href="http://brlcad.org/d/node/47">took a break</a> and didn't apply to
+participate in 2010. We wanted to give another org the chance to
+participate and allow ourselves a little extra time to focus on our own
+development priorities.</p>
+<h2 id="gsoc-2009"><a href="Google_Summer_of_Code/2009">GSoC 2009</a></h2>
+<p><img alt="" src="/wiki/img/brlcad_gsoc2009_flyer.png" /></p>
+<p>For the second year in a row, BRL-CAD is participating in the Google
+Summer of Code. BRL-CAD was accepted as a participating organization and
+took upon five students, four of which successfully worked their
+projects and integrated with the development team.</p>
+<h2 id="gsoc-2008"><a href="Google_Summer_of_Code/2008">GSoC 2008</a></h2>
+<p><img alt="" src="/wiki/img/brlcad_gsoc2008_flyer.png" /></p>
+<p>The Google Summer of Code 2008 was announced on February 25, 2008.
+BRL-CAD was accepted as a participating organization and took upon four
+students, all of which successfully worked their projects and integrated
+with the development team.</p>
+<p><a href="Category:_Summer_of_Code">Category: Summer of Code</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
