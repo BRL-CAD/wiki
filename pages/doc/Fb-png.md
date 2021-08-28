@@ -4,6 +4,6 @@ dimensions of the image should be provided.
 
 # See also
 
--   [pix-png](pix-png.md)
+-   [pix-png](Pix-png.md)
 
 [category:commands](category:commands.md)

@@ -44,5 +44,5 @@ Note: You can read all [Failure](Failure.md) codes.
 
 ## Google Code In
 
-This page was edited for [Google_Code_In](Google_Code_In.md)
+This page was edited for [Google_Code_In](../Google_Code_In.md)
 by BSRJ.

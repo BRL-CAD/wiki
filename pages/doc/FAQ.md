@@ -37,7 +37,7 @@ that they can be chained together, scripted, and expanded upon in order
 to provide powerful flexibility.
 
 That said, most users will be interested in using
-[mged](mged.md) as a first step in getting started with BRL-CAD.
+[mged](Mged.md) as a first step in getting started with BRL-CAD.
 Documentation on mged can be found in the share directory where BRL-CAD
 was installed. There is also extensive mged documentation available on
 the website under [Documentation](Documentation.md).
@@ -105,20 +105,20 @@ Brl-CAD, Brl-Cad, Brl-cad, BrLcAd, etc.
 
 The File-&gt;Raytrace and File-&gt;Render_View-&gt;RT_Script menu
 options in MGED will generate a raster image of MGED's current view. The
-[pix-png](pix-png.md) utility can be used to convert from
+[pix-png](Pix-png.md) utility can be used to convert from
 BRL-CAD's .pix raw image file format to the .png file format, and can
 then be printed or embedded into other documents using other tools.
 
 Additionally, the other File-&gt;Render_View options for generating
 standard Plot and PostScript output files of the MGED wireframe suitable
-for printing. The [pl-fb](pl-fb.md) and
-[fb-png](fb-png.md) tools can be used to rasterize a Plot file
+for printing. The [pl-fb](Pl-fb.md) and
+[fb-png](Fb-png.md) tools can be used to rasterize a Plot file
 to the .png format.
 
 Finally, there are a variety of renderers and lighting models available
-in BRL-CAD that are useful for various purposes. The [rt](rt.md)
+in BRL-CAD that are useful for various purposes. The [rt](Rt.md)
 tool is the primary ray-tracer that is used for shaded view rendering.
-The [rtedge](rtedge.md) and [rthide](rthide.md) commands
+The [rtedge](Rtedge.md) and [rthide](Rthide.md) commands
 are used for hidden-line renderings similar to what you'd want for
 generating drafting documents. [rtwizard](rtwizard.md) is a
 graphical 'wizard' tool that can be used to generate a variety of hybrid

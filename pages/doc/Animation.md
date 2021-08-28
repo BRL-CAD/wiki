@@ -14,11 +14,11 @@ composite them together into a movie.
 
 # Rendering image frames for an animation
 
-There are a variety of rendering and image processing tools that support
-a wide range of visualization techniques. Tools that may be of interest
-include **[rt](rt.md)**, **[rtedge](rtedge.md)**,
-**rtxray**, **pixmatte**, and **pixblend** as well as a variety of other
-rendering and image processing tools.
+There are a variety of rendering and image processing tools that
+support a wide range of visualization techniques. Tools that may be of
+interest include **rt**, **rtedge**, **rtxray**, **pixmatte**, and
+**pixblend** as well as a variety of other rendering and image
+processing tools.
 
 If the animation you want is very simple like having an animation of
 something spinning, the relatively simple process is described in the

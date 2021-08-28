@@ -1,7 +1,6 @@
 To determine the properties of a primitive, use the l command followed
 by the primitive name. The example below shows the output of the l
-command against a [right circular
-cylinder](right_circular_cylinder.md):
+command against a [right circular cylinder]:
 
 `l cyl1.s`
 
@@ -18,8 +17,8 @@ cylinder](right_circular_cylinder.md):
 `   AxB direction cosines=(90, 90, 0)`
 `   AxB rotation angle=90, fallback angle=90`
 
-So, the primitive values for the [right circular
-cylinder](right_circular_cylinder.md) are as follows:
+So, the primitive values for the [right circular cylinder] are as
+follows:
 
 ------------------------------------------------------------------------
 

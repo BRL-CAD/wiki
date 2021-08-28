@@ -38,7 +38,7 @@ lack such forms cannot be edited using this method.
 
 Any *currently displayed* primitive object can be selected for
 modification or relocation using either the GUI **Edit--&gt;Primitive
-Selection...** or the CLI [**sed**](MGED_CMD_sed.md) command.
+Selection...** or the CLI [**sed**] (MGED_CMD_sed.md) command.
 
 Objects that aren't currently displayed will not be listed in the
 Primitive Selection Menu dialog, and the sed command will display an

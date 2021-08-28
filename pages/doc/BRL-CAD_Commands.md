@@ -9,7 +9,7 @@ as you see fit.
 
 `mged`—multi-device geometry editor. Start here.
 
-[burst](burst.md)—PDAM input generator
+[burst](Burst.md)—PDAM input generator
 
 `tire`—make a model of a tire
 

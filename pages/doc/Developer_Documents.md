@@ -23,7 +23,7 @@ Developers](An_Introduction_To_New_Developers.md)
 
 ### I'm trying to add a new file to the repository and I get an error on commit about mime types. What should I do?
 
-You should set the mime type. See [mime-types](mime-types.md)
+You should set the mime type. See [mime-types](Mime-types.md)
 for more information.
 
 ## Developer Examples
@@ -51,21 +51,19 @@ for more information.
     -   [BRL-CAD's core C++
         interface](BRL-CAD's_core_C++_interface.md)
     -   [Geometry Service](Geometry_Service.md)
-        -   [Geometry Service
-            Project](Geometry_Service_Project_Main.md)
+        -   [Geometry Service Project](../misc/Geometry_Service_Project_Main.md)
 -   Geometry Conversion
     -   [Pro/ENGINEER to BRL-CAD export plugin](ProE-BRL.md)
     -   [ISO 103030 STEP Geometry Conversion Support](STEP.md)
 -   Community Initiatives
-    -   [Google Summer of Code](Google_Summer_of_Code.md)
-    -   [ESA Summer of Code in
-        Space](ESA_Summer_of_Code_in_Space.md)
-    -   [Google Code In](Google_Code_In.md)
-    -   [Google Doc Camp](Google_Doc_Camp.md)
-    -   [Google Season of Docs](Google_Season_of_Docs.md)
+    -   [Google Summer of Code](../Google_Summer_of_Code.md)
+    -   [ESA Summer of Code in Space](../ESA_Summer_of_Code_in_Space.md)
+    -   [Google Code In](../Google_Code_In.md)
+    -   [Google Doc Camp](../Google_Doc_Camp.md)
+    -   [Google Season of Docs](../Google_Season_of_Docs.md)
 -   Out-of-date Orphans
     -   [libpg : A parametrics/constraint
-        library](libpg_:_A_parametrics/constraint_library.md)
-    -   [libpc : Geometric Constraint Solving](libpc.md)
+        library](Libpg_:_A_parametrics/constraint_library.md)
+    -   [libpc : Geometric Constraint Solving](Libpc.md)
 
 [Category:Design Documents](Category:Design_Documents.md)

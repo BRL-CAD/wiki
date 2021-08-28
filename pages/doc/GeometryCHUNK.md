@@ -23,10 +23,10 @@ Note: You can read all [Failure](Failure.md) codes.
 ## Byte Format
 
 No additional fields beyond that of the [Common
-Header](NetMsgTypes.md) and
+Header](../misc/NetMsgTypes.md) and
 [GenericMultiByteMsg](GenericMultiByteMsg.md)
 
 ## Google Code In
 
-This page was edited for [Google_Code_In](Google_Code_In.md)
+This page was edited for [Google_Code_In](../Google_Code_In.md)
 by BSRJ.

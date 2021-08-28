@@ -5,15 +5,15 @@ __NOTOC__
 ## Communications Management
 
 -   Thin Client Session Tracking
-    -   [ThinClient via Network](GS_Dev_ThinClient_Use_Cases.md)
-    -   [Network](GS_Dev_Network_Use_Cases.md)
-    -   [GeometryEngine](GS_Dev_GeometryEngine_Use_Cases.md)
+    -   [ThinClient via Network] (GS_Dev_ThinClient_Use_Cases.md)
+    -   [Network] (GS_Dev_Network_Use_Cases.md)
+    -   [GeometryEngine] (GS_Dev_GeometryEngine_Use_Cases.md)
 -   GE Interlink Handling
-    -   [Network](GS_Dev_Network_Use_Cases.md)
-    -   [GeometryEngine](GS_Dev_GeometryEngine_Use_Cases.md)
+    -   [Network] (GS_Dev_Network_Use_Cases.md)
+    -   [GeometryEngine] (GS_Dev_GeometryEngine_Use_Cases.md)
 -   External Application Handling
-    -   [Network](GS_Dev_Network_Use_Cases.md)
-    -   [ExternalApplication](GS_Dev_ExternalApplication_Use_Cases.md)
+    -   [Network] (GS_Dev_Network_Use_Cases.md)
+    -   [ExternalApplication] (GS_Dev_ExternalApplication_Use_Cases.md)
 
 
 

@@ -391,7 +391,7 @@ Arguments: render method, threshold, number of points, location and field streng
 
 ## brep
 
-[see NURBS](NURBS.md)
+[see NURBS](../misc/NURBS.md)
 
 ## spline
 
@@ -434,7 +434,7 @@ Status: depreciated, use bot instead
 2d outline
 
 Handled by: make form(sketch editor) create
-See also: [sketch](sketch.md)
+See also: [sketch](Sketch.md)
 
 ## annot
 
@@ -442,7 +442,7 @@ See also: [sketch](sketch.md)
 
 Handled by: in command
 
-See: [annot](annot.md)
+See: [annot](Annot.md)
 
 ## grip
 

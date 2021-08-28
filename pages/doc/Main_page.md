@@ -33,11 +33,11 @@ So be **bold** and *improve our documentation*!
 
 ## Want to get involved?
 
--   [2-hour Tasks](Deuces.md)
+-   [2-hour Tasks](../task/Deuces.md)
 -   [BRL-CAD Priorities](http://brlcad.org/BRL-CAD_Priorities.png)
 -   [Additional Development Ideas](http://brlcad.org/~sean/ideas.html)
 -   [Code Cleanup](Code_Cleanup.md)
--   [Continuous Integration](Continuous_Integration.md)
+-   [Continuous Integration](../task/Continuous_Integration.md)
 -   [Developer Documents](Developer_Documents.md)
 -   Compiling BRL-CAD...
     -   [...from a Subversion checkout](Building_from_SVN.md)
@@ -85,5 +85,5 @@ If you are unsure on how to edit or add new pages, see our
 
 Unless otherwise noted, all contributions to the BRL-CAD wiki are made
 available under the terms of the [BSD Documentation
-License](BSD_Documentation_License.md) (BDL). Please refer to
-the wiki site [disclaimer](disclaimer.md) for more details.
+License](../misc/BSD_Documentation_License.md) (BDL). Please refer to
+the wiki site [disclaimer](../misc/disclaimer.md) for more details.

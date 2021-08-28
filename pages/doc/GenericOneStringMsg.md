@@ -7,4 +7,4 @@ Generic NetMsg Virtual Subclass containing a single Byte Field
 |                    |                                                                |
 |--------------------|----------------------------------------------------------------|
 | **Element**        | **Length**                                                     |
-| GenericStringField | [String (Variable bytes)](IBME_NETWORKPROTO_STRING.md) |
+| GenericStringField | [String (Variable bytes)] (IBME_NETWORKPROTO_STRING.md) |

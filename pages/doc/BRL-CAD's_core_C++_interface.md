@@ -53,6 +53,6 @@ primitives etc.).
 # Examples
 
 -   [A kind of a "Hallo World"
-    program](coreInterface_Hallo_World_Example.md)
--   [PrintTitle](coreInterface_PrintTitle_Example.md)
--   [Tree walker](coreInterface_Tree_Walker_Example.md)
+    program](CoreInterface_Hallo_World_Example.md)
+-   [PrintTitle](CoreInterface_PrintTitle_Example.md)
+-   [Tree walker](CoreInterface_Tree_Walker_Example.md)
