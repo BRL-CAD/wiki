@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/user/Vasco.costa/GSoC15/logs/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Community Bonding Period - BRL-CAD Wiki</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/user/Vasco.costa/GSoC15/logs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#community-bonding-period" class="nav-link">Community Bonding Period</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#background-research" class="nav-link">Background Research</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-status" class="nav-link">Development Status</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#development-phase" class="nav-link">Development Phase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#post-development-phase" class="nav-link">Post Development Phase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="community-bonding-period">Community Bonding Period</h1>
+<p>I made two patches for OpenCL (OCL) shot code. One patch refactors the
+existing SPH (Sphere) shot code, and the another patch implements EHY
+(Elliptical Hyperboloid) shot code.</p>
+<h1 id="background-research">Background Research</h1>
+<ul>
+<li><a href="http://graphics.cs.kuleuven.be/publications/LD08CFRGRT/">http://graphics.cs.kuleuven.be/publications/LD08CFRGRT/</a></li>
+<li><a href="http://research.microsoft.com/en-us/um/people/cloop/garanzhaloop2010.pdf">http://research.microsoft.com/en-us/um/people/cloop/garanzhaloop2010.pdf</a></li>
+</ul>
+<h1 id="development-status">Development Status</h1>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th align="left">Description</th>
+<th>Patch</th>
+<th align="left">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M0.1</td>
+<td align="left">fix OCL SPH shot routine compilation errors.</td>
+<td>#341</td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M0.2</td>
+<td align="left">EHY shot routine in OCL.</td>
+<td>#346</td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td></td>
+<td align="left"></td>
+<td></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>M1</td>
+<td align="left">ELL and ARB8 shot routines in OCL.</td>
+<td>#370</td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M2</td>
+<td align="left"><s>refactor dispatcher, shoot, optical renderer to process many rays in parallel in C when rendering an image or block.</s></td>
+<td></td>
+<td align="left"><em>see M5</em></td>
+</tr>
+<tr>
+<td>M3.0</td>
+<td align="left"><s>grid spatial partitioning in C.</s></td>
+<td>#379</td>
+<td align="left"><em>see M3.2</em></td>
+</tr>
+<tr>
+<td>M3.1</td>
+<td align="left"><s>grid spatial partitioning in OCL.</s></td>
+<td>#379</td>
+<td align="left"><em>see M3.2</em></td>
+</tr>
+<tr>
+<td>M3.2</td>
+<td align="left">HLBVH object partitioning builder in C. traversal in OCL.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M4</td>
+<td align="left">GPU side database storage of OCL implemented primitives.</td>
+<td>#392</td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M5</td>
+<td align="left">port compute intensive or critical parts of the dispatcher, <s>boolean evaluation</s>, optical renderer to OCL.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M5.1</td>
+<td align="left">OCL dispatcher that performs the shot routines for a whole frame.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M5.2</td>
+<td align="left">OCL rasterizer that does the pixel pushing for a whole frame.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M5.3</td>
+<td align="left">OCL lighting modes: Phong, Diffuse, Surface Normals.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M5.4</td>
+<td align="left">OCL lighting modes: Multi-hit transparent.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M6</td>
+<td align="left">TOR and TGC shot routines in OCL.</td>
+<td>#393</td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M6.1</td>
+<td align="left">REC shot routine in OCL.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M6.2</td>
+<td align="left">Surface normal routines for all seven OCL implemented primitives.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M7</td>
+<td align="left">BOT shot routine in OCL.</td>
+<td></td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td>M7.1</td>
+<td align="left">Simple BOT shot routine in OCL that computes triangle hits and normals brute force.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+<tr>
+<td>M7.2</td>
+<td align="left">CPU HLBVH BOT shot construction with OCL traversal and interpolated per pixel normals.</td>
+<td></td>
+<td align="left"><strong>TRUNK</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The ARB8, ARS, BOT, EHY, ELL, SPH, REC, TOR, TGC, shot routines are in
+SVN trunk.</p>
+<p>SVN trunk also contains solid database device storage and a render
+function which given a view2model matrix, width, height, can generate an
+RGB8 bitmap. Diffuse and Surface Normal light models are supported. The
+renderer does BVH accelerated ray tracing and ignores the CSG operators.
+It is integrated as a render option in <strong>mged</strong>.</p>
+<h1 id="development-phase">Development Phase</h1>
+<h3 id="week-1-25-31-may">Week 1 : 25-31 May</h3>
+<ul>
+<li>Created some example .g files in mged for the primitives to be
+    implemented this week. The Quick Reference Card proved to be quite
+    useful.</li>
+<li>Do the matrix ops for EHY (Elliptical Hyperboloid) in the OCL side.<ul>
+<li><a href="https://sourceforge.net/p/brlcad/patches/346/">https://sourceforge.net/p/brlcad/patches/346/</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Made patch for ELL (Generalized Ellipsoid) and ARB8 (Arbitrary
+    Polyhedron) OCL shots.</li>
+<li><em>M1 complete: ELL, ARB8 shot routines in OCL</em>.<ul>
+<li><a href="https://sourceforge.net/p/brlcad/patches/370/">https://sourceforge.net/p/brlcad/patches/370/</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tried out a bunch of code browsing tools (cscope, LXR, doxygen,
+    etc). The NetBeans IDE seems the most promising.</li>
+</ul>
+<h3 id="week-2-1-7-jun">Week 2 : 1-7 Jun</h3>
+<ul>
+<li>Read code to better understand the main rendering loop. It seems to
+    be something like this:</li>
+</ul>
+<p><code>do_frame() → do_run() → worker()* → do_pixel()* → rt_shootray()* → rt_*_shot()</code></p>
+<!-- -->
+
+<p>The code is recursive (which is problematic for OCL). I'll work on a
+simplified version of the rendering loop which only does the primary
+rays in C as a first approach. After I get the non-recursive parallel
+friendly C code I'll work on the OCL port.</p>
+<ul>
+<li>Updated project proposal on Google Melange.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>SVN r65153 fails to compile with a bogus error of an unused variable
+    that's actually being used its just that GCC 4.9.1 is too dumb to
+    figure that out.<ul>
+<li><a href="https://sourceforge.net/p/brlcad/bugs/365/">https://sourceforge.net/p/brlcad/bugs/365/</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Upgraded Ubuntu and GCC.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Made simple ray generation code in C.</li>
+<li>Made simple frame buffer write code in C.</li>
+<li>Made simple diffuse shading code in C.</li>
+</ul>
+<h3 id="week-3-8-14-jun">Week 3 : 8-14 Jun</h3>
+<ul>
+<li>Added the main boolean weaving code to our minimal renderer.</li>
+<li>Eliminated some gotos and made the code more thread safe.</li>
+<li>The simple renderer patches are in the
+    <a href="https://sourceforge.net/p/brlcad/mailman/message/34191546/">mailing-list</a>.</li>
+</ul>
+<h3 id="week-4-15-21-jun">Week 4 : 15-21 Jun</h3>
+<ul>
+<li>Added OpenMP compile support. Use OpenMP constructs to launch the
+    rendering threads. This work still has some bugs in it.</li>
+<li><em>Alpha M2 patch.</em> in
+    <a href="https://sourceforge.net/p/brlcad/mailman/message/34191546/">mailing-list</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Read code to better understand the main spatial partition
+    construction routines. They seem to be something like this:</li>
+</ul>
+<p><code>rt_prep_parallel() → rt_cut_it() → rt_nugrid_cut()</code></p>
+<!-- -->
+
+<p>We need something less complex that is more amenable to porting to OCL.
+So I will be implementing the Lagae &amp; Dutré compact grid construction
+algorithm published at EGSR. First I will program in ANSI C then I will
+port the code to OpenCL.</p>
+<ul>
+<li>Started work on <em>M3: grid spatial partitioning in OCL</em>.</li>
+<li>ANSI C Lagae &amp; Dutré grid construction code.</li>
+</ul>
+<h3 id="week-5-22-28-jun">Week 5 : 22-28 Jun</h3>
+<ul>
+<li><em>Took time off from the project to go to the CGI'15 conference.</em></li>
+</ul>
+<h3 id="week-6-29-jun-5-jul">Week 6 : 29 Jun-5 Jul</h3>
+<ul>
+<li><em>GSoC Midterm Evaluations.</em></li>
+</ul>
+<h3 id="weeks-7-8-6-jul-12-jul-13-jul-19-jul">Weeks 7-8 : 6 Jul-12 Jul, 13 Jul-19 Jul</h3>
+<ul>
+<li>Evaluating algorithms for grid construction.</li>
+<li>Selecting OCL kernels we can use to support grid construction. It
+    seems PyOpenCL has some kernels we could use. Now the question is
+    how to extricate the OpenCL/C from the Python...</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>ANSI C grid traversal code.</li>
+<li>OCL grid construction on the GPU.</li>
+<li><em>M3 complete: grid spatial partitioning in OCL</em>.<ul>
+<li><a href="https://sourceforge.net/p/brlcad/patches/379/">https://sourceforge.net/p/brlcad/patches/379/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="weeks-9-10-20-jul-26-jul-27-jul-2-aug">Weeks 9-10 : 20 Jul-26 Jul, 27 Jul-2 Aug</h3>
+<ul>
+<li>Implemented GPU side solid database storage infrastructure.</li>
+<li>The OCL EHY shot code now uses the GPU solid database instead of
+    creating the input buffers on every call.</li>
+</ul>
+<p>The code allows the primitive to decide how it is stored without
+imposing a convention. So one can use SoA, AoS, or whatever to store the
+data.</p>
+<ul>
+<li>Implemented GPU side solid database storage for SPH, ELL, ARB8.</li>
+<li>Extracted out some duplicated OCL code.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><em>M4 complete: GPU side database storage of OCL implemented
+    primitives.</em><ul>
+<li><a href="https://sourceforge.net/p/brlcad/patches/392/">https://sourceforge.net/p/brlcad/patches/392/</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>OCL TOR (Torus) shot routine. Includes the higher order equation
+    solver code.</li>
+<li>OCL TGC (Truncated General Cone) shot routine.</li>
+<li>Put equation solver in separate .cl file.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><em>M6 complete: TOR and TGC shot routines in OCL</em>.<ul>
+<li><a href="https://sourceforge.net/p/brlcad/patches/393/">https://sourceforge.net/p/brlcad/patches/393/</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>General overhaul and cleanup of the OCL shot patches.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Upgraded NVIDIA OpenCL drivers on my computer to CUDA 7.0.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I drew up a tentative algorithm for the CSG raytrace:</li>
+</ul>
+<p><code># GPU execution</code><br />
+<code>GEN_RAYS(args)</code><br />
+<code>lengths = COMPUTE_LEN_SEGMENTS(rays, db)</code><br />
+<code>segs = ALLOC_SEGMENTS(lengths)</code><br />
+<code>segs = COMPUTE_SEGMENTS(rays, db, segs)</code>  </p>
+<p><code># CPU execution</code><br />
+<code>waiting_segs = READ_SEGMENTS(segs)</code><br />
+<code># merge with CPU computed segments for non-accelerated primitives</code><br />
+<code>finished_segs = RT_BOOL_WEAVE(waiting_segs)</code><br />
+<code>partitions = RT_BOOL_FINAL(finished_segs)</code><br />
+<code>pixels = VIEWSHADE(rays, db, partitions)</code></p>
+<p>This allows us to ultimately reuse the CPU code for boolean weaving,
+primitive normals, shaders, to have a 100% pixel accurate result. At the
+expense of a lot of memory traffic and CPU-side computation of some
+fairly maths intensive parts like the normal compute and shade. However
+I presently see no other way of having a 100% accurate result in the
+time we have available.</p>
+<ul>
+<li>Made OCL EHY shot code look exactly like the ANSI C version.
+    Cleanups.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Ran tests on OCL shot code to check for accuracy vs existing code:</li>
+</ul>
+<p><code># e.g. test for tgc</code><br />
+<code>make tgc tgc</code><br />
+<code>e tgc ; rt -o rt_tgc.pix # OR e tgc ; rt -o cl_tgc.pix</code><br />
+<code>pixdiff rt_tgc.pix cl_tgc.pix | pix-fb</code></p>
+<p><code># test results:</code><br />
+<code>arb8: pixdiff bytes:  777500 matching,    8932 off by 1,       0 off by many</code><br />
+<code>ehy:  pixdiff bytes:  760977 matching,   25443 off by 1,      12 off by many</code><br />
+<code>ell:  pixdiff bytes:  764588 matching,   21844 off by 1,       0 off by many</code><br />
+<code>sph:  pixdiff bytes:  736942 matching,   49490 off by 1,       0 off by many</code><br />
+<code>tgc:  pixdiff bytes:  783191 matching,    3241 off by 1,       0 off by many</code><br />
+<code>tor:  pixdiff bytes:  774138 matching,   12294 off by 1,       0 off by many</code></p>
+<table>
+<thead>
+<tr>
+<th><strong>RT (EHY)</strong></th>
+<th><strong>OCL (EHY)</strong></th>
+<th><strong>PIXDIFF (EHY)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../../../img/Rt_ehy.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="" src="../../../img/Cl_ehy.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="" src="../../../img/Diff_ehy.png" /></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The off by many problem with EHY is probably related to rounding
+    errors with <em>sqrt</em> in OCL for NVIDIA using a different rounding mode
+    than X86. It is possible to use PTX assembly, i.e.
+    <code>asm("sqrt.rp.f64 %0, %1;" : "=d"(b) : "d"(a));</code>. OCL 1.1 and over
+    have <a href="http://wok.oblomov.eu/tecnologia/gpgpu/opencl-rounding-modes/">no support for setting rounding
+    modes</a>
+    without using inline assembly.</li>
+</ul>
+<h3 id="week-11-3-aug-9-aug">Week 11 : 3 Aug-9 Aug</h3>
+<ul>
+<li>Sean applied patches #341 and #346 to SVN trunk.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Got SVN write access.</li>
+<li>Applied patches #393 and #370 to SVN trunk.</li>
+<li>SVN trunk now has OCL shot evaluation for SPH, EHY, ELL, ARB8, TOR,
+    TGC primitives.</li>
+<li>Refactored SPH (remove duplicate code, etc) and applied it to trunk.</li>
+<li>Move declarations to top level in order to eliminate duplicate code
+    in trunk.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Pass struct with primitive data to OCL as an initial step to an AoS
+    device primitive database. Move constants into common.cl.</li>
+<li>Generic OCL solid shot handler. Refactored code to remove
+    duplicates.</li>
+<li>Load large OCL vectors on demand to reduce stack footprint per
+    function call.</li>
+<li>Fix memory leak on OCL loaded program source code.</li>
+</ul>
+<h3 id="week-12-10-aug-16-aug">Week 12 : 10 Aug-16 Aug</h3>
+<ul>
+<li>Add inclusive and exclusive scan OCL code from PyOpenCL to trunk.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Created a private branch for opencl.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><em>M2 commited to opencl branch: kludge up a simple rendering pipeline
+    with grid spatial partitioning traversal acceleration.</em></li>
+</ul>
+<p>The simple ANSI C rendering pipeline only supports Lambertian reflection
+with a stock grey material to make things simpler. Golliath scene:</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>arb8</strong></td>
+<td>160</td>
+</tr>
+<tr>
+<td><strong>ell</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td>pipe</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>tgc</strong></td>
+<td>94</td>
+</tr>
+<tr>
+<td><strong>tor</strong></td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>We have OCL shot tests for 278 of 288 solids. Only primitive in this
+database which is not ported yet is <strong>pipe</strong>.</p>
+<!-- -->
+
+<p>For future reference I get these timings for the above scene (one OCL
+kernel invocation per ray-primitive shot):</p>
+<p>SHOT: cpu = 421.568 sec, elapsed = 447.675 sec</p>
+<ul>
+<li><em>M4 commited to opencl branch: add device side solid database
+    storage.</em></li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Refactor opencl database storage on opencl branch.</li>
+<li>Backport solid database storage from opencl branch to trunk.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Simple OCL rendering pipeline which brute force computes all shots
+    and returns a silhouette of the view:</li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>RT+OCL (Havoc)</strong></th>
+<th><strong>OCL (Havoc)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../../../img/Rt_havoc.png" /></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="" src="../../../img/Cl_havoc.png" /></td>
+<td></td>
+</tr>
+<tr>
+<td>one OCL kernel invocation per shot with BSP spatial partitioning</td>
+<td>OCL brute force computation of all shots (2429 solids, 929232 pixels) in one kernel call</td>
+</tr>
+<tr>
+<td>elapsed time: 375.68 sec</td>
+<td>elapsed time: 3.22 sec</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>This is not an apples to apple comparison since the work done is a lot
+different. The brute force version ignores the CSG operators. We don't
+have OCL normal computation. But it's a way to gauge the possibilities
+here. If we implemented a BVH we could cut the iterations per pixel from
+2429 to around log2(2429)*depth complexity where log2(2429)=11.25. In
+opencl branch.</p>
+<!-- -->
+
+<p>PS: The missile launcher tubes don't show up. The tgcs degenerate to
+recs. So need OCL rec shot to render this properly. Might also be an
+issue in other scenes.</p>
+<ul>
+<li>Add REC shot routine to opencl branch. Fixes the issues with the
+    havoc missile launchers as seen above.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Backport REC shot routine from opencl branch to trunk. Add checks
+    for NULL results buffer.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>OCL normal computation for arb8, ehy, ell, rec, sph, tgc, tor.</li>
+<li>Backport opencl normal computation for arb8, ehy, ell, rec, sph,
+    tgc, tor to trunk.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Add diffuse, surface normals rendering light models to opencl
+    branch. Screenshots:</li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>OCL Sphere (Surface Normals)</strong></th>
+<th><strong>OCL Sphere (Diffuse)</strong></th>
+<th><strong>OCL Havoc (Surface Normals)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../../../img/Cl_sphere_surf_normals.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="" src="../../../img/Cl_sphere_diffuse.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="" src="../../../img/Cl_havoc_surf_normals.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>elapsed time: 0.05 sec</td>
+<td>elapsed time: 0.05 sec</td>
+<td>elapsed time: 4.20 sec</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>Backport diffuse, surface normals rendering light models from opencl
+    branch.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>On hindsight I think the grids are not a good option for BRL-CAD on
+    the GPU. Spatial partitioning can result in duplicate shots. Shots
+    of BRL-CAD primitives can be more expensive than simple ray-triangle
+    shots. The alternative is to use mailboxing like the BRL-CAD ANSI C
+    code currently does but this requires a lot of per thread memory
+    which we can ill afford on a massively parallel architecture like a
+    GPU. So I think we would be better served by object partitioning
+    namely BVHs. Did another literature search to see if I could come up
+    with some papers we could use for the boolean evaluation, BVH
+    construction and traversal.</li>
+</ul>
+<p>As for the boolean evaluator. If we can compute this incrementally this
+will have a significant impact on memory loads and memory consumption.</p>
+<ul>
+<li>Retrofit HLBVH tree builder from pbrtv3 source into opencl branch.</li>
+<li>OCL BVH traversal in branch.</li>
+</ul>
+<p>For reference the OCL BVH can render the Havoc scene, as seen above, at
+elapsed time: <strong>0.09 sec</strong> vs the 4.20 sec it took with the brute force
+code. i.e. it is around 45x faster for this scene. The advantage should
+increase for scenes with more solids.</p>
+<ul>
+<li>The HLBVH code has stabilized enough that I replaced the grids code
+    with it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added bu_pool memory pool allocator because it's useful for the
+    HLBVH builder.</li>
+<li>HLBVH CPU builder code has landed on trunk.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Integrated OCL rendering with <strong>rt</strong> (command line option "-z") and
+    <strong>mged</strong> (<em>diffuse</em> and <em>surface normals</em> light models). Currently
+    it is fill rate limited. Pixel pushing is done with <strong>view_pixel</strong>
+    on a single CPU core. This should be done on the GPU. The
+    framebuffer outputs should also support writing blocks of pixels.
+    Currently they use line oriented output. Doing these changes would
+    require breaking API compatibility.</li>
+</ul>
+<h3 id="week-13-17-aug-23-aug">Week 13 : 17 Aug-23 Aug</h3>
+<ul>
+<li>Do heavy duty pixel pushing with the GPU. This speeds up rendering
+    of Havok around 2-3x on my system. It should make even more of a
+    difference in simpler scenes which are more fillrate than geometry
+    performance limited. I figured out a way to do the code for this
+    without actually breaking the API. I used a callback to get the
+    framebuffer pointer.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>I redid the accuracy tests after reimplementing the raster parts of
+    the code in OCL to check the accuracy. I got the same accuracy in
+    surface normals mode as when we only computed the hit results in OCL
+    with one kernel invocation per ray-solid intersection.</li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>RT Hyperboloid</strong></th>
+<th><strong>OCL Hyperboloid</strong></th>
+<th><strong>PIXDIFF Hyperboloid</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../../../img/Rt_ehyn.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="" src="../../../img/Cl_ehyn.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="" src="../../../img/Diff_ehyn.png" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>elapsed time @ 972x956: 0.35 sec</td>
+<td>elapsed time @ 972x956: 0.06 sec</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>This was the one primitive which had the most differences last time so I
+ran the test again.
+<code>ehy: pixdiff bytes: 760757 matching, 25663 off by 1, 12 off by many</code>. I
+got similar results. So the pixel engine shouldn't be more innacurate
+than the regular one. What I did find out in surface normals mode was
+that the CPU code actually is showing hits with the side of the
+hyperboloid (see the blue dots in the figure at the left). Despite this
+view being top down. So maybe the GPU version is actually <em>more</em>
+accurate? The differences show a nice noisy pattern without obvious
+banding or moire so there don't seem to be any major issues with the
+hits, normals, and raster.</p>
+<ul>
+<li>Show <code>-z</code> OpenCL command line option when running <code>rt -h</code>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Rename table.cl to rt.cl.</li>
+<li>Replace branches in pixel writing with conditional moves.</li>
+<li>Refactor sub buffer code.</li>
+<li>Write depth buffer in network byte order.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Removed scan code from PyOpenCL because of licensing issues. Good
+    thing it wasn't being used anywhere yet.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Remove malloc inside framebuffer grabber routine.</li>
+<li>Require OpenCL 1.2 or greater.</li>
+<li>Change OCL primitive packing routines to use memory pools.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Initial bot, ars implementation. It just intersects all the
+    triangles. No acceleration.</li>
+<li>Removed the, now unused, one kernel call per ray-primitive
+    intersection routines.</li>
+<li>HLBVH bot construction (experimental) and OCL traversal. Here's a
+    screenshot:</li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>Buddha (OCL)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../../../img/Cl_buddha.png" /></td>
+</tr>
+<tr>
+<td>1 million triangles</td>
+</tr>
+<tr>
+<td>elapsed time @ 972x956: <strong>0.14 sec</strong> (OCL)</td>
+</tr>
+<tr>
+<td>elapsed time @ 972x956: 17.49 sec (RT)</td>
+</tr>
+<tr>
+<td>elapsed time @ 972x956: 0.49 sec (RT bot kd-tree)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>All math operations are done in double precision FP.</p>
+<ul>
+<li>Fix bugs in bot triangle data parsing.</li>
+<li>Add gamma correction and haze.</li>
+<li>Fix a bug in hlbvh construction in certain edge cases were the
+    primitive bounding boxes are empty.</li>
+<li>Experimental bot triangle normal support.</li>
+<li>Phong shading lighting model.</li>
+<li>Handle UNORDERED, CW, and CCW triangle vertices to fix bot normal
+    generation.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added material colors to OCL render. The colors are kind of buggy
+    because there is no easy way, that I know of, getting the actual
+    material associated with a solid in the table. The materials are in
+    regions and regions are the ones with materials. Any solid may be in
+    a number of regions. Figuring out the material without consulting
+    the actual CSG tree which has the regions is hence non-trivial.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Added a lightmodel with transparent multi-hit rendering to show the
+    multi-hit facilities.</li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>Golliath (OCL)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../../../img/Cl_golliath.png" /></td>
+</tr>
+<tr>
+<td>elapsed time @ 972x956: 0.33 sec</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>Fix linking errors in AMD OCL SDK.</li>
+<li>Fix issues with OCL color render.</li>
+<li>Fix issue when doing a render with nothing on view.</li>
+<li>Set the local workgroup size when rendering to use subgrids up to
+    8x8 size to maximize coherency of accesses. speeds up things like
+    2x.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Tested an adaptation of <em>Understanding the Efficiency of Ray
+    Traversal on GPUs. Timo Aila and Samuli Laine, Proc.
+    High-Performance Graphics 2009.</em> Was not significantly better on the
+    GTX TITAN compared with just shooting rays in 8x8 blocks. You can
+    read more about it here:<ul>
+<li><a href="https://sourceforge.net/p/brlcad/patches/416/">https://sourceforge.net/p/brlcad/patches/416/</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="post-development-phase">Post Development Phase</h1>
+<h3 id="week-24-30-aug">Week: 24-30 Aug</h3>
+<ul>
+<li>Use less memory to store solid ids and materials. Eliminate some
+    more branches and simplify logic in solver.</li>
+<li>Compute transparency using attenuation.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>bool.c cleanups. If we ever are to port the standard BRL-CAD CSG
+    evaluator algorithm to OpenCL C, given that there seem to be no
+    other major viable options which give sufficiently correct results
+    for our project's purposes, this code must be brought to heel. Such
+    a task would be immense. I hope I helped this with a series of
+    patches to: remove <code>goto</code> (not available in OpenCL C), to re-compile
+    the bool trees (binary tree of pointers) to a linear postfix array
+    form. This form is easier to parse and eval during the rendering
+    stage. I did those tasks in these stages:<ul>
+<li>eliminated all gotos in <code>rt_default_multioverlap()</code>.</li>
+<li>eliminated all gotos in <code>rt_boolweave()</code>.</li>
+<li>produced a patch to use the postfix linear tree. I uses a lot
+    less memory (64-bits per node) and the traversal is more cache
+    coherent. The CSG inference engine supports these operators:
+    UNION, INTERSECT, DIFFERENCE, XOR, NOT, SOLID, NOP.</li>
+</ul>
+</li>
+</ul>
+<p>It might require re-interfacing with db code in particular for the way
+XOR operations used to be treated. I reimplemented these functions to
+use the postfix bool tree:</p>
+<p><code>rt_tree_max_raynum()</code>, <code>rt_tree_test_ready()</code>, <code>rt_booleval()</code>,
+<code>rt_solid_bitfinder()</code>.</p>
+<ul>
+<li>
+<p><a href="https://sourceforge.net/p/brlcad/patches/417/">https://sourceforge.net/p/brlcad/patches/417/</a></p>
+</li>
+<li>
+<p>Process segments instead of hit points. Use registers to store
+    segments. Make all available rendering modes (full, diffuse,
+    normals, multi-hit transparent) work in a single pass. This speeds
+    up the full and transparent modes like 2-3x.</p>
+</li>
+<li>Also updated the multiple-kernel launch renderer code to work with
+    the segment list approach. It might be slower than the single-kernel
+    launch renderer but we might eventually need the whole segment list
+    in memory at the same time to perform more advanced rendering.</li>
+<li>Fixed the ocl material colors. It seems a solid's basic material
+    color is in the end rather than the beginning of the regions list it
+    has...</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>Well folks GSoC 2015 is finally over! Mission complete! I thank
+    everyone who made this possible:<ul>
+<li>Google: Carol Smith</li>
+<li>BRL-CAD: brlcad (Sean), Stragus, ``Erik, starseeker.</li>
+</ul>
+</li>
+</ul>
+<p>These were the most notable task supporters to list. The deepest thanks
+go to my parents for tirelessly supporting me during this code marathon.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

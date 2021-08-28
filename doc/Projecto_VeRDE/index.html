@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://brl-cad.github.io/wiki/doc/Projecto_VeRDE/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Projecto VeRDE - BRL-CAD Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">BRL-CAD Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../code/" class="nav-link">Code</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../tasks/" class="nav-link">Tasks</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../users/" class="nav-link">Users</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../docs/" class="nav-link">Docs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../pdf/" class="nav-link">PDFs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../misc/" class="nav-link">Misc</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../talks/" class="nav-link">Talks</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/BRL-CAD/wiki/blob/main/pages/doc/Projecto_VeRDE.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#projecto-verde-vehicle-for-collecting-space-debris" class="nav-link">Projecto VeRDE: Vehicle for Collecting Space Debris</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#360-view-animation" class="nav-link">360 view animation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interview-with-raquel" class="nav-link">Interview with Raquel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Included in following is a brief article regarding a project from within
+our user community where BRL-CAD was put to use. It's a science project
+from three young ladies who, in the span of just a couple months, went
+from knowing absolutely nothing about modeling and BRL-CAD to creating a
+CAD model of their concept with rendered images and animations. Raquel,
+Marta, and Teresa used BRL-CAD for their project to model and visualize
+a space vehicle they designed.</p>
+<h1 id="projecto-verde-vehicle-for-collecting-space-debris">Projecto VeRDE: Vehicle for Collecting Space Debris</h1>
+<p><code>Students:</code><em><code>Raquel`` ``Albuquerque,`` ``Marta`` ``Camões,`` ``and`` ``Teresa`` ``Leal</code></em><br />
+<code>Teacher:</code><em><code>Professor`` ``Luís`` ``Ferreira</code></em><br />
+<code>School:</code><em><a href="http://www.esjgf.com"><code>Escola`` ``Secundária`` ``José`` ``Gomes`` ``Ferreira</code></a></em></p>
+<p><img alt="" src="../img/Projecto_VeRDE_nave1.jpg" /></p>
+<p>The project is named “Projecto VeRDE”. Translating to English may sound
+strange as "Green Project", but in Portuguese 'VeRDE' is the
+abbreviation of “<a href="http://observatoriosatalaia.blogspot.com/2009/05/projecto-verde-veiculo-de-recolha-de.html">Veículo de Recolha de Detritos
+Espaciais</a>."
+In English, this is a "Vehicle for Collecting Space Debris".</p>
+<p>The idea behind the project is that planet Earth is surrounded by space
+junk that endangers astronauts and represents a very expensive risk to
+space infrastructures like the International Space Station (ISS), the
+Hubble Space Telescope, and other functioning satellites. The goal of
+this space vehicle is 1) to reduce the amount of space debris in Low
+Earth Orbit (LEO) and 2) to construct a “space truck” with
+environmentally friendly components and electronic systems that already
+exist in satellites and space shuttles.</p>
+<p>The students conducted research on prospective vehicle components by
+surveying various space companies’ websites that sell materials to the
+National Aeronautics and Space Administration (NASA), the European Space
+Agency (ESA), and others for building their space shuttles and
+satellites. They discovered that there are already a variety of
+components available such as:</p>
+<p><img alt="" src="../img/Projecto_VeRDE_nave3.jpg" /></p>
+<ul>
+<li>Radio Frequency Ion Thruster Assembly</li>
+<li>Actuator Drive Electronic</li>
+<li>Laser-reactive method for disposal of small space debris</li>
+<li>Protective coating for the vehicle surface</li>
+<li>Solar arrays, batteries, and sensors</li>
+<li>Mini-pulse tube cooler</li>
+<li>Avionics integrated control and data system electronics (ICDE)</li>
+<li>Magnetic torquers</li>
+<li>Antenna</li>
+<li>… and more ...</li>
+</ul>
+<p><img alt="" src="../img/Projecto_VeRDE_nave2.jpg" /></p>
+<p>Using this information regarding available components, a concept vehicle
+design was constructed. The three high-school teenagers then worked on
+creating a representation of their concept within the BRL-CAD solid
+modeling system. Without any prior knowledge of BRL-CAD, but after going
+through the available introductory tutorials (even though they were in
+English), they were able to create a 3d model concept prototype with
+material shader properties defined. They then used BRL-CAD tools to
+render animation frames for a 360 degree spinning visualization.</p>
+<p>In orbit, space debris travels at a very high speed that can be reduced
+with the help of lasers. This reduced speed lets the debris enter inside
+the space vehicle. Then, with the help of a treadmill, the debris can be
+clustered with a polymer. Afterwards the cluster of space junk will be
+sent to the sun (the incinerator chamber) thanks to the velocity that it
+gains from the treadmill plus the velocity of the vehicle.</p>
+<p><img alt="" src="../img/Projecto_VeRDE_nave4.jpg" /></p>
+<p>At a science fair in 2009 among 100 other projects, Raquel, Marta, and
+Teresa received an honorable mention for their project at the Electrical
+Museum in Lisbon, Portugal. <em>"To create the design of our spaceship the
+BRL-CAD was a very useful tool to create our 3D model."</em> - Raquel
+Albuquerque</p>
+<h2 id="360-view-animation">360 view animation</h2>
+<p>Screen capture of 360 animation:</p>
+<p><img alt="" src="../img/Projecto_VeRDE.png" /></p>
+<ul>
+<li><a href="http://brlcad.org/videos/verde/Projecto_VeRDE.mp4">MPEG-4 Video
+    File</a></li>
+<li><a href="http://brlcad.org/videos/verde/Projecto_VeRDE.mpg">MPEG-2 Video
+    File</a></li>
+<li><a href="http://brlcad.org/videos/verde/Projecto_VeRDE.ogg">Ogg/Vorbis Video
+    File</a></li>
+<li><a href="http://brlcad.org/videos/verde/Projecto_VeRDE.wmv">Windows Media Video
+    File</a></li>
+</ul>
+<p>Included above are rendered 360 degree spinning view video animations of
+the spacecraft. Individual frames were rendered with BRL-CAD's
+"<a href="rt" title="wikilink">rt</a>" ray tracer and composited with 3rd-party video
+processing tools.</p>
+<h2 id="interview-with-raquel">Interview with Raquel</h2>
+<p><strong>Was this your first time using BRL-CAD?</strong></p>
+<p><em>Yes, it was. We didn't know anything about BRL-CAD until our teacher
+told us about it and encouraged us to do the 3D model using BRL-CAD.</em></p>
+<p><strong>How long would you estimate it took you to learn MGED / BRL-CAD?</strong></p>
+<p><em>First we all trained our skills by reading and doing some models
+through BRL-CAD tutorials. This first learning step probably took about
+two months because we were getting used to the code, language, and
+dealing with the command window.</em></p>
+<p><em>I have to say that Teresa was the one who learned faster because she
+got really excited with it, and I think during the whole modeling
+process she became addicted to BRL-CAD! (After a couple months), I think
+we were all equal in dealing with this application and became
+BRL-CADaholics.</em></p>
+<p><strong>How long did it take your team to model the space craft? How many days
+or hours did it take?</strong></p>
+<p><em>We begin to model in BRL-CAD in November/December 2008 and we finished
+it in April 2009,we didn't finish sooner because we also had other
+subjects in school.</em></p>
+<p><em>We used BRL-CAD during classes about 3 hours per week, and we also
+worked at home. Friday and Saturday evenings, we worked about 2 or 3
+hours on average. Taking all this into account, we worked about 6 hours
+per week during 4 months, so... 96 hours approximately.</em></p>
+<p><strong>What was the hardest aspect of using MGED / BRL-CAD?</strong></p>
+<p><em>Dealing with the Command Window was difficult at the beginning. We were
+accustomed to moving and creating objects directly, with buttons,
+arrows, and other widgets that simplify modeling actions. It appeared
+more difficult, but our model became more precise due to the coordinates
+and measurements that we inserted in the command window.</em></p>
+<p><em>But the hardest part was making the fly-around animation. We had the
+script that's in BRL-CAD's website, but it was quite difficult to
+understand and modify because we had never dealt with programming
+languages before. But with Sean and our teacher's guidance it became
+clear.</em></p>
+<p><strong>What was the easiest aspect of using MGED / BRL-CAD?</strong></p>
+<p><em>When we got used to it, we realized that it was easier that we thought
+at the beginning.</em></p>
+<p><em>I would say that the boolean operations were the easy part, due to its
+precision and simplicity, by constructing complex objects with basic
+geometric solids.</em></p>
+<hr />
+<p>Interview responses from February 16th, 2010.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

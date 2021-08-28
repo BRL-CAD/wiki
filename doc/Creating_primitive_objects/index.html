@@ -94,22 +94,22 @@
 objects</strong></a> can be created using any of
 the following MGED command line (CLI) or graphical user interface (GUI)
 commands:</p>
-<p><a href="MGED_CMD_in.md"><strong>in</strong></a> : Entering a CLI <strong>in</strong> command allows you to interactively create an object with a specified name, type and parameters. That information can either be included in the initial command or provided in response to prompts that are displayed if any required information is omitted from the command line.
+<p>[<strong>in</strong>] (MGED_CMD_in.md) : Entering a CLI <strong>in</strong> command allows you to interactively create an object with a specified name, type and parameters. That information can either be included in the initial command or provided in response to prompts that are displayed if any required information is omitted from the command line.
 <strong>form</strong> : Selecting <strong>Primitive Editor</strong> from the GUI <strong>Edit</strong> menu displays a form/dialog box you can use to name, set the parameters of and then create objects of most (but not all) types. Some derivative objects do not have their own forms, in which case the primitive editor will display the base object's form.
 <strong>create</strong> : Selecting an object type from the GUI <strong>Create</strong> menu displays the object-naming dialog box, then creates and displays an object of that type having default parameter values.
-<a href="MGED_CMD_make.md"><strong>make</strong></a> : Entering a CLI <strong>make</strong> command also creates and displays an object of a specified type having a specified name and default parameter values.</p>
+[<strong>make</strong>] (MGED_CMD_make.md) : Entering a CLI <strong>make</strong> command also creates and displays an object of a specified type having a specified name and default parameter values.</p>
 <p>Note that the Create menu is essentially the GUI equivalent of the CLI
 make command. After using either, you will generally want to
 <a href="../Changing_the_properties_of_primitive_objects/"><strong>edit</strong></a> the
 resulting object's default location, shape and size.</p>
 <p>Primitive objects can also be created by:</p>
 <ul>
-<li>using the CLI <a href="MGED_CMD_cp.md"><strong>cp</strong></a> command to make a
+<li>using the CLI [<strong>cp</strong>] (MGED_CMD_cp.md) command to make a
     copy of an existing object, which can then be moved and modified;</li>
-<li>using the CLI <a href="MGED_CMD_dbconcat.md"><strong>dbconcat</strong></a> or GUI
+<li>using the CLI [<strong>dbconcat</strong>] (MGED_CMD_dbconcat.md) or GUI
     <strong>File--&gt;Import</strong> command to merge in all objects defined by
     another geometry file; and</li>
-<li>entering TCL <a href="MGED_CMD_put_edit_solid.md"><strong>put</strong></a> commands
+<li>entering TCL [<strong>put</strong>] (MGED_CMD_put_edit_solid.md) commands
     via the command window.</li>
 </ul>
 <p>See also:</p>

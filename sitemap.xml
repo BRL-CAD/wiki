@@ -696,6 +696,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://brl-cad.github.io/wiki/doc/Projecto_VeRDE/</loc>
+         <lastmod>2021-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://brl-cad.github.io/wiki/doc/RemHostNameSET/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
@@ -741,6 +746,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://brl-cad.github.io/wiki/doc/SGI_Cube/</loc>
+         <lastmod>2021-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://brl-cad.github.io/wiki/doc/STEP/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
@@ -757,6 +767,16 @@
     </url>
     <url>
          <loc>https://brl-cad.github.io/wiki/doc/SVN/</loc>
+         <lastmod>2021-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://brl-cad.github.io/wiki/doc/Sketch/</loc>
+         <lastmod>2021-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://brl-cad.github.io/wiki/doc/Spiral/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -952,11 +972,6 @@
     </url>
     <url>
          <loc>https://brl-cad.github.io/wiki/misc/Logo/</loc>
-         <lastmod>2021-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://brl-cad.github.io/wiki/misc/Mediawiki_3D_Geometry_Extension/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1291,6 +1306,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://brl-cad.github.io/wiki/task/Mediawiki_3D_Geometry_Extension/</loc>
+         <lastmod>2021-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://brl-cad.github.io/wiki/task/Mesh_library_cleanup/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
@@ -1347,6 +1367,11 @@
     </url>
     <url>
          <loc>https://brl-cad.github.io/wiki/task/Object-oriented_interfaces/</loc>
+         <lastmod>2021-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://brl-cad.github.io/wiki/task/Online_Geometry_Viewer_Back-end/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1842,11 +1867,6 @@
     </url>
     <url>
          <loc>https://brl-cad.github.io/wiki/user/Oleksandr_dubenko/</loc>
-         <lastmod>2021-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://brl-cad.github.io/wiki/user/Online_Geometry_Viewer_Back-end/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2952,6 +2972,11 @@
     </url>
     <url>
          <loc>https://brl-cad.github.io/wiki/user/Vasco.costa/MidtermSummary2015/</loc>
+         <lastmod>2021-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://brl-cad.github.io/wiki/user/Vasco.costa/GSoC15/logs/</loc>
          <lastmod>2021-08-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
