@@ -20,12 +20,12 @@ northern hemisphere's summer timeframe:
     -   That, in turn, determines how many student developers work with
         that organization.
 
-Students interested in participating with BRL-CAD in SOCIS should review
-our **[CHECKLIST](Summer_of_Code/Checklist.md)** to get started.
-Start with our [Project
-Ideas](ESA_Summer_of_Code_in_Space/Project_Ideas.md) page for a
-list of project suggestions that are of particular interest. Students
-are welcome to submit their own ideas as well but, more importantly, are
+Students interested in participating with BRL-CAD in SOCIS should
+review our **[CHECKLIST](Summer_of_Code/Checklist.md)** to get
+started.  Start with our [Project
+Ideas](ESA_Summer_of_Code_in_Space/Project_Ideas.md) page for a list
+of project suggestions that are of particular interest. Students are
+welcome to submit their own ideas as well but, more importantly, are
 encouraged to collaborate with the developers on formulating projects.
 
 # Getting Selected

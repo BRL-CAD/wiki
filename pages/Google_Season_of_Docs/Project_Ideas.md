@@ -3,9 +3,9 @@ graphics** documentation, you've come to the right place! Please check
 out our project ideas below. They are roughly in order or priority and
 difficulty. Here are some links to help you get started with a proposal:
 
-1.  [Get BRL-CAD source code](../Compiling.md)
-2.  [Read our existing docs](../Documentation.md)
-3.  [Get additional doc perspective](../Main_page.md)
+1.  [Get BRL-CAD source code](../doc/Compiling.md)
+2.  [Read our existing docs](../doc/Documentation.md)
+3.  [Get additional doc perspective](../doc/Main_page.md)
 4.  [Read our contributor guide](http://brlcad.org/HACKING_BRL-CAD.pdf)
 
 We will consider GSoD proposals for **all** skill levels ranging from
@@ -16,7 +16,7 @@ for you.
 
 Remember that project descriptions are just *rough ideas*. You must
 expand with [considerably more
-detail](Summer_of_Code/Application_Guidelines.md). Set goals
+detail](../Summer_of_Code/Application_Guidelines.md). Set goals
 that fit your experience and interest.
 
 # Migrate doc infrastructure

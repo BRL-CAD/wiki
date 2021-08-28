@@ -2,7 +2,7 @@ Here's a short list of things that can help you complete tasks for
 Google Code-In:
 
 1.  Need to talk?
-    1.  Most use Internet chat: [IRC](IRC.md) (ask and WAIT
+    1.  Most use Internet chat: [IRC](../misc/IRC.md) (ask and WAIT
         patiently!)
     2.  BRL-CAD stuff? Join the [dev mailing
         list](https://lists.sourceforge.net/lists/listinfo/brlcad-devel)
