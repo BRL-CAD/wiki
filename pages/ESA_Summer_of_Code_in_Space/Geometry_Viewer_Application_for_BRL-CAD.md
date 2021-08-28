@@ -178,9 +178,9 @@ populate the struct db_i. A cleaner approach would be to directly
 populate the struct db_i and I am working on that.
 
 The next step is to identify the top level objects of a g file. These
-can be listed by issuing a ["tops"](MGED_CMD_tops.md) command on mged
-after opening a g file. In code this can be achieved by following
-db_ls and/or DB_LS_TOPS in src/libged/\*.c.
+can be listed by issuing a "tops" command on mged after opening a g
+file. In code this can be achieved by following db_ls and/or
+DB_LS_TOPS in src/libged/\*.c.
 
 After these top level objects have been identified we need to call
 [db_walk_tree](http://brlcad.sourceforge.net/doxygen/d3/d9b/group__dbio.html#ge69d8a8eb90d514e554e1b84bbb7018f)

@@ -1,4 +1,4 @@
--   See this [page](Msgid1010480.md) for the history of the
+-   See this [page](../misc/Msgid1010480.md) for the history of the
     following data.
 
 ## Editing, viewing, and correcting objects

@@ -12,11 +12,11 @@ this:
 -   A BRL-CAD mentor reviews the work and either sends it back for more
     work or accepts it as completed successfully.
 
-# Getting Started [Checklist](Checklist.md)
+# Getting Started [Checklist](Google_Code_In/Checklist.md)
 
 Whether you're applying or accepted, we've itemized everything you need
 to do into a simple
-[CHECKLIST](Checklist.md). We're here
+[CHECKLIST](Google_Code_In/Checklist.md). We're here
 to help you become new open source developers, so don't be shy if you
 have any questions.
 

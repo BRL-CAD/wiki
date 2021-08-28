@@ -67,7 +67,7 @@ TBD!
 -   **Mentor:** Christopher Sean Morrison
 -   [**Development
     Log**](https://github.com/asadpiz/brlcad-viewer/commits/master)
--   [**Project Design**](Geometry_Viewer_Application_for_BRL-CAD.md)
+-   [**Project Design**](ESA_Summer_of_Code_in_Space/Geometry_Viewer_Application_for_BRL-CAD.md)
 -   [**Project Repository**](https://github.com/asadpiz/brlcad-viewer)
 
 ## 2014

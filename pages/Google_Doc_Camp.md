@@ -51,6 +51,6 @@ event, and Adam Hyde of [FLOSS Manuals](http://www.flossmanuals.org/)
 for directing the production.
 
 For more information on this book or how to contribute to BRL-CAD,
-please join one of our [mailing lists](mailing_lists.md).
+please join one of our [mailing lists](doc/Mailing_Lists.md).
 
 ![](/wiki/img/DocCamp_Team.png)

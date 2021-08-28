@@ -37,7 +37,7 @@ So be **bold** and *improve our documentation*!
 -   [BRL-CAD Priorities](http://brlcad.org/BRL-CAD_Priorities.png)
 -   [Additional Development Ideas](http://brlcad.org/~sean/ideas.html)
 -   [Code Cleanup](Code_Cleanup.md)
--   [Continuous Integration](../task/Continuous_Integration.md)
+-   [Continuous Integration](../misc/Continuous_Integration.md)
 -   [Developer Documents](Developer_Documents.md)
 -   Compiling BRL-CAD...
     -   [...from a Subversion checkout](Building_from_SVN.md)

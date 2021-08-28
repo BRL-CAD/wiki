@@ -31,7 +31,7 @@ for more information.
 -   [Linking against a library](Example_libbu.md)
 -   [Using db_walk_tree()](Example_db_walk_tree.md)
 -   [GCV_Plugin_Tutorial](GCV_Plugin_Tutorial.md)
--   [:Category:Code examples](:Category:Code_examples.md)
+-   [:Category:Code examples] (:Category:Code_examples.md)
 
 ## Development Tips
 

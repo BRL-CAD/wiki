@@ -11,5 +11,5 @@ Hostname field.
 ## Byte Format
 
 No additional fields beyond that of the [Common
-Header](NetMsgTypes.md) and
+Header](../misc/NetMsgTypes.md) and
 [GenericOneStringMsg](GenericOneStringMsg.md)

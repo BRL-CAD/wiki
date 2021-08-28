@@ -75,4 +75,4 @@ You get...
 [New Example](image:_ShadersShot15.png.md)
 
 Here you can find an Introduction to MGED and Shaders presentation:
-[Documentation](Documentation.md)
+[Documentation](../Documentation.md)

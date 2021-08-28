@@ -26,6 +26,6 @@ knowledgeable community member.
 Some information may be found on other pages here. To wit:
 
 -   [Mime-types](/wiki/doc/Mime-types)
--   [Undoing a commit](Undoing-a-commit.md)
+-   [Undoing a commit](../misc/Undoing-a-commit.md)
 
 [category:Getting started](category:Getting_started.md)

@@ -37,7 +37,7 @@ So be **bold** and *improve our documentation*!
 -   [BRL-CAD Priorities](http://brlcad.org/BRL-CAD_Priorities.png)
 -   [Additional Development Ideas](http://brlcad.org/~sean/ideas.html)
 -   [Code Cleanup](doc/Code_Cleanup.md)
--   [Continuous Integration](Continuous_Integration.md)
+-   [Continuous Integration](misc/Continuous_Integration.md)
 -   [Developer Documents](doc/Developer_Documents.md)
 -   Compiling BRL-CAD...
     -   [...from a Subversion checkout](doc/Building_from_SVN.md)
@@ -83,4 +83,4 @@ So be **bold** and *improve our documentation*!
 Unless otherwise noted, all contributions to the BRL-CAD wiki are made
 available under the terms of the [BSD Documentation
 License](misc/BSD_Documentation_License.md) (BDL). Please refer to
-the wiki site [disclaimer](misc/disclaimer.md) for more details.
+the wiki site [disclaimer](misc/Disclaimer.md) for more details.

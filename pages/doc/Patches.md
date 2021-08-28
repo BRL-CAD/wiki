@@ -66,5 +66,5 @@ if necessary, what isn't working.
 
 Be sure to check out the extensive
 [Documentation](Documentation.md) and
-[Main_Page](Main_Page.md) for tutorials and
-[Deuces](Deuces.md) for ways to get involved!
+[Main_Page](Main_page.md) for tutorials and
+[Deuces](../task/Deuces.md) for ways to get involved!
