@@ -1,6 +1,6 @@
 ## Description
 
-[NetMsg](IBME_GeometryService#NetMsg_Class.md) that indicates a
+[NetMsg] (IBME_GeometryService.md#NetMsg_Class) that indicates a
 Remote Host's desire to receive a complete list of hosts attached to the
 recipient. This is a 'MsgType Only' NetMsg and carries no body.
 
@@ -20,5 +20,5 @@ No additional byte information beyond the Common Header is required.
 
 ## Google Code In
 
-This page was edited for [Google_Code_In](Google_Code_In.md)
+This page was edited for [Google_Code_In](../Google_Code_In.md)
 by BSRJ.

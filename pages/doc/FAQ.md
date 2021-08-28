@@ -120,7 +120,7 @@ in BRL-CAD that are useful for various purposes. The [rt](Rt.md)
 tool is the primary ray-tracer that is used for shaded view rendering.
 The [rtedge](Rtedge.md) and [rthide](Rthide.md) commands
 are used for hidden-line renderings similar to what you'd want for
-generating drafting documents. [rtwizard](rtwizard.md) is a
+generating drafting documents. [rtwizard](Rtwizard.md) is a
 graphical 'wizard' tool that can be used to generate a variety of hybrid
 renderings.
 

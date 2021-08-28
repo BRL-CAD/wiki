@@ -64,6 +64,6 @@ for more information.
 -   Out-of-date Orphans
     -   [libpg : A parametrics/constraint
         library](Libpg_:_A_parametrics/constraint_library.md)
-    -   [libpc : Geometric Constraint Solving](Libpc.md)
+    -   [libpc : Geometric Constraint Solving](../misc/Libpc.md)
 
 [Category:Design Documents](Category:Design_Documents.md)

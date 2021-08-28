@@ -29,11 +29,11 @@ So be **bold** and *improve our documentation*!
 -   [BRL-CAD Commands](doc/BRL-CAD_Commands.md)
 -   [BRL-CAD Primitives](doc/BRL-CAD_Primitives.md)
 -   [Image Gallery](http://brlcad.org/gallery)
--   [Forums](Forums.md)
+-   [Forums](doc/Forums.md)
 
 ## Want to get involved?
 
--   [2-hour Tasks](Deuces.md)
+-   [2-hour Tasks](task/Deuces.md)
 -   [BRL-CAD Priorities](http://brlcad.org/BRL-CAD_Priorities.png)
 -   [Additional Development Ideas](http://brlcad.org/~sean/ideas.html)
 -   [Code Cleanup](doc/Code_Cleanup.md)
@@ -82,5 +82,5 @@ So be **bold** and *improve our documentation*!
 
 Unless otherwise noted, all contributions to the BRL-CAD wiki are made
 available under the terms of the [BSD Documentation
-License](BSD_Documentation_License.md) (BDL). Please refer to
-the wiki site [disclaimer](disclaimer.md) for more details.
+License](misc/BSD_Documentation_License.md) (BDL). Please refer to
+the wiki site [disclaimer](misc/disclaimer.md) for more details.

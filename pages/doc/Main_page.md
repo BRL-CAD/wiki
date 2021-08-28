@@ -25,7 +25,7 @@ So be **bold** and *improve our documentation*!
 -   [BRL-CAD FAQ](FAQ.md)
 -   [MGED FAQ](MgedFAQ.md)
 -   [Documentation](Documentation.md)
--   [MGED Commands](MGED_Commands.md)
+-   [MGED Commands] (MGED_Commands.md)
 -   [BRL-CAD Commands](BRL-CAD_Commands.md)
 -   [BRL-CAD Primitives](BRL-CAD_Primitives.md)
 -   [Image Gallery](http://brlcad.org/gallery)
@@ -86,4 +86,4 @@ If you are unsure on how to edit or add new pages, see our
 Unless otherwise noted, all contributions to the BRL-CAD wiki are made
 available under the terms of the [BSD Documentation
 License](../misc/BSD_Documentation_License.md) (BDL). Please refer to
-the wiki site [disclaimer](../misc/disclaimer.md) for more details.
+the wiki site [disclaimer](../misc/Disclaimer.md) for more details.

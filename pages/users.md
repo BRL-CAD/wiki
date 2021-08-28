@@ -295,6 +295,7 @@
 - [Thethirdone.md](user/Thethirdone.md)
 - [Todor_nikolov/proposal.md](user/Todor_nikolov/proposal.md)
 - [User000name.md](user/User000name.md)
+- [Vasco.costa/GSoC15/logs.md](user/Vasco.costa/GSoC15/logs.md)
 - [Vasco.costa/GSoC15/proposal.md](user/Vasco.costa/GSoC15/proposal.md)
 - [Vasco.costa.md](user/Vasco.costa.md)
 - [Vasco.costa/MidtermSummary2015.md](user/Vasco.costa/MidtermSummary2015.md)
