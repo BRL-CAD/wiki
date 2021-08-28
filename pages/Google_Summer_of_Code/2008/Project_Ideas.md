@@ -18,7 +18,7 @@ with us beforehand will generally trump the priorities. Please do
 corrections, comments, or ideas of your own that you'd like to suggest.
 
 Be sure to read up on our [application
-process](Google_Summer_of_Code.md) for getting started with your
+process](../../Google_Summer_of_Code.md) for getting started with your
 proposal submission if you have not done so already.
 
 # <AN IDEA OF YOUR OWN>

@@ -1,6 +1,6 @@
 Covered below in detail are the expectations for Summer of Code students
 that are accepted to participate. In addition to the [acceptance
-criteria](Summer_of_Code/Acceptance.md) that all students are
+criteria](Acceptance.md) that all students are
 required to abide by, there are participation and behavior expectations.
 
 The program timeframe is *very* short. There's not much time to get up

@@ -199,7 +199,6 @@
 - [NyahCheck/Survey_of_CSG_Algorithms.md](user/NyahCheck/Survey_of_CSG_Algorithms.md)
 - [Oleksandr_dubenko/GSoC2017/Project.md](user/Oleksandr_dubenko/GSoC2017/Project.md)
 - [Oleksandr_dubenko.md](user/Oleksandr_dubenko.md)
-- [Online_Geometry_Viewer_Back-end.md](user/Online_Geometry_Viewer_Back-end.md)
 - [Pacman87.md](user/Pacman87.md)
 - [Paddedto10/GSoC18/Project.md](user/Paddedto10/GSoC18/Project.md)
 - [Paddedto10/GSoC18/Proposal.md](user/Paddedto10/GSoC18/Proposal.md)

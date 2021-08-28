@@ -24,7 +24,6 @@
 - [IRC.md](misc/IRC.md)
 - [Libpc.md](misc/Libpc.md)
 - [Logo.md](misc/Logo.md)
-- [Mediawiki_3D_Geometry_Extension.md](misc/Mediawiki_3D_Geometry_Extension.md)
 - [Msgid1010480.md](misc/Msgid1010480.md)
 - [NetMsgTypes.md](misc/NetMsgTypes.md)
 - [NewSessionFAIL.md](misc/NewSessionFAIL.md)

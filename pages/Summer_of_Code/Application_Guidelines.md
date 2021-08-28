@@ -99,7 +99,7 @@ following information:
     -   (optional) Anything else?
 
 You must agree to our [participation
-requirements](Summer_of_Code/Acceptance.md) should you get
+requirements](Acceptance.md) should you get
 selected.
 
 [category:Summer of Code](category:Summer_of_Code.md)

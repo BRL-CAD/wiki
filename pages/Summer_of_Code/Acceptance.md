@@ -1,7 +1,7 @@
 This page is intended to lay out the basic "**rules and requirements**"
 that our organization requires of all Summer of Code (whether
-[GSoC](Google_Summer_of_Code.md) or
-[SOCIS](ESA_Summer_of_Code_in_Space.md)) participants whose
+[GSoC](../Google_Summer_of_Code.md) or
+[SOCIS](../ESA_Summer_of_Code_in_Space.md)) participants whose
 project proposals are accepted. Unless otherwise arranged with the
 organization administrator (contact 'brlcad' via IRC on
 irc.freenode.net), it will be expected that all students will comply
