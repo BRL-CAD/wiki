@@ -2,7 +2,7 @@
 
 |                                        |                                                                                      |
 |----------------------------------------|--------------------------------------------------------------------------------------|
-| ![](/wiki/img/Users_128px.png) | Herein lay the information that a user of the Geometry Service may find interesting. |
+| ![](../img/Users_128px.png) | Herein lay the information that a user of the Geometry Service may find interesting. |
 
 ------------------------------------------------------------------------
 

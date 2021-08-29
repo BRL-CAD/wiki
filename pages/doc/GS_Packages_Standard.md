@@ -12,7 +12,7 @@
 
 
 Example:
-![](/wiki/img/Restaurant-UML-UC.png)
+![](../img/Restaurant-UML-UC.png)
 
 
 !!Replace graphic with GS example!!

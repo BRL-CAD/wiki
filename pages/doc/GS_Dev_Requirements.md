@@ -50,14 +50,14 @@
 <center>
 
 
-![](/wiki/img/GS_Concept_local.jpg)
+![](../img/GS_Concept_local.jpg)
 A Thin Client connected to a Geometry Service, all running on one
 physical machine
 
 
 
 
-![](/wiki/img/GS_Concept_Multi_med.jpg)
+![](../img/GS_Concept_Multi_med.jpg)
 Thin Clients connected to Geometry Services, each running on independent
 physical machines, but connected to a 'headless' Geometry Service. The
 'headless' geometry service also serves other enterprise level

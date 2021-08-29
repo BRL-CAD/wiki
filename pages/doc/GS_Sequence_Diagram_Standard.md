@@ -12,7 +12,7 @@
 
 # Sequence Diagram Legend
 
-![](/wiki/img/ATypicalSequenceDiagram.png)
+![](../img/ATypicalSequenceDiagram.png)
 
 
 

@@ -2,7 +2,7 @@
 
 |                                                |                                                                                            |
 |------------------------------------------------|--------------------------------------------------------------------------------------------|
-| ![](/wiki/img/Developer_128px.png "Developer_128px.png") | Herein lay the information that a Developer for the Geometry Service may find interesting. |
+| ![](../img/Developer_128px.png "Developer_128px.png") | Herein lay the information that a Developer for the Geometry Service may find interesting. |
 
 ------------------------------------------------------------------------
 
