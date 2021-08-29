@@ -11,11 +11,11 @@ draw and model things you find in the world.
 In order to take advantage of this tool, you need to download and
 install it on your computer.
 
-![](/wiki/doc/img/BRL-CAD_homepage.PNG)
-![](/wiki/doc/img/Download.PNG)
-![](/wiki/doc/img/DownloadPage.PNG)
-![](/wiki/doc/img/DownloadIt.PNG)
-![](/wiki/doc/img/Install.PNG)
+![](../img/BRL-CAD_homepage.PNG)
+![](../img/Download.PNG)
+![](../img/DownloadPage.PNG)
+![](../img/DownloadIt.PNG)
+![](../img/Install.PNG)
 
 Then what? It installed programs that don't run. They just say "The
 procedure entry point GetSystemTimePreciseAsFileTime could not be
@@ -30,13 +30,13 @@ start menu and open the program. Once you have opened up MGED you see
 that there is a terminal with a white background and a graphical window
 with a black background.
 
-![](/wiki/doc/img/Editor_Windows.png)
+![](../img/Editor_Windows.png)
 
 Once you see that you can almost begin to model, but first you need to
 create the file, or database that you are editing. In order to do that
 you need to go to the graphical layout then click File&gt;New
 
-![](/wiki/doc/img/FileNew.PNG)
+![](../img/FileNew.PNG)
 
 and type in the file name and select the file that will be saved, then
 click save. After that, you will be prompted if you want to make the
@@ -46,12 +46,12 @@ I made was a sphere, but there are many other types of primitive shapes
 (make sphere1 sph) and then if you look in the graphical window you will
 see a very crude sphere.
 
-![](/wiki/doc/img/Sphere.PNG)
+![](../img/Sphere.PNG)
 
 Then if you want to make a cube type in (make cube1 arb8) and you will
 have your very own cube.
 
-![](/wiki/doc/img/Cube.PNG)
+![](../img/Cube.PNG)
 
 Then you can type in the names of other shapes and you will see that
 they make the object that you type in. After making part of your model,
@@ -65,13 +65,13 @@ will be gone for good. After finishing, type in rt in the console, and
 you will see your model rendered and showing you how it would look with
 faces and lighting instead of a wireframe.
 
-![](/wiki/doc/img/RT.PNG)
+![](../img/RT.PNG)
 
 If you don’t know how to do a certain thing then just type in help. and
 all of the commands will be listed with a description of what they do
 and how you use them.
 
-![](/wiki/doc/img/TutHelp.PNG)
+![](../img/TutHelp.PNG)
 
 Thank you for reading, and good modeling!
 

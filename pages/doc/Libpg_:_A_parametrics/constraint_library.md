@@ -116,7 +116,7 @@ An object oriented method of implementation would be the creation of a
 mixed ( in the sense that they contain both geometric and non-geometric
 information ) object. The object architecture is as shown below which
 shows the data types as well as the public and private methods.
-![](/wiki/doc/img/LibpgObjectArch.png)
+![](../img/LibpgObjectArch.png)
 
 ### Parametric Geometric Objects
 
