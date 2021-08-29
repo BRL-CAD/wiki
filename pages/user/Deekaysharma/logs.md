@@ -407,7 +407,7 @@ basic steps that were used to install on Ubuntu. And I faced the same
 error which I feared of
 
 
-![](/wiki/user/img/Meteor_freeBSD_error.png)
+![](../img/Meteor_freeBSD_error.png)
 
 
 As there is no official support for meteor on freeBSD. I searched more
@@ -437,7 +437,7 @@ Final call for surgery. Stayed at home.
     exists even after installing compact6x from ports. Looking for the
     solution for this.
 
-![](/wiki/user/img/Meteor_freeBSD_libm.so.6_error.png)
+![](../img/Meteor_freeBSD_libm.so.6_error.png)
 
 ## 15 July
 

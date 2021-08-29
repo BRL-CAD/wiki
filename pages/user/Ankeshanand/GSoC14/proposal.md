@@ -61,7 +61,7 @@ as machine descriptions, versions, results etc.
 <!-- -->
 
 
-![](/wiki/user/img/Benchmark_overview_v3.jpg)
+![](../../img/Benchmark_overview_v3.jpg)
 
 #### The current status of the Project
 

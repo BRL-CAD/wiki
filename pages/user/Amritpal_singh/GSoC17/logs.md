@@ -35,7 +35,7 @@ Also, explored functions like `face.normalAt()`, `face.CenterOfMass()`.
 
 **4 June** : Today, I designed the taskpanel UI of straight rebar in
 Qtcreator by using FreeCAD
-widgets.![](/wiki/user/img/straightrebar_taskpanel.png)
+widgets.![](../../img/straightrebar_taskpanel.png)
 
 **5 June** : Today, I have integrated the task panel UI of straight
 rebar with backend scripts. This script will take input values from task
@@ -53,7 +53,7 @@ box using PySide. For eg. I simply added QLabel object at the top of the
 dialog box using Qtcreator and then use
 `label.setPixmap(QtGui.QPixmap(`<path>`))` command to add an image.
 Also, followed some links/tutorials to learn Inkscape.
-![](/wiki/user/img/Straightrebar_image.png)
+![](../../img/Straightrebar_image.png)
 
 **8 June** : Today, I have added checks to my Python code. These checks
 will verify that user have selected the face or not and if only user
@@ -167,8 +167,8 @@ Finally, I found a reason behind this bug and then fix it.
 -   Made an icon for U-Shape rebar and also improved Straight rebar
     icon.
 
-![](/wiki/user/img/Straightrebar5.png)
-![](/wiki/user/img/U-shaperebar.png)
+![](../../img/Straightrebar5.png)
+![](../../img/U-shaperebar.png)
 
 </ul>
 
@@ -225,7 +225,7 @@ Here is a
 **29 June**:
 
 -   Learnt all the mathematical concepts of stirrup and derives formulas
-    to find rounding length.![](/wiki/user/img/Stirrup.jpg)
+    to find rounding length.![](../../img/Stirrup.jpg)
 -   Embedded dropdown list icons in my code.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/1a45628fc4478601eac357dcf0455be04dd8e909)
 
@@ -237,8 +237,8 @@ Here is a
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/660cd715990af7ae1d94d45935b4ac82676874cf)
 
 Here are the few screenshots of stirrup created from my code:
-![](/wiki/user/img/stirrup1.png)
-![](/wiki/user/img/stirrup2.png)
+![](../../img/stirrup1.png)
+![](../../img/stirrup2.png)
 
 **1 July**:
 
@@ -297,11 +297,11 @@ Here are the few screenshots of stirrup created from my code:
 **10-11 July**:
 
 -   Made an icon for dialog box of rebar distribution.
-    ![](/wiki/user/img/Rebardistribution.jpg)
+    ![](../../img/Rebardistribution.jpg)
 -   Added button for custom spacing in straight rebar dialog box and
     also added few function in RebarDistribution.py file.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/543aab29000d8766a26fb27b3b83881c6aab012f)
-    ![](/wiki/user/img/Rebardistribution2.png)
+    ![](../../img/Rebardistribution2.png)
 -   Implemented uniform spacing in all rebar dialog box with a proper
     way.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/8a3672dc88deb395706773b8291e162b1a1e5f3d)
@@ -401,7 +401,7 @@ Link](https://forum.freecadweb.org/viewtopic.php?f=8&t=22760&start=170#p183866)
 -   Implemented bent up rebar.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/33ebe406b233ed6ae25829299dc914f1d5115768)
 
-![](/wiki/user/img/Bentrebar.png)
+![](../../img/Bentrebar.png)
 
 </ul>
 
@@ -412,7 +412,7 @@ Link](https://forum.freecadweb.org/viewtopic.php?f=8&t=22760&start=170#p183866)
 -   Created dialog box for pop up image and implemented it.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/159884f86e53d0efc0bda39de05d913e067757cb)
 
-![](/wiki/user/img/PopimageUshapeRebar.png)
+![](../../img/PopimageUshapeRebar.png)
 
 </ul>
 
@@ -424,11 +424,11 @@ Link](https://forum.freecadweb.org/viewtopic.php?f=8&t=22760&start=170#p183866)
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/f4ed0f4d06a34d2a45ec39de6828dc3a1066a623)
 -   Wrote code in CircularStirrup.py file.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/32f883a9014b1f8d59a039245d14e0a3558227e6)
-    ![](/wiki/user/img/CircluarStirrup3.png)
-    ![](/wiki/user/img/circluarStirrup4.png)
+    ![](../../img/CircluarStirrup3.png)
+    ![](../../img/circluarStirrup4.png)
 -   Discussed issues related to circular stirrup with Yorik which comes
     when I set `Part::Helix` as a base of rebar object.
-    ![](/wiki/user/img/helix.png) ![](/wiki/user/img/helix2.png)
+    ![](../../img/helix.png) ![](../../img/helix2.png)
 
 **5 Augest**: GSoC party!.
 
@@ -451,7 +451,7 @@ Link](https://forum.freecadweb.org/viewtopic.php?f=8&t=22760&start=170#p183866)
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/388c280df1fd217dfac9a747cc7e477680b0942a)
 -   Added description image in Bent shape rebar.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/b7ad0889efa07415dba2551a85a78ab407c2796d)
-    ![](/wiki/user/img/Bentshapepopup.png)
+    ![](../../img/Bentshapepopup.png)
 -   Fixed bug
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/ea3e56f6059a69b15f1dc0bb2fb5a26e0d0048ea):
     No reaction on changing diameter in LShape, UShape and Bent shape
@@ -459,8 +459,8 @@ Link](https://forum.freecadweb.org/viewtopic.php?f=8&t=22760&start=170#p183866)
     <https://forum.freecadweb.org/viewtopic.php?f=34&t=23637&p=186052#p186052>
 -   Implemented `Part::Helix` in circular(helical) rebar.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/888377bc01e6ff0e21fba187bf6821eb46c4c26b)
-    ![](/wiki/user/img/Helicalrebar1.png)
-    ![](/wiki/user/img/Helicalrebar2.png)
+    ![](../../img/Helicalrebar1.png)
+    ![](../../img/Helicalrebar2.png)
 
 **12-13 August**:
 

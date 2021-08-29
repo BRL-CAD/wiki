@@ -32,7 +32,7 @@ memory chunk so the display mode was not memorized by the old function.
 
 -   -   Position adjustment of the annotations:
 
-![](/wiki/user/img/Currentpos.png)
+![](../../img/Currentpos.png)
 
 the old implementation of the annotation considered just the top right
 (TR) relative position of the text with respect to the reference point.
@@ -58,14 +58,14 @@ this patch implements the nine possible relative positions
 The user may want to have a box around the text this patch implement
 this feature.
 
-![](/wiki/user/img/Uplodbox.png)
+![](../../img/Uplodbox.png)
 
 `   `[`https://sourceforge.net/p/brlcad/patches/537/#8aa5`](https://sourceforge.net/p/brlcad/patches/537/#8aa5)
 
 -   -   Annotations editor: this feature is implemented based on the
         existing sketch editor.
 
-![](/wiki/user/img/Ant_edt.png)
+![](../../img/Ant_edt.png)
 
 `   `[`https://sourceforge.net/p/brlcad/patches/533/#cdc1`](https://sourceforge.net/p/brlcad/patches/533/#cdc1)
 `   `[`https://sourceforge.net/p/brlcad/patches/528/#0a9c`](https://sourceforge.net/p/brlcad/patches/528/#0a9c)
@@ -73,7 +73,7 @@ this feature.
 -   -   Dimension line annotation: this feature enables the user to add
         a dimension line between two points in the wireframe view.
 
-![](/wiki/user/img/DL.png)
+![](../../img/DL.png)
 
 `   `[`https://sourceforge.net/p/brlcad/patches/536/#2428`](https://sourceforge.net/p/brlcad/patches/536/#2428)
 
@@ -99,7 +99,7 @@ Here is the link to my [Proposal](/wiki/user/Ali_Haydar) The tasks
 mentioned in the proposal are either completed or approached partially
 and needs work and discussion with the society.
 
-![](/wiki/user/img/Ex.png)
+![](../../img/Ex.png)
 
 **Project Extension**
 

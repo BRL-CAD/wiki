@@ -64,34 +64,34 @@ Rebars (different types of rebars) in case of Beam Reinforcement.
     consuming task.</br>
     Example: You can see below how the things went wrong after modifying
     covering of Stirrup.
-    ![](/wiki/user/img/ModifyCoverofStirrup.png)
+    ![](../img/ModifyCoverofStirrup.png)
 
 Example: In case of Beam Reinforcement
 
 1.  To create reinforcement in a Beam, user has to do following steps:
     -   Select face of the beam and create stirrups.
-        ![](/wiki/user/img/BeamReinforcementImage1.png)
-        ![](/wiki/user/img/BeamReinforcementImage2.png)
+        ![](../img/BeamReinforcementImage1.png)
+        ![](../img/BeamReinforcementImage2.png)
     -   To create rebars, first user needs to select one of the face,
         perpendicular to previously selected face and then calculate
         ‘Front Cover’ and ‘Top/Bottom Cover’ based on the values of
         Rounding and Top/Bottom/Left/Right Cover of the stirrups. And
         this should be done for all four sides. And this will produce
         single layered Reinforcement in Beam as follow:
-        ![](/wiki/user/img/BeamReinforcementImage3.png)
-        ![](/wiki/user/img/BeamReinforcementImage4.png)
+        ![](../img/BeamReinforcementImage3.png)
+        ![](../img/BeamReinforcementImage4.png)
 2.  To create multi-layered Reinforcement in a Beam, user needs to do
     following steps:
     -   Create Reinforcement as discussed above.
     -   Create Spacer Reinforcement for new layer. While creating this,
         user needs to perform calculations to adjust cover and spacing
         of Spacer Rebars.
-        ![](/wiki/user/img/BeamReinforcementImage5.png)
+        ![](../img/BeamReinforcementImage5.png)
     -   Create Rebars of new layer:
-        ![](/wiki/user/img/BeamReinforcementImage6.png)
+        ![](../img/BeamReinforcementImage6.png)
     -   Now to create each new layer of Reinforcement, user needs to
         repeat Step II and III and perform all calculations manually.
-        ![](/wiki/user/img/BeamReinforcementImage7.png)
+        ![](../img/BeamReinforcementImage7.png)
 
 **Proposed solution to the problem**
 
@@ -130,7 +130,7 @@ So, the developed UI will contains following features:
     here: <https://archive.org/details/gov.in.is.sp.34.1987/page/n95>
     </br> Due to time constraints of GSoC, I will implement following
     prototypes, but will keep on adding even after GSoC.
-    ![](/wiki/user/img/ColumnPrototypes1.png) I also
+    ![](../img/ColumnPrototypes1.png) I also
     implemented above prototypes manually and can be found at
     <https://github.com/SurajDadral/FreeCAD-Examples>
 
@@ -297,7 +297,7 @@ scope](#Future_Scope.md) of project.
 **Enhancement**
 
 <b>Master Configuration:</b>Instead of setting default values in UI as
-in below image: ![](/wiki/user/img/CreateColumn1.png) We will
+in below image: ![](../img/CreateColumn1.png) We will
 have Master Configuration file, in which user can set default values for
 Rebar Addon like:
 
@@ -321,7 +321,7 @@ Rebar Addon like:
 </dt>
 <dd>
 
-![](/wiki/user/img/RebarAddonInitializationMenu.png)
+![](../img/RebarAddonInitializationMenu.png)
 
 </dd>
 <dt>
@@ -331,10 +331,10 @@ Rebar Addon like:
 </dt>
 <dd>
 
-![](/wiki/user/img/CreateBeam1.png)
-![](/wiki/user/img/CreateBeam2.png)
-![](/wiki/user/img/CreateBeam3.png)
-![](/wiki/user/img/CreateBeam4.png)
+![](../img/CreateBeam1.png)
+![](../img/CreateBeam2.png)
+![](../img/CreateBeam3.png)
+![](../img/CreateBeam4.png)
 
 </dd>
 <dt>
@@ -344,8 +344,8 @@ Rebar Addon like:
 </dt>
 <dd>
 
-![](/wiki/user/img/CreateColumn1.png)
-![](/wiki/user/img/CreateColumn2.png)
+![](../img/CreateColumn1.png)
+![](../img/CreateColumn2.png)
 
 </dd>
 </dl>
@@ -467,7 +467,7 @@ I will be interested to implement this.
 
 For Column Reinforcement, we can have following prototypes also and much
 more as in <https://archive.org/details/gov.in.is.sp.34.1987/page/n95> :
-![](/wiki/user/img/ColumnPrototypes2.png)
+![](../img/ColumnPrototypes2.png)
 
 # Time Availability
 

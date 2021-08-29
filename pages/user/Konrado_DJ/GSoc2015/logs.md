@@ -378,10 +378,10 @@ allocation.
 
 -Uploaded patch and test conversions
 
-![](/wiki/user/img/Chess8Levels.png)
+![](../../img/Chess8Levels.png)
 
 <figure>
-![](/wiki/user/img/AllenDuttonVillage.png)
+![](../../img/AllenDuttonVillage.png)
 
 
 \- Added support for X3D IndexedTriangleSet

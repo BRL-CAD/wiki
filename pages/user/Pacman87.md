@@ -171,7 +171,7 @@ doing, and updated norm() to use the new private vector stored in the
 hitpoint. "rt" seems to work perfectly, but trying to raytrace from
 inside mged still fails.
 
-![](/wiki/user/img/Rt_hyp.png)
+![](img/Rt_hyp.png)
 
 ### 2008-06-02
 
@@ -187,7 +187,7 @@ wireframe, so ellipses are drawn at +-100%, +-50%, +-25%, and 0% of the
 height vector, and upgraded the ellipses from 8 to 16 points.
 
 <figure>
-![](/wiki/user/img/Wireframe_hyp.png)
+![](img/Wireframe_hyp.png)
 
 
 Refined the plot() function, and corrected some errors regarding

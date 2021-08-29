@@ -264,8 +264,8 @@
     -   Solved the display problem - now correct drawings can be made in
         the embedded framebuffer window:
 
-![](/wiki/user/img/Mged_fb.png)
-![](/wiki/user/img/Mged_fb2.png)
+![](../../img/Mged_fb.png)
+![](../../img/Mged_fb2.png)
 
 -   24 July:
     -   Tried to find out why the image disappears after is drawn in the
@@ -299,8 +299,8 @@
         that need some further investigation (at some point the display
         manager crashes)
 
-![](/wiki/user/img/Mged_fb3.png)
-![](/wiki/user/img/Mged_fb4.png)
+![](../../img/Mged_fb3.png)
+![](../../img/Mged_fb4.png)
 
 -   2 August:
     -   Investigated to see why the display manager sometimes crashes
@@ -321,8 +321,8 @@
 -   6 August:
     -   Integrated the fb in archer:
 
-![](/wiki/user/img/Archer_fb.png)
-![](/wiki/user/img/Archer_fb2.png)
+![](../../img/Archer_fb.png)
+![](../../img/Archer_fb2.png)
 
 -   7 August:
     -   Did some testing to see that everything works as expected

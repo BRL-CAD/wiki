@@ -22,7 +22,7 @@ displayed.**
     but needs to be configured by brlcad accounts (after deployment).
 
 
-![](/wiki/user/img/LoginOmniAuth.png)
+![](../../img/LoginOmniAuth.png)
 
 ## **Feedback**
 
@@ -36,7 +36,7 @@ displayed.**
     in the feedback form at all times, without stopping any of his work.
 
 
-![](/wiki/user/img/feedbackTemplate.png)
+![](../../img/feedbackTemplate.png)
 
 ## **Edit info of Model**
 
@@ -54,7 +54,7 @@ displayed.**
     have been resolved.
 
 
-![](/wiki/user/img/editinfo.png) ![](/wiki/user/img/editinfo2.png)
+![](../../img/editinfo.png) ![](../../img/editinfo2.png)
 
 ## **Model Viewer**
 
@@ -65,10 +65,10 @@ displayed.**
     emissive, wireframe+model, only wireframe and wireframe line width.
 
 
-![](/wiki/user/img/modelViewer1.png)
-![](/wiki/user/img/modelViewer2.png)
-![](/wiki/user/img/modelViewer3.png)
-![](/wiki/user/img/modelViewer4.png)
+![](../../img/modelViewer1.png)
+![](../../img/modelViewer2.png)
+![](../../img/modelViewer3.png)
+![](../../img/modelViewer4.png)
 
 ## **Follower/following format for users**
 
@@ -86,4 +86,4 @@ displayed.**
 The first picture depicts the view of user's own profile.
 And the second one is when the same profile is being viewed by another
 user. That is when the user clicks the follow button.
-![](/wiki/user/img/profilePage.png)![](/wiki/user/img/profilePage2.png)
+![](../../img/profilePage.png)![](../../img/profilePage2.png)

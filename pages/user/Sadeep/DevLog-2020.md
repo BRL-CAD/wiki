@@ -166,7 +166,7 @@ Finished writing DM to coreinterfaces:VectorList.
 
 bug fixes in coreinterface.
 
-![](/wiki/user/img/arbalest2.png)
+![](../img/arbalest2.png)
 
 -   14 June 2020
 
@@ -216,7 +216,7 @@ failed.
 
 -   24 June 2020
 
-Display lists and managing color done. ![](/wiki/user/img/arbalestj25.png)
+Display lists and managing color done. ![](../img/arbalestj25.png)
 
 Removed the C like vlist rendering since BRLCAD::VectorList::Iterate is
 now fast enough with Display lists implemented.
@@ -339,7 +339,7 @@ above.
 
 Learning about fonts and using them in Qt.
 
-![](/wiki/user/img/aba2.png)
+![](../img/aba2.png)
 
 -   17-25 July 2020
 
@@ -424,4 +424,4 @@ Implemented object creation.
 
 Implemented changing background color of raytraced outputs.
 
-![](/wiki/user/img/arbalest6.png)
+![](../img/arbalest6.png)

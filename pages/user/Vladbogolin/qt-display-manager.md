@@ -9,7 +9,7 @@ Tk windows so this was one of the first features implemented. Then,
 basic drawing had to be done, more exactly line, points and text
 drawing. To obtain this a QPainter that draws on a QPixmap was used.
 
-![](/wiki/user/img/Tkqt1.png)![](/wiki/user/img/Sph.png)<img src="img/Tor.png" title="fig:Tor.png" width="200" alt="Tor.png" />
+![](../img/Tkqt1.png)![](../img/Sph.png)<img src="img/Tor.png" title="fig:Tor.png" width="200" alt="Tor.png" />
 
 At this point the display manager could draw almost anything but there
 was no event processing involved so user input was ignored. The problem
@@ -23,15 +23,15 @@ The events can be grouped in three categories:
 
 -   mouse events:
 
-![](/wiki/user/img/Tor1.png)![](/wiki/user/img/Tor2.png)
+![](../img/Tor1.png)![](../img/Tor2.png)
 
 -   keyboard events:
 
-![](/wiki/user/img/Keyboard.png)![](/wiki/user/img/Keyboard2.png)![](/wiki/user/img/mged-c.png)
+![](../img/Keyboard.png)![](../img/Keyboard2.png)![](../img/mged-c.png)
 
 -   mouse + keyboard events:
 
-![](/wiki/user/img/Rotate1.png)![](/wiki/user/img/Rotate2.png)
+![](../img/Rotate1.png)![](../img/Rotate2.png)
 
 As it comes to key bindings, I've tried to do everything in such a way
 that new key bindings can be easily added. In order to add a new key
@@ -56,12 +56,12 @@ towards integrating the new display manager
 
 -   in mged:
 
-![](/wiki/user/img/mged.png)
+![](../img/mged.png)
 
 -   and archer:
 
 <figure>
-![](/wiki/user/img/archer.png)
+![](../img/archer.png)
 
 made some testing using some more complex objects to see that everything
 is displayed properly and working as expected.
