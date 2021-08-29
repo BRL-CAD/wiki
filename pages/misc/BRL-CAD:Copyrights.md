@@ -1,1 +1,1 @@
-Please see the site [disclaimer](disclaimer.md).
+Please see the site [disclaimer](Disclaimer.md).

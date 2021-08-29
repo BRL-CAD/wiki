@@ -29,7 +29,7 @@ documentation each.
 
 <!-- -->
 
--   [MGED_Commands](MGED_Commands.md)
+-   [MGED_Commands] (MGED_Commands.md)
 -   [BRL-CAD_Commands](BRL-CAD_Commands)
 
 # Requirements

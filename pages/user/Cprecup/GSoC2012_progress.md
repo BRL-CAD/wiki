@@ -839,7 +839,7 @@ image so now I want to compile and install BRL-CAD from source (from a
 svn checkout).
 
 I've followed the instructions with respect to the dependencies (the
-ones from here [Compiling](../../Compiling.md) and from the
+ones from here [Compiling](../../doc/Compiling.md) and from the
 **doc/README.Linux**). I've used the command
 
 *cmake -DCMAKE_BUILD_TYPE=Debug -DBRLCAD_BUNDLED_LIBS=Bundled .*

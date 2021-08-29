@@ -22,9 +22,8 @@ Feel free to discuss anything about the project at IRC or mailing list.
 
 # References
 
--   [Online Geometry Viewer
-    Back-end](Online_Geometry_Viewer_Back-end.md)
--   [Online Geometry: TODO](Online_Geometry/TODO.md)
+-   [Online Geometry Viewer Back-end](Online_Geometry_Viewer_Back-end.md)
+-   [Online Geometry: TODO](../doc/Online_Geometry/TODO.md)
 
 # Requirements
 

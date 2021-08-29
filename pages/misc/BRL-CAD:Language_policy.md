@@ -29,15 +29,15 @@ languages as possible.
     automatically creates links to all available translations.
 
 This system will be compatible with the planned [automated import/export
-of Help pages](Automating_help_page_export.md), but may need a
+of Help pages] (Automating_help_page_export.md), but may need a
 bit of working around to export/import non-English pages in the interim.
 
 ## The main page
 
 The English version of our front page is located at
-[Main_Page](Main_Page.md). Translated versions are located at
+[Main_Page](../doc/Main_page.md). Translated versions are located at
 Main_Page/code, where code is the language code (e.g.
-[Main_Page/es](Main_Page/es.md)). Please see [Project:Main page
+[Main_Page/es] (Main_page/es.md)). Please see [Project:Main page
 templates](Project:Main_page_templates.md) for more details
 about creating or editing this content.
 

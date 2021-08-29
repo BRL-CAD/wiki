@@ -52,5 +52,5 @@ full-time years of effort.
 
 This was the first year doing GCI. BRL-CAD was 1 of 10 organizations
 selected. Student response was
-[overwhelming](Community_Publication_Portal.md#BRL-CAD_Accomplishments_:_GCI_2012).
+[overwhelming](misc/Community_Publication_Portal.md#BRL-CAD_Accomplishments_:_GCI_2012).
 We learned a lot and fell in love with the program.

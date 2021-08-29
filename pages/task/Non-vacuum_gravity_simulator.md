@@ -32,4 +32,4 @@ maintainability. MIT/BSD license is ideal.
 
 # Past Efforts
 
--   [GSoC12](Google_Summer_of_Code/2012.md)
+-   [GSoC12](../Google_Summer_of_Code/2012.md)

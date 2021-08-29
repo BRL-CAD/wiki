@@ -5,6 +5,6 @@ indicate that a new session has failed.
 
 ## Related Subjects
 
-[NewSession](NewSession.md)
+[NewSession](../doc/NewSession.md)
 
-[Success](Success.md) Codes
+[Success](../doc/Success.md) Codes

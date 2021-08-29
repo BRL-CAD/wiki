@@ -1,6 +1,6 @@
 Previous GSoC projects have made progress towards a
 parametrics/constraint library. Please check [libpc Developer
-Doc](libpg_:_A_parametrics/constraint_library.md) as well as the
+Doc](../doc/Libpg_:_A_parametrics/constraint_library.md) as well as the
 [libpc
 source](http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/src/libpc/).
 For this year's project, we're suggesting a specific direction as
