@@ -729,22 +729,22 @@ six intersections.
         neighbors, of course, but in the global scale majorly determined
         by the large domain \[0, 2000\], they become neighbors and the
         result is totally messy.
-    -   ![](../../img/epa_bad.png)
-        ![](../../img/epa_good.png)
+    -   ![](../../img/Epa_bad.png)
+        ![](../../img/Epa_good.png)
     -   The below are 2D parametric curves. The left is the projection
         on the plane surface (it's a parabola) and the right is the
         projection on the parabolic surface (it's some line segments).
-    -   ![](../../img/epa_2d_for_plane.png)
-        ![](../../img/epa_2d_for_parabola.png)
+    -   ![](../../img/Epa_2d_for_plane.png)
+        ![](../../img/Epa_2d_for_parabola.png)
 -   Test ssx_overlap on planes (src/librt/tests/arb_intersect.g).
     -   brep A_brep intersect C_brep 0 1
     -   Part of the two surfaces overlap.
-    -   ![](../../img/partial_overlap.png)
+    -   ![](../../img/Partial_overlap.png)
     -   brep A_brep intersect A_brep 0 0
     -   We intersect two surfaces that are exactly the same. Maybe this
         case can be optimized (Detect it's a duplicated surface and
         return the boundary of the whole surface directly).
-    -   ![](../../img/completely_overlap.png)
+    -   ![](../../img/Completely_overlap.png)
 -   The extreme test case (src/librt/tests/extreme_ssi_test.g):
     -   The 2D intersect curves generated as sketch primitives by
         test_ssi: test_ssi extreme_ssi_tests.g surface_1.s
@@ -752,21 +752,21 @@ six intersections.
         surface B is the same). (New: the right one includes two
         intersection curves)
     -   ![](../../img/Five_rec.png)
-        ![](../../img/extreme_final.png)
+        ![](../../img/Extreme_final.png)
 -   NURBS boolean evaluations (intersection)
     -   An arb8 and an ehy (left: original structures; right: result of
         intersection)
-    -   ![](../../img/arb8_ehy.png)
-        ![](../../img/arb8_ehy_inter.png)
+    -   ![](../../img/Arb8_ehy.png)
+        ![](../../img/Arb8_ehy_inter.png)
     -   A sph and a torus (left: original structures; right: result of
         intersection)
-    -   ![](../../img/ehy_tor.png)
-        ![](../../img/ehy_tor_inter.png)
+    -   ![](../../img/Ehy_tor.png)
+        ![](../../img/Ehy_tor_inter.png)
     -   Two spheres (first: result of union; second: result of
         intersection; third: result of difference)
-    -   ![](../../img/union_sph.png)
-        ![](../../img/sph_sph_inter.png)
-        ![](../../img/diff_sph.png)
+    -   ![](../../img/Union_sph.png)
+        ![](../../img/Sph_sph_inter.png)
+        ![](../../img/Diff_sph.png)
     -   Two arb8 (first: union, second: intersection, third: diff)
     -   ![](../../img/Arb_union.png)
         ![](../../img/Arb_intersect.png)

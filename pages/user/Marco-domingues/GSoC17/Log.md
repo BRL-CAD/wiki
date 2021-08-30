@@ -84,7 +84,7 @@ the middle partition of the ray has the "TRUE" value.
 -   The next figure contains images with the results of the OCL code and
     a comparison with the Ansi C code.
 
-![](../../img/ocl_results.png)
+![](../../img/Ocl_results.png)
 
 -   Planning to refractor the 'weave_segs' kernel next week to a
     solution that does not use a bounded array for the segments in each
@@ -355,9 +355,9 @@ the middle partition of the ray has the "TRUE" value.
 -   Prepared the code and submitted the patch in the svn
     (https://sourceforge.net/p/brlcad/patches/472/)
 
-![](../../img/results1.png)
+![](../../img/Results1.png)
 
-![](../../img/results2.png)
+![](../../img/Results2.png)
 
 ### 24 July
 
@@ -378,7 +378,7 @@ the middle partition of the ray has the "TRUE" value.
 -   Tomorrow will add some more measurements and will share the document
     with the results.
 
-![](../../img/operators_normals.png)
+![](../../img/Operators_normals.png)
 
 ### 25 July
 
@@ -390,7 +390,7 @@ the middle partition of the ray has the "TRUE" value.
 -   Fixed the issue that was causing some interior normals to be wrongly
     represented
 
-![](../../img/normals_fixed.png)
+![](../../img/Normals_fixed.png)
 
 -   Working on a solution to iterate only over partitions evaluated in
     the shading process
@@ -407,7 +407,7 @@ the middle partition of the ray has the "TRUE" value.
     performance, as you can see in the following table:
 
 (Running the OpenCL over the NVIDIA OpenCL SDK on GPU - Debug build)
-![](../../img/time_comparison.png)
+![](../../img/Time_comparison.png)
 
 ### 31 July
 
@@ -433,7 +433,7 @@ the middle partition of the ray has the "TRUE" value.
 
 -   Example of what was happening before vs what is happening now:
 
-![](../../img/shade_closest_partition.png)
+![](../../img/Shade_closest_partition.png)
 
 ### 2 - 4 August
 
@@ -461,7 +461,7 @@ the middle partition of the ray has the "TRUE" value.
     trunk, the code with the new tree structure and the code currently
     in the opencl branch (RPN tree):
 
-(Release build) ![](../../img/comparison.png)
+(Release build) ![](../../img/Comparison.png)
 
 -   Removed the 'next_evalpp' from the partition structure, which
     wasn't necessary in the first place
@@ -473,7 +473,7 @@ the middle partition of the ray has the "TRUE" value.
     trunk! This difference is more noticeable when rendering the havoc
     scene with the command "rt -s2048": 2.53sec vs 2.18sec.
 
-(Release build) ![](../../img/time.png)
+(Release build) ![](../../img/Time.png)
 
 ### 9 August
 
@@ -509,7 +509,7 @@ the middle partition of the ray has the "TRUE" value.
     with the new tree representation:
 
 (running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
-![](../../img/new_tree_times.png)
+![](../../img/New_tree_times.png)
 
 ### 11 August
 
@@ -618,7 +618,7 @@ the middle partition of the ray has the "TRUE" value.
     increased significantly, as we can see in the following table:
 
 (running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
-![](../../img/times.png)
+![](../../img/Times.png)
 
 ### GSoC17 is Over!!
 

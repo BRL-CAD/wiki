@@ -36,7 +36,7 @@ displayed.**
     in the feedback form at all times, without stopping any of his work.
 
 
-![](../../img/feedbackTemplate.png)
+![](../../img/FeedbackTemplate.png)
 
 ## **Edit info of Model**
 
@@ -54,7 +54,7 @@ displayed.**
     have been resolved.
 
 
-![](../../img/editinfo.png) ![](../../img/editinfo2.png)
+![](../../img/Editinfo.png) ![](../../img/Editinfo2.png)
 
 ## **Model Viewer**
 
@@ -65,10 +65,10 @@ displayed.**
     emissive, wireframe+model, only wireframe and wireframe line width.
 
 
-![](../../img/modelViewer1.png)
-![](../../img/modelViewer2.png)
-![](../../img/modelViewer3.png)
-![](../../img/modelViewer4.png)
+![](../../img/ModelViewer1.png)
+![](../../img/ModelViewer2.png)
+![](../../img/ModelViewer3.png)
+![](../../img/ModelViewer4.png)
 
 ## **Follower/following format for users**
 
@@ -86,4 +86,4 @@ displayed.**
 The first picture depicts the view of user's own profile.
 And the second one is when the same profile is being viewed by another
 user. That is when the user clicks the follow button.
-![](../../img/profilePage.png)![](../../img/profilePage2.png)
+![](../../img/ProfilePage.png)![](../../img/ProfilePage2.png)

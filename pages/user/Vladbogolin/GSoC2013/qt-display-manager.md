@@ -50,20 +50,19 @@ One of the best way to see the actual results is from screenshots:
 To use the display manager in classic mged simply select it when
 prompted:
 
-![](../../img/mged-c.png)
+![](../../img/Mged-c.png)
 
 To use the display manager in mged it must be selected from
 Modes-&gt;DisplayManager-&gt;Qt.
 
-<figure>
-![](../../img/mged.png)
+![](../../img/Mged.png)
 
 used in archer too. At this moment there isn't a option like in mged
 (Modes-&gt;DisplayManager-&gt;Qt) so what has to be done to use the dm
 in archer is modify src/tclscripts/lib/Get.tcl line 957 (set dmType qt)
 and deactivate the use of Display Lists:
 
-![](../../img/archer.png)
+![](../../img/Archer.png)
 
 [log page](Logs.md).
 

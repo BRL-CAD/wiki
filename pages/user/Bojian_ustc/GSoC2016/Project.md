@@ -119,7 +119,7 @@ intersection hit point.
 
 1\) Ray intersection with surface
 
-![](../../img/figure_1.png)
+![](../../img/Figure_1.png)
 
 Figure 1: Ray intersection with surface.(a) Incident ray at normal
 direction precisely. (b) Incident ray deviating normal direction in a
@@ -143,7 +143,7 @@ represents the inner product of dray and -dn.
 
 2\) Ray intersection with corner.
 
-![](../../img/figure_2.png)
+![](../../img/Figure_2.png)
 
 Figure 2: Ray intersection with corner. Because of the corner, which is
 formed by intersection of two discrete surfaces, it is not so easy to
@@ -161,7 +161,7 @@ to compute the ‘out’ hit point.
 Let us take Figure 2(b) as a more general example, then we add some
 notations in order to clarify the problem as shown in Figure 3.
 
-![](../../img/figure_3.png)
+![](../../img/Figure_3.png)
 
 Figure 3: Figure 2(b) with notations for clarifying how to generate the
 ‘out’ hit point.

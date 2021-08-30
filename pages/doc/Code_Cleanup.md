@@ -127,7 +127,7 @@ Definitions are provided for "Refactoring", "Zero One or Infinity"
 (ZOI), "Don't Repeat Yourself" (DRY), "Rule of Three", and "Cargo Cult
 Programming".
 
-![](img/CodeCleanup.pdf)
+[CodeCleanup.pdf](pdf/CodeCleanup.pdf)
 
 # CPPCHECK-CLEANUP
 

@@ -50,7 +50,7 @@ cmake ../ -DCMAKE_BUILD_TYPE=Debug -DBRLCAD_BUNDLED_LIBS=Bundled
     mouse-button** will move the view away from or toward the center
     (where the cartesian plane X,Y,Z are 0,0,0)
 
-![](img/mged_radio_graphic_window.gif)
+![](img/Mged_radio_graphic_window.gif)
 
 ## Primitive Examples
 

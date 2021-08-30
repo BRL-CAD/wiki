@@ -9,7 +9,11 @@ Tk windows so this was one of the first features implemented. Then,
 basic drawing had to be done, more exactly line, points and text
 drawing. To obtain this a QPainter that draws on a QPixmap was used.
 
-![](../img/Tkqt1.png)![](../img/Sph.png)<img src="img/Tor.png" title="fig:Tor.png" width="200" alt="Tor.png" />
+![](../img/Tkqt1.png)
+
+![](../img/Sph.png)
+
+![](../img/Tor.png)
 
 At this point the display manager could draw almost anything but there
 was no event processing involved so user input was ignored. The problem
@@ -27,7 +31,7 @@ The events can be grouped in three categories:
 
 -   keyboard events:
 
-![](../img/Keyboard.png)![](../img/Keyboard2.png)![](../img/mged-c.png)
+![](../img/Keyboard.png)![](../img/Keyboard2.png)![](../img/Mged-c.png)
 
 -   mouse + keyboard events:
 
@@ -56,12 +60,11 @@ towards integrating the new display manager
 
 -   in mged:
 
-![](../img/mged.png)
+![](../img/Mged.png)
 
 -   and archer:
 
-<figure>
-![](../img/archer.png)
+![](../img/Archer.png)
 
 made some testing using some more complex objects to see that everything
 is displayed properly and working as expected.

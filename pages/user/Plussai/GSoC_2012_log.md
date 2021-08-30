@@ -18,7 +18,7 @@
 `    ON_SurfaceArray m_S;//Pointers to parametric surfaces (used by faces)`
 `    ON_BrepTrimArray m_T;//trims`
 `    ON_BrepVertexArray m_V;//vertexs`
-![](../img/brep.jpg)
+![](../img/Brep.jpg)
 figure:[1](http://brlcad.org/w/images/5/5e/Brep.jpg)
 
 ## 9 May 2012
@@ -406,8 +406,8 @@ needed.
 -   image: some BBoxing in uv which should be trimmed are still
     remain(right bottom conner).
 
-![](../img/rhino.png)
-![](../img/rhino1.png)
+![](../img/Rhino.png)
+![](../img/Rhino1.png)
 
 ### 10 July 2012
 

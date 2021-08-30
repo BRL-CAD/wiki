@@ -510,7 +510,7 @@ As an example, here is how the graph for the *share/db/axis.g* database
 looks like now:
 
 
-![](../img/Graph_editor_v2.png)
+![](../user/img/Graph_editor_v2.png)
 
 Further work that can extend the *interactive* trait of the graph layout
 API includes adding user actions upon the graph such as *move* (dragging
@@ -604,7 +604,7 @@ archive with or without the help of the database.
     which generates the javascript code to interact with the Google
     Charts service.
 
-![](../img/Absavgperfvsimagescomb.png)
+![](../user/img/Absavgperfvsimagescomb.png)
 
 Plumbing between these components is via the python scripts.
 
@@ -834,7 +834,7 @@ in the latest scan. This reduced BRL-CAD’s defect density to just 0.22
 defects per thousand lines of code- less than a quarter of the industry
 average.
 
-![](../img/CoverityExample2.png)
+![](../doc/img/CoverityExample2.png)
 
 *Coverity analysis showing secure coding suggestions. Image courtesy of
 BRL-CAD wiki.*

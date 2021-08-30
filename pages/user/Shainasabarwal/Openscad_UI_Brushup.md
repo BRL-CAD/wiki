@@ -72,7 +72,7 @@ desires
 -   Solarized <http://ethanschoonover.com/solarized>
 
 Can add more if required by developers. This will require diving into
-highlighter.cc and adding more color themes. ![](../img/improved_code_editor.png)
+highlighter.cc and adding more color themes. ![](../img/Improved_code_editor.png)
 
 **Custom designed toolbar:-** Finding the right menu through the menubar
 is a hectic task for the user. It takes lots of clicks and hassle going

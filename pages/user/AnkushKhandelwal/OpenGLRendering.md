@@ -91,7 +91,7 @@ used in rendering edges, now we want to separate it from the polyset.cc
 file such that the moved code is not allowed to use any private methods
 or any member variables of polyset.
 
-![](../img/polyset.png)
+![](../img/Polyset.png)
 
 To do that we take this function to another file and we create a
 renderer class and add API to polyset to enable that rendering class to

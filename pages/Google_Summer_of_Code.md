@@ -134,7 +134,7 @@ development priorities.
 
 ## [GSoC 2009](Google_Summer_of_Code/2009)
 
-![](img/brlcad_gsoc2009_flyer.png)
+![](img/Brlcad_gsoc2009_flyer.png)
 
 For the second year in a row, BRL-CAD is participating in the Google
 Summer of Code. BRL-CAD was accepted as a participating organization and
@@ -143,7 +143,7 @@ projects and integrated with the development team.
 
 ## [GSoC 2008](Google_Summer_of_Code/2008)
 
-![](img/brlcad_gsoc2008_flyer.png)
+![](img/Brlcad_gsoc2008_flyer.jpg)
 
 The Google Summer of Code 2008 was announced on February 25, 2008.
 BRL-CAD was accepted as a participating organization and took upon four

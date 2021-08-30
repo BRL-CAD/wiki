@@ -69,11 +69,16 @@ window. This can be done by checking the change status of each open tab.
 
 The expected GUI should look like the following, generated with mock-up
 code:
-![](../../img/Image3.png)
+
+(../../img/Image3.png)
+
 Any changed files will be marked by asterisk(\*)
-![](../../img/Image4.png)
+
+(../../img/Image4.png)
+
 Changes in file menu
-![](../../img/Image2.png)
+
+(../../img/Image2.png)
 
 #### Phase II - Keyword Autocompletion
 
@@ -113,7 +118,8 @@ Refer gif at [PR \#2889](https://github.com/openscad/openscad/pull/2889)
 to see the expected result
 
 Changed GUI at Preferences-Editor
-![](../../img/Image1.png)
+
+(../../img/Image1.png)
 
 ## If Time Permits
 

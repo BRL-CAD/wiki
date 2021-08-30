@@ -35,7 +35,7 @@ Also, explored functions like `face.normalAt()`, `face.CenterOfMass()`.
 
 **4 June** : Today, I designed the taskpanel UI of straight rebar in
 Qtcreator by using FreeCAD
-widgets.![](../../img/straightrebar_taskpanel.png)
+widgets.![](../../img/Straightrebar_taskpanel.png)
 
 **5 June** : Today, I have integrated the task panel UI of straight
 rebar with backend scripts. This script will take input values from task
@@ -237,8 +237,8 @@ Here is a
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/660cd715990af7ae1d94d45935b4ac82676874cf)
 
 Here are the few screenshots of stirrup created from my code:
-![](../../img/stirrup1.png)
-![](../../img/stirrup2.png)
+![](../../img/Stirrup1.png)
+![](../../img/Stirrup2.png)
 
 **1 July**:
 
@@ -425,10 +425,10 @@ Link](https://forum.freecadweb.org/viewtopic.php?f=8&t=22760&start=170#p183866)
 -   Wrote code in CircularStirrup.py file.
     [Commit](https://github.com/amrit3701/FreeCAD-Reinforcement/commit/32f883a9014b1f8d59a039245d14e0a3558227e6)
     ![](../../img/CircluarStirrup3.png)
-    ![](../../img/circluarStirrup4.png)
+    ![](../../img/CircluarStirrup4.png)
 -   Discussed issues related to circular stirrup with Yorik which comes
     when I set `Part::Helix` as a base of rebar object.
-    ![](../../img/helix.png) ![](../../img/helix2.png)
+    ![](../../img/Helix.png) ![](../../img/Helix2.png)
 
 **5 Augest**: GSoC party!.
 

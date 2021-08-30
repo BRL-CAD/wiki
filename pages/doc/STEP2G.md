@@ -8,7 +8,7 @@ Consider this .stp file. You can copy the data from this file to your
 working directory and name it bull.stp. We have the output how it should
 look as below.
 
-![](img/original.png)
+![](img/Original.png)
 
 After you have bull.stp and BRL-CAD, just type the following command on
 terminal. " step-g -o bull.g bull.stp "
