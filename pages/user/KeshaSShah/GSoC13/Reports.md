@@ -140,8 +140,7 @@ Three Cheers for this awesome summer !
 ## May 3
 
 -   Proposal Submission Deadline on melange.
--   Made my
-    [User-Wiki-pages](/wiki/user/KeshaSShah/GSoC13)
+-   Made my [User-Wiki-pages](../GSoC13.md)
 -   Uploaded proposal on
     [Melange](http://www.google-melange.com/gsoc/dashboard/google/gsoc2013#proposals)
     and embedded wiki links in it.

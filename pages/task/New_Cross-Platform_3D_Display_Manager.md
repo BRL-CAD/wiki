@@ -72,4 +72,4 @@ drawing, etc.
 
 # Past Efforts
 
-[GSoC12](/wiki/user/Mesut/Reports)
+[GSoC12](../user/Mesut/Reports.md)

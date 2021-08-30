@@ -95,7 +95,7 @@ this feature.
 
 `   `[`https://sourceforge.net/p/brlcad/patches/529/#31d8`](https://sourceforge.net/p/brlcad/patches/529/#31d8)
 
-Here is the link to my [Proposal](/wiki/user/Ali_Haydar) The tasks
+Here is the link to my [Proposal](../../Ali_Haydar_presonal_page.md) The tasks
 mentioned in the proposal are either completed or approached partially
 and needs work and discussion with the society.
 

@@ -20,7 +20,7 @@ existing functionality robust and fast.
 
 <!-- -->
 
--   [user/Phoenix/GSoc2013/Reports](/wiki/user/Phoenix/GSoc2013/Reports)
+-   [user/Phoenix/GSoc2013/Reports](../user/Phoenix/GSoc2013/Reports.md)
 
 # Requirements
 

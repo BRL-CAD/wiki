@@ -1,14 +1,14 @@
 ## Proposal draft for adding exec option to search command (WIP)
 
-#### [Personal information](/wiki/user/Bhinesley)
+#### [Personal information](../../Bhinesley.md)
 
-##### [Contact info](/wiki/user/Bhinesley.md#Contact)
+##### [Contact info](../../Bhinesley.md#Contact)
 
 ##### Alternate contact info
 
-##### [Who I am](/wiki/user/Bhinesley.md#Who_I_am)
+##### [Who I am](../../Bhinesley.md#Who_I_am)
 
-##### [Experience](/wiki/user/Bhinesley.md#Experience)
+##### [Experience](../../Bhinesley.md#Experience)
 
 ##### Interest in BRL-CAD
 

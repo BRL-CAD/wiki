@@ -36,7 +36,7 @@ The project was divided into two parts:
 `  `[`https://sourceforge.net/p/brlcad/patches/471/#cd2e`](https://sourceforge.net/p/brlcad/patches/471/#cd2e)
 `  `[`https://sourceforge.net/p/brlcad/patches/471/#acd7`](https://sourceforge.net/p/brlcad/patches/471/#acd7)
 
-Here is the link to my [Proposal](/wiki/user/Gabbar1947) The tasks
+Here is the link to my [Proposal](../ShubhamRathore.md) The tasks
 mentioned in the proposal are completed, just the extension ideas need
 to be worked upon.
 

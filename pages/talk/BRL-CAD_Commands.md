@@ -1,13 +1,13 @@
 This page would be much better if it was formatted similar to [MGED
 Commands](MGED_Commands.md), marking commands to their purpose
 or categorizing them or something. As is, it's incomplete and redundant.
---[Ssd](/wiki/user/Ssd) 09:42, 15 November 2009 (EST)
+--[Ssd](../user/Ssd.md) 09:42, 15 November 2009 (EST)
 
 ------------------------------------------------------------------------
 
 Agreed. Though with over 400 commands, the task really begs for
 automation and scripting or a plugin.. or some serious OCD editing.
-Ideas on ways to streamline the process? --[Sean](/wiki/user/Sean)
+Ideas on ways to streamline the process? --[Sean](../user/Sean.md)
 14:11, 15 November 2009 (EST)
 
 
@@ -17,7 +17,7 @@ category system to do the heavy lifting and forget marking by purpose
 want a list sorted by function, just gotta plug at it one by one...like
 putting all the image conversion functions in at once or something.
 Where is the documentation for these things anyway?
---[Ssd](/wiki/user/Ssd) 08:27, 18 November 2009 (EST)
+--[Ssd](../user/Ssd.md) 08:27, 18 November 2009 (EST)
 
 <!-- -->
 
@@ -33,7 +33,7 @@ here](http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/src/rt/rtshot
 or in docbook format
 [here](http://brlcad.svn.sourceforge.net/viewvc/brlcad/brlcad/trunk/doc/docbook/system/man1/en/).
 At least, that's the case for the ones not already imported. --
-[Sean](/wiki/user/Sean) 02:43, 19 November 2009 (EST)
+[Sean](../user/Sean.md) 02:43, 19 November 2009 (EST)
 
 Guess I misunderstood the question. I'd use the categorization as a
 vechicle to drive the manual labor of getting the information in.
@@ -43,4 +43,4 @@ I suppose I should automate the categorization I'm doing now (have you
 looked? does it look ok?), but I'm reading the pages as I go, and
 finding a few typos and things on the way too. By the way...is there a
 reason why the MGED debug\* commands are not marked as developer
-commands? --[Ssd](/wiki/user/Ssd) 02:17, 21 November 2009 (EST)
+commands? --[Ssd](../user/Ssd.md) 02:17, 21 November 2009 (EST)

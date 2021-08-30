@@ -50,4 +50,4 @@ Documentation of relevance:
 
 # Past Efforts
 
-[GSoC11](/wiki/user/Kunigami/GSoc2011/Proposal)
+[GSoC11](../user/Kunigami/GSoc2011/Proposal.md)

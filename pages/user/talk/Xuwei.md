@@ -7,5 +7,5 @@ Was this by accident probably?
 You can check this in page history at
 <http://brlcad.org/w/index.php?title=Google_Summer_of_Code/2019&action=history>
 and restore your profile if this wasn't you.
-[LordOfBikes](/wiki/user/LordOfBikes)
-([talk](/wiki/user/talk/LordOfBikes)) 04:36, 20 May 2019 (EDT)
+[LordOfBikes](../LordOfBikes.md)
+([talk](../LordOfBikes.md)) 04:36, 20 May 2019 (EDT)
