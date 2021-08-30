@@ -116,6 +116,6 @@ and needs work and discussion with the society.
 **Documentations**
 
 -   Documentations has been provided
-    [dimension_line](/wiki/Annot_dimension_line) ,
-    [label_box](/wiki/Annot_label_box)
--   [Link](/wiki/Ali_Haydar_Dev_log) to my daily logs.
+    [dimension_line](../../../doc/Annot_dimension_line.md) ,
+    [label_box](../../../doc/Annot_label_box.md)
+-   [Link](../../Ali_Haydar_Dev_log.md) to my daily logs.

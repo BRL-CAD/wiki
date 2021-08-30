@@ -23,7 +23,7 @@ Also I have some experience in C/C++:
 # Google Summer of Code (2012)
 
 This summer I am taking part in project ["Code
-Reduction"](/wiki/Code_Reduction) and hope to finish it
+Reduction"](../task/Code_Reduction.md) and hope to finish it
 successfully
 
 [This is my proposal to GSoC](Ksuzee/Proposal.md)

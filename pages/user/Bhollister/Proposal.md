@@ -31,8 +31,7 @@ modules (/librt/primitives/nmg/, etc.).
 
 # Project Details
 
-See [MGED CMD nmg](/wiki/MGED_CMD_nmg). The new command
-*design* is similar to [brep](/wiki/MGED_CMD_brep).
+See [MGED CMD nmg]. The new command *design* is similar to [brep].
 
 # Project Schedule
 

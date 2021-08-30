@@ -279,7 +279,7 @@ to meaningfully contribute.
 
 If accepted, I plan on continuing my involvement with BRLCAD after
 GSoC ends, moving on to more challenging tasks. In particular
-[this](/wiki/General_Tree_Walker) project interests me as I have a
+[this](../task/General_Tree_Walker.md) project interests me as I have a
 good deal of experience working with trees from my Data Structures
 course at school. Having already invested some time familiarizing
 myself with BRLCAD's source library, I'm considering completing some

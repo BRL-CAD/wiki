@@ -30,4 +30,4 @@ here.
 
 # See also
 
--   [Code Cleanup](/wiki/doc/Code_Cleanup)
+-   [Code Cleanup](../doc/Code_Cleanup.md)

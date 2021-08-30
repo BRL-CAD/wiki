@@ -8,7 +8,7 @@
 
 # GSoC (Google Summer of Code) 2008
 
--   Project: [OpenGL GUI Framework](/wiki/OpenGL_GUI_Framework)
+-   Project: [OpenGL GUI Framework](../doc/OpenGL_GUI_Framework.md)
 -   Example for interaction:
     <http://brlcad.org/design/gui/ioe_proto_final.mov> , recommended by
     [Sean](Sean.md)

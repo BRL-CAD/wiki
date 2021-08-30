@@ -1,7 +1,7 @@
 ## Creation Note
 
 I am working on completing the [BRL-CAD
-Primitives](/wiki/doc/BRL-CAD_Primitives) article as an overview of all
+Primitives](../doc/BRL-CAD_Primitives.md) article as an overview of all
 such shapes. To keep it to a managable length, I plan on creating a
 series of *Creating and editing ... primitives* articles, of which this
 is one. It currently contains only the preliminary content that was

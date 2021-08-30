@@ -57,5 +57,5 @@ to be worked upon.
 
 **Documentation**
 
--   Documentation has been provided [here](/wiki/Annot).
+-   Documentation has been provided [here](../../../doc/Annot.md).
 -   [Link](https://rathoresaab.wordpress.com/gsoclogs) to my daily logs.

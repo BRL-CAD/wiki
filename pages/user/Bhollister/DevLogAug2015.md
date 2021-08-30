@@ -134,7 +134,7 @@ n/a
 
 # Wed, August 12, 2015
 
--   added [labelface](/wiki/MGED_CMD_labelface)
+-   added [labelface]
     documentation
 -   added patch [403](https://sourceforge.net/p/brlcad/patches/403/) for
     *labelface* cmd
@@ -150,7 +150,7 @@ n/a
     \#3](https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/5d69a16a456b2fbd607a9e9193b86aca4c8ffb15)
     removed accidental redundant error checking
 -   **todo: implement 'kill F' next, using the indices provided in
-    display by [labelface](/wiki/MGED_CMD_labelface)**
+    display by [labelface]**
 
 # Thurs, August 13, 2015
 
@@ -182,8 +182,8 @@ n/a
 -   submitted patch [405](https://sourceforge.net/p/brlcad/patches/405/)
     for move V nmg subcommand
 -   updated docs
-    -   [nmg](/wiki/MGED_CMD_nmg)
-    -   [labelvert](/wiki/MGED_CMD_labelvert) for proposed -i
+    -   [nmg]
+    -   [labelvert] for proposed -i
         (index) option
         -   this will allow for CLI specification with make F
 -   updated [project
@@ -305,7 +305,7 @@ n/a
 -   submitted patch [415](https://sourceforge.net/p/brlcad/patches/415/)
     for 'make F' subcommand
 -   finished final evaluation on google-melange
--   updated [mged nmg subcommands](/wiki/MGED_CMD_nmg)
+-   updated [mged nmg subcommands]
     documentation
 
 # Sun, August 23, 2015

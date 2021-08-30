@@ -73,7 +73,7 @@ it only so you are aware of the long-term plan, not to derail your
 current (excellent) goals of cleaning up what we do have.
 
 One piece of information you may not yet have come across is a [table of
-contents](/wiki/TOC) that I recently pulled together. That includes
+contents](../doc/TOC.md) that I recently pulled together. That includes
 a massive Documentation section that I would greatly appreciate feedback
 on from your tech writer perspective. I'd like to build up a consistent
 vision for where the website as a whole is going with an emphasis on

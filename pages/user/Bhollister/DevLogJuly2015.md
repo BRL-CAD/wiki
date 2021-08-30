@@ -61,11 +61,11 @@ __FORCETOC__
 -   received good direction from brlcad in irc
     -   reviewed
         <http://www.google-melange.com/gci/task/view/google/gci2014/5546966268248064>
-    -   reviewed [NMG](/wiki/NMG)
+    -   reviewed [NMG](../../doc/NMG.md)
     -   previously unaware that nmg models could be created with
         ged_put
 -   todo: need to plan high-level subcommands after cmface working
--   todo: check winding order in cmface, as [NMG](/wiki/NMG)
+-   todo: check winding order in cmface, as [NMG](../../doc/NMG.md)
     mentions potential crashing with incorrect winding order
 
 non-brlcad time expenditures...
@@ -174,7 +174,7 @@ n/a
 
 -   re-tested with 'strict' build options - works!
 -   updated schedule to include new designs
--   created [MGED_CMD_nmg](/wiki/MGED_CMD_nmg) design
+-   created [MGED_CMD_nmg] design
     doc
 -   proposed new subcommands:
 
@@ -226,7 +226,7 @@ non-brlcad expenditures...
     response)
 -   todo: polish declarative syntax for 'creation' subcommands per
     Sean's suggestions
--   added 'nmg' to [mged cmds](/wiki/MGED_Commands)
+-   added 'nmg' to [mged cmds]
 
 non-brlcad expenditures...
 
@@ -244,12 +244,12 @@ n/a
 
 # Mon, July 20, 2015: ***Start of Week 9 (of 14)***
 
--   updated [proposed subcommands](/wiki/MGED_CMD_nmg.md#Proposed_subcommands)
+-   updated [proposed subcommands]
     -   need to find way of marking model parts
     -   need to allow users to select desired model parts through model
         labels in subcommand (see previous link for design ideas)
 -   investigated color setting with mged
-    -   only found info on [comb_color](/wiki/MGED_CMD_comb_color)
+    -   only found info on [comb_color]
         which doesn't appear relevant
     -   need to find simple way to set real-time geometry window colors
         (down to an opengl state function possibly?? and trace that back
@@ -333,8 +333,7 @@ non-brlcad expenditures...
         argc, const char \*argv\[\]) from mged/chgview.c
     -   traced: stateChange(int UNUSED(oldstate), int newstate) from
         mged/buttons.c
-    -   usage of [sed](/wiki/MGED_CMD_sed) command and
-        [facedef](/wiki/MGED_CMD_facedef) command (relevant to nmg
+    -   usage of [sed] command and [facedef] command (relevant to nmg
         subcommands for updating nmg geometry)
 -   found label vert functionality:
     -   /\* Usage: labelvert solid(s) \*/ **f_labelvert**(ClientData
@@ -398,13 +397,12 @@ n/a
 
 # Mon, July 27, 2015: ***Start of Week 10 (of 14)***
 
--   [kill V](/wiki/MGED_CMD_nmg.md#Proposed_subcommands)
+-   [kill V]
     design updated
     -   determined that the best way to select a vertex is to use
-        [labelvert](/wiki/MGED_CMD_labelvert) on object
+        [labelvert] on object
         to select vertex by coords
-    -   user then issues selected coord for [kill
-        V](/wiki/MGED_CMD_nmg.md#Proposed_subcommands)
+    -   user then issues selected coord for [kill V]
 -   [commit
     \#1](https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/c714dcd21a909d7fdd6dfa8116c7db9a858287e9)
     revamped ged_nmg_kill_v. now requiring user to first use
