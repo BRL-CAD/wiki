@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.1
-      - run: git pull
       - run: pip3 install mkdocs
       - run: mkdocs build --strict
+#      - run: git pull origin main
