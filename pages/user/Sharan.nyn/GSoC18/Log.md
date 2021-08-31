@@ -9,7 +9,7 @@ following:
 -   Week 1
     -   Prepared a flowchart to understand how the execution of the
         rtcheck program works :
-        [rtcheck_flow](http://brlcad.org/w/images/a/ad/Rtcheck_flow.jpeg)
+        [rtcheck_flow](../../img/Rtcheck_flow.jpeg)
     -   Was introduced to 'gdb' which helped me a lot to analyze the
         flow.
     -   Understood how the front-end portions of rt and back-end

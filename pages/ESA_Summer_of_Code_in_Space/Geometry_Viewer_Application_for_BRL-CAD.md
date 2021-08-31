@@ -211,7 +211,7 @@ g file into this window.
 
 ## References
 
-[3](http://brlcad.org/w/images/3/3d/Application_Development.pdf)
+[3](../doc/pdf/Application_Development.pdf)
 [4](http://brlcad.sourceforge.net/doxygen/modules.html)
 [5](http://brlcad.org/docs/doxygen-r64112/index.xhtml)
 [6](http://brlcad.org/docs/doxygen-r64112/d2/d66/structdb__i.xhtml)

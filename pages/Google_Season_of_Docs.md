@@ -55,7 +55,7 @@ We especially need help with:
 -   setting up existing docs so we can update and maintain them
     faster/easier
 
-# [PROJECT IDEAS](https://brlcad.org/w/index.php?title=Google_Season_of_Docs/Project_Ideas)
+# [PROJECT IDEAS](Google_Season_of_Docs/Project_Ideas.md)
 
 For 2021, our Season of Docs focus project is [Migrating BRL-CAD's
 Documentation
@@ -63,7 +63,7 @@ Infrastructure](Google_Season_of_Docs/Proposal.md).
 
 If you are interested in working with BRL-CAD on a documentation
 project, whether under GSoD or not, please see our [PROJECT
-IDEAS](https://brlcad.org/w/index.php?title=Google_Season_of_Docs/Project_Ideas)
+IDEAS](Google_Season_of_Docs/Project_Ideas.md)
 page. Another good starting point for technical writers is our "[HACKING
 BRL-CAD](http://brlcad.org/HACKING_BRL-CAD.pdf)" (pdf, 35MB) book which
 includes a section on contributing to documentation.
