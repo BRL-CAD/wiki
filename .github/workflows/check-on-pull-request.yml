@@ -1,13 +1,13 @@
 # This action runs on pull request in order to check
 # that the proposed changes don't break the site.
 #
-name: Build GitHub Pages
+name: Check a pull request
 on:
   pull_request:
     branches: [ main ]
     types: [ opened, edited, synchronize, reopened, ready_for_review ]
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.1
