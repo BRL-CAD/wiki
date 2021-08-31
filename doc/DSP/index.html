@@ -108,12 +108,12 @@
 <h2 id="creating-a-dsp-object-from-miscellaneous-images">Creating a DSP object from miscellaneous images</h2>
 <p>We will use two examples to illustrate the next few sections.</p>
 <p>1. A black and white (gray scale) image (png format):</p>
-<p><img alt="" src="/wiki/doc/img/Ex1.png" /></p>
+<p><img alt="" src="../img/Ex1.png" /></p>
 <p>with properties:</p>
 <p><code>$ file Ex1.png</code>
 <code>Ex1.png: PNG image, 142 x 150, 8-bit gray+alpha, non-interlaced</code></p>
 <p>2. A color png file:</p>
-<p><img alt="" src="/wiki/doc/img/Ex2.png" /></p>
+<p><img alt="" src="../img/Ex2.png" /></p>
 <p>with properties:</p>
 <p><code>$ file Ex2.png</code>
 <code>Ex2.png: PNG image, 152 x 150, 8-bit/color RGBA, non-interlaced</code></p>
@@ -178,7 +178,7 @@ and unit elevation 0.005 (in current units):</p>
 <code>mged&gt; ae 270 90</code>
 <code>mged&gt; rt</code></p>
 <p>You should see something like this:</p>
-<p><img alt="" src="/wiki/doc/img/Ex1rt.png" /></p>
+<p><img alt="" src="../img/Ex1rt.png" /></p>
 <p>You can play around with the scaling factors (the end pair: 1 - cell
 width, 0.005 - cell height) to improve the looks of the image.</p>
 <p>But now let's invert the file so we get its negative:</p>
@@ -187,17 +187,17 @@ width, 0.005 - cell height) to improve the looks of the image.</p>
 <p><code>$ cv huc nu16 Ex1n.bw Ex1n.dsp</code>
 <code>$ ...</code></p>
 <p>And see the results:</p>
-<p><img alt="" src="/wiki/doc/img/Ex1nrt.png" /></p>
+<p><img alt="" src="../img/Ex1nrt.png" /></p>
 <p>Example 2.</p>
 <p><code>mged&gt; B dsp2.r</code>
 <code>mged&gt; ae 270 90</code>
 <code>mged&gt; rt</code></p>
 <p>You should see something like this:</p>
-<p><img alt="" src="/wiki/doc/img/Ex2rt.png" /></p>
+<p><img alt="" src="../img/Ex2rt.png" /></p>
 <p>Again, you could play with various parameters to get the desired look.
 You could also create the negative as we did with example 1 and see the
 results:</p>
-<p><img alt="" src="/wiki/doc/img/Ex2nrt.png" /></p>
+<p><img alt="" src="../img/Ex2nrt.png" /></p>
 <h2 id="creating-a-dsp-object-from-manual-or-programmatic-generation-of-data">Creating a DSP object from manual or programmatic generation of data</h2>
 <p>A DSP object can be created manually or programmatically by creating an
 ASCII data file as input using the BRL-CAD utility asc2dsp to convert it
@@ -303,7 +303,7 @@ all the work for us with the options shown:</p>
 <p><code>$ cd /path/to/3818122.dem</code>
 <code>$ sdtsdem2asc 3814CATD.DDF --base=3818122 --chop</code></p>
 <p>The resulting default png file (but cropped) is shown below.</p>
-<p><img alt="" src="/wiki/doc/img/381822-az35-el25.png" /></p></div>
+<p><img alt="" src="../img/381822-az35-el25.png" /></p></div>
             </div>
         </div>
 

@@ -91,7 +91,7 @@
                     <div class="col-md-9" role="main">
 
 <p><a href="category:tutorials.md">category:tutorials</a></p>
-<p><img alt="" src="/wiki/doc/img/nmg-wiki-tutorial-screenshot.png" /></p>
+<p><img alt="" src="../img/Nmg-wiki-tutorial-screenshot.png" /></p>
 <p>BRL-CAD contains a powerful Non-Manifold Geometry (NMG) mesh primitive.
 NMG objects are usually created through geometry importers, or through
 commands like "facetize" that create NMG from other geometry. However,
@@ -152,7 +152,7 @@ that the final command to create it is:</p>
 <p><code>mged&gt; put box_nmg nmg V { { 0 0 0 } { 0 1 0 } { 1 1 0 } { 1 0 0 } { 1 0 1 } { 0 0 1 } { 0 1 1 } { 1 1 1 } } F { { 0 1 2 3 } } F { { 4 5 6 7 } } F { { 0 1 6 5 } } F { { 1 2 7 6 } } F { { 2 3 4 7 } } F { { 0 5 4 3 } }</code></p>
 <p>This yields the following object: (an MGED wireframe, from the az35,el25
 view setting):
-<img alt="" src="/wiki/doc/img/nmg-wiki-tutorial-box-mged-screenshot.png" /></p>
+<img alt="" src="../img/Nmg-wiki-tutorial-box-mged-screenshot.png" /></p>
 <p>Another more complex example is to create a box with a hole through it.
 Much of the command is the same as the one above for creating a plain
 box; the first thing to do is to add the necessary vertices to the <code>V</code>
@@ -169,7 +169,7 @@ and <code>F { { 12 8 9 15 } }</code>. The final command with all of this is:</p>
 <p><code>mged&gt; put box_with_hole_nmg nmg V { { 0 0 0 } { 0 1 0 } { 1 1 0 } { 1 0 0 } { 1 0 1 } { 0 0 1 } { 0 1 1 } { 1 1 1 } { 0.25 0.25 0 } { 0.75 0.25 0 } { 0.75 0.75 0 } { 0.25 0.75 0 } { 0.25 0.25 1 } { 0.25 0.75 1 } { 0.75 0.75 1 } { 0.75 0.25 1 } } F { { 0 1 2 3 } { 8 9 10 11 } } F { { 4 5 6 7 } { 12 13 14 15 } } F { { 0 1 6 5 } } F { { 1 2 7 6 } } F { { 2 3 4 7 } } F { { 0 5 4 3 } } F { { 8 12 13 11 } } F { { 11 13 14 10 } } F { { 10 14 15 9 } } F { { 9 15 12 8 } }</code></p>
 <p>This produces the following wireframe when drawn in MGED using the
 az35,el25 view setting:
-<img alt="" src="/wiki/doc/img/nmg-wiki-tutorial-box-with-hole-mged-screenshot.png" /></p></div>
+<img alt="" src="../img/Nmg-wiki-tutorial-box-with-hole-mged-screenshot.png" /></p></div>
             </div>
         </div>
 

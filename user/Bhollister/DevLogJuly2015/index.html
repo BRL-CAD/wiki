@@ -310,13 +310,13 @@
 <li>received good direction from brlcad in irc<ul>
 <li>reviewed
     <a href="http://www.google-melange.com/gci/task/view/google/gci2014/5546966268248064">http://www.google-melange.com/gci/task/view/google/gci2014/5546966268248064</a></li>
-<li>reviewed <a href="/wiki/NMG">NMG</a></li>
+<li>reviewed <a href="../../../doc/NMG/">NMG</a></li>
 <li>previously unaware that nmg models could be created with
     ged_put</li>
 </ul>
 </li>
 <li>todo: need to plan high-level subcommands after cmface working</li>
-<li>todo: check winding order in cmface, as <a href="/wiki/NMG">NMG</a>
+<li>todo: check winding order in cmface, as <a href="../../../doc/NMG/">NMG</a>
     mentions potential crashing with incorrect winding order</li>
 </ul>
 <p>non-brlcad time expenditures...</p>
@@ -429,7 +429,7 @@
 <ul>
 <li>re-tested with 'strict' build options - works!</li>
 <li>updated schedule to include new designs</li>
-<li>created <a href="/wiki/MGED_CMD_nmg">MGED_CMD_nmg</a> design
+<li>created [MGED_CMD_nmg] design
     doc</li>
 <li>proposed new subcommands:</li>
 </ul>
@@ -474,7 +474,7 @@ selects that face instead.</em></p>
     response)</li>
 <li>todo: polish declarative syntax for 'creation' subcommands per
     Sean's suggestions</li>
-<li>added 'nmg' to <a href="/wiki/MGED_Commands">mged cmds</a></li>
+<li>added 'nmg' to [mged cmds]</li>
 </ul>
 <p>non-brlcad expenditures...</p>
 <ul>
@@ -488,14 +488,14 @@ selects that face instead.</em></p>
 <p>n/a</p>
 <h1 id="mon-july-20-2015-start-of-week-9-of-14">Mon, July 20, 2015: <strong><em>Start of Week 9 (of 14)</em></strong></h1>
 <ul>
-<li>updated <a href="/wiki/MGED_CMD_nmg.md#Proposed_subcommands">proposed subcommands</a><ul>
+<li>updated [proposed subcommands]<ul>
 <li>need to find way of marking model parts</li>
 <li>need to allow users to select desired model parts through model
     labels in subcommand (see previous link for design ideas)</li>
 </ul>
 </li>
 <li>investigated color setting with mged<ul>
-<li>only found info on <a href="/wiki/MGED_CMD_comb_color">comb_color</a>
+<li>only found info on [comb_color]
     which doesn't appear relevant</li>
 <li>need to find simple way to set real-time geometry window colors
     (down to an opengl state function possibly?? and trace that back
@@ -589,8 +589,7 @@ selects that face instead.</em></p>
     argc, const char *argv[]) from mged/chgview.c</li>
 <li>traced: stateChange(int UNUSED(oldstate), int newstate) from
     mged/buttons.c</li>
-<li>usage of <a href="/wiki/MGED_CMD_sed">sed</a> command and
-    <a href="/wiki/MGED_CMD_facedef">facedef</a> command (relevant to nmg
+<li>usage of [sed] command and [facedef] command (relevant to nmg
     subcommands for updating nmg geometry)</li>
 </ul>
 </li>
@@ -660,13 +659,12 @@ selects that face instead.</em></p>
 <p>n/a</p>
 <h1 id="mon-july-27-2015-start-of-week-10-of-14">Mon, July 27, 2015: <strong><em>Start of Week 10 (of 14)</em></strong></h1>
 <ul>
-<li><a href="/wiki/MGED_CMD_nmg.md#Proposed_subcommands">kill V</a>
+<li>[kill V]
     design updated<ul>
 <li>determined that the best way to select a vertex is to use
-    <a href="/wiki/MGED_CMD_labelvert">labelvert</a> on object
+    [labelvert] on object
     to select vertex by coords</li>
-<li>user then issues selected coord for <a href="/wiki/MGED_CMD_nmg.md#Proposed_subcommands">kill
-    V</a></li>
+<li>user then issues selected coord for [kill V]</li>
 </ul>
 </li>
 <li><a href="https://github.com/behollis/brlcad-svn-rev65072-gsoc2015/commit/c714dcd21a909d7fdd6dfa8116c7db9a858287e9">commit

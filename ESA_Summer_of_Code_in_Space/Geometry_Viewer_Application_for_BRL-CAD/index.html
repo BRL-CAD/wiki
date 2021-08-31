@@ -122,7 +122,7 @@
 
 <p><font size="5"><strong>European Summer of Code 2016</strong></font></p>
 <p>Mentor: <strong>Christopher Sean Morrison</strong></p>
-<p>Student: <a href="/wiki/user/Asadmorgoth">Asad</a></p>
+<p>Student: <a href="../../user/Asadmorgoth/">Asad</a></p>
 <p>This document lists down the design for the project. This includes the
 major milestones and deadlines. <a href="https://onedrive.live.com/redir?page=view&amp;resid=A5975CC7CB592FF3!1807&amp;authkey=!ACJF7aDRbNZlIIA">Prettier
 Version</a></p>
@@ -160,7 +160,7 @@ glfw.</p>
 <p>The brlcad suite has many tools and libraries that interact with each
 other to render and view models. The general architecture is given
 below:
-<img alt="" src="/wiki/img/Data_flow_structure.png" /></p>
+<img alt="" src="../../doc/img/Data_flow_structure.png" /></p>
 <p>The most important part for us out of this architecture is the geometry
 rendering libraries, to be more specific librt &amp; libdm.</p>
 <p>•
@@ -274,14 +274,14 @@ which takes this db_i structure as input to do so.</p>
 <p>As we have located the g file bytes, we simply write out these bytes
 onto a temporary file and pass this file onto db_open(). db_open then
 populates the database structure db_i. An
-<a href="/wiki/doc/Example_db_walk_tree"><strong>example</strong></a> is already available that shows
+<a href="../../doc/Example_db_walk_tree/"><strong>example</strong></a> is already available that shows
 the usage of db_open. We are utilizing the skeleton of this example to
 populate the struct db_i. A cleaner approach would be to directly
 populate the struct db_i and I am working on that.</p>
 <p>The next step is to identify the top level objects of a g file. These
-can be listed by issuing a <a href="MGED_CMD_tops.md">"tops"</a> command on mged
-after opening a g file. In code this can be achieved by following
-db_ls and/or DB_LS_TOPS in src/libged/*.c.</p>
+can be listed by issuing a "tops" command on mged after opening a g
+file. In code this can be achieved by following db_ls and/or
+DB_LS_TOPS in src/libged/*.c.</p>
 <p>After these top level objects have been identified we need to call
 <a href="http://brlcad.sourceforge.net/doxygen/d3/d9b/group__dbio.html#ge69d8a8eb90d514e554e1b84bbb7018f">db_walk_tree</a>
 on each of them.</p>
@@ -306,7 +306,7 @@ g file into this window.</p>
     <strong>#brlcad</strong> (Fridays 16:00 GMT+2)</li>
 </ul>
 <h2 id="references">References</h2>
-<p><a href="http://brlcad.org/w/images/3/3d/Application_Development.pdf">3</a>
+<p><a href="../../doc/pdf/Application_Development.pdf">3</a>
 <a href="http://brlcad.sourceforge.net/doxygen/modules.html">4</a>
 <a href="http://brlcad.org/docs/doxygen-r64112/index.xhtml">5</a>
 <a href="http://brlcad.org/docs/doxygen-r64112/d2/d66/structdb__i.xhtml">6</a>

@@ -100,6 +100,26 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#milestones" class="nav-link">Milestones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#my-preparation" class="nav-link">My Preparation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-brl-cad" class="nav-link">Why BRL-CAD?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#why-me" class="nav-link">Why Me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -230,7 +250,7 @@ be boosted by doing following things:</p>
     down OGV. Therefore merging obj files will reduce HTTP requests by a
     big number.</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/_details.png" /></p>
+<p>(../img/_details.png)</p>
 <ul>
 <li><strong>Group/Ungroup merged Obj file</strong>: User should get an option to
     group/ungroup the merged obj file. As I will load only one obj file
@@ -251,47 +271,38 @@ be boosted by doing following things:</p>
     These names will then be seen when hovered with mouse over the part
     of model</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/_show_hide.png" /></p>
+<p>(../img/_show_hide.png)</p>
 <ul>
 <li><strong>Coloring parts of model</strong>: Once the model is ungrouped, we get a
     set of different parts that can be colored in a separate color or a
     material texture.</li>
 </ul>
-<figure>
-![](/wiki/user/img/_colored_parts.png)
-
-
--   **Searching parts of Model**: Complex models have a large number of
+<p>(../img/_colored_parts.png)</p>
+<ul>
+<li><strong>Searching parts of Model</strong>: Complex models have a large number of
     parts, so it isn't feasible to go through the list manually to find
     a specific part in order to perform an operation on it. Thus there
-    comes the need of searching the part of the model.
-
+    comes the need of searching the part of the model.</li>
+</ul>
 <!-- -->
 
--   **Searching users and models**: OGV already has this search. But it
+<ul>
+<li><strong>Searching users and models</strong>: OGV already has this search. But it
     isn't much functional. We can't go to the desired model from the
     search results. Also, the existing search uses simple string
     comparison instead of any search algorithm. I would like to use
     phonetic search and auto-complete search algorithm for an enhanced
     search experience. Following meteor package can help us achieve
-    autocorrect, phonetic search experience.
-
-`  art1sec8:fuse`
-
-<figure>
-![](/wiki/user/img/_empty_search.png)
-</figure>
-
-
-![](/wiki/user/img/_search_ga.png)
-</figure>
-
+    autocorrect, phonetic search experience.</li>
+</ul>
+<p><code>art1sec8:fuse</code></p>
+<p>(../img/_empty_search.png)</p>
+<p>(../img/_search_ga.png)</p>
 <ul>
 <li><strong>Advanced Search</strong>: With this we can search for models using
     certain filters. Filters include filter by the owner of the model,</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/_advanced_search.png" />
-</figure></p>
+<p>(../img/_advanced_search.png)</p>
 <h3 id="notifications">Notifications</h3>
 <ul>
 <li><strong>Better notification UI</strong>: The current notification style cover the
@@ -307,10 +318,7 @@ be boosted by doing following things:</p>
     panel and also in the mail. Notification in the mail is
     configurable. You can switch it off if you don't want it.</li>
 </ul>
-<figure>
-![](/wiki/user/img/_notifications.png)
-</figure>
-
+<p>(../img/_notifications.png)</p>
 <h3 id="customized-access-to-models">Customized Access to models</h3>
 <ul>
 <li>Private models: Only user itself can see the privately uploaded
@@ -326,10 +334,7 @@ be boosted by doing following things:</p>
     with a template for progress bar</li>
 </ul>
 <p><code>{{&gt; FS.UploadProgressBar}}</code></p>
-<figure>
-![](/wiki/user/img/_uploading.png)
-</figure>
-
+<p>(../img/_uploading.png)</p>
 <ul>
 <li><strong>Progress bar for conversion</strong>: In current OGV code, the conversion
     percentage is already being calculated in file
@@ -337,184 +342,216 @@ be boosted by doing following things:</p>
     am going to use that percentage variable with a javascript function,
     that animates the button.</li>
 </ul>
-<figure>
-![](/wiki/user/img/_conversion.png)
-
-    image file to be used as a thumbnail of the model. Automatic
-    thumbnail generation will snapshot the rendered view of a model, and
-    use that image as a thumbnail.
-
-The suggested technology for this is phantomJs. But I was successful in
+<p>(../img/_conversion.png)</p>
+<pre><code>image file to be used as a thumbnail of the model. Automatic
+thumbnail generation will snapshot the rendered view of a model, and
+use that image as a thumbnail.
+</code></pre>
+<p>The suggested technology for this is phantomJs. But I was successful in
 creating a screenshot with simple javascript from the console. Also
-doing it this way seems a right approach to me.
-
-`   window.open( renderer.domElement.toDataURL( 'image/png' ), 'screenshot' );`
-
-
--   **Improvements in social elements**: Social elements like love and
+doing it this way seems a right approach to me.</p>
+<p><code>window.open( renderer.domElement.toDataURL( 'image/png' ), 'screenshot' );</code></p>
+<ul>
+<li><strong>Improvements in social elements</strong>: Social elements like love and
     comment needs some UI refreshment. Also, another social element of
     sharing someone else's model on your profile is going to be a part
-    of this task.
-
+    of this task.</li>
+</ul>
 <!-- -->
 
--   **Improved embedded view**: Right now the embedded view is
+<ul>
+<li><strong>Improved embedded view</strong>: Right now the embedded view is
     cluttered, I have already fixed this with PR:
-    <https://github.com/BRL-CAD/OGV-meteor/pull/34> But now it only
+    <a href="https://github.com/BRL-CAD/OGV-meteor/pull/34">https://github.com/BRL-CAD/OGV-meteor/pull/34</a> But now it only
     shows the model, and social elements like count of total love and
     comment are hidden. The improved view will show the social elements
-    on mouse hover in embedded view.
-
-### Admin Panel
-
--   **Getting rid of hard coded superuser**: Now when we install OGV, a
-    super user *admin@example.com* is already in a database. The
+    on mouse hover in embedded view.</li>
+</ul>
+<h3 id="admin-panel">Admin Panel</h3>
+<ul>
+<li><strong>Getting rid of hard coded superuser</strong>: Now when we install OGV, a
+    super user <em>admin@example.com</em> is already in a database. The
     username and password of this user are written into the code itself.
-    *(in file OGV/server/accounts.js)* Instead of this hard coded user,
+    <em>(in file OGV/server/accounts.js)</em> Instead of this hard coded user,
     a more righteous approach would be to enable the admin to create a
     super user when a fresh install of OGV is done. The way we do during
-    a Wordpress installation.
-
+    a Wordpress installation.</li>
+</ul>
 <!-- -->
 
--   **Improved Admin panel**: Currently in OGV, the admin panel contain
+<ul>
+<li><strong>Improved Admin panel</strong>: Currently in OGV, the admin panel contain
     settings like SMTP URL, mged path, g-obj path. There aren't any
     settings related to other users and OGV. A super user should have
-    settings to
-    -   Enable/Disable private model uploads
-    -   Enable/Disable user registrations
-    -   View statistics of total model uploads by each user
-
+    settings to<ul>
+<li>Enable/Disable private model uploads</li>
+<li>Enable/Disable user registrations</li>
+<li>View statistics of total model uploads by each user</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   Enabling guest users to upload the model without signing up.
-
-### Deployment
-
--   Deploying on a freeBSD system
--   Establishing a mechanism that automatically updates the code on
-    server when a new commit is pushed in master branch (gruntjs)
--   During the course of GSoC, every friday would be a deployment
+<ul>
+<li>Enabling guest users to upload the model without signing up.</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<ul>
+<li>Deploying on a freeBSD system</li>
+<li>Establishing a mechanism that automatically updates the code on
+    server when a new commit is pushed in master branch (gruntjs)</li>
+<li>During the course of GSoC, every friday would be a deployment
     Friday(not of the master branch, but of the gsoc branch, so that it
-    can be regularly tested by other members of the community).
-
-## Milestones
-
--   Community Bonding Period
-    -   Discuss on blaze to react conversions
-    -   Making Repository ready for deployment
-
+    can be regularly tested by other members of the community).</li>
+</ul>
+<h2 id="milestones">Milestones</h2>
+<ul>
+<li>Community Bonding Period<ul>
+<li>Discuss on blaze to react conversions</li>
+<li>Making Repository ready for deployment</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 1 (23rd May)**
-
-Code Cleanup (Removing redundant/unused code) (23rd - 29th May)
-
--   **WEEK 2 (30th May)**
-
-Deployment (Deploying master branch on freeBSD and also making scripts
-for automatic deployment)
-
--   **WEEK 3 (6th June)**
-
-Robust database using aldeed:schema
-
--   **WEEK 4 (13th June)**
-    -   Improving notifications
-    -   Push notifications
-    -   notifications panel
-    -   adding share functionality
-
+<ul>
+<li><strong>WEEK 1 (23rd May)</strong></li>
+</ul>
+<p>Code Cleanup (Removing redundant/unused code) (23rd - 29th May)</p>
+<ul>
+<li><strong>WEEK 2 (30th May)</strong></li>
+</ul>
+<p>Deployment (Deploying master branch on freeBSD and also making scripts
+for automatic deployment)</p>
+<ul>
+<li><strong>WEEK 3 (6th June)</strong></li>
+</ul>
+<p>Robust database using aldeed:schema</p>
+<ul>
+<li><strong>WEEK 4 (13th June)</strong><ul>
+<li>Improving notifications</li>
+<li>Push notifications</li>
+<li>notifications panel</li>
+<li>adding share functionality</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 5 (20th June)**
-    -   Improving user and model search using art1sec8:fuse
-    -   Improving UI for social elements
-
+<ul>
+<li><strong>WEEK 5 (20th June)</strong><ul>
+<li>Improving user and model search using art1sec8:fuse</li>
+<li>Improving UI for social elements</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 6 (27th June)**
-    -   Thumbnail Generation
-    -   Code cleanup for mid term evaluation
-
-MID-TERM EVALUATION
-
--   **WEEK 7 (4th July)**
-    -   Merging Obj files using threejs geometry and objExporter
-    -   Removing duplicate obj files.
-
+<ul>
+<li><strong>WEEK 6 (27th June)</strong><ul>
+<li>Thumbnail Generation</li>
+<li>Code cleanup for mid term evaluation</li>
+</ul>
+</li>
+</ul>
+<p>MID-TERM EVALUATION</p>
+<ul>
+<li><strong>WEEK 7 (4th July)</strong><ul>
+<li>Merging Obj files using threejs geometry and objExporter</li>
+<li>Removing duplicate obj files.</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 8 (11th July)**
-    -   Search inside models
-    -   show/hide parts
-
+<ul>
+<li><strong>WEEK 8 (11th July)</strong><ul>
+<li>Search inside models</li>
+<li>show/hide parts</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 9 (18th July)**
-    -   Giving different color/material(image) to different parts
-    -   Progress bars (upload and conversion)
-
+<ul>
+<li><strong>WEEK 9 (18th July)</strong><ul>
+<li>Giving different color/material(image) to different parts</li>
+<li>Progress bars (upload and conversion)</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 10 (25th July)**
-    -   Creating groups/lists of followers
-    -   Restricting access to model viewing (public/private models)
-
+<ul>
+<li><strong>WEEK 10 (25th July)</strong><ul>
+<li>Creating groups/lists of followers</li>
+<li>Restricting access to model viewing (public/private models)</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 11 (1st August)**
-    -   admin panel
-
+<ul>
+<li><strong>WEEK 11 (1st August)</strong><ul>
+<li>admin panel</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 12 (8th Aug)**
-    -   Minor UI/UX improvements
-
+<ul>
+<li><strong>WEEK 12 (8th Aug)</strong><ul>
+<li>Minor UI/UX improvements</li>
+</ul>
+</li>
+</ul>
 <!-- -->
 
--   **WEEK 13 (15th Aug)**
-    -   Code Cleanup
-    -   Testing
-    -   Final Deployment
-
-FINAL EVALUATION
-
-## My Preparation
-
--   I have been studying about the meteor, specifically for OGV.
--   I have also gained some experience mged commands and using BRL-CAD.
--   I have read and understand how g to obj converts.
--   I have already sent a PRs regarding embedded view of models and
-    other things in OGV.
--   I have spent great deal of time in reading the roadmaps and inner
-    workings of meteor, so that we code with future in our mind.
-
-## Why BRL-CAD?
-
--   I have been a part of this community for about 4 years now.
--   I feel like home at this community
--   When it came to GSoC I really didn't have to choose, I knew I would
-    go with BRL-CAD.
-
-## Why Me?
-
--   I have a rich community experience with BRL-CAD.
--   I have sufficient meteor experience. I have been contributing to a
-    number of meteor projects.
--   I am following OGV, from its first iteration in 2013 till now.
--   I have been a participant of GCI 2012 and mentor in GCI 2013, 2014.
-    And I tried to be helpful where I can like in BRL-CAD website.
--   I have interested in bringing BRL-CAD to web since 2013. Link to
+<ul>
+<li><strong>WEEK 13 (15th Aug)</strong><ul>
+<li>Code Cleanup</li>
+<li>Testing</li>
+<li>Final Deployment</li>
+</ul>
+</li>
+</ul>
+<p>FINAL EVALUATION</p>
+<h2 id="my-preparation">My Preparation</h2>
+<ul>
+<li>I have been studying about the meteor, specifically for OGV.</li>
+<li>I have also gained some experience mged commands and using BRL-CAD.</li>
+<li>I have read and understand how g to obj converts.</li>
+<li>I have already sent a PRs regarding embedded view of models and
+    other things in OGV.</li>
+<li>I have spent great deal of time in reading the roadmaps and inner
+    workings of meteor, so that we code with future in our mind.</li>
+</ul>
+<h2 id="why-brl-cad">Why BRL-CAD?</h2>
+<ul>
+<li>I have been a part of this community for about 4 years now.</li>
+<li>I feel like home at this community</li>
+<li>When it came to GSoC I really didn't have to choose, I knew I would
+    go with BRL-CAD.</li>
+</ul>
+<h2 id="why-me">Why Me?</h2>
+<ul>
+<li>I have a rich community experience with BRL-CAD.</li>
+<li>I have sufficient meteor experience. I have been contributing to a
+    number of meteor projects.</li>
+<li>I am following OGV, from its first iteration in 2013 till now.</li>
+<li>I have been a participant of GCI 2012 and mentor in GCI 2013, 2014.
+    And I tried to be helpful where I can like in BRL-CAD website.</li>
+<li>I have interested in bringing BRL-CAD to web since 2013. Link to
     repository:
-    <https://github.com/GreatDevelopers/wBRLCAD/tree/master/general/tableModel>
-
-## References
-
--   <http://guide.meteor.com/collections.html#schemas>
--   <https://www.discovermeteor.com/blog/blaze-react-meteor/>
--   Fuse js: <http://kiro.me/projects/fuse.html>
--   Grunt js: <http://gruntjs.com/></div>
+    <a href="https://github.com/GreatDevelopers/wBRLCAD/tree/master/general/tableModel">https://github.com/GreatDevelopers/wBRLCAD/tree/master/general/tableModel</a></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://guide.meteor.com/collections.html#schemas">http://guide.meteor.com/collections.html#schemas</a></li>
+<li><a href="https://www.discovermeteor.com/blog/blaze-react-meteor/">https://www.discovermeteor.com/blog/blaze-react-meteor/</a></li>
+<li>Fuse js: <a href="http://kiro.me/projects/fuse.html">http://kiro.me/projects/fuse.html</a></li>
+<li>Grunt js: <a href="http://gruntjs.com/">http://gruntjs.com/</a></li>
+</ul></div>
             </div>
         </div>
 

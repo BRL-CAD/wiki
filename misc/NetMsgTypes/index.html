@@ -106,12 +106,12 @@
 <p>The GSNet API provides several Template classes to be used or extended
 from.</p>
 <ul>
-<li><a href="GenericOneByteMsg.md">Generic One Byte Msg</a></li>
-<li><a href="GenericTwoBytesMsg.md">Generic Two Byte Msg</a></li>
-<li><a href="GenericFourBytesMsg.md">Generic Four Byte Msg</a></li>
-<li><a href="GenericEightByteMsg.md">Generic Eight Byte Msg</a></li>
-<li><a href="GenericMultiByteMsg.md">Generic Multi Byte Msg</a></li>
-<li><a href="GenericOneStringMsg.md">Generic One String Msg</a></li>
+<li><a href="../../doc/GenericOneByteMsg/">Generic One Byte Msg</a></li>
+<li><a href="../../doc/GenericTwoBytesMsg/">Generic Two Byte Msg</a></li>
+<li><a href="../../doc/GenericFourBytesMsg/">Generic Four Byte Msg</a></li>
+<li><a href="../../doc/GenericEightByteMsg/">Generic Eight Byte Msg</a></li>
+<li><a href="../../doc/GenericMultiByteMsg/">Generic Multi Byte Msg</a></li>
+<li><a href="../../doc/GenericOneStringMsg/">Generic One String Msg</a></li>
 <li><a href="../GenericMultiStringMsg/">Generic Multi-String Msg</a></li>
 </ul>
 <hr />
@@ -152,31 +152,31 @@ their related MsgTypes, and links to details on that specific NetMsg:</p>
 <tr>
 <td>0x0050</td>
 <td>Failure</td>
-<td><a href="GenericOneByteMsg.md">GenericOneByteMsg</a></td>
+<td><a href="../../doc/GenericOneByteMsg/">GenericOneByteMsg</a></td>
 <td>1 byte 'error code'</td>
 </tr>
 <tr>
 <td>0x0051</td>
 <td>Success</td>
-<td><a href="GenericOneByteMsg.md">GenericOneByteMsg</a></td>
+<td><a href="../../doc/GenericOneByteMsg/">GenericOneByteMsg</a></td>
 <td>1 byte 'success code'</td>
 </tr>
 <tr>
 <td>0x0060</td>
 <td>PING</td>
-<td><a href="GenericEightByteMsg.md">GenericEightByteMsg</a></td>
+<td><a href="../../doc/GenericEightByteMsg/">GenericEightByteMsg</a></td>
 <td>8 byte time stamp for start time</td>
 </tr>
 <tr>
 <td>0x0062</td>
 <td>PONG</td>
-<td><a href="GenericEightByteMsg.md">GenericEightByteMsg</a></td>
+<td><a href="../../doc/GenericEightByteMsg/">GenericEightByteMsg</a></td>
 <td>8 byte time stamp for start time, dup of the ping value</td>
 </tr>
 <tr>
 <td>0x0100</td>
 <td>GS Remote Nodename Set</td>
-<td><a href="GenericOneStringMsg.md">GenericOneStringMsg</a></td>
+<td><a href="../../doc/GenericOneStringMsg/">GenericOneStringMsg</a></td>
 <td>String is the Nodename</td>
 </tr>
 <tr>
@@ -188,7 +188,7 @@ their related MsgTypes, and links to details on that specific NetMsg:</p>
 <tr>
 <td>0x0200</td>
 <td>New Node on Network</td>
-<td><a href="GenericOneStringMsg.md">GenericOneStringMsg</a></td>
+<td><a href="../../doc/GenericOneStringMsg/">GenericOneStringMsg</a></td>
 <td>String is the Nodename</td>
 </tr>
 <tr>
@@ -206,36 +206,36 @@ their related MsgTypes, and links to details on that specific NetMsg:</p>
 <tr>
 <td>0x0300</td>
 <td><a href="../NewSessionReqMsg/">New Session Request</a></td>
-<td><a href="NetMsg.md">NetMsg</a></td>
+<td>[NetMsg] (NetMsg.md)</td>
 <td>Two strings, username and password</td>
 </tr>
 <tr>
 <td>0x0305</td>
-<td><a href="SessionInfoMsg.md">Session Information</a></td>
-<td><a href="NetMsg.md">NetMsg</a></td>
+<td>[Session Information] (SessionInfoMsg.md)</td>
+<td>[NetMsg] (NetMsg.md)</td>
 <td>One string, the session UUID</td>
 </tr>
 <tr>
 <td>0x0400</td>
 <td><a href="../GeometryReqMsg/">Geometry Request</a></td>
-<td><a href="GenericOneStringMsg.md">GenericOneStringMsg</a></td>
+<td><a href="../../doc/GenericOneStringMsg/">GenericOneStringMsg</a></td>
 <td>Has additional custom fields.</td>
 </tr>
 <tr>
 <td>0x0401</td>
-<td><a href="GeometryBoTReqMsg.md">BoT Geometry Request</a></td>
-<td><a href="GenericOneStringMsg.md">GenericOneStringMsg</a></td>
+<td>[BoT Geometry Request] (GeometryBoTReqMsg.md)</td>
+<td><a href="../../doc/GenericOneStringMsg/">GenericOneStringMsg</a></td>
 <td>Requests geometry in BoT format, with exactly one BoT per region.</td>
 </tr>
 <tr>
 <td>0x0402</td>
-<td><a href="GeometryListReqMsg.md">Geometry List Request</a></td>
-<td><a href="GenericOneStringMsg.md">GenericOneStringMsg</a></td>
+<td>[Geometry List Request] (GeometryListReqMsg.md)</td>
+<td><a href="../../doc/GenericOneStringMsg/">GenericOneStringMsg</a></td>
 <td>Requests a list of geometry artifacts at given location.</td>
 </tr>
 <tr>
 <td>0x0403</td>
-<td><a href="GeometryListResMsg.md">Geometry List Results</a></td>
+<td>[Geometry List Results] (GeometryListResMsg.md)</td>
 <td><a href="../GenericMultiStringMsg/">GenericMultiStringMsg</a></td>
 <td>Display a list of geometry artifact names.</td>
 </tr>
@@ -248,7 +248,7 @@ their related MsgTypes, and links to details on that specific NetMsg:</p>
 <tr>
 <td>0x0410</td>
 <td><a href="../GeometryChunkMsg/">Geometry Chunk</a></td>
-<td><a href="GenericMultiByteMsg.md">GenericMultiByteMsg</a></td>
+<td><a href="../../doc/GenericMultiByteMsg/">GenericMultiByteMsg</a></td>
 <td>Raw .g information. Chunks can be written to a file to produce a viable V5 .g db. ReUUID is the associated GeometryReqMsg UUID.</td>
 </tr>
 </tbody>

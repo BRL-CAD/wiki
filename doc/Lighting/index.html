@@ -132,14 +132,14 @@ illuminate a portion of a scene without seeing the light object itself.</p>
 <h2 id="a-simple-example">A Simple Example</h2>
 <p>Consider a simple scene comprised of a box with three colored lights
 positioned above the box:</p>
-<p><img alt="" src="/wiki/doc/img/Light1.png" /></p>
+<p><img alt="" src="../img/Light1.png" /></p>
 <p>The default ambient illumination allows the entire box to be visible
 even though the light sources clearly do not illuminate the sides or
 bottom of the box. By default, the 30% of the illumination in a scene
 goes towards ambient lighting. If we set the ambient light contribution
 to 0% (via <strong>rt -A0</strong>), only the top of the box is illuminated as we
 would expect.</p>
-<p><img alt="" src="/wiki/doc/img/Light2.png" /></p>
+<p><img alt="" src="../img/Light2.png" /></p>
 <p>To fully control the lighting for a given scene, ambient lighting should
 be turned off (via <strong>rt -A0</strong>) or at least set to a low value (e.g.,
 <strong>rt -A0.1</strong>). Without ambient lighting, more care must be taken to
@@ -148,10 +148,10 @@ lights around the scene or to increase the fraction of contribution on
 the lights in the scene. For example, if we consider our simple scene
 with ambient lighting disabled and increase the <em>fraction</em> parameter on
 all three lights from 1.0 to 2.0, we double the intensity of the lights.</p>
-<p><img alt="" src="/wiki/doc/img/Light3.png" /></p>
+<p><img alt="" src="../img/Light3.png" /></p>
 <p>Crank that fraction up to 10.0 and the lights reflected on the top of
 the box really begin to bloom:</p>
-<p><img alt="" src="/wiki/doc/img/Light4.png" /></p>
+<p><img alt="" src="../img/Light4.png" /></p>
 <p>Note that there is so much overlap between the lights at that point, so
 you see blue for the farthest light, a pinkish magenta color in the
 middle where blue and red are cross, and white where all three colors
@@ -177,35 +177,35 @@ a light returns back towards the viewer. By default, 70% of light
 hitting a phong surface will be <em>specular</em> and biased back towards a
 viewer. The remaining 30% of the light is considered <em>diffuse</em> and
 reflects less sharply towards the viewer.</p>
-<p><img alt="" src="/wiki/doc/img/Phong.png" /></p>
+<p><img alt="" src="../img/Phong.png" /></p>
 <h2 id="tweaking-the-box">Tweaking the Box</h2>
 <p>If we move the spherical light sources a little bit closer to the box's
 surface, we can emphasize the effects of diffuse and specular
 reflectivity:</p>
-<p><img alt="" src="/wiki/doc/img/Light5.png" /></p>
+<p><img alt="" src="../img/Light5.png" /></p>
 <p>The default ratio of specular-to-diffuse is 7:3 or 70% going towards
 specular and 30% towards diffuse reflectivity. If we balance the two
 out, decreasing specular and increasing diffuse reflectivity, the
 surface becomes slightly more 'dulled' and with our (high-powered, high
 fraction) lights, we see even more overlap and blending of colors.</p>
-<p><img alt="" src="/wiki/doc/img/Light6.png" /></p>
+<p><img alt="" src="../img/Light6.png" /></p>
 <p>Taking that to an extreme with only diffuse reflectivity, the light
 hitting the surface becomes very spread out:</p>
-<p><img alt="" src="/wiki/doc/img/Light7.png" /></p>
+<p><img alt="" src="../img/Light7.png" /></p>
 <p>Taking it to the opposite extreme with only specular reflectivity, each
 light harshly reflects back off the surface and the "forward-blending"
 of colors becomes rather apparent:</p>
-<p><img alt="" src="/wiki/doc/img/Light8.png" /></p>
+<p><img alt="" src="../img/Light8.png" /></p>
 <h2 id="topping-it-all-off">Topping it all off</h2>
 <p>In the simple example scene we are using, if we look at the scene from
 directly above the three spheres, specular reflectance is no longer a
 concern and we can see that the lights indeed do reflect straight down.
 Here they are seen with a default 1.0 fraction and no ambient lighting:</p>
-<p><img alt="" src="/wiki/doc/img/Light_brg.png" /></p>
+<p><img alt="" src="../img/Light_brg.png" /></p>
 <p>If we increase the light intensity contribution (i.e., its fraction) by
 an order of magnitude to 10.0 then the colors begin to overlap
 considerably:</p>
-<p><img alt="" src="/wiki/doc/img/Light_brg10.png" /></p>
+<p><img alt="" src="../img/Light_brg10.png" /></p>
 <p>Notice in particular the optical illusion of a bright halo around each
 light caused by how the three lights are overlapping and how you can
 begin to see a combined "white" underneath the red light where all three
@@ -215,7 +215,7 @@ and the contribution of the neighboring colors continues to increase
 (which seems darker but is actually brighter).</p>
 <p>If the fraction is increased even further still, the center white
 becomes even more pronounced and the color overlap becomes considerable:</p>
-<p><img alt="" src="/wiki/doc/img/Light_brg20.png" />
+<p><img alt="" src="../img/Light_brg20.png" />
 <a href="category:tutorials.md">category:tutorials</a></p></div>
             </div>
         </div>

@@ -94,9 +94,9 @@
 running BRL-CAD. BRL-CAD uses the CMake build system so it can generate
 project files for a number of different development environments. Here
 we show you how to create a project using the Eclipse CDT4 generator.</p>
-<p>Note that you can <a href="Compiling/Eclipse/Manually.md">manually set up an Eclipse
-project</a> for BRL-CAD, though
-there are several substantial differences in the result.</p>
+<p>Note that you can <a href="Manually/">manually set up an Eclipse
+project</a> for BRL-CAD, though there are several
+substantial differences in the result.</p>
 <p>At first we need to run CMake, and set ”Where is the source code” and
 “Where to build the binaries”, but before that you have to be sure that
 you have a <em>CMakeLists.txt</em> file in the src directory . Your project
@@ -105,32 +105,32 @@ your build folder name. Otherwise, Eclipse will NOT pick up your
 executable as you build them. Our second work is that to select the
 generator(the window <em>cmake-gui</em> appears when you click <strong>Generate</strong>),
 in our case – Eclipse.</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-1.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-1.PNG" /></p>
 <p>For Eclipse, it is important that the build directory not to be a
 subdirectory of the source directory due to a CMake limitation.</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-2.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-2.PNG" /></p>
 <p>In the next step you have to run Eclipse and import your new project.</p>
 <p><code></code><em><code>File/Import/General/`` ``Existing`` ``Projects`` ``into`` ``Workspace</code></em><code>, Then just click</code><strong><code>Next</code></strong><code>.</code></p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-3.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-3.PNG" /></p>
 <p>Here you have to <em>Select root directory</em>, then check your projects, keep
 "Copy projects into workspace" unchecked and <strong>Finish</strong> import.</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-4.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-4.PNG" /></p>
 <p>Next, we could build everything, but here we build pieces of the project
 with the <em>benchmark</em> and <em>mged</em> targets. First, the BRL-CAD benchmark:
 <em>Project/Make Target/Build...</em>, then select target:<em>benchmark</em>(location
 <em>bench</em>) and click <strong>Build</strong></p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-5.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-5.PNG" /></p>
 <p>Already built project:</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-6.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-6.PNG" /></p>
 <p>Now in analog of benchmark we will make it with <em>MGED</em> and will run it.
 Let’s choose the target...</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-7.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-7.PNG" /></p>
 <p>And the built project:</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-8.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-8.PNG" /></p>
 <p>So let’s run it and choose <em>mged</em> from <em>binaries</em> and then click <strong>OK</strong>.</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-9.PNG" /></p>
+<p><img alt="" src="../../img/Compiling-Eclipse-9.PNG" /></p>
 <p>And finally we have started <em>MGED</em>:</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-10.PNG" /></p></div>
+<p><img alt="" src="../../img/Compiling-Eclipse-10.PNG" /></p></div>
             </div>
         </div>
 

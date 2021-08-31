@@ -110,7 +110,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><a href="Compiling/Eclipse.md">Setting up in Eclipse</a></p>
+<p><a href="../">Setting up in Eclipse</a></p>
 <p>BRL-CAD build system uses CMake and so I will show you how to build a
 project from cross-platform CMake on Eclipse. The CMake 2.8 project
 generator for Eclipse does not work, so you must create the project and
@@ -120,7 +120,7 @@ configure it to build with GNU Make. Here’s how to do it on Linux.</p>
 <em>File &gt; New &gt; C++</em> Project command for your C++ project, or <em>File
 &gt; New &gt; C</em> Project for a C project. Do not create the project
 using the CMake Eclipse project generator.</p>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-1.png" /></p>
+<p><img alt="" src="../../../img/Compiling-Eclipse-Manually-1.png" /></p>
 <h2 id="create-eclipse-make-targets">Create Eclipse Make Targets</h2>
 <p>The conventional approach to using CMake with Eclipse is to create an
 <em>external tool</em> in Eclipse. However, a <em>Make Target</em> is simpler, and
@@ -146,7 +146,7 @@ usual <em>Release</em> and <em>Debug</em> configurations:</p>
 </ul>
 </li>
 <li>Click OK<ul>
-<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-2.png" /></li>
+<li><img alt="" src="../../../img/Compiling-Eclipse-Manually-2.png" /></li>
 </ul>
 </li>
 </ul>
@@ -177,7 +177,7 @@ usual <em>Release</em> and <em>Debug</em> configurations:</p>
 <li>Deselect <em>Generate Makefiles automatically</em></li>
 <li>Make the <em>Build directory</em> field blank</li>
 <li>The form should appear as shown below:<ul>
-<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-3.png" /></li>
+<li><img alt="" src="../../../img/Compiling-Eclipse-Manually-3.png" /></li>
 </ul>
 </li>
 </ul>
@@ -187,7 +187,7 @@ usual <em>Release</em> and <em>Debug</em> configurations:</p>
     target name <em>all</em></li>
 <li>Select <em>Clean</em> and specify the target name <em>clean</em></li>
 <li>The form should appear as shown below:<ul>
-<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-4.png" /></li>
+<li><img alt="" src="../../../img/Compiling-Eclipse-Manually-4.png" /></li>
 </ul>
 </li>
 </ul>
@@ -203,8 +203,8 @@ usual <em>Release</em> and <em>Debug</em> configurations:</p>
 <li>Choose the <em>Behavior</em> tab<ul>
 <li>Set all values exactly the same as the <em>Release</em>
     configuration<ul>
-<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-5.png" /></li>
-<li><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-6.png" /></li>
+<li><img alt="" src="../../../img/Compiling-Eclipse-Manually-5.png" /></li>
+<li><img alt="" src="../../../img/Compiling-Eclipse-Manually-6.png" /></li>
 </ul>
 </li>
 <li>Click OK</li>
@@ -222,7 +222,7 @@ usual <em>Release</em> and <em>Debug</em> configurations:</p>
     <em>CMake Debug</em> to generate the GNU Make build system in <strong>Release/</strong>
     or <strong>Debug/</strong>, respectively</li>
 </ul>
-<p><img alt="" src="/wiki/doc/img/Compiling-Eclipse-Manually-7.PNG" /></p>
+<p><img alt="" src="../../../img/Compiling-Eclipse-Manually-7.PNG" /></p>
 <ul>
 <li>If necessary, edit your <strong>CMakeLists.txt</strong> control files</li>
 <li>Delete the contents of the corresponding build directory. For

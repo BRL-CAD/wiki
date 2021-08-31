@@ -213,7 +213,7 @@ the rendering from the rest of the software. The code of OpenSCAD is in
 openGL 2 and 1.1 + extentions and also we have users on openGL 2 and
 openGL 1.1 + extentions , so abstracting away OpenGL extensions and
 version differences is important.</p>
-<p><img alt="" src="/wiki/user/img/Diagram.png" /></p>
+<p><img alt="" src="../../img/Diagram.png" /></p>
 <p>If we know exactly how much GL code is in a file , the next step would
 be to turn it into a separate component, i.e. a class or set of
 functions that take a polyset as parameter and renders it. This will
@@ -227,7 +227,7 @@ take an example. Below we have a function from file polyset.cc which is
 used in rendering edges, now we want to separate it from the polyset.cc
 file such that the moved code is not allowed to use any private methods
 or any member variables of polyset.</p>
-<p><img alt="" src="/wiki/user/img/polyset.png" /></p>
+<p><img alt="" src="../../img/Polyset.png" /></p>
 <p>To do that we take this function to another file and we create a
 renderer class and add API to polyset to enable that rendering class to
 extract the data. The renderer can now compile a VBO from that data and

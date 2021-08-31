@@ -191,7 +191,7 @@
 <li>Planning to shade the segments from the evaluated partitions next
     week.</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/Csg_simple_example.png" /></p>
+<p><img alt="" src="../../../img/Csg_simple_example.png" /></p>
 <h3 id="week-2">Week 2:</h3>
 <h3 id="5-june">5 June</h3>
 <ul>
@@ -228,7 +228,7 @@
 <li>The next figure contains images with the results of the OCL code and
     a comparison with the Ansi C code.</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/ocl_results.png" /></p>
+<p><img alt="" src="../../../img/Ocl_results.png" /></p>
 <ul>
 <li>Planning to refractor the 'weave_segs' kernel next week to a
     solution that does not use a bounded array for the segments in each
@@ -284,7 +284,7 @@
     order to have a more exact comparision between the Ansi C and the
     OpenCL code</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/White_shading_results.png" /></p>
+<p><img alt="" src="../../../img/White_shading_results.png" /></p>
 <table>
 <thead>
 <tr>
@@ -413,7 +413,7 @@
     the ansi c results. There are some slightly differences in the
     illumination, but those differences were already there before.</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/Shading_eval.png" /></p>
+<p><img alt="" src="../../../img/Shading_eval.png" /></p>
 <h3 id="10-july">10 July</h3>
 <ul>
 <li>Debugged the code trying to identify the cause for the wrong results
@@ -436,7 +436,7 @@
     'rtip-&gt;rti_Solids' bits before sending the boolean trees to
     OpenCL, and was able to get the following results:</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/Operators.png" /></p>
+<p><img alt="" src="../../../img/Operators.png" /></p>
 <ul>
 <li>Hopefully this help us find the cause for the 'seg_sti' mismatch
     between the segments and the bits in the boolean tree.</li>
@@ -460,7 +460,7 @@
     Here is an example of a view that was having this problem, now
     fixed:</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/Operators_v1.png" /></p>
+<p><img alt="" src="../../../img/Operators_v1.png" /></p>
 <ul>
 <li>Will finish the rt_boolfinal kernel, by implementing the handler
     for overlapping partitions before submiting the patch in the svn.</li>
@@ -538,8 +538,8 @@
 <li>Prepared the code and submitted the patch in the svn
     (https://sourceforge.net/p/brlcad/patches/472/)</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/results1.png" /></p>
-<p><img alt="" src="/wiki/user/img/results2.png" /></p>
+<p><img alt="" src="../../../img/Results1.png" /></p>
+<p><img alt="" src="../../../img/Results2.png" /></p>
 <h3 id="24-july">24 July</h3>
 <ul>
 <li>Made some changes on the 'shade_segs' kernel to replicate the
@@ -561,7 +561,7 @@
 <li>Tomorrow will add some more measurements and will share the document
     with the results.</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/operators_normals.png" /></p>
+<p><img alt="" src="../../../img/Operators_normals.png" /></p>
 <h3 id="25-july">25 July</h3>
 <ul>
 <li>Did some further testing over some scenes in 'share/db' to gather
@@ -572,7 +572,7 @@
 <li>Fixed the issue that was causing some interior normals to be wrongly
     represented</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/normals_fixed.png" /></p>
+<p><img alt="" src="../../../img/Normals_fixed.png" /></p>
 <ul>
 <li>Working on a solution to iterate only over partitions evaluated in
     the shading process</li>
@@ -590,7 +590,7 @@
     performance, as you can see in the following table:</li>
 </ul>
 <p>(Running the OpenCL over the NVIDIA OpenCL SDK on GPU - Debug build)
-<img alt="" src="/wiki/user/img/time_comparison.png" /></p>
+<img alt="" src="../../../img/Time_comparison.png" /></p>
 <h3 id="31-july">31 July</h3>
 <ul>
 <li>Changed the code to skip unevaluated partitions during the shading
@@ -617,7 +617,7 @@
 <ul>
 <li>Example of what was happening before vs what is happening now:</li>
 </ul>
-<p><img alt="" src="/wiki/user/img/shade_closest_partition.png" /></p>
+<p><img alt="" src="../../../img/Shade_closest_partition.png" /></p>
 <h3 id="2-4-august">2 - 4 August</h3>
 <ul>
 <li>Working on a linearized binary tree representation to perform
@@ -645,7 +645,7 @@
     trunk, the code with the new tree structure and the code currently
     in the opencl branch (RPN tree):</li>
 </ul>
-<p>(Release build) <img alt="" src="/wiki/user/img/comparison.png" /></p>
+<p>(Release build) <img alt="" src="../../../img/Comparison.png" /></p>
 <ul>
 <li>Removed the 'next_evalpp' from the partition structure, which
     wasn't necessary in the first place</li>
@@ -657,7 +657,7 @@
     trunk! This difference is more noticeable when rendering the havoc
     scene with the command "rt -s2048": 2.53sec vs 2.18sec.</li>
 </ul>
-<p>(Release build) <img alt="" src="/wiki/user/img/time.png" /></p>
+<p>(Release build) <img alt="" src="../../../img/Time.png" /></p>
 <h3 id="9-august">9 August</h3>
 <ul>
 <li>Manually merged the new code over the opencl branch code.</li>
@@ -696,7 +696,7 @@
     with the new tree representation:</li>
 </ul>
 <p>(running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
-<img alt="" src="/wiki/user/img/new_tree_times.png" /></p>
+<img alt="" src="../../../img/New_tree_times.png" /></p>
 <h3 id="11-august">11 August</h3>
 <ul>
 <li>Cleaning the code to prepare for commit.</li>
@@ -816,7 +816,7 @@
     increased significantly, as we can see in the following table:</li>
 </ul>
 <p>(running the OpenCL over the Intel OpenCL SDK on CPU - Release build)
-<img alt="" src="/wiki/user/img/times.png" /></p>
+<img alt="" src="../../../img/Times.png" /></p>
 <h3 id="gsoc17-is-over">GSoC17 is Over!!</h3>
 <ul>
 <li>Google Summer of Code 2017 comes to an end! It was an amazing
